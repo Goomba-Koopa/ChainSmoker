@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXIOM ICSE 7 • The Master Academic Compendium</title>
+  
+  <!-- Typography: Newsreader (Serif) + Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      background-color: var(--bg-warm);
+      color: var(--ink-black);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* TOP EDITORIAL MASTHEAD */
+    .masthead {
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 24px 64px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      background: var(--bg-warm);
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--ink-black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--terracotta);
+    }
+
+    .masthead-meta {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      padding: 64px 64px 36px;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-kicker {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+    }
+
+    .hero-heading {
+      font-family: var(--font-serif);
+      font-size: 46px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--ink-black);
+      letter-spacing: -0.03em;
+      max-width: 900px;
+    }
+
+    .hero-subtext {
+      font-size: 16.5px;
+      color: var(--ink-secondary);
+      max-width: 760px;
+      margin-top: 16px;
+      line-height: 1.65;
+    }
+
+    /* FEATURED EXEMPLAR SPOTLIGHT DIRECTLY ON LANDING */
+    .featured-sample-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 36px 40px;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+    }
+
+    .featured-sample-panel::before {
+      content: "CANONICAL ICSE MODEL PROBLEM";
+      position: absolute;
+      top: -10px;
+      left: 36px;
+      background: var(--terracotta);
+      color: #ffffff;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 3px;
+    }
+
+    .sample-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-strong);
+      padding-bottom: 10px;
+    }
+
+    .sample-discipline {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-style: italic;
+      color: var(--ink-black);
+    }
+
+    .sample-marks {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .sample-prompt {
+      font-size: 16px;
+      color: var(--ink-black);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .sample-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink-black);
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .sample-btn:hover {
+      background: var(--bg-warm);
+      border-color: var(--ink-black);
+    }
+
+    .sample-reveal-box {
+      display: none;
+      background: #ffffff;
+      border-left: 3px solid var(--emerald-accent);
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 20px 24px;
+      border-radius: 0 6px 6px 0;
+      font-size: 14.5px;
+      color: var(--ink-secondary);
+      line-height: 1.7;
+    }
+
+    .sample-reveal-box strong {
+      color: var(--ink-black);
+      font-family: var(--font-serif);
+      font-size: 16px;
+    }
+
+    /* CONTROLS BAR: FILTER TABS + SEARCH */
+    .controls-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 36px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tabs-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-tab:hover {
+      background: #ffffff;
+      color: var(--ink-black);
+    }
+
+    .filter-tab.active {
+      background: var(--ink-black);
+      border-color: var(--ink-black);
+      color: #ffffff;
+    }
+
+    .search-field {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 9px 18px;
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      color: var(--ink-black);
+      outline: none;
+      width: 280px;
+      transition: border-color 0.15s;
+    }
+
+    .search-field:focus {
+      border-color: var(--terracotta);
+    }
+
+    /* MAIN ASYMMETRIC TOPICS CANVAS */
+    .main-canvas {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 64px 96px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      .masthead, .hero-section, .main-canvas { padding-left: 24px; padding-right: 24px; }
+      .hero-heading { font-size: 32px; }
+    }
+
+    /* TOPIC ROW CARD */
+    .topic-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s, border-color 0.15s, transform 0.15s;
+    }
+
+    .topic-card:hover {
+      background: #ffffff;
+      border-color: var(--ink-black);
+      transform: translateY(-2px);
+    }
+
+    /* LEFT SUBJECT IDENTITY BADGE */
+    .topic-left-badge {
+      width: 130px;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      flex-shrink: 0;
+      border-right: 1px solid var(--border-strong);
+      background: var(--bg-surface);
+      transition: background 0.15s;
+    }
+
+    .topic-card:hover .topic-left-badge {
+      background: #ffffff;
+    }
+
+    .badge-icon { font-size: 22px; }
+    .badge-code { font-size: 12.5px; font-weight: 700; letter-spacing: 0.05em; color: var(--ink-black); }
+    .badge-unit { font-size: 11px; color: var(--ink-muted); font-style: italic; }
+
+    /* CARD BODY CONTENT */
+    .topic-middle {
+      padding: 22px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .topic-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ink-black);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .topic-snippet {
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.55;
+    }
+
+    /* RIGHT ACTION */
+    .topic-right-action {
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .action-arrow {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-black);
+      border-bottom: 1px solid var(--ink-black);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .topic-card:hover .action-arrow {
+      color: var(--terracotta);
+      border-color: var(--terracotta);
+    }
+
+    /* EMPTY CONTAINER FALLBACK RULE */
+    .empty-state-notice {
+      padding: 64px 0;
+      text-align: center;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .empty-text {
+      font-family: var(--font-serif);
+      font-size: 13.5px;
+      font-style: italic;
+      color: var(--ink-muted);
+    }
+
+    /* FOOTER */
+    .editorial-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 64px;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+
+    .footer-note {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 14.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="index.html" class="brand-title">AXIOM <em>ICSE 7</em></a>
+    <div class="masthead-meta">The Definitive Class 7 Compendium</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-kicker">Unified Curriculum Compendium</div>
+    <h1 class="hero-heading">Middle school science, typeset with pure academic depth.</h1>
+    <p class="hero-subtext">
+      The complete Class 7 CISCE syllabus presented in a single, authoritative editorial edition. Formal derivations, balanced stoichiometric chemical equations, anatomical distinction matrices, and evaluator marking criteria.
+    </p>
+
+    <!-- INLINE FEATURED PROBLEM SPOTLIGHT -->
+    <div class="featured-sample-panel">
+      <div class="sample-header">
+        <span class="sample-discipline">Physics • Hydrostatic Fluid Mechanics</span>
+        <span class="sample-marks">CISCE Model Problem • [3 Marks]</span>
+      </div>
+      <div class="sample-prompt">
+        A metal block of mass \(60\text{ kg}\) measures \(0.5\text{ m} \times 0.4\text{ m} \times 0.2\text{ m}\). Calculate (i) the maximum pressure, and (ii) the minimum pressure it can exert on a horizontal table. <em>[Take \(g = 10\text{ m/s}^2\)]</em>
+      </div>
+      <div>
+        <button class="sample-btn" onclick="toggleSample()">Show Step-by-Step Solution ↓</button>
+        <div class="sample-reveal-box" id="sampleReveal">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Applied Thrust (Weight of the Block):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$F = m \cdot g = 60\text{ kg} \times 10\text{ m/s}^2 = \mathbf{600\text{ N}} \quad \text{[1 Mark]}$$<br>
+          2. <em>Maximum Pressure (Smallest Base Area \(A_{\text{min}} = 0.4\text{ m} \times 0.2\text{ m} = 0.08\text{ m}^2\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{max}} = \frac{F}{A_{\text{min}}} = \frac{600\text{ N}}{0.08\text{ m}^2} = \mathbf{7,500\text{ Pa (or N/m}^2\mathbf{)}} \quad \text{[1 Mark]}$$<br>
+          3. <em>Minimum Pressure (Largest Base Area \(A_{\text{max}} = 0.5\text{ m} \times 0.4\text{ m} = 0.20\text{ m}^2\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{min}} = \frac{F}{A_{\text{max}}} = \frac{600\text{ N}}{0.20\text{ m}^2} = \mathbf{3,000\text{ Pa (or N/m}^2\mathbf{)}} \quad \text{[1 Mark]}$$
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCIPLINE FILTER TABS & SEARCH -->
+    <div class="controls-bar">
+      <div class="filter-tabs-group">
+        <button class="filter-tab active" onclick="filterDiscipline('all')">All Lessons (24)</button>
+        <button class="filter-tab" onclick="filterDiscipline('Physics')">Physics (9)</button>
+        <button class="filter-tab" onclick="filterDiscipline('Chemistry')">Chemistry (8)</button>
+        <button class="filter-tab" onclick="filterDiscipline('Biology')">Biology (7)</button>
+      </div>
+      <input type="text" class="search-field" placeholder="Search topics, laws, or formulas..." oninput="handleSearch(this.value)">
+    </div>
+  </section>
+
+  <!-- MAIN TOPIC LESSONS CONTAINER -->
+  <main class="main-canvas" id="topicsContainer">
+    <!-- Rendered dynamically by script with direct links to all self-contained topics -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">AXIOM ICSE 7 • Typeset in Newsreader and Plus Jakarta Sans • KaTeX LaTeX Engine</div>
+    <div>CISCE Class 7 Academic Edition</div>
+  </footer>
+
+  <script>
+    const SHIPPED_TOPICS = [
+      // PHYSICS (TOPICS 01 - 09)
+      {
+        discipline: "Physics",
+        code: "PHY-01",
+        unitNum: "Kinematics",
+        icon: "⚛️",
+        title: "Motion, Distance, Displacement & Speed",
+        snippet: "Relativity of rest and motion, scalar distance vs vector displacement, and the 1 km/h = 5/18 m/s mathematical derivation.",
+        file: "topics/physics_01_motion_and_speed.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-02",
+        unitNum: "Work & Energy",
+        icon: "⚛️",
+        title: "Energy, Mechanical Work & Simple Machines",
+        snippet: "Scientific work W = F × s, Kinetic vs Potential energy, and Class 1, 2, 3 Levers (MA = Load/Effort, VR, Efficiency).",
+        file: "topics/physics_02_energy_and_machines.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-03",
+        unitNum: "Optics",
+        icon: "⚛️",
+        title: "Light, Shadows & Reflection at Plane Surfaces",
+        snippet: "Rectilinear propagation, Laws of Reflection (∠i = ∠r), virtual images, and inclined mirrors formula n = (360/θ) - 1.",
+        file: "topics/physics_03_light_and_reflection.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-04",
+        unitNum: "Acoustics",
+        icon: "⚛️",
+        title: "Sound Waves, Vibration & Acoustics",
+        snippet: "Longitudinal waves, vacuum bell jar experiment, speed across states of matter, amplitude vs loudness, and pitch vs frequency.",
+        file: "topics/physics_04_sound_and_vibration.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-05",
+        unitNum: "Electrodynamics",
+        icon: "⚛️",
+        title: "Electricity, Electric Current & Circuits",
+        snippet: "Current I = Q/t, Series vs Parallel circuits comparison matrix, Joule heating, and electric fuse alloy safety mechanics.",
+        file: "topics/physics_05_electricity_and_circuits.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-06",
+        unitNum: "Hydrostatics",
+        icon: "⚛️",
+        title: "Force, Thrust & Hydrostatic Fluid Pressure",
+        snippet: "Mathematical proof of liquid depth pressure P = hρg, Pascal's Law of fluid transmission, and hydraulic lift mechanics.",
+        file: "topics/physics_06_force_and_pressure.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-07",
+        unitNum: "Thermodynamics",
+        icon: "⚛️",
+        title: "Heat Energy, Temperature & Thermometry",
+        snippet: "Internal kinetic energy vs temperature, thermometric scale derivation C/5 = (F-32)/9 = (K-273)/5, and anomalous expansion of water.",
+        file: "topics/physics_07_heat_and_temperature.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-08",
+        unitNum: "Fluid Mechanics",
+        icon: "⚛️",
+        title: "Density, Relative Density & Buoyancy",
+        snippet: "Volumetric mass density d = m/V, 1 g/cm³ = 1000 kg/m³ proof, Archimedes' Principle, and iron nail vs steel ship floatation.",
+        file: "topics/physics_08_density_and_buoyancy.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-09",
+        unitNum: "Magnetism",
+        icon: "⚛️",
+        title: "Magnetism, Magnetic Fields & Electromagnets",
+        snippet: "Magnetic dipole properties, proof of why repulsion is the only sure test, non-intersecting field lines, and electromagnets.",
+        file: "topics/physics_09_magnetism_and_fields.html"
+      },
+
+      // CHEMISTRY (TOPICS 01 - 08)
+      {
+        discipline: "Chemistry",
+        code: "CHEM-01",
+        unitNum: "States of Matter",
+        icon: "🧪",
+        title: "Matter & Kinetic Molecular Theory",
+        snippet: "The 4 postulates of Kinetic Theory, Intermolecular Forces vs Spaces, and 5-point Solids vs Liquids vs Gases matrix.",
+        file: "topics/chemistry_01_matter_and_composition.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-02",
+        unitNum: "Atomic Theory",
+        icon: "🧪",
+        title: "Atomic Structure, Energy Shells & Valency",
+        snippet: "Protons, Neutrons, Electrons, Bohr-Bury 2n² energy distribution (K, L, M, N), Atomic Number Z, and Mass Number A.",
+        file: "topics/chemistry_02_atomic_structure_and_valency.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-03",
+        unitNum: "Chemical Taxonomy",
+        icon: "🧪",
+        title: "Elements, Compounds & Mixtures",
+        snippet: "Pure substances vs mixtures, Law of Constant Proportions, 5-point Compounds vs Mixtures matrix, and separation science.",
+        file: "topics/chemistry_03_elements_and_compounds.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-04",
+        unitNum: "Nomenclature",
+        icon: "🧪",
+        title: "Atoms, Molecules & Chemical Radicals",
+        snippet: "Atomicity classifications, basic cations (+1 to +4), acidic anions (-1 to -4), and criss-cross formula construction ledger.",
+        file: "topics/chemistry_04_atoms_molecules_radicals.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-05",
+        unitNum: "Stoichiometry",
+        icon: "🧪",
+        title: "Chemical Reactions & Equation Balancing",
+        snippet: "The 4 primary reaction archetypes (Synthesis, Decomposition, Displacement, Double Decomposition) and Hit-and-Trial balancing.",
+        file: "topics/chemistry_05_chemical_reactions_balancing.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-06",
+        unitNum: "Acids & Alkalis",
+        icon: "🧪",
+        title: "Acids, Bases, Salts & Chemical Indicators",
+        snippet: "Arrhenius ion definitions, neutralization dynamics, and the master indicator color transition table (Litmus, Methyl Orange, Phenolphthalein).",
+        file: "topics/chemistry_06_acids_bases_and_salts.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-07",
+        unitNum: "Metallurgy Basics",
+        icon: "🧪",
+        title: "Metals, Non-Metals & The Reactivity Series",
+        snippet: "Metals vs Non-metals physical matrix, the Activity Series hierarchy (K > Na > ... > Au), displacement reactions, and rust chemistry.",
+        file: "topics/chemistry_07_metals_nonmetals_reactivity.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-10",
+        unitNum: "Carbon Chemistry",
+        icon: "🧪",
+        title: "Carbon & Its Allotropic Modifications",
+        snippet: "Phenomenon of allotropy, Diamond tetrahedral vs Graphite planar sheet crystal architectures, and amorphous carbon forms.",
+        file: "topics/chemistry_10_carbon_and_allotropes.html"
+      },
+
+      // BIOLOGY (TOPICS 01 - 09)
+      {
+        discipline: "Biology",
+        code: "BIO-01",
+        unitNum: "Histology",
+        icon: "🌿",
+        title: "Plant & Animal Tissue Histology",
+        snippet: "Meristematic vs Permanent plant tissues, vascular Xylem vs Phloem transport, and the 4 primary animal tissue systems.",
+        file: "topics/biology_01_plant_and_animal_tissues.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-02",
+        unitNum: "Plant Physiology",
+        icon: "🌿",
+        title: "Photosynthesis & Cellular Respiration in Plants",
+        snippet: "Balanced chemical reaction (6CO₂ + 12H₂O), stomatal guard cell turgor, and the 5-point Anabolic vs Catabolic matrix.",
+        file: "topics/biology_02_photosynthesis_and_respiration.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-03",
+        unitNum: "Cytology",
+        icon: "🌿",
+        title: "Cell Structure, Cytology & Organelles",
+        snippet: "The Cell Theory, organelle specialization (Mitochondria 38 ATP, Ribosomes, Lysosomes), and 6-point Plant vs Animal cell matrix.",
+        file: "topics/biology_03_cell_structure_organelles.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-04",
+        unitNum: "Human Physiology",
+        icon: "🌿",
+        title: "Human Digestive System & Nutrition",
+        snippet: "5 stages of holozoic nutrition, complete digestive enzyme catalytic ledger, and small intestine villi micro-anatomy.",
+        file: "topics/biology_04_digestive_system.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-05",
+        unitNum: "Cardiovascular",
+        icon: "🌿",
+        title: "Human Circulatory System, Blood & Heart",
+        snippet: "4-chambered heart anatomy, cardiac valves, Pulmonary vs Systemic double circulation, and the 5-point Arteries vs Veins matrix.",
+        file: "topics/biology_05_circulatory_system.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-06",
+        unitNum: "Respiratory System",
+        icon: "🌿",
+        title: "Human Respiratory System & Gas Exchange",
+        snippet: "Mechanics of breathing (Inhalation vs Exhalation), alveolar diffusion, and Aerobic (38 ATP) vs Anaerobic (2 ATP) respiration.",
+        file: "topics/biology_06_human_respiratory_system.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-07",
+        unitNum: "Renal Physiology",
+        icon: "🌿",
+        title: "Human Excretory System & Kidney Nephrons",
+        snippet: "Excretion vs Egestion distinction, gross renal anatomy, nephron structure, and the 3 stages of urine formation.",
+        file: "topics/biology_07_excretory_system.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-08",
+        unitNum: "Neurobiology",
+        icon: "🌿",
+        title: "Human Nervous System, Brain & Reflex Arc",
+        snippet: "Neuron cytology (Cyton, Axon, Myelin, Synapse), Cerebrum vs Cerebellum vs Medulla Oblongata, and the 5-step Reflex Arc pathway.",
+        file: "topics/biology_08_nervous_system.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-09",
+        unitNum: "Reproduction",
+        icon: "🌿",
+        title: "Reproduction in Plants & Animals",
+        snippet: "Asexual vs Sexual reproduction, four whorls of a complete flower, Self vs Cross pollination, and fertilization dynamics.",
+        file: "topics/biology_09_reproduction_in_plants_animals.html"
+      }
+    ];
+
+    let currentFilter = 'all';
+    let currentSearch = '';
+
+    function renderTopics() {
+      const container = document.getElementById('topicsContainer');
+      container.innerHTML = '';
+
+      const filtered = SHIPPED_TOPICS.filter(item => {
+        const matchesCategory = currentFilter === 'all' || item.discipline === currentFilter;
+        const matchesSearch = currentSearch === '' ||
+          item.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
+          item.discipline.toLowerCase().includes(currentSearch.toLowerCase()) ||
+          item.snippet.toLowerCase().includes(currentSearch.toLowerCase()) ||
+          item.code.toLowerCase().includes(currentSearch.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      // RULE: IF EMPTY CONTAINER, PUT SMALL TEXT AT BOTTOM: "nothing here"
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state-notice">
+            <div class="empty-text">nothing here</div>
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement('a');
+        card.className = 'topic-card';
+        card.href = item.file;
+
+        card.innerHTML = `
+          <div class="topic-left-badge">
+            <div class="badge-icon">${item.icon}</div>
+            <div class="badge-code">${item.code}</div>
+            <div class="badge-unit">${item.unitNum}</div>
+          </div>
+          <div class="topic-middle">
+            <h3 class="topic-title">${item.title}</h3>
+            <p class="topic-snippet">${item.snippet}</p>
+          </div>
+          <div class="topic-right-action">
+            <span class="action-arrow">Read Lesson →</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterDiscipline(disc) {
+      currentFilter = disc;
+      document.querySelectorAll('.filter-tab').forEach(tab => {
+        const text = tab.innerText;
+        tab.classList.toggle('active', (disc === 'all' && text.includes('All')) || text.includes(disc));
+      });
+      renderTopics();
+    }
+
+    function handleSearch(val) {
+      currentSearch = val;
+      renderTopics();
+    }
+
+    function toggleSample() {
+      const el = document.getElementById('sampleReveal');
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // Initial render
+    renderTopics();
+  </script>
+</body>
+</html>
