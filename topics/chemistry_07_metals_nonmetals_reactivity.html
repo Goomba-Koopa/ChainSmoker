@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry 07: Metals, Non-Metals & Reactivity • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header { padding: 64px 64px 32px; max-width: 900px; margin: 0 auto; width: 100%; }
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 42px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 16.5px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.6; }
+
+    .article-body { max-width: 900px; margin: 0 auto; padding: 16px 64px 96px; width: 100%; display: flex; flex-direction: column; gap: 48px; }
+    @media (max-width: 768px) { .masthead, .article-header, .article-body { padding-left: 24px; padding-right: 24px; } .topic-title { font-size: 32px; } }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🧪 AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 07</div>
+    <h1 class="topic-title">Metals, Non-Metals & The Reactivity Series</h1>
+    <p class="topic-subtext">
+      Comparative physical and chemical properties of metals vs non-metals, the electrochemical Activity Series, single displacement mechanics, and the prevention of rust.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. METALS VS NON-METALS -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Metals vs. Non-Metals: Physical Properties</h2>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Metals</th>
+            <th>Non-Metals</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Physical State at Room Temp</strong></td>
+            <td><strong>Solids</strong> (<em>Exception:</em> Mercury \(\text{Hg}\) is a liquid).</td>
+            <td><strong>Solids, liquids, or gases</strong> (<em>Exception:</em> Bromine \(\text{Br}_2\) is a liquid).</td>
+          </tr>
+          <tr>
+            <td><strong>Malleability & Ductility</strong></td>
+            <td><strong>Highly malleable</strong> (drawn into sheets) & <strong>ductile</strong> (drawn into wires).</td>
+            <td><strong>Brittle</strong>; snap into powder when hammered.</td>
+          </tr>
+          <tr>
+            <td><strong>Electrical & Thermal Conductivity</strong></td>
+            <td><strong>Good conductors</strong> (Silver \(\text{Ag}\) is the best).</td>
+            <td><strong>Poor insulators</strong> (<em>Exception:</em> Graphite is a good conductor).</td>
+          </tr>
+          <tr>
+            <td><strong>Sonority & Lustre</strong></td>
+            <td><strong>Sonorous</strong> (produce ringing sound) & <strong>lustrous</strong>.</td>
+            <td><strong>Non-sonorous</strong> & dull (<em>Exceptions:</em> Diamond, Iodine crystals).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. REACTIVITY SERIES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. The Metal Reactivity Series</h2>
+      <div class="definition-box">
+        <span class="definition-term">Activity Series of Metals:</span>
+        The arrangement of metals in descending order of their chemical reactivity:
+        $$\mathbf{K > Na > Ca > Mg > Al > Zn > Fe > Pb > [H] > Cu > Hg > Ag > Au > Pt}$$
+        <br>
+        • <strong>Single Displacement Rule:</strong> Any metal placed higher in the reactivity series can displace a lower metal from its aqueous salt solution:
+        $$\text{Zn (s)} + \text{CuSO}_4\text{ (aq, blue)} \longrightarrow \text{ZnSO}_4\text{ (aq, colourless)} + \text{Cu (s, reddish-brown ppt)}$$
+        $$\text{Cu (s)} + \text{ZnSO}_4\text{ (aq)} \longrightarrow \mathbf{\text{No Reaction}} \quad (\text{since Cu is below Zn})$$
+      </div>
+    </div>
+
+    <!-- 3. CORROSION & RUSTING -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Corrosion & Iron Rusting Chemistry</h2>
+      <div class="derivation-card">
+        <span class="derivation-title">Chemical Mechanism of Rust Formation</span>
+        <div class="derivation-step">
+          Rusting is the slow oxidation of iron in the simultaneous presence of both <strong>oxygen (\(\text{O}_2\))</strong> and <strong>water vapour (\(\text{H}_2\text{O}\))</strong>:
+          $$4\text{Fe (s)} + 3\text{O}_2\text{ (g)} + 2x\text{H}_2\text{O (l)} \longrightarrow \mathbf{2Fe_2O_3 \cdot xH_2O\text{ (s, Hydrated Ferric Oxide)}}$$
+          <br>
+          • <strong>Rust Prevention Methods:</strong>
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;1. <strong>Galvanization:</strong> Depositing a protective sacrificial coating of molten <strong>Zinc (\(\text{Zn}\))</strong> over iron surfaces.
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;2. <strong>Electroplating:</strong> Coating with non-corrosive Chromium (\(\text{Cr}\)) or Nickel (\(\text{Ni}\)).
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;3. <strong>Alloying:</strong> Combining iron with carbon, nickel, and chromium to produce <strong>Stainless Steel</strong>.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div>AXIOM ICSE 7 • Chemistry Topic 07: Metals & Reactivity</div>
+    <div>Typeset in Newsreader and Plus Jakarta Sans • KaTeX LaTeX Engine</div>
+  </footer>
+</body>
+</html>
+
+

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXIOM ICSE Class 7 â€” Chemistry Topic #06: Acids, Bases, Salts & Indicators</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '', right: '', display: true}, {left: '\(', right: '\)', display: false}]});"></script>
+    <style>
+      :root {
+        --bg-warm: #fcfbf9;
+        --bg-surface: #f7f5f0;
+        --bg-card: #ffffff;
+        --border-subtle: #e6dfd3;
+        --border-strong: #d3c7b4;
+        --ink-black: #121214;
+        --ink-secondary: #423d38;
+        --ink-muted: #797166;
+        --terracotta: #c2410c;
+        --terracotta-soft: #fbf0ea;
+        --emerald-accent: #059669;
+        --emerald-soft: #f0f7f2;
+        --font-serif: 'Newsreader', Georgia, serif;
+        --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      }
+      body {
+        background-color: var(--bg-warm);
+        color: var(--ink-black);
+        font-family: var(--font-sans);
+        line-height: 1.6;
+        margin: 0;
+        padding: 2rem;
+      }
+      h1, h2, h3, h4, h5, h6, .serif {
+        font-family: var(--font-serif);
+        color: var(--ink-black);
+      }
+      .accent-terracotta { color: var(--terracotta); }
+      .accent-emerald { color: var(--emerald-accent); }
+    </style>
+</head>
+<body class="min-h-screen bg-[#fbfaf7] text-[#161514] font-sans selection:bg-emerald-100 antialiased leading-relaxed">
+
+  <!-- Header -->
+  <header class="border-b border-[#e6ded1] bg-[#fbfaf7] sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded bg-emerald-800 text-white flex items-center justify-center font-bold text-xs ">
+          C6
+        </div>
+        <div>
+          <span class="font-bold text-sm text-[#161514] tracking-tight">AXIOM ICSE 7 â€¢ Topic 13 of 36</span>
+          <span class="text-xs text-slate-500 ml-2 ">[Chemistry: Acids, Bases &amp; Salts]</span>
+        </div>
+      </div>
+      <div class="text-xs  font-bold text-emerald-900 bg-[#f4efe6] px-3 py-1 rounded border border-[#e6ded1]">
+        CISCE Class 7 Standard â€¢ Warm Editorial Aesthetic
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-10 space-y-12">
+
+    <!-- Topic Header -->
+    <section class="border-b border-[#e6ded1] pb-6 space-y-2">
+      <div class="flex items-center gap-2">
+        <span class="text-xs  font-bold text-emerald-800 uppercase bg-[#f4efe6] px-2.5 py-0.5 rounded border border-[#e6ded1]">Chemistry Chapter 6</span>
+        <span class="text-xs  text-slate-500">Batch Topic #13</span>
+      </div>
+      <h1 class="text-3xl font-extrabold text-[#161514] tracking-tight font-serif italic">
+        Acids, Bases, Salts &amp; Natural / Synthetic Chemical Indicators
+      </h1>
+      <p class="text-xs text-slate-700 max-w-3xl">
+        Textbook exposition: Mineral vs Organic Acids, Strong vs Weak Alkalis, Comprehensive indicator reaction ledger (Litmus, Methyl Orange, Phenolphthalein, Universal Indicator, Turmeric), and Classification of Salts (Normal, Acidic, Basic).
+      </p>
+    </section>
+
+    <!-- 1.0 Master Distinction: Acids vs Bases -->
+    <section class="space-y-4">
+      <h2 class="text-sm font-bold uppercase tracking-wider text-[#161514]  flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-700"></span>
+        1.0 Master Distinction: Acids vs Bases
+      </h2>
+
+      <div class="overflow-x-auto rounded border border-[#e6ded1]">
+        <table class="w-full text-xs text-left border-collapse bg-white">
+          <thead>
+            <tr class="bg-[#f4efe6] text-[#161514] font-bold border-b border-[#e6ded1]">
+              <th class="p-3 border-r border-[#e6ded1] w-1/4">Criterion</th>
+              <th class="p-3 border-r border-[#e6ded1] w-3/8">Acids (pH &lt; 7)</th>
+              <th class="p-3 w-3/8">Bases / Alkalis (pH &gt; 7)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#e6ded1] text-slate-800">
+            <tr>
+              <td class="p-3 font-semibold bg-[#fbfaf7] border-r border-[#e6ded1]">1. Taste &amp; Texture</td>
+              <td class="p-3 border-r border-[#e6ded1]">Sour taste; corrosive and stinging to touch.</td>
+              <td class="p-3">Bitter taste; slippery and soapy to the touch.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold bg-[#fbfaf7] border-r border-[#e6ded1]">2. Blue Litmus Test</td>
+              <td class="p-3 border-r border-[#e6ded1] font-bold text-red-700">Turns Blue Litmus RED.</td>
+              <td class="p-3 text-slate-500">No color change (Remains Blue).</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold bg-[#fbfaf7] border-r border-[#e6ded1]">3. Red Litmus Test</td>
+              <td class="p-3 border-r border-[#e6ded1] text-slate-500">No color change (Remains Red).</td>
+              <td class="p-3 font-bold text-blue-700">Turns Red Litmus BLUE.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold bg-[#fbfaf7] border-r border-[#e6ded1]">4. Phenolphthalein</td>
+              <td class="p-3 border-r border-[#e6ded1]">Remains COLORLESS.</td>
+              <td class="p-3 font-bold text-pink-700">Turns MAGENTA / DEEP PINK.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold bg-[#fbfaf7] border-r border-[#e6ded1]">5. Methyl Orange</td>
+              <td class="p-3 border-r border-[#e6ded1] font-bold text-red-700">Turns PINK / RED.</td>
+              <td class="p-3 font-bold text-amber-700">Turns YELLOW.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-semibold bg-[#fbfaf7] border-r border-[#e6ded1]">6. Ions in Aqueous Solution</td>
+              <td class="p-3 border-r border-[#e6ded1] ">Releases Hydrogen ions: Hâº (aq) / Hâ‚ƒOâº</td>
+              <td class="p-3 ">Releases Hydroxide ions: OHâ» (aq)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 2.0 Types of Salts & Preparation -->
+    <section class="space-y-4">
+      <h2 class="text-sm font-bold uppercase tracking-wider text-[#161514]  flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-700"></span>
+        2.0 Chemical Classification of Salts
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs ">
+        <div class="p-4 bg-[#f4efe6] border border-[#e6ded1] rounded space-y-1">
+          <span class="font-bold text-blue-900 font-sans block text-sm">1. Normal Salts (Neutral)</span>
+          <p class="text-slate-700 font-sans">Formed by complete replacement of all replaceable Hâº ions of an acid.</p>
+          <p class="text-blue-800 font-bold">NaCl, Kâ‚‚SOâ‚„, NaNOâ‚ƒ, CaCOâ‚ƒ</p>
+        </div>
+
+        <div class="p-4 bg-[#f4efe6] border border-[#e6ded1] rounded space-y-1">
+          <span class="font-bold text-amber-900 font-sans block text-sm">2. Acid Salts (Partially Replaced)</span>
+          <p class="text-slate-700 font-sans">Formed by partial replacement of replaceable Hâº ions of a dibasic/tribasic acid.</p>
+          <p class="text-amber-800 font-bold">NaHCOâ‚ƒ (Baking Soda), NaHSOâ‚„</p>
+        </div>
+
+        <div class="p-4 bg-[#f4efe6] border border-[#e6ded1] rounded space-y-1">
+          <span class="font-bold text-emerald-900 font-sans block text-sm">3. Basic Salts</span>
+          <p class="text-slate-700 font-sans">Formed by partial replacement of OHâ» ions of a diacidic/triacidic base.</p>
+          <p class="text-emerald-800 font-bold">Cu(OH)Cl, Pb(OH)NOâ‚ƒ</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-[#e6ded1] bg-[#fbfaf7] py-6 text-xs text-slate-500 text-center ">
+    AXIOM ICSE 7 Batch Production Pipeline â€¢ Topic #13 / 36 Shipped â€¢ CISCE Class 7 Standard
+  </footer>
+
+</body>
+</html>
+

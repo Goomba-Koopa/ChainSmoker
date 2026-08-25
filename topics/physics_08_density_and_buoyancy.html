@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 08: Density, Relative Density & Buoyancy • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header { padding: 64px 64px 32px; max-width: 900px; margin: 0 auto; width: 100%; }
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 42px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 16.5px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.6; }
+
+    .article-body { max-width: 900px; margin: 0 auto; padding: 16px 64px 96px; width: 100%; display: flex; flex-direction: column; gap: 48px; }
+    @media (max-width: 768px) { .masthead, .article-header, .article-body { padding-left: 24px; padding-right: 24px; } .topic-title { font-size: 32px; } }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 08</div>
+    <h1 class="topic-title">Density, Relative Density & Buoyancy</h1>
+    <p class="topic-subtext">
+      Volumetric mass packing (\(d = m/V\)), conversion proof (\(1\text{ g/cm}^3 = 1000\text{ kg/m}^3\)), Archimedes' Principle of buoyant upthrust, and the Law of Floatation.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. DENSITY DEFINITION & UNITS -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Volumetric Density & Unit Conversion</h2>
+      <div class="definition-box">
+        <span class="definition-term">Definition of Density (\(d\) or \(\rho\)):</span>
+        Density is defined as the mass per unit volume of a substance:
+        $$d = \frac{\text{Mass } (m)}{\text{Volume } (V)}$$
+        <br>
+        • <strong>SI Unit:</strong> \(\text{kg/m}^3\) (kilogram per cubic metre).
+        <br>• <strong>CGS Unit:</strong> \(\text{g/cm}^3\) (gram per cubic centimetre).
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Derivation of SI to CGS Density Equivalence</span>
+        <div class="derivation-step">
+          $$1\text{ g/cm}^3 = \frac{1\text{ g}}{1\text{ cm}^3} = \frac{10^{-3}\text{ kg}}{(10^{-2}\text{ m})^3} = \frac{10^{-3}\text{ kg}}{10^{-6}\text{ m}^3} = \mathbf{1,000\text{ kg/m}^3}$$
+          <br>
+          • <em>Density of Pure Water at \(4^\circ\text{C}\):</em>
+          $$\rho_{\text{water}} = 1.0\text{ g/cm}^3 = 1,000\text{ kg/m}^3$$
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. RELATIVE DENSITY -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Relative Density (Specific Gravity)</h2>
+      <div class="definition-box">
+        <span class="definition-term">Relative Density (RD):</span>
+        The ratio of the density of a substance to the density of pure water at \(4^\circ\text{C}\):
+        $$RD = \frac{\text{Density of substance}}{\text{Density of water at } 4^\circ\text{C}} = \frac{\text{Mass of any volume } V \text{ of substance}}{\text{Mass of an equal volume } V \text{ of water at } 4^\circ\text{C}}$$
+        <br>
+        • <em>Crucial Unit Rule:</em> Since Relative Density is a pure ratio of two identical physical quantities, <strong>it has no units (dimensionless)</strong>.
+      </div>
+    </div>
+
+    <!-- 3. ARCHIMEDES PRINCIPLE & FLOATATION -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Archimedes' Principle & Law of Floatation</h2>
+      <div class="derivation-card">
+        <span class="derivation-title">Archimedes' Principle & Upthrust (\(F_B\))</span>
+        <div class="derivation-step">
+          When a body is partially or completely immersed in a fluid at rest, it experiences an upward buoyant force (upthrust) equal to the weight of the fluid displaced by it:
+          $$F_B = V_{\text{sub}} \times \rho_{\text{liquid}} \times g$$
+          <br>
+          • <strong>Law of Floatation:</strong> A floating body displaces a volume of liquid whose weight is equal to the total weight of the floating body:
+          $$\text{Weight of floating body} = \text{Weight of displaced liquid}$$
+          <br>
+          • <em>Why an Iron Nail Sinks while a Heavy Steel Ship Floats:</em> An iron nail is solid, displacing a small volume of water; its weight exceeds the buoyant upthrust (\(W > F_B\)). A steel ship is hollowed out with a large hull, enclosing vast pockets of air, displacing a massive volume of water such that the upward buoyant force balances the entire weight of the ship (\(F_B = W\)).
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. WORKED ICSE NUMERICAL -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Worked CISCE Exemplar Numerical</h2>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Exemplar 8.1: Relative Density & Mass</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          The Relative Density of silver is \(10.8\). Calculate: (i) The density of silver in SI units (\(\text{kg/m}^3\)), (ii) The mass of a solid silver block of volume \(250\text{ cm}^3\).
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_p8_1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_p8_1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Density in SI Units:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(\rho_{\text{silver}} = RD \times \rho_{\text{water}} = 10.8 \times 1,000\text{ kg/m}^3 = \mathbf{10,800\text{ kg/m}^3}\) [1.5 Marks]<br><br>
+          2. <em>Mass of Silver Block:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;In CGS: \(\rho = 10.8\text{ g/cm}^3\), Volume \(V = 250\text{ cm}^3\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$m = \rho \times V = 10.8\text{ g/cm}^3 \times 250\text{ cm}^3 = \mathbf{2,700\text{ grams (or } 2.7\text{ kg)}}\) [1.5 Marks]
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div>AXIOM ICSE 7 • Physics Topic 08: Density & Buoyancy</div>
+    <div>Typeset in Newsreader and Plus Jakarta Sans • KaTeX LaTeX Engine</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+
+

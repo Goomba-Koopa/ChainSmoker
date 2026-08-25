@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology 06: Human Respiratory System & Gas Exchange • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header { padding: 64px 64px 32px; max-width: 900px; margin: 0 auto; width: 100%; }
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 42px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 16.5px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.6; }
+
+    .article-body { max-width: 900px; margin: 0 auto; padding: 16px 64px 96px; width: 100%; display: flex; flex-direction: column; gap: 48px; }
+    @media (max-width: 768px) { .masthead, .article-header, .article-body { padding-left: 24px; padding-right: 24px; } .topic-title { font-size: 32px; } }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🌿 AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 06</div>
+    <h1 class="topic-title">Human Respiratory System & Gas Exchange</h1>
+    <p class="topic-subtext">
+      The dual mechanics of breathing (Inhalation vs Exhalation), microscopic alveolar diffusion, and Aerobic (\(38\text{ ATP}\)) vs Anaerobic (\(2\text{ ATP}\)) cellular energetics.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. INSPIRATION VS EXPIRATION -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Inhalation (Inspiration) vs. Exhalation (Expiration)</h2>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Mechanical Event</th>
+            <th>Inhalation (Inspiration)</th>
+            <th>Exhalation (Expiration)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Diaphragm Movement</strong></td>
+            <td><strong>Contracts and flattens downwards</strong>.</td>
+            <td><strong>Relaxes and arches upwards</strong> into dome shape.</td>
+          </tr>
+          <tr>
+            <td><strong>External Intercostal Muscles</strong></td>
+            <td><strong>Contract</strong>, pulling ribs upwards and outwards.</td>
+            <td><strong>Relax</strong>, allowing rib cage to return downwards and inwards.</td>
+          </tr>
+          <tr>
+            <td><strong>Thoracic Volume</strong></td>
+            <td><strong>Increases</strong> in both dimensions.</td>
+            <td><strong>Decreases</strong> to resting baseline.</td>
+          </tr>
+          <tr>
+            <td><strong>Intrapulmonary Pressure</strong></td>
+            <td><strong>Drops below atmospheric pressure</strong> (\(P_{\text{pulm}} < P_{\text{atm}}\)).</td>
+            <td><strong>Rises above atmospheric pressure</strong> (\(P_{\text{pulm}} > P_{\text{atm}}\)).</td>
+          </tr>
+          <tr>
+            <td><strong>Direction of Air Flow</strong></td>
+            <td>Atmospheric air rushes <strong>into</strong> lungs.</td>
+            <td>Alveolar air is expelled <strong>out of</strong> lungs.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. AEROBIC VS ANAEROBIC RESPIRATION -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Aerobic vs. Anaerobic Cellular Respiration</h2>
+      <div class="derivation-card">
+        <span class="derivation-title">Comparative Chemical Energetics</span>
+        <div class="derivation-step">
+          • <strong>1. Aerobic Respiration (In Presence of \(\text{O}_2\)):</strong><br>
+          $$\text{C}_6\text{H}_{12}\text{O}_6 + 6\text{O}_2 \xrightarrow{\text{mitochondria}} 6\text{CO}_2 + 6\text{H}_2\text{O} + \mathbf{38\text{ ATP (2830 kJ)}}$$
+          <br>
+          • <strong>2. Anaerobic Respiration (In Yeast / Alcoholic Fermentation):</strong><br>
+          $$\text{C}_6\text{H}_{12}\text{O}_6 \xrightarrow{\text{zymase}} 2\text{C}_2\text{H}_5\text{OH (Ethanol)} + 2\text{CO}_2 + \mathbf{2\text{ ATP (150 kJ)}}$$
+          <br>
+          • <strong>3. Anaerobic Respiration in Fatigued Human Muscles:</strong><br>
+          $$\text{C}_6\text{H}_{12}\text{O}_6 \longrightarrow 2\text{C}_3\text{H}_6\text{O}_3\text{ (Lactic Acid)} + \mathbf{2\text{ ATP}} \quad \text{[Causes Muscle Cramps]}$$
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div>AXIOM ICSE 7 • Biology Topic 06: Respiratory System</div>
+    <div>Typeset in Newsreader and Plus Jakarta Sans • KaTeX LaTeX Engine</div>
+  </footer>
+</body>
+</html>
+
+
