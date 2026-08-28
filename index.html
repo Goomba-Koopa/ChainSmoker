@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ICSE Class 7 Science</title>
+  <title>ICSE Class 7 Science Compendium</title>
   
   <!-- Typography: Newsreader (Serif) + Plus Jakarta Sans (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,7 +126,7 @@
     }
 
     .featured-sample-panel::before {
-      content: "MODEL PROBLEM";
+      content: "CANONICAL ICSE MODEL PROBLEM";
       position: absolute;
       top: -10px;
       left: 36px;
@@ -424,21 +424,25 @@
     <div class="featured-sample-panel">
       <div class="sample-header">
         <span class="sample-discipline">Physics • Hydrostatic Fluid Mechanics</span>
-        <span class="sample-marks">[3 Marks]</span>
+        <span class="sample-marks">Worked Logical Exemplar</span>
       </div>
       <div class="sample-prompt">
-        A metal block of mass \(60\text{ kg}\) measures \(0.5\text{ m} \times 0.4\text{ m} \times 0.2\text{ m}\). Calculate (i) the maximum pressure, and (ii) the minimum pressure it can exert on a horizontal table. <em>[Take \(g = 10\text{ m/s}^2\)]</em>
+        A solid metal block of mass \(60\text{ kg}\) measures \(0.5\text{ m} \times 0.4\text{ m} \times 0.2\text{ m}\). Calculate (i) the maximum pressure, and (ii) the minimum pressure it can exert on a horizontal table. <em>[Take \(g = 10\text{ m/s}^2\)]</em>
       </div>
       <div>
         <button class="sample-btn" onclick="toggleSample()">Show Step-by-Step Solution ↓</button>
         <div class="sample-reveal-box" id="sampleReveal">
-          <strong>Step-by-Step Solution:</strong><br><br>
-          1. <em>Applied Thrust (Weight of the Block):</em><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;$$F = m \cdot g = 60\text{ kg} \times 10\text{ m/s}^2 = \mathbf{600\text{ N}} \quad \text{[1 Mark]}$$<br>
-          2. <em>Maximum Pressure (Smallest Base Area \(A_{\text{min}} = 0.4\text{ m} \times 0.2\text{ m} = 0.08\text{ m}^2\)):</em><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{max}} = \frac{F}{A_{\text{min}}} = \frac{600\text{ N}}{0.08\text{ m}^2} = \mathbf{7,500\text{ Pa (or N/m}^2\mathbf{)}} \quad \text{[1 Mark]}$$<br>
-          3. <em>Minimum Pressure (Largest Base Area \(A_{\text{max}} = 0.5\text{ m} \times 0.4\text{ m} = 0.20\text{ m}^2\)):</em><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{min}} = \frac{F}{A_{\text{max}}} = \frac{600\text{ N}}{0.20\text{ m}^2} = \mathbf{3,000\text{ Pa (or N/m}^2\mathbf{)}} \quad \text{[1 Mark]}$$
+          <strong>Step-by-Step Logical Resolution:</strong><br><br>
+          1. <strong>Applied Thrust (Downward Force):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The gravitational thrust is the full weight of the metal block:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$F = m \cdot g = 60\text{ kg} \times 10\text{ m/s}^2 = \mathbf{600\text{ N}}$$<br><br>
+          2. <strong>Maximum Pressure (Concentrated on Smallest Base Area):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Pressure is inversely proportional to contact area (\(P = F/A\)). The smallest face is \(A_{\text{min}} = 0.4\text{ m} \times 0.2\text{ m} = 0.08\text{ m}^2\):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{max}} = \frac{600\text{ N}}{0.08\text{ m}^2} = \mathbf{7,500\text{ Pa (or N/m}^2\mathbf{)}}$$<br><br>
+          3. <strong>Minimum Pressure (Spread over Largest Base Area):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The largest face is \(A_{\text{max}} = 0.5\text{ m} \times 0.4\text{ m} = 0.20\text{ m}^2\):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{min}} = \frac{600\text{ N}}{0.20\text{ m}^2} = \mathbf{3,000\text{ Pa (or N/m}^2\mathbf{)}}$$<br>
+          <em>Physical Intuition:</em> Standing the block on its smallest end concentrates the 600 N weight onto a tiny surface, yielding 2.5× higher pressure than resting it flat.
         </div>
       </div>
     </div>
@@ -446,10 +450,10 @@
     <!-- DISCIPLINE FILTER TABS & SEARCH -->
     <div class="controls-bar">
       <div class="filter-tabs-group">
-        <button class="filter-tab active" onclick="filterDiscipline('all')">All Lessons (24)</button>
-        <button class="filter-tab" onclick="filterDiscipline('Physics')">Physics (9)</button>
-        <button class="filter-tab" onclick="filterDiscipline('Chemistry')">Chemistry (8)</button>
-        <button class="filter-tab" onclick="filterDiscipline('Biology')">Biology (7)</button>
+        <button class="filter-tab active" data-discipline="all" onclick="filterDiscipline('all')">All Lessons</button>
+        <button class="filter-tab" data-discipline="Physics" onclick="filterDiscipline('Physics')">Physics</button>
+        <button class="filter-tab" data-discipline="Chemistry" onclick="filterDiscipline('Chemistry')">Chemistry</button>
+        <button class="filter-tab" data-discipline="Biology" onclick="filterDiscipline('Biology')">Biology</button>
       </div>
       <input type="text" class="search-field" placeholder="Search topics, laws, or formulas..." oninput="handleSearch(this.value)">
     </div>
@@ -462,8 +466,8 @@
 
   <!-- FOOTER -->
   <footer class="editorial-footer">
-    <div class="footer-note">ICSE Class 7 Science Reference</div>
-    <div>CISCE Syllabus</div>
+    <div class="footer-note">ICSE Science Class 7 • Self-Contained Academic Compendium</div>
+    <div>Typeset in Newsreader &amp; Plus Jakarta Sans • KaTeX LaTeX Engine</div>
   </footer>
 
   <script>
@@ -550,8 +554,35 @@
         snippet: "Magnetic dipole properties, proof of why repulsion is the only sure test, non-intersecting field lines, and electromagnets.",
         file: "topics/physics_09_magnetism_and_fields.html"
       },
+      {
+        discipline: "Physics",
+        code: "PHY-10",
+        unitNum: "Optics",
+        icon: "⚛️",
+        title: "Spherical Mirrors & Image Formation",
+        snippet: "Curved spherical mirrors, principal focus f = R/2, concave converging vs convex diverging optics, and real vs virtual image formation.",
+        file: "topics/physics_10_spherical_mirrors_and_images.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-11",
+        unitNum: "Electrostatics",
+        icon: "⚛️",
+        title: "Static Electricity & Electrostatics",
+        snippet: "Frictional charging electron shifts, like charges repel, conduction vs induction, gold leaf electroscope, and lightning conductors.",
+        file: "topics/physics_11_static_electricity_and_charges.html"
+      },
+      {
+        discipline: "Physics",
+        code: "PHY-12",
+        unitNum: "Mechanics",
+        icon: "⚛️",
+        title: "Simple Machines & Mechanical Advantage",
+        snippet: "Mechanical Advantage, Velocity Ratio, Efficiency η = MA/VR, Principle of Moments, Class I, II, III levers, and pulley systems.",
+        file: "topics/physics_12_simple_machines_and_efficiency.html"
+      },
 
-      // CHEMISTRY (TOPICS 01 - 08)
+      // CHEMISTRY (TOPICS 01 - 12)
       {
         discipline: "Chemistry",
         code: "CHEM-01",
@@ -617,15 +648,51 @@
       },
       {
         discipline: "Chemistry",
+        code: "CHEM-08",
+        unitNum: "Hydrology",
+        icon: "🧪",
+        title: "Water, Solutions &amp; Solubility",
+        snippet: "Structure of water, solute-solvent interactions, solubility curves, saturated vs unsaturated solutions, and hard vs soft water.",
+        file: "topics/chemistry_08_water_solutions_solubility.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-09",
+        unitNum: "Atmospheric Chemistry",
+        icon: "🧪",
+        title: "Air, Oxygen &amp; Combustion",
+        snippet: "Composition of air, properties and preparation of oxygen, types of combustion, rusting, and the nitrogen cycle.",
+        file: "topics/chemistry_09_air_oxygen_combustion.html"
+      },
+      {
+        discipline: "Chemistry",
         code: "CHEM-10",
         unitNum: "Carbon Chemistry",
         icon: "🧪",
         title: "Carbon & Its Allotropic Modifications",
-        snippet: "Phenomenon of allotropy, Diamond tetrahedral vs Graphite planar sheet crystal architectures, and amorphous carbon forms.",
+        snippet: "Phenomenon of allotropy, Diamond tetrahedral vs Graphite planar sheets, C60 Fullerenes, and amorphous carbon forms.",
         file: "topics/chemistry_10_carbon_and_allotropes.html"
       },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-11",
+        unitNum: "Water Treatment",
+        icon: "🧪",
+        title: "Water Hardness & Treatment Technologies",
+        snippet: "Soft vs hard water, temporary vs permanent hardness, boiling, Clark's slaked lime process, washing soda, and ion exchange resins.",
+        file: "topics/chemistry_11_water_hardness_and_treatment.html"
+      },
+      {
+        discipline: "Chemistry",
+        code: "CHEM-12",
+        unitNum: "Environmental Chemistry",
+        icon: "🧪",
+        title: "Oxides, Acid Rain & Atmospheric Chemistry",
+        snippet: "Classification of oxides (Acidic, Basic, Amphoteric, Neutral), Acid rain formation (SO2/NO2), Taj Mahal marble cancer, and greenhouse gases.",
+        file: "topics/chemistry_12_oxides_acid_rain_and_atmosphere.html"
+      },
 
-      // BIOLOGY (TOPICS 01 - 09)
+      // BIOLOGY (TOPICS 01 - 12)
       {
         discipline: "Biology",
         code: "BIO-01",
@@ -641,7 +708,7 @@
         unitNum: "Plant Physiology",
         icon: "🌿",
         title: "Photosynthesis & Cellular Respiration in Plants",
-        snippet: "Balanced chemical reaction (6CO₂ + 12H₂O), stomatal guard cell turgor, and the 5-point Anabolic vs Catabolic matrix.",
+        snippet: "Balanced chemical reaction (6CO₂ + 12H₂O), stomatal guard cell turgor, aerobic (38 ATP) vs anaerobic respiration pathways.",
         file: "topics/biology_02_photosynthesis_and_respiration.html"
       },
       {
@@ -706,6 +773,33 @@
         title: "Reproduction in Plants & Animals",
         snippet: "Asexual vs Sexual reproduction, four whorls of a complete flower, Self vs Cross pollination, and fertilization dynamics.",
         file: "topics/biology_09_reproduction_in_plants_animals.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-10",
+        unitNum: "Taxonomy",
+        icon: "🌿",
+        title: "Classification of Living Organisms",
+        snippet: "Taxonomic hierarchy, Binomial nomenclature, Whittaker's 5 Kingdoms (Monera, Protista, Fungi, Plantae, Animalia), Invertebrates vs Vertebrates.",
+        file: "topics/biology_10_classification_of_organisms.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-11",
+        unitNum: "Pathology & Hygiene",
+        icon: "🌿",
+        title: "Health, Hygiene & Infectious Pathogens",
+        snippet: "Communicable vs Non-communicable diseases, Bacteria/Viruses/Fungi/Protozoa, insect vectors (Anopheles, Aedes, Houseflies), and vaccines.",
+        file: "topics/biology_11_health_hygiene_and_diseases.html"
+      },
+      {
+        discipline: "Biology",
+        code: "BIO-12",
+        unitNum: "Ecology",
+        icon: "🌿",
+        title: "Ecosystems, Food Chains & Energy Dynamics",
+        snippet: "Biotic vs Abiotic ecosystem components, food chains & webs, Lindeman's 10% energy transfer law, and biomagnification.",
+        file: "topics/biology_12_ecosystems_and_food_chains.html"
       }
     ];
 
@@ -761,9 +855,8 @@
 
     function filterDiscipline(disc) {
       currentFilter = disc;
-      document.querySelectorAll('.filter-tab').forEach(tab => {
-        const text = tab.innerText;
-        tab.classList.toggle('active', (disc === 'all' && text.includes('All')) || text.includes(disc));
+      document.querySelectorAll('.filter-tab[data-discipline]').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.discipline === disc);
       });
       renderTopics();
     }
@@ -778,7 +871,18 @@
       el.style.display = (el.style.display === 'block') ? 'none' : 'block';
     }
 
+    function populateCounts() {
+      document.querySelectorAll('.filter-tab[data-discipline]').forEach(btn => {
+        const disc = btn.dataset.discipline;
+        const count = disc === 'all'
+          ? SHIPPED_TOPICS.length
+          : SHIPPED_TOPICS.filter(t => t.discipline === disc).length;
+        btn.textContent = btn.textContent.replace(/ \(\d+\)$/, '') + ` (${count})`;
+      });
+    }
+
     // Initial render
+    populateCounts();
     renderTopics();
   </script>
 </body>
