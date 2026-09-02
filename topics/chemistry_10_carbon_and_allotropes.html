@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry 10: Carbon & Its Allotropes • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    .prose-text { font-size: 15px; color: var(--ink-black); line-height: 1.65; max-width: 75ch; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="brand-title">🧪 Chemistry • Topic 10</a>
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 10</div>
+    <h1 class="topic-title">Carbon & Its Allotropes</h1>
+    <p class="topic-subtext">
+      Allotropy definition, crystalline allotropes of carbon (Diamond: tetrahedral 3D network, Graphite: planar hexagonal layers, Fullerenes: geodesic spherical C60 cages), amorphous forms (coal, charcoal, coke, carbon black), and structural logic behind practical applications.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. ALLOTROPY CONCEPT -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Phenomenon of Allotropy</h2>
+      <p class="prose-text">
+        Imagine you have a large bucket of identical plastic building blocks. Using just those exact same blocks, you could build a tall, sturdy tower, or you could spread them out to build a wide, flat floor. The individual blocks are identical, but because they are connected differently, the final structures look completely different and serve entirely different purposes. In chemistry, carbon atoms act just like these blocks. When pure carbon atoms bond together in different ways, they create materials that look and behave very differently from one another.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Allotropy:</span>
+        The existence of an element in two or more different physical forms in the same physical state, which have different physical properties but identical chemical properties. The different forms are called <strong>allotropes</strong>.
+        <br><br>
+        • <em>Logical Deduction:</em> Because all allotropes of an element contain the exact same type of atoms, they show identical chemical behavior. For instance, burning equal masses of pure diamond, graphite, fullerene, or charcoal in excess oxygen will yield the exact same product—carbon dioxide gas (\(\text{C} + \text{O}_2 \rightarrow \text{CO}_2\))—and leaving no residue behind.
+      </div>
+    </div>
+
+    <!-- 2. DIAMOND AND GRAPHITE: CRYSTALLINE ALLOTROPES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Crystalline Allotropes: Diamond vs. Graphite</h2>
+      <p class="prose-text">
+        Carbon atoms can bond in highly organized, repeating geometric patterns to form crystalline solids. The sparkling diamond in a ring is the hardest naturally occurring substance on Earth, while graphite—the dark "lead" in your pencil—is so soft and slippery that it peels off onto paper as you write. This extreme difference is entirely due to their internal atomic architecture.
+      </p>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Diamonds_and_graphite.jpg/320px-Diamonds_and_graphite.jpg" alt="Photograph showing clear, sparkling diamonds next to dull, dark pieces of graphite" class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1: Diamond and Graphite are two chemically identical forms of carbon whose completely opposite physical appearances arise from their internal bonding architecture.</figcaption>
+      </figure>
+
+      <div class="definition-box">
+        <span class="definition-term">Tetrahedral vs. Planar Network:</span>
+        In <strong>Diamond</strong>, each carbon atom is tightly bound by strong covalent bonds to four other carbon atoms, forming a rigid, three-dimensional tetrahedral network. In <strong>Graphite</strong>, each carbon atom is covalently bonded to only three other carbon atoms, creating flat, planar hexagonal layers. Weak forces hold these layers together, allowing them to slide easily.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Diamond</th>
+            <th>Graphite</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Appearance</strong></td>
+            <td>Transparent, colorless, and sparkles brilliantly.</td>
+            <td>Opaque, grayish-black, and slightly shiny.</td>
+          </tr>
+          <tr>
+            <td><strong>Hardness</strong></td>
+            <td>Extremely hard (the hardest natural substance).</td>
+            <td>Soft, slippery, and greasy to the touch.</td>
+          </tr>
+          <tr>
+            <td><strong>Structure / Bonding</strong></td>
+            <td>Each carbon is bonded to 4 others (rigid 3D network).</td>
+            <td>Each carbon is bonded to 3 others (flat hexagonal layers).</td>
+          </tr>
+          <tr>
+            <td><strong>Electrical Conductivity</strong></td>
+            <td>Non-conductor (no free electrons available).</td>
+            <td>Good conductor (the 4th valence electron is free to move).</td>
+          </tr>
+          <tr>
+            <td><strong>Density</strong></td>
+            <td>High density (\(\approx 3.5\text{ g/cm}^3\)).</td>
+            <td>Lower density (\(\approx 2.2\text{ g/cm}^3\)).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. FULLERENES (BUCKMINSTERFULLERENE) -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Fullerenes: The Spherical Molecular Allotropes</h2>
+      <p class="prose-text">
+        For centuries, scientists believed diamond and graphite were the only crystalline forms of carbon. In 1985, researchers discovered a third, entirely new class of crystalline carbon allotropes called <strong>fullerenes</strong>. The most famous and stable member of this family is <strong>Buckminsterfullerene (\(\text{C}_{60}\))</strong>, affectionately nicknamed "Buckyballs".
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Buckminsterfullerene (\(\text{C}_{60}\)):</span>
+        A discrete molecular allotrope of carbon consisting of 60 carbon atoms arranged in a hollow, spherical cage resembling a geodesic soccer ball. It is named after the American architect R. Buckminster Fuller, who designed famous geodesic dome structures sharing this exact geometric symmetry.
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Structural Features & Applications of \(\text{C}_{60}\)</span>
+        <div class="derivation-step">
+          1. <strong>Geometric Cage:</strong> The spherical cage is made of 60 carbon atoms interconnected into 20 hexagonal rings and 12 pentagonal rings, exactly like the stitching on a traditional football.<br><br>
+          2. <strong>Discrete Molecules:</strong> Unlike diamond and graphite (which are gigantic continuous networks of infinite atoms), fullerenes are distinct, individual molecules that can dissolve in organic solvents like benzene.<br><br>
+          3. <strong>High Tensile Strength & Conductivity:</strong> Because of the interlocking covalent rings, fullerenes can withstand extreme pressures and temperatures. They can behave as conductors or semiconductors.<br><br>
+          4. <strong>Modern Nanotechnology Applications:</strong> The hollow interior can trap drug molecules for targeted cancer drug delivery inside the human body, serve as ultra-slick molecular ball-bearings/lubricants, and form the basis of carbon nanotubes.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. AMORPHOUS ALLOTROPES -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Amorphous Forms of Carbon</h2>
+      <p class="prose-text">
+        Unlike the highly ordered crystalline forms, amorphous allotropes of carbon do not possess a regular, repeating atomic pattern. These are the dull, black powders and porous chunks you might see when wood or oil is burned. Think of the dark soot that coats the inside of a chimney, or the lightweight lumps of charcoal you use to light a barbecue grill. These materials are technically microcrystalline, but for our purposes, they lack large-scale geometric order.
+      </p>
+      
+      <div class="derivation-card">
+        <span class="derivation-title">Key Amorphous Allotropes & Their Origins</span>
+        <div class="derivation-step">
+          1. <strong>Coal:</strong> A natural fossil fuel formed over millions of years from decaying plant matter subjected to high heat and pressure underground.<br><br>
+          2. <strong>Wood Charcoal:</strong> Produced by heating wood strongly in a limited supply of air (destructive distillation). It is highly porous and an excellent absorbent.<br><br>
+          3. <strong>Coke:</strong> The solid residue left behind when coal is heated strongly in the absence of air. Used primarily as a reducing agent in metal extraction (like making iron).<br><br>
+          4. <strong>Carbon Black (Soot):</strong> Produced by burning hydrocarbons (like oil or natural gas) in an insufficient supply of air. It is a fine black powder used as a pigment in black ink and automobile tires.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. WORKED ICSE QUESTIONS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 4.1: Structure-Property Reasoning</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Graphite conducts electricity but Diamond does not, even though both are made entirely of carbon atoms. Explain this difference in terms of their atomic structure and bonding.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Carbon Valency:</em> Carbon has 4 valence electrons available for bonding. [0.5 Marks]<br><br>
+          2. <em>Diamond Structure:</em> In diamond, each carbon atom is covalently bonded to 4 other carbon atoms in a rigid 3D tetrahedral network. All valence electrons are locked into covalent bonds, leaving no free electrons to carry an electric charge. Hence, it is an insulator. [1.5 Marks]<br><br>
+          3. <em>Graphite Structure:</em> In graphite, each carbon atom is bonded to only 3 other carbon atoms in a flat hexagonal layer. The 4th valence electron of each atom remains unbonded (delocalized) and is free to move throughout the layer. The flow of these free electrons allows graphite to conduct electricity. [1.0 Marks]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 4.2: Uses Based on Structure</span>
+          <span class="problem-marks">[5 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Match each use to the correct allotrope (Diamond or Graphite):<br>
+          (i) Electrodes in electrolysis<br>
+          (ii) Cutting glass<br>
+          (iii) Lubricant in heavy machinery<br>
+          (iv) Gemstones in jewelry<br>
+          (v) Pencil lead<br>
+          Justify each answer with a structural reason.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <strong>(i) Electrodes:</strong> Graphite. <em>Reason:</em> It has free, delocalized electrons that make it a good conductor of electricity. [1 Mark]<br><br>
+          2. <strong>(ii) Cutting glass:</strong> Diamond. <em>Reason:</em> The rigid 3D tetrahedral network of strong covalent bonds makes it incredibly hard. [1 Mark]<br><br>
+          3. <strong>(iii) Lubricant:</strong> Graphite. <em>Reason:</em> The flat hexagonal layers are held together by weak forces, allowing them to slide over each other easily (slippery). [1 Mark]<br><br>
+          4. <strong>(iv) Gemstones:</strong> Diamond. <em>Reason:</em> Its tightly packed, dense structure gives it a high refractive index, making it sparkle brilliantly when cut. [1 Mark]<br><br>
+          5. <strong>(v) Pencil lead:</strong> Graphite. <em>Reason:</em> Because the layers slide and flake off easily due to weak forces, it leaves a dark mark on paper. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 5. GIVE SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Conceptual Application</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Give a scientific reason: Wood charcoal is often placed inside gas masks or air purifiers.</div>
+        <div class="reasoning-answer" id="sol_num3">
+          <strong>Examiner Solution:</strong><br>
+          Wood charcoal has a highly porous, amorphous structure. This gives it a massive internal surface area, allowing it to act as an excellent <strong>adsorbent</strong>. It easily attracts and traps harmful poison gases, odours, and impurities onto its surface, thereby purifying the air that passes through it. [2 Marks]
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Conceptual Application</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num4')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Give a scientific reason: Burning both diamond and coal produces carbon dioxide gas, but burning coal leaves behind ash while diamond does not.</div>
+        <div class="reasoning-answer" id="sol_num4">
+          <strong>Examiner Solution:</strong><br>
+          Diamond is an extremely pure crystalline allotrope of carbon; upon combustion, it completely reacts with oxygen to form only carbon dioxide gas, leaving zero solid residue. Coal, however, is a naturally occurring amorphous form that contains various mineral impurities (such as silica and clay) alongside carbon. When the carbon burns away as gas, these non-combustible impurities are left behind as ash. [2 Marks]
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_09_air_oxygen_combustion.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-09 · Air, Oxygen &amp;</a>
+    <a href="chemistry_11_water_hardness_and_treatment.html" class="topic-nav-link topic-nav-next">CHEM-11 · Water Hardness & &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Chemistry • Topic 10: Carbon & Its Allotropes</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800" width="100%" height="100%" style="background:#0f172a; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Mirror Gradient & Patterns -->
+    <linearGradient id="mirrorSurfaceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <pattern id="silverHatch" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#475569" stroke-width="1.8" />
+    </pattern>
+
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <filter id="glowRay" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <g transform="translate(450, 40)" text-anchor="middle">
+    <text fill="#38bdf8" font-size="24" font-weight="800" letter-spacing="1">ICSE CLASS 7 PHYSICS: LIGHT</text>
+    <text y="25" fill="#94a3b8" font-size="15" font-weight="500">Laws of Reflection of Light at a Plane Surface (Mirror)</text>
+  </g>
+
+  <!-- MAIN RAY OPTICS GEOMETRY -->
+  <!-- Point of Incidence O at (450, 480) -->
+  <g transform="translate(0, 0)">
+    <!-- PLANE MIRROR (Horizontal at y=480) -->
+    <!-- Mirror Glass Block -->
+    <rect x="150" y="474" width="600" height="12" fill="url(#mirrorSurfaceGrad)" stroke="#38bdf8" stroke-width="1" />
+    <!-- Silvered / Opaque Backing with Hatching -->
+    <rect x="150" y="486" width="600" height="24" fill="url(#silverHatch)" stroke="#334155" stroke-width="1.5" />
+    <!-- Mirror Label -->
+    <text x="170" y="465" fill="#38bdf8" font-size="13" font-weight="700">M</text>
+    <text x="730" y="465" fill="#38bdf8" font-size="13" font-weight="700">M' (Plane Mirror)</text>
+    <text x="450" y="525" fill="#64748b" font-size="12" font-weight="600" text-anchor="middle">SILVERED / POLISHED BACK SURFACE</text>
+
+    <!-- NORMAL LINE (Perpendicular ON at x=450 from y=120 to 480) -->
+    <line x1="450" y1="130" x2="450" y2="480" stroke="#facc15" stroke-width="2.5" stroke-dasharray="8,6" />
+    <!-- Point N at top -->
+    <circle cx="450" cy="130" r="4" fill="#facc15" />
+    <text x="450" y="115" fill="#fde047" font-size="14" font-weight="800" text-anchor="middle">N (Normal)</text>
+
+    <!-- Right Angle Symbol at O (90 deg to mirror) -->
+    <path d="M 450 455 L 475 455 L 475 480" fill="none" stroke="#facc15" stroke-width="1.5" />
+    <circle cx="462" cy="468" r="2" fill="#facc15" />
+
+    <!-- POINT OF INCIDENCE O -->
+    <circle cx="450" cy="480" r="6" fill="#f43f5e" stroke="#ffffff" stroke-width="2" />
+    <text x="450" y="505" fill="#f43f5e" font-size="14" font-weight="800" text-anchor="middle">O (Point of Incidence)</text>
+
+    <!-- INCIDENT RAY AO (from A at (200, 180) to O at (450, 480)) -->
+    <!-- Angle = 50.19° with normal -->
+    <line x1="200" y1="180" x2="450" y2="480" stroke="#38bdf8" stroke-width="3.5" filter="url(#glowRay)" />
+    <!-- Arrowhead pointing to O at midpoint (325, 330) -->
+    <polygon points="325,330 310,320 318,337" fill="#38bdf8" stroke="#ffffff" stroke-width="1" />
+    <!-- Point A -->
+    <circle cx="200" cy="180" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5" />
+    <text x="180" y="175" fill="#38bdf8" font-size="15" font-weight="800">A (Incident Light)</text>
+
+    <!-- REFLECTED RAY OB (from O at (450, 480) to B at (700, 180)) -->
+    <!-- Angle = 50.19° with normal -->
+    <line x1="450" y1="480" x2="700" y2="180" stroke="#4ade80" stroke-width="3.5" filter="url(#glowRay)" />
+    <!-- Arrowhead pointing away from O at midpoint (575, 330) -->
+    <polygon points="585,320 570,330 578,337" fill="#4ade80" stroke="#ffffff" stroke-width="1" />
+    <!-- Point B -->
+    <circle cx="700" cy="180" r="5" fill="#4ade80" stroke="#ffffff" stroke-width="1.5" />
+    <text x="715" y="175" fill="#4ade80" font-size="15" font-weight="800">B (Reflected Light)</text>
+
+    <!-- ANGLE OF INCIDENCE ARC (angle i) -->
+    <!-- From normal (270 deg / -90 deg) to incident ray (vector (-250, -300)) -->
+    <path d="M 450 370 A 110 110 0 0 0 380 395" fill="none" stroke="#38bdf8" stroke-width="2.5" />
+    <rect x="365" y="325" width="65" height="34" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="397" y="347" fill="#38bdf8" font-size="14" font-weight="800" text-anchor="middle">∠ i</text>
+
+    <!-- ANGLE OF REFLECTION ARC (angle r) -->
+    <path d="M 450 370 A 110 110 0 0 1 520 395" fill="none" stroke="#4ade80" stroke-width="2.5" />
+    <rect x="470" y="325" width="65" height="34" rx="6" fill="#0f172a" stroke="#4ade80" stroke-width="1.5" />
+    <text x="502" y="347" fill="#4ade80" font-size="14" font-weight="800" text-anchor="middle">∠ r</text>
+
+    <!-- Glancing Angle of Incidence & Reflection (Optional Class 7 syllabus enrichment) -->
+    <path d="M 330 480 A 120 120 0 0 1 365 440" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" />
+    <text x="305" y="465" fill="#94a3b8" font-size="11" font-weight="600">Glancing (90°-i)</text>
+
+    <path d="M 570 480 A 120 120 0 0 0 535 440" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="3,3" />
+    <text x="595" y="465" fill="#94a3b8" font-size="11" font-weight="600">Glancing (90°-r)</text>
+  </g>
+
+  <!-- LAWS OF REFLECTION SUMMARY PANELS (Bottom) -->
+  <g transform="translate(60, 560)">
+    <!-- First Law Panel -->
+    <g transform="translate(0, 0)">
+      <rect width="370" height="200" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" filter="url(#shadow)" />
+      <rect width="370" height="36" rx="10" fill="#0284c7" />
+      <text x="185" y="23" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">FIRST LAW OF REFLECTION</text>
+
+      <g transform="translate(18, 55)" font-size="12" fill="#cbd5e1">
+        <text y="10" font-weight="700" fill="#fde047">"The angle of incidence (∠i) is ALWAYS</text>
+        <text y="28" font-weight="700" fill="#fde047">equal to the angle of reflection (∠r)."</text>
+        
+        <rect x="0" y="45" width="334" height="42" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+        <text x="167" y="72" fill="#38bdf8" font-size="17" font-weight="900" text-anchor="middle" font-family="monospace">
+          ∠i = ∠r
+        </text>
+
+        <text y="112" fill="#94a3b8" font-size="11">• If ray falls normally (∠i = 0°), it retraces</text>
+        <text y="126" fill="#94a3b8" font-size="11">  its path back along normal (∠r = 0°).</text>
+      </g>
+    </g>
+
+    <!-- Second Law Panel -->
+    <g transform="translate(410, 0)">
+      <rect width="370" height="200" rx="10" fill="#1e293b" stroke="#4ade80" stroke-width="1.5" filter="url(#shadow)" />
+      <rect width="370" height="36" rx="10" fill="#15803d" />
+      <text x="185" y="23" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">SECOND LAW OF REFLECTION</text>
+
+      <g transform="translate(18, 55)" font-size="12" fill="#cbd5e1">
+        <text y="10" font-weight="700" fill="#86efac">"The incident ray, the reflected ray, and</text>
+        <text y="28" font-weight="700" fill="#86efac">the normal at the point of incidence, all</text>
+        <text y="46" font-weight="700" fill="#86efac">lie in the SAME PLANE."</text>
+
+        <rect x="0" y="60" width="334" height="48" rx="6" fill="#0f172a" stroke="#4ade80" stroke-width="1.5" />
+        <text x="167" y="82" fill="#4ade80" font-size="12" font-weight="700" text-anchor="middle">
+          Coplanar Geometry
+        </text>
+        <text x="167" y="98" fill="#cbd5e1" font-size="11" text-anchor="middle">
+          (Incident Plane = Reflected Plane)
+        </text>
+
+        <text y="128" fill="#94a3b8" font-size="11">• Applies to all reflecting surfaces: plane &amp; curved.</text>
+      </g>
+    </g>
+  </g>
+</svg>

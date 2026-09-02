@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics 11: Static Electricity & Electrostatics • ICSE Class 7</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); text-decoration: none; }
+    .nav-back { font-size: 13.5px; font-weight: 600; color: var(--terracotta); text-decoration: none; }
+    
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 14px; }
+    .section-heading { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    
+    p { font-size: 15px; color: var(--ink-black); line-height: 1.65; max-width: 75ch; }
+    
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-secondary); }
+    .definition-term { font-weight: 700; color: var(--ink-black); }
+    
+    .derivation-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .derivation-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); margin-bottom: 8px; display: block; }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; }
+    
+    .distinction-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13.5px; }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-strong); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-weight: 600; color: var(--ink-black); }
+    .distinction-table tr:nth-child(even) td { background: var(--bg-surface); }
+    
+    .problem-box { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .problem-type { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .problem-statement { font-size: 15px; font-weight: 500; color: var(--ink-black); margin-bottom: 14px; line-height: 1.5; }
+    
+    .btn-toggle { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; }
+    .solution-drawer { display: none; margin-top: 14px; padding: 14px; background: var(--bg-card); border-left: 3px solid var(--emerald-accent); border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.6; }
+    
+    .diagram-figure { margin: 12px 0; text-align: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    /* Muted purplish grey exception system */
+    .exception-tag {
+      color: #6b5b7b;
+      font-size: 0.78em;
+      vertical-align: super;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: help;
+    }
+
+    .exception-note {
+      margin-top: 16px;
+      margin-left: 20px;
+      padding: 10px 16px;
+      border-left: 2px solid #6b5b7b;
+      background: rgba(107, 91, 123, 0.04);
+      border-radius: 0 6px 6px 0;
+      color: #6b5b7b;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .exception-note-title {
+      font-weight: 700;
+      color: #554564;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13.5px;
+    }
+    
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 48px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); margin-top: 48px; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">⚛️ Physics • Topic 11</a>
+    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 11</div>
+    <h1 class="topic-title">Static Electricity &amp; Electrostatics</h1>
+    <p class="topic-subtext">
+      Origin of electrostatic charges, electronic theory of friction, the Fundamental Law of Electrostatics, charging by Conduction vs Induction, Gold Leaf Electroscope detection, and atmospheric lightning mechanisms.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. ATOMIC ORIGIN OF STATIC ELECTRICITY -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Atomic Origin of Static Charges</h2>
+      <p>
+        If you rub an ordinary plastic comb through your dry hair on a winter morning and bring it close to tiny bits of paper on a table, the paper scraps will suddenly leap upward and cling to the comb against gravity. This invisible force is <strong>static electricity</strong>—electric charges at rest on the surface of an insulating object.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Electronic Theory of Frictional Charging:</span>
+        All matter consists of neutral atoms containing positively charged protons in the central nucleus and negatively charged electrons revolving in outer shells. When two different insulators are vigorously rubbed together:
+        <br><br>
+        • The material with loosely bound electrons <strong>loses electrons</strong> and becomes <strong>positively charged</strong>.<br>
+        • The material with higher electron affinity <strong>gains those electrons</strong> and becomes equally <strong>negatively charged</strong>.<br>
+        • <em>Fundamental Conservation Law:</em> Charge is never created or destroyed during friction; it is merely transferred from one body to another.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Frictional Pair</th>
+            <th>Acquires Positive Charge (+)</th>
+            <th>Acquires Negative Charge (−)</th>
+            <th>Physical Reason (Electron Shift)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Glass Rod rubbed with Silk Cloth</strong></td>
+            <td>Glass Rod</td>
+            <td>Silk Cloth</td>
+            <td>Electrons are stripped from the glass atoms and transfer onto the tightly holding silk fibers.</td>
+          </tr>
+          <tr>
+            <td><strong>Ebonite Rod rubbed with Wool/Fur</strong></td>
+            <td>Wool / Cat's Fur</td>
+            <td>Ebonite (Hard Rubber) Rod</td>
+            <td>Wool easily yields electrons to the ebonite surface, leaving the fur with an electron deficiency.</td>
+          </tr>
+          <tr>
+            <td><strong>Plastic Comb rubbed through Dry Hair</strong></td>
+            <td>Human Hair</td>
+            <td>Plastic Comb</td>
+            <td>Hair strands lose electrons and repel each other (standing on end), while the comb gains excess electrons.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. FUNDAMENTAL LAW OF ELECTROSTATICS -->
+    <div class="section-block">
+      <h2 class="section-heading">2. The Fundamental Law of Electrostatics</h2>
+      <p>
+        Just like magnetic poles, electric charges exert non-contact forces on one another through an invisible electric field.
+      </p>
+
+      <div class="derivation-card">
+        <span class="derivation-title">The Fundamental Law</span>
+        <div class="derivation-step">
+          1. <strong>Like charges repel each other:</strong> Two positively charged glass rods brought close together push away; two negatively charged ebonite rods push away.<br><br>
+          2. <strong>Unlike charges attract each other:</strong> A positively charged glass rod strongly pulls toward a negatively charged ebonite rod.<br><br>
+          3. <em>The Sure Test of Charge:</em> <strong>Repulsion is the only sure test of electrification.</strong> A charged body can attract both an oppositely charged body AND a completely neutral body (due to temporary induction). However, repulsion occurs exclusively between two bodies carrying the same type of charge.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. CONDUCTION VS INDUCTION -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Charging by Conduction vs. Induction</h2>
+      <p>
+        There are two distinct physical ways to charge a neutral metal conductor using an already electrified rod:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Charging by Conduction</th>
+            <th>Charging by Induction</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Physical Contact</strong></td>
+            <td>Requires <strong>direct physical touching</strong> of the charged rod to the neutral conductor.</td>
+            <td>Occurs <strong>without physical contact</strong> (the charged rod is brought close but never touches).</td>
+          </tr>
+          <tr>
+            <td><strong>Nature of Charge Acquired</strong></td>
+            <td>Acquires the <strong>same sign of charge</strong> as the charging rod (e.g. touching with a positive rod gives positive charge).</td>
+            <td>Acquires the <strong>opposite sign of charge</strong> (e.g. bringing a positive rod close and earthing leaves the conductor negative).</td>
+          </tr>
+          <tr>
+            <td><strong>Charge on the Original Rod</strong></td>
+            <td>The charging rod <strong>loses a portion</strong> of its charge as electrons flow across the contact point.</td>
+            <td>The charging rod <strong>loses zero charge</strong>; its own charge remains completely intact.</td>
+          </tr>
+          <tr>
+            <td><strong>Permanence Mechanism</strong></td>
+            <td>Immediate and permanent upon physical separation.</td>
+            <td>Requires the conductor to be momentarily <em>earthed</em> (grounded) while the charged rod is still held nearby.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. GOLD LEAF ELECTROSCOPE & LIGHTNING -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Gold Leaf Electroscope &amp; Atmospheric Lightning</h2>
+      <p>
+        How can a scientist detect whether an object carries an electric charge and determine its positive or negative polarity? The classic scientific instrument designed for this is the <strong>Gold Leaf Electroscope (GLE)</strong>.
+      </p>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Electroscope_drawing.png/300px-Electroscope_drawing.png" alt="Gold leaf electroscope schematic diagram" class="diagram-img" >
+        <figcaption class="diagram-caption">Fig 1: A Gold Leaf Electroscope. When a charge reaches the brass disc, it travels down the brass rod to the two delicate gold leaves. Because both leaves receive like charges, they repel and diverge outward.</figcaption>
+      </figure>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Atmospheric Electricity: Lightning &amp; Benjamin Franklin's Conductor</span>
+        <div class="derivation-step">
+          1. <strong>Cloud Electrification:</strong> During a thunderstorm, violent updrafts of air and falling ice pellets cause heavy friction between water droplets. Positive charges gather at the high, icy cloud top, while massive negative charges accumulate at the lower cloud base.<br><br>
+          2. <strong>Ground Induction:</strong> The massive negative charge at the cloud base repels electrons deep into the Earth, inducing a massive positive charge on tall trees, church steeples, and skyscrapers below.<br><br>
+          3. <strong>Lightning Discharge:</strong> When the air's insulation breaks down under immense voltage, billions of electrons jump between cloud and ground in a giant spark called <strong>lightning</strong>, instantly heating the air to \(30,000^\circ\text{C}\) to create explosive shockwaves (thunder).<br><br>
+          4. <strong>Lightning Conductor:</strong> A thick copper rod with sharp pointed spikes installed higher than the roof of a building, connected to a deep copper plate buried in moist earth. It safely channels the strike harmlessly into the ground (earthing).<sup class="exception-tag">[†1]</sup>
+        </div>
+      </div>
+
+      <!-- Indented Scientific Exception Note -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†1] Physical Mechanism: Action of Points</span>
+        A lightning conductor protects a building in two complementary ways. Its primary job is not just to "catch" a lightning bolt; its sharp copper spikes create such a concentrated electric field that they constantly spray out ions of opposite charge into the sky (a gentle process called <em>corona discharge</em> or the action of points). This silently neutralizes the overhead cloud before a violent lightning spark can even trigger.
+      </div>
+    </div>
+
+    <!-- 5. WORKED LOGICAL EXEMPLARS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 11.1: Diagnosing Unknown Charges with a Gold Leaf Electroscope</span>
+        </div>
+        <div class="problem-statement">
+          A Gold Leaf Electroscope is already positively charged, so its two gold leaves are diverged. An unknown rod \(Z\) is brought close to the brass cap without touching it.<br>
+          (i) The leaves diverge even further.<br>
+          (ii) In a separate experiment with another rod \(W\), the leaves collapse (divergence decreases).<br>
+          Logically deduce the electrical state of Rod \(Z\) and Rod \(W\).
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_p11_1')">Show Step-by-Step Deduction ↓</button>
+        <div class="solution-drawer" id="sol_p11_1">
+          <strong>Step-by-Step Logical Deduction:</strong><br><br>
+          1. <strong>Analysis of Rod \(Z\) (Increased Divergence):</strong><br>
+          • The electroscope is already positive. The leaves diverge because they are pushed apart by like positive charges.<br>
+          • When Rod \(Z\) approaches the cap, it causes even more positive charge to migrate down to the leaves (by repelling positive charges or attracting electrons to the cap).<br>
+          • This proves Rod \(Z\) is <strong>Positively Charged</strong>.<br><br>
+          2. <strong>Analysis of Rod \(W\) (Decreased Divergence / Collapse):</strong><br>
+          • When Rod \(W\) approaches, it attracts positive charges up toward the cap (or repels electrons down to neutralize the positive leaves), reducing the net charge on the gold leaves.<br>
+          • This indicates Rod \(W\) is either <strong>Negatively Charged</strong> OR a <strong>Neutral Conductor</strong>. To confirm, repulsion (divergence) is the only conclusive test.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 11.2: The Truck Earth Chain</span>
+        </div>
+        <div class="problem-statement">
+          Petrol transport tankers on highways frequently have a metallic chain attached to their chassis that dangles down and drags along the asphalt road. Explain the physical necessity of this dragging metal chain.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_p11_2')">Show Physical Explanation ↓</button>
+        <div class="solution-drawer" id="sol_p11_2">
+          <strong>Step-by-Step Physical Explanation:</strong><br><br>
+          1. <strong>Frictional Electrification:</strong> As the tanker speeds along the highway, the rubber tires rub against the road, and the liquid fuel sloshes vigorously against the metal tank walls. In addition, atmospheric air constantly rubs against the moving metal body.<br><br>
+          2. <strong>Accumulation of Static Charge:</strong> These continuous frictional contacts generate massive static electric charges on the metal body of the truck.<br><br>
+          3. <strong>Discharge Danger &amp; Prevention:</strong> If this charge accumulates, a sudden electric spark could jump to the ground, instantly igniting volatile petrol fumes and causing a catastrophic explosion. The dragging metallic chain acts as a continuous <strong>earthing conductor</strong>, safely draining all accumulated static electric charges directly into the ground as fast as they are generated.
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 6. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Electrostatics 1: Dry Hair & Plastic Comb</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_p11_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why does a plastic comb rubbed through dry hair attract small bits of dry paper, but fails to do so when the hair is wet?</div>
+        <div class="reasoning-answer" id="reas_p11_1">
+          <strong>Scientific Resolution:</strong><br>
+          1. When rubbed vigorously through dry hair, friction causes electrons to transfer from hair to the plastic comb, giving the comb a negative static charge. The charged comb induces opposite charges in nearby paper bits and attracts them.<br>
+          2. When hair is wet, water acts as an electrical conductor and immediately grounds/discharges any accumulated static electricity before a charge can build up.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Electrostatics 2: Lightning Conductors</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_p11_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are tall architectural buildings equipped with pointed copper lightning arrestors connected to metal plates buried deep in the moist earth?</div>
+        <div class="reasoning-answer" id="reas_p11_2">
+          <strong>Scientific Resolution:</strong><br>
+          Pointed copper rods promote action of points (corona discharge) to partially neutralize incoming thunderclouds. When a massive lightning stroke does occur, the heavy copper strip provides a low-resistance path that safely routes millions of volts of electric discharge directly into the ground, completely shielding the building structure from explosion and fire.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_10_spherical_mirrors_and_images.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-10 · Spherical Mirrors &</a>
+    <a href="physics_12_simple_machines_and_efficiency.html" class="topic-nav-link topic-nav-next">PHY-12 · Simple Machines & &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Physics • Topic 11: Static Electricity &amp; Electrostatics</div>
+    <div>CISCE Class 7 Academic Compendium</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

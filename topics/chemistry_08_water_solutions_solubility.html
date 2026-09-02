@@ -1,0 +1,425 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry 08: Water as a Solvent, Solutions & Solubility • ICSE Class 7</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; } 
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; } 
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🧪 Chemistry • Topic 08</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 08</div>
+    <h1 class="topic-title">Water as a Solvent, Solutions & Solubility</h1>
+    <p class="topic-subtext">
+      Solute, solvent, and solution definitions; Saturated vs Unsaturated vs Supersaturated solutions; solubility formula (S = mass of solute / 100g solvent); hard water vs soft water; temporary vs permanent hardness; and anomalous expansion of water.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. SOLUTE, SOLVENT, AND SOLUTION DEFINITIONS -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Anatomy of a Solution</h2>
+      <p>
+        When you stir a spoonful of sugar into a hot cup of tea, the sugar granules seem to vanish entirely into the liquid. This disappearing act isn't magic; it is a physical process where the solid substance breaks down into its individual molecules and disperses uniformly throughout the liquid. This uniform mixture is a perfect example of a solution. Water, due to its ability to dissolve a vast array of substances, is widely known as a "universal solvent," though it specifically dissolves polar and ionic substances best.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Solution Components:</span>
+        • <strong>Solute:</strong> The substance that dissolves in a medium to form a solution (e.g., sugar, salt). It is usually present in a smaller proportion.<br>
+        • <strong>Solvent:</strong> The medium in which the solute dissolves (e.g., water, alcohol). It is usually present in a larger proportion.<br>
+        • <strong>Solution:</strong> A homogeneous mixture of two or more substances, formed when a solute completely dissolves in a solvent.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Term</th>
+            <th>State</th>
+            <th>Role in Mixture</th>
+            <th>Everyday Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Solute</strong></td>
+            <td>Can be solid, liquid, or gas</td>
+            <td>The substance being dissolved</td>
+            <td>Salt (solid) in saltwater, or Carbon dioxide (gas) in soda</td>
+          </tr>
+          <tr>
+            <td><strong>Solvent</strong></td>
+            <td>Usually a liquid</td>
+            <td>The substance doing the dissolving</td>
+            <td>Water in saltwater, or Alcohol in perfumes</td>
+          </tr>
+          <tr>
+            <td><strong>Solution</strong></td>
+            <td>Typically matches the state of the solvent</td>
+            <td>The final homogeneous mixture</td>
+            <td>Ocean water (salt + water), or Air (gas + gas)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. SATURATED VS UNSATURATED VS SUPERSATURATED -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Saturation and Solution Types</h2>
+      <p>
+        Imagine making a thick sugar syrup for a traditional sweet like gulab jamun. At first, the sugar dissolves easily in the water. But as you add more and more sugar, eventually it simply settles at the bottom of the pan, refusing to dissolve no matter how much you stir. This happens because the water has reached its maximum capacity to hold the sugar molecules at that specific temperature. If you heat the water, you can suddenly trick it into holding even more sugar.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Levels of Saturation:</span>
+        • <strong>Unsaturated Solution:</strong> A solution in which more solute can be dissolved at a given temperature without any settling at the bottom.<br>
+        • <strong>Saturated Solution:</strong> A solution that cannot dissolve any more solute at a given temperature. Any additional solute will remain undissolved at the bottom.<br>
+        • <strong>Supersaturated Solution:</strong> A highly unstable solution containing more dissolved solute than a saturated solution at a given temperature. It is created by saturating a solution at a high temperature and cooling it slowly.
+      </div>
+    </div>
+
+    <!-- 3. SOLUBILITY FORMULA -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Solubility and Its Calculation</h2>
+      <p>
+        Just like recipes require exact measurements, chemists need to know the precise amount of a substance that can dissolve in water. Some substances, like table salt, dissolve very easily in large amounts, whereas others, like baking soda, have a much lower limit. Solubility gives us a mathematical way to compare the dissolving power of different substances by standardized testing: measuring how many grams of the solute can completely dissolve in exactly 100 grams of the solvent.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Solubility Definition:</span>
+        The <strong>solubility</strong> of a solute in a particular solvent is defined as the maximum mass (in grams) of the solute that can be dissolved in \(100\text{ g}\) of the solvent at a specified temperature to form a saturated solution.
+      </div>
+      <div class="derivation-card">
+        <span class="derivation-title">The Solubility Formula</span>
+        <div class="derivation-step">
+          To calculate solubility (\(S\)), we determine the ratio of the mass of the solute to the mass of the solvent, and scale it to \(100\text{ g}\) of solvent.<br><br>
+          $$S = \left( \frac{\text{Mass of solute (in g)}}{\text{Mass of solvent (in g)}} \right) \times 100$$<br>
+          <em>Note:</em> The mass of the solvent can be found by subtracting the mass of the solute from the mass of the total solution (if given). Because solubility is a ratio of masses multiplied by 100, it is usually expressed simply in grams per 100 g of solvent.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 & 5. HARD WATER VS SOFT WATER & TYPES OF HARDNESS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Hard Water vs. Soft Water</h2>
+      <p>
+        Have you ever tried washing your hands with soap from a well or a specific tap, only to find that instead of a rich, bubbly foam, a sticky, white scum forms on your skin? This occurs because the water in that area contains dissolved minerals picked up from underground rocks. When water travels through limestone or gypsum, it dissolves calcium and magnesium salts. These dissolved metal ions chemically react with soap, destroying its ability to lather.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Water Hardness Definitions:</span>
+        • <strong>Soft Water:</strong> Water that readily gives a rich lather with ordinary soap. It is essentially free from dissolved calcium and magnesium salts.<br>
+        • <strong>Hard Water:</strong> Water that does not lather easily with soap, but instead forms a sticky, insoluble precipitate called "scum". It contains dissolved salts (bicarbonates, chlorides, or sulphates) of calcium and magnesium.<br><br>
+        • <strong>Temporary Hardness:</strong> Hardness caused by the presence of dissolved bicarbonates of calcium and magnesium. It can be easily removed by simply boiling the water.<br>
+        • <strong>Permanent Hardness:</strong> Hardness caused by the presence of dissolved chlorides and sulphates of calcium and magnesium. It cannot be removed by boiling, requiring chemical treatment (like adding washing soda).
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Temporary Hardness</th>
+            <th>Permanent Hardness</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Causing Salts</strong></td>
+            <td>Calcium bicarbonate \(Ca(HCO_3)_2\)<br>Magnesium bicarbonate \(Mg(HCO_3)_2\)</td>
+            <td>Calcium/Magnesium Chlorides \((CaCl_2, MgCl_2)\)<br>Calcium/Magnesium Sulphates \((CaSO_4, MgSO_4)\)</td>
+          </tr>
+          <tr>
+            <td><strong>Removal Method</strong></td>
+            <td>Can be removed by straightforward boiling.</td>
+            <td>Cannot be removed by boiling; requires washing soda.</td>
+          </tr>
+          <tr>
+            <td><strong>Boiling Reaction</strong></td>
+            <td>Soluble bicarbonate turns into insoluble carbonate (scale), which precipitates out.</td>
+            <td>No reaction occurs upon boiling; ions remain dissolved.</td>
+          </tr>
+          <tr>
+            <td><strong>Real-World Issue</strong></td>
+            <td>Forms chalky white scale inside kettles and hot water pipes.</td>
+            <td>Interferes with industrial boilers and dyeing processes.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 6. ANOMALOUS EXPANSION OF WATER -->
+    <div class="section-block">
+      <h2 class="section-heading">5. The Anomalous Expansion of Water</h2>
+      <p>
+        If you accidentally leave a sealed glass bottle completely filled with water in the freezer overnight, you will likely wake up to find the glass shattered. Almost all liquids in the universe shrink and become denser as they freeze into a solid. Water, bizarrely, breaks this rule. Below \(4^\circ\text{C}\), as it approaches its freezing point, water actually expands and becomes less dense. This strange behavior is the reason why ice cubes float in your drink, and why frozen lakes have liquid water underneath, allowing fish to survive the winter.
+      </p>
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Ice_structure.png/300px-Ice_structure.png" alt="Crystal structure of solid ice showing a spacious hexagonal lattice" class="diagram-img" >
+        <figcaption class="diagram-caption">Crystal structure of ice. The unique hexagonal arrangement of water molecules leaves large empty spaces, causing ice to take up more volume than liquid water.</figcaption>
+      </figure>
+      <div class="definition-box">
+        <span class="definition-term">Anomalous Expansion:</span>
+        The unusual behavior of water whereby it contracts when heated from \(0^\circ\text{C}\) to \(4^\circ\text{C}\), and expands when cooled from \(4^\circ\text{C}\) to \(0^\circ\text{C}\). Consequently, water has its maximum density at exactly \(4^\circ\text{C}\).
+      </div>
+    </div>
+
+
+    <!-- WORKED ICSE NUMERICALS & REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 8.1: Solubility Calculation</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          \(36\text{ g}\) of salt dissolves in \(200\text{ g}\) of water at \(20^\circ\text{C}\) to form a saturated solution. Calculate the solubility of the salt at \(20^\circ\text{C}\).
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Identify Given Values:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Mass of solute (salt) = \(36\text{ g}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Mass of solvent (water) = \(200\text{ g}\) [1 Mark]<br><br>
+          2. <em>Apply the Solubility Formula:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Solubility } (S) = \frac{\text{Mass of solute}}{\text{Mass of solvent}} \times 100$$ [1 Mark]<br><br>
+          3. <em>Calculate:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$S = \frac{36}{200} \times 100 = \frac{36}{2} = \mathbf{18\text{ g / 100 g of water}}$$ [1 Mark]<br><br>
+          <em>Conclusion:</em> The solubility of the salt at \(20^\circ\text{C}\) is \(18\text{ g}\) per \(100\text{ g}\) of water.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 8.2: Hard Water Distinction & Treatment</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A student boils a sample of hard water for 10 minutes. Afterwards, the boiled water lathers freely with soap but the original sample did not. <br>
+          (i) What type of hardness did the water have?<br>
+          (ii) Write the chemical equation showing how boiling removes this hardness.<br>
+          (iii) Name one salt that causes permanent hardness.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i): Type of Hardness</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Since the hardness was removed simply by boiling (allowing it to lather with soap), the water had <strong>Temporary Hardness</strong>. [1 Mark]<br><br>
+          2. <em>Part (ii): Chemical Equation</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;When temporary hard water is boiled, the soluble bicarbonates decompose into insoluble carbonates, which precipitate out.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$Ca(HCO_3)_2 \xrightarrow{\text{heat}} CaCO_3 \downarrow + H_2O + CO_2 \uparrow$$ [2 Marks]<br><br>
+          3. <em>Part (iii): Cause of Permanent Hardness</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Permanent hardness is caused by chlorides or sulphates. Example: <strong>Calcium sulphate (\(CaSO_4\))</strong> or Magnesium chloride (\(MgCl_2\)). [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 8.3: Give Scientific Reasons</span>
+          <span class="problem-marks">[2 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Give a scientific reason: Why do water pipes in extremely cold countries often burst during severe winters?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num3">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          Due to the <strong>anomalous expansion of water</strong>, when the temperature outside drops below \(4^\circ\text{C}\), the water inside the pipes begins to expand as it cools towards \(0^\circ\text{C}\) and turns into ice. [1 Mark]<br>
+          Since ice occupies a larger volume than liquid water, it exerts immense outward pressure on the inner walls of the rigid metal or plastic pipes, ultimately causing them to crack and burst. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 7. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Aquatic Chemistry 1: Aquatic Life in Frozen Lakes</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_c8_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why do fish and aquatic animals survive at the bottom of frozen lakes in extreme winter climates?</div>
+        <div class="reasoning-answer" id="reas_c8_1">
+          <strong>Scientific Resolution:</strong><br>
+          Due to the <strong>anomalous expansion of water</strong>, water reaches its maximum density at \(4^\circ\text{C}\). As surface water cools below \(4^\circ\text{C}\), it becomes lighter and remains on top, eventually freezing into an insulating surface ice sheet at \(0^\circ\text{C}\), while dense liquid water at \(4^\circ\text{C}\) stays insulated underneath at the lake bed.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Aquatic Chemistry 2: Water as Universal Solvent</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_c8_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why is water universally designated as the 'Universal Solvent'?</div>
+        <div class="reasoning-answer" id="reas_c8_2">
+          <strong>Scientific Resolution:</strong><br>
+          Water has a highly polar molecule with a high dielectric constant, allowing it to dissolve a wider variety of ionic salts, acids, bases, and polar organic substances than any other liquid known in nature.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_07_metals_nonmetals_reactivity.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-07 · Metals, Non-Metals &</a>
+    <a href="chemistry_09_air_oxygen_combustion.html" class="topic-nav-link topic-nav-next">CHEM-09 · Air, Oxygen &amp; &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Chemistry Topic 08: Water as a Solvent, Solutions & Solubility</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+
+

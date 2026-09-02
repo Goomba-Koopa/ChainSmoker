@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AXIOM ICSE 7 • Examination Problem Sandbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-warm);
+      color: var(--ink-black);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* MASTHEAD */
+    .masthead {
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 24px 64px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      background: var(--bg-warm);
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink-black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--terracotta);
+    }
+
+    .masthead-nav {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid var(--border-strong);
+      padding-bottom: 2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .masthead-nav:hover {
+      color: var(--terracotta);
+      border-color: var(--terracotta);
+    }
+
+    /* HERO */
+    .hero-section {
+      padding: 64px 64px 36px;
+      max-width: 980px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-kicker {
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+    }
+
+    .hero-heading {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--ink-black);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtext {
+      font-size: 16.5px;
+      color: var(--ink-secondary);
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    /* FILTER TABS (TEXTBOOK MINIMALIST) */
+    .filter-bar {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn:hover {
+      background: #ffffff;
+      color: var(--ink-black);
+    }
+
+    .filter-btn.active {
+      background: var(--ink-black);
+      border-color: var(--ink-black);
+      color: #ffffff;
+    }
+
+    /* PROBLEMS MAIN CANVAS */
+    .problems-container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px 64px 96px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    @media (max-width: 768px) {
+      .masthead, .hero-section, .problems-container { padding-left: 24px; padding-right: 24px; }
+      .hero-heading { font-size: 32px; }
+    }
+
+    /* PROBLEM CARD (WARM OFF-WHITE / CREAM TEXTURE) */
+    .problem-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .problem-card:hover {
+      border-color: var(--ink-black);
+      box-shadow: 0 4px 20px rgba(18, 18, 20, 0.04);
+    }
+
+    .problem-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+    }
+
+    .problem-subject {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--terracotta);
+    }
+
+    .problem-marks-badge {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-muted);
+      letter-spacing: 0.02em;
+    }
+
+    /* TIGHTER LINE-HEIGHT ON STATEMENTS FOR ACADEMIC DENSITY */
+    .problem-statement {
+      font-size: 16px;
+      color: var(--ink-black);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    /* INTERACTIVE DRAWER ACTIONS */
+    .interactive-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .btn-action {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-black);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--bg-warm);
+      border-color: var(--ink-black);
+    }
+
+    .btn-action.active {
+      background: var(--ink-black);
+      color: #ffffff;
+      border-color: var(--ink-black);
+    }
+
+    /* TEXTURED WARM EMERALD HINT BOX */
+    .hint-box {
+      display: none;
+      background: var(--emerald-soft);
+      border-left: 3px solid var(--emerald-accent);
+      border-top: 1px solid #d1fae5;
+      border-right: 1px solid #d1fae5;
+      border-bottom: 1px solid #d1fae5;
+      padding: 18px 22px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14.5px;
+      color: #064e3b;
+      line-height: 1.6;
+    }
+
+    .hint-box strong {
+      font-family: var(--font-serif);
+      font-size: 15.5px;
+      color: #064e3b;
+    }
+
+    /* SOFTENED SOLUTION BOX WITH SERIF LABEL */
+    .solution-box {
+      display: none;
+      background: #ffffff;
+      border-left: 3px solid var(--terracotta);
+      border-top: 1px solid var(--border-subtle);
+      border-right: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 22px 26px;
+      border-radius: 0 8px 8px 0;
+      font-size: 14.5px;
+      color: var(--ink-secondary);
+      line-height: 1.7;
+    }
+
+    .solution-heading {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--terracotta);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* FOOTER */
+    .editorial-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 64px;
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+
+    .footer-note {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 14.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="master_edition_navigator.html" class="brand-title">AXIOM <em>ICSE 7</em></a>
+    <a href="master_edition_navigator.html" class="masthead-nav">← Back to Editions Library</a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-kicker">Edition 05 • Problem Sandbox</div>
+    <h1 class="hero-heading">Middle school examination problems, solved with board rigor.</h1>
+    <p class="hero-subtext">
+      Practice questions across Physics, Chemistry, and Biology. Test your reasoning with tiered conceptual hints, or expand complete step-by-step evaluator solutions with explicit mark breakdowns.
+    </p>
+
+    <!-- DISCIPLINE FILTER TABS -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCategory('all')">All Disciplines (4)</button>
+      <button class="filter-btn" onclick="filterCategory('physics')">Physics (2)</button>
+      <button class="filter-btn" onclick="filterCategory('chemistry')">Chemistry (1)</button>
+      <button class="filter-btn" onclick="filterCategory('biology')">Biology (1)</button>
+    </div>
+  </section>
+
+  <!-- PROBLEMS CANVAS -->
+  <main class="problems-container" id="problemsContainer">
+
+    <!-- PROBLEM 1: PHYSICS (PRESSURE) -->
+    <article class="problem-card" data-category="physics">
+      <div class="problem-meta-row">
+        <span class="problem-subject">Physics • Fluid Mechanics & Pressure</span>
+        <span class="problem-marks-badge">CISCE Model Examination • [3 Marks]</span>
+      </div>
+      <div class="problem-statement">
+        A rectangular solid block of iron having mass \(12\text{ kg}\) has dimensions \(20\text{ cm} \times 10\text{ cm} \times 5\text{ cm}\). Calculate: (i) The maximum pressure, and (ii) The minimum pressure that the block can exert on a horizontal surface. <em>[Take acceleration due to gravity \(g = 10\text{ m/s}^2\)]</em>
+      </div>
+      <div class="interactive-row">
+        <button class="btn-action" onclick="toggleBox('hint1', this)">💡 Show Conceptual Hint</button>
+        <button class="btn-action" onclick="toggleBox('sol1', this)">Show Step-by-Step Solution ↓</button>
+      </div>
+      <div class="hint-box" id="hint1">
+        <strong>Examiner Guidance:</strong> Pressure is inversely proportional to the contact surface area (\(P = F/A\)). The force (thrust) is constant and equal to the weight of the block (\(W = m \cdot g\)). Hence, maximum pressure occurs on the smallest surface face, while minimum pressure occurs on the largest surface face. Convert all dimensions to SI metres before multiplying.
+      </div>
+      <div class="solution-box" id="sol1">
+        <span class="solution-heading">Step-by-step Evaluator Marking Scheme:</span>
+        1. <em>Applied Thrust (Weight):</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;$$F = m \cdot g = 12\text{ kg} \times 10\text{ m/s}^2 = \mathbf{120\text{ N}} \quad \text{[1 Mark]}$$<br>
+        2. <em>Maximum Pressure (Smallest Area):</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;\(A_{\text{min}} = 0.10\text{ m} \times 0.05\text{ m} = 0.005\text{ m}^2\)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{max}} = \frac{120\text{ N}}{0.005\text{ m}^2} = \mathbf{24,000\text{ Pa (or N/m}^2\mathbf{)}} \quad \text{[1 Mark]}$$<br>
+        3. <em>Minimum Pressure (Largest Area):</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;\(A_{\text{max}} = 0.20\text{ m} \times 0.10\text{ m} = 0.02\text{ m}^2\)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;$$P_{\text{min}} = \frac{120\text{ N}}{0.02\text{ m}^2} = \mathbf{6,000\text{ Pa (or N/m}^2\mathbf{)}} \quad \text{[1 Mark]}$$
+      </div>
+    </article>
+
+    <!-- PROBLEM 2: PHYSICS (LEVERS) -->
+    <article class="problem-card" data-category="physics">
+      <div class="problem-meta-row">
+        <span class="problem-subject">Physics • Work, Energy & Machines</span>
+        <span class="problem-marks-badge">CISCE Model Examination • [3 Marks]</span>
+      </div>
+      <div class="problem-statement">
+        A crowbar \(2.0\text{ m}\) long is pivoted at a point \(40\text{ cm}\) from a load of \(750\text{ N}\). Calculate: (i) The Mechanical Advantage (MA) of the crowbar, and (ii) The minimum effort required to lift the load.
+      </div>
+      <div class="interactive-row">
+        <button class="btn-action" onclick="toggleBox('hint2', this)">💡 Show Conceptual Hint</button>
+        <button class="btn-action" onclick="toggleBox('sol2', this)">Show Step-by-Step Solution ↓</button>
+      </div>
+      <div class="hint-box" id="hint2">
+        <strong>Examiner Guidance:</strong> A crowbar is a Class 1 lever with the fulcrum situated between the load and the effort. Mechanical Advantage is the ratio of Effort Arm to Load Arm (\(MA = \frac{\text{Effort Arm}}{\text{Load Arm}}\)). Remember that total crowbar length equals the sum of load arm and effort arm.
+      </div>
+      <div class="solution-box" id="sol2">
+        <span class="solution-heading">Step-by-step Evaluator Marking Scheme:</span>
+        1. <em>Effort Arm Length:</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;\(\text{Total Length} = 2.0\text{ m} = 200\text{ cm}\)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;\(\text{Load Arm} = 40\text{ cm}\)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;\(\text{Effort Arm} = 200\text{ cm} - 40\text{ cm} = \mathbf{160\text{ cm}}\) [0.5 Mark]<br><br>
+        2. <em>Mechanical Advantage (MA):</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;$$MA = \frac{\text{Effort Arm}}{\text{Load Arm}} = \frac{160\text{ cm}}{40\text{ cm}} = \mathbf{4} \quad \text{[1.5 Marks]}$$<br>
+        3. <em>Minimum Effort (\(E\)):</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;$$E = \frac{\text{Load}}{MA} = \frac{750\text{ N}}{4} = \mathbf{187.5\text{ N}} \quad \text{[1 Mark]}$$
+      </div>
+    </article>
+
+    <!-- PROBLEM 3: CHEMISTRY (REACTION BALANCING) -->
+    <article class="problem-card" data-category="chemistry">
+      <div class="problem-meta-row">
+        <span class="problem-subject">Chemistry • Reactions & Equation Balancing</span>
+        <span class="problem-marks-badge">CISCE Model Examination • [3 Marks]</span>
+      </div>
+      <div class="problem-statement">
+        Balance the following skeletal chemical equations and identify the type of chemical reaction in each case:
+        <br><br>
+        (a) \(\text{KClO}_3\text{ (s)} \xrightarrow{\Delta} \text{KCl (s)} + \text{O}_2\text{ (g)}\)
+        <br>(b) \(\text{Fe (s)} + \text{CuSO}_4\text{ (aq)} \longrightarrow \text{FeSO}_4\text{ (aq)} + \text{Cu (s)}\)
+      </div>
+      <div class="interactive-row">
+        <button class="btn-action" onclick="toggleBox('hint3', this)">💡 Show Conceptual Hint</button>
+        <button class="btn-action" onclick="toggleBox('sol3', this)">Show Step-by-Step Solution ↓</button>
+      </div>
+      <div class="hint-box" id="hint3">
+        <strong>Examiner Guidance:</strong> Apply the Law of Conservation of Mass. For reaction (a), look at oxygen: 3 atoms on the left and 2 on the right; their lowest common multiple is 6. For reaction (b), verify if single element displacement is taking place according to the Activity Series.
+      </div>
+      <div class="solution-box" id="sol3">
+        <span class="solution-heading">Step-by-step Evaluator Marking Scheme:</span>
+        1. <em>Part (a) Balanced Equation:</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;$$\mathbf{2KClO_3\text{ (s)} \xrightarrow[\text{MnO}_2]{\Delta} 2KCl\text{ (s)} + 3O_2\uparrow\text{ (g)}}$$<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• <em>Reaction Type:</em> <strong>Thermal Decomposition Reaction</strong>. [1.5 Marks]<br><br>
+        2. <em>Part (b) Balanced Equation:</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;$$\mathbf{Fe\text{ (s)} + CuSO_4\text{ (aq, blue)} \longrightarrow FeSO_4\text{ (aq, green)} + Cu\text{ (s, reddish ppt)}}$$<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• <em>Reaction Type:</em> <strong>Single Displacement (Redox) Reaction</strong>. [1.5 Marks]
+      </div>
+    </article>
+
+    <!-- PROBLEM 4: BIOLOGY (CIRCULATORY SYSTEM) -->
+    <article class="problem-card" data-category="biology">
+      <div class="problem-meta-row">
+        <span class="problem-subject">Biology • Human Circulatory System</span>
+        <span class="problem-marks-badge">CISCE Model Examination • [3 Marks]</span>
+      </div>
+      <div class="problem-statement">
+        Give precise scientific reasons for the following anatomical features of the human cardiovascular system:
+        <br><br>
+        (a) The left ventricle of the heart has a much thicker muscular wall than the right ventricle.
+        <br>(b) Veins contain internal pocket-shaped valves, whereas arteries do not.
+      </div>
+      <div class="interactive-row">
+        <button class="btn-action" onclick="toggleBox('hint4', this)">💡 Show Conceptual Hint</button>
+        <button class="btn-action" onclick="toggleBox('sol4', this)">Show Step-by-Step Solution ↓</button>
+      </div>
+      <div class="hint-box" id="hint4">
+        <strong>Examiner Guidance:</strong> Focus on pressure dynamics and destination distances. The left ventricle pumps blood throughout the entire body (systemic circulation), while the right ventricle pumps only to the adjacent lungs (pulmonary circulation). For veins, consider the low-pressure steady flow against gravity.
+      </div>
+      <div class="solution-box" id="sol4">
+        <span class="solution-heading">Step-by-step Evaluator Marking Scheme:</span>
+        1. <em>Part (a) Scientific Reason:</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;The <strong>left ventricle</strong> must generate powerful hydrostatic pressure to pump oxygenated blood to all distant tissues of the body through the aorta (systemic circulation). In contrast, the <strong>right ventricle</strong> pumps blood only a short distance to the neighboring lungs (pulmonary circulation). [1.5 Marks]<br><br>
+        2. <em>Part (b) Scientific Reason:</em><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Blood in <strong>veins</strong> flows under very low pressure in a steady stream, often moving upwards against gravity; <strong>semilunar pocket valves</strong> prevent the backward flow of blood. In <strong>arteries</strong>, blood surges rapidly under high pulsating pressure directly from the heart, preventing any backflow. [1.5 Marks]
+      </div>
+    </article>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">AXIOM ICSE 7 • Typeset in Newsreader and Plus Jakarta Sans</div>
+    <div>CISCE Examination Sandbox</div>
+  </footer>
+
+  <script>
+    function toggleBox(id, btn) {
+      const el = document.getElementById(id);
+      const isOpen = el.style.display === 'block';
+      el.style.display = isOpen ? 'none' : 'block';
+      btn.classList.toggle('active', !isOpen);
+    }
+
+    function filterCategory(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText.includes('All')));
+      });
+
+      const cards = document.querySelectorAll('.problem-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology 04: Human Digestive System • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+    
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+    
+    p { font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🌿 Biology • Topic 04</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 04</div>
+    <h1 class="topic-title">Human Digestive System</h1>
+    <p class="topic-subtext">
+      The five stages of holozoic nutrition (ingestion, digestion, absorption, assimilation, egestion), the complete digestive enzyme matrix (Ptyalin/Pepsin/Trypsin/Lipase/Amylase), and the small intestine villus structure for absorption.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. FIVE STAGES OF HOLOZOIC NUTRITION -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Five Stages of Holozoic Nutrition</h2>
+      <p>
+        Imagine eating an apple. First, you take a bite and chew it in your mouth. Then, your stomach powerfully breaks down the chunks into a liquid mush. Once it is fully broken down, your body absorbs all the vitamins and sugars from the apple, using them to give you energy to grow and run. Finally, whatever your body couldn't use is passed out as waste when you go to the bathroom. This entire sequential process is how humans—and most animals—derive energy from solid food.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Holozoic Nutrition:</span>
+        The mode of nutrition in which organisms take in complex solid or liquid organic food material into their bodies, which is then sequentially processed through five distinct biological stages: <strong>Ingestion, Digestion, Absorption, Assimilation,</strong> and <strong>Egestion</strong>.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>Scientific Process</th>
+            <th>Primary Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Ingestion</strong></td>
+            <td>The act of taking large, complex food particles into the body through the mouth.</td>
+            <td>Mouth (Oral Cavity)</td>
+          </tr>
+          <tr>
+            <td><strong>2. Digestion</strong></td>
+            <td>The mechanical and chemical breakdown of complex, insoluble food molecules into simple, water-soluble molecules by the action of specific enzymes.</td>
+            <td>Mouth, Stomach, Small Intestine</td>
+          </tr>
+          <tr>
+            <td><strong>3. Absorption</strong></td>
+            <td>The process by which the simple, digested soluble nutrients pass through the intestinal walls into the bloodstream.</td>
+            <td>Small Intestine</td>
+          </tr>
+          <tr>
+            <td><strong>4. Assimilation</strong></td>
+            <td>The utilization of absorbed nutrients by body cells for producing energy, growth, and cellular repair.</td>
+            <td>All Body Cells</td>
+          </tr>
+          <tr>
+            <td><strong>5. Egestion</strong></td>
+            <td>The elimination of undigested, unabsorbed solid waste matter (feces) from the body.</td>
+            <td>Large Intestine, Rectum, Anus</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. DIGESTIVE ANATOMY -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Anatomy of the Alimentary Canal</h2>
+      <p>
+        Think of your digestive system as a 30-foot long, continuous muscular tube stretching from your mouth all the way down to your anus. As food travels down this highly specialized conveyor belt, different organs along the way add chemical juices and physically squeeze the food. This system is divided into the main digestive tract (the alimentary canal) and accessory glands like the liver and pancreas, which squirt important digestive juices into the tube but never actually have food pass directly inside them.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">The Human Digestive System:</span>
+        A complete biological system comprising the <strong>Alimentary Canal</strong> (a continuous muscular tube including the mouth, esophagus, stomach, small intestine, and large intestine) and associated <strong>Digestive Glands</strong> (salivary glands, liver, and pancreas) that secrete biochemical enzymes to facilitate digestion.
+      </div>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Digestive_system_diagram_en.svg/300px-Digestive_system_diagram_en.svg.png" alt="Diagram showing the human digestive system including mouth, esophagus, stomach, liver, pancreas, and intestines" class="diagram-img">
+        <figcaption class="diagram-caption">Figure 1: Anatomy of the human digestive system. Notice how accessory organs like the liver and pancreas connect to the primary tract via ducts.</figcaption>
+      </figure>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Organ</th>
+            <th>Primary Structural Feature</th>
+            <th>Digestive Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Mouth & Teeth</strong></td>
+            <td>Hard enamel structures (incisors, canines, premolars, molars).</td>
+            <td>Mechanical mastication (chewing) of food and mixing it with saliva to form a bolus.</td>
+          </tr>
+          <tr>
+            <td><strong>Oesophagus</strong></td>
+            <td>A 25 cm long muscular tube connecting the pharynx to the stomach.</td>
+            <td>Pushes the food bolus downwards via rhythmic muscular contractions called <em>peristalsis</em>.</td>
+          </tr>
+          <tr>
+            <td><strong>Stomach</strong></td>
+            <td>A highly muscular, J-shaped sac lined with gastric glands.</td>
+            <td>Churns food mechanically and secretes hydrochloric acid (HCl) and pepsin for protein breakdown.</td>
+          </tr>
+          <tr>
+            <td><strong>Small Intestine</strong></td>
+            <td>The longest segment (~6 meters), heavily coiled, receiving bile and pancreatic juices.</td>
+            <td>The site of complete chemical digestion and maximum absorption of nutrients.</td>
+          </tr>
+          <tr>
+            <td><strong>Large Intestine</strong></td>
+            <td>A wider, thicker tube ending in the rectum and anus.</td>
+            <td>Absorbs excess water from undigested matter and forms solid feces for egestion.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ENZYME MATRIX -->
+    <div class="section-block">
+      <h2 class="section-heading">3. The Complete Digestive Enzyme Matrix</h2>
+      <p>
+        Imagine you have a giant, tangled necklace made of different colored beads. You can't use it like that, so you need specific pairs of scissors to snip it into individual beads. Digestive enzymes act exactly like these tiny chemical scissors. They target massive food molecules—like starches from bread or proteins from meat—and snip the chemical bonds holding them together. By doing this, they turn huge, complex, insoluble chunks into tiny, water-soluble pieces (like glucose and amino acids) that are small enough to pass into your blood.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Digestive Enzyme:</span>
+        A biological catalyst, proteinaceous in nature, that accelerates the chemical breakdown of large, complex food molecules into simpler, soluble, and absorbable micromolecules without itself being consumed in the reaction.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Enzyme Name</th>
+            <th>Source Gland / Organ</th>
+            <th>Substrate (Acts Upon)</th>
+            <th>Product (End Result)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Ptyalin (Salivary Amylase)</strong></td>
+            <td>Salivary Glands (Mouth)</td>
+            <td>Starch (Complex Carbohydrates)</td>
+            <td>Maltose (Simpler Sugar)</td>
+          </tr>
+          <tr>
+            <td><strong>Pepsin</strong></td>
+            <td>Gastric Glands (Stomach)</td>
+            <td>Proteins</td>
+            <td>Peptides and Peptones</td>
+          </tr>
+          <tr>
+            <td><strong>Pancreatic Amylase</strong></td>
+            <td>Pancreas</td>
+            <td>Remaining Starch</td>
+            <td>Maltose</td>
+          </tr>
+          <tr>
+            <td><strong>Trypsin</strong></td>
+            <td>Pancreas</td>
+            <td>Proteins & Peptides</td>
+            <td>Smaller Peptides & Amino Acids</td>
+          </tr>
+          <tr>
+            <td><strong>Lipase</strong></td>
+            <td>Pancreas & Intestinal Glands</td>
+            <td>Emulsified Fats (Lipids)</td>
+            <td>Fatty Acids & Glycerol</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. VILLI AND ABSORPTION -->
+    <div class="section-block">
+      <h2 class="section-heading">4. The Small Intestine & Villus Structure</h2>
+      <p>
+        Have you ever noticed that a thick, fluffy towel can absorb way more water than a flat piece of paper? The towel has thousands of tiny fabric loops sticking up, which gives it a huge surface area to touch the water. Your small intestine uses the exact same trick! Its inner walls aren't flat; they are densely packed with millions of microscopic, finger-like projections called villi. These villi massively increase the interior surface area, ensuring that every drop of liquid, digested nutrient gets rapidly soaked up into your bloodstream before it can pass out of your body.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Villi (Singular: Villus):</span>
+        Millions of microscopic, finger-like cellular projections lining the inner surface of the small intestine. They massively increase the surface area available for the rapid and efficient absorption of digested nutrients.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> Each villus is richly supplied with a dense network of blood capillaries to absorb glucose and amino acids, and a central lymph vessel called a <strong>lacteal</strong> specifically designed to absorb fatty acids and glycerol.
+      </div>
+    </div>
+
+    <!-- 5. WORKED ICSE PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <!-- Problem 1: Enzyme Table -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Question 5.1: Complete the Enzyme Matrix</span>
+          <span class="problem-marks">[5 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Complete the following table regarding digestive enzymes by providing the missing organ, substrate, and product details for: Ptyalin, Pepsin, Lipase, Trypsin, and Amylase (Pancreatic).
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_bio1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_bio1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          <table class="distinction-table">
+            <thead>
+              <tr>
+                <th>Enzyme</th>
+                <th>Organ that secretes it</th>
+                <th>Substrate</th>
+                <th>Product</th>
+                <th>Mark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ptyalin</strong></td>
+                <td>Salivary Glands</td>
+                <td>Starch</td>
+                <td>Maltose</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td><strong>Pepsin</strong></td>
+                <td>Stomach</td>
+                <td>Proteins</td>
+                <td>Peptones / Peptides</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td><strong>Lipase</strong></td>
+                <td>Pancreas / Intestine</td>
+                <td>Fats (Emulsified)</td>
+                <td>Fatty Acids & Glycerol</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td><strong>Trypsin</strong></td>
+                <td>Pancreas</td>
+                <td>Proteins / Peptides</td>
+                <td>Amino Acids</td>
+                <td>[1]</td>
+              </tr>
+              <tr>
+                <td><strong>Amylase</strong></td>
+                <td>Pancreas</td>
+                <td>Starch</td>
+                <td>Maltose</td>
+                <td>[1]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Problem 2: Give Scientific Reasons -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Question 5.2: Give Scientific Reasons</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Give scientific reasons for the following anatomical and physiological features:
+          <br>(i) The inner lining of the small intestine is covered with millions of villi.
+          <br>(ii) Bile does not contain any digestive enzymes, yet it is essential for digestion.
+          <br>(iii) Hydrochloric acid (HCl) is actively secreted in the stomach.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_bio2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_bio2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          <strong>(i) Villi in the small intestine:</strong><br>
+          Villi are millions of finger-like projections that massively increase the internal surface area of the small intestine. This vast surface area is scientifically necessary to ensure maximum, rapid, and efficient absorption of digested nutrients into the bloodstream before the food passes out. [1 Mark]<br><br>
+          
+          <strong>(ii) Role of bile despite having no enzymes:</strong><br>
+          Although bile lacks enzymes, it plays a critical physical role by emulsifying large fat globules into tiny micro-droplets. This increases the total surface area of fats, making it significantly easier and faster for the enzyme Lipase to chemically digest them. Bile also neutralizes stomach acidity, creating an alkaline medium necessary for pancreatic enzymes to function. [1 Mark]<br><br>
+
+          <strong>(iii) Secretion of HCl in the stomach:</strong><br>
+          Hydrochloric acid (HCl) provides the highly acidic medium (low pH) which is strictly required for the inactive enzyme pepsinogen to be converted into its active form, Pepsin, for protein digestion. Additionally, HCl acts as an antiseptic, effectively killing harmful ingested bacteria and pathogens that enter along with the food. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 6. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Physiology 1: Stomach Acid Function</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b4_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why do oxyntic cells in the gastric glands secrete hydrochloric acid (\(\text{HCl}\)) into the stomach?</div>
+        <div class="reasoning-answer" id="reas_b4_1">
+          <strong>Scientific Resolution:</strong><br>
+          1. \(\text{HCl}\) creates an optimal acidic medium (\(\text{pH } 1.5 - 2.5\)) necessary to activate inactive pepsinogen into active <strong>pepsin</strong> for protein digestion.<br>
+          2. The strong acidity kills harmful ingested pathogenic bacteria entering with food.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Physiology 2: Small Intestine Villus Adaptations</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b4_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">How does the inner mucosal lining of the ileum achieve maximum absorption efficiency?</div>
+        <div class="reasoning-answer" id="reas_b4_2">
+          <strong>Scientific Resolution:</strong><br>
+          The ileum contains millions of microscopic finger-like projections called <strong>villi</strong> and <strong>microvilli</strong>, which amplify internal surface area by over 600-fold. Each villus has a thin single-layered epithelium, dense blood capillaries for water-soluble nutrients, and a central <strong>lacteal</strong> for fatty acid absorption.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="biology_03_cell_structure_organelles.html" class="topic-nav-link topic-nav-prev">&#8592; BIO-03 · Cell Structure, Cytology</a>
+    <a href="biology_05_circulatory_system.html" class="topic-nav-link topic-nav-next">BIO-05 · Human Circulatory System, &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Human Digestive System</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+
+

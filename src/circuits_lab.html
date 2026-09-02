@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXIOM ICSE 7 - Circuits & Magnetic Field Lab</title>
+  <style>
+    :root {
+      --bg-main: #ffffff;
+      --bg-panel: #f8fafc;
+      --border-color: #e2e8f0;
+      --border-focus: #94a3b8;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --north-color: #ef4444;
+      --south-color: #3b82f6;
+      --wire-color: #334155;
+      --glow-bulb: #facc15;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    header {
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--bg-main);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .tab-group {
+      display: flex;
+      gap: 4px;
+      background: var(--bg-panel);
+      padding: 3px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .tab-btn {
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      background: transparent;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+    }
+
+    .tab-btn.active {
+      background: #ffffff;
+      color: var(--text-main);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-weight: 600;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .view-panel {
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    .view-panel.active {
+      display: flex;
+    }
+
+    /* Side Toolbar / Parameters */
+    .sidebar {
+      width: 320px;
+      border-right: 1px solid var(--border-color);
+      background: var(--bg-panel);
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      gap: 16px;
+      overflow-y: auto;
+    }
+
+    .canvas-container {
+      flex: 1;
+      position: relative;
+      background: var(--bg-main);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hud-overlay {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(4px);
+      border: 1px solid var(--border-color);
+      padding: 12px 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      pointer-events: none;
+    }
+
+    .hud-metric {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .hud-metric:last-child {
+      margin-bottom: 0;
+    }
+
+    .hud-metric .label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hud-metric .value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .panel-section {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 14px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .control-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .control-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .control-label {
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .slider-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    input[type="range"] {
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border-color);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--text-main);
+      cursor: pointer;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px var(--border-color);
+    }
+
+    .numeric-readout {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      font-weight: 600;
+      min-width: 48px;
+      text-align: right;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--bg-panel);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background: #f1f5f9;
+      border-color: var(--border-focus);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+    }
+
+    .component-palette {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .palette-item {
+      padding: 10px 8px;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      background: #ffffff;
+      text-align: center;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 500;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .palette-item:hover {
+      border-color: var(--text-main);
+      background: var(--bg-panel);
+    }
+
+    .palette-item svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* Canvas SVG styling */
+    svg.workspace {
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+
+    .grid-line {
+      stroke: #f1f5f9;
+      stroke-width: 1;
+    }
+
+    .wire-path {
+      stroke: var(--wire-color);
+      stroke-width: 3;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .current-particle {
+      fill: #eab308;
+      stroke: #ca8a04;
+      stroke-width: 0.5;
+    }
+
+    .interactive-element {
+      cursor: pointer;
+    }
+
+    .interactive-element:hover .element-box {
+      stroke: var(--accent);
+      stroke-width: 1.5;
+    }
+
+    .element-box {
+      fill: #ffffff;
+      stroke: var(--border-color);
+      stroke-width: 1;
+      rx: 4;
+      ry: 4;
+    }
+
+    .key-info-box {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--text-muted);
+    }
+
+    .key-info-box strong {
+      color: var(--text-main);
+    }
+
+    .compass-disc {
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <span class="brand-title">AXIOM &bull; ICSE Class 7</span>
+      <span class="badge">Physics Lab &bull; Chapter: Electricity & Magnetism</span>
+    </div>
+    <div class="tab-group">
+      <button class="tab-btn active" onclick="switchTab('circuit')">1. Circuit Simulator</button>
+      <button class="tab-btn" onclick="switchTab('magnetic')">2. Magnetic Field Vectors</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. CIRCUIT SIMULATOR PANEL -->
+    <div id="circuit-tab" class="view-panel active">
+      <div class="sidebar">
+        <div class="panel-section">
+          <div class="section-title">Circuit Controls</div>
+          <div class="control-row">
+            <label class="control-label">Switch State</label>
+            <button class="btn btn-primary" id="switch-toggle-btn" onclick="toggleCircuitSwitch()">Open Switch (Break)</button>
+          </div>
+          <div class="control-row" style="margin-top: 8px;">
+            <div class="control-label">
+              <span>Battery Voltage</span>
+              <span class="numeric-readout" id="voltage-val">6.0 V</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="voltage-slider" min="1.5" max="24.0" step="1.5" value="6.0" oninput="updateVoltage(this.value)">
+            </div>
+          </div>
+          <div class="control-row">
+            <div class="control-label">
+              <span>Resistor Load</span>
+              <span class="numeric-readout" id="resistor-val">10 &Omega;</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="resistor-slider" min="2" max="50" step="1" value="10" oninput="updateResistance(this.value)">
+            </div>
+          </div>
+          <div class="control-row">
+            <div class="control-label">
+              <span>Bulb Rated Resistance</span>
+              <span class="numeric-readout" id="bulb-res-val">5 &Omega;</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="bulb-res-slider" min="1" max="20" step="1" value="5" oninput="updateBulbResistance(this.value)">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <div class="section-title">Standard Circuit Elements</div>
+          <div class="component-palette">
+            <div class="palette-item" onclick="insertComponent('cell')">
+              <svg viewBox="0 0 40 40">
+                <line x1="8" y1="20" x2="16" y2="20" stroke="#334155" stroke-width="2"/>
+                <line x1="16" y1="10" x2="16" y2="30" stroke="#334155" stroke-width="2"/>
+                <line x1="24" y1="14" x2="24" y2="26" stroke="#334155" stroke-width="3.5"/>
+                <line x1="24" y1="20" x2="32" y2="20" stroke="#334155" stroke-width="2"/>
+              </svg>
+              <span>Cell (DC)</span>
+            </div>
+            <div class="palette-item" onclick="insertComponent('bulb')">
+              <svg viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="10" stroke="#334155" stroke-width="1.5" fill="none"/>
+                <path d="M14 26 L26 14 M14 14 L26 26" stroke="#334155" stroke-width="1.5"/>
+              </svg>
+              <span>Bulb</span>
+            </div>
+            <div class="palette-item" onclick="insertComponent('switch')">
+              <svg viewBox="0 0 40 40">
+                <circle cx="12" cy="20" r="2.5" fill="#334155"/>
+                <circle cx="28" cy="20" r="2.5" fill="#334155"/>
+                <line x1="12" y1="20" x2="26" y2="12" stroke="#334155" stroke-width="2"/>
+              </svg>
+              <span>Key / Switch</span>
+            </div>
+            <div class="palette-item" onclick="insertComponent('ammeter')">
+              <svg viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="11" stroke="#334155" stroke-width="1.5" fill="none"/>
+                <text x="20" y="24" font-size="12" font-weight="700" text-anchor="middle" fill="#334155">A</text>
+              </svg>
+              <span>Ammeter</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-section key-info-box">
+          <strong>ICSE Key Concepts:</strong><br>
+          &bull; <strong>Current ($I$)</strong>: Flow of electric charge per unit time ($I = \frac{V}{R_{total}}$).<br>
+          &bull; <strong>Conventional Current</strong>: Positive to negative terminal.<br>
+          &bull; <strong>Open Circuit</strong>: Break in path, zero current.<br>
+          &bull; <strong>Closed Circuit</strong>: Continuous unbroken loop.
+        </div>
+      </div>
+
+      <div class="canvas-container">
+        <div class="hud-overlay">
+          <div class="hud-metric">
+            <span class="label">Circuit State:</span>
+            <span class="value" id="hud-status" style="color: #16a34a;">CLOSED (Conducting)</span>
+          </div>
+          <div class="hud-metric">
+            <span class="label">Total Resistance ($R_{eq}$):</span>
+            <span class="value" id="hud-req">15.0 &Omega;</span>
+          </div>
+          <div class="hud-metric">
+            <span class="label">Ammeter Current ($I$):</span>
+            <span class="value" id="hud-current">0.40 A</span>
+          </div>
+          <div class="hud-metric">
+            <span class="label">Bulb Dissipation ($P$):</span>
+            <span class="value" id="hud-power">0.80 W</span>
+          </div>
+        </div>
+
+        <svg id="circuit-svg" class="workspace" viewBox="0 0 800 600">
+          <defs>
+            <!-- Grid Pattern -->
+            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <path d="M 20 0 L 0 0 0 20" fill="none" class="grid-line"/>
+            </pattern>
+            <!-- Bulb Glow Filter -->
+            <filter id="bulb-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+
+          <!-- Circuit Loop Wire Path -->
+          <!-- Loop: Rectangular with rounded turns: (150,120) to (650,120) to (650,480) to (150,480) -->
+          <g id="circuit-wires">
+            <!-- Top wire segments -->
+            <line x1="150" y1="120" x2="350" y2="120" class="wire-path"/>
+            <line x1="450" y1="120" x2="650" y2="120" class="wire-path"/>
+            <!-- Right wire segment -->
+            <line x1="650" y1="120" x2="650" y2="250" class="wire-path"/>
+            <line x1="650" y1="350" x2="650" y2="480" class="wire-path"/>
+            <!-- Bottom wire segments -->
+            <line x1="650" y1="480" x2="450" y2="480" class="wire-path"/>
+            <line x1="350" y1="480" x2="150" y2="480" class="wire-path"/>
+            <!-- Left wire segments -->
+            <line x1="150" y1="480" x2="150" y2="350" class="wire-path"/>
+            <line x1="150" y1="250" x2="150" y2="120" class="wire-path"/>
+          </g>
+
+          <!-- Current Animation Particles -->
+          <g id="current-particles"></g>
+
+          <!-- COMPONENTS -->
+          <!-- 1. Battery / DC Source (Top center: 400, 120) -->
+          <g id="component-battery" class="interactive-element" transform="translate(400, 120)">
+            <rect x="-45" y="-25" width="90" height="50" class="element-box"/>
+            <!-- Positive Plate (Long, Thin) -->
+            <line x1="-12" y1="-18" x2="-12" y2="18" stroke="#0f172a" stroke-width="2.5"/>
+            <!-- Negative Plate (Short, Thick) -->
+            <line x1="4" y1="-10" x2="4" y2="10" stroke="#0f172a" stroke-width="4.5"/>
+            <!-- Terminal leads -->
+            <line x1="-45" y1="0" x2="-12" y2="0" stroke="#0f172a" stroke-width="2"/>
+            <line x1="4" y1="0" x2="45" y2="0" stroke="#0f172a" stroke-width="2"/>
+            <!-- Polarities -->
+            <text x="-22" y="-8" font-size="11" font-weight="700" fill="#ef4444">+</text>
+            <text x="14" y="-8" font-size="11" font-weight="700" fill="#3b82f6">-</text>
+            <text x="0" y="32" font-size="11" font-weight="600" text-anchor="middle" fill="#0f172a" id="diagram-battery-label">6.0 V</text>
+          </g>
+
+          <!-- 2. Electric Bulb (Right branch: 650, 300) -->
+          <g id="component-bulb" class="interactive-element" transform="translate(650, 300)">
+            <rect x="-35" y="-45" width="70" height="90" class="element-box"/>
+            <!-- Glow background circle -->
+            <circle id="bulb-glow-circle" cx="0" cy="0" r="22" fill="#fef08a" opacity="0.6" filter="url(#bulb-glow)"/>
+            <!-- Bulb glass outline -->
+            <circle cx="0" cy="0" r="18" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+            <!-- Filament cross -->
+            <path d="M-9 9 L9 -9 M-9 -9 L9 9" stroke="#0f172a" stroke-width="1.5"/>
+            <!-- Connector terminals -->
+            <line x1="0" y1="-45" x2="0" y2="-18" stroke="#0f172a" stroke-width="2"/>
+            <line x1="0" y1="18" x2="0" y2="45" stroke="#0f172a" stroke-width="2"/>
+            <text x="44" y="4" font-size="11" font-weight="600" text-anchor="start" fill="#0f172a">Bulb (<span id="diagram-bulb-r">5&Omega;</span>)</text>
+          </g>
+
+          <!-- 3. Fixed Resistor (Bottom center: 400, 480) -->
+          <g id="component-resistor" class="interactive-element" transform="translate(400, 480)">
+            <rect x="-45" y="-22" width="90" height="44" class="element-box"/>
+            <!-- Zig-zag resistor schematic -->
+            <path d="M-40 0 L-25 0 L-20 -9 L-10 9 L0 -9 L10 9 L20 -9 L25 0 L40 0" fill="none" stroke="#0f172a" stroke-width="2"/>
+            <text x="0" y="28" font-size="11" font-weight="600" text-anchor="middle" fill="#0f172a" id="diagram-resistor-label">10.0 &Omega;</text>
+          </g>
+
+          <!-- 4. Switch / Key (Left branch: 150, 300) -->
+          <g id="component-switch" class="interactive-element" transform="translate(150, 300)" onclick="toggleCircuitSwitch()">
+            <rect x="-35" y="-45" width="70" height="90" class="element-box"/>
+            <!-- Terminals -->
+            <circle cx="0" cy="-22" r="3.5" fill="#0f172a"/>
+            <circle cx="0" cy="22" r="3.5" fill="#0f172a"/>
+            <!-- Arm -->
+            <line id="switch-arm" x1="0" y1="22" x2="0" y2="-22" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+            <line x1="0" y1="-45" x2="0" y2="-22" stroke="#0f172a" stroke-width="2"/>
+            <line x1="0" y1="22" x2="0" y2="45" stroke="#0f172a" stroke-width="2"/>
+            <text x="-42" y="4" font-size="11" font-weight="600" text-anchor="end" fill="#0f172a">Switch (K)</text>
+          </g>
+
+          <!-- 5. Ammeter (Top Left: 230, 120) -->
+          <g id="component-ammeter" class="interactive-element" transform="translate(240, 120)">
+            <circle cx="0" cy="0" r="18" class="element-box"/>
+            <text x="0" y="5" font-size="13" font-weight="700" text-anchor="middle" fill="#0f172a">A</text>
+            <text x="0" y="-24" font-size="10" font-weight="600" text-anchor="middle" fill="#64748b">Ammeter</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 2. MAGNETIC FIELD VECTORS PANEL -->
+    <div id="magnetic-tab" class="view-panel">
+      <div class="sidebar">
+        <div class="panel-section">
+          <div class="section-title">Magnet Properties</div>
+          <div class="control-row">
+            <div class="control-label">
+              <span>Pole Strength ($M$)</span>
+              <span class="numeric-readout" id="pole-strength-val">1000 &mu;Wb</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="pole-slider" min="200" max="2500" step="50" value="1000" oninput="updateMagnetStrength(this.value)">
+            </div>
+          </div>
+          <div class="control-row">
+            <div class="control-label">
+              <span>Magnet Length ($2l$)</span>
+              <span class="numeric-readout" id="length-val">180 mm</span>
+            </div>
+            <div class="slider-container">
+              <input type="range" id="length-slider" min="100" max="260" step="10" value="180" oninput="updateMagnetLength(this.value)">
+            </div>
+          </div>
+          <div class="control-row">
+            <button class="btn" onclick="reversePolarity()">Reverse Magnet Poles (N &harr; S)</button>
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <div class="section-title">Field Visualization</div>
+          <div class="control-row">
+            <label style="display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; cursor:pointer;">
+              <input type="checkbox" id="show-lines-toggle" checked onchange="toggleFieldLines(this.checked)">
+              <span>Display Magnetic Field Lines</span>
+            </label>
+          </div>
+          <div class="control-row">
+            <label style="display:flex; align-items:center; gap:8px; font-size:13px; font-weight:500; cursor:pointer;">
+              <input type="checkbox" id="show-grid-vectors" checked onchange="toggleVectorGrid(this.checked)">
+              <span>Display Field Tangent Vector Grid</span>
+            </label>
+          </div>
+          <div class="control-row">
+            <button class="btn" onclick="resetCompassPosition()">Center Test Compass</button>
+          </div>
+        </div>
+
+        <div class="panel-section key-info-box">
+          <strong>Magnetic Field Laws:</strong><br>
+          &bull; Field lines emerge from the <strong>North (N)</strong> pole and enter into the <strong>South (S)</strong> pole externally.<br>
+          &bull; The tangent at any point on a field line gives the direction of the magnetic field vector ($\vec{B}$).<br>
+          &bull; Lines never intersect each other.<br>
+          &bull; Density of lines indicates magnetic field strength.
+        </div>
+      </div>
+
+      <div class="canvas-container">
+        <div class="hud-overlay">
+          <div class="hud-metric">
+            <span class="label">Compass Position:</span>
+            <span class="value" id="hud-mag-pos">X: 400, Y: 180</span>
+          </div>
+          <div class="hud-metric">
+            <span class="label">Magnetic Flux Density ($|\vec{B}|$):</span>
+            <span class="value" id="hud-mag-b">142.5 &mu;T</span>
+          </div>
+          <div class="hud-metric">
+            <span class="label">Deflection Angle (&theta;):</span>
+            <span class="value" id="hud-mag-theta">32.4&deg;</span>
+          </div>
+        </div>
+
+        <svg id="magnetic-svg" class="workspace" viewBox="0 0 800 600">
+          <rect width="100%" height="100%" fill="url(#grid)" />
+
+          <!-- Magnetic Field Lines Layer -->
+          <g id="field-lines-layer"></g>
+
+          <!-- Vector Array Grid Layer -->
+          <g id="vector-grid-layer"></g>
+
+          <!-- Central Bar Magnet -->
+          <g id="bar-magnet" transform="translate(400, 300)">
+            <!-- South Pole Half -->
+            <rect id="south-half" x="-90" y="-20" width="90" height="40" fill="#3b82f6" rx="3" ry="3"/>
+            <!-- North Pole Half -->
+            <rect id="north-half" x="0" y="-20" width="90" height="40" fill="#ef4444" rx="3" ry="3"/>
+            <!-- Divider -->
+            <line x1="0" y1="-20" x2="0" y2="20" stroke="#ffffff" stroke-width="1.5"/>
+            <!-- Labels -->
+            <text id="south-label" x="-45" y="6" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">S</text>
+            <text id="north-label" x="45" y="6" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">N</text>
+            <rect x="-90" y="-20" width="180" height="40" fill="none" stroke="#0f172a" stroke-width="1.5" rx="3" ry="3"/>
+          </g>
+
+          <!-- Draggable Magnetic Compass Needle -->
+          <g id="compass" class="compass-disc" transform="translate(400, 180)">
+            <circle cx="0" cy="0" r="30" fill="#ffffff" stroke="#0f172a" stroke-width="1.5" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.15))"/>
+            <!-- Compass Dial ticks -->
+            <circle cx="0" cy="0" r="26" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+            <text x="0" y="-18" font-size="8" font-weight="700" text-anchor="middle" fill="#64748b">N</text>
+            <text x="0" y="24" font-size="8" font-weight="700" text-anchor="middle" fill="#64748b">S</text>
+            
+            <!-- Rotating Needle -->
+            <g id="compass-needle">
+              <!-- North tip (Red) -->
+              <polygon points="0,-22 5,-3 0,0 -5,-3" fill="#ef4444" stroke="#b91c1c" stroke-width="0.5"/>
+              <!-- South tip (Blue) -->
+              <polygon points="0,22 5,3 0,0 -5,3" fill="#3b82f6" stroke="#1d4ed8" stroke-width="0.5"/>
+              <circle cx="0" cy="0" r="2.5" fill="#0f172a"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    /* ==========================================================
+       TAB SWITCHING
+       ========================================================== */
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.view-panel').forEach(panel => panel.classList.remove('active'));
+      
+      if (tabId === 'circuit') {
+        document.querySelector('.tab-btn:nth-child(1)').classList.add('active');
+        document.getElementById('circuit-tab').classList.add('active');
+      } else {
+        document.querySelector('.tab-btn:nth-child(2)').classList.add('active');
+        document.getElementById('magnetic-tab').classList.add('active');
+        renderMagneticSimulation();
+      }
+    }
+
+    /* ==========================================================
+       1. CIRCUIT SIMULATOR LOGIC & ANIMATION
+       ========================================================== */
+    const circuitState = {
+      isClosed: true,
+      voltage: 6.0,
+      resistance: 10.0,
+      bulbResistance: 5.0,
+      particles: []
+    };
+
+    // Rectangular Path points (Loop):
+    // (150,120) -> (650,120) -> (650,480) -> (150,480) -> (150,120)
+    // Battery at (400,120) [Positive left, Negative right -> Conventional flow is Clockwise]
+    const loopPerimeter = 2 * (500 + 360); // 1720 px
+    const NUM_PARTICLES = 36;
+
+    function initCircuitParticles() {
+      const container = document.getElementById('current-particles');
+      container.innerHTML = '';
+      circuitState.particles = [];
+      
+      for (let i = 0; i < NUM_PARTICLES; i++) {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('r', '3.5');
+        circle.setAttribute('class', 'current-particle');
+        container.appendChild(circle);
+        circuitState.particles.push({
+          element: circle,
+          dist: (i / NUM_PARTICLES) * loopPerimeter
+        });
+      }
+    }
+
+    function getPointOnLoop(dist) {
+      dist = (dist % loopPerimeter + loopPerimeter) % loopPerimeter;
+      // Segment 1: (150,120) to (650,120) - Top [Length 500]
+      if (dist <= 500) {
+        return { x: 150 + dist, y: 120 };
+      }
+      // Segment 2: (650,120) to (650,480) - Right [Length 360]
+      dist -= 500;
+      if (dist <= 360) {
+        return { x: 650, y: 120 + dist };
+      }
+      // Segment 3: (650,480) to (150,480) - Bottom [Length 500]
+      dist -= 360;
+      if (dist <= 500) {
+        return { x: 650 - dist, y: 480 };
+      }
+      // Segment 4: (150,480) to (150,120) - Left [Length 360]
+      dist -= 500;
+      return { x: 150, y: 480 - dist };
+    }
+
+    function updateCircuitHUD() {
+      const rTotal = circuitState.resistance + circuitState.bulbResistance;
+      const current = circuitState.isClosed ? (circuitState.voltage / rTotal) : 0;
+      const bulbPower = circuitState.isClosed ? (current * current * circuitState.bulbResistance) : 0;
+
+      document.getElementById('hud-status').textContent = circuitState.isClosed ? 'CLOSED (Conducting)' : 'OPEN (Zero Current)';
+      document.getElementById('hud-status').style.color = circuitState.isClosed ? '#16a34a' : '#dc2626';
+      document.getElementById('hud-req').innerHTML = `${rTotal.toFixed(1)} &Omega;`;
+      document.getElementById('hud-current').textContent = `${current.toFixed(2)} A`;
+      document.getElementById('hud-power').textContent = `${bulbPower.toFixed(2)} W`;
+
+      // Visual bulb glow
+      const bulbGlow = document.getElementById('bulb-glow-circle');
+      if (circuitState.isClosed) {
+        const intensity = Math.min(1, bulbPower / 8.0);
+        bulbGlow.style.opacity = (0.2 + 0.8 * intensity).toString();
+        bulbGlow.setAttribute('r', (18 + 14 * intensity).toString());
+      } else {
+        bulbGlow.style.opacity = '0';
+      }
+
+      // Switch SVG visual
+      const switchArm = document.getElementById('switch-arm');
+      if (circuitState.isClosed) {
+        switchArm.setAttribute('x2', '0');
+        switchArm.setAttribute('y2', '-22');
+      } else {
+        switchArm.setAttribute('x2', '18');
+        switchArm.setAttribute('y2', '-15');
+      }
+    }
+
+    function toggleCircuitSwitch() {
+      circuitState.isClosed = !circuitState.isClosed;
+      const btn = document.getElementById('switch-toggle-btn');
+      btn.textContent = circuitState.isClosed ? 'Open Switch (Break)' : 'Close Switch (Connect)';
+      btn.className = circuitState.isClosed ? 'btn btn-primary' : 'btn';
+      updateCircuitHUD();
+    }
+
+    function updateVoltage(val) {
+      circuitState.voltage = parseFloat(val);
+      document.getElementById('voltage-val').textContent = `${circuitState.voltage.toFixed(1)} V`;
+      document.getElementById('diagram-battery-label').textContent = `${circuitState.voltage.toFixed(1)} V`;
+      updateCircuitHUD();
+    }
+
+    function updateResistance(val) {
+      circuitState.resistance = parseFloat(val);
+      document.getElementById('resistor-val').innerHTML = `${circuitState.resistance.toFixed(0)} &Omega;`;
+      document.getElementById('diagram-resistor-label').innerHTML = `${circuitState.resistance.toFixed(1)} &Omega;`;
+      updateCircuitHUD();
+    }
+
+    function updateBulbResistance(val) {
+      circuitState.bulbResistance = parseFloat(val);
+      document.getElementById('bulb-res-val').innerHTML = `${circuitState.bulbResistance.toFixed(0)} &Omega;`;
+      document.getElementById('diagram-bulb-r').innerHTML = `${circuitState.bulbResistance.toFixed(0)}&Omega;`;
+      updateCircuitHUD();
+    }
+
+    function insertComponent(type) {
+      // Notification helper for students
+      console.log(`Configuring component: ${type}`);
+    }
+
+    // Animation Loop for Current
+    let lastTime = performance.now();
+    function animateCircuit(time) {
+      const dt = (time - lastTime) / 1000;
+      lastTime = time;
+
+      if (circuitState.isClosed) {
+        const current = circuitState.voltage / (circuitState.resistance + circuitState.bulbResistance);
+        const speed = current * 90; // pixels per second
+        
+        circuitState.particles.forEach(p => {
+          p.dist += speed * dt;
+          const pos = getPointOnLoop(p.dist);
+          p.element.setAttribute('cx', pos.x);
+          p.element.setAttribute('cy', pos.y);
+          p.element.style.display = 'block';
+        });
+      } else {
+        circuitState.particles.forEach(p => {
+          p.element.style.display = 'none';
+        });
+      }
+
+      requestAnimationFrame(animateCircuit);
+    }
+
+    /* ==========================================================
+       2. MAGNETIC FIELD VECTOR & COMPASS SIMULATION
+       ========================================================== */
+    const magnetState = {
+      cx: 400,
+      cy: 300,
+      length: 180, // distance between ends
+      poleStrength: 1000,
+      isReversed: false,
+      showLines: true,
+      showGrid: true,
+      compass: { x: 400, y: 180 }
+    };
+
+    function getPoles() {
+      const halfL = magnetState.length / 2 - 10;
+      if (!magnetState.isReversed) {
+        // Normal: South on Left (-x), North on Right (+x)
+        return {
+          south: { x: magnetState.cx - halfL, y: magnetState.cy },
+          north: { x: magnetState.cx + halfL, y: magnetState.cy }
+        };
+      } else {
+        return {
+          south: { x: magnetState.cx + halfL, y: magnetState.cy },
+          north: { x: magnetState.cx - halfL, y: magnetState.cy }
+        };
+      }
+    }
+
+    // Magnetic flux density computation at (x, y) using dipole / two pole model:
+    // B = (mu0 / 4pi) * [ q_m / r_N^2 * r_hat_N - q_m / r_S^2 * r_hat_S ]
+    function computeBField(x, y) {
+      const poles = getPoles();
+      const dxN = x - poles.north.x;
+      const dyN = y - poles.north.y;
+      const rNsq = dxN * dxN + dyN * dyN + 100; // soft clamp
+      const rN = Math.sqrt(rNsq);
+
+      const dxS = x - poles.south.x;
+      const dyS = y - poles.south.y;
+      const rSsq = dxS * dxS + dyS * dyS + 100;
+      const rS = Math.sqrt(rSsq);
+
+      const q = magnetState.poleStrength;
+      // Field radiates outward from North, inward to South
+      const BxN = (q * dxN) / (rN * rNsq);
+      const ByN = (q * dyN) / (rN * rNsq);
+
+      const BxS = -(q * dxS) / (rS * rSsq);
+      const ByS = -(q * dyS) / (rS * rSsq);
+
+      const Bx = BxN + BxS;
+      const By = ByN + ByS;
+      const magnitude = Math.sqrt(Bx * Bx + By * By);
+      const angleRad = Math.atan2(By, Bx);
+
+      return { Bx, By, magnitude, angleRad, angleDeg: (angleRad * 180) / Math.PI };
+    }
+
+    function renderMagneticSimulation() {
+      // 1. Update Magnet geometry
+      const halfL = magnetState.length / 2;
+      const southHalf = document.getElementById('south-half');
+      const northHalf = document.getElementById('north-half');
+      const southLabel = document.getElementById('south-label');
+      const northLabel = document.getElementById('north-label');
+
+      if (!magnetState.isReversed) {
+        southHalf.setAttribute('x', -halfL);
+        southHalf.setAttribute('width', halfL);
+        southHalf.setAttribute('fill', '#3b82f6');
+        southLabel.setAttribute('x', -halfL / 2);
+        southLabel.textContent = 'S';
+
+        northHalf.setAttribute('x', '0');
+        northHalf.setAttribute('width', halfL);
+        northHalf.setAttribute('fill', '#ef4444');
+        northLabel.setAttribute('x', halfL / 2);
+        northLabel.textContent = 'N';
+      } else {
+        southHalf.setAttribute('x', '0');
+        southHalf.setAttribute('width', halfL);
+        southHalf.setAttribute('fill', '#3b82f6');
+        southLabel.setAttribute('x', halfL / 2);
+        southLabel.textContent = 'S';
+
+        northHalf.setAttribute('x', -halfL);
+        northHalf.setAttribute('width', halfL);
+        northHalf.setAttribute('fill', '#ef4444');
+        northLabel.setAttribute('x', -halfL / 2);
+        northLabel.textContent = 'N';
+      }
+
+      // 2. Render Field Lines
+      const linesContainer = document.getElementById('field-lines-layer');
+      linesContainer.innerHTML = '';
+      if (magnetState.showLines) {
+        const poles = getPoles();
+        const numSeeds = 16;
+        for (let i = 0; i < numSeeds; i++) {
+          const theta = (i / numSeeds) * 2 * Math.PI;
+          // Seed around north pole
+          let curX = poles.north.x + 18 * Math.cos(theta);
+          let curY = poles.north.y + 18 * Math.sin(theta);
+          
+          let d = `M ${curX.toFixed(1)} ${curY.toFixed(1)}`;
+          const stepSize = 8;
+          let steps = 0;
+          
+          while (steps < 120) {
+            const field = computeBField(curX, curY);
+            if (field.magnitude < 0.0001) break;
+            
+            const dx = (field.Bx / field.magnitude) * stepSize;
+            const dy = (field.By / field.magnitude) * stepSize;
+            
+            curX += dx;
+            curY += dy;
+            d += ` L ${curX.toFixed(1)} ${curY.toFixed(1)}`;
+            
+            // Check if reached South pole
+            const distToS = Math.hypot(curX - poles.south.x, curY - poles.south.y);
+            if (distToS < 15) break;
+            if (curX < 20 || curX > 780 || curY < 20 || curY > 580) break;
+            steps++;
+          }
+
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', d);
+          path.setAttribute('fill', 'none');
+          path.setAttribute('stroke', '#cbd5e1');
+          path.setAttribute('stroke-width', '1.2');
+          path.setAttribute('stroke-dasharray', '4,3');
+          linesContainer.appendChild(path);
+        }
+      }
+
+      // 3. Render Field Vector Grid
+      const gridContainer = document.getElementById('vector-grid-layer');
+      gridContainer.innerHTML = '';
+      if (magnetState.showGrid) {
+        for (let gx = 60; gx <= 740; gx += 50) {
+          for (let gy = 60; gy <= 540; gy += 45) {
+            // Avoid drawing inside magnet
+            if (Math.abs(gx - magnetState.cx) < halfL + 10 && Math.abs(gy - magnetState.cy) < 26) continue;
+
+            const field = computeBField(gx, gy);
+            const len = Math.min(18, Math.max(6, field.magnitude * 20000));
+            const angle = field.angleRad;
+            const x2 = gx + len * Math.cos(angle);
+            const y2 = gy + len * Math.sin(angle);
+
+            const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            arrow.setAttribute('x1', gx);
+            arrow.setAttribute('y1', gy);
+            arrow.setAttribute('x2', x2);
+            arrow.setAttribute('y2', y2);
+            arrow.setAttribute('stroke', '#94a3b8');
+            arrow.setAttribute('stroke-width', '1.5');
+            arrow.setAttribute('stroke-linecap', 'round');
+            gridContainer.appendChild(arrow);
+          }
+        }
+      }
+
+      // 4. Update Compass state
+      updateCompass(magnetState.compass.x, magnetState.compass.y);
+    }
+
+    function updateCompass(x, y) {
+      magnetState.compass.x = x;
+      magnetState.compass.y = y;
+      
+      const compassGroup = document.getElementById('compass');
+      compassGroup.setAttribute('transform', `translate(${x}, ${y})`);
+
+      const field = computeBField(x, y);
+      // Needle points in direction of field (angleDeg + 90 because needle default is vertical)
+      const rot = field.angleDeg + 90;
+      document.getElementById('compass-needle').setAttribute('transform', `rotate(${rot})`);
+
+      // Update HUD
+      document.getElementById('hud-mag-pos').textContent = `X: ${Math.round(x)}, Y: ${Math.round(y)}`;
+      document.getElementById('hud-mag-b').textContent = `${(field.magnitude * 25000).toFixed(1)} \u03BCT`;
+      document.getElementById('hud-mag-theta').textContent = `${field.angleDeg.toFixed(1)}\u00B0`;
+    }
+
+    function updateMagnetStrength(val) {
+      magnetState.poleStrength = parseFloat(val);
+      document.getElementById('pole-strength-val').textContent = `${val} \u03BCWb`;
+      renderMagneticSimulation();
+    }
+
+    function updateMagnetLength(val) {
+      magnetState.length = parseFloat(val);
+      document.getElementById('length-val').textContent = `${val} mm`;
+      renderMagneticSimulation();
+    }
+
+    function reversePolarity() {
+      magnetState.isReversed = !magnetState.isReversed;
+      renderMagneticSimulation();
+    }
+
+    function toggleFieldLines(checked) {
+      magnetState.showLines = checked;
+      renderMagneticSimulation();
+    }
+
+    function toggleVectorGrid(checked) {
+      magnetState.showGrid = checked;
+      renderMagneticSimulation();
+    }
+
+    function resetCompassPosition() {
+      updateCompass(400, 180);
+    }
+
+    /* Draggable Compass Implementation */
+    let isDraggingCompass = false;
+    const compassEl = document.getElementById('compass');
+    const magSvg = document.getElementById('magnetic-svg');
+
+    compassEl.addEventListener('pointerdown', (e) => {
+      isDraggingCompass = true;
+      compassEl.setPointerCapture(e.pointerId);
+    });
+
+    magSvg.addEventListener('pointermove', (e) => {
+      if (!isDraggingCompass) return;
+      const pt = magSvg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      const svgP = pt.matrixTransform(magSvg.getScreenCTM().inverse());
+      
+      const clampedX = Math.max(35, Math.min(765, svgP.x));
+      const clampedY = Math.max(35, Math.min(565, svgP.y));
+      updateCompass(clampedX, clampedY);
+    });
+
+    window.addEventListener('pointerup', () => {
+      isDraggingCompass = false;
+    });
+
+    /* Initializations */
+    window.addEventListener('DOMContentLoaded', () => {
+      initCircuitParticles();
+      updateCircuitHUD();
+      requestAnimationFrame(animateCircuit);
+      renderMagneticSimulation();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 850" width="100%" height="100%" style="background:#0f172a; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Glows and gradients -->
+    <radialGradient id="nucleusGrad" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f87171" />
+      <stop offset="60%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </radialGradient>
+
+    <radialGradient id="electronGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#67e8f9" />
+      <stop offset="60%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0e7490" />
+    </radialGradient>
+
+    <radialGradient id="protonGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#fca5a5" />
+      <stop offset="70%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </radialGradient>
+
+    <radialGradient id="neutronGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="70%" stop-color="#64748b" />
+      <stop offset="100%" stop-color="#334155" />
+    </radialGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="panelShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <g transform="translate(475, 40)" text-anchor="middle">
+    <text fill="#38bdf8" font-size="24" font-weight="800" letter-spacing="1">ICSE CLASS 7 CHEMISTRY: ATOMIC STRUCTURE</text>
+    <text y="25" fill="#94a3b8" font-size="15" font-weight="500">Bohr-Rutherford Model of the Atom &amp; Electron Configuration (2n² Rule)</text>
+  </g>
+
+  <!-- MAIN ATOM BOHR MODEL ORBIT CANVAS -->
+  <!-- Center of atom at (340, 440) -->
+  <g transform="translate(340, 440)">
+    <!-- Energy Level / Shell Orbits -->
+    <!-- N-Shell (n=4, r=230) -->
+    <circle cx="0" cy="0" r="230" fill="none" stroke="#6366f1" stroke-width="1.8" stroke-dasharray="8,6" opacity="0.8" />
+    <!-- M-Shell (n=3, r=175) -->
+    <circle cx="0" cy="0" r="175" fill="none" stroke="#a855f7" stroke-width="1.8" stroke-dasharray="6,5" opacity="0.8" />
+    <!-- L-Shell (n=2, r=120) -->
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="5,4" opacity="0.9" />
+    <!-- K-Shell (n=1, r=68) -->
+    <circle cx="0" cy="0" r="68" fill="none" stroke="#4ade80" stroke-width="2" stroke-dasharray="4,3" opacity="0.95" />
+
+    <!-- Shell Label Badges on Orbits -->
+    <g transform="translate(0, -68)">
+      <rect x="-18" y="-12" width="36" height="18" rx="4" fill="#0f172a" stroke="#4ade80" stroke-width="1.2" />
+      <text y="1" fill="#4ade80" font-size="10" font-weight="800" text-anchor="middle">K (1)</text>
+    </g>
+    <g transform="translate(0, -120)">
+      <rect x="-18" y="-12" width="36" height="18" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" />
+      <text y="1" fill="#38bdf8" font-size="10" font-weight="800" text-anchor="middle">L (2)</text>
+    </g>
+    <g transform="translate(0, -175)">
+      <rect x="-18" y="-12" width="36" height="18" rx="4" fill="#0f172a" stroke="#a855f7" stroke-width="1.2" />
+      <text y="1" fill="#c084fc" font-size="10" font-weight="800" text-anchor="middle">M (3)</text>
+    </g>
+    <g transform="translate(0, -230)">
+      <rect x="-18" y="-12" width="36" height="18" rx="4" fill="#0f172a" stroke="#6366f1" stroke-width="1.2" />
+      <text y="1" fill="#818cf8" font-size="10" font-weight="800" text-anchor="middle">N (4)</text>
+    </g>
+
+    <!-- NUCLEUS (Protons & Neutrons Cluster) -->
+    <circle cx="0" cy="0" r="42" fill="#1e1b4b" stroke="#f87171" stroke-width="2" filter="url(#glow)" />
+    
+    <!-- Protons (p+) & Neutrons (n0) cluster items -->
+    <g transform="translate(0, 0)">
+      <!-- Neutrons -->
+      <circle cx="-12" cy="-14" r="8.5" fill="url(#neutronGrad)" /><text x="-12" y="-11" fill="#0f172a" font-size="8" font-weight="bold" text-anchor="middle">n⁰</text>
+      <circle cx="14" cy="-10" r="8.5" fill="url(#neutronGrad)" /><text x="14" y="-7" fill="#0f172a" font-size="8" font-weight="bold" text-anchor="middle">n⁰</text>
+      <circle cx="-14" cy="12" r="8.5" fill="url(#neutronGrad)" /><text x="-14" y="15" fill="#0f172a" font-size="8" font-weight="bold" text-anchor="middle">n⁰</text>
+      <circle cx="12" cy="14" r="8.5" fill="url(#neutronGrad)" /><text x="12" y="17" fill="#0f172a" font-size="8" font-weight="bold" text-anchor="middle">n⁰</text>
+      <!-- Protons -->
+      <circle cx="0" cy="-18" r="8.5" fill="url(#protonGrad)" /><text x="0" y="-15" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">p⁺</text>
+      <circle cx="-18" cy="0" r="8.5" fill="url(#protonGrad)" /><text x="-18" y="3" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">p⁺</text>
+      <circle cx="18" cy="0" r="8.5" fill="url(#protonGrad)" /><text x="18" y="3" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">p⁺</text>
+      <circle cx="0" cy="18" r="8.5" fill="url(#protonGrad)" /><text x="0" y="21" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">p⁺</text>
+      <circle cx="0" cy="0" r="9" fill="url(#protonGrad)" /><text x="0" y="3" fill="#ffffff" font-size="8" font-weight="bold" text-anchor="middle">p⁺</text>
+    </g>
+
+    <!-- ELECTRONS (e-) ON SHELLS (Illustrated Element: Argon / Calcium representation) -->
+    <!-- K-Shell Electrons (2 e-) at 0° and 180° -->
+    <g transform="rotate(45)">
+      <circle cx="68" cy="0" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+      <text x="68" y="3" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+
+      <circle cx="-68" cy="0" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+      <text x="-68" y="3" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    </g>
+
+    <!-- L-Shell Electrons (8 e-) paired at 0, 90, 180, 270 with small split -->
+    <!-- Pair 1: Top -->
+    <circle cx="-8" cy="-120" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="-8" y="-117" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    <circle cx="8" cy="-120" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="8" y="-117" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    <!-- Pair 2: Right -->
+    <circle cx="120" cy="-8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="120" y="-5" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    <circle cx="120" cy="8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="120" y="11" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    <!-- Pair 3: Bottom -->
+    <circle cx="-8" cy="120" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="-8" y="123" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    <circle cx="8" cy="120" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="8" y="123" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    <!-- Pair 4: Left -->
+    <circle cx="-120" cy="-8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="-120" y="-5" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    <circle cx="-120" cy="8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/>
+    <text x="-120" y="11" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+
+    <!-- M-Shell Electrons (8 e-) -->
+    <g transform="rotate(30)">
+      <circle cx="-8" cy="-175" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="-8" y="-172" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="8" cy="-175" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="8" y="-172" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="175" cy="-8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="175" y="-5" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="175" cy="8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="175" y="11" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="-8" cy="175" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="-8" y="178" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="8" cy="175" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="8" y="178" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="-175" cy="-8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="-175" y="-5" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="-175" cy="8" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="-175" y="11" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    </g>
+
+    <!-- N-Shell Electrons (e.g. Calcium 20: 2,8,8,2) -->
+    <g transform="rotate(75)">
+      <circle cx="0" cy="-230" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="0" y="-227" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+      <circle cx="0" cy="230" r="7" fill="url(#electronGrad)" stroke="#ffffff" stroke-width="1.2" filter="url(#glow)"/><text x="0" y="233" fill="#0f172a" font-size="9" font-weight="900" text-anchor="middle">e⁻</text>
+    </g>
+  </g>
+
+  <!-- RIGHT SIDEBAR: BOHR-BURY RULES & FORMULAS -->
+  <g transform="translate(620, 100)">
+    <!-- Bohr-Bury 2n^2 Rule Card -->
+    <rect width="300" height="230" rx="10" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" filter="url(#panelShadow)" />
+    <rect width="300" height="36" rx="10" fill="#0284c7" />
+    <text x="150" y="23" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">BOHR-BURY RULES (2n² RULE)</text>
+
+    <g transform="translate(16, 50)" font-size="12" fill="#cbd5e1">
+      <text y="10" font-weight="700" fill="#facc15">Maximum capacity of any shell = 2n²</text>
+      <text y="28" font-size="11" fill="#94a3b8">where n = principal quantum number (shell #)</text>
+      
+      <!-- Table of Shells -->
+      <g transform="translate(0, 42)">
+        <rect width="268" height="110" rx="6" fill="#0f172a" stroke="#334155" />
+        <!-- Header -->
+        <text x="12" y="20" fill="#38bdf8" font-weight="700">Shell</text>
+        <text x="75" y="20" fill="#38bdf8" font-weight="700">n</text>
+        <text x="120" y="20" fill="#38bdf8" font-weight="700">Formula (2n²)</text>
+        <text x="220" y="20" fill="#38bdf8" font-weight="700">Max e⁻</text>
+        <line x1="0" y1="28" x2="268" y2="28" stroke="#334155" />
+        
+        <!-- Row 1 K -->
+        <text x="12" y="46" fill="#4ade80" font-weight="bold">K</text><text x="75" y="46">1</text><text x="120" y="46">2 × 1² = 2</text><text x="230" y="46" fill="#4ade80" font-weight="bold">2</text>
+        <!-- Row 2 L -->
+        <text x="12" y="66" fill="#38bdf8" font-weight="bold">L</text><text x="75" y="66">2</text><text x="120" y="66">2 × 2² = 8</text><text x="230" y="66" fill="#38bdf8" font-weight="bold">8</text>
+        <!-- Row 3 M -->
+        <text x="12" y="86" fill="#c084fc" font-weight="bold">M</text><text x="75" y="86">3</text><text x="120" y="86">2 × 3² = 18</text><text x="230" y="86" fill="#c084fc" font-weight="bold">18 (8*)</text>
+        <!-- Row 4 N -->
+        <text x="12" y="104" fill="#818cf8" font-weight="bold">N</text><text x="75" y="104">4</text><text x="120" y="104">2 × 4² = 32</text><text x="230" y="104" fill="#818cf8" font-weight="bold">32</text>
+      </g>
+    </g>
+
+    <!-- Octet Rule & Valency Card -->
+    <g transform="translate(0, 245)">
+      <rect width="300" height="230" rx="10" fill="#1e293b" stroke="#a855f7" stroke-width="1.5" filter="url(#panelShadow)" />
+      <rect width="300" height="36" rx="10" fill="#7e22ce" />
+      <text x="150" y="23" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">OCTET RULE &amp; DUPLIT RULE</text>
+
+      <g transform="translate(15, 52)" font-size="11.5" fill="#e2e8f0">
+        <text y="10" font-weight="700" fill="#f43f5e">• Octet Rule:</text>
+        <text y="26" fill="#cbd5e1">Outermost valence shell cannot accommodate</text>
+        <text y="42" fill="#cbd5e1">more than 8 electrons, even if capacity allows.</text>
+
+        <text y="70" font-weight="700" fill="#4ade80">• Duplet Rule:</text>
+        <text y="86" fill="#cbd5e1">For K shell (Helium), 2 electrons provide</text>
+        <text y="102" fill="#cbd5e1">maximum electronic stability.</text>
+
+        <text y="130" font-weight="700" fill="#38bdf8">• Stepwise Filling:</text>
+        <text y="146" fill="#cbd5e1">Electrons fill inner shells before occupying</text>
+        <text y="162" fill="#cbd5e1">outer higher-energy shells.</text>
+      </g>
+    </g>
+
+    <!-- Subatomic Particles Summary -->
+    <g transform="translate(0, 490)">
+      <rect width="300" height="215" rx="10" fill="#1e293b" stroke="#10b981" stroke-width="1.5" filter="url(#panelShadow)" />
+      <rect width="300" height="36" rx="10" fill="#047857" />
+      <text x="150" y="23" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">SUBATOMIC PARTICLES</text>
+
+      <g transform="translate(15, 52)" font-size="11.5">
+        <g transform="translate(0, 0)">
+          <circle cx="10" cy="10" r="7" fill="url(#protonGrad)" />
+          <text x="25" y="14" fill="#f87171" font-weight="bold">Proton (p⁺):</text>
+          <text x="110" y="14" fill="#cbd5e1">Charge +1 | Mass 1 amu</text>
+        </g>
+
+        <g transform="translate(0, 38)">
+          <circle cx="10" cy="10" r="7" fill="url(#neutronGrad)" />
+          <text x="25" y="14" fill="#94a3b8" font-weight="bold">Neutron (n⁰):</text>
+          <text x="110" y="14" fill="#cbd5e1">Charge 0 | Mass 1 amu</text>
+        </g>
+
+        <g transform="translate(0, 76)">
+          <circle cx="10" cy="10" r="7" fill="url(#electronGrad)" />
+          <text x="25" y="14" fill="#38bdf8" font-weight="bold">Electron (e⁻):</text>
+          <text x="110" y="14" fill="#cbd5e1">Charge -1 | Mass ~1/1840 amu</text>
+        </g>
+
+        <line x1="0" y1="108" x2="270" y2="108" stroke="#334155" />
+        <text x="135" y="130" fill="#facc15" font-weight="700" text-anchor="middle">Atomic No. (Z) = Number of Protons</text>
+        <text x="135" y="146" fill="#4ade80" font-weight="700" text-anchor="middle">Mass No. (A) = Protons + Neutrons</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- BOTTOM STRIP: QUICK FORMULA ICSE SYLLABUS -->
+  <g transform="translate(40, 750)">
+    <rect width="550" height="70" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5" />
+    <text x="275" y="24" fill="#38bdf8" font-size="12" font-weight="800" text-anchor="middle">CLASS 7 ICSE CANONICAL EXAMPLE: CALCIUM (₂₀Ca)</text>
+    <text x="275" y="48" fill="#f8fafc" font-size="13" font-weight="700" text-anchor="middle" font-family="monospace">
+      Atomic No Z = 20  |  Mass No A = 40  |  Config: K=2, L=8, M=8, N=2  |  Valency = +2
+    </text>
+  </g>
+</svg>
