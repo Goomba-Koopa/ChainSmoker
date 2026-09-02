@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry 12: Oxides & Acid Rain Chemistry • ICSE Class 7</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); text-decoration: none; }
+    .nav-back { font-size: 13.5px; font-weight: 600; color: var(--terracotta); text-decoration: none; }
+    
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 14px; }
+    .section-heading { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    
+    p { font-size: 15px; color: var(--ink-black); line-height: 1.65; max-width: 75ch; }
+    
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-secondary); }
+    .definition-term { font-weight: 700; color: var(--ink-black); }
+    
+    .derivation-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .derivation-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); margin-bottom: 8px; display: block; }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; }
+    
+    .distinction-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13.5px; }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-strong); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-weight: 600; color: var(--ink-black); }
+    .distinction-table tr:nth-child(even) td { background: var(--bg-surface); }
+    
+    .problem-box { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .problem-type { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .problem-statement { font-size: 15px; font-weight: 500; color: var(--ink-black); margin-bottom: 14px; line-height: 1.5; }
+    
+    .btn-toggle { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; }
+    .solution-drawer { display: none; margin-top: 14px; padding: 14px; background: var(--bg-card); border-left: 3px solid var(--emerald-accent); border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.6; }
+    
+    .diagram-figure { margin: 12px 0; text-align: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    /* Muted purplish grey exception system */
+    .exception-tag {
+      color: #6b5b7b;
+      font-size: 0.78em;
+      vertical-align: super;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: help;
+    }
+
+    .exception-note {
+      margin-top: 16px;
+      margin-left: 20px;
+      padding: 10px 16px;
+      border-left: 2px solid #6b5b7b;
+      background: rgba(107, 91, 123, 0.04);
+      border-radius: 0 6px 6px 0;
+      color: #6b5b7b;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .exception-note-title {
+      font-weight: 700;
+      color: #554564;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13.5px;
+    }
+    
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 48px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); margin-top: 48px; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">🧪 Chemistry • Topic 12</a>
+    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 12</div>
+    <h1 class="topic-title">Oxides, Acid Rain &amp; Atmospheric Chemistry</h1>
+    <p class="topic-subtext">
+      Chemical classification of oxides (Acidic, Basic, Amphoteric, Neutral), Industrial origins of atmospheric pollutants (\(\text{SO}_2, \text{NO}_x\)), Acid Rain formation mechanisms, Taj Mahal Marble Cancer, and Greenhouse warming dynamics.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. CLASSIFICATION OF OXIDES -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Classification of Oxides</h2>
+      <p>
+        An <strong>oxide</strong> is a binary chemical compound formed when an element combines with oxygen. Depending on their behavior with water, acids, and bases, oxides are classified into four distinct chemical families:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Family of Oxide</th>
+            <th>Defining Chemical Behavior</th>
+            <th>Reaction with Water / Acid / Base</th>
+            <th>Everyday Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Basic Oxides</strong></td>
+            <td>Metallic oxides that react with acids to form salt and water (neutralization). Soluble basic oxides dissolve in water to form alkalis.</td>
+            <td>\(\text{Na}_2\text{O} + \text{H}_2\text{O} \rightarrow 2\text{NaOH}\)<br>\(\text{CaO} + 2\text{HCl} \rightarrow \text{CaCl}_2 + \text{H}_2\text{O}\)</td>
+            <td>• Calcium Oxide (\(\text{CaO}\), Quicklime)<br>• Magnesium Oxide (\(\text{MgO}\))<br>• Sodium Oxide (\(\text{Na}_2\text{O}\))</td>
+          </tr>
+          <tr>
+            <td><strong>2. Acidic Oxides (Acid Anhydrides)</strong></td>
+            <td>Non-metallic oxides that dissolve in water to produce acidic solutions and react with basic alkalis to produce salt and water.</td>
+            <td>\(\text{SO}_3 + \text{H}_2\text{O} \rightarrow \text{H}_2\text{SO}_4\)<br>\(\text{CO}_2 + 2\text{NaOH} \rightarrow \text{Na}_2\text{CO}_3 + \text{H}_2\text{O}\)</td>
+            <td>• Carbon Dioxide (\(\text{CO}_2\))<br>• Sulphur Dioxide (\(\text{SO}_2\))<br>• Nitrogen Dioxide (\(\text{NO}_2\))</td>
+          </tr>
+          <tr>
+            <td><strong>3. Amphoteric Oxides</strong></td>
+            <td>Metallic oxides that show a dual chemical nature: they react with both strong acids AND strong alkalis to produce salt and water.<sup class="exception-tag">[†1]</sup></td>
+            <td>\(\text{ZnO} + 2\text{HCl} \rightarrow \text{ZnCl}_2 + \text{H}_2\text{O}\)<br>\(\text{ZnO} + 2\text{NaOH} \rightarrow \text{Na}_2\text{ZnO}_2\text{ (Sodium Zincate)} + \text{H}_2\text{O}\)</td>
+            <td>• Zinc Oxide (\(\text{ZnO}\))<br>• Aluminium Oxide (\(\text{Al}_2\text{O}_3\))<br>• Lead Oxide (\(\text{PbO}\))</td>
+          </tr>
+          <tr>
+            <td><strong>4. Neutral Oxides</strong></td>
+            <td>Non-metallic oxides that display neither basic nor acidic properties. They have zero reaction with acids, bases, or litmus indicator paper.</td>
+            <td>No reaction with \(\text{HCl}\) or \(\text{NaOH}\). \(\text{pH} = 7.0\) in pure aqueous solution.</td>
+            <td>• Water (\(\text{H}_2\text{O}\))<br>• Carbon Monoxide (\(\text{CO}\))<br>• Nitrous Oxide (\(\text{N}_2\text{O}\), Laughing Gas)<br>• Nitric Oxide (\(\text{NO}\))</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Indented Scientific Exception Note -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†1] Chemical Bridge: The Dual Personality of Amphoteric Oxides</span>
+        While the general rule states that "metal oxides are basic" and "non-metal oxides are acidic", amphoteric oxides like \(\text{ZnO}\) and \(\text{Al}_2\text{O}_3\) represent a crucial transition. When treated with an acid (like \(\text{HCl}\)), they act as bases to produce zinc chloride; but when treated with a base (like \(\text{NaOH}\)), they switch roles and behave like acids to form complex zincate/aluminate salts!
+      </div>
+    </div>
+
+    <!-- 2. ACID RAIN FORMATION -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Acid Rain: Origins, Reactions &amp; Ecological Impact</h2>
+      <p>
+        Normal clean rainwater is naturally slightly acidic (\(\text{pH} \approx 5.6\)) because atmospheric carbon dioxide dissolves in it to form weak carbonic acid (\(\text{H}_2\text{CO}_3\)). However, when coal-fired thermal power plants, oil refineries, and diesel vehicles burn fossil fuels containing sulphur and nitrogen impurities, toxic acidic oxides are released into the sky, lowering rain \(\text{pH}\) below \(4.5\). This precipitation is called <strong>acid rain</strong>.
+      </p>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Atmospheric Acid Synthesis Equations</span>
+        <div class="derivation-step">
+          1. <strong>Sulphur Dioxide to Sulphuric Acid:</strong><br>
+          Coal burning releases \(\text{SO}_2\), which is catalyzed by atmospheric dust particles into sulphur trioxide, dissolving in rain clouds to form corrosive sulphuric acid:
+          $$2\text{SO}_2\text{ (g)} + \text{O}_2\text{ (g)} \rightarrow 2\text{SO}_3\text{ (g)}$$
+          $$\text{SO}_3\text{ (g)} + \text{H}_2\text{O (l)} \rightarrow \mathbf{\text{H}_2\text{SO}_4\text{ (Sulphuric Acid)}}$$<br>
+
+          2. <strong>Nitrogen Dioxide to Nitric Acid:</strong><br>
+          High-temperature vehicle engines spark atmospheric nitrogen and oxygen into nitric oxide (\(\text{NO}\)), which oxidizes into \(\text{NO}_2\) and forms nitric acid:
+          $$2\text{NO (g)} + \text{O}_2\text{ (g)} \rightarrow 2\text{NO}_2\text{ (g)}$$
+          $$4\text{NO}_2\text{ (g)} + 2\text{H}_2\text{O (l)} + \text{O}_2\text{ (g)} \rightarrow \mathbf{4\text{HNO}_3\text{ (Nitric Acid)}}$$
+        </div>
+      </div>
+
+      <div class="definition-box">
+        <span class="definition-term">The "Marble Cancer" of the Taj Mahal:</span>
+        The white marble of the historic Taj Mahal in Agra is composed of pure crystalline Calcium Carbonate (\(\text{CaCO}_3\)). When acid rain from nearby industrial oil refineries falls on the monument, the sulphuric acid chemically attacks and dissolves the marble, converting it into flaky, yellowed calcium sulphate (gypsum):
+        $$\text{CaCO}_3\text{ (s)} + \text{H}_2\text{SO}_4\text{ (aq)} \rightarrow \mathbf{\text{CaSO}_4\text{ (Gypsum Crust)}} + \text{H}_2\text{O} + \text{CO}_2\uparrow$$
+        This chemical erosion and pitting of historical marble statues is known as <strong>marble cancer</strong>.
+      </div>
+    </div>
+
+    <!-- 3. GREENHOUSE EFFECT & GLOBAL WARMING -->
+    <div class="section-block">
+      <h2 class="section-heading">3. The Greenhouse Effect &amp; Climate Dynamics</h2>
+      <p>
+        Without any atmosphere, Earth's average global temperature would be a frozen \(-18^\circ\text{C}\). Natural greenhouse gases act like glass walls of a botanical greenhouse: they allow short-wavelength solar rays to enter, but absorb and re-radiate the outgoing long-wavelength infrared heat, keeping Earth at a hospitable \(+15^\circ\text{C}\).
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Greenhouse Gas</th>
+            <th>Primary Anthropogenic (Human) Source</th>
+            <th>Heat-Trapping Potential</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Carbon Dioxide (\(\text{CO}_2\))</strong></td>
+            <td>Combustion of coal, petrol, and natural gas; widespread deforestation.</td>
+            <td>Baseline reference (\(1\times\)); longest atmospheric lifetime (centuries).</td>
+          </tr>
+          <tr>
+            <td><strong>Methane (\(\text{CH}_4\))</strong></td>
+            <td>Decomposition in flooded paddy fields, cattle digestion, landfill rotting.</td>
+            <td><strong>\(25\times\) more potent</strong> heat-trapper than \(\text{CO}_2\) over 100 years.</td>
+          </tr>
+          <tr>
+            <td><strong>Nitrous Oxide (\(\text{N}_2\text{O}\))</strong></td>
+            <td>Excessive chemical nitrogen fertilizers in industrial agriculture.</td>
+            <td><strong>\(300\times\) more potent</strong> than \(\text{CO}_2\).</td>
+          </tr>
+          <tr>
+            <td><strong>Chlorofluorocarbons (CFCs)</strong></td>
+            <td>Old refrigerator coolants and aerosol spray propellants (also destroys ozone).</td>
+            <td>Thousands of times more potent than \(\text{CO}_2\).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. WORKED LOGICAL EXEMPLARS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 12.1: Experimental Differentiation of Oxides</span>
+        </div>
+        <div class="problem-statement">
+          A laboratory technician is provided with two white powders labeled Oxide \(X\) and Oxide \(Y\).<br>
+          • Oxide \(X\) dissolves in water to turn red litmus blue.<br>
+          • Oxide \(Y\) does not react with water, but dissolves in dilute \(\text{HCl}\) to form a clear solution AND dissolves in concentrated \(\text{NaOH}\) upon warming.<br>
+          Classify Oxide \(X\) and Oxide \(Y\), providing one named chemical example for each.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_c12_1')">Show Logical Diagnosis ↓</button>
+        <div class="solution-drawer" id="sol_c12_1">
+          <strong>Step-by-Step Logical Diagnosis:</strong><br><br>
+          1. <strong>Classification of Oxide \(X\):</strong><br>
+          • It dissolves in water to turn red litmus blue, indicating it produces hydroxide ions (\(\text{OH}^-\)).<br>
+          • Therefore, Oxide \(X\) is a <strong>Soluble Basic Oxide (an Alkali)</strong>.<br>
+          • <em>Named Example:</em> <strong>Sodium Oxide (\(\text{Na}_2\text{O}\))</strong> or <strong>Calcium Oxide (\(\text{CaO}\))</strong>.<br><br>
+          2. <strong>Classification of Oxide \(Y\):</strong><br>
+          • It reacts with both a strong acid (\(\text{HCl}\)) and a strong base (\(\text{NaOH}\)) to form soluble salt complexes.<br>
+          • Therefore, Oxide \(Y\) is an <strong>Amphoteric Oxide</strong>.<br>
+          • <em>Named Example:</em> <strong>Zinc Oxide (\(\text{ZnO}\))</strong> or <strong>Aluminium Oxide (\(\text{Al}_2\text{O}_3\))</strong>.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 12.2: Ecological Remediation of Acidified Lakes</span>
+        </div>
+        <div class="problem-statement">
+          Due to severe acid rain, a freshwater lake's \(\text{pH}\) drops to \(4.2\), killing fish populations and aquatic weeds. Environmental scientists dump several metric tons of powdered limestone (\(\text{CaCO}_3\)) into the lake. Explain the chemical logic behind this intervention.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_c12_2')">Show Remediation Resolution ↓</button>
+        <div class="solution-drawer" id="sol_c12_2">
+          <strong>Step-by-Step Chemical Resolution:</strong><br><br>
+          1. <strong>Problem:</strong> Acid rain injects high concentrations of sulphuric acid (\(\text{H}_2\text{SO}_4\)) into the lake water, increasing hydronium ion concentration and lowering \(\text{pH}\) to lethal levels for aquatic organisms.<br><br>
+          2. <strong>Limestone Neutralization (Liming):</strong> Powdered Calcium Carbonate acts as an insoluble, safe base that neutralizes the acid without over-alkalizing the lake:
+          $$\text{CaCO}_3\text{ (s)} + \text{H}_2\text{SO}_4\text{ (aq)} \rightarrow \text{CaSO}_4\text{ (aq)} + \text{H}_2\text{O (l)} + \text{CO}_2\uparrow$$<br>
+          3. <strong>Restoration:</strong> This reaction consumes excess \(\text{H}^+\) ions, safely elevating lake \(\text{pH}\) back toward a healthy neutral range (\(6.5 - 7.5\)), allowing fish gills to function properly again.
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 5. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Atmospheric Chemistry 1: Marble Corrosion by Acid Rain</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_c12_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why does acid rain cause yellowing and pitting (stone cancer) on historical marble monuments like the Taj Mahal?</div>
+        <div class="reasoning-answer" id="reas_c12_1">
+          <strong>Scientific Resolution:</strong><br>
+          Acid rain contains dissolved sulphuric acid (\(\text{H}_2\text{SO}_4\)) from industrial \(\text{SO}_2\) emissions. Sulphuric acid reacts chemically with the calcium carbonate (\(\text{CaCO}_3\)) in white marble to form soluble calcium sulphate (\(\text{CaSO}_4\)), which washes away with rainwater and pits the surface:
+          $$\text{CaCO}_3 + \text{H}_2\text{SO}_4 \to \text{CaSO}_4 + \text{H}_2\text{O} + \text{CO}_2$$
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Atmospheric Chemistry 2: Greenhouse Effect Essentiality</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_c12_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why is the natural greenhouse effect considered indispensable for sustaining life on Earth?</div>
+        <div class="reasoning-answer" id="reas_c12_2">
+          <strong>Scientific Resolution:</strong><br>
+          Naturally occurring greenhouse gases (like \(\text{CO}_2\) and water vapour) trap outgoing terrestrial infrared radiation, keeping Earth's average global temperature at a hospitable \(+15^\circ\text{C}\). Without the natural greenhouse effect, Earth would freeze at \(-18^\circ\text{C}\), making biological life impossible.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_11_water_hardness_and_treatment.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-11 · Water Hardness &</a>
+    <a href="biology_01_plant_and_animal_tissues.html" class="topic-nav-link topic-nav-next">BIO-01 · Plant & Animal &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Chemistry • Topic 12: Oxides, Acid Rain &amp; Atmosphere</div>
+    <div>CISCE Class 7 Academic Compendium</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

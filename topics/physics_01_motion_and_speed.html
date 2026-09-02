@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 01: Motion, Distance, Displacement & Speed • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 42px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 16.5px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.6; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: var(--ink-secondary); }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--ink-black); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .diagram-figure { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; text-align: center; margin: 12px 0; }
+    .diagram-img { max-width: 100%; height: auto; border-radius: 4px; display: inline-block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 10px; font-style: italic; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 01</div>
+    <h1 class="topic-title">Motion, Distance, Displacement & Speed</h1>
+    <p class="topic-subtext">
+      The relative nature of rest and motion, translatory particle mechanics (rectilinear vs curvilinear), rotatory and periodic systems, scalar distance vs vector displacement, uniform vs non-uniform speed, and algebraic conversion proofs.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. RELATIVE NATURE OF REST & MOTION -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Relativity of Rest and Motion</h2>
+      <div class="definition-box">
+        <span class="definition-term">Rest & Motion Postulate:</span>
+        A body is said to be at <strong>rest</strong> if it does not change its position with respect to a fixed reference point (surroundings) with time. A body is in <strong>motion</strong> if its position continuously changes with respect to its surroundings.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> <strong>Rest and motion are purely relative terms.</strong> Absolute rest or absolute motion does not exist in the physical universe. A passenger seated inside a moving railway carriage is at rest relative to co-passengers and the carriage walls, yet in rapid motion relative to trees, telephone poles, and platforms outside.
+      </div>
+
+      <div class="concept-callout">
+        <span class="concept-callout-title">The Role of the Reference Frame (Origin of Coordinates)</span>
+        To state whether an object is moving, an observer must establish a <strong>Reference Frame</strong> — a stationary reference point (often designated the origin \(O\)) against which position vectors are measured. Without defining a reference point, describing motion is mathematically and physically meaningless.
+      </div>
+    </div>
+
+    <!-- 2. TRANSLATORY MOTION: RIGOROUS MECHANICS -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Translatory Motion: Particle Mechanics & Geometry</h2>
+      <p>
+        Before comparing complex forms of motion, we must establish the precise mechanical definition of <strong>Translatory Motion</strong> (also termed <em>pure translation</em>).
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Translatory Motion Criterion:</span>
+        A rigid body is said to possess <strong>Translatory Motion</strong> if every constituent particle of the body shifts through the exact same distance along parallel trajectories during any given time interval.
+        <br><br>
+        <em>Geometric Property:</em> If a straight line segment \(AB\) is drawn connecting any two arbitrary points inside the moving body, the segment \(AB\) remains <strong>strictly parallel to its initial orientation</strong> at every single instant of time (\(AB \parallel A'B'\)).
+      </div>
+
+      <p>
+        Translatory motion is divided into two fundamental geometric classes depending on the path traced in space:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Rectilinear Translatory Motion</th>
+            <th>Curvilinear Translatory Motion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Path Trajectory</strong></td>
+            <td>Motion occurs along a <strong>straight line</strong> path.</td>
+            <td>Motion occurs along a <strong>curved path</strong> in two or three dimensions.</td>
+          </tr>
+          <tr>
+            <td><strong>Particle Trajectories</strong></td>
+            <td>All particles trace parallel straight lines of identical length.</td>
+            <td>All particles trace parallel curved paths of identical shape and length.</td>
+          </tr>
+          <tr>
+            <td><strong>Orientation of Body</strong></td>
+            <td>Fixed direction; line segment \(AB \parallel A'B'\).</td>
+            <td>Fixed orientation; the body does <strong>not rotate</strong> as it traverses the curve.</td>
+          </tr>
+          <tr>
+            <td><strong>Real-World Examples</strong></td>
+            <td>
+              • A coin sliding freely on a smooth horizontal carrom board.<br>
+              • A stone dropped vertically from a height under gravity.<br>
+              • A locomotive running on a straight, unbanked railway track.
+            </td>
+            <td>
+              • A car navigating a curved road bend without spinning on its axis.<br>
+              • A stone thrown horizontally from a cliff tracing a parabolic trajectory.<br>
+              • A child sliding down a smooth curved park slide.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="concept-callout">
+        <span class="concept-callout-title">Translatory vs. Rotatory: The Critical Mechanical Distinction</span>
+        In pure <strong>Translatory Motion</strong>, all particles possess identical velocities and undergo equal displacements in equal time intervals. In contrast, in pure <strong>Rotatory Motion</strong>, the body turns around a fixed internal or external axis: points lying at different radial distances from the axis trace concentric circular paths of different lengths with different linear speeds (\(v = \omega r\)), while points lying on the axis remain completely stationary.
+      </div>
+    </div>
+
+    <!-- 3. OTHER FUNDAMENTAL TYPES OF MOTION -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Rotatory, Oscillatory, Periodic & Random Motion</h2>
+      <p>
+        Beyond translatory motion, mechanical systems exhibit rotational, oscillatory, and combined motions:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Type of Motion</th>
+            <th>Defining Physical Mechanism</th>
+            <th>Real-World Physical Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Rotatory Motion</strong></td>
+            <td>A body pivots around a fixed stationary axis passing through it. Different points describe concentric circular paths of varying radii.</td>
+            <td>• Blades of a ceiling fan rotating about its central spindle.<br>• Earth spinning about its geographic polar axis (\(24\text{ hours}\)).<br>• The wheel of a stationary sewing machine.</td>
+          </tr>
+          <tr>
+            <td><strong>2. Circular Motion</strong></td>
+            <td>An entire body (treated as a point mass) revolves along the circumference of a circular path around an external centre.</td>
+            <td>• Motion of the Earth revolving around the Sun.<br>• A stone tied to a string whirled horizontally in a circle.</td>
+          </tr>
+          <tr>
+            <td><strong>3. Oscillatory / Vibratory Motion</strong></td>
+            <td>A body moves repeatedly to-and-fro (back-and-forth) about a fixed central mean equilibrium position at regular intervals.</td>
+            <td>• The swinging bob of a simple pendulum.<br>• Motion of a child on a playground swing.<br>• Vibrations of a struck tuning fork or plucked guitar string.</td>
+          </tr>
+          <tr>
+            <td><strong>4. Periodic Motion</strong></td>
+            <td>Any motion that repeats itself in exact, identical intervals of time (Time Period \(T\)).</td>
+            <td>• Revolution of the Moon around the Earth (\(27.3\text{ days}\)).<br>• Movement of the hands of a mechanical clock.</td>
+          </tr>
+          <tr>
+            <td><strong>5. Non-Periodic Motion</strong></td>
+            <td>Motion that does not repeat at regular predictable time intervals.</td>
+            <td>• Movement of an automobile in busy traffic.<br>• Swaying of tree branches in fluctuating wind.</td>
+          </tr>
+          <tr>
+            <td><strong>6. Multiple / Combined Motion</strong></td>
+            <td>A single body executing two or more distinct types of motion simultaneously.</td>
+            <td>• <em>Rolling Bicycle Wheel:</em> Translatory (linear road progress) + Rotatory (spinning on axle).<br>• <em>Earth:</em> Rotatory (spin) + Circular (orbital revolution).<br>• <em>Drill Bit:</em> Rotatory (drilling) + Translatory (forward penetration).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. DISTANCE VS DISPLACEMENT -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Distance vs. Displacement</h2>
+      <p>
+        Kinematics distinguishes between the total ground an object traverses and its net change in position:
+      </p>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Displacement_vector.svg/500px-Displacement_vector.svg.png" alt="Diagram showing curved distance path versus straight displacement arrow" class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1: Distance (the winding path) is a scalar magnitude, whereas Displacement (the straight arrow connecting initial to final position) is a directed vector.</figcaption>
+      </figure>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Distance (\(s\))</th>
+            <th>Displacement (\(\vec{s}\))</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Definition</strong></td>
+            <td>Total length of the actual path traversed by a moving body irrespective of direction.</td>
+            <td>Shortest straight-line distance measured from initial position to final position in a specified direction.</td>
+          </tr>
+          <tr>
+            <td><strong>Quantity Type</strong></td>
+            <td><strong>Scalar quantity</strong> (has magnitude only).</td>
+            <td><strong>Vector quantity</strong> (has both magnitude and specific direction).</td>
+          </tr>
+          <tr>
+            <td><strong>Sign & Value</strong></td>
+            <td>Always <strong>positive</strong>; never zero or negative for a body in motion.</td>
+            <td>Can be <strong>positive, negative, or zero</strong> depending on direction.</td>
+          </tr>
+          <tr>
+            <td><strong>Magnitude Relationship</strong></td>
+            <td>\(\text{Distance} \ge |\text{Displacement}|\). Equal only in straight-line one-directional motion.</td>
+            <td>\(|\text{Displacement}| \le \text{Distance}\). Cannot exceed distance.</td>
+          </tr>
+          <tr>
+            <td><strong>Closed Loop Motion</strong></td>
+            <td>Equal to total perimeter (\(s = 2\pi r\) for a full circle).</td>
+            <td>Exactly <strong>zero</strong> (\(\vec{s} = 0\)) because initial and final positions coincide.</td>
+          </tr>
+          <tr>
+            <td><strong>SI & CGS Units</strong></td>
+            <td>SI: \(\text{metre (m)}\); CGS: \(\text{centimetre (cm)}\)</td>
+            <td>SI: \(\text{metre (m)}\); CGS: \(\text{centimetre (cm)}\)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. SPEED FORMULAS & UNIT CONVERSIONS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Speed Formulas & Conversion Derivations</h2>
+      <div class="definition-box">
+        <span class="definition-term">Speed Definition & Formula:</span>
+        The <strong>speed</strong> of a body is the rate of distance covered per unit time:
+        $$\text{Speed } (v) = \frac{\text{Distance } (s)}{\text{Time } (t)}$$
+        • <em>Uniform Speed:</em> When a body covers equal distances in equal intervals of time, however small the intervals may be.<br>
+        • <em>Non-Uniform (Variable) Speed:</em> When a body covers unequal distances in equal intervals of time.<br>
+        • <em>Average Speed:</em>
+        $$v_{\text{avg}} = \frac{\text{Total Distance Covered } (S_{\text{total}})}{\text{Total Time Taken } (T_{\text{total}})}$$
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Mathematical Proof: \(1\text{ km/h} = \frac{5}{18}\text{ m/s}\)</span>
+        <div class="derivation-step">
+          1. By definition of standard metric conversion factors:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(1\text{ kilometre (km)} = 1,000\text{ metres (m)}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(1\text{ hour (h)} = 60\text{ minutes} \times 60\text{ seconds} = 3,600\text{ seconds (s)}\)<br><br>
+          2. Taking the ratio of length over time:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$1\text{ km/h} = \frac{1,000\text{ m}}{3,600\text{ s}} = \frac{10}{36}\text{ m/s} = \frac{\mathbf{5}}{\mathbf{18}}\text{ m/s} \approx 0.2778\text{ m/s}$$<br>
+          3. <em>Conversion Rules:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• To convert \(\text{km/h} \to \text{m/s}\): Multiply by \(\frac{5}{18}\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• To convert \(\text{m/s} \to \text{km/h}\): Multiply by \(\frac{18}{5} = 3.6\).
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. WORKED PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.1: Non-Uniform Round Journey & Average Speed</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A car travels a distance of \(120\text{ km}\) from City A to City B at a uniform speed of \(60\text{ km/h}\), and returns from City B to City A over the identical route at a speed of \(40\text{ km/h}\). Calculate: (i) Total time taken, and (ii) Average speed of the entire journey.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Logical Resolution:</strong><br><br>
+          1. <em>Forward Journey (A to B):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(t_1 = \frac{s_1}{v_1} = \frac{120\text{ km}}{60\text{ km/h}} = \mathbf{2.0\text{ hours}}\)<br><br>
+          2. <em>Return Journey (B to A):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(t_2 = \frac{s_2}{v_2} = \frac{120\text{ km}}{40\text{ km/h}} = \mathbf{3.0\text{ hours}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Total Time \(T_{\text{total}} = t_1 + t_2 = 2.0 + 3.0 = \mathbf{5.0\text{ hours}}\)<br><br>
+          3. <em>Average Speed:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Total Distance \(S_{\text{total}} = 120 + 120 = 240\text{ km}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$v_{\text{avg}} = \frac{S_{\text{total}}}{T_{\text{total}}} = \frac{240\text{ km}}{5\text{ h}} = \mathbf{48\text{ km/h}} \quad \left(= 48 \times \frac{5}{18} = \mathbf{13.33\text{ m/s}}\right)$$<br>
+          <em>Key Physical Intuition:</em> Average speed is not the simple arithmetic mean of 60 and 40 (\(50\text{ km/h}\)) because the vehicle spends more time traveling at the slower speed.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.2: Circular Track Distance & Displacement</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          An athlete runs along a circular track of radius \(r = 14\text{ m}\). Calculate the distance covered and the magnitude of displacement when the athlete completes: (i) Half a revolution, (ii) One full revolution. <em>[Take \(\pi = \frac{22}{7}\)]</em>
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Logical Resolution:</strong><br><br>
+          1. <em>Case (i): Half a Revolution (Diameter opposite):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Distance \(s = \pi r = \frac{22}{7} \times 14\text{ m} = \mathbf{44\text{ m}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Displacement \(\vec{s} = \text{Diameter} = 2r = 2 \times 14\text{ m} = \mathbf{28\text{ m}}\) directed from initial to opposite point.<br><br>
+          2. <em>Case (ii): One Full Revolution (Initial = Final position):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Distance \(s = 2\pi r = 2 \times \frac{22}{7} \times 14\text{ m} = \mathbf{88\text{ m}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Displacement \(\vec{s} = \mathbf{0\text{ m}}\) (since the initial and final position vectors are identical).
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.3: Metric Unit Conversion & Speed Comparison</span>
+          <span class="problem-marks">[2 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A cheetah sprints at \(90\text{ km/h}\), while a carrier pigeon flies at \(24\text{ m/s}\). By rigorous metric conversion, determine which moves faster and compute the difference in speed in \(\text{m/s}\).
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num3">
+          <strong>Step-by-Step Logical Resolution:</strong><br><br>
+          1. <em>Convert Cheetah's Speed to SI units (\(\text{m/s}\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$v_{\text{cheetah}} = 90 \times \frac{5}{18}\text{ m/s} = 5 \times 5\text{ m/s} = \mathbf{25\text{ m/s}}$$<br>
+          2. <em>Compare with Pigeon:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(v_{\text{pigeon}} = 24\text{ m/s}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Since \(25\text{ m/s} > 24\text{ m/s}\), the <strong>cheetah is faster</strong>.<br><br>
+          3. <em>Speed Difference:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\Delta v = 25\text{ m/s} - 24\text{ m/s} = \mathbf{1.0\text{ m/s}} \quad (= 3.6\text{ km/h})$$
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 7. SCIENTIFIC REASONING & CONCEPTUAL Q&A -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Scientific Reasoning & Conceptual Q&A</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Conceptual Deduction 1: Non-Zero Distance with Zero Displacement</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_1')">View Deduction ↓</button>
+        </div>
+        <div class="reasoning-question">
+          Can a physical body have traversed a non-zero distance while its net displacement remains exactly zero? Provide a rigorous mechanical example.
+        </div>
+        <div class="reasoning-answer" id="reas_1">
+          <strong>Scientific Resolution:</strong><br>
+          <strong>Yes.</strong> Distance is a scalar quantity measuring the cumulative length of the actual path traversed, which continuously increases as long as the object moves (\(s > 0\)). Displacement is a vector defined as the shortest straight-line distance between the initial and final positions (\(\vec{s} = \vec{r}_f - \vec{r}_i\)).
+          <br><br>
+          Whenever a moving object returns to its starting point (a closed loop, such as a child completing a lap on a running track or a thrown ball returning to the thrower's hand), the initial and final position vectors coincide (\(\vec{r}_f = \vec{r}_i\)), making net displacement \(\vec{s} = 0\), even though distance \(s > 0\).
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Conceptual Deduction 2: Straight-Line Curvilinear Particle Tracks</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_2')">View Deduction ↓</button>
+        </div>
+        <div class="reasoning-question">
+          Why is the motion of a train rounding a horizontal curve classified as curvilinear translatory motion rather than rotatory motion?
+        </div>
+        <div class="reasoning-answer" id="reas_2">
+          <strong>Scientific Resolution:</strong><br>
+          In <strong>Curvilinear Translatory Motion</strong>, all particles of the train body shift through the exact same distance along parallel curved tracks in any given time interval, and the train does not turn continuously around an internal fixed axle.
+          <br><br>
+          In pure <strong>Rotatory Motion</strong>, an internal axis remains stationary while particles at different radial distances trace concentric circles with different speeds. Since every passenger and carriage on the train moves along parallel curved paths with equal speeds, its overall movement is curvilinear translation.
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="#" class="topic-nav-link topic-nav-prev topic-nav-link--hidden">&#8592; </a>
+    <a href="physics_02_energy_and_machines.html" class="topic-nav-link topic-nav-next">PHY-02 · Energy, Mechanical Work &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div>Physics • Topic 01: Motion, Distance, Displacement & Speed</div>
+    <div>CISCE Class 7 Academic Compendium</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

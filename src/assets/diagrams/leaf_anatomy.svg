@@ -1,0 +1,284 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 820" width="100%" height="100%" style="background:#0f172a; font-family:'Segoe UI', system-ui, -apple-system, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="cuticleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ca8a04" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="epidermisGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#86efac" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="palisadeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="50%" stop-color="#16a34a" />
+      <stop offset="100%" stop-color="#14532d" />
+    </linearGradient>
+
+    <linearGradient id="spongyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+
+    <linearGradient id="xylemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <linearGradient id="phloemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Title Header -->
+  <g transform="translate(475, 40)" text-anchor="middle">
+    <text fill="#4ade80" font-size="24" font-weight="800" letter-spacing="1">ICSE CLASS 7 BIOLOGY: PHOTOSYNTHESIS</text>
+    <text y="25" fill="#94a3b8" font-size="15" font-weight="500">Transverse Section (T.S.) of a Dicot Leaf Anatomy</text>
+  </g>
+
+  <!-- Sunlight incoming rays (Top Left) -->
+  <g transform="translate(120, 75)">
+    <circle cx="20" cy="20" r="18" fill="#facc15" opacity="0.9" />
+    <line x1="20" y1="20" x2="60" y2="70" stroke="#fde047" stroke-width="3" stroke-dasharray="4,3" />
+    <line x1="30" y1="15" x2="90" y2="70" stroke="#fde047" stroke-width="3" stroke-dasharray="4,3" />
+    <line x1="40" y1="25" x2="120" y2="70" stroke="#fde047" stroke-width="3" stroke-dasharray="4,3" />
+    <text x="70" y="30" fill="#fef08a" font-size="13" font-weight="800">SUNLIGHT (Photons)</text>
+  </g>
+
+  <!-- MAIN LEAF CROSS SECTION BLOCK -->
+  <!-- Cross section bounds: x=80 to 620 (width 540), y=150 to 640 (height 490) -->
+  <g transform="translate(40, 0)">
+    <!-- 1. WAXY CUTICLE (Top Layer, y=150 to 160) -->
+    <rect x="80" y="150" width="540" height="12" rx="3" fill="url(#cuticleGrad)" stroke="#ca8a04" stroke-width="1.5" filter="url(#shadow)" />
+
+    <!-- 2. UPPER EPIDERMIS (y=162 to 205) -->
+    <!-- 9 rectangular barrel-shaped cells -->
+    <g fill="url(#epidermisGrad)" stroke="#15803d" stroke-width="1.5">
+      <rect x="80" y="162" width="60" height="42" rx="4" />
+      <rect x="140" y="162" width="60" height="42" rx="4" />
+      <rect x="200" y="162" width="60" height="42" rx="4" />
+      <rect x="260" y="162" width="60" height="42" rx="4" />
+      <rect x="320" y="162" width="60" height="42" rx="4" />
+      <rect x="380" y="162" width="60" height="42" rx="4" />
+      <rect x="440" y="162" width="60" height="42" rx="4" />
+      <rect x="500" y="162" width="60" height="42" rx="4" />
+      <rect x="560" y="162" width="60" height="42" rx="4" />
+    </g>
+    <!-- Nuclei in Upper Epidermis -->
+    <g fill="#14532d">
+      <circle cx="110" cy="183" r="5" /><circle cx="170" cy="183" r="5" /><circle cx="230" cy="183" r="5" />
+      <circle cx="290" cy="183" r="5" /><circle cx="350" cy="183" r="5" /><circle cx="410" cy="183" r="5" />
+      <circle cx="470" cy="183" r="5" /><circle cx="530" cy="183" r="5" /><circle cx="590" cy="183" r="5" />
+    </g>
+
+    <!-- 3. PALISADE MESOPHYLL LAYER (y=206 to 370) -->
+    <!-- Tightly packed columnar cells with rich chloroplasts -->
+    <g fill="url(#palisadeGrad)" stroke="#14532d" stroke-width="1.5">
+      <!-- 12 palisade columns -->
+      <rect x="82" y="206" width="42" height="160" rx="8" />
+      <rect x="126" y="206" width="42" height="160" rx="8" />
+      <rect x="170" y="206" width="42" height="160" rx="8" />
+      <rect x="214" y="206" width="42" height="160" rx="8" />
+      <rect x="258" y="206" width="42" height="160" rx="8" />
+      <rect x="302" y="206" width="42" height="160" rx="8" />
+      <rect x="346" y="206" width="42" height="160" rx="8" />
+      <rect x="390" y="206" width="42" height="160" rx="8" />
+      <rect x="434" y="206" width="42" height="160" rx="8" />
+      <rect x="478" y="206" width="42" height="160" rx="8" />
+      <rect x="522" y="206" width="42" height="160" rx="8" />
+      <rect x="566" y="206" width="42" height="160" rx="8" />
+    </g>
+
+    <!-- Chloroplasts inside Palisade Cells (Bright Green Ovals) -->
+    <g fill="#4ade80" stroke="#16a34a" stroke-width="0.8">
+      <!-- Repeating chloroplast dots in palisade cells -->
+      <ellipse cx="103" cy="225" rx="5" ry="3" /><ellipse cx="103" cy="250" rx="5" ry="3" /><ellipse cx="103" cy="280" rx="5" ry="3" /><ellipse cx="103" cy="310" rx="5" ry="3" /><ellipse cx="103" cy="340" rx="5" ry="3" />
+      <ellipse cx="147" cy="225" rx="5" ry="3" /><ellipse cx="147" cy="250" rx="5" ry="3" /><ellipse cx="147" cy="280" rx="5" ry="3" /><ellipse cx="147" cy="310" rx="5" ry="3" /><ellipse cx="147" cy="340" rx="5" ry="3" />
+      <ellipse cx="191" cy="225" rx="5" ry="3" /><ellipse cx="191" cy="250" rx="5" ry="3" /><ellipse cx="191" cy="280" rx="5" ry="3" /><ellipse cx="191" cy="310" rx="5" ry="3" /><ellipse cx="191" cy="340" rx="5" ry="3" />
+      <ellipse cx="235" cy="225" rx="5" ry="3" /><ellipse cx="235" cy="250" rx="5" ry="3" /><ellipse cx="235" cy="280" rx="5" ry="3" /><ellipse cx="235" cy="310" rx="5" ry="3" /><ellipse cx="235" cy="340" rx="5" ry="3" />
+      <ellipse cx="279" cy="225" rx="5" ry="3" /><ellipse cx="279" cy="250" rx="5" ry="3" /><ellipse cx="279" cy="280" rx="5" ry="3" /><ellipse cx="279" cy="310" rx="5" ry="3" /><ellipse cx="279" cy="340" rx="5" ry="3" />
+      <ellipse cx="323" cy="225" rx="5" ry="3" /><ellipse cx="323" cy="250" rx="5" ry="3" /><ellipse cx="323" cy="280" rx="5" ry="3" /><ellipse cx="323" cy="310" rx="5" ry="3" /><ellipse cx="323" cy="340" rx="5" ry="3" />
+      <ellipse cx="367" cy="225" rx="5" ry="3" /><ellipse cx="367" cy="250" rx="5" ry="3" /><ellipse cx="367" cy="280" rx="5" ry="3" /><ellipse cx="367" cy="310" rx="5" ry="3" /><ellipse cx="367" cy="340" rx="5" ry="3" />
+      <ellipse cx="411" cy="225" rx="5" ry="3" /><ellipse cx="411" cy="250" rx="5" ry="3" /><ellipse cx="411" cy="280" rx="5" ry="3" /><ellipse cx="411" cy="310" rx="5" ry="3" /><ellipse cx="411" cy="340" rx="5" ry="3" />
+      <ellipse cx="455" cy="225" rx="5" ry="3" /><ellipse cx="455" cy="250" rx="5" ry="3" /><ellipse cx="455" cy="280" rx="5" ry="3" /><ellipse cx="455" cy="310" rx="5" ry="3" /><ellipse cx="455" cy="340" rx="5" ry="3" />
+      <ellipse cx="499" cy="225" rx="5" ry="3" /><ellipse cx="499" cy="250" rx="5" ry="3" /><ellipse cx="499" cy="280" rx="5" ry="3" /><ellipse cx="499" cy="310" rx="5" ry="3" /><ellipse cx="499" cy="340" rx="5" ry="3" />
+      <ellipse cx="543" cy="225" rx="5" ry="3" /><ellipse cx="543" cy="250" rx="5" ry="3" /><ellipse cx="543" cy="280" rx="5" ry="3" /><ellipse cx="543" cy="310" rx="5" ry="3" /><ellipse cx="543" cy="340" rx="5" ry="3" />
+      <ellipse cx="587" cy="225" rx="5" ry="3" /><ellipse cx="587" cy="250" rx="5" ry="3" /><ellipse cx="587" cy="280" rx="5" ry="3" /><ellipse cx="587" cy="310" rx="5" ry="3" /><ellipse cx="587" cy="340" rx="5" ry="3" />
+    </g>
+
+    <!-- 4. SPONGY MESOPHYLL LAYER (y=370 to 520) -->
+    <!-- Loosely arranged oval/irregular cells with air cavities -->
+    <g fill="url(#spongyGrad)" stroke="#14532d" stroke-width="1.5">
+      <!-- Left side spongy cells -->
+      <ellipse cx="110" cy="395" rx="22" ry="18" />
+      <ellipse cx="160" cy="420" rx="20" ry="16" />
+      <ellipse cx="115" cy="460" rx="24" ry="18" />
+      <ellipse cx="170" cy="485" rx="22" ry="18" />
+      <ellipse cx="220" cy="405" rx="18" ry="18" />
+      <ellipse cx="230" cy="465" rx="22" ry="20" />
+
+      <!-- Right side spongy cells -->
+      <ellipse cx="470" cy="400" rx="22" ry="18" />
+      <ellipse cx="525" cy="420" rx="20" ry="18" />
+      <ellipse cx="580" cy="400" rx="20" ry="18" />
+      <ellipse cx="480" cy="460" rx="22" ry="20" />
+      <ellipse cx="540" cy="470" rx="24" ry="18" />
+      <ellipse cx="590" cy="460" rx="18" ry="18" />
+    </g>
+
+    <!-- Chloroplasts in Spongy cells (fewer density) -->
+    <g fill="#86efac">
+      <circle cx="110" cy="395" r="3" /><circle cx="160" cy="420" r="3" /><circle cx="115" cy="460" r="3" />
+      <circle cx="470" cy="400" r="3" /><circle cx="525" cy="420" r="3" /><circle cx="540" cy="470" r="3" />
+    </g>
+
+    <!-- 5. VASCULAR BUNDLE (Vein: Xylem & Phloem) in Center (x=350, y=445) -->
+    <g transform="translate(350, 445)">
+      <!-- Bundle Sheath ring -->
+      <ellipse cx="0" cy="0" rx="68" ry="58" fill="#1e293b" stroke="#facc15" stroke-width="2" />
+
+      <!-- Xylem (Upper portion - Water transport) -->
+      <path d="M -55 -5 C -55 -45 55 -45 55 -5 Z" fill="#0369a1" stroke="#38bdf8" stroke-width="1.5" />
+      <!-- Xylem Vessels (Lignified rings) -->
+      <circle cx="-25" cy="-22" r="14" fill="#0284c7" stroke="#e0f2fe" stroke-width="2" />
+      <circle cx="0" cy="-28" r="12" fill="#0284c7" stroke="#e0f2fe" stroke-width="2" />
+      <circle cx="25" cy="-22" r="14" fill="#0284c7" stroke="#e0f2fe" stroke-width="2" />
+      <circle cx="-10" cy="-12" r="9" fill="#0284c7" stroke="#e0f2fe" stroke-width="1.5" />
+      <circle cx="12" cy="-12" r="9" fill="#0284c7" stroke="#e0f2fe" stroke-width="1.5" />
+
+      <!-- Phloem (Lower portion - Sucrose transport) -->
+      <path d="M -55 5 C -55 45 55 45 55 5 Z" fill="#9a3412" stroke="#fb923c" stroke-width="1.5" />
+      <!-- Phloem Sieve Tubes -->
+      <circle cx="-24" cy="22" r="9" fill="#c2410c" stroke="#fed7aa" stroke-width="1.2" />
+      <circle cx="0" cy="24" r="10" fill="#c2410c" stroke="#fed7aa" stroke-width="1.2" />
+      <circle cx="24" cy="22" r="9" fill="#c2410c" stroke="#fed7aa" stroke-width="1.2" />
+      <circle cx="-10" cy="12" r="7" fill="#c2410c" stroke="#fed7aa" stroke-width="1" />
+      <circle cx="10" cy="12" r="7" fill="#c2410c" stroke="#fed7aa" stroke-width="1" />
+
+      <text x="0" y="-36" fill="#e0f2fe" font-size="10" font-weight="800" text-anchor="middle">XYLEM (H₂O)</text>
+      <text x="0" y="40" fill="#ffedd5" font-size="10" font-weight="800" text-anchor="middle">PHLOEM (Food)</text>
+    </g>
+
+    <!-- Intercellular Air Spaces label background -->
+    <text x="210" y="440" fill="#38bdf8" font-size="10" font-weight="700" text-anchor="middle">Air Space</text>
+
+    <!-- 6. LOWER EPIDERMIS WITH STOMATA (y=520 to 560) -->
+    <!-- Epidermal cells interrupted by Guard Cells/Stomata -->
+    <g fill="url(#epidermisGrad)" stroke="#15803d" stroke-width="1.5">
+      <rect x="80" y="520" width="80" height="38" rx="4" />
+      <rect x="230" y="520" width="100" height="38" rx="4" />
+      <rect x="370" y="520" width="90" height="38" rx="4" />
+      <rect x="530" y="520" width="90" height="38" rx="4" />
+    </g>
+
+    <!-- Stoma 1 (Left, x=195) -->
+    <g transform="translate(195, 539)">
+      <!-- Left Guard Cell -->
+      <path d="M -15 -14 C -28 -8 -28 8 -15 14 C -6 8 -6 -8 -15 -14 Z" fill="#22c55e" stroke="#14532d" stroke-width="1.5" />
+      <circle cx="-16" cy="0" r="2.5" fill="#14532d" /><!-- nucleus -->
+      <circle cx="-18" cy="-6" r="1.5" fill="#4ade80" /><!-- chloroplast -->
+      <circle cx="-18" cy="6" r="1.5" fill="#4ade80" />
+
+      <!-- Right Guard Cell -->
+      <path d="M 15 -14 C 28 -8 28 8 15 14 C 6 8 6 -8 15 -14 Z" fill="#22c55e" stroke="#14532d" stroke-width="1.5" />
+      <circle cx="16" cy="0" r="2.5" fill="#14532d" />
+      <circle cx="18" cy="-6" r="1.5" fill="#4ade80" />
+      <circle cx="18" cy="6" r="1.5" fill="#4ade80" />
+
+      <!-- Stomatal Pore Aperture -->
+      <ellipse cx="0" cy="0" rx="5" ry="10" fill="#0f172a" stroke="#16a34a" stroke-width="1" />
+    </g>
+
+    <!-- Stoma 2 (Right, x=495) -->
+    <g transform="translate(495, 539)">
+      <path d="M -15 -14 C -28 -8 -28 8 -15 14 C -6 8 -6 -8 -15 -14 Z" fill="#22c55e" stroke="#14532d" stroke-width="1.5" />
+      <path d="M 15 -14 C 28 -8 28 8 15 14 C 6 8 6 -8 15 -14 Z" fill="#22c55e" stroke="#14532d" stroke-width="1.5" />
+      <ellipse cx="0" cy="0" rx="5" ry="10" fill="#0f172a" stroke="#16a34a" stroke-width="1" />
+    </g>
+
+    <!-- 7. LOWER WAXY CUTICLE (y=558 to 568) -->
+    <rect x="80" y="558" width="80" height="8" rx="2" fill="url(#cuticleGrad)" stroke="#ca8a04" stroke-width="1" />
+    <rect x="230" y="558" width="100" height="8" rx="2" fill="url(#cuticleGrad)" stroke="#ca8a04" stroke-width="1" />
+    <rect x="370" y="558" width="90" height="8" rx="2" fill="url(#cuticleGrad)" stroke="#ca8a04" stroke-width="1" />
+    <rect x="530" y="558" width="90" height="8" rx="2" fill="url(#cuticleGrad)" stroke="#ca8a04" stroke-width="1" />
+
+    <!-- Gas Exchange In & Out Arrows at Stoma 1 -->
+    <g transform="translate(195, 570)">
+      <!-- CO2 Inward -->
+      <path d="M -20 50 L -5 10" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)" />
+      <text x="-35" y="65" fill="#38bdf8" font-size="11" font-weight="700">CO₂ (In)</text>
+
+      <!-- O2 & H2O Outward -->
+      <path d="M 5 10 L 20 50" stroke="#4ade80" stroke-width="2" marker-end="url(#arrow)" />
+      <text x="15" y="65" fill="#4ade80" font-size="11" font-weight="700">O₂ &amp; H₂O (Out)</text>
+    </g>
+  </g>
+
+  <!-- RIGHT ANNOTATION LABELS & DETAILS -->
+  <g transform="translate(680, 140)">
+    <!-- Cuticle Callout -->
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="15" r="10" fill="#eab308" /><text x="0" y="19" fill="#0f172a" font-size="11" font-weight="bold" text-anchor="middle">1</text>
+      <text x="18" y="14" fill="#fde047" font-size="13" font-weight="700">Waxy Cuticle</text>
+      <text x="18" y="28" fill="#94a3b8" font-size="10.5">Waterproof lipid layer; cuts transpiration</text>
+      <line x1="-10" y1="15" x2="-35" y2="15" stroke="#eab308" stroke-width="1.5" stroke-dasharray="3,2" />
+    </g>
+
+    <!-- Upper Epidermis Callout -->
+    <g transform="translate(0, 50)">
+      <circle cx="0" cy="15" r="10" fill="#22c55e" /><text x="0" y="19" fill="#0f172a" font-size="11" font-weight="bold" text-anchor="middle">2</text>
+      <text x="18" y="14" fill="#86efac" font-size="13" font-weight="700">Upper Epidermis</text>
+      <text x="18" y="28" fill="#94a3b8" font-size="10.5">Single layer, transparent, protects tissue</text>
+      <line x1="-10" y1="15" x2="-35" y2="40" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3,2" />
+    </g>
+
+    <!-- Palisade Mesophyll Callout -->
+    <g transform="translate(0, 110)">
+      <circle cx="0" cy="15" r="10" fill="#16a34a" /><text x="0" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">3</text>
+      <text x="18" y="14" fill="#4ade80" font-size="13" font-weight="700">Palisade Mesophyll</text>
+      <text x="18" y="28" fill="#94a3b8" font-size="10.5">Primary site of Photosynthesis (rich in Chl)</text>
+      <line x1="-10" y1="15" x2="-65" y2="130" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2" />
+    </g>
+
+    <!-- Vascular Bundle Callout -->
+    <g transform="translate(0, 190)">
+      <circle cx="0" cy="15" r="10" fill="#0284c7" /><text x="0" y="19" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">4</text>
+      <text x="18" y="14" fill="#38bdf8" font-size="13" font-weight="700">Vascular Bundle (Vein)</text>
+      <text x="18" y="28" fill="#cbd5e1" font-size="10.5">• Xylem: H₂O + Minerals transport</text>
+      <text x="18" y="42" fill="#cbd5e1" font-size="10.5">• Phloem: Translocation of Sucrose</text>
+      <line x1="-10" y1="20" x2="-215" y2="280" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,2" />
+    </g>
+
+    <!-- Spongy Mesophyll Callout -->
+    <g transform="translate(0, 275)">
+      <circle cx="0" cy="15" r="10" fill="#10b981" /><text x="0" y="19" fill="#0f172a" font-size="11" font-weight="bold" text-anchor="middle">5</text>
+      <text x="18" y="14" fill="#34d399" font-size="13" font-weight="700">Spongy Mesophyll</text>
+      <text x="18" y="28" fill="#94a3b8" font-size="10.5">Air cavities allow rapid CO₂ diffusion</text>
+      <line x1="-10" y1="15" x2="-45" y2="210" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,2" />
+    </g>
+
+    <!-- Stomata & Guard Cells Callout -->
+    <g transform="translate(0, 355)">
+      <circle cx="0" cy="15" r="10" fill="#f59e0b" /><text x="0" y="19" fill="#0f172a" font-size="11" font-weight="bold" text-anchor="middle">6</text>
+      <text x="18" y="14" fill="#fbbf24" font-size="13" font-weight="700">Stomata &amp; Guard Cells</text>
+      <text x="18" y="28" fill="#94a3b8" font-size="10.5">Regulate gas exchange &amp; transpiration rate</text>
+      <line x1="-10" y1="15" x2="-140" y2="390" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,2" />
+    </g>
+  </g>
+
+  <!-- BOTTOM PHOTOSYNTHESIS FORMULA STRIP -->
+  <g transform="translate(50, 720)">
+    <rect width="850" height="75" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="1.5" filter="url(#shadow)" />
+    <text x="425" y="24" fill="#4ade80" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">CANONICAL BALANCED CHEMICAL EQUATION FOR PHOTOSYNTHESIS</text>
+    <text x="425" y="55" fill="#f8fafc" font-size="15" font-weight="800" text-anchor="middle" font-family="monospace">
+      6CO₂ + 12H₂O  <tspan fill="#fde047">──[ Sunlight / Chlorophyll ]──▶</tspan>  C₆H₁₂O₆ (Glucose) + 6O₂ ↑ + 6H₂O
+    </text>
+  </g>
+</svg>

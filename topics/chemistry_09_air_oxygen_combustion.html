@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry 09: Air, Oxygen & Combustion • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+    
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🧪 Chemistry • Topic 09</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 09</div>
+    <h1 class="topic-title">Air, Oxygen & Combustion</h1>
+    <p class="topic-subtext">
+      Composition of air (N₂ 78%, O₂ 21%, Ar+CO₂ 1%), properties and preparation of oxygen, combustion types (rapid, slow, spontaneous), products of combustion, and rusting of iron with prevention methods.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. COMPOSITION OF AIR -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Composition of Air</h2>
+      <p>
+        When you take a deep breath or fill up a party balloon, you are not just inhaling a single pure gas, but a rich, invisible mixture that blankets our entire planet. This mixture, which we call the atmosphere, is a dynamic blend of several gases, water vapour, and dust particles. While we often think of oxygen as the most important part because it keeps us alive, it is actually not the most abundant gas in the air around us.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Air (Atmospheric Mixture):</span>
+        Air is a homogeneous mixture of various gases, primarily composed of nitrogen and oxygen, along with trace amounts of other gases, which surrounds the Earth.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> Air is explicitly classified as a <strong>mixture</strong> rather than a compound. The gases in air are simply mixed physically without any chemical bonds holding them together, meaning their individual properties remain entirely unchanged and they can be separated by fractional distillation.
+      </div>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Atmosphere_gas_proportions.svg/500px-Atmosphere_gas_proportions.svg.png" alt="Pie chart illustrating the proportions of gases in Earth's atmosphere: 78% Nitrogen, 21% Oxygen, and 1% other trace gases" class="diagram-img" >
+        <figcaption class="diagram-caption">Fig 1: Relative volumetric proportions of atmospheric gases. Nitrogen comprises nearly four-fifths of the mixture, with oxygen making up roughly one-fifth.</figcaption>
+      </figure>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Constituent Gas</th>
+            <th>Approximate Volume (%)</th>
+            <th>Primary Biological & Environmental Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Nitrogen (N₂)</strong></td>
+            <td>78%</td>
+            <td>Dilutes the activity of oxygen (preventing rapid, uncontrollable combustion) and is essential for plant growth via the nitrogen cycle.</td>
+          </tr>
+          <tr>
+            <td><strong>Oxygen (O₂)</strong></td>
+            <td>21%</td>
+            <td>Essential for the respiration of nearly all living organisms and entirely responsible for supporting the process of combustion (burning).</td>
+          </tr>
+          <tr>
+            <td><strong>Argon (Ar) & Noble Gases</strong></td>
+            <td>~ 0.9%</td>
+            <td>Chemically inert and unreactive; primarily used in light bulbs to prevent the tungsten filament from burning out.</td>
+          </tr>
+          <tr>
+            <td><strong>Carbon Dioxide (CO₂)</strong></td>
+            <td>~ 0.04%</td>
+            <td>Utilised by plants during photosynthesis to manufacture food, and plays a vital role in regulating the Earth's temperature (greenhouse effect).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. OXYGEN: PROPERTIES & PREPARATION -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Oxygen: Properties & Preparation</h2>
+      <p>
+        If you have ever seen a campfire suddenly roar to life when a gust of wind hits it, you are witnessing the power of oxygen in action. Oxygen is the active, life-giving component of air that drives energetic chemical reactions. In the laboratory, chemists must often generate pure oxygen gas on demand rather than trying to filter it out of the everyday air.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Laboratory Preparation of Oxygen:</span>
+        Oxygen is typically prepared in the laboratory by the thermal decomposition of oxygen-rich compounds, such as potassium chlorate ($KClO_3$), or the catalytic decomposition of hydrogen peroxide ($H_2O_2$).
+        <br><br>
+        • <em>Catalytic Decomposition Equation:</em> $$2H_2O_2 \xrightarrow{MnO_2} 2H_2O + O_2 \uparrow$$
+        In this reaction, manganese dioxide ($MnO_2$) acts as a <strong>catalyst</strong>—a substance that radically speeds up the rate of the chemical reaction without being consumed or permanently altered itself.
+      </div>
+      <div class="derivation-card">
+        <span class="derivation-title">Physical and Chemical Properties of Oxygen</span>
+        <div class="derivation-step">
+          1. <strong>Physical State:</strong> At room temperature, oxygen is a colourless, odourless, and tasteless gas. It is slightly heavier than air and sparingly soluble in water (which allows aquatic life to survive).<br><br>
+          2. <strong>Supporter of Combustion:</strong> Oxygen itself is <em>non-combustible</em> (it does not burn on its own), but it is a vigorous <em>supporter of combustion</em>. A glowing splint plunged into a jar of pure oxygen will brightly reignite.<br><br>
+          3. <strong>Reaction with Metals:</strong> It reacts with most metals to form basic metal oxides. For example, burning magnesium in oxygen yields brilliant white magnesium oxide:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$2Mg + O_2 \rightarrow 2MgO$$<br>
+          4. <strong>Reaction with Non-Metals:</strong> It reacts with non-metals to form acidic oxides. For example, burning sulphur produces pungent sulphur dioxide:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$S + O_2 \rightarrow SO_2$$
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. COMBUSTION -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Combustion Types and Products</h2>
+      <p>
+        When you strike a matchstick, the sudden burst of heat and light is unmistakable. However, not all burning happens in a dramatic flash. Sometimes, like when a pile of oily rags slowly heats up in a garage, the reaction builds up quietly over time. In chemistry, burning is defined systematically based on how fast the reaction occurs and how much energy is released.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Combustion:</span>
+        Combustion is an exothermic chemical process in which a substance reacts rapidly with oxygen to produce heat and light energy. The substance that undergoes burning is called a combustible substance.
+        <br><br>
+        • <em>Ignition Temperature:</em> The lowest temperature at which a combustible substance catches fire in the presence of air is termed its ignition temperature. A substance cannot catch fire if its temperature is lower than this critical threshold.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Type of Combustion</th>
+            <th>Definition & Characteristics</th>
+            <th>Common Real-World Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rapid Combustion</strong></td>
+            <td>A fast reaction that requires an external heat source to start, producing enormous amounts of heat and visible light instantly.</td>
+            <td>Burning of a wax candle, striking a matchstick, or turning on a domestic LPG gas stove.</td>
+          </tr>
+          <tr>
+            <td><strong>Spontaneous Combustion</strong></td>
+            <td>A dangerous reaction in which a substance suddenly bursts into flames entirely on its own, without any external application of heat.</td>
+            <td>White phosphorus catching fire in open air at room temperature; coal dust igniting in deep mines.</td>
+          </tr>
+          <tr>
+            <td><strong>Slow Combustion</strong></td>
+            <td>A gradual reaction taking place at low temperatures, releasing heat very slowly without any emission of light.</td>
+            <td>Cellular respiration inside human bodies; the slow decomposition of organic matter in a compost pit.</td>
+          </tr>
+          <tr>
+            <td><strong>Explosive Combustion</strong></td>
+            <td>An instantaneous reaction producing immense heat, brilliant light, and a massive volume of expanding gases, causing a loud sound.</td>
+            <td>Detonating a firecracker; the ignition of a highly volatile dynamite stick.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. RUSTING OF IRON & PREVENTION -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Rusting of Iron and Its Prevention</h2>
+      <p>
+        If you leave a shiny new bicycle outside in the damp rain for a few weeks, you will soon notice an ugly, reddish-brown flaky crust forming on its chains and frame. This slow, destructive process is a specific chemical reaction that specifically targets iron when it is exposed to the elements, eating away at the structural integrity of bridges, ships, and vehicles.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Rusting:</span>
+        Rusting is the slow, continuous oxidation of iron in the simultaneous presence of atmospheric oxygen and moisture (water) to form a hydrated iron(III) oxide, commonly known as rust.
+        <br><br>
+        • <em>Chemical Equation for Rusting:</em> 
+        $$4Fe + 3O_2 + 2xH_2O \rightarrow 2Fe_2O_3 \cdot xH_2O$$
+        (Where '$x$' represents a variable number of water molecules of crystallization). Rust is highly porous and non-adherent, meaning it continuously flakes off, exposing fresh iron beneath to further attack.
+      </div>
+      <div class="derivation-card">
+        <span class="derivation-title">Methods for the Prevention of Rusting</span>
+        <div class="derivation-step">
+          To prevent iron from rusting, one must break the contact between the iron surface and the two essential conditions: oxygen and moisture.<br><br>
+          1. <strong>Barrier Protection (Painting or Oiling):</strong> Coating the surface of iron objects with paint, grease, or oil forms a physical barrier that entirely blocks out air and water. This is commonly used on moving machine parts and bridge girders.<br><br>
+          2. <strong>Galvanization:</strong> The process of coating a thin layer of zinc over iron articles. Because zinc is far more reactive than iron, the zinc layer oxidizes first, effectively sacrificing itself to protect the underlying iron (even if the coating gets scratched).<br><br>
+          3. <strong>Alloying (Stainless Steel):</strong> Mixing iron with precise amounts of carbon, chromium, and nickel creates a homogenous alloy called stainless steel. This fundamentally alters the chemical properties of the metal, making it completely resistant to rusting, ideal for surgical instruments and kitchen cutlery.
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. WORKED ICSE NUMERICALS / PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.1: Combustion Equations & Types</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Write balanced chemical equations for the complete combustion of: (i) Carbon (ii) Hydrogen (iii) Methane ($CH_4$) in an excess supply of oxygen. Furthermore, identify the primary type of combustion occurring in each scenario.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Combustion of Carbon:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Equation: $$C + O_2 \rightarrow CO_2 + \text{Heat} + \text{Light}$$ [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Type: Rapid combustion (produces heat and light rapidly upon ignition).<br><br>
+          2. <em>Combustion of Hydrogen:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Equation: $$2H_2 + O_2 \rightarrow 2H_2O + \text{Heat}$$ [1.5 Marks]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Type: Explosive/Rapid combustion (hydrogen burns with a distinctive 'pop' sound and explosive violence in air).<br><br>
+          3. <em>Combustion of Methane ($CH_4$):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Equation: $$CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O + \text{Heat} + \text{Light}$$ [1.5 Marks]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Type: Rapid combustion (methane is the primary component of natural gas, burning smoothly with a blue flame).
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.2: Investigating Rusting Conditions</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A student sets up three test tubes: (A) an iron nail in dry air (with anhydrous calcium chloride), (B) an iron nail in boiled, distilled water sealed with a layer of oil, and (C) an iron nail in ordinary tap water open to the air. After one week of observation, which nail rusts? Explain in detail why conditions A and B successfully prevent rusting.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Observation (Which nail rusts?):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Only the iron nail in <strong>Test Tube C</strong> will rust. This is because it is the only tube exposed to both dissolved oxygen from the air and liquid moisture simultaneously. [1 Mark]<br><br>
+          2. <em>Explanation for Condition A (Dry Air):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The anhydrous calcium chloride is a powerful drying agent (desiccant) that entirely absorbs any atmospheric moisture. The nail is exposed to oxygen, but there is absolutely no water present. Without water, the hydration step of rusting cannot occur. [1 Mark]<br><br>
+          3. <em>Explanation for Condition B (Boiled Water + Oil):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Boiling the water forcefully expels all the dissolved oxygen gas from it. The subsequent layer of oil poured on top acts as an impermeable physical barrier, preventing new atmospheric oxygen from dissolving back into the water. The nail has moisture, but absolutely no oxygen, hence rusting is blocked. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 6. GIVE SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning Item</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reason1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question"><strong>Q:</strong> Why do deep sea divers and mountaineers carry specialized oxygen cylinders with them?</div>
+        <div class="reasoning-answer" id="reason1">
+          <strong>Model Examiner Answer:</strong> As altitude increases on high mountains, the atmospheric pressure sharply decreases, meaning the air becomes much thinner and the partial pressure of oxygen is too low to sustain normal human respiration. Conversely, deep underwater, humans have no biological mechanism (like gills) to extract the dissolved oxygen from the water. In both extreme environments, carrying pressurized oxygen cylinders is strictly necessary to ensure a continuous, sufficient supply of oxygen directly to the lungs for cellular respiration.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning Item</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reason2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question"><strong>Q:</strong> Why is it incredibly dangerous to sleep in a closed room with a coal fire burning inside?</div>
+        <div class="reasoning-answer" id="reason2">
+          <strong>Model Examiner Answer:</strong> In a completely closed room, the burning coal rapidly consumes the available oxygen in the air. As the oxygen supply dwindles, the coal undergoes <em>incomplete combustion</em>, which generates deadly carbon monoxide (CO) gas instead of carbon dioxide. Carbon monoxide is exceptionally dangerous because it binds with the haemoglobin in human blood much faster than oxygen, cutting off the oxygen supply to the brain and potentially causing fatal suffocation during sleep.
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_08_water_solutions_solubility.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-08 · Water, Solutions &amp;</a>
+    <a href="chemistry_10_carbon_and_allotropes.html" class="topic-nav-link topic-nav-next">CHEM-10 · Carbon & Its &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Chemistry Topic 09: Air, Oxygen & Combustion</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+  
+</body>
+</html>

@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chemistry 11: Water Hardness & Treatment • ICSE Class 7</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); text-decoration: none; }
+    .nav-back { font-size: 13.5px; font-weight: 600; color: var(--terracotta); text-decoration: none; }
+    
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 14px; }
+    .section-heading { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    
+    p { font-size: 15px; color: var(--ink-black); line-height: 1.65; max-width: 75ch; }
+    
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-secondary); }
+    .definition-term { font-weight: 700; color: var(--ink-black); }
+    
+    .derivation-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .derivation-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); margin-bottom: 8px; display: block; }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; }
+    
+    .distinction-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13.5px; }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-strong); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-weight: 600; color: var(--ink-black); }
+    .distinction-table tr:nth-child(even) td { background: var(--bg-surface); }
+    
+    .problem-box { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .problem-type { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .problem-statement { font-size: 15px; font-weight: 500; color: var(--ink-black); margin-bottom: 14px; line-height: 1.5; }
+    
+    .btn-toggle { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; }
+    .solution-drawer { display: none; margin-top: 14px; padding: 14px; background: var(--bg-card); border-left: 3px solid var(--emerald-accent); border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.6; }
+    
+    .diagram-figure { margin: 12px 0; text-align: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    /* Muted purplish grey exception system */
+    .exception-tag {
+      color: #6b5b7b;
+      font-size: 0.78em;
+      vertical-align: super;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: help;
+    }
+
+    .exception-note {
+      margin-top: 16px;
+      margin-left: 20px;
+      padding: 10px 16px;
+      border-left: 2px solid #6b5b7b;
+      background: rgba(107, 91, 123, 0.04);
+      border-radius: 0 6px 6px 0;
+      color: #6b5b7b;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .exception-note-title {
+      font-weight: 700;
+      color: #554564;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13.5px;
+    }
+    
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 48px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); margin-top: 48px; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">🧪 Chemistry • Topic 11</a>
+    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 11</div>
+    <h1 class="topic-title">Water Hardness &amp; Treatment Technologies</h1>
+    <p class="topic-subtext">
+      Soft vs Hard water, Chemical origin of hardness (\(\text{Ca}^{2+}\) and \(\text{Mg}^{2+}\) salts), Temporary vs Permanent hardness, Removal methods (Boiling, Clark's process, Washing soda, Ion exchange resins), and Industrial boiler scale hazards.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. SOFT VS HARD WATER -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Soft Water vs. Hard Water</h2>
+      <p>
+        Have you ever noticed that when washing your hands with soap in certain cities or when using mountain well water, the soap easily foams into rich, fluffy bubbles (lather), while in other areas, the soap refuses to foam and instead forms a sticky, curd-like white scum that clings to your skin? This difference is caused by dissolved mineral salts in the water.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Definitions of Water Types:</span>
+        • <strong>Soft Water:</strong> Water that readily forms a rich lather when rubbed with ordinary soap (e.g. distilled water, pure rainwater). It contains negligible amounts of dissolved calcium and magnesium ions.<br>
+        • <strong>Hard Water:</strong> Water that does not readily produce lather with soap, but instead reacts with soap molecules to form an insoluble white precipitate called <strong>scum</strong> (e.g. underground well water, tube-well water, water flowing through limestone hills).
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">The Chemical Mechanism of Soap Scum Formation</span>
+        <div class="derivation-step">
+          Ordinary bathing soap is the sodium salt of a long-chain fatty acid called sodium stearate (\(\text{C}_{17}\text{H}_{35}\text{COONa}\)). When soap dissolves in hard water containing dissolved calcium ions (\(\text{Ca}^{2+}\)), a double displacement reaction takes place:
+          $$2\text{C}_{17}\text{H}_{35}\text{COONa (aq)} + \text{CaSO}_4\text{ (aq)} \rightarrow (\text{C}_{17}\text{H}_{35}\text{COO})_2\text{Ca}\downarrow\text{ (Curdy Scum)} + \text{Na}_2\text{SO}_4\text{ (aq)}$$
+          <em>Key Practical Consequence:</em> No lather can form until all the dissolved calcium and magnesium ions have precipitated out as scum, resulting in massive wastage of soap.
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. TYPES OF WATER HARDNESS -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Temporary Hardness vs. Permanent Hardness</h2>
+      <p>
+        Water hardness is categorized according to the specific chemical anions paired with the calcium and magnesium cations:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Temporary Hardness</th>
+            <th>Permanent Hardness</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Dissolved Chemical Salts</strong></td>
+            <td>Dissolved <strong>Hydrogen Carbonates (Bicarbonates)</strong> of Calcium and Magnesium:<br>
+            • Calcium Bicarbonate \(\text{Ca(HCO}_3)_2\)<br>
+            • Magnesium Bicarbonate \(\text{Mg(HCO}_3)_2\)</td>
+            <td>Dissolved <strong>Chlorides and Sulphates</strong> of Calcium and Magnesium:<br>
+            • Calcium Chloride \(\text{CaCl}_2\) &amp; Calcium Sulphate \(\text{CaSO}_4\)<br>
+            • Magnesium Chloride \(\text{MgCl}_2\) &amp; Magnesium Sulphate \(\text{MgSO}_4\)</td>
+          </tr>
+          <tr>
+            <td><strong>Origin in Nature</strong></td>
+            <td>Rainwater containing dissolved \(\text{CO}_2\) percolating through limestone (\(\text{CaCO}_3\)) rocks.</td>
+            <td>Water flowing through underground mineral deposits of gypsum (\(\text{CaSO}_4\cdot 2\text{H}_2\text{O}\)) or rock salt.</td>
+          </tr>
+          <tr>
+            <td><strong>Ease of Removal</strong></td>
+            <td>Can be removed simply by <strong>boiling</strong> or adding calculated slaked lime (Clark's process).</td>
+            <td><strong>Cannot</strong> be removed by simple boiling; requires chemical treatment or ion-exchange resins.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. WATER SOFTENING TECHNIQUES -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Methods for Softening Hard Water</h2>
+      <p>
+        Softening water means removing or deactivating the dissolved \(\text{Ca}^{2+}\) and \(\text{Mg}^{2+}\) ions so that the water can lather freely with soap:
+      </p>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Softening Chemical Reactions</span>
+        <div class="derivation-step">
+          1. <strong>Removal of Temporary Hardness by Boiling:</strong><br>
+          Heating decomposes soluble bicarbonates into insoluble carbonates that precipitate out as solid crusts:<br>
+          $$\text{Ca(HCO}_3)_2\text{ (aq)} \xrightarrow{\Delta} \mathbf{\text{CaCO}_3\downarrow\text{ (Solid Insoluble)}} + \text{H}_2\text{O} + \text{CO}_2\uparrow$$<br>
+
+          2. <strong>Clark's Process (Addition of Slaked Lime):</strong><br>
+          A carefully calculated quantity of calcium hydroxide \(\text{Ca(OH)}_2\) is added to neutralize temporary hardness without heat:<br>
+          $$\text{Ca(HCO}_3)_2 + \text{Ca(OH)}_2 \rightarrow 2\mathbf{\text{CaCO}_3\downarrow} + 2\text{H}_2\text{O}$$<br>
+
+          3. <strong>Removal of Permanent Hardness using Washing Soda (\(\text{Na}_2\text{CO}_3\)):</strong><br>
+          Adding sodium carbonate converts soluble sulphates/chlorides into insoluble metal carbonates:<br>
+          $$\text{CaSO}_4\text{ (aq)} + \text{Na}_2\text{CO}_3\text{ (aq)} \rightarrow \mathbf{\text{CaCO}_3\downarrow} + \text{Na}_2\text{SO}_4\text{ (aq)}$$
+          $$\text{MgCl}_2\text{ (aq)} + \text{Na}_2\text{CO}_3\text{ (aq)} \rightarrow \mathbf{\text{MgCO}_3\downarrow} + 2\text{NaCl (aq)}$$<br>
+
+          4. <strong>Modern Ion-Exchange (Permutit / Zeolite Process):</strong><br>
+          Hard water is passed through a cylinder packed with sodium aluminium silicate zeolite (\(\text{Na}_2\text{Z}\)). The resin swaps its harmless sodium ions for the calcium and magnesium ions in the water:
+          $$\text{Na}_2\text{Z (Resin)} + \text{Ca}^{2+}\text{ (aq)} \rightarrow \mathbf{\text{CaZ (Trapped)}} + 2\text{Na}^+\text{ (Soft Water)}$$
+        </div>
+      </div>
+
+      <!-- Indented Scientific Exception Note -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†1] Industrial Hazard: Boiler Scale &amp; Explosion Risks</span>
+        When hard water is fed into high-pressure industrial steam boilers, the continuous boiling creates a thick, stony layer of \(\text{CaCO}_3\) and \(\text{CaSO}_4\) on the inner metal walls known as <strong>boiler scale</strong>. Because scale is an extremely poor conductor of heat, operators must burn excessive coal to boil water. Worse, if the brittle scale cracks under heat, cold water suddenly contacts the red-hot steel boiler plate, creating instantaneous high-pressure steam that can explode the entire boiler!
+      </div>
+    </div>
+
+    <!-- 4. WORKED LOGICAL EXEMPLARS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 11.1: Chemical Identification of Water Samples</span>
+        </div>
+        <div class="problem-statement">
+          A chemistry student is given three unlabeled beakers containing Sample \(A\), Sample \(B\), and Sample \(C\).<br>
+          • Sample \(A\) lathers immediately with soap without any treatment.<br>
+          • Sample \(B\) forms scum initially, but after boiling for 5 minutes, it filters clear and lathers freely.<br>
+          • Sample \(C\) forms scum initially, and boiling has zero effect on its ability to lather.<br>
+          Classify the three samples and identify the chemical salts responsible for hardness in \(B\) and \(C\).
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_c11_1')">Show Logical Diagnosis ↓</button>
+        <div class="solution-drawer" id="sol_c11_1">
+          <strong>Step-by-Step Logical Diagnosis:</strong><br><br>
+          1. <strong>Sample \(A\) is Soft Water:</strong> Because it produces rich lather immediately without treatment, it contains negligible dissolved \(\text{Ca}^{2+}\) or \(\text{Mg}^{2+}\) ions.<br><br>
+          2. <strong>Sample \(B\) is Temporarily Hard Water:</strong> Because boiling successfully removes its hardness, the hardness is caused by thermally unstable <strong>Calcium Bicarbonate \(\text{Ca(HCO}_3)_2\)</strong> or <strong>Magnesium Bicarbonate \(\text{Mg(HCO}_3)_2\)</strong>, which decompose upon heating to form insoluble carbonate precipitates.<br><br>
+          3. <strong>Sample \(C\) is Permanently Hard Water:</strong> Because boiling fails to soften the water, the hardness is caused by thermally stable <strong>Chlorides or Sulphates of Calcium/Magnesium (\(\text{CaCl}_2, \text{CaSO}_4, \text{MgCl}_2, \text{MgSO}_4\))</strong>.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 11.2: The Kettle Crust Phenomenon</span>
+        </div>
+        <div class="problem-statement">
+          In households supplied with well water, the inner heating element of an electric kettle develops a hard white chalky coating after a few weeks of use. Explain: (i) What this white substance is chemically, (ii) The balanced chemical reaction explaining its formation, and (iii) How dilute lemon juice or vinegar safely dissolves it.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_c11_2')">Show Chemical Resolution ↓</button>
+        <div class="solution-drawer" id="sol_c11_2">
+          <strong>Step-by-Step Chemical Resolution:</strong><br><br>
+          1. <strong>Identity:</strong> The white coating is solid <strong>Calcium Carbonate (\(\text{CaCO}_3\))</strong> (scale/fur).<br><br>
+          2. <strong>Formation Equation:</strong> As tap water is boiled in the kettle, soluble calcium bicarbonate decomposes thermally:
+          $$\text{Ca(HCO}_3)_2\text{ (aq)} \xrightarrow{\Delta} \mathbf{\text{CaCO}_3\downarrow\text{ (Solid Fur)}} + \text{H}_2\text{O} + \text{CO}_2\uparrow$$<br>
+          3. <strong>Descaling with Acid:</strong> Lemon juice (citric acid) or vinegar (acetic acid) contains mild acids (\(\text{H}^+\)) that react with the insoluble carbonate, converting it into soluble calcium citrate/acetate along with harmless fizzing of \(\text{CO}_2\):
+          $$\text{CaCO}_3\text{ (s)} + 2\text{CH}_3\text{COOH (aq)} \rightarrow (\text{CH}_3\text{COO})_2\text{Ca (aq)} + \text{H}_2\text{O} + \text{CO}_2\uparrow$$
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 5. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Water Hardness 1: Boiling Temporary Hard Water</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_c11_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why can temporary hardness of water be removed by simple boiling, while permanent hardness cannot?</div>
+        <div class="reasoning-answer" id="reas_c11_1">
+          <strong>Scientific Resolution:</strong><br>
+          Temporary hardness is caused by soluble bicarbonates (\(\text{Ca(HCO}_3)_2\) and \(\text{Mg(HCO}_3)_2\)), which decompose upon heating into insoluble carbonates (\(\text{CaCO}_3\)) that precipitate out. Permanent hardness is caused by soluble chlorides and sulphates (\(\text{CaCl}_2, \text{MgSO}_4\)), which are thermally stable and do not decompose upon boiling.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Water Hardness 2: Detergent vs Soap in Hard Water</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_c11_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are synthetic detergents preferred over ordinary soaps for washing fabrics in hard water?</div>
+        <div class="reasoning-answer" id="reas_c11_2">
+          <strong>Scientific Resolution:</strong><br>
+          Soap reacts with calcium and magnesium ions in hard water to form a sticky, insoluble precipitate called scum (\(\text{curd}\)), wasting soap. Synthetic detergents do not form insoluble precipitates with \(\text{Ca}^{2+}\) or \(\text{Mg}^{2+}\) ions and lather freely even in hard water.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_10_carbon_and_allotropes.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-10 · Carbon & Its</a>
+    <a href="chemistry_12_oxides_acid_rain_and_atmosphere.html" class="topic-nav-link topic-nav-next">CHEM-12 · Oxides, Acid Rain &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Chemistry • Topic 11: Water Hardness &amp; Treatment</div>
+    <div>CISCE Class 7 Academic Compendium</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

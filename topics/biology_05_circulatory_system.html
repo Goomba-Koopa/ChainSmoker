@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology 05: Human Circulatory System • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+    
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🌿 Biology • Topic 05</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 05</div>
+    <h1 class="topic-title">Human Circulatory System</h1>
+    <p class="topic-subtext">
+      The 4-chambered heart anatomy (atria, ventricles, valves), double circulation (pulmonary + systemic), the five-point Arteries vs Veins vs Capillaries matrix, blood components (RBC/WBC/Platelets/Plasma), and the cardiac cycle.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. HEART ANATOMY -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Heart Anatomy: The Pumping Organ</h2>
+      <p>
+        Imagine a mechanical water pump that pushes water through the pipes of a house, ensuring it always flows in one direction and never backs up. The human heart acts as exactly such a pump for our body. It is a hollow, muscular organ roughly the size of a clenched fist, situated slightly to the left in the chest cavity, tirelessly pumping blood throughout our life.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Human Heart Structure:</span>
+        The human heart is divided into four main chambers: two upper receiving chambers called <strong>Atria</strong> (or auricles), and two lower pumping chambers called <strong>Ventricles</strong>. The chambers are separated by a muscular wall known as the <em>septum</em>. <strong>Valves</strong> (like the bicuspid and tricuspid valves) are flap-like structures located between the atria and ventricles that prevent the backward flow of blood.
+      </div>
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Diagram_of_the_human_heart_%28cropped%29.svg/500px-Diagram_of_the_human_heart_%28cropped%29.svg.png" alt="Diagram showing the four chambers of the human heart" class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1.1: Cross-section of the human heart showing atria, ventricles, and major vessels.</figcaption>
+      </figure>
+    </div>
+
+    <!-- 2. DOUBLE CIRCULATION -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Double Circulation</h2>
+      <p>
+        Think of a subway train system operating in a figure-8 pattern: one loop specifically goes to a station to pick up cargo, returns to the center, and then takes another loop to deliver that cargo across the entire city. In the human body, blood completes one full circuit by passing through the heart twice. It goes to the lungs to pick up oxygen, returns to the heart, and is then pumped out to the rest of the body.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Double Circulation:</span>
+        A circulatory mechanism in which blood passes through the heart twice during one complete cycle through the body. It consists of two pathways: <strong>Pulmonary Circulation</strong> (blood flow between the heart and lungs) and <strong>Systemic Circulation</strong> (blood flow between the heart and the rest of the body).
+      </div>
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Circulatory_System_en.svg/300px-Circulatory_System_en.svg.png" alt="Circulatory system overview showing double circulation" class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1.2: Schematic of double circulation—pulmonary and systemic circuits.</figcaption>
+      </figure>
+    </div>
+
+    <!-- 3. BLOOD VESSELS -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Blood Vessels Matrix</h2>
+      <p>
+        Our body uses a network of tubes similar to city roads. Arteries act like high-speed highways carrying supplies away from the center; veins are like return roads bringing vehicles back; and capillaries are the narrow, single-lane alleyways where actual deliveries take place right at the doorstep of cells.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Blood Vessels:</span>
+        The network of tubes transporting blood. <strong>Arteries</strong> carry oxygenated blood away from the heart, <strong>Veins</strong> bring deoxygenated blood back to the heart, and <strong>Capillaries</strong> are microscopic vessels that connect arteries and veins, allowing the exchange of gases and nutrients with tissues.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Arteries</th>
+            <th>Veins</th>
+            <th>Capillaries</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Function</strong></td>
+            <td>Carry blood away from the heart.</td>
+            <td>Carry blood towards the heart.</td>
+            <td>Connect arterioles and venules for exchange.</td>
+          </tr>
+          <tr>
+            <td><strong>Wall Thickness</strong></td>
+            <td>Thick, elastic, and muscular.</td>
+            <td>Thin and less elastic.</td>
+            <td>Extremely thin (one-cell thick).</td>
+          </tr>
+          <tr>
+            <td><strong>Valves</strong></td>
+            <td>Absent.</td>
+            <td>Present (to prevent backflow).</td>
+            <td>Absent.</td>
+          </tr>
+          <tr>
+            <td><strong>Blood Pressure</strong></td>
+            <td>High and flows in spurts.</td>
+            <td>Low and steady.</td>
+            <td>Extremely low.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. BLOOD COMPONENTS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Blood Components</h2>
+      <p>
+        Blood is often compared to a complex soup. The watery broth is the plasma, carrying dissolved nutrients. Floating in this broth are red chunks for delivering oxygen, white chunks patrolling for invading germs, and sticky fragments that clump together to plug leaks if the bowl cracks.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Composition of Blood:</span>
+        Blood is a fluid connective tissue composed of a liquid matrix called <strong>Plasma</strong> (55%) and formed elements or blood cells (45%). The formed elements include <strong>Red Blood Cells (RBCs/Erythrocytes)</strong> for oxygen transport, <strong>White Blood Cells (WBCs/Leukocytes)</strong> for immunity and defense, and <strong>Platelets (Thrombocytes)</strong> for blood clotting.
+      </div>
+    </div>
+
+    <!-- 5. CARDIAC CYCLE -->
+    <div class="section-block">
+      <h2 class="section-heading">5. The Cardiac Cycle</h2>
+      <p>
+        The beating of your heart follows a steady rhythmic drumbeat pattern—a "lub-dub" sound. This beat represents a highly synchronized sequence of relaxing to fill up with blood, followed by a powerful squeeze to pump that blood out.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Cardiac Cycle:</span>
+        The sequence of events occurring during one complete heartbeat. It includes the contraction phase (<strong>Systole</strong>) where blood is pumped out of the heart, and the relaxation phase (<strong>Diastole</strong>) where the heart chambers fill with blood.
+      </div>
+    </div>
+
+    <!-- WORKED PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Question 1: Distinction Table</span>
+          <span class="problem-marks">[5 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Distinguish between Arteries and Veins under the following headings:<br>
+          (i) Direction of blood flow<br>
+          (ii) Presence of valves<br>
+          (iii) Wall thickness<br>
+          (iv) Blood pressure<br>
+          (v) Type of blood carried (except pulmonary vessels)
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          <table class="distinction-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Arteries</th>
+                <th>Veins</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>(i) Direction of blood flow</strong> [1 Mark]</td>
+                <td>Flows away from the heart to various organs.</td>
+                <td>Flows from various organs towards the heart.</td>
+              </tr>
+              <tr>
+                <td><strong>(ii) Presence of valves</strong> [1 Mark]</td>
+                <td>Valves are completely absent.</td>
+                <td>Valves are present to prevent backward flow.</td>
+              </tr>
+              <tr>
+                <td><strong>(iii) Wall thickness</strong> [1 Mark]</td>
+                <td>Walls are thick, highly elastic, and muscular.</td>
+                <td>Walls are thin and less elastic.</td>
+              </tr>
+              <tr>
+                <td><strong>(iv) Blood pressure</strong> [1 Mark]</td>
+                <td>Blood flows under high pressure and in spurts.</td>
+                <td>Blood flows smoothly under low pressure.</td>
+              </tr>
+              <tr>
+                <td><strong>(v) Type of blood carried</strong> [1 Mark]</td>
+                <td>Carry oxygenated blood (except the pulmonary artery).</td>
+                <td>Carry deoxygenated blood (except the pulmonary vein).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Question 2: Give Scientific Reasons</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Give scientific reasons for the following statements:<br>
+          (i) The left ventricle wall is thicker than the right ventricle wall.<br>
+          (ii) Veins have valves but arteries do not.<br>
+          (iii) RBCs have no nucleus in maturity.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          <strong>(i) The left ventricle wall is thicker than the right ventricle wall.</strong> [1 Mark]<br>
+          <em>Reason:</em> The left ventricle has to pump blood across the entire systemic circulation to all distant parts of the body against high resistance, requiring immense force. The right ventricle only pumps blood to the nearby lungs.<br><br>
+          
+          <strong>(ii) Veins have valves but arteries do not.</strong> [1 Mark]<br>
+          <em>Reason:</em> Blood in veins flows under low pressure, often against gravity (e.g., from the legs upward). Valves prevent this blood from flowing backward. Arterial blood is under high pressure from the heart's pumping, so it naturally moves in one direction without needing valves.<br><br>
+          
+          <strong>(iii) RBCs have no nucleus in maturity.</strong> [1 Mark]<br>
+          <em>Reason:</em> Mature mammalian red blood cells lose their nucleus to maximize their internal space to accommodate more haemoglobin, allowing them to transport oxygen more efficiently. It also gives them a flexible biconcave shape to squeeze through narrow capillaries.
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 7. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Cardiology 1: Ventricles vs Atria Wall Thickness</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b5_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are the muscular walls of the left ventricle significantly thicker than those of the right ventricle and atria?</div>
+        <div class="reasoning-answer" id="reas_b5_1">
+          <strong>Scientific Resolution:</strong><br>
+          The atria only pump blood into adjacent ventricles, and the right ventricle pumps blood a short distance to the nearby lungs under low pulmonary pressure. The <strong>left ventricle</strong> must generate massive systemic arterial pressure (\(120\text{ mmHg}\)) to pump oxygenated blood through the aorta to the entire human body from head to toe.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Cardiology 2: Veins Possessing Internal Valves</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b5_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are veins equipped with semilunar pocket valves while arteries have none?</div>
+        <div class="reasoning-answer" id="reas_b5_2">
+          <strong>Scientific Resolution:</strong><br>
+          Arteries carry blood away from the heart under high systolic pressure, keeping blood flowing forward. Veins carry deoxygenated blood under very low pressure, often moving vertically upwards against gravity. Semilunar valves close automatically to prevent backward flow of blood.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="biology_04_digestive_system.html" class="topic-nav-link topic-nav-prev">&#8592; BIO-04 · Human Digestive System</a>
+    <a href="biology_06_human_respiratory_system.html" class="topic-nav-link topic-nav-next">BIO-06 · Human Respiratory System &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Human Circulatory System</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

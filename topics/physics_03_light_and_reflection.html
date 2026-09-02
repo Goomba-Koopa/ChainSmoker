@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 03: Light, Reflection & Shadows • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ Physics • Topic 03</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 03</div>
+    <h1 class="topic-title">Light: Reflection, Mirrors & Shadows</h1>
+    <p class="topic-subtext">
+      Rectilinear propagation of light, formation of shadows and eclipses, laws of reflection (∠i = ∠r), lateral inversion, and the inclined-mirror formula (n = 360°/θ − 1).
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. RECTILINEAR PROPAGATION & MOTION SYSTEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Rectilinear Propagation of Light</h2>
+      <p>
+        If you have ever shined a laser pointer across a dusty room or observed sunlight streaming through a small gap in thick curtains, you might have noticed that the beam of light travels in a perfectly straight line without bending or spinning. In physics, we analyze this straight-line nature of light by comparing it to physical motion systems. Unlike a spinning top which demonstrates rotatory motion, a light ray in a uniform medium exclusively demonstrates pure forward translatory motion.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Rectilinear Propagation of Light:</span>
+        The fundamental property of light which states that in a homogeneous and transparent medium, light always travels in a straight line.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Translatory Motion System</th>
+            <th>Rotatory Motion System</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Motion Path</strong></td>
+            <td>Object moves along a straight or curved path where all particles move the same distance.</td>
+            <td>Object spins or revolves around a fixed central axis.</td>
+          </tr>
+          <tr>
+            <td><strong>Application to Light</strong></td>
+            <td>A ray of light traveling through empty space perfectly models pure translatory (linear) motion.</td>
+            <td>Light rays do not spin around their own axis as they propagate; thus, they lack rotatory motion.</td>
+          </tr>
+          <tr>
+            <td><strong>Energy Transfer</strong></td>
+            <td>Energy is carried forward continuously from the source to the destination.</td>
+            <td>Energy is localized to the rotating object unless translated forward.</td>
+          </tr>
+          <tr>
+            <td><strong>Observation</strong></td>
+            <td>Pin-hole camera images and shadow formation provide direct evidence.</td>
+            <td>Spinning gears, wheels, and planetary rotation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. SHADOWS AND ECLIPSES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Formation of Shadows & Eclipses</h2>
+      <p>
+        When you make hand puppets in front of a bright projector, the wall behind your hands goes dark. Because light travels in straight lines (rectilinear propagation), it cannot bend around an opaque obstacle. The region where light is blocked creates a dark patch known as a shadow. On a cosmic scale, shadows cast by celestial bodies like the Earth and Moon result in the spectacular phenomena we call eclipses.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Shadows & Eclipses:</span>
+        A <strong>shadow</strong> is the dark space formed behind an opaque object when it blocks the path of light from a source. A shadow has two parts: the <strong>umbra</strong> (region of total darkness) and the <strong>penumbra</strong> (region of partial darkness). An <strong>eclipse</strong> occurs when celestial bodies cast shadows on one another.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Solar Eclipse</th>
+            <th>Lunar Eclipse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Alignment</strong></td>
+            <td>Sun — Moon — Earth. The Moon comes precisely between the Sun and the Earth.</td>
+            <td>Sun — Earth — Moon. The Earth comes precisely between the Sun and the Moon.</td>
+          </tr>
+          <tr>
+            <td><strong>Shadow Cast By</strong></td>
+            <td>The Moon casts its shadow onto the surface of the Earth.</td>
+            <td>The Earth casts its shadow onto the surface of the Moon.</td>
+          </tr>
+          <tr>
+            <td><strong>Occurrence Time</strong></td>
+            <td>Can only occur during a <strong>New Moon</strong> day.</td>
+            <td>Can only occur during a <strong>Full Moon</strong> night.</td>
+          </tr>
+          <tr>
+            <td><strong>Visibility & Duration</strong></td>
+            <td>Visible from a very small region on Earth; lasts for a few minutes.</td>
+            <td>Visible from the entire night-side of Earth; can last for hours.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. LAWS OF REFLECTION -->
+    <div class="section-block">
+      <h2 class="section-heading">3. The Laws of Reflection</h2>
+      <p>
+        Imagine bouncing a tennis ball against a smooth brick wall at a specific angle; you will intuitively know that the ball will rebound at the exact same angle on the opposite side. Light behaves similarly when it strikes a smooth, polished surface like a mirror. The incoming ray bounces back into the same medium, following strict geometric rules.
+      </p>
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Reflection_angles.svg/300px-Reflection_angles.svg.png" alt="Diagram showing the laws of reflection: an incident ray striking a surface, reflecting off at an equal angle relative to the normal line." class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1: The Laws of Reflection illustrating the incident ray, reflected ray, the normal, and equal angles (∠i = ∠r).</figcaption>
+      </figure>
+      <div class="definition-box">
+        <span class="definition-term">Laws of Reflection:</span>
+        1. The incident ray, the reflected ray, and the normal to the mirror surface at the point of incidence all lie in the same plane.<br>
+        2. The angle of incidence (\(\angle i\)) is always exactly equal to the angle of reflection (\(\angle r\)). Mathematically, \(\angle i = \angle r\).
+      </div>
+    </div>
+
+    <!-- 4. LATERAL INVERSION -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Lateral Inversion in Plane Mirrors</h2>
+      <p>
+        If you raise your right hand in front of a bathroom mirror, your reflection appears to raise its left hand. Similarly, the word 'AMBULANCE' is deliberately painted reversed on emergency vehicles so that when a driver looks in their rear-view mirror, the word reads perfectly normal. This optical side-to-side reversal is a direct consequence of reflection.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Lateral Inversion:</span>
+        The phenomenon where the right side of an object appears as the left side of its image in a plane mirror, and vice versa. This occurs because the mirror reverses the front-to-back direction of light rays, causing a left-right perceptual flip.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Real Object</th>
+            <th>Plane Mirror Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Orientation</strong></td>
+            <td>Standard left-right orientation.</td>
+            <td>Laterally inverted (left and right are swapped).</td>
+          </tr>
+          <tr>
+            <td><strong>Nature of Image</strong></td>
+            <td>Physical matter emitting or reflecting light.</td>
+            <td><strong>Virtual</strong> (cannot be caught on a screen) and <strong>Erect</strong> (upright).</td>
+          </tr>
+          <tr>
+            <td><strong>Size Comparison</strong></td>
+            <td>Has physical dimensions.</td>
+            <td>Exactly the same size as the real object.</td>
+          </tr>
+          <tr>
+            <td><strong>Distance</strong></td>
+            <td>At distance \(d\) in front of the mirror.</td>
+            <td>Appears at distance \(d\) behind the mirror.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. INCLINED MIRRORS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Images in Inclined Mirrors</h2>
+      <p>
+        When you stand in a clothing store dressing room that has two mirrors joined at a corner, you will see multiple reflections of yourself. When two plane mirrors are kept inclined to each other at an angle, the image formed by the first mirror acts as a virtual object for the second mirror, leading to multiple images.
+      </p>
+      <div class="derivation-card">
+        <span class="derivation-title">The Inclined-Mirror Formula</span>
+        <div class="derivation-step">
+          To find the number of images (\(n\)) formed by two plane mirrors inclined at an angle \(\theta\):<br><br>
+          1. Calculate the ratio: $$m = \frac{360^\circ}{\theta}$$<br>
+          2. If \(m\) is an <strong>even</strong> integer:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The number of images is \(n = m - 1\). This formula applies for all positions of the object.<br><br>
+          3. If \(m\) is an <strong>odd</strong> integer:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• If the object is placed symmetrically (on the angle bisector): \(n = m - 1\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• If the object is placed asymmetrically: \(n = m\).<br><br>
+          <em>Note:</em> For parallel mirrors (\(\theta = 0^\circ\)), \(n = \frac{360^\circ}{0^\circ}\), which approaches infinity (\(\infty\)), meaning an infinite number of images are formed.
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. WORKED ICSE NUMERICALS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.1: Multiple Images in Inclined Mirrors</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Two plane mirrors are inclined at an angle of 60° to each other. An object is placed asymmetrically between them. How many images are formed by this arrangement? Show full working.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Identify the given angle:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(\theta = 60^\circ\) [1 Mark]<br><br>
+          2. <em>Calculate the ratio \(m\):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$m = \frac{360^\circ}{\theta} = \frac{360^\circ}{60^\circ} = 6$$ [1 Mark]<br><br>
+          3. <em>Apply the formula for an even integer:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Since \(m = 6\) is an even integer, the formula for the number of images \(n\) is:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(n = \frac{360^\circ}{\theta} - 1\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(n = 6 - 1 = \mathbf{5\text{ images}}\) [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.2: Calculating the Angle of Reflection</span>
+          <span class="problem-marks">[2 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A light ray strikes a plane mirror such that the angle between the incident ray and the mirror surface is 35°. Find the angle of incidence and the angle of reflection.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Calculate Angle of Incidence (\(\angle i\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The normal is perpendicular (90°) to the mirror surface.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Therefore, \(\angle i = 90^\circ - \text{angle with surface}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(\angle i = 90^\circ - 35^\circ = \mathbf{55^\circ}\) [1 Mark]<br><br>
+          2. <em>Calculate Angle of Reflection (\(\angle r\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;According to the First Law of Reflection, \(\angle i = \angle r\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Therefore, \(\angle r = \mathbf{55^\circ}\) [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 7. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning Question 1</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_reason1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why does a solar eclipse not occur on every new moon day?</div>
+        <div class="reasoning-answer" id="sol_reason1">
+          <strong>Model Answer:</strong><br>
+          A solar eclipse does not occur on every new moon day because the Moon's orbit is tilted by about 5° relative to Earth's orbit around the Sun. Due to this tilt, the shadows cast by the Moon usually fall above or below the Earth. A solar eclipse only occurs when the Sun, Moon, and Earth align perfectly on the same geometrical plane.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning Question 2</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_reason2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why do letters printed on a piece of paper appear normal, but when viewed through a plane mirror they are unreadable?</div>
+        <div class="reasoning-answer" id="sol_reason2">
+          <strong>Model Answer:</strong><br>
+          When text is viewed in a plane mirror, it undergoes lateral inversion, where the left side of the letters becomes the right side and vice-versa. This optical side-to-side reversal causes the asymmetrical letters to flip backwards, making standard printed text appear unreadable.
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_02_energy_and_machines.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-02 · Energy, Mechanical Work</a>
+    <a href="physics_04_sound_and_vibration.html" class="topic-nav-link topic-nav-next">PHY-04 · Sound Waves, Vibration &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Light: Reflection, Mirrors & Shadows</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+
