@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 05: Electricity: Current, Circuits & Effects • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ Physics • Topic 05</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 05</div>
+    <h1 class="topic-title">Electricity: Current, Circuits & Effects</h1>
+    <p class="topic-subtext">
+      Electric current (I = Q/t), potential difference, series vs parallel circuits, Ohm's Law, Joule heating (H = I²Rt), fuses, and the magnetic effect of current.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. ELECTRIC CURRENT & POTENTIAL DIFFERENCE -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Electric Current and Potential Difference</h2>
+      <p>
+        When you flip a light switch, a bulb instantly lights up. This happens because billions of tiny, invisible particles called electrons rush through the copper wires, much like water rushing through a garden hose. However, water doesn't flow through a hose on its own; it needs a water pump to push it. Similarly, electrons need an electrical "pump"—like a battery or a generator—to push them through a circuit. The flow of these electrons is called electric current, and the push provided by the battery is the potential difference.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Electric Current (\(I\)):</span>
+        The rate of flow of electric charge (\(Q\)) through any cross-section of a conductor in a unit time (\(t\)).<br>
+        <strong>Formula:</strong> \(I = \frac{Q}{t}\)<br>
+        <strong>SI Unit:</strong> Ampere (A), where \(1\text{ A} = 1\text{ Coulomb per second (C/s)}\).
+      </div>
+      
+      <div class="definition-box">
+        <span class="definition-term">Potential Difference (\(V\)):</span>
+        The amount of work done in moving a unit positive charge from one point to another in an electric circuit. It acts as the driving force that causes charges to flow.<br>
+        <strong>SI Unit:</strong> Volt (V), where \(1\text{ V} = 1\text{ Joule per Coulomb (J/C)}\).
+      </div>
+    </div>
+
+    <!-- 2. OHM'S LAW -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Ohm's Law and Resistance</h2>
+      <p>
+        Imagine squeezing a water hose: the water flow slows down because the squeeze creates resistance. In an electrical circuit, the wire itself (or components like bulbs) provides resistance to the flow of electrons. In 1827, the German physicist Georg Simon Ohm discovered a fundamental relationship between the "push" (voltage), the "flow" (current), and the "squeeze" (resistance).
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Ohm's Law:</span>
+        Ohm's Law states that the physical conditions (like temperature) remaining constant, the current (\(I\)) flowing through a conductor is directly proportional to the potential difference (\(V\)) applied across its ends.<br>
+        <strong>Formula:</strong> \(V = I \times R\), where \(R\) is the Resistance of the conductor.<br>
+        <strong>SI Unit of Resistance:</strong> Ohm (\(\Omega\)).
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Factors Affecting Resistance (\(R\))</span>
+        <div class="derivation-step">
+          The resistance of a wire depends on several physical factors:<br><br>
+          1. <strong>Length (\(l\)):</strong> Resistance is directly proportional to length (\(R \propto l\)). A longer wire has more resistance.<br>
+          2. <strong>Area of Cross-Section (\(A\)):</strong> Resistance is inversely proportional to the thickness (\(R \propto \frac{1}{A}\)). A thicker wire has less resistance.<br>
+          3. <strong>Nature of Material:</strong> Copper has low resistance, while nichrome has high resistance.<br>
+          4. <strong>Temperature:</strong> For most pure metals, resistance increases with an increase in temperature.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SERIES VS PARALLEL CIRCUITS -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Series vs. Parallel Circuits</h2>
+      <p>
+        Think of old decorative string lights: if one bulb burns out, the entire string goes dark because there is only one continuous path for the electricity. This is a series circuit. In contrast, the electrical outlets in your house are wired so that turning off the television doesn't turn off the refrigerator. This multiple-pathway setup is a parallel circuit.
+      </p>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Series_and_parallel_circuits.svg/400px-Series_and_parallel_circuits.svg.png" alt="Diagram showing a series circuit (top) with one path, and a parallel circuit (bottom) with branched paths" class="diagram-img">
+        <figcaption class="diagram-caption">In a series circuit (top), components are connected end-to-end, offering only one path for the current. In a parallel circuit (bottom), components are connected across the same two points, dividing the current among multiple branches.</figcaption>
+      </figure>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Series Circuit</th>
+            <th>Parallel Circuit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Path for Current</strong></td>
+            <td>Only one continuous path; current is the same everywhere.</td>
+            <td>Multiple branches; current divides among the branches.</td>
+          </tr>
+          <tr>
+            <td><strong>Failure Impact</strong></td>
+            <td>If one component fails, the entire circuit is broken.</td>
+            <td>If one component fails, other branches continue working normally.</td>
+          </tr>
+          <tr>
+            <td><strong>Equivalent Resistance (\(R_{eq}\))</strong></td>
+            <td>Sum of individual resistances: \(R_{eq} = R_1 + R_2 + R_3\)</td>
+            <td>Reciprocal sum: \(\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}\)</td>
+          </tr>
+          <tr>
+            <td><strong>Potential Difference (Voltage)</strong></td>
+            <td>Voltage is divided among components (\(V = V_1 + V_2 + V_3\)).</td>
+            <td>Voltage is identical across all parallel branches (\(V = V_1 = V_2 = V_3\)).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. HEATING & MAGNETIC EFFECTS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Heating and Magnetic Effects of Current</h2>
+      <p>
+        When you look inside a working toaster, you see glowing red wires. This happens because electrical resistance generates heat as electrons collide with atoms in the wire. Conversely, when current flows through a wire coiled around a piece of iron, it turns the iron into a strong magnet—this is the principle used in giant scrap-yard cranes to lift heavy cars.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Joule's Law of Heating:</span>
+        The heat (\(H\)) produced in a resistor is directly proportional to the square of the current (\(I^2\)), the resistance (\(R\)), and the time (\(t\)) for which the current flows.<br>
+        <strong>Formula:</strong> \(H = I^2Rt\)<br>
+        <em>Note: This principle is applied in electric irons, heaters, and fuses.</em>
+      </div>
+
+      <div class="definition-box">
+        <span class="definition-term">Electric Fuse:</span>
+        A safety device placed in an electrical circuit consisting of a short piece of wire (often an alloy of tin and lead) with a very low melting point. If the current exceeds a safe limit, Joule heating melts the wire instantly, breaking the circuit and preventing fire.
+      </div>
+      
+      <div class="definition-box">
+        <span class="definition-term">Electromagnetism:</span>
+        A magnetic field is created around a current-carrying conductor. An <strong>electromagnet</strong> is a temporary magnet made by winding a coil of insulated wire (solenoid) around a soft iron core. It loses its magnetism as soon as the current is switched off.
+      </div>
+    </div>
+
+    <!-- 5. WORKED ICSE NUMERICAL -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 5.1: Ohm's Law and Power</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A resistor of \(8\text{ }\Omega\) carries a current of \(3\text{ A}\). Calculate (i) the potential difference (voltage) across it, and (ii) the energy (power dissipated) in 10 minutes.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i): Potential Difference</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Given: Resistance \(R = 8\text{ }\Omega\), Current \(I = 3\text{ A}\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Using Ohm's Law: \(V = I \times R\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(V = 3\text{ A} \times 8\text{ }\Omega = \mathbf{24\text{ V}}\) [1 Mark]<br><br>
+          2. <em>Part (ii): Energy Dissipated (Joule Heating)</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;First, calculate the Power (\(P\)): \(P = I^2R\) or \(P = V \times I\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(P = 24\text{ V} \times 3\text{ A} = 72\text{ W (Joules per second)}\) [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Time \(t = 10\text{ minutes} = 10 \times 60\text{ s} = 600\text{ s}\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Energy \(H = P \times t = 72\text{ W} \times 600\text{ s} = \mathbf{43,200\text{ Joules (or 43.2 kJ)}}\) [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 5.2: Equivalent Resistance in Parallel</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Three resistors of \(2\text{ }\Omega\), \(3\text{ }\Omega\), and \(6\text{ }\Omega\) are connected in parallel across a \(12\text{ V}\) battery. Find (i) the total equivalent resistance of the circuit, and (ii) the total current drawn from the battery.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i): Total Equivalent Resistance (\(R_{eq}\))</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;For parallel connection: \(\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(\frac{1}{R_{eq}} = \frac{1}{2} + \frac{1}{3} + \frac{1}{6}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Taking the lowest common multiple (6):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(\frac{1}{R_{eq}} = \frac{3 + 2 + 1}{6} = \frac{6}{6} = 1\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Therefore, \(R_{eq} = \mathbf{1\text{ }\Omega}\) [2 Marks]<br><br>
+          2. <em>Part (ii): Total Current (\(I\))</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Given Total Voltage \(V = 12\text{ V}\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Using Ohm's Law for the whole circuit: \(I = \frac{V}{R_{eq}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(I = \frac{12\text{ V}}{1\text{ }\Omega} = \mathbf{12\text{ A}}\) [2 Marks]
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. GIVE SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q1: Why is tungsten used for the filament of an electric bulb?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_1_3491')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_1_3491">
+          Tungsten has a very high melting point (approx 3380°C) and high resistance. When electric current passes through it, it becomes white-hot without melting, thereby emitting bright light.
+        </div>
+      </div>
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q2: Why are appliances in a household connected in parallel rather than in series?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_2_1069')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_2_1069">
+          In a parallel circuit, if one appliance breaks down or is switched off, the others continue to operate independently because each has its own closed path to the power supply. Additionally, all appliances receive the full standard mains voltage.
+        </div>
+      </div>
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q3: Why is a fuse wire made of a tin-lead alloy?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_3_1229')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_3_1229">
+          A tin-lead alloy has a notably low melting point. If a short circuit causes excessive current to flow, Joule heating (\(H = I^2Rt\)) instantly raises the temperature, melting the fuse wire and breaking the circuit before expensive electrical appliances are damaged or a fire starts.
+        </div>
+      </div>
+    </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_04_sound_and_vibration.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-04 · Sound Waves, Vibration</a>
+    <a href="physics_06_force_and_pressure.html" class="topic-nav-link topic-nav-next">PHY-06 · Force, Thrust & &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Electricity: Current, Circuits & Effects</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+  
+  
+</body>
+</html>

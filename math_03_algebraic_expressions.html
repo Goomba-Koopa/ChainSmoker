@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathematics 03: The Algebraic Language: Expressions, Polynomials & Operations • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 17px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.65; max-width: 900px; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 52px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 20px; }
+    .section-heading { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-top: 8px; }
+    .subsection-heading { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink-black); margin-top: 14px; }
+
+    p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.75; }
+    p strong { color: var(--ink-black); }
+
+    .definition-box { background: var(--bg-surface); border-left: 4px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+
+    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
+    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; }
+    .problem-type { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15.5px; color: var(--ink-black); line-height: 1.65; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 15px; color: var(--ink-black); font-weight: 500; line-height: 1.5; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    .content-list { padding-left: 24px; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.8; }
+    .numbered-list { padding-left: 20px; line-height: 1.8; font-size: 15px; color: var(--ink-secondary); }
+    .bullet-list { margin-top: 8px; padding-left: 20px; line-height: 1.7; }
+
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">📐 AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Mathematics • Topic 03</div>
+    <h1 class="topic-title">The Algebraic Language: Expressions, Polynomials & Operations</h1>
+    <p class="topic-subtext">
+      The master code of mathematics: why letters replace mystery numbers, terms, coefficients, degrees of polynomials, the strict apples-and-oranges rule of like terms, bulletproof bracket distribution, and polynomial arithmetic.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- INTRO HOOK -->
+    <section class="section-block">
+      <h2 class="section-heading">Introduction: The Mystery Box and the Master Key</h2>
+      
+      <p>
+        In primary school arithmetic, you are given specific numbers: \(5 + 7 = 12\), or \(4 \times 9 = 36\). That works when you are solving a single problem once.
+      </p>
+      <p>
+        But what if you run a shop and want a formula to calculate total profit for <strong>any</strong> number of items sold? What if a physicist wants to calculate the landing time of <strong>any</strong> rocket regardless of its launch speed?
+      </p>
+      <p>
+        Arithmetic is like having a key that opens one specific padlock. <strong>Algebra is the master key that unlocks every padlock of that type in the universe.</strong>
+      </p>
+      <p>
+        Instead of numbers, we use letters (\(x, y, a, b\)) as <strong>mystery containers</strong>. Think of \(x\) as an unlabeled cardboard box. The box can hold 5 chocolates, 100 marbles, or -2 degrees temperature. The rules of algebra teach us how to manipulate the boxes without having to open them every single second!
+      </p>
+    </section>
+
+    <!-- SUBTOPIC 1: ANATOMY OF ALGEBRAIC EXPRESSIONS -->
+    <section class="section-block">
+      <h2 class="section-heading">1. Anatomy of an Algebraic Expression</h2>
+      
+      <p>
+        Consider the expression: <strong>\(7x^2 - 4xy + 9\)</strong>. Every part of this expression has a precise technical name:
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Key Building Blocks</span>
+        • <strong>Variable (Literal):</strong> A letter that represents an unknown or changing quantity (e.g., \(x\) and \(y\)).<br>
+        • <strong>Constant:</strong> A fixed numerical value that never changes (e.g., \(+9\)).<br>
+        • <strong>Term:</strong> Parts of an algebraic expression separated strictly by <strong>plus (\(+\)) or minus (\(-\))</strong> signs. The expression \(7x^2 - 4xy + 9\) has exactly <strong>3 terms</strong>: \(7x^2\), \(-4xy\), and \(+9\).<br>
+        • <strong>Numerical Coefficient:</strong> The number multiplying the variable. In the term \(-4xy\), the numerical coefficient is <strong>\(-4\)</strong> (always keep the sign!).<br>
+        • <strong>Degree of a Polynomial:</strong> The highest sum of powers of the variables in any single term. In \(7x^2\), the degree is 2. In \(3x^2y^3\), the degree is \(2 + 3 = \mathbf{5}\).
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Type of Polynomial</th>
+            <th>Number of Terms</th>
+            <th>Example</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Monomial</strong></td>
+            <td>Exactly 1 term</td>
+            <td>\(5x^3\), \(-12xy\), \(8\)</td>
+            <td>Multiplication or division binds factors into a single term.</td>
+          </tr>
+          <tr>
+            <td><strong>Binomial</strong></td>
+            <td>Exactly 2 terms</td>
+            <td>\(3x + 4y\), \(x^2 - 9\)</td>
+            <td>Separated by one \(+\) or \(-\) sign.</td>
+          </tr>
+          <tr>
+            <td><strong>Trinomial</strong></td>
+            <td>Exactly 3 terms</td>
+            <td>\(x^2 - 5x + 6\)</td>
+            <td>Separated by two \(+\) or \(-\) signs.</td>
+          </tr>
+          <tr>
+            <td><strong>Multinomial / Polynomial</strong></td>
+            <td>2 or more terms</td>
+            <td>\(4x^3 - 2x^2 + 7x - 1\)</td>
+            <td>General umbrella name for multi-term expressions.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SUBTOPIC 2: LIKE VS UNLIKE TERMS -->
+    <section class="section-block">
+      <h2 class="section-heading">2. Like vs. Unlike Terms: The "Apples and Oranges" Rule</h2>
+      
+      <p>
+        Imagine you have a basket with 3 apples and 5 apples. You can easily add them together: \(3\text{ apples} + 5\text{ apples} = 8\text{ apples}\).
+      </p>
+      <p>
+        Now imagine you have 3 apples and 5 oranges. Can you add them to make 8 "apple-oranges"? Of course not! You still just have 3 apples and 5 oranges.
+      </p>
+      <p>
+        In algebra, this is called the <strong>Like Terms Principle</strong>:
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">What are Like Terms?</span>
+        <strong>Like terms</strong> are terms that contain the <strong>exact same literal variables raised to the exact same powers</strong>. Only the numerical coefficients are allowed to differ!
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Pair of Terms</th>
+            <th>Are They Like Terms?</th>
+            <th>Why or Why Not?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>\(4x\) and \(-9x\)</td>
+            <td><strong>YES</strong></td>
+            <td>Both have the exact same variable \(x\) to the power 1.</td>
+          </tr>
+          <tr>
+            <td>\(5x^2y\) and \(8yx^2\)</td>
+            <td><strong>YES</strong></td>
+            <td>Order of multiplication does not matter (\(x^2y = yx^2\)). Identical powers!</td>
+          </tr>
+          <tr>
+            <td>\(3x\) and \(3y\)</td>
+            <td><strong>NO</strong></td>
+            <td>Different variables entirely (Apples vs Oranges).</td>
+          </tr>
+          <tr>
+            <td>\(2x^2\) and \(5x\)</td>
+            <td><strong>NO</strong></td>
+            <td>Same variable, but <strong>different powers</strong>! \(x^2\) is an area; \(x\) is a line.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ The #1 Algebra Trap in Class 7 Exams!</span>
+        Students constantly write:
+        $$3x + 4x^2 = 7x^3 \quad \text{❌ DEAD WRONG!}$$
+        \(3x\) and \(4x^2\) are <strong>unlike terms</strong>. You cannot combine them into a single term. They must stay written as:
+        $$3x + 4x^2 \quad \text{✅ Already in simplest form!}$$
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 3: ADDITION & SUBTRACTION -->
+    <section class="section-block">
+      <h2 class="section-heading">3. Addition and Subtraction of Polynomials</h2>
+      
+      <p>
+        Adding polynomials is simply gathering like terms together. You can arrange terms in columns or combine them horizontally:
+      </p>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Horizontal Grouping Walkthrough</div>
+        <div class="derivation-step">
+          Simplify: \((5x^2 - 3x + 8) + (2x^2 + 7x - 11)\)<br><br>
+          1. <strong>Group like terms together:</strong><br>
+          $$(5x^2 + 2x^2) + (-3x + 7x) + (8 - 11)$$<br>
+          2. <strong>Combine coefficients:</strong><br>
+          $$(5 + 2)x^2 + (-3 + 7)x + (8 - 11) = \mathbf{7x^2 + 4x - 3}$$
+        </div>
+      </div>
+
+      <h3 class="subsection-heading">The Danger of Subtraction: "Subtract A from B"</h3>
+      <p>
+        English phrasing trips up students here every single year. Look at this English sentence: <em>"Subtract 3 from 10."</em> You do \(10 - 3 = 7\), NOT \(3 - 10\)!
+      </p>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ Order &amp; Sign Distribution in Subtraction</span>
+        When an exam says: <strong>"Subtract \(P\) from \(Q\)"</strong>, you MUST write:
+        $$Q - (P)$$
+        Notice the brackets around \(P\)! The minus sign applies to <strong>every single term inside \(P\)</strong>:<br>
+        $$-(3x^2 - 5x + 4) = -3x^2 + 5x - 4$$
+        Every plus becomes a minus, and every minus becomes a plus!
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 4: MULTIPLICATION OF POLYNOMIALS -->
+    <section class="section-block">
+      <h2 class="section-heading">4. Multiplication of Polynomials: The Distributive Law</h2>
+      
+      <p>
+        When multiplying algebraic terms, remember:
+      </p>
+      <ul class="content-list">
+        <li>Multiply the <strong>numbers</strong> (coefficients) first.</li>
+        <li>Multiply the <strong>letters</strong> (variables) by <strong>adding their exponents</strong> (Law of Indices: \(x^a \times x^b = x^{a+b}\)).</li>
+      </ul>
+
+      <div class="derivation-card">
+        <div class="derivation-title">The Three Tiers of Polynomial Multiplication</div>
+        <div class="derivation-step">
+          <strong>Tier 1: Monomial × Monomial</strong><br>
+          $$(-3x^2y) \times (4xy^3) = (-3 \times 4) \times (x^2 \times x^1) \times (y^1 \times y^3) = \mathbf{-12x^3y^4}$$
+        </div>
+        <div class="derivation-step">
+          <strong>Tier 2: Monomial × Binomial (The Distributive Law)</strong><br>
+          Think of handing out test papers to every student in the front row:<br>
+          $$2a(3a - 5b) = (2a \times 3a) - (2a \times 5b) = \mathbf{6a^2 - 10ab}$$
+        </div>
+        <div class="derivation-step">
+          <strong>Tier 3: Binomial × Binomial (The Double Distribution / FOIL Method)</strong><br>
+          To multiply \((2x + 3)(x - 4)\), every term in the first bracket must shake hands with every term in the second bracket:<br>
+          $$(2x + 3)(x - 4) = 2x(x - 4) + 3(x - 4)$$
+          $$= (2x^2 - 8x) + (3x - 12)$$
+          Combine the like terms in the middle (\(-8x + 3x = -5x\)):<br>
+          $$= \mathbf{2x^2 - 5x - 12}$$
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: WORKED PROBLEMS -->
+    <section class="section-block">
+      <h2 class="section-heading">Worked Problems</h2>
+
+      <!-- Problem 3.1 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.1: Nested Bracket Simplification</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Simplify the following algebraic expression by removing the grouping symbols from the inside out:
+          $$4a - \left[ 3b - \left\{ 2a - (5b - \overline{a - 2b}) \right\} \right]$$
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-1">
+          <strong>Step 1: Remove the vinculum (bar \(\overline{a - 2b}\)):</strong><br>
+          The minus in front of the bar applies to both terms: \(-(a - 2b) = -a + 2b\).<br>
+          Inside parentheses: \(5b - a + 2b = (5b + 2b) - a = 7b - a\).<br><br>
+
+          <strong>Step 2: Remove the round brackets \(( \quad )\):</strong><br>
+          $$2a - (7b - a) = 2a - 7b + a = (2a + a) - 7b = 3a - 7b$$<br>
+
+          <strong>Step 3: Remove the curly braces \(\{ \quad \}\):</strong><br>
+          $$3b - \{ 3a - 7b \} = 3b - 3a + 7b = -3a + 10b$$<br>
+
+          <strong>Step 4: Remove the square brackets \([ \quad ]\):</strong><br>
+          $$4a - [ -3a + 10b ] = 4a + 3a - 10b = \mathbf{7a - 10b}$$
+        </div>
+      </div>
+
+      <!-- Problem 3.2 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.2: "What Must Be Subtracted" Classic</span>
+          <span class="problem-marks">ICSE Exam Standard • 3 Marks</span>
+        </div>
+        <div class="problem-statement">
+          What must be subtracted from \(3x^3 - 4x^2 + 5x - 6\) to obtain \(x^3 - 2x^2 - 3x + 1\)?
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-2">
+          <strong>The Intuition:</strong> Think of numbers: <em>"What must be subtracted from 10 to get 7?"</em><br>
+          The answer is \(10 - 7 = 3\). So we simply subtract the resulting polynomial from the original polynomial!<br><br>
+
+          $$\text{Required Expression} = (3x^3 - 4x^2 + 5x - 6) - (x^3 - 2x^2 - 3x + 1)$$<br>
+
+          <strong>Step 1: Distribute the negative sign across the second bracket:</strong><br>
+          $$= 3x^3 - 4x^2 + 5x - 6 - x^3 + 2x^2 + 3x - 1$$<br>
+
+          <strong>Step 2: Collect like terms:</strong><br>
+          • For \(x^3\): \(3x^3 - 1x^3 = \mathbf{2x^3}\)<br>
+          • For \(x^2\): \(-4x^2 + 2x^2 = \mathbf{-2x^2}\)<br>
+          • For \(x\): \(+5x + 3x = \mathbf{+8x}\)<br>
+          • Constants: \(-6 - 1 = \mathbf{-7}\)<br><br>
+
+          $$\mathbf{\text{Answer} = 2x^3 - 2x^2 + 8x - 7}$$
+        </div>
+      </div>
+
+      <!-- Problem 3.3 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.3: Product Expansion and Numerical Evaluation</span>
+          <span class="problem-marks">ICSE Exam Standard • 3 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Find the product \((3x - 2y)(2x + 5y)\) and evaluate its numerical value when \(x = 2\) and \(y = -1\).
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-3">
+          <strong>Step 1: Expand using double distribution:</strong><br>
+          $$(3x - 2y)(2x + 5y) = 3x(2x + 5y) - 2y(2x + 5y)$$
+          $$= (6x^2 + 15xy) - (4xy + 10y^2)$$
+          $$= 6x^2 + 15xy - 4xy - 10y^2$$
+          $$= \mathbf{6x^2 + 11xy - 10y^2}$$<br>
+
+          <strong>Step 2: Substitute \(x = 2\) and \(y = -1\):</strong><br>
+          • \(6x^2 = 6(2)^2 = 6 \times 4 = 24\)<br>
+          • \(11xy = 11(2)(-1) = -22\)<br>
+          • \(-10y^2 = -10(-1)^2 = -10 \times 1 = -10\)<br><br>
+
+          <strong>Step 3: Sum the terms:</strong><br>
+          $$\text{Value} = 24 - 22 - 10 = 2 - 10 = \mathbf{-8}$$
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SCIENTIFIC REASONING -->
+    <section class="section-block">
+      <h2 class="section-heading">Mathematical Curiosities & "Why?" Questions</h2>
+
+      <!-- Reasoning Q1 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 3.1: Why Can't We Add \(3x + 4y\) Into \(7xy\)?</span>
+        </div>
+        <div class="reasoning-question">
+          Why is writing \(3x + 4y = 7xy\) mathematically illegal, even though \(3x \times 4y = 12xy\) is completely legal?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-1')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-1">
+          Addition represents counting units of the <strong>same physical dimension</strong>, while multiplication represents combining dimensions (like length × breadth = area).<br><br>
+          If \(x\) represents "meters" and \(y\) represents "kilograms", \(3\text{ meters} + 4\text{ kilograms}\) is meaningless nonsense—you cannot add a length to a weight! But in physics, you CAN multiply meters by kilograms to compute work or energy. In algebra, \(3x + 4y\) must remain separate because \(x\) and \(y\) are completely independent dimensions.
+        </div>
+      </div>
+
+      <!-- Reasoning Q2 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 3.2: The Origin of the Word "Algebra"</span>
+        </div>
+        <div class="reasoning-question">
+          Where does the word "Algebra" come from, and how did it change human civilization?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-2')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-2">
+          The word comes from the 9th-century Arabic treatise <em>"Al-Kitāb al-mukhtaṣar fī ḥisāb al-jabr wal-muqābala"</em> written by the Persian mathematician Muhammad ibn Mūsā al-Khwārizmī.<br><br>
+          The word **al-jabr** literally means <em>"the reunion of broken parts"</em> or <em>"restoring balance"</em>—specifically, moving a negative quantity from one side of an equation to the other to make it positive! Before al-Khwārizmī, people had to invent clumsy word-riddles for every business transaction or inheritance dispute. Al-jabr created a universal algebraic grammar that paved the way for modern engineering, computing, and physics.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="math_02_laws_of_indices.html" class="topic-nav-link topic-nav-prev">&#8592; MATH-02 · Scale &amp; Index Laws</a>
+    <a href="math_04_linear_equations.html" class="topic-nav-link topic-nav-next">MATH-04 · Linear Equations &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
+    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+  </footer>
+
+  <script>
+    function toggleSolution(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleReasoning(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

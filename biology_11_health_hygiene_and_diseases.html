@@ -1,0 +1,415 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biology 11: Health, Hygiene & Pathogens • ICSE Class 7</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); text-decoration: none; }
+    .nav-back { font-size: 13.5px; font-weight: 600; color: var(--emerald-accent); text-decoration: none; }
+    
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 14px; }
+    .section-heading { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    
+    p { font-size: 15px; color: var(--ink-black); line-height: 1.65; max-width: 75ch; }
+    
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-secondary); }
+    .definition-term { font-weight: 700; color: var(--ink-black); }
+    
+    .derivation-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .derivation-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--emerald-accent); margin-bottom: 8px; display: block; }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; }
+    
+    .distinction-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13.5px; }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-strong); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-weight: 600; color: var(--ink-black); }
+    .distinction-table tr:nth-child(even) td { background: var(--bg-surface); }
+    
+    .problem-box { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .problem-type { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--emerald-accent); }
+    .problem-statement { font-size: 15px; font-weight: 500; color: var(--ink-black); margin-bottom: 14px; line-height: 1.5; }
+    
+    .btn-toggle { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; }
+    .solution-drawer { display: none; margin-top: 14px; padding: 14px; background: var(--bg-card); border-left: 3px solid var(--emerald-accent); border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.6; }
+    
+    .diagram-figure { margin: 12px 0; text-align: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    /* Muted purplish grey exception system */
+    .exception-tag {
+      color: #6b5b7b;
+      font-size: 0.78em;
+      vertical-align: super;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: help;
+    }
+
+    .exception-note {
+      margin-top: 16px;
+      margin-left: 20px;
+      padding: 10px 16px;
+      border-left: 2px solid #6b5b7b;
+      background: rgba(107, 91, 123, 0.04);
+      border-radius: 0 6px 6px 0;
+      color: #6b5b7b;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .exception-note-title {
+      font-weight: 700;
+      color: #554564;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13.5px;
+    }
+    
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 48px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); margin-top: 48px; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">🌿 Biology • Topic 11</a>
+    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 11</div>
+    <h1 class="topic-title">Health, Hygiene &amp; Infectious Pathogens</h1>
+    <p class="topic-subtext">
+      Definition of health (WHO standards), Communicable vs Non-communicable diseases, Microscopic pathogens (Bacteria, Viruses, Fungi, Protozoa), Biological insect vectors (Mosquitoes, Houseflies), and Body immunity mechanisms.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. HEALTH AND DISEASE -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Concept of Health &amp; Classification of Diseases</h2>
+      <p>
+        According to the World Health Organization (WHO), <strong>health</strong> is not merely the absence of disease or infirmity, but a state of complete physical, mental, and social well-being. When any organ or organ system fails to function normally, producing specific symptoms and signs, the body enters a state of <strong>disease</strong>.
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Disease Category</th>
+            <th>Transmission Mechanism</th>
+            <th>Primary Causes</th>
+            <th>Everyday Medical Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Communicable (Infectious) Diseases</strong></td>
+            <td>Can spread rapidly from an infected person to a healthy person through air, water, food, physical contact, or insect vectors.</td>
+            <td>Living biological pathogens (Bacteria, Viruses, Protozoa, Fungi, Parasitic Worms).</td>
+            <td>• Common Cold &amp; Influenza (Airborne droplets)<br>• Cholera &amp; Typhoid (Contaminated water/food)<br>• Malaria &amp; Dengue (Mosquito vector)</td>
+          </tr>
+          <tr>
+            <td><strong>Non-Communicable Diseases</strong></td>
+            <td>Remain confined to the individual; cannot spread from one person to another by contact or sharing food.</td>
+            <td>Nutritional deficiencies, genetic defects, organ malfunction, or lifestyle factors.</td>
+            <td>• Scurvy (Vitamin C deficiency)<br>• Diabetes (Insulin deficiency in pancreas)<br>• Hypertension &amp; Coronary Heart Disease</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. PATHOGENS AND INFECTIONS -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Major Classes of Microscopic Pathogens</h2>
+      <p>
+        A <strong>pathogen</strong> is any disease-causing biological organism. The four primary pathogen families infecting humans include:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Pathogen Family</th>
+            <th>Biological Nature</th>
+            <th>Diseases Caused</th>
+            <th>Primary Route of Infection</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Bacteria</strong></td>
+            <td>Single-celled microscopic prokaryotes; release toxic metabolic poisons (toxins) inside tissues.</td>
+            <td>• <strong>Cholera</strong> (<em>Vibrio cholerae</em>)<br>• <strong>Typhoid</strong> (<em>Salmonella typhi</em>)<br>• <strong>Tuberculosis</strong> (<em>Mycobacterium tuberculosis</em>)</td>
+            <td>Contaminated drinking water; airborne sputum droplets from coughs.</td>
+          </tr>
+          <tr>
+            <td><strong>Viruses</strong></td>
+            <td>Ultra-microscopic non-cellular genetic particles (DNA/RNA in a protein coat); hijack host cell machinery to multiply.<sup class="exception-tag">[†1]</sup></td>
+            <td>• <strong>Influenza (Flu)</strong><br>• <strong>Polio</strong><br>• <strong>Rabies</strong> (transmitted via infected dog/animal bites)<br>• <strong>Dengue Fever</strong></td>
+            <td>Sneezing aerosols; blood transmission; mosquito saliva; animal bites.</td>
+          </tr>
+          <tr>
+            <td><strong>Protozoa</strong></td>
+            <td>Single-celled microscopic eukaryotic organisms.</td>
+            <td>• <strong>Malaria</strong> (<em>Plasmodium</em>)<br>• <strong>Amoebic Dysentery</strong> (<em>Entamoeba histolytica</em>)</td>
+            <td>Bite of female <em>Anopheles</em> mosquito; drinking contaminated pond water.</td>
+          </tr>
+          <tr>
+            <td><strong>Fungi</strong></td>
+            <td>Microscopic non-photosynthetic molds and spores.</td>
+            <td>• <strong>Ringworm</strong> (<em>Tinea</em>)<br>• <strong>Athlete's Foot</strong></td>
+            <td>Direct skin-to-skin contact; sharing infected towels, combs, or shoes.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Indented Scientific Exception Note -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†1] Medical Nuance: Why Antibiotics Cannot Cure Viral Infections</span>
+        Antibiotics (like Penicillin) work specifically by destroying bacterial cell walls or interfering with bacterial protein synthesis. Because viruses lack a cell wall and reproduce entirely inside human host cells using our own cellular machinery, <strong>antibiotics have zero effect on viral illnesses</strong> like the common cold, flu, or chickenpox. Taking antibiotics for a viral flu only kills beneficial gut bacteria and breeds dangerous drug-resistant superbugs.
+      </div>
+    </div>
+
+    <!-- 3. INSECT VECTORS -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Insect Vectors: Biological vs. Mechanical Carriers</h2>
+      <p>
+        A <strong>vector</strong> is an organism (typically an insect) that carries pathogens from an infected person to a healthy host without suffering from the disease itself.
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Insect Vector</th>
+            <th>Type of Carrier</th>
+            <th>Pathogen Transmitted &amp; Disease</th>
+            <th>Preventive Control Measures</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Female <em>Anopheles</em> Mosquito</strong></td>
+            <td><strong>Biological Vector:</strong> The <em>Plasmodium</em> parasite completes critical sexual stages of its life cycle inside the mosquito's gut and salivary glands.</td>
+            <td>Transmits <strong>Malaria</strong> into the human bloodstream during blood meals (females need protein to lay eggs; males only sip nectar).</td>
+            <td>Eliminate standing puddles; introduce <em>Gambusia</em> fish to eat mosquito larvae; use mosquito bed nets.</td>
+          </tr>
+          <tr>
+            <td><strong>Female <em>Aedes</em> Mosquito</strong></td>
+            <td><strong>Biological Vector:</strong> Active daytime biter (tiger mosquito with white striped legs).</td>
+            <td>Transmits <strong>Dengue virus</strong> and <strong>Chikungunya virus</strong>.</td>
+            <td>Empty stagnant water from flowerpots, discarded tires, and open roof tanks.</td>
+          </tr>
+          <tr>
+            <td><strong>Common Housefly (<em>Musca domestica</em>)</strong></td>
+            <td><strong>Mechanical Vector:</strong> Carries pathogens on hairy legs and sticky mouthparts after landing on sewage, then vomits digestive juices onto uncovered human food.</td>
+            <td>Transmits <strong>Cholera, Typhoid, and Amoebiasis</strong>.</td>
+            <td>Keep food strictly covered under wire mesh; maintain clean kitchen sanitation; dispose of household garbage in sealed bins.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. WORKED LOGICAL EXEMPLARS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Worked Logical Diagnostic Exemplars</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 11.1: Epidemiological Outbreak Investigation</span>
+        </div>
+        <div class="problem-statement">
+          During the monsoon season, fifty residents of a village suddenly develop high fever accompanied by violent shivering (chills) every 48 hours, followed by profuse sweating. A swamp near the village has extensive stagnant water.<br>
+          1. Diagnose the disease.<br>
+          2. Name the causative pathogen and its transmitting vector.<br>
+          3. Explain the biological logic behind spraying kerosene oil on the stagnant swamp surface.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_b11_1')">Show Epidemiological Diagnosis ↓</button>
+        <div class="solution-drawer" id="sol_b11_1">
+          <strong>Step-by-Step Epidemiological Diagnosis:</strong><br><br>
+          1. <strong>Diagnosis:</strong> The recurring cycle of violent shivering chills, high fever, and profuse sweating every 48 hours is the classic clinical symptom of <strong>Malaria</strong>.<br><br>
+          2. <strong>Pathogen &amp; Vector:</strong><br>
+          • Causative Pathogen: The protozoan parasite <strong><em>Plasmodium vivax</em></strong>.<br>
+          • Transmitting Vector: The <strong>Female <em>Anopheles</em> mosquito</strong>.<br><br>
+          3. <strong>Logic of Kerosene Spraying:</strong><br>
+          • Mosquito larvae and pupae breathe atmospheric air by protruding a tiny breathing tube (respiratory siphon) through the water surface tension film.<br>
+          • Spraying a thin film of kerosene oil drastically reduces surface tension and physically blocks the siphon tubes, cutting off oxygen and suffocating the larvae before they can mature into adult biting mosquitoes.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 11.2: Vaccination &amp; Active Immunity Mechanism</span>
+        </div>
+        <div class="problem-statement">
+          A healthy 6-month-old infant receives an injection of the oral polio vaccine. Explain: (i) What a vaccine actually contains, and (ii) The logical biological chain of events through which the vaccine provides lifelong protection without causing illness.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_b11_2')">Show Immunological Resolution ↓</button>
+        <div class="solution-drawer" id="sol_b11_2">
+          <strong>Step-by-Step Immunological Resolution:</strong><br><br>
+          1. <strong>Composition of a Vaccine:</strong> A vaccine contains dead, weakened (attenuated), or fragmented parts of the pathogen that retain their surface recognition flags (antigens) but are incapable of producing full-blown disease.<br><br>
+          2. <strong>Biological Defense Chain:</strong><br>
+          • <strong>Recognition:</strong> The infant's white blood cells (lymphocytes) detect the foreign viral antigens in the vaccine.<br>
+          • <strong>Antibody Production:</strong> Lymphocytes produce specialized protective protein molecules called <strong>antibodies</strong> tailored to neutralize that specific pathogen.<br>
+          • <strong>Immunological Memory:</strong> Long-lived <em>memory cells</em> are formed. If the child is exposed to live, wild poliovirus years later, the memory cells immediately recognize the virus and mass-produce lethal antibodies instantly, destroying the virus before it can establish an infection.
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 5. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Immunology 1: Vaccination & Immunity</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b11_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">How does administering a vaccine protect a child from future infectious bacterial and viral diseases?</div>
+        <div class="reasoning-answer" id="reas_b11_1">
+          <strong>Scientific Resolution:</strong><br>
+          A vaccine introduces dead or weakened (attenuated) antigens into the bloodstream. This stimulates white blood cells (B-lymphocytes) to produce specific <strong>antibodies</strong> and generate long-lasting <strong>memory cells</strong> without causing actual disease. Upon future real infection, memory cells rapidly produce massive antibody levels.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Immunology 2: Antibiotics Ineffective Against Viruses</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b11_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are antibiotics like penicillin completely ineffective in treating the common cold or viral influenza?</div>
+        <div class="reasoning-answer" id="reas_b11_2">
+          <strong>Scientific Resolution:</strong><br>
+          Antibiotics specifically target and destroy bacterial cell walls and bacterial metabolic pathways. Viruses are acellular particles lacking cell walls and metabolic machinery, relying entirely on host cells for replication, making them immune to antibiotic action.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="biology_10_classification_of_organisms.html" class="topic-nav-link topic-nav-prev">&#8592; BIO-10 · Classification of Living</a>
+    <a href="biology_12_ecosystems_and_food_chains.html" class="topic-nav-link topic-nav-next">BIO-12 · Ecosystems, Food Chains &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Biology • Topic 11: Health, Hygiene &amp; Diseases</div>
+    <div>CISCE Class 7 Academic Compendium</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

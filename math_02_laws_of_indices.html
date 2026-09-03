@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathematics 02: Scale & Index Laws: Powers, Exponents & Scientific Notation • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 17px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.65; max-width: 900px; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 52px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 20px; }
+    .section-heading { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-top: 8px; }
+    .subsection-heading { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink-black); margin-top: 14px; }
+
+    p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.75; }
+    p strong { color: var(--ink-black); }
+
+    .definition-box { background: var(--bg-surface); border-left: 4px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+
+    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
+    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; }
+    .problem-type { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15.5px; color: var(--ink-black); line-height: 1.65; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 15px; color: var(--ink-black); font-weight: 500; line-height: 1.5; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    .content-list { padding-left: 24px; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.8; }
+    .numbered-list { padding-left: 20px; line-height: 1.8; font-size: 15px; color: var(--ink-secondary); }
+    .bullet-list { margin-top: 8px; padding-left: 20px; line-height: 1.7; }
+
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">📐 AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Mathematics • Topic 02</div>
+    <h1 class="topic-title">Scale & Index Laws: Powers, Exponents & Scientific Notation</h1>
+    <p class="topic-subtext">
+      The mathematical language of scale: repeated multiplication compressed into exponents, common-sense proofs for why a number to the zero power equals 1, why negative powers flip into the denominator, the five fundamental index laws, and standard scientific form from bacteria to galaxies.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- INTRO HOOK -->
+    <section class="section-block">
+      <h2 class="section-heading">Introduction: The King, The Chessboard & The Power of Doubling</h2>
+      
+      <p>
+        An ancient legend tells of the inventor of chess who presented the game to his emperor. Delighted with the game, the emperor offered any reward the inventor desired.
+      </p>
+      <p>
+        The inventor made a modest-sounding request: <em>"Place 1 grain of rice on the first square of the board. Place 2 grains on the second square, 4 on the third, 8 on the fourth, and continue doubling the rice on each square until all 64 squares are filled."</em>
+      </p>
+      <p>
+        The emperor laughed and agreed immediately, thinking it would cost a few sacks of rice. But by the 10th square, it was 512 grains. By the 20th square, it was over a million grains. By the 64th square, the total rice needed was:
+      </p>
+      <p>
+        $$2^{63} \approx 9,223,372,036,854,775,808 \text{ grains}$$
+      </p>
+      <p>
+        That is more than all the rice produced on Earth in several centuries! That is the staggering reality of <strong>exponential growth</strong>. Writing out numbers with twenty digits is exhausting and prone to costly mistakes. Exponents give us the power to compress astronomical quantities into tiny, elegant packages.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Anatomy of an Exponential Term</span>
+        In the expression \(a^n\):<br>
+        • <strong>Base (\(a\)):</strong> The number that is repeatedly being multiplied.<br>
+        • <strong>Exponent or Index (\(n\)):</strong> The counter that tells us <em>how many times</em> the base appears as a factor.<br><br>
+        $$a^n = \underbrace{a \times a \times a \times \dots \times a}_{n \text{ times}}$$
+        <em>Example:</em> In \(5^3\), the base is 5, the exponent is 3, and the expanded value is \(5 \times 5 \times 5 = 125\).
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 1: THE FIVE FUNDAMENTAL INDEX LAWS -->
+    <section class="section-block">
+      <h2 class="section-heading">1. The Five Fundamental Index Laws</h2>
+      
+      <p>
+        Exponents are not random rules invented to torment students in exams. They are simply shortcuts for counting identical factors:
+      </p>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Law 1: Product of Powers with Same Base (\(a^m \times a^n = a^{m+n}\))</div>
+        <div class="derivation-step">
+          Look at what happens when you write out \(2^3 \times 2^4\) in full:<br>
+          $$2^3 \times 2^4 = (2 \times 2 \times 2) \times (2 \times 2 \times 2 \times 2)$$
+          Count how many 2s are multiplying together: exactly \(3 + 4 = 7\) of them!<br>
+          $$2^3 \times 2^4 = 2^{3+4} = \mathbf{2^7}$$
+          <strong>The Rule:</strong> When multiplying powers with the <strong>same base</strong>, keep the base and <strong>add the exponents</strong>.
+        </div>
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Law 2: Quotient of Powers with Same Base (\(a^m \div a^n = a^{m-n}\))</div>
+        <div class="derivation-step">
+          Write out \(\frac{5^5}{5^2}\) as a fraction and cancel out common factors:<br>
+          $$\frac{5^5}{5^2} = \frac{5 \times 5 \times 5 \times \cancel{5} \times \cancel{5}}{\cancel{5} \times \cancel{5}} = 5 \times 5 \times 5 = \mathbf{5^3}$$
+          Notice that \(5 - 2 = 3\).<br>
+          <strong>The Rule:</strong> When dividing powers with the <strong>same base</strong>, keep the base and <strong>subtract the exponents</strong>.
+        </div>
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Law 3: Power of a Power (\((a^m)^n = a^{m \times n}\))</div>
+        <div class="derivation-step">
+          Consider \((3^2)^4\). This means \(3^2\) multiplied by itself 4 times:<br>
+          $$(3^2)^4 = (3 \times 3) \times (3 \times 3) \times (3 \times 3) \times (3 \times 3) = \mathbf{3^8}$$
+          Notice that \(2 \times 4 = 8\).<br>
+          <strong>The Rule:</strong> When raising a power to another power, <strong>multiply the exponents</strong>.
+        </div>
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Law 4 &amp; 5: Powers of Products &amp; Quotients (\((ab)^n = a^n b^n\) and \((\frac{a}{b})^n = \frac{a^n}{b^n}\))</div>
+        <div class="derivation-step">
+          The exponent distributes to every factor inside the bracket:<br>
+          $$(2 \times x)^3 = (2x) \times (2x) \times (2x) = (2 \times 2 \times 2) \times (x \times x \times x) = \mathbf{8x^3}$$
+          $$\left(\frac{3}{5}\right)^2 = \frac{3}{5} \times \frac{3}{5} = \frac{3^2}{5^2} = \mathbf{\frac{9}{25}}$$
+        </div>
+      </div>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ The Most Common Exponent Trap: Multiplying Different Bases</span>
+        You <strong>cannot</strong> add exponents if the bases are different!
+        $$2^3 \times 3^2 \neq 6^5$$
+        \(2^3 \times 3^2 = 8 \times 9 = 72\), whereas \(6^5 = 7776\). The base addition rule strictly requires <strong>identical bases</strong>.
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 2: WHY ZERO POWER = 1 AND NEGATIVE EXPONENTS -->
+    <section class="section-block">
+      <h2 class="section-heading">2. Why Does \(a^0 = 1\), and What is a Negative Exponent?</h2>
+      
+      <p>
+        Two things confuse 7th graders more than anything else in exponents:
+      </p>
+      <ol class="content-list">
+        <li>Why on earth does any number to the power of zero equal 1? (Why isn't it 0?)</li>
+        <li>How can an exponent be negative? You can't multiply a number by itself negative three times!</li>
+      </ol>
+      <p>
+        Both answers become crystal clear when you look at the division pattern:
+      </p>
+
+      <div class="derivation-card">
+        <div class="derivation-title">The Downward Division Staircase</div>
+        <div class="derivation-step">
+          Watch powers of 2 decrease by dividing by 2 at each step:<br>
+          $$2^4 = 16$$
+          $$2^3 = 8 \quad (\div 2)$$
+          $$2^2 = 4 \quad (\div 2)$$
+          $$2^1 = 2 \quad (\div 2)$$
+          <br>
+          Now, keep the exact same pattern going! Divide by 2 again:<br>
+          $$2^0 = 2 \div 2 = \mathbf{1}$$
+          Divide by 2 again to reach negative powers:<br>
+          $$2^{-1} = 1 \div 2 = \mathbf{\frac{1}{2} = \frac{1}{2^1}}$$
+          $$2^{-2} = \frac{1}{2} \div 2 = \mathbf{\frac{1}{4} = \frac{1}{2^2}}$$
+          $$2^{-3} = \frac{1}{4} \div 2 = \mathbf{\frac{1}{8} = \frac{1}{2^3}}$$
+        </div>
+        <div class="derivation-step">
+          <strong>The Proof Using Law 2:</strong><br>
+          We know that any non-zero number divided by itself equals 1: \(\frac{a^m}{a^m} = 1\).<br>
+          By Law 2, \(\frac{a^m}{a^m} = a^{m-m} = a^0\).<br>
+          Therefore: $$\mathbf{a^0 = 1} \quad (\text{for all } a \neq 0)$$
+          Similarly: \(a^{-n} = a^{0 - n} = \frac{a^0}{a^n} = \mathbf{\frac{1}{a^n}}\).
+        </div>
+      </div>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">The "Elevator Ticket" Rule for Negative Exponents</div>
+        <p>
+          Think of a negative exponent as an <strong>elevator pass</strong> between the numerator and denominator:
+        </p>
+        <p>
+          Whenever an exponent is negative, moving the base across the fraction bar flips the sign of the exponent to positive!
+        </p>
+        <p>$$x^{-4} = \frac{1}{x^4} \qquad \text{and} \qquad \frac{1}{y^{-5}} = y^5 \qquad \text{and} \qquad \left(\frac{2}{3}\right)^{-2} = \left(\frac{3}{2}\right)^2 = \frac{9}{4}$$</p>
+      </div>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ Trap Alert: \((-3)^4\) vs \(-3^4\)</span>
+        Look closely at the brackets!
+        • In \((-3)^4\), the negative sign is inside the bracket: \((-3) \times (-3) \times (-3) \times (-3) = \mathbf{+81}\).<br>
+        • In \(-3^4\), the exponent only touches the 3: \(-(3 \times 3 \times 3 \times 3) = \mathbf{-81}\).<br>
+        Omitting brackets changes positive into negative!
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 3: SCIENTIFIC NOTATION -->
+    <section class="section-block">
+      <h2 class="section-heading">3. Scientific Notation: Taming the Universe's Extremes</h2>
+      
+      <p>
+        Scientists and astronomers deal with numbers that are absurdly huge or impossibly tiny:
+      </p>
+      <ul class="content-list">
+        <li>The speed of light: \(300,000,000\text{ m/s}\)</li>
+        <li>The distance from Earth to the Sun: \(149,600,000,000\text{ m}\)</li>
+        <li>The mass of a single dust particle: \(0.000000000753\text{ kg}\)</li>
+      </ul>
+      <p>
+        Writing out all those zeros is an invitation for counting errors. To solve this, science uses <strong>Standard Form (Scientific Notation)</strong>.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">The Standard Form Blueprint</span>
+        A number is in <strong>Standard Scientific Form</strong> when written strictly as:
+        $$m \times 10^k$$
+        Where:
+        • \(m\) is a decimal number between \(1\) and \(10\) (that is, \(1 \le m < 10\)). There must be <strong>exactly one non-zero digit before the decimal point</strong>!<br>
+        • \(k\) is an integer (positive for huge numbers, negative for tiny decimal fractions).
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Normal Number</th>
+            <th>How We Shift the Decimal</th>
+            <th>Scientific Notation</th>
+            <th>Why the Power Has That Sign</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>\(5,972,000,000,000\text{ kg}\)</td>
+            <td>Move decimal 12 places <strong>left</strong></td>
+            <td>\(5.972 \times 10^{12}\)</td>
+            <td>Big number (\(>1\)) \(\to\) positive exponent</td>
+          </tr>
+          <tr>
+            <td>\(149,600,000\text{ km}\)</td>
+            <td>Move decimal 8 places <strong>left</strong></td>
+            <td>\(1.496 \times 10^8\)</td>
+            <td>Big number (\(>1\)) \(\to\) positive exponent</td>
+          </tr>
+          <tr>
+            <td>\(0.000045\text{ m}\)</td>
+            <td>Move decimal 5 places <strong>right</strong></td>
+            <td>\(4.5 \times 10^{-5}\)</td>
+            <td>Tiny number (\(<1\)) \(\to\) negative exponent</td>
+          </tr>
+          <tr>
+            <td>\(0.000000008\text{ g}\)</td>
+            <td>Move decimal 9 places <strong>right</strong></td>
+            <td>\(8.0 \times 10^{-9}\)</td>
+            <td>Tiny number (\(<1\)) \(\to\) negative exponent</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECTION: WORKED PROBLEMS -->
+    <section class="section-block">
+      <h2 class="section-heading">Worked Problems</h2>
+
+      <!-- Problem 2.1 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.1: Multi-Base Index Law Simplification</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Simplify the following expression into prime-factor index form, leaving no negative exponents in your final answer:
+          $$\frac{12^4 \times 9^3 \times 4}{6^3 \times 8^2 \times 27}$$
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-1">
+          <strong>The Strategy:</strong> The bases (12, 9, 4, 6, 8, 27) are composite numbers. First, break every single base down into its prime factors: **2 and 3**!<br><br>
+
+          <strong>Step 1: Express every base in prime factors:</strong><br>
+          • \(12 = 2^2 \times 3 \implies 12^4 = (2^2 \times 3)^4 = 2^{2 \times 4} \times 3^4 = 2^8 \times 3^4\)<br>
+          • \(9 = 3^2 \implies 9^3 = (3^2)^3 = 3^6\)<br>
+          • \(4 = 2^2\)<br>
+          • \(6 = 2 \times 3 \implies 6^3 = (2 \times 3)^3 = 2^3 \times 3^3\)<br>
+          • \(8 = 2^3 \implies 8^2 = (2^3)^2 = 2^6\)<br>
+          • \(27 = 3^3\)<br><br>
+
+          <strong>Step 2: Reassemble the numerator by adding powers:</strong><br>
+          $$\text{Numerator} = (2^8 \times 3^4) \times 3^6 \times 2^2 = 2^{8+2} \times 3^{4+6} = 2^{10} \times 3^{10}$$<br>
+
+          <strong>Step 3: Reassemble the denominator:</strong><br>
+          $$\text{Denominator} = (2^3 \times 3^3) \times 2^6 \times 3^3 = 2^{3+6} \times 3^{3+3} = 2^9 \times 3^6$$<br>
+
+          <strong>Step 4: Apply the Quotient Rule (subtract exponents):</strong><br>
+          $$\frac{2^{10} \times 3^{10}}{2^9 \times 3^6} = 2^{10 - 9} \times 3^{10 - 6} = 2^1 \times 3^4$$<br>
+
+          <strong>Step 5: Final numerical evaluation:</strong><br>
+          $$2^1 \times 3^4 = 2 \times 81 = \mathbf{162} \quad (\text{or } \mathbf{2 \cdot 3^4})$$
+        </div>
+      </div>
+
+      <!-- Problem 2.2 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.2: Taming Negative & Fractional Exponents</span>
+          <span class="problem-marks">ICSE Exam Standard • 3 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Find the value of \(x\) that satisfies the exponential equation:
+          $$\left(\frac{3}{5}\right)^{2x - 1} \times \left(\frac{5}{3}\right)^{-3} = \left(\frac{3}{5}\right)^8$$
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-2">
+          <strong>Step 1: Look at the bases:</strong><br>
+          Notice that the middle term has base \(\frac{5}{3}\), while the other terms have base \(\frac{3}{5}\).<br>
+          Use the negative exponent flip rule to make all bases identical:<br>
+          $$\left(\frac{5}{3}\right)^{-3} = \left(\frac{3}{5}\right)^{+3}$$<br>
+
+          <strong>Step 2: Substitute back into the equation:</strong><br>
+          $$\left(\frac{3}{5}\right)^{2x - 1} \times \left(\frac{3}{5}\right)^3 = \left(\frac{3}{5}\right)^8$$<br>
+
+          <strong>Step 3: Combine the left side using Law 1 (add exponents):</strong><br>
+          $$\left(\frac{3}{5}\right)^{(2x - 1) + 3} = \left(\frac{3}{5}\right)^8$$
+          $$\left(\frac{3}{5}\right)^{2x + 2} = \left(\frac{3}{5}\right)^8$$<br>
+
+          <strong>Step 4: Equate exponents (since bases are equal):</strong><br>
+          $$2x + 2 = 8$$
+          $$2x = 8 - 2 = 6$$
+          $$x = \frac{6}{2} = \mathbf{3}$$
+        </div>
+      </div>
+
+      <!-- Problem 2.3 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.3: Scientific Notation Comparison in Astrophysics</span>
+          <span class="problem-marks">ICSE Exam Standard • 3 Marks</span>
+        </div>
+        <div class="problem-statement">
+          The mass of planet Jupiter is approximately \(1.9 \times 10^{27}\text{ kg}\), and the mass of Earth is \(5.97 \times 10^{24}\text{ kg}\). How many times heavier is Jupiter than Earth? Give your answer rounded to the nearest whole number.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-3">
+          <strong>Step 1: Set up the ratio of masses:</strong><br>
+          $$\text{Ratio} = \frac{\text{Mass of Jupiter}}{\text{Mass of Earth}} = \frac{1.9 \times 10^{27}}{5.97 \times 10^{24}}$$<br>
+
+          <strong>Step 2: Separate the decimal numbers from the powers of 10:</strong><br>
+          $$\text{Ratio} = \left(\frac{1.9}{5.97}\right) \times \left(\frac{10^{27}}{10^{24}}\right)$$<br>
+
+          <strong>Step 3: Apply Law 2 to the powers of 10:</strong><br>
+          $$\frac{10^{27}}{10^{24}} = 10^{27 - 24} = 10^3 = 1,000$$<br>
+
+          <strong>Step 4: Multiply through:</strong><br>
+          $$\text{Ratio} = \frac{1.9}{5.97} \times 1,000 = \frac{1900}{5.97} \approx 318.25$$<br>
+
+          <strong>Step 5: Final Conclusion:</strong><br>
+          Jupiter is approximately **318 times** heavier than Earth!
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SCIENTIFIC REASONING -->
+    <section class="section-block">
+      <h2 class="section-heading">Mathematical Curiosities & "Why?" Questions</h2>
+
+      <!-- Reasoning Q1 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 2.1: Why Isn't \(0^0\) Simply Equal to 1?</span>
+        </div>
+        <div class="reasoning-question">
+          If any number to the power 0 equals 1 (\(a^0 = 1\)), and 0 to any power equals 0 (\(0^n = 0\)), what happens when they collide at \(0^0\)?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-1')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-1">
+          \(0^0\) is one of the famous **indeterminate forms** in mathematics because two fundamental rules crash into each other:<br><br>
+          • Rule 1 says: <em>"Any base raised to the power 0 must equal 1."</em> (This pushes \(0^0\) toward 1).<br>
+          • Rule 2 says: <em>"Zero raised to any positive power must equal 0."</em> (\(0 \times 0 = 0\), which pushes \(0^0\) toward 0).<br><br>
+          Furthermore, our division proof for \(a^0\) was: \(a^0 = \frac{a^m}{a^m}\). But if \(a = 0\), this becomes \(\frac{0^m}{0^m} = \frac{0}{0}\), which is completely undefined division by zero! Therefore, in general arithmetic, \(0^0\) has no single agreed value and is left strictly indeterminate.
+        </div>
+      </div>
+
+      <!-- Reasoning Q2 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 2.2: How Negative Powers Built Modern Nanotechnology</span>
+        </div>
+        <div class="reasoning-question">
+          Why does physics and chemistry use negative exponents like \(10^{-9}\) instead of just writing small fractions like \(\frac{1}{1,000,000,000}\)?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-2')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-2">
+          Negative exponents make calculations vastly easier and prevent fatal zero-counting errors.<br><br>
+          The prefix **nano** literally means \(10^{-9}\) (one-billionth of a meter). If a semiconductor engineer wants to calculate how many atoms fit into a transistor gate of size \(2 \times 10^{-9}\text{ m}\) when each silicon atom has a diameter of \(2 \times 10^{-10}\text{ m}\), they don't have to divide long decimal strings with 10 zeros! They just subtract the exponents:<br>
+          $$\frac{2 \times 10^{-9}}{2 \times 10^{-10}} = 10^{-9 - (-10)} = 10^{-9 + 10} = 10^1 = \mathbf{10\text{ atoms}}$$
+          In three seconds, index laws solved what would otherwise take two minutes of error-prone long division.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="math_01_number_continuum.html" class="topic-nav-link topic-nav-prev">&#8592; MATH-01 · Number Continuum</a>
+    <a href="math_03_algebraic_expressions.html" class="topic-nav-link topic-nav-next">MATH-03 · Algebraic Expressions &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
+    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+  </footer>
+
+  <script>
+    function toggleSolution(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleReasoning(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

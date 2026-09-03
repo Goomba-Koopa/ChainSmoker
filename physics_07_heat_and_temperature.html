@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 07: Heat, Temperature & Transfer â€¢ ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .section-block p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .diagram-figure { margin: 8px 0; } 
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; background: #ffffff; } 
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: center; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="brand-title">âš›ï¸ Physics â€¢ Topic 07</a>
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="nav-back">â† Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics â€¢ Topic 07</div>
+    <h1 class="topic-title">Heat, Temperature &amp; Transfer</h1>
+    <p class="topic-subtext">
+      Heat vs temperature distinction, thermometric scales (C/5 = (Fâˆ’32)/9 = Kâˆ’273), conduction/convection/radiation mechanisms, the anomalous expansion of water (0Â°Câ€“4Â°C), and the thermos flask.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. HEAT VS TEMPERATURE -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Heat vs. Temperature Distinction</h2>
+      <p>Imagine holding a lit match and standing next to a warm ocean. The match is incredibly hot and could easily burn your finger, yet the warm ocean contains far more total energy because of its massive size. This difference highlights why we cannot simply rely on how hot something feels to measure its energy; we must separate the concept of total energy from the intensity of that energy.</p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Heat &amp; Temperature:</span>
+        <strong>Heat</strong> is a form of internal thermal energy that flows from a body at a higher temperature to a body at a lower temperature due to the temperature difference. <strong>Temperature</strong> is the physical quantity that measures the degree of hotness or coldness of a body, thereby determining the direction of heat flow.
+      </div>
+      
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Heat</th>
+            <th>Temperature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Definition</strong></td>
+            <td>The total kinetic and potential energy of all the molecules in a substance.</td>
+            <td>The average kinetic energy of the individual molecules in a substance.</td>
+          </tr>
+          <tr>
+            <td><strong>SI &amp; Common Units</strong></td>
+            <td>SI Unit: Joule (\(\text{J}\)). Common: Calorie (\(\text{cal}\)).</td>
+            <td>SI Unit: Kelvin (\(\text{K}\)). Common: Celsius (\(\text{Â°C}\)).</td>
+          </tr>
+          <tr>
+            <td><strong>Dependence on Mass</strong></td>
+            <td>Depends on the mass (number of molecules) of the substance.</td>
+            <td>Independent of the mass of the substance.</td>
+          </tr>
+          <tr>
+            <td><strong>Measuring Instrument</strong></td>
+            <td>Measured using a <strong>Calorimeter</strong>.</td>
+            <td>Measured using a <strong>Thermometer</strong>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. THERMOMETRIC SCALES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Thermometric Scales</h2>
+      <p>When a doctor checks your fever, they might say your temperature is 99 degrees, but a scientist in a laboratory might record the room's temperature as 298. These numbers seem vastly different, yet they can represent the exact same level of hotness. We use different temperature scales specifically designed for everyday weather, medical use, and rigorous scientific research.</p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Thermometric Scale &amp; Fixed Points:</span>
+        A <strong>thermometric scale</strong> is a standardized system for measuring temperature, calibrated using two reliable fixed reference points: the <strong>lower fixed point</strong> (the melting point of pure ice at standard pressure) and the <strong>upper fixed point</strong> (the boiling point of pure water at standard pressure).
+      </div>
+      
+      <div class="derivation-card">
+        <span class="derivation-title">Scale Conversion Formula</span>
+        <div class="derivation-step">
+          1. <em>Celsius Scale (C):</em> Lower point = \(0\text{Â°C}\), Upper point = \(100\text{Â°C}\) (100 divisions).<br>
+          2. <em>Fahrenheit Scale (F):</em> Lower point = \(32\text{Â°F}\), Upper point = \(212\text{Â°F}\) (180 divisions).<br>
+          3. <em>Kelvin Scale (K):</em> Lower point = \(273.15\text{ K}\) (\(\approx 273\text{ K}\)), Upper point = \(373\text{ K}\) (100 divisions).<br><br>
+          Because the intervals must be proportional across scales, we equate the ratio of the temperature difference from the lower fixed point to the total number of divisions:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\frac{C - 0}{100} = \frac{F - 32}{180} = \frac{K - 273}{100}$$<br>
+          Simplifying by dividing the denominators by 20 yields the universal conversion equation:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\frac{C}{5} = \frac{F - 32}{9} = \frac{K - 273}{5}$$
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. MECHANISMS OF HEAT TRANSFER -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Mechanisms of Heat Transfer</h2>
+      <p>If you leave a metal spoon in a bowl of hot soup, the handle quickly becomes hot to the touch. Meanwhile, the soup itself bubbles as hot liquid rises to the top, and you can feel the warmth radiating onto your face from a few feet away. Heat always finds a way to travel from a hotter object to a colder one, but it does so through three entirely distinct physical mechanisms.</p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Conduction, Convection &amp; Radiation:</span>
+        <strong>Conduction</strong> is the transfer of heat through stationary matter by direct microscopic particle collisions. <strong>Convection</strong> is the transfer of heat by the actual physical movement of macroscopic fluid (liquid or gas) currents. <strong>Radiation</strong> is the transfer of heat through electromagnetic waves without the need for any material medium.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Conduction</th>
+            <th>Convection</th>
+            <th>Radiation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Material Medium</strong></td>
+            <td>Requires a solid medium.</td>
+            <td>Requires a fluid medium (liquid/gas).</td>
+            <td>Does not require any medium (can occur in a vacuum).</td>
+          </tr>
+          <tr>
+            <td><strong>Particle Movement</strong></td>
+            <td>Particles vibrate in fixed positions; no actual displacement.</td>
+            <td>Actual physical movement of particles from hot to cold regions.</td>
+            <td>No particles are involved; energy travels as electromagnetic waves.</td>
+          </tr>
+          <tr>
+            <td><strong>Path &amp; Direction</strong></td>
+            <td>Any direction depending on the temperature gradient.</td>
+            <td>Generally upwards (hot fluids become less dense and rise).</td>
+            <td>Travels in straight lines in all directions.</td>
+          </tr>
+          <tr>
+            <td><strong>Speed of Transfer</strong></td>
+            <td>Slow process.</td>
+            <td>Moderate process.</td>
+            <td>Fastest process (travels at the speed of light: \(3 \times 10^8\text{ m/s}\)).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. ANOMALOUS EXPANSION OF WATER -->
+    <div class="section-block">
+      <h2 class="section-heading">4. The Anomalous Expansion of Water</h2>
+      <p>If you put a tightly sealed glass bottle completely filled with water into a freezer, the bottle will shatter when the water turns to ice. Almost all substances shrink and become denser as they get colder. Water is unique because it completely disobeys this rule right before it freezes, expanding instead of contracting.</p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Anomalous Expansion:</span>
+        <strong>Anomalous expansion of water</strong> is the unusual behavior of water wherein it contracts when heated from \(0\text{Â°C}\) to \(4\text{Â°C}\) and expands when cooled from \(4\text{Â°C}\) to \(0\text{Â°C}\). Consequently, water attains its maximum density (\(1\text{ g/cm}^3\)) and minimum volume at exactly \(4\text{Â°C}\).
+      </div>
+      
+      <div class="derivation-card">
+        <span class="derivation-title">Density and Volume Dynamics</span>
+        <div class="derivation-step">
+          â€¢ <strong>Above \(4\text{Â°C}\):</strong> Water behaves normally. As temperature drops, volume decreases and density increases.<br>
+          â€¢ <strong>At \(4\text{Â°C}\):</strong> Water reaches its absolute maximum density of \(1,000\text{ kg/m}^3\).<br>
+          â€¢ <strong>Below \(4\text{Â°C}\):</strong> Water behaves anomalously. It expands as it cools down to \(0\text{Â°C}\). Because its density decreases, ice at \(0\text{Â°C}\) is lighter than liquid water and floats on top.
+        </div>
+      </div>
+      
+      <figure class="diagram-figure">
+        <img src="../src/assets/diagrams/anomalous_expansion_water.svg" alt="Diagram showing the anomalous expansion of water and temperature stratification in a lake during summer and winter" class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1. Temperature stratification in a lake showing the survival zone for aquatic life under the ice layer during winter.</figcaption>
+      </figure>
+    </div>
+
+    <!-- 5. THE THERMOS FLASK -->
+    <div class="section-block">
+      <h2 class="section-heading">5. The Thermos (Vacuum) Flask</h2>
+      <p>When you pack a hot lunch for school, a special container keeps it steaming hot until the afternoon, even if it is freezing outside. Similarly, it can keep cold drinks icy all day long. This container acts as an ultimate barrier, meticulously engineered to block all three avenues by which heat tries to enter or escape.</p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Vacuum Flask:</span>
+        A <strong>vacuum flask</strong> (or Thermos flask) is a highly insulated storage vessel that greatly lengthens the time over which its contents remain hotter or cooler than the flask's surroundings by preventing heat transfer via conduction, convection, and radiation.
+      </div>
+      
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Flask Component</th>
+            <th>Primary Function &amp; Mechanism Stopped</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Double-Walled Glass or Steel Vessel</strong></td>
+            <td>Traps a layer of space. Glass itself is a poor conductor of heat. Minimizes <strong>conduction</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>Vacuum Between the Walls</strong></td>
+            <td>Eliminates the material medium required for heat transfer. Prevents <strong>conduction</strong> and <strong>convection</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>Silvered (Mirrored) Inner Surfaces</strong></td>
+            <td>Reflects thermal energy back inward (if hot) or outward (if cold), minimizing heat loss/gain via <strong>radiation</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>Insulating Stopper (Cork or Plastic)</strong></td>
+            <td>Prevents heat loss by <strong>convection</strong> (escaping hot air currents) and blocks <strong>conduction</strong> at the opening.</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <figure class="diagram-figure">
+        <img src="../src/assets/diagrams/vacuum_dewar_flask.svg" alt="Cross-section diagram of a Vacuum Dewar Flask showing the double walls, vacuum, and silvered surfaces" class="diagram-img">
+        <figcaption class="diagram-caption">Fig 2. Cross-section of a vacuum flask demonstrating the specialized structural barriers against heat transfer.</figcaption>
+      </figure>
+    </div>
+
+    <!-- 6. WORKED ICSE NUMERICALS & REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Worked Problems</h2>
+      
+      <!-- Problem 1: Temperature conversion -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 7.1: Thermometric Scale Conversion</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Convert (i) \(37\text{Â°C}\) to Fahrenheit and (ii) \(212\text{Â°F}\) to Celsius and Kelvin.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution â†“</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i): Convert \(37\text{Â°C}\) to Fahrenheit</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Using the formula: \(\frac{C}{5} = \frac{F - 32}{9}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Substitute \(C = 37\): \(\frac{37}{5} = \frac{F - 32}{9}\) [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(7.4 = \frac{F - 32}{9}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(F - 32 = 7.4 \times 9 = 66.6\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(F = 66.6 + 32 = \mathbf{98.6\text{Â°F}}\) [1 Mark]<br><br>
+          2. <em>Part (ii): Convert \(212\text{Â°F}\) to Celsius and Kelvin</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Using the formula: \(\frac{C}{5} = \frac{F - 32}{9}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Substitute \(F = 212\): \(\frac{C}{5} = \frac{212 - 32}{9}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(\frac{C}{5} = \frac{180}{9} = 20\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(C = 20 \times 5 = \mathbf{100\text{Â°C}}\) [1 Mark]<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;To find Kelvin, use \(K = C + 273\):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(K = 100 + 273 = \mathbf{373\text{ K}}\) [1 Mark]
+        </div>
+      </div>
+
+      <!-- Problem 2: Anomalous expansion -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 7.2: Application of Anomalous Expansion</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Why does ice form at the surface of a pond in winter and not at the bottom? Give a scientific explanation referencing the density of water between \(0\text{Â°C}\) and \(4\text{Â°C}\).
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution â†“</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Initial Cooling:</em> As winter air cools the pond's surface, the surface water contracts, becomes denser, and sinks. This convection current continues until the entire pond reaches \(4\text{Â°C}\). [1 Mark]<br><br>
+          2. <em>Anomalous Phase:</em> Below \(4\text{Â°C}\), further cooling causes the surface water to undergo anomalous expansion. It expands instead of contracting, meaning its density <em>decreases</em>. [1 Mark]<br><br>
+          3. <em>Freezing &amp; Insulation:</em> Because this colder water (\(0\text{Â°C}\) to \(4\text{Â°C}\)) is less dense, it remains at the surface. When it reaches \(0\text{Â°C}\), it freezes into ice. Ice is even lighter than water, so it floats. The ice layer acts as a thermal insulator, preventing the bottom water (which remains at \(4\text{Â°C}\)) from freezing, thereby protecting aquatic life. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 7. SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning 7.1: Everyday Heat Transfer</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are ventilators provided near the ceiling of a room?</div>
+        <div class="reasoning-answer" id="sol_num3">
+          <strong>Examiner Solution:</strong><br><br>
+          The air we exhale is warm. Warm air expands, becomes less dense, and naturally rises upwards due to <strong>convection currents</strong>. Providing ventilators near the ceiling allows this warm, stale air to easily escape the room, while fresh, cooler, denser air enters through windows and doors closer to the floor.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning 7.2: Thermal Insulation</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num4')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why do cooking utensils have handles made of wood or hard plastic (bakelite)?</div>
+        <div class="reasoning-answer" id="sol_num4">
+          <strong>Examiner Solution:</strong><br><br>
+          Metals are excellent conductors of heat, so the main body of a cooking utensil gets very hot. Wood and plastic, however, are <strong>poor conductors (insulators)</strong> of heat. By using these materials for the handles, heat is not easily conducted from the hot pan to our hands, preventing severe burns when we grip the utensil.
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_06_force_and_pressure.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-06 · Force, Thrust &</a>
+    <a href="physics_08_density_and_buoyancy.html" class="topic-nav-link topic-nav-next">PHY-08 · Density, Relative Density &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Physics â€¢ Topic 07: Heat, Temperature &amp; Transfer</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+  
+</body>
+</html>
+
+

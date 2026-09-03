@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biology 10: Classification of Living Organisms • ICSE Class 7</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); text-decoration: none; }
+    .nav-back { font-size: 13.5px; font-weight: 600; color: var(--terracotta); text-decoration: none; }
+    
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 14px; }
+    .section-heading { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    
+    p { font-size: 15px; color: var(--ink-black); line-height: 1.65; max-width: 75ch; }
+    
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-secondary); }
+    .definition-term { font-weight: 700; color: var(--ink-black); }
+    
+    .derivation-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .derivation-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--emerald-accent); margin-bottom: 8px; display: block; }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; }
+    
+    .distinction-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13.5px; }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-strong); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-weight: 600; color: var(--ink-black); }
+    .distinction-table tr:nth-child(even) td { background: var(--bg-surface); }
+    
+    .problem-box { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .problem-type { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--emerald-accent); }
+    .problem-statement { font-size: 15px; font-weight: 500; color: var(--ink-black); margin-bottom: 14px; line-height: 1.5; }
+    
+    .btn-toggle { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; }
+    .solution-drawer { display: none; margin-top: 14px; padding: 14px; background: var(--bg-card); border-left: 3px solid var(--terracotta); border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.6; }
+    
+    .diagram-figure { margin: 12px 0; text-align: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    /* Muted purplish grey exception system */
+    .exception-tag {
+      color: #6b5b7b;
+      font-size: 0.78em;
+      vertical-align: super;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: help;
+    }
+
+    .exception-note {
+      margin-top: 16px;
+      margin-left: 20px;
+      padding: 10px 16px;
+      border-left: 2px solid #6b5b7b;
+      background: rgba(107, 91, 123, 0.04);
+      border-radius: 0 6px 6px 0;
+      color: #6b5b7b;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .exception-note-title {
+      font-weight: 700;
+      color: #554564;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13.5px;
+    }
+    
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 48px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); margin-top: 48px; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">🌿 Biology • Topic 10</a>
+    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 10</div>
+    <h1 class="topic-title">Classification of Living Organisms</h1>
+    <p class="topic-subtext">
+      The necessity of biological classification, Linnaean hierarchy, binomial nomenclature rules, Whittaker's Five Kingdom Classification (Monera, Protista, Fungi, Plantae, Animalia), and major invertebrate and vertebrate diagnostic matrices.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. NEED FOR CLASSIFICATION & TAXONOMY -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Need for Biological Classification</h2>
+      <p>
+        Imagine walking into a massive library containing nearly two million books scattered randomly across the floor in piles. Finding a specific historical text or comparing two science books would be nearly impossible. A librarian organizes books into sections, genres, authors, and call numbers. Earth is inhabited by nearly two million identified species of living organisms, with millions more awaiting discovery. To study their evolutionary relationships, physiological characteristics, and shared ancestry logically, biologists organize organisms into structured groups based on their similarities and differences.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Taxonomy:</span>
+        The branch of biological science concerned with the identification, naming (nomenclature), and systematic categorization (classification) of living organisms according to their established natural relationships.
+        <br><br>
+        <span class="definition-term">Classification:</span>
+        The scientific arrangement of organisms into hierarchical groups and sub-groups based on their morphological, cellular, and evolutionary similarities and differences.
+      </div>
+    </div>
+
+    <!-- 2. THE TAXONOMIC HIERARCHY & BINOMIAL NOMENCLATURE -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Taxonomic Hierarchy & Binomial Nomenclature</h2>
+      <p>
+        Organisms are categorized into a tiered series of nested ranks. As you descend the hierarchy from Kingdom to Species, the number of organisms in each rank decreases, while the degree of specific anatomical similarity increases.
+      </p>
+
+      <div class="derivation-card">
+        <span class="derivation-title">The Seven Obligate Taxonomic Ranks</span>
+        <div class="derivation-step">
+          $$\text{Kingdom} \rightarrow \text{Phylum (or Division in Plants)} \rightarrow \text{Class} \rightarrow \text{Order} \rightarrow \text{Family} \rightarrow \text{Genus} \rightarrow \text{Species}$$
+          <br>
+          • <strong>Species:</strong> The fundamental, basic unit of classification. A group of closely related organisms capable of freely interbreeding in nature to produce fertile offspring.<br>
+          • <strong>Genus:</strong> A group of closely related species sharing common structural characteristics.<br>
+          • <em>Memory Mnemonic:</em> <strong>K</strong>ing <strong>P</strong>hilip <strong>C</strong>ame <strong>O</strong>ver <strong>F</strong>or <strong>G</strong>ood <strong>S</strong>oup.
+        </div>
+      </div>
+
+      <div class="definition-box">
+        <span class="definition-term">Binomial Nomenclature (Carolus Linnaeus):</span>
+        The universal scientific system of naming every living organism using a two-word Latinized name.
+        <br><br>
+        <strong>Strict Scientific Conventions:</strong><br>
+        1. <strong>First Word:</strong> Represents the <em>Genus</em> (Generic name). It must always begin with an uppercase capital letter.<br>
+        2. <strong>Second Word:</strong> Represents the <em>Species</em> (Specific epithet). It must always begin with a lowercase letter.<br>
+        3. <strong>Typesetting:</strong> When printed, the entire name is typeset in <em>italics</em>. When handwritten by students in exam scripts, the genus and species names must be <u>underlined</u> <u>separately</u>.
+        <br><br>
+        <em>Standard ICSE Examples:</em><br>
+        • Human Being: <em>Homo sapiens</em><br>
+        • Mango Tree: <em>Mangifera indica</em><br>
+        • Tiger: <em>Panthera tigris</em><br>
+        • Frog: <em>Rana tigrina</em>
+      </div>
+    </div>
+
+    <!-- 3. WHITTAKER'S FIVE KINGDOM CLASSIFICATION -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Whittaker's Five Kingdom Classification System</h2>
+      <p>
+        In 1969, American ecologist Robert H. Whittaker proposed the modern <strong>Five Kingdom System</strong> based on three fundamental biological criteria: cell complexity (prokaryotic vs eukaryotic), organismal complexity (unicellular vs multicellular), and mode of nutrition (autotrophic vs heterotrophic).
+      </p>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Biological_classification_L_Pengo_vflip.svg/500px-Biological_classification_L_Pengo_vflip.svg.png" alt="Taxonomic classification hierarchy diagram from Kingdom down to Species" class="diagram-img" >
+        <figcaption class="diagram-caption">Fig 1: The hierarchical structure of biological classification. Organisms are sorted into increasingly specific taxa, culminating in the individual species.</figcaption>
+      </figure>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Kingdom</th>
+            <th>Cellular Organization</th>
+            <th>Nuclear Architecture</th>
+            <th>Mode of Nutrition</th>
+            <th>Diagnostic Features & ICSE Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Monera</strong></td>
+            <td>Unicellular</td>
+            <td><strong>Prokaryotic</strong> (lacks nuclear membrane and membrane-bound organelles).</td>
+            <td>Autotrophic or Heterotrophic (mostly saprophytic/parasitic).</td>
+            <td>Possess rigid cell wall (non-cellulose). Microscopic.<br><em>Examples:</em> <em>Escherichia coli</em> (Bacteria), <em>Nostoc</em>, Cyanobacteria (Blue-green algae).</td>
+          </tr>
+          <tr>
+            <td><strong>2. Protista</strong></td>
+            <td>Unicellular</td>
+            <td><strong>Eukaryotic</strong> (possesses true distinct nucleus bounded by nuclear envelope).</td>
+            <td>Autotrophic (photosynthetic) or Heterotrophic.<sup class="exception-tag">[†1]</sup></td>
+            <td>Aquatic organisms; move using microscopic hair-like cilia, whip-like flagella, or false feet (pseudopodia).<br><em>Examples:</em> <em>Amoeba</em>, <em>Paramecium</em>, <em>Euglena</em>, <em>Chlamydomonas</em>.</td>
+          </tr>
+          <tr>
+            <td><strong>3. Fungi</strong></td>
+            <td>Mostly Multicellular (Yeast is single-celled).</td>
+            <td><strong>Eukaryotic</strong></td>
+            <td><strong>Heterotrophic</strong> (absorptive saprophytes; release digestive juices onto dead matter and soak up dissolved nutrients).</td>
+            <td>Body formed of delicate microscopic threads called <em>hyphae</em> (forming a fluffy web called <em>mycelium</em>). Cell wall built of <strong>chitin</strong> (not plant cellulose). Completely lacks green chlorophyll.<br><em>Examples:</em> Bread mould (<em>Rhizopus</em>), Button Mushroom (<em>Agaricus</em>), Baker's Yeast (<em>Saccharomyces</em>).</td>
+          </tr>
+          <tr>
+            <td><strong>4. Plantae</strong></td>
+            <td>Multicellular</td>
+            <td><strong>Eukaryotic</strong></td>
+            <td><strong>Autotrophic</strong> (manufactures food through photosynthesis).</td>
+            <td>Contains green chlorophyll pigment inside chloroplasts; cell wall constructed of tough <strong>cellulose</strong>. Non-motile.<br><em>Examples:</em> Pond silk (<em>Spirogyra</em> algae), Mosses, Ferns, Pine trees, Mango trees.</td>
+          </tr>
+          <tr>
+            <td><strong>5. Animalia</strong></td>
+            <td>Multicellular</td>
+            <td><strong>Eukaryotic</strong></td>
+            <td><strong>Heterotrophic</strong> (ingests solid food and digests it internally).</td>
+            <td>Completely lacks cell walls and chloroplasts. Capable of active independent movement and sensory responses via a nervous system.<br><em>Examples:</em> Sponges, Earthworms, Ants, Fish, Birds, Humans.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Indented Scientific Exception Note -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†1] Taxonomic Bridge: The Dual Nature of <em>Euglena</em></span>
+        <em>Euglena</em> is a fascinating microscopic organism that bridges plants and animals. In bright sunlight, it uses green chloroplasts to produce its own food like a plant. In total darkness, it loses chlorophyll, swims around with its whip-like flagellum, and hunts bacteria for food like an animal. This dual identity broke early 2-Kingdom classifications and was a primary reason Whittaker established Kingdom Protista.
+      </div>
+    </div>
+
+    <!-- 4. MAJOR ANIMAL INVERTEBRATE PHYLA -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Major Invertebrate (Non-Chordate) Phyla</h2>
+      <p>
+        Invertebrates are animals that lack an internal bony vertebral column (backbone). Over 95% of all animal species on Earth belong to this diverse group.
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Phylum</th>
+            <th>Body Architecture</th>
+            <th>Distinctive Diagnostic Features</th>
+            <th>Everyday Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Porifera (Sponges)</strong></td>
+            <td>Asymmetrical porous body; cellular level.</td>
+            <td>Permanently anchored to underwater rocks (sessile). Body riddled with tiny intake pores (<em>ostia</em>) and one large exhalant chimney (<em>osculum</em>) through which water circulates.</td>
+            <td>Sycon, Freshwater Bath Sponge (<em>Spongilla</em>).</td>
+          </tr>
+          <tr>
+            <td><strong>Cnidaria / Coelenterata</strong></td>
+            <td>Radially symmetrical (like a wheel); soft bag-like body.</td>
+            <td>Hollow central digestive cavity with a single opening (mouth) ringed by waving tentacles armed with microscopic stinging harpoon cells (<em>cnidoblasts</em>) to paralyze prey.</td>
+            <td>Pond <em>Hydra</em>, Ocean Jellyfish (<em>Aurelia</em>), Sea Anemone.</td>
+          </tr>
+          <tr>
+            <td><strong>Platyhelminthes (Flatworms)</strong></td>
+            <td>Bilaterally symmetrical; flattened from top to bottom like a ribbon.</td>
+            <td>Soft, paper-thin body lacking a body cavity. Mostly internal parasites equipped with suckers or hooks to anchor into host intestines.</td>
+            <td>Human Tapeworm (<em>Taenia</em>), Liver Fluke, Free-living <em>Planaria</em>.</td>
+          </tr>
+          <tr>
+            <td><strong>Nematoda (Roundworms)</strong></td>
+            <td>Unsegmented cylindrical body with pointed tapered ends.</td>
+            <td>Smooth, thread-like worms with a complete digestive tube having both an intake mouth and an exit anus.</td>
+            <td>Intestinal Roundworm (<em>Ascaris</em>), Hookworm.</td>
+          </tr>
+          <tr>
+            <td><strong>Annelida (Segmented Worms)</strong></td>
+            <td>True coelom; body divided into distinct ring-like segments.</td>
+            <td>Body resembles a row of tiny rings stitched together. Moves using microscopic stiff bristles (<em>setae</em>) on each segment and respires through moist skin.</td>
+            <td>Common Earthworm (<em>Pheretima</em>), Medicinal Leech.</td>
+          </tr>
+          <tr>
+            <td><strong>Arthropoda (Jointed-Leg Animals)</strong></td>
+            <td>Segmented body encased in a tough outer armor (exoskeleton).</td>
+            <td>Largest phylum in the animal kingdom. Characterized by jointed limbs and antennae. Body divided into three segments: Head, Thorax, and Abdomen.</td>
+            <td>Cockroach, Housefly, Garden Spider, Honeybee, Ocean Prawn, Scorpion.</td>
+          </tr>
+          <tr>
+            <td><strong>Mollusca (Soft-Bodied Animals)</strong></td>
+            <td>Soft, unsegmented muscular body, usually protected by a hard shell.</td>
+            <td>Possesses a muscular slimy foot for gliding and a soft mantle fold that secretes a protective calcium-carbonate shell.</td>
+            <td>Garden Snail (<em>Pila</em>), Clam, Sea Octopus (shell internal/reduced).</td>
+          </tr>
+          <tr>
+            <td><strong>Echinodermata (Spiny-Skinned Animals)</strong></td>
+            <td>Radially symmetrical in adults; tough skin with hard calcareous spines.</td>
+            <td>Exclusively marine organisms. Possess a unique internal hydraulic water-vascular system that operates hundreds of suction-cup tube feet for crawling and prying open food.</td>
+            <td>Five-armed Starfish (<em>Asterias</em>), Spiny Sea Urchin, Sea Cucumber.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. VERTEBRATE CLASSES -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Vertebrate (Chordate) Classes</h2>
+      <p>
+        Vertebrates are advanced animals characterized by an internal bony skeleton with an articulating jointed backbone (vertebral column) that houses and shields the central spinal nerve cord.
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Class</th>
+            <th>Body Temperature & Skin</th>
+            <th>Respiration & Circulation</th>
+            <th>Reproduction & Limbs</th>
+            <th>Key Everyday Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Pisces (Fish)</strong></td>
+            <td><strong>Cold-blooded:</strong> Body temperature matches surrounding water. Streamlined body covered with waterproof overlapping scales.</td>
+            <td>Breathe dissolved oxygen via <strong>feathery gills</strong>. <strong>2-chambered heart</strong> (1 auricle, 1 ventricle).</td>
+            <td>Lay soft jelly-coated eggs in water. Swim and balance using paired pectoral/pelvic fins and a muscular tail fin.</td>
+            <td>Freshwater Rohu (<em>Labeo</em>), Ocean Shark, Seahorse.</td>
+          </tr>
+          <tr>
+            <td><strong>Amphibia (Dual-Life)</strong></td>
+            <td><strong>Cold-blooded:</strong> Smooth, slimy, moist skin without any scales; can absorb oxygen directly through damp skin.</td>
+            <td>Aquatic tadpoles breathe with gills; land adults breathe via <strong>lungs and moist skin</strong>. <strong>3-chambered heart</strong> (2 auricles, 1 ventricle).</td>
+            <td>Lay jelly eggs in water. Undergo complete metamorphosis from swimming, herbivorous tadpole to leaping, carnivorous adult. Four limbs with webbed feet.</td>
+            <td>Common Frog (<em>Rana</em>), Terrestrial Toad (<em>Bufo</em>), Salamander.</td>
+          </tr>
+          <tr>
+            <td><strong>Reptilia (Creeping Vertebrates)</strong></td>
+            <td><strong>Cold-blooded:</strong> Dry, rough, waterproof skin covered in hard horny epidermal scales to prevent dehydration on dry land.</td>
+            <td>Breathe exclusively using <strong>lungs</strong>. <strong>3-chambered heart</strong> with an incomplete dividing partition.<sup class="exception-tag">[†2]</sup></td>
+            <td>Lay waterproof, leathery-shelled eggs on land. Four crawling limbs equipped with sharp claws (limbs lost in snakes).</td>
+            <td>House Wall Lizard, Cobra Snake, Land Tortoise, Crocodile.<sup class="exception-tag">[†2]</sup></td>
+          </tr>
+          <tr>
+            <td><strong>Aves (Birds)</strong></td>
+            <td><strong>Warm-blooded:</strong> Maintain a constant high body temperature (\(\approx 42^\circ\text{C}\)). Body covered with insulating, aerodynamic feathers.</td>
+            <td>Compact lungs connected to large inflatable air sacs for continuous oxygen during flight. <strong>4-chambered heart</strong> (complete separation of oxygenated and deoxygenated blood).</td>
+            <td>Lay hard, protective calcium-carbonate shelled eggs. Forelimbs modified into feathered flight wings; bones are hollow and air-filled (pneumatic) to minimize flight weight. Toothless horny beak.</td>
+            <td>City Pigeon (<em>Columba</em>), Peacock, Sparrow, Flightless Ostrich.</td>
+          </tr>
+          <tr>
+            <td><strong>Mammalia (Mammals)</strong></td>
+            <td><strong>Warm-blooded:</strong> Maintain constant internal body heat. Skin covered with insulating hair or fur. Possess external flexible ear pinnae.</td>
+            <td>Lungs expanded by a muscular floor called a <strong>diaphragm</strong>. Complete <strong>4-chambered heart</strong>.</td>
+            <td>Give direct birth to live young (viviparous)<sup class="exception-tag">[†3]</sup> and mother nourishes infants with milk from specialized <strong>mammary glands</strong>. Differentiated teeth (incisors, canines, premolars, molars).</td>
+            <td>Humans, Dogs, Flying Bats, Ocean Whales, Kangaroos, Platypus.<sup class="exception-tag">[†3]</sup></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Indented Scientific Exception Notes -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†] Evolutionary Anomalies & Vertebrate Exceptions</span>
+        • <strong>[†2] The Crocodile's 4-Chambered Heart:</strong> While all standard reptiles (lizards, snakes, turtles) have a 3-chambered heart with an incomplete central partition that allows slight blood mixing, <em>Crocodiles</em> uniquely possess a fully divided <strong>4-chambered heart</strong> just like birds and mammals, allowing them to dive underwater for hours without depleting oxygen.<br>
+        • <strong>[†3] The Egg-Laying Mammals (Monotremes):</strong> While 99% of mammals give direct birth to live babies (viviparous), the Australian <em>Duck-billed Platypus</em> and <em>Spiny Anteater (Echidna)</em> are primitive mammals that lay leathery eggs. However, once the young hatch, the mother nourishes them with milk secreted from mammary glands, which confirms their true classification as Mammals.
+      </div>
+    </div>
+
+    <!-- 6. LOGICAL CLASSIFICATION EXEMPLARS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Worked Logical Classification Exemplars</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 10.1: Diagnostic Biological Key</span>
+        </div>
+        <div class="problem-statement">
+          An unknown organism \(X\) is discovered in a damp forest. Laboratory analysis reveals the following diagnostic characteristics:<br>
+          1. It is multicellular and eukaryotic.<br>
+          2. It completely lacks chlorophyll and cannot perform photosynthesis.<br>
+          3. Its cell walls are composed of chitin, not cellulose.<br>
+          4. It reproduces by producing microscopic spores from fungal hyphae.<br>
+          Assign Organism \(X\) to its correct Whittaker Kingdom and provide clear logical justifications based on each characteristic.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_class1')">Show Logical Taxonomic Deduction ↓</button>
+        <div class="solution-drawer" id="sol_class1">
+          <strong>Step-by-Step Logical Deduction:</strong><br><br>
+          1. <strong>Elimination of Monera:</strong> Because the organism is multicellular and eukaryotic (possessing membrane-bound nuclei), it cannot belong to Monera (which are exclusively unicellular prokaryotes).<br><br>
+          2. <strong>Elimination of Protista:</strong> Protists are primarily unicellular eukaryotes. Being multicellular eliminates Protista.<br><br>
+          3. <strong>Elimination of Plantae:</strong> Although it possesses cell walls, it completely lacks chlorophyll and does not produce food via photosynthesis. True plants are autotrophic with cellulose cell walls.<br><br>
+          4. <strong>Elimination of Animalia:</strong> Animals lack cell walls entirely and ingest food holozoically, whereas this organism has a chitinous cell wall.<br><br>
+          <strong>Final Taxonomic Assignment:</strong> Organism \(X\) belongs to <strong>Kingdom Fungi</strong>.<br>
+          <em>Key Validating Hallmarks:</em> Eukaryotic + Heterotrophic absorptive saprophyte + Chitinous cell wall + Hyphal spore-bearing body structure.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 10.2: Vertebrate Class Identification</span>
+        </div>
+        <div class="problem-statement">
+          A flying animal is caught in a garden at twilight. A student claims: <em>"It flies through the air, so it must belong to Class Aves (Birds)."</em><br>
+          Upon closer examination, the biologist notes: It has external ear pinnae, skin covered in fine fur, teeth in its jaws, and nourishes its live-born young with milk from mammary glands.<br>
+          Logically evaluate the student's claim and assign the animal to its correct vertebrate class.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_class2')">Show Scientific Evaluation ↓</button>
+        <div class="solution-drawer" id="sol_class2">
+          <strong>Logical Evaluation & Deduction:</strong><br><br>
+          1. <strong>Refutation of Student Claim:</strong> Flight is an ecological locomotion adaptation (analogy), not an exclusive taxonomic diagnostic criterion for Class Aves. Class Aves is strictly characterized by feathers, pneumatic hollow bones, a toothless horny beak, and oviparous egg-laying reproduction.<br><br>
+          2. <strong>Analysis of Anatomical Features:</strong><br>
+          • <em>External Ear Pinna:</em> Found exclusively in mammals.<br>
+          • <em>Body Covering:</em> Fur/hair is a unique diagnostic hallmark of mammals (birds have feathers).<br>
+          • <em>Dentition:</em> Possesses differentiated teeth, whereas birds have beaks without teeth.<br>
+          • <em>Mammary Glands & Vivipary:</em> Nourishing live-born young with milk produced by mammary glands is the defining biological criterion of Class Mammalia.<br><br>
+          <strong>Final Conclusion:</strong> The animal is a <strong>Bat</strong>, which belongs to <strong>Class Mammalia</strong> (not Class Aves).
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 7. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Taxonomy 1: Binomial Nomenclature Universality</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b10_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why did Carolus Linnaeus introduce Latinized Binomial Nomenclature for naming living organisms?</div>
+        <div class="reasoning-answer" id="reas_b10_1">
+          <strong>Scientific Resolution:</strong><br>
+          Common regional names vary widely across languages and dialects, causing severe confusion among scientists. Binomial nomenclature gives every species a unique, standardized two-word Latin name (\(\textit{Genus}\) + \(\textit{species}\), e.g., \(\textit{Homo sapiens}\)) recognised internationally.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Taxonomy 2: Amphibians Requiring Water</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b10_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are frogs and toads classified as Amphibians even though adult frogs spend significant time on land?</div>
+        <div class="reasoning-answer" id="reas_b10_2">
+          <strong>Scientific Resolution:</strong><br>
+          Amphibians are dual-habitat animals. Although adults possess lungs for land respiration, they have thin, moist skin and lack shelled eggs. They are biologically bound to freshwater for external fertilization, egg-laying, and larval development with gill-breathing tadpoles.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="biology_09_reproduction_in_plants_animals.html" class="topic-nav-link topic-nav-prev">&#8592; BIO-09 · Reproduction in Plants</a>
+    <a href="biology_11_health_hygiene_and_diseases.html" class="topic-nav-link topic-nav-next">BIO-11 · Health, Hygiene & &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Biology • Topic 10: Classification of Living Organisms</div>
+    <div>CISCE Class 7 Academic Compendium</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology 03: Cell Structure & Organelles • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+    
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🌿 Biology • Topic 03</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 03</div>
+    <h1 class="topic-title">Cell Structure & Organelles</h1>
+    <p class="topic-subtext">
+      Plant vs Animal cell comparison, organelle functions (Nucleus, Mitochondria, Ribosomes, Lysosomes, Plastids/Chloroplasts, Golgi Body, Endoplasmic Reticulum, Vacuole, Cell Wall).
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. PLANT CELL STRUCTURE -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Plant Cell Structure</h2>
+      <p>
+        Imagine a mighty castle surrounded by a rigid, impenetrable stone wall. This wall protects the bustling city inside from being crushed or losing its shape. A plant cell is very much like this castle. Because plants do not have a skeletal system (like bones in humans) to hold them upright, their individual cells must be incredibly strong and rigid. They contain specialized structures that allow them to stand tall, even against strong winds, and to manufacture their own food using sunlight.
+      </p>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Plant_cell_structure_svg_labels.svg/500px-Plant_cell_structure_svg_labels.svg.png" alt="Diagram showing the internal structure of a typical plant cell, including the cell wall, large central vacuole, and chloroplasts." class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1. Generalized structure of a Plant Cell, highlighting the thick outer cell wall, prominent central vacuole, and green chloroplasts.</figcaption>
+      </figure>
+
+      <div class="definition-box">
+        <span class="definition-term">Plant Cell:</span>
+        A eukaryotic cell that serves as the basic structural and functional unit of all plants. It is characterized by the presence of a rigid cellulose cell wall, plastids (such as chloroplasts for photosynthesis), and a large central vacuole that maintains cell turgidity.
+      </div>
+    </div>
+
+    <!-- 2. ANIMAL CELL STRUCTURE -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Animal Cell Structure</h2>
+      <p>
+        Now imagine a squishy, flexible water balloon filled with tiny, floating machines working tirelessly. Unlike the rigid plant cell, an animal cell can often change its shape. This flexibility is essential because animals need to move, stretch, and bend. Without a rigid outer wall, animal cells rely on a thin, flexible boundary to keep everything contained while allowing them to interact easily with other cells to form complex tissues like muscles and nerves.
+      </p>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Animal_cell_structure_en.svg/500px-Animal_cell_structure_en.svg.png" alt="Diagram showing the internal structure of a typical animal cell, featuring a flexible membrane, prominent nucleus, and various organelles but lacking a cell wall." class="diagram-img">
+        <figcaption class="diagram-caption">Fig 2. Generalized structure of an Animal Cell, showcasing the flexible cell membrane, centrally located nucleus, and absence of a cell wall or large central vacuole.</figcaption>
+      </figure>
+
+      <div class="definition-box">
+        <span class="definition-term">Animal Cell:</span>
+        A eukaryotic cell that serves as the fundamental unit of life in animals. It lacks a rigid cell wall and chloroplasts, possessing instead a flexible cell membrane, temporary or small vacuoles, and centrioles that assist during cell division.
+      </div>
+    </div>
+
+    <!-- 3. CELL WALL AND MEMBRANE -->
+    <div class="section-block">
+      <h2 class="section-heading">3. The Boundaries: Cell Wall & Cell Membrane</h2>
+      <p>
+        Think of a factory's boundary. There might be an outer concrete fence that stops anything large from smashing into the factory, and an inner security gate where guards check ID badges to decide exactly who enters and leaves. The <strong>Cell Wall</strong> is that thick concrete fence, present only in plants to provide shape and protection. The <strong>Cell Membrane</strong> is the living security gate, present in both plant and animal cells, which carefully controls the traffic of nutrients and waste.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Cell Wall:</span>
+        A non-living, rigid outermost layer made primarily of cellulose, found in plant cells. It provides structural support, protection, and a fixed shape to the cell. It is freely permeable, allowing most substances to pass through.<br><br>
+        <span class="definition-term">Cell Membrane (Plasma Membrane):</span>
+        A living, thin, flexible layer composed of lipids and proteins that surrounds the cytoplasm of all cells. It is selectively permeable, meaning it controls the entry and exit of specific substances in and out of the cell.
+      </div>
+    </div>
+
+    <!-- 4. THE NUCLEUS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. The Nucleus: The Cell's Control Center</h2>
+      <p>
+        Every functioning city needs a city hall or control center where the master blueprints are stored and all major decisions are made. In the cell, this is the <strong>Nucleus</strong>. It holds the genetic material (DNA), which acts as an instruction manual for building and operating everything in the cell. Without a nucleus, the cell would not know how to grow, repair itself, or reproduce.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Nucleus:</span>
+        A large, typically spherical organelle bounded by a double membrane (nuclear envelope). It contains thread-like structures called chromatin (which condense into chromosomes during cell division) and is responsible for coordinating all cellular activities, including growth, metabolism, and reproduction.
+      </div>
+    </div>
+
+    <!-- 5. MITOCHONDRIA -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Mitochondria: The Powerhouses</h2>
+      <p>
+        A city cannot function without power plants generating electricity to keep the lights on and the machines running. <strong>Mitochondria</strong> act as the power plants of the cellular city. They take in the food we eat and the oxygen we breathe, and through a complex process, they release usable energy that fuels every single activity within the cell, from moving muscles to thinking thoughts.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Mitochondria (Singular: Mitochondrion):</span>
+        Double-membrane-bound organelles where cellular respiration occurs. The inner membrane is highly folded into structures called cristae to increase surface area. They oxidize food molecules to release energy in the form of ATP (Adenosine Triphosphate), earning them the title "powerhouse of the cell."
+      </div>
+    </div>
+
+    <!-- 6. ER & RIBOSOMES -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Endoplasmic Reticulum & Ribosomes: The Factories and Highways</h2>
+      <p>
+        Inside a bustling city, factories manufacture important goods, and an intricate network of highways transports these goods to where they are needed. <strong>Ribosomes</strong> are the tiny factories that manufacture proteins, the essential building blocks of life. The <strong>Endoplasmic Reticulum (ER)</strong> acts as the highway system—a network of tubes and channels that transport these proteins and other materials throughout the cell.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Endoplasmic Reticulum (ER):</span>
+        An interconnected network of membranous tubules and sacs. It exists in two forms: Rough ER (studded with ribosomes) which synthesizes and transports proteins, and Smooth ER (lacking ribosomes) which is involved in lipid synthesis and detoxification.<br><br>
+        <span class="definition-term">Ribosomes:</span>
+        Small, dense, granular structures found either floating freely in the cytoplasm or attached to the Rough ER. They are the primary site of protein synthesis in the cell.
+      </div>
+    </div>
+
+    <!-- 7. GOLGI BODY -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Golgi Body: The Cellular Post Office</h2>
+      <p>
+        When a factory produces goods, they aren't always ready to be used immediately. They must go to a post office or packaging center where they are sorted, modified, placed in boxes, and given shipping labels. The <strong>Golgi Body</strong> does exactly this. It takes the proteins and lipids built by the ER, modifies them, packs them into tiny vesicles (bubbles), and ships them to different parts of the cell or even outside of it.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Golgi Body (Golgi Apparatus / Dictyosome in plants):</span>
+        A stack of flattened, membrane-bound sacs called cisternae. Its primary function is the modification, sorting, and packaging of proteins and lipids for secretion or delivery to other organelles.
+      </div>
+    </div>
+
+    <!-- 8. LYSOSOMES -->
+    <div class="section-block">
+      <h2 class="section-heading">8. Lysosomes: The Recycling Centers</h2>
+      <p>
+        No city can survive without garbage trucks and recycling centers to clean up waste. Over time, cellular machines break down, and harmful invaders like bacteria might enter the cell. <strong>Lysosomes</strong> are specialized bubbles filled with powerful chemicals that digest and break down cellular waste, old organelles, and foreign particles, keeping the cell clean and healthy.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Lysosomes:</span>
+        Small, spherical vesicles containing potent hydrolytic (digestive) enzymes. They are responsible for intracellular digestion, breaking down worn-out cell parts, and destroying foreign pathogens. Under conditions of severe cellular damage, they may burst to digest the entire cell, hence they are often called "suicide bags."
+      </div>
+    </div>
+
+    <!-- 9. PLASTIDS & CHLOROPLASTS -->
+    <div class="section-block">
+      <h2 class="section-heading">9. Plastids & Chloroplasts: The Solar Panels</h2>
+      <p>
+        Imagine if buildings could produce their own food simply by sitting in the sun using advanced solar panels. Plants do exactly this! Plant cells contain special structures called <strong>Plastids</strong>, the most famous of which are <strong>Chloroplasts</strong>. These act like biological solar panels, capturing the energy from sunlight and using it to bake sugars from water and air—a magical process known as photosynthesis.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Plastids:</span>
+        Double-membrane organelles found exclusively in plant cells and algae. They include:<br>
+        • <strong>Chloroplasts:</strong> Contain the green pigment chlorophyll; the site of photosynthesis where solar energy is converted into chemical energy (food).<br>
+        • <strong>Chromoplasts:</strong> Contain pigments giving yellow, orange, or red colors to flowers and fruits.<br>
+        • <strong>Leucoplasts:</strong> Colorless plastids involved in storing starch, oils, or proteins.
+      </div>
+    </div>
+
+    <!-- 10. VACUOLES -->
+    <div class="section-block">
+      <h2 class="section-heading">10. Vacuoles: The Storage Tanks</h2>
+      <p>
+        Cities in dry areas need enormous water tanks to store water and essential supplies for times of need. <strong>Vacuoles</strong> are the storage tanks of a cell. In plant cells, there is usually one massive central vacuole filled with water and nutrients, which acts like a blown-up balloon pressing against the cell wall to keep the plant standing upright. If you forget to water a plant, this vacuole shrinks, and the plant wilts!
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Vacuole:</span>
+        A fluid-filled, membrane-bound space within the cytoplasm. In mature plant cells, a single large central vacuole (surrounded by a membrane called the tonoplast) stores water, cell sap, dissolved sugars, and waste products, while also maintaining cell turgor pressure. Animal cells, if they have them, contain only small, temporary vacuoles.
+      </div>
+    </div>
+
+    <!-- 11. PLANT VS ANIMAL CELL DISTINCTION -->
+    <div class="section-block">
+      <h2 class="section-heading">11. Distinction: Plant vs. Animal Cell</h2>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Plant Cell</th>
+            <th>Animal Cell</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cell Wall</strong></td>
+            <td>Present (made of cellulose); provides rigid shape.</td>
+            <td>Absent; cell shape is flexible.</td>
+          </tr>
+          <tr>
+            <td><strong>Plastids / Chloroplasts</strong></td>
+            <td>Present; essential for photosynthesis and coloration.</td>
+            <td>Absent; animals cannot perform photosynthesis.</td>
+          </tr>
+          <tr>
+            <td><strong>Vacuoles</strong></td>
+            <td>Usually a single, large, prominent central vacuole.</td>
+            <td>Small, temporary, or completely absent.</td>
+          </tr>
+          <tr>
+            <td><strong>Centrosome / Centrioles</strong></td>
+            <td>Absent in most mature higher plants.</td>
+            <td>Present; plays a critical role in cell division.</td>
+          </tr>
+          <tr>
+            <td><strong>Nucleus Position</strong></td>
+            <td>Pushed to the periphery (side) due to the large central vacuole.</td>
+            <td>Usually located in the center of the cytoplasm.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 12. WORKED ICSE EXAM PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">12. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.1: Organelle-Function Matching</span>
+          <span class="problem-marks">[5 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Match the cell organelle to its correct specific function: <br>
+          (i) Site of protein synthesis <br>
+          (ii) Powerhouse of the cell <br>
+          (iii) Contains digestive enzymes <br>
+          (iv) Controls all cell activities <br>
+          (v) Provides rigidity to plant cells only
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Examiner's Answer Key:</strong><br><br>
+          (i) Site of protein synthesis — <strong>Ribosomes</strong> [1 Mark]<br>
+          (ii) Powerhouse of the cell — <strong>Mitochondria</strong> [1 Mark]<br>
+          (iii) Contains digestive enzymes — <strong>Lysosomes</strong> [1 Mark]<br>
+          (iv) Controls all cell activities — <strong>Nucleus</strong> [1 Mark]<br>
+          (v) Provides rigidity to plant cells only — <strong>Cell Wall</strong> [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.2: Structural Distinction</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Distinguish between a Plant Cell and an Animal Cell under four specific anatomical headings.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          To secure full marks, the distinction must be tabulated with specific headings.<br><br>
+          1. <strong>Heading: Cell Wall</strong> [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Plant Cell:</em> Possesses a rigid, outermost cellulose cell wall.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Animal Cell:</em> Completely lacks a cell wall (outermost boundary is the cell membrane).<br><br>
+          
+          2. <strong>Heading: Plastids</strong> [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Plant Cell:</em> Contains plastids, notably chloroplasts for photosynthesis.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Animal Cell:</em> Plastids are absent.<br><br>
+          
+          3. <strong>Heading: Vacuoles</strong> [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Plant Cell:</em> Contains a single, large central vacuole filled with cell sap.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Animal Cell:</em> Vacuoles are usually absent; if present, they are small and temporary.<br><br>
+          
+          4. <strong>Heading: Centrosome</strong> [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Plant Cell:</em> Centrosomes and centrioles are typically absent in higher plants.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Animal Cell:</em> Centrosome with centrioles is present and aids in cell division.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 3.3: Give Scientific Reasons</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Provide scientific reasons for the following statements:<br>
+          (a) Lysosomes are known as the "suicide bags" of the cell.<br>
+          (b) A plant cell does not burst when placed in excess water, but an animal cell might.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num3">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          <strong>(a) Reason for Lysosomes [2 Marks]:</strong><br>
+          Lysosomes contain powerful digestive (hydrolytic) enzymes. If the cell undergoes severe damage, disease, or aging, the lysosomes may rupture. When they burst open, their potent enzymes digest the entire contents of their own cell, leading to cell death. Hence, they are termed "suicide bags."<br><br>
+          
+          <strong>(b) Reason for Plant vs Animal Cell Bursting [2 Marks]:</strong><br>
+          A plant cell is surrounded by a rigid, non-living cell wall made of cellulose. When water enters a plant cell, it swells, but the strong cell wall pushes back, creating turgor pressure that prevents the cell from bursting. An animal cell lacks this protective cell wall and only has a thin, flexible cell membrane; thus, excessive water intake causes it to stretch beyond its limits and eventually rupture or burst.
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 13. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">13. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Cytology 1: Mitochondria as Powerhouse</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b3_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are mitochondria referred to as the 'Powerhouses of the Cell'?</div>
+        <div class="reasoning-answer" id="reas_b3_1">
+          <strong>Scientific Resolution:</strong><br>
+          Mitochondria are the primary site of aerobic cellular respiration (Krebs cycle and oxidative phosphorylation), where glucose is broken down in the presence of oxygen to synthesize large quantities of energy stored as <strong>ATP (Adenosine Triphosphate)</strong> molecules.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Cytology 2: Lysosomes as Suicide Bags</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b3_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are lysosomes designated as the 'Suicide Bags' of a eukaryotic cell?</div>
+        <div class="reasoning-answer" id="reas_b3_2">
+          <strong>Scientific Resolution:</strong><br>
+          Lysosomes contain potent hydrolytic digestive enzymes. If a cell undergoes irreversible metabolic injury or dies, the lysosome membrane ruptures, releasing digestive enzymes into the cytoplasm that completely digest and destroy its own cellular body.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="biology_02_photosynthesis_and_respiration.html" class="topic-nav-link topic-nav-prev">&#8592; BIO-02 · Photosynthesis & Cellular</a>
+    <a href="biology_04_digestive_system.html" class="topic-nav-link topic-nav-next">BIO-04 · Human Digestive System &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Cell Structure & Organelles</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

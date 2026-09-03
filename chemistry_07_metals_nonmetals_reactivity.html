@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry 07: Metals, Non-Metals & Reactivity Series • ICSE Class 7</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; text-align: center; }
+
+    /* Muted purplish grey exception system */
+    .exception-tag {
+      color: #6b5b7b;
+      font-size: 0.78em;
+      vertical-align: super;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: help;
+    }
+
+    .exception-note {
+      margin-top: 16px;
+      margin-left: 20px;
+      padding: 10px 16px;
+      border-left: 2px solid #6b5b7b;
+      background: rgba(107, 91, 123, 0.04);
+      border-radius: 0 6px 6px 0;
+      color: #6b5b7b;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .exception-note-title {
+      font-weight: 700;
+      color: #554564;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13.5px;
+    }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">🧪 Chemistry • Topic 07</a>
+    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 07</div>
+    <h1 class="topic-title">Metals, Non-Metals &amp; Reactivity Series</h1>
+    <p class="topic-subtext">
+      Physical and chemical properties of metals vs non-metals, the Metal Reactivity Series (K &gt; Na &gt; Ca &gt; Mg &gt; Al &gt; Zn &gt; Fe &gt; Pb &gt; Cu &gt; Ag &gt; Au), displacement reactions, and reactions of metals with water, acids, and oxygen.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. PHYSICAL PROPERTIES OF METALS VS NON-METALS -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Physical Properties of Metals vs Non-Metals</h2>
+      <p>
+        If you look inside a phone charger, you will find copper wires that easily bend and conduct electricity, allowing your device to charge. In contrast, the graphite lead inside a pencil snaps under pressure and is brittle. These everyday observations highlight the fundamental differences in physical properties between metals and non-metals. Metals are generally hard, shiny, and good conductors, while non-metals display a wide variety of states and are typically poor conductors. Recognizing these properties helps scientists and engineers choose the right materials for building bridges, designing circuits, or creating insulated containers.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Metals and Non-Metals:</span>
+        <strong>Metals</strong> are electropositive elements that readily lose electrons to form positive ions (cations). They are typically solid, malleable, ductile, sonorous, and excellent conductors of heat and electricity. <strong>Non-metals</strong> are electronegative elements that tend to gain electrons to form negative ions (anions). They are generally brittle when solid, non-sonorous, dull in appearance, and poor conductors of heat and electricity.
+      </div>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Graphite-layers-side-3D-balls.png/300px-Graphite-layers-side-3D-balls.png" alt="Graphite layered structure" class="diagram-img">
+        <figcaption class="diagram-caption">The layered structure of graphite. The free electrons moving between these sheets allow this non-metal to conduct electricity efficiently—a major exception to the general rule that non-metals are insulators.</figcaption>
+      </figure>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Physical Property</th>
+            <th>Metals</th>
+            <th>Non-Metals</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>State at Room Temperature</strong></td>
+            <td>Solid and hard.<sup class="exception-tag">[†1]</sup></td>
+            <td>Can exist as solids (Carbon, Sulphur), liquids<sup class="exception-tag">[†2]</sup>, or gases (Oxygen, Nitrogen).</td>
+          </tr>
+          <tr>
+            <td><strong>Malleability &amp; Ductility</strong></td>
+            <td>Highly malleable (beaten into thin foils) and ductile (drawn into fine wires).</td>
+            <td>Brittle in solid state; fragments under hammer. Completely non-ductile.</td>
+          </tr>
+          <tr>
+            <td><strong>Thermal &amp; Electrical Conductivity</strong></td>
+            <td>Excellent conductors of heat and electricity due to free mobile electrons.</td>
+            <td>Poor thermal and electrical insulators.<sup class="exception-tag">[†3]</sup></td>
+          </tr>
+          <tr>
+            <td><strong>Appearance (Lustre)</strong></td>
+            <td>Possess a shiny metallic lustre and can be polished.</td>
+            <td>Generally dull in appearance.<sup class="exception-tag">[†4]</sup></td>
+          </tr>
+          <tr>
+            <td><strong>Hardness &amp; Density</strong></td>
+            <td>Generally hard with high densities.<sup class="exception-tag">[†5]</sup></td>
+            <td>Generally soft with lower densities.<sup class="exception-tag">[†6]</sup></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Indented Scientific Exceptions -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†] Chemical Nuances & Notable Elemental Exceptions</span>
+        • <strong>[†1] Liquid Metal:</strong> <em>Mercury (\(\text{Hg}\))</em> is the only metal that is a free-flowing liquid at room temperature (\(25^\circ\text{C}\)), due to the unique electronic configuration of its outer shell.<br>
+        • <strong>[†2] Liquid Non-Metal:</strong> <em>Bromine (\(\text{Br}_2\))</em> is the only non-metallic element that is liquid at room temperature (a reddish-brown fuming liquid).<br>
+        • <strong>[†3] Conducting Non-Metal:</strong> <em>Graphite</em> (an allotrope of carbon) has delocalized free electrons between its flat hexagonal sheets, making it an excellent electrical conductor.<br>
+        • <strong>[†4] Lustrous Non-Metals:</strong> <em>Iodine</em> crystals and <em>Diamond</em> exhibit intense natural lustre and sparkle despite being non-metals.<br>
+        • <strong>[†5] Soft Metals:</strong> <em>Sodium (\(\text{Na}\))</em> and <em>Potassium (\(\text{K}\))</em> are so soft they can easily be sliced with a butter knife and float on water due to low densities (\(< 1\text{ g/cm}^3\)).<br>
+        • <strong>[†6] Hardest Natural Substance:</strong> <em>Diamond</em> is an allotrope of carbon (a non-metal), yet its rigid 3D tetrahedral network makes it the hardest naturally occurring substance on Earth.
+      </div>
+    </div>
+
+    <!-- 2. THE METAL REACTIVITY SERIES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. The Metal Reactivity Series</h2>
+      <p>
+        Gold jewelry can stay buried in the earth for centuries and still come out gleaming and shiny. On the other hand, an unprotected iron gate left out in the rain will begin to rust and deteriorate in just a few days. This happens because different metals have vastly different tendencies to undergo chemical reactions. Chemists organize these metals from the most fiercely reactive to the most chemically sluggish in a specialized list known as the Reactivity Series.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Reactivity Series of Metals:</span>
+        The <strong>Reactivity Series</strong> (or Activity Series) is a structured arrangement of common metals in the decreasing order of their chemical reactivity. Metals placed higher in the series easily lose their valence electrons to form positive ions, making them highly reactive. Metals lower down hold onto their electrons tightly and are therefore less reactive.
+        <br><br>
+        • <em>The Standard ICSE Order to Memorize:</em> <strong>Potassium (K) &gt; Sodium (Na) &gt; Calcium (Ca) &gt; Magnesium (Mg) &gt; Aluminium (Al) &gt; Zinc (Zn) &gt; Iron (Fe) &gt; Lead (Pb) &gt; [Hydrogen (H)] &gt; Copper (Cu) &gt; Silver (Ag) &gt; Gold (Au).</strong><br>
+        • Hydrogen is included as a reference point for acid reactions, even though it is a non-metal.
+      </div>
+      
+      <div class="derivation-card">
+        <span class="derivation-title">Reactivity Patterns and Methods of Extraction</span>
+        <div class="derivation-step">
+          1. <strong>Highly Reactive Metals (K, Na, Ca, Mg, Al):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;These metals are never found in a free state in nature. They form extremely stable compounds and require energy-intensive electrolytic reduction methods for commercial extraction.<br><br>
+          2. <strong>Moderately Reactive Metals (Zn, Fe, Pb, Cu):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Often found as oxides, sulfides, or carbonate ores. They are usually extracted by roasting followed by chemical reduction using carbon (coke) in a blast furnace.<br><br>
+          3. <strong>Least Reactive Metals (Ag, Au):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Frequently found in their free (native) state in the earth's crust because they do not readily react with oxygen, moisture, or carbon dioxide. They are noble metals.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. DISPLACEMENT REACTIONS -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Displacement Reactions in Aqueous Solutions</h2>
+      <p>
+        If you drop a shiny iron nail into a bright blue solution of copper sulfate, a fascinating chemical exchange occurs over time. The nail gradually gets coated in a red-brown layer of solid copper, and the blue liquid slowly fades into a pale green color. This is a classic battle of chemical reactivity, where a "stronger" (more reactive) metal kicks out a "weaker" (less reactive) metal from its compound.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Displacement Reaction:</span>
+        A <strong>displacement reaction</strong> is a type of chemical reaction in which a more reactive element displaces a less reactive element from its aqueous salt solution.
+        <br><br>
+        • <em>General Word Equation:</em> \(\text{Metal A} + \text{Salt of Metal B} \rightarrow \text{Salt of Metal A} + \text{Metal B}\)<br>
+        • <em>Condition for Reaction:</em> The reaction will ONLY occur if Metal A is placed strictly higher than Metal B in the reactivity series. If Metal A is lower, no reaction takes place.
+      </div>
+      <p>
+        In the classic case of the iron nail in copper sulfate solution: 
+        $$\text{Fe}_{(s)} + \text{CuSO}_{4(aq)} \rightarrow \text{FeSO}_{4(aq)} + \text{Cu}_{(s)}$$
+        Because Iron (Fe) is situated above Copper (Cu) in the Reactivity Series, it can successfully displace the copper ions from the solution. The pale green color produced is due to the formation of aqueous iron(II) sulfate.
+      </p>
+    </div>
+
+    <!-- 4. REACTIONS WITH OXYGEN, WATER, AND ACIDS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Chemical Properties: Reactions with Oxygen, Water, and Acids</h2>
+      <p>
+        Dropping a small piece of sodium into a bowl of water results in a violent, fizzing reaction, often producing a small yellow flame as the hydrogen gas ignites. Conversely, tossing a copper coin into water produces absolutely no reaction, even if you wait a lifetime. The way a given metal behaves with oxygen, water, and acids is directly governed by its specific position in the reactivity series.
+      </p>
+      
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Reagent</th>
+            <th>Highly Reactive Metals (e.g., K, Na, Ca)</th>
+            <th>Moderately Reactive Metals (e.g., Mg, Zn, Fe)</th>
+            <th>Least Reactive Metals (e.g., Cu, Ag, Au)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Reaction with Oxygen (\(\text{O}_2\))</strong></td>
+            <td>React vigorously at room temperature to form basic metal oxides. (Sodium is stored in kerosene to prevent catching fire).</td>
+            <td>React upon heating to form metal oxides. Example: Magnesium burns with a dazzling white flame. (\(2\text{Mg} + \text{O}_2 \rightarrow 2\text{MgO}\)).</td>
+            <td>Do not react with oxygen easily, even upon prolonged strong heating. They retain their metallic shine.</td>
+          </tr>
+          <tr>
+            <td><strong>Reaction with Water (\(\text{H}_2\text{O}\))</strong></td>
+            <td>React violently with cold water, forming a metal hydroxide and rapidly evolving hydrogen gas.</td>
+            <td>Do not react with cold water. Mg reacts with hot water; Zn and Fe react only with steam to form metal oxides and hydrogen.</td>
+            <td>Absolutely no reaction with cold water, hot water, or even superheated steam.</td>
+          </tr>
+          <tr>
+            <td><strong>Reaction with Dilute Acids (e.g., \(\text{HCl}\))</strong></td>
+            <td>React explosively, displacing hydrogen gas and forming aqueous metal chloride salts.</td>
+            <td>React steadily to form metal salts and evolve bubbles of hydrogen gas. (Example: \(\text{Zn} + 2\text{HCl} \rightarrow \text{ZnCl}_2 + \text{H}_2\uparrow\)).</td>
+            <td>No reaction occurs. They cannot displace hydrogen from dilute acids because they are positioned below hydrogen in the series.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. WORKED ICSE NUMERICAL -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 5.1: Predicting Displacement Reactions</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Predict whether the following reactions will occur. If yes, write a balanced equation: (i) Cu + ZnSO₄ solution (ii) Zn + CuSO₄ solution (iii) Fe + AgNO₃ solution. Justify using the Reactivity Series.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Reaction (i): \(\text{Cu} + \text{ZnSO}_4\)</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Will it occur?</strong> No reaction occurs. [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Justification:</strong> Copper is placed below Zinc in the reactivity series, meaning Copper is a less reactive metal and cannot displace the more reactive Zinc from its aqueous salt solution.<br><br>
+          2. <em>Reaction (ii): \(\text{Zn} + \text{CuSO}_4\)</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Will it occur?</strong> Yes, the reaction takes place. [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Justification:</strong> Zinc is placed above Copper in the reactivity series, so it can easily displace it.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Equation:</strong> \(\text{Zn}_{(s)} + \text{CuSO}_{4(aq)} \rightarrow \text{ZnSO}_{4(aq)} + \text{Cu}_{(s)}\) [1 Mark]<br><br>
+          3. <em>Reaction (iii): \(\text{Fe} + \text{AgNO}_3\)</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Will it occur?</strong> Yes, the reaction takes place.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Justification:</strong> Iron is placed substantially higher than Silver in the reactivity series.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Equation:</strong> \(\text{Fe}_{(s)} + 2\text{AgNO}_{3(aq)} \rightarrow \text{Fe(NO}_3)_{2(aq)} + 2\text{Ag}_{(s)}\) [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 5.2: Identifying Elements by Properties</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A shiny element X conducts electricity and can be beaten into thin sheets. Another element Y is a gas at room temperature and does not conduct electricity. Identify which is a metal and which is a non-metal. State three other properties of each.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Identification of Elements:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Element X</strong> is definitively a <strong>Metal</strong> because it possesses a shiny lustre, conducts electricity, and exhibits malleability (can be beaten into thin sheets). [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Element Y</strong> is a <strong>Non-metal</strong> because it exists as a gas at room temperature and functions as an electrical insulator (poor conductor). [1 Mark]<br><br>
+          2. <em>Three other physical properties of Metal X:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• It is ductile, meaning it can be drawn out into long wires.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• It is sonorous, producing a deep ringing sound when physically struck.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• It has a comparatively high melting point and high density. [1 Mark]<br><br>
+          3. <em>Three other physical properties of Non-metal Y:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• If it were compressed into a solid form, it would be extremely brittle (neither malleable nor ductile).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• It is fundamentally non-sonorous.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• It generally has a low melting and boiling point compared to typical metals. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 6. GIVE SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Analytical Question 1</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_rsn1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why must sodium metal be stored submerged under kerosene oil in the laboratory?</div>
+        <div class="reasoning-answer" id="sol_rsn1">
+          <strong>Scientific Reason:</strong> Sodium is placed very high in the reactivity series. It is a highly reactive, electropositive metal that vigorously and exothermically reacts with oxygen and moisture present in the atmospheric air, sometimes catching fire spontaneously. Storing it submerged under kerosene physically cuts off its direct contact with air and moisture, effectively preventing a dangerous explosive reaction.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Analytical Question 2</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_rsn2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why is copper predominantly used for making household electrical wires, even though silver is scientifically proven to be a better conductor of electricity?</div>
+        <div class="reasoning-answer" id="sol_rsn2">
+          <strong>Scientific Reason:</strong> While silver is indeed the absolute best conductor of electricity among all metals, it is classified as a precious metal and is extremely expensive. Copper is the second-best conductor, highly ductile, and significantly cheaper and more abundantly available than silver. This makes copper the most economically and physically practical choice for widespread electrical wiring.
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_06_acids_bases_and_salts.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-06 · Acids, Bases, Salts</a>
+    <a href="chemistry_08_water_solutions_solubility.html" class="topic-nav-link topic-nav-next">CHEM-08 · Water, Solutions &amp; &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Chemistry • Topic 07</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

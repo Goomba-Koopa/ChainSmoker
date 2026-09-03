@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry 01: Matter & Composition • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🧪 Chemistry • Topic 01</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 01</div>
+    <h1 class="topic-title">Matter: States, Properties & Kinetic Theory</h1>
+    <p class="topic-subtext">
+      The Kinetic Molecular Theory of matter, intermolecular forces vs spaces, the five-point Solids/Liquids/Gases comparison table, Brownian motion, diffusion, and changes of state with latent heat.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. KINETIC MOLECULAR THEORY -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Kinetic Molecular Theory of Matter</h2>
+      <p>
+        If someone sprays perfume on one side of a room, you can soon smell it on the other side. This happens because all matter is made of tiny, invisible particles that are constantly moving. The Kinetic Molecular Theory explains how these particles behave, depending on how much energy they have.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Kinetic Molecular Theory (Postulates):</span>
+        The fundamental scientific model stating that:<br>
+        1. All matter is composed of extremely small particles (atoms, molecules, or ions).<br>
+        2. These particles are in a state of continuous random motion, and thus possess kinetic energy.<br>
+        3. The kinetic energy of the particles increases with an increase in absolute temperature.<br>
+        4. There are empty spaces between these particles, known as intermolecular spaces.<br>
+        5. There exists a force of attraction between the particles, called intermolecular force, which keeps them together.
+      </div>
+    </div>
+
+    <!-- 2. INTERMOLECULAR FORCES VS SPACES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Intermolecular Forces vs. Intermolecular Spaces</h2>
+      <p>
+        You cannot easily compress a wooden block, but you can effortlessly push the plunger of an empty syringe with your thumb blocking the tip. The wood resists because its particles are tightly packed with very strong attractive forces holding them in place. The air inside the syringe has large spaces between its particles and weak attractive forces, allowing them to be pushed closer together.
+      </p>
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Diamonds_and_graphite.jpg/320px-Diamonds_and_graphite.jpg" alt="Crystal structure of diamond showing a rigid solid lattice" class="diagram-img">
+        <figcaption class="diagram-caption">The rigid arrangement of carbon atoms in a diamond crystal. In solids, intermolecular forces are extremely strong and spaces are minimal.</figcaption>
+      </figure>
+      <div class="definition-box">
+        <span class="definition-term">Intermolecular Force of Attraction:</span>
+        The physical force of attraction existing between the adjacent molecules of a substance. It is maximum in solids, intermediate in liquids, and negligible in gases.
+        <br><br>
+        <span class="definition-term">Intermolecular Space:</span>
+        The empty gap or distance between the individual molecules of a given state of matter. It is inversely proportional to the intermolecular force.
+      </div>
+    </div>
+
+    <!-- 3. THE 5-POINT COMPARISON TABLE -->
+    <div class="section-block">
+      <h2 class="section-heading">3. The Three Fundamental States of Matter</h2>
+      <p>
+        Water is unique because we commonly see it as solid ice, liquid water, and gaseous steam. The state depends entirely on the balance between intermolecular spaces and forces at a given temperature.
+      </p>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Solids</th>
+            <th>Liquids</th>
+            <th>Gases</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Shape and Volume</strong></td>
+            <td>Definite shape and definite volume.</td>
+            <td>Indefinite shape (takes the shape of the container) but definite volume.</td>
+            <td>Indefinite shape and indefinite volume.</td>
+          </tr>
+          <tr>
+            <td><strong>Intermolecular Space</strong></td>
+            <td>Negligible (particles are closely packed).</td>
+            <td>Larger than in solids but smaller than in gases.</td>
+            <td>Very large (particles are far apart).</td>
+          </tr>
+          <tr>
+            <td><strong>Intermolecular Force</strong></td>
+            <td>Maximum (very strong).</td>
+            <td>Intermediate (weaker than in solids).</td>
+            <td>Negligible or extremely weak.</td>
+          </tr>
+          <tr>
+            <td><strong>Compressibility</strong></td>
+            <td>Highly incompressible.</td>
+            <td>Slightly compressible.</td>
+            <td>Highly compressible.</td>
+          </tr>
+          <tr>
+            <td><strong>Particle Motion</strong></td>
+            <td>Particles only vibrate about their mean positions.</td>
+            <td>Particles can slip and slide over one another.</td>
+            <td>Particles move randomly in all possible directions at high speeds.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. BROWNIAN MOTION AND DIFFUSION -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Brownian Motion & Diffusion</h2>
+      <p>
+        When you look closely at dust motes dancing chaotically in a bright sunbeam, you are witnessing the effects of invisible air molecules constantly bombarding the dust. Similarly, dropping a single drop of red food coloring into a glass of still water eventually turns the entire glass red without any stirring. These phenomena provide direct physical evidence for the kinetic theory.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Brownian Motion:</span>
+        The continuous, random, zig-zag motion of microscopic particles suspended in a fluid (a liquid or a gas), caused by the uneven bombardment of the particles by the fast-moving molecules of the surrounding fluid.
+        <br><br>
+        <span class="definition-term">Diffusion:</span>
+        The spontaneous mixing and intermingling of particles of two or more different substances on their own, moving from a region of higher concentration to a region of lower concentration, until a uniform mixture is formed.
+      </div>
+    </div>
+
+    <!-- 5. CHANGES OF STATE AND LATENT HEAT -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Changes of State & Latent Heat</h2>
+      <p>
+        When you put an ice cube in a warm drink, it begins to melt. Interestingly, a thermometer placed in the melting ice will read exactly 0°C until the very last piece of ice has melted, even though heat is constantly entering it. This "hidden" heat is not raising the temperature; it is being used to break the strong intermolecular forces holding the solid water molecules together.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Change of State:</span>
+        The physical process of a substance transforming from one state of matter to another without any change in its chemical composition, usually achieved by changing the temperature or pressure. Examples include melting (solid to liquid), boiling (liquid to gas), and sublimation (solid directly to gas).
+        <br><br>
+        <span class="definition-term">Latent Heat:</span>
+        The amount of heat energy absorbed or released by a substance during a change of state, which occurs at a constant temperature. It is termed 'latent' (meaning hidden) because it does not register as a temperature change on a thermometer.
+      </div>
+    </div>
+
+    <!-- 6. WORKED ICSE PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. CISCE Exemplar Problems & Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Question 1: Give Scientific Reasons</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">(a) Why does a gas fill the entire container it is placed in?<br>
+          (b) Why does a solid maintain its own shape?</div>
+        <div class="reasoning-answer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (a): Gas filling the container</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;In a gas, the intermolecular forces of attraction are almost negligible. [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;As a result, the gas particles are completely free to move randomly in all directions at high speeds. They continuously expand to occupy all available intermolecular space, thus completely filling whatever container they are placed in. [1 Mark]<br><br>
+          2. <em>Part (b): Solid maintaining shape</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;In a solid, the intermolecular forces of attraction are extremely strong and intermolecular spaces are negligible. [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Because of this, the particles are held rigidly in fixed positions. They can only vibrate about their mean positions and cannot slide past one another, giving the solid a definite, rigid shape. [1 Mark]
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Question 2: Distinction</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Distinguish between evaporation and boiling. State two differences.</div>
+        <div class="reasoning-answer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Difference 1 (Temperature Dependence):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Evaporation takes place at all temperatures (below the boiling point), whereas boiling takes place only at a specific, fixed temperature called the boiling point. [1 Mark]<br><br>
+          2. <em>Difference 2 (Site of occurrence):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Evaporation is a slow surface phenomenon (it only happens at the exposed surface of the liquid), whereas boiling is a rapid bulk phenomenon (bubbles form throughout the entire volume of the liquid). [1 Mark]
+        </div>
+      </div>
+      
+    </div>
+
+  
+    <!-- 5. WORKED PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.1: Kinetic Particle Velocity & Thermal Expansion</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A sealed copper sphere contains 0.5 kg of air at 25°C. When heated to 100°C: (i) What happens to the kinetic energy of the air particles? (ii) What happens to the internal pressure? (iii) Does the mass of air change?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_c1_1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_c1_1">
+          <strong>Step-by-Step Solution:</strong><br><br>
+          1. <em>Part (i): Kinetic Energy:</em> Increases proportionally with absolute temperature. Particles vibrate and move at higher velocities.<br><br>
+          2. <em>Part (ii): Internal Pressure:</em> Increases because faster gas molecules collide more frequently and violently against the sphere's inner walls.<br><br>
+          3. <em>Part (iii): Mass:</em> Remains strictly constant (0.5 kg) according to the Law of Conservation of Mass.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.2: Latent Heat of Fusion</span>
+          <span class="problem-marks">[2 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Why does the temperature of melting ice remain constant at 0°C even though heat is continuously being supplied by a flame?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_c1_2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_c1_2">
+          <strong>Step-by-Step Solution:</strong><br><br>
+          The continuous thermal energy supplied does not increase particle kinetic energy; instead, it is consumed as <strong>Latent Heat of Fusion</strong> to overcome strong intermolecular forces of attraction holding the ice crystal lattice together. Until the entire solid transitions into liquid, the temperature remains fixed at 0°C.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_12_simple_machines_and_efficiency.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-12 · Simple Machines &</a>
+    <a href="chemistry_02_atomic_structure_and_valency.html" class="topic-nav-link topic-nav-next">CHEM-02 · Atomic Structure, Energy &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Matter: States, Properties & Kinetic Theory</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

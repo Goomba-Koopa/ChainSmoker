@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Physics 10: Spherical Mirrors & Ray Optics • ICSE Class 7</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fcfbf9;
+      --bg-surface: #f7f5f0;
+      --bg-card: #ffffff;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #121214;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #059669;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); text-decoration: none; }
+    .nav-back { font-size: 13.5px; font-weight: 600; color: var(--terracotta); text-decoration: none; }
+    
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 14px; }
+    .section-heading { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    
+    p { font-size: 15px; color: var(--ink-black); line-height: 1.65; max-width: 75ch; }
+    
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14.5px; line-height: 1.6; color: var(--ink-secondary); }
+    .definition-term { font-weight: 700; color: var(--ink-black); }
+    
+    .derivation-card { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .derivation-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); margin-bottom: 8px; display: block; }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.6; }
+    
+    .distinction-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13.5px; }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-strong); padding: 10px 12px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-weight: 600; color: var(--ink-black); }
+    .distinction-table tr:nth-child(even) td { background: var(--bg-surface); }
+    
+    .problem-box { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; margin: 8px 0; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .problem-type { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .problem-statement { font-size: 15px; font-weight: 500; color: var(--ink-black); margin-bottom: 14px; line-height: 1.5; }
+    
+    .btn-toggle { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; }
+    .solution-drawer { display: none; margin-top: 14px; padding: 14px; background: var(--bg-card); border-left: 3px solid var(--emerald-accent); border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.6; }
+    
+    .diagram-figure { margin: 12px 0; text-align: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    /* Muted purplish grey exception system */
+    .exception-tag {
+      color: #6b5b7b;
+      font-size: 0.78em;
+      vertical-align: super;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: help;
+    }
+
+    .exception-note {
+      margin-top: 16px;
+      margin-left: 20px;
+      padding: 10px 16px;
+      border-left: 2px solid #6b5b7b;
+      background: rgba(107, 91, 123, 0.04);
+      border-radius: 0 6px 6px 0;
+      color: #6b5b7b;
+      font-size: 13.5px;
+      line-height: 1.6;
+    }
+
+    .exception-note-title {
+      font-weight: 700;
+      color: #554564;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 13.5px;
+    }
+    
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 48px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); margin-top: 48px; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">⚛️ Physics • Topic 10</a>
+    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 10</div>
+    <h1 class="topic-title">Spherical Mirrors &amp; Image Formation</h1>
+    <p class="topic-subtext">
+      Anatomy of curved mirrors (Center of Curvature, Principal Focus, Focal Length \(f = R/2\)), Concave converging vs Convex diverging optics, Ray diagram principles, Real vs Virtual images, and real-world optical devices.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. SPHERICAL MIRROR GEOMETRY -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Anatomy of Curved Spherical Mirrors</h2>
+      <p>
+        If you look at your reflection in the shiny surface of a stainless steel soup spoon, you will notice something peculiar: looking into the inside hollow of the spoon shows your face upside down, while turning the spoon around to the bulging back side shows your face right-side up, but miniaturized. A spoon is a perfect everyday model of a <strong>spherical mirror</strong>—a mirror whose reflective surface is part of a hollow sphere of glass.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Concave vs. Convex Mirrors:</span>
+        • <strong>Concave Mirror (Converging):</strong> A spherical mirror whose reflecting surface curves inward toward the center of the hollow sphere (like the inside bowl of a spoon). It collects incoming parallel light rays and focuses them toward a single point.<br>
+        • <strong>Convex Mirror (Diverging):</strong> A spherical mirror whose reflecting surface curves outward away from the center (like the shiny outer back of a spoon). It spreads out incoming light rays over a wide field of view.
+      </div>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Concave_mirror.svg/500px-Concave_mirror.svg.png" alt="Ray diagram of a concave mirror focusing parallel light rays at the principal focus" class="diagram-img" >
+        <figcaption class="diagram-caption">Fig 1: A concave spherical mirror reflects parallel incoming light rays to intersect at a common point on the principal axis called the Principal Focus (\(F\)).</figcaption>
+      </figure>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Key Optical Reference Points &amp; Parameters</span>
+        <div class="derivation-step">
+          1. <strong>Pole (\(P\)):</strong> The geometric center of the reflecting spherical surface.<br><br>
+          2. <strong>Center of Curvature (\(C\)):</strong> The center of the hollow glass sphere of which the mirror forms a part.<br><br>
+          3. <strong>Radius of Curvature (\(R\)):</strong> The linear distance from the Pole to the Center of Curvature (\(PC = R\)).<br><br>
+          4. <strong>Principal Axis:</strong> The straight line passing through both the Pole (\(P\)) and Center of Curvature (\(C\)).<br><br>
+          5. <strong>Principal Focus (\(F\)):</strong> The point on the principal axis where all incident light rays traveling parallel to the axis meet (in concave mirrors) or appear to diverge from (in convex mirrors) after reflection.<br><br>
+          6. <strong>Focal Length (\(f\)):</strong> The distance between the Pole and Principal Focus (\(PF = f\)). For spherical mirrors of small aperture, the focal length is exactly half the radius of curvature:
+          $$f = \frac{R}{2} \quad \Longleftrightarrow \quad R = 2f$$
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. REAL VS VIRTUAL IMAGES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Real vs. Virtual Images</h2>
+      <p>
+        When you watch a movie at the cinema, the projector casts light rays directly onto a white screen—you can physically catch that image on a surface. But when you look at yourself in a bathroom mirror in the morning, nobody can put a sheet of paper behind the glass to catch your reflection; your eyes are simply tracing diverged light rays backwards. This is the fundamental distinction in optics between real and virtual images.
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Real Image</th>
+            <th>Virtual Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Formation Mechanism</strong></td>
+            <td>Formed when reflected light rays <strong>actually intersect</strong> in front of the mirror.</td>
+            <td>Formed when reflected light rays diverge and only <strong>appear to meet</strong> when produced backwards behind the mirror.</td>
+          </tr>
+          <tr>
+            <td><strong>Screen Capture</strong></td>
+            <td>Can be captured and projected onto a physical white screen.</td>
+            <td>Cannot be captured on a physical screen.</td>
+          </tr>
+          <tr>
+            <td><strong>Spatial Orientation</strong></td>
+            <td>Always <strong>inverted</strong> (upside down) relative to the object.</td>
+            <td>Always <strong>erect</strong> (right-side up) relative to the object.</td>
+          </tr>
+          <tr>
+            <td><strong>Everyday Example</strong></td>
+            <td>Image projected on a cinema screen; image formed on the retina of human eye.</td>
+            <td>Your morning reflection in a flat dressing mirror; reflection in a car rear-view mirror.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. RULES FOR CONSTRUCTING RAY DIAGRAMS -->
+    <div class="section-block">
+      <h2 class="section-heading">3. The Three Cardinal Rules of Ray Tracing</h2>
+      <p>
+        To logically predict where an image will form, how large it will be, and whether it is right-side up or upside down, physicists use three simple geometric rules governing light rays hitting a spherical mirror:
+      </p>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Ray Tracing Principles</span>
+        <div class="derivation-step">
+          • <strong>Rule 1 (Parallel Ray):</strong> A ray of light incident parallel to the principal axis passes directly through the Principal Focus (\(F\)) after reflection from a concave mirror.<br><br>
+          • <strong>Rule 2 (Focal Ray):</strong> A ray of light passing through the Principal Focus (\(F\)) reflects back parallel to the principal axis.<br><br>
+          • <strong>Rule 3 (Center of Curvature Ray):</strong> A ray of light passing through the Center of Curvature (\(C\)) strikes the mirror surface normally (\(90^\circ\)) and reflects straight back along its own incoming path.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. PRACTICAL APPLICATIONS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Practical Applications Based on Optical Geometry</h2>
+      <p>
+        Engineers choose between concave and convex mirrors based entirely on how their light rays converge or diverge in everyday devices:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Mirror Type</th>
+            <th>Everyday Device</th>
+            <th>Underlying Optical Logic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Concave</strong></td>
+            <td><strong>Car Headlights &amp; Searchlights</strong></td>
+            <td>Placing a high-intensity bulb at the exact Principal Focus (\(F\)) reflects the light into a powerful, parallel beam that illuminates roads hundreds of meters ahead.</td>
+          </tr>
+          <tr>
+            <td><strong>Concave</strong></td>
+            <td><strong>Dentist's Inspection Mirror &amp; Shaving Mirrors</strong></td>
+            <td>When an object (teeth or face) is placed very close—between the Pole (\(P\)) and Focus (\(F\))—a concave mirror produces a highly magnified, upright, virtual view.<sup class="exception-tag">[†1]</sup></td>
+          </tr>
+          <tr>
+            <td><strong>Concave</strong></td>
+            <td><strong>Solar Furnaces &amp; Cookers</strong></td>
+            <td>Large concave dishes gather incoming parallel rays of natural sunlight and converge all their thermal energy onto a single focal spot to boil water or generate steam.</td>
+          </tr>
+          <tr>
+            <td><strong>Convex</strong></td>
+            <td><strong>Automobile Rear-View / Side Mirrors</strong></td>
+            <td>Always produces an erect, diminished image. Because it curves outward, it gives the driver a vastly wider panoramic field of view of trailing highway traffic than a flat mirror could.</td>
+          </tr>
+          <tr>
+            <td><strong>Convex</strong></td>
+            <td><strong>Store Security &amp; Blind-Corner Road Mirrors</strong></td>
+            <td>Installed at sharp hairpin turns or grocery aisles to allow people to see around blind corners from a distance.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Indented Scientific Exception Note -->
+      <div class="exception-note">
+        <span class="exception-note-title">[†1] Optical Boundary: Concave Magnification vs Inversion</span>
+        A concave mirror forms inverted, real images for almost all object positions (\(\infty\), beyond \(C\), at \(C\), between \(C\) and \(F\)). The single dramatic exception occurs when the object is brought closer than the focal length (between \(F\) and the mirror's surface \(P\)). At this close threshold, reflected rays diverge as they leave the mirror and can never meet in real space; our brain traces them backwards to create an upright, greatly enlarged virtual image. Dentists exploit this exact threshold to inspect tiny cavities.
+      </div>
+    </div>
+
+    <!-- 5. WORKED LOGICAL EXEMPLARS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 10.1: Focal Length &amp; Curvature Calculation</span>
+        </div>
+        <div class="problem-statement">
+          A convex security mirror installed in a supermarket has a radius of curvature of \(40\text{ cm}\).<br>
+          1. Calculate its focal length.<br>
+          2. Explain why a supermarket manager chooses a convex mirror rather than a flat plane mirror to monitor store aisles.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_p10_1')">Show Logical Resolution ↓</button>
+        <div class="solution-drawer" id="sol_p10_1">
+          <strong>Step-by-Step Logical Resolution:</strong><br><br>
+          1. <strong>Focal Length Calculation:</strong><br>
+          • Given Radius of Curvature \(R = 40\text{ cm}\).<br>
+          • Formula: \(f = \frac{R}{2} = \frac{40\text{ cm}}{2} = \mathbf{20\text{ cm}}\).<br><br>
+          2. <strong>Optical Justification:</strong><br>
+          • A flat plane mirror only shows a narrow slice of the aisle equal in width to the mirror itself.<br>
+          • A convex mirror curves outward, allowing incoming light rays from extreme side angles to reflect into the viewer's eyes. This compresses a broad panoramic view into a compact, upright, virtual image, allowing security staff to survey multiple aisles simultaneously.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 10.2: Image Characterization at the Center of Curvature</span>
+        </div>
+        <div class="problem-statement">
+          A lighted candle of height \(5\text{ cm}\) is placed directly at the Center of Curvature (\(C\)) of a concave mirror having a focal length \(f = 15\text{ cm}\).<br>
+          1. Deduce the exact position of the resulting image.<br>
+          2. State the nature, orientation, and height of the image formed.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_p10_2')">Show Logical Resolution ↓</button>
+        <div class="solution-drawer" id="sol_p10_2">
+          <strong>Step-by-Step Logical Resolution:</strong><br><br>
+          1. <strong>Position of the Object &amp; Image:</strong><br>
+          • Radius of curvature \(R = 2f = 2 \times 15\text{ cm} = 30\text{ cm}\).<br>
+          • The candle is placed at \(C = 30\text{ cm}\) from the pole.<br>
+          • By ray tracing rules, when an object is positioned exactly at the Center of Curvature (\(C\)), the reflected rays intersect to form the image at the exact same location: <strong>at \(C\) (\(30\text{ cm}\) in front of the mirror)</strong>.<br><br>
+          2. <strong>Characterization:</strong><br>
+          • <strong>Nature:</strong> Real (formed by actual intersection of reflected rays).<br>
+          • <strong>Orientation:</strong> Inverted (upside down).<br>
+          • <strong>Size/Height:</strong> Same size as the object (\(\text{Height} = 5\text{ cm}\)).
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 6. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Optical Geometry 1: Convex Rear-View Mirrors</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_p10_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are convex mirrors preferred as rear-view (wing) mirrors in motor vehicles over plane mirrors?</div>
+        <div class="reasoning-answer" id="reas_p10_1">
+          <strong>Scientific Resolution:</strong><br>
+          1. A convex mirror always forms an <strong>erect, virtual, and diminished</strong> image of objects regardless of distance.<br>
+          2. Because the mirror is curved outwards, it provides a significantly <strong>wider field of view</strong> than a flat plane mirror of the same aperture, allowing drivers to view a much larger area of traffic behind them.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Optical Geometry 2: Concave Shaving & Dental Mirrors</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_p10_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why does a dentist use a concave mirror rather than a convex mirror to examine teeth?</div>
+        <div class="reasoning-answer" id="reas_p10_2">
+          <strong>Scientific Resolution:</strong><br>
+          When an object (a tooth) is placed close to a concave mirror between its pole (\(P\)) and principal focus (\(F\)), the concave mirror produces an <strong>erect, virtual, and highly magnified</strong> image. This enables the dentist to see a clearly enlarged view of small cavities. A convex mirror would only produce diminished images.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_09_magnetism_and_fields.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-09 · Magnetism, Magnetic Fields</a>
+    <a href="physics_11_static_electricity_and_charges.html" class="topic-nav-link topic-nav-next">PHY-11 · Static Electricity & &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Physics • Topic 10: Spherical Mirrors &amp; Ray Optics</div>
+    <div>CISCE Class 7 Academic Compendium</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

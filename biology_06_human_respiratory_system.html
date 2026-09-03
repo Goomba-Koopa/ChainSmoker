@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology 06: Human Respiratory System & Gas Exchange • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🌿 Biology • Topic 06</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 06</div>
+    <h1 class="topic-title">Human Respiratory System & Gas Exchange</h1>
+    <p class="topic-subtext">
+      The pathway of air through the respiratory tract (nasal cavity → larynx → trachea → bronchi → bronchioles → alveoli), the mechanics of breathing (Inhalation vs Exhalation diaphragm/intercostal muscles), alveolar gas exchange, and Aerobic vs Anaerobic cellular respiration with balanced equations.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. PATHWAY OF AIR -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Pathway of Air</h2>
+      <p>
+        Have you ever noticed how the air you breathe in on a cold winter day feels warm by the time it reaches your lungs? This is because the air travels through a specialized series of tubes designed to filter, warm, and moisten the air before it reaches the delicate inner tissues. This continuous journey ensures that the oxygen required by your body is delivered safely and efficiently.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Respiratory Tract:</span>
+        The sequence of organs and passages through which atmospheric air enters the body and travels to the lungs for gas exchange.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> The pathway must be memorized in strict sequential order. Any disruption or reversal in the written sequence is marked incorrect in ICSE examinations.
+      </div>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Respiratory_system_complete_en.svg/300px-Respiratory_system_complete_en.svg.png" alt="Human Respiratory System" class="diagram-img">
+        <figcaption class="diagram-caption">The human respiratory tract, illustrating the larynx, trachea, bronchi, and lungs.</figcaption>
+      </figure>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Sequential Flow of Inhaled Air</span>
+        <div class="derivation-step">
+          1. <strong>Nasal Cavity:</strong> Hairs and mucus trap dust and pathogens. Blood vessels warm the air.<br>
+          2. <strong>Pharynx & Larynx:</strong> The throat (pharynx) leads to the voice box (larynx), guarded by the epiglottis to prevent food entry.<br>
+          3. <strong>Trachea (Windpipe):</strong> A long tube supported by C-shaped cartilaginous rings that keep it open.<br>
+          4. <strong>Bronchi:</strong> The trachea bifurcates into two main bronchi, each entering a lung.<br>
+          5. <strong>Bronchioles:</strong> Secondary and tertiary branching tubes inside the lungs, forming a tree-like network.<br>
+          6. <strong>Alveoli:</strong> Microscopic air sacs at the ends of bronchioles where gas exchange actually takes place.
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. MECHANICS OF BREATHING -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Mechanics of Breathing (Ventilation)</h2>
+      <p>
+        Place your hands on your ribs while you take a deep breath in and out—feel that cage expanding and shrinking? Your lungs do not have muscles of their own. Instead, they act like balloons that inflate and deflate based on the pressure changes created by the muscles surrounding them in the chest cavity.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Breathing (Ventilation):</span>
+        The physical, mechanical process of moving air into (inhalation/inspiration) and out of (exhalation/expiration) the lungs. It is driven by pressure gradients established by the diaphragm and intercostal muscles.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Inhalation (Inspiration)</th>
+            <th>Exhalation (Expiration)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Diaphragm Position</strong></td>
+            <td>Contracts and moves <strong>downward</strong> (flattens).</td>
+            <td>Relaxes and moves <strong>upward</strong> (dome-shaped).</td>
+          </tr>
+          <tr>
+            <td><strong>Intercostal Muscles</strong></td>
+            <td>Contract, pulling the rib cage <strong>upward and outward</strong>.</td>
+            <td>Relax, allowing the rib cage to move <strong>downward and inward</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>Volume of Thoracic Cavity</strong></td>
+            <td><strong>Increases</strong>, lowering the internal air pressure.</td>
+            <td><strong>Decreases</strong>, raising the internal air pressure.</td>
+          </tr>
+          <tr>
+            <td><strong>Direction of Air Flow</strong></td>
+            <td>Air rushes <strong>into</strong> the lungs from the high-pressure atmosphere.</td>
+            <td>Air is forced <strong>out of</strong> the lungs to the lower-pressure atmosphere.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ALVEOLAR GAS EXCHANGE -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Alveolar Gas Exchange</h2>
+      <p>
+        Think of a busy trading port where ships drop off waste cargo and immediately pick up fresh supplies. This precise exchange happens millions of times a second in your chest. The alveoli are the bustling ports where the blood drops off carbon dioxide and takes on fresh oxygen.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Gas Exchange:</span>
+        The biological process through which different gases are transferred in opposite directions across a specialized respiratory surface, primarily driven by passive diffusion.
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">The Diffusion Mechanism at Alveoli</span>
+        <div class="derivation-step">
+          • <strong>Surface Adaptations:</strong> Alveoli have extremely thin walls (one cell thick), a vast collective surface area, a moist lining to dissolve gases, and a dense network of surrounding blood capillaries.<br><br>
+          • <strong>Oxygen (\(\text{O}_2\)) Transport:</strong> The concentration of oxygen is higher in the inhaled air within the alveolus than in the deoxygenated blood. Thus, \(\text{O}_2\) diffuses across the alveolar membrane into the blood capillaries, binding to hemoglobin.<br><br>
+          • <strong>Carbon Dioxide (\(\text{CO}_2\)) Transport:</strong> The concentration of carbon dioxide is higher in the blood plasma (arriving from the body's tissues) than in the alveolar air. Thus, \(\text{CO}_2\) diffuses out of the blood into the alveolus to be exhaled.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. CELLULAR RESPIRATION -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Aerobic vs. Anaerobic Cellular Respiration</h2>
+      <p>
+        When you sprint so hard your legs burn, your cells are switching to a temporary emergency power generator because they ran out of oxygen. While breathing is a physical process, respiration is a chemical one that unlocks the energy trapped in the food you eat.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Cellular Respiration:</span>
+        The biochemical process occurring within cells (specifically mitochondria and cytoplasm) where organic nutrients (like glucose) are broken down to release energy in the form of ATP (Adenosine Triphosphate).
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Aerobic Respiration</th>
+            <th>Anaerobic Respiration (in muscles)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Oxygen Requirement</strong></td>
+            <td>Requires the presence of oxygen.</td>
+            <td>Occurs in the complete absence of oxygen.</td>
+          </tr>
+          <tr>
+            <td><strong>Breakdown of Glucose</strong></td>
+            <td>Complete breakdown (oxidation) of glucose.</td>
+            <td>Incomplete breakdown of glucose.</td>
+          </tr>
+          <tr>
+            <td><strong>End Products</strong></td>
+            <td>Carbon dioxide (\(\text{CO}_2\)) and Water (\(\text{H}_2\text{O}\)).</td>
+            <td>Lactic acid (in human muscle cells).</td>
+          </tr>
+          <tr>
+            <td><strong>Energy Yield</strong></td>
+            <td>High (Produces roughly 38 ATP molecules per glucose).</td>
+            <td>Low (Produces only 2 ATP molecules per glucose).</td>
+          </tr>
+          <tr>
+            <td><strong>Balanced Chemical Word Equation</strong></td>
+            <td>$$\text{Glucose} + \text{Oxygen} \rightarrow \text{Carbon Dioxide} + \text{Water} + \text{Energy (ATP)}$$</td>
+            <td>$$\text{Glucose} \rightarrow \text{Lactic Acid} + \text{Energy (ATP)}$$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. WORKED ICSE QUESTIONS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <!-- Problem 1 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.1: Breathing Mechanism Distinction</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Distinguish between Inhalation and Exhalation under the following headings:<br>
+          (i) Diaphragm position<br>
+          (ii) Intercostal muscles<br>
+          (iii) Volume of thoracic cavity<br>
+          (iv) Direction of air flow
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          (i) <strong>Diaphragm position:</strong> In inhalation, the diaphragm contracts and flattens (moves downwards). In exhalation, it relaxes and becomes dome-shaped (moves upwards). [1 Mark]<br><br>
+          (ii) <strong>Intercostal muscles:</strong> In inhalation, they contract to pull the rib cage upwards and outwards. In exhalation, they relax, allowing the rib cage to move downwards and inwards. [1 Mark]<br><br>
+          (iii) <strong>Volume of thoracic cavity:</strong> In inhalation, the volume increases (decreasing pressure). In exhalation, the volume decreases (increasing pressure). [1 Mark]<br><br>
+          (iv) <strong>Direction of air flow:</strong> In inhalation, air flows from the outside environment into the lungs. In exhalation, air flows out from the lungs to the exterior. [1 Mark]
+        </div>
+      </div>
+
+      <!-- Problem 2 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.2: Give Scientific Reasons</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Give scientific reasons for the following statements:<br>
+          (i) Alveoli have a rich blood supply.<br>
+          (ii) A person exercises vigorously and their muscles produce lactic acid.<br>
+          (iii) The trachea is supported by C-shaped rings of cartilage.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          (i) <strong>Alveoli have a rich blood supply:</strong> This maintains a steep concentration gradient between the alveolar air and the blood. The continuous flow of blood removes oxygen as fast as it diffuses in, and supplies carbon dioxide as fast as it diffuses out, maximizing the efficiency of gas exchange. [1 Mark]<br><br>
+          (ii) <strong>Production of lactic acid during vigorous exercise:</strong> During strenuous activity, the muscle cells require more energy than the available oxygen can provide for aerobic respiration. To meet this sudden energy demand, the cells switch to anaerobic respiration, partially breaking down glucose without oxygen, which produces lactic acid as a byproduct. [1 Mark]<br><br>
+          (iii) <strong>Trachea supported by C-shaped cartilaginous rings:</strong> The rings provide structural rigidity, ensuring that the trachea does not collapse or pinch shut due to the negative pressure created during inhalation, thus keeping the airway continuously open. The rings are C-shaped (incomplete at the back) to allow the esophagus, which lies just behind the trachea, to expand when swallowing food. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 6. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Pulmonology 1: Cartilaginous Rings in Trachea</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b6_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why is the human trachea (windpipe) supported by C-shaped rings of cartilage?</div>
+        <div class="reasoning-answer" id="reas_b6_1">
+          <strong>Scientific Resolution:</strong><br>
+          The C-shaped rings of flexible hyaline cartilage keep the lumen of the trachea permanently open, preventing it from collapsing inwards under negative thoracic pressure during inhalation. The open posterior side accommodates expansion of the adjacent oesophagus during swallowing.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Pulmonology 2: Nasal Breathing vs Mouth Breathing</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b6_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why is breathing through the nose physiologically superior to breathing through the mouth?</div>
+        <div class="reasoning-answer" id="reas_b6_2">
+          <strong>Scientific Resolution:</strong><br>
+          The nasal cavity is lined with fine cilia, mucus-secreting goblet cells, and dense blood vessels that trap dust particles, filter airborne pathogens, and humidify and warm the incoming air to body temperature before reaching delicate lung alveoli.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="biology_05_circulatory_system.html" class="topic-nav-link topic-nav-prev">&#8592; BIO-05 · Human Circulatory System,</a>
+    <a href="biology_07_excretory_system.html" class="topic-nav-link topic-nav-next">BIO-07 · Human Excretory System &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Biology Topic 06: Human Respiratory System & Gas Exchange</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

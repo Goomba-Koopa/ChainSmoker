@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology 01: Plant & Animal Tissues • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .body-text { font-size: 16px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--emerald-accent); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .diagram-figure { margin: 8px 0; } 
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; } 
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">🌿 Biology • Topic 01</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 01</div>
+    <h1 class="topic-title">Plant & Animal Tissues</h1>
+    <p class="topic-subtext">
+      Meristematic vs Permanent plant tissues (Simple: Parenchyma/Collenchyma/Sclerenchyma; Complex: Xylem/Phloem), and the four animal tissue systems (Epithelial, Connective, Muscular, Nervous) with functions.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. MERISTEMATIC & PERMANENT PLANT TISSUES -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Plant Tissues: Meristematic and Permanent</h2>
+      <p class="body-text">
+        Just like how human fingernails and hair grow from specific regions, plants also grow from dedicated zones. If you observe a growing plant, its height increases mainly at the tips of the roots and stems. The tissue responsible for this active growth is meristematic tissue, characterized by rapid cell division. As these cells mature, they take on specialized roles and lose their ability to divide, becoming permanent tissue, much like how a student graduates to become a specialized professional like a doctor or engineer.
+      </p>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Plant_cell_structure_svg_labels.svg/500px-Plant_cell_structure_svg_labels.svg.png" alt="Diagram showing the structure of a generic plant cell, components of plant tissues" class="diagram-img">
+        <figcaption class="diagram-caption">Typical structure of a plant cell. Tissues are essentially large organized groups of such cells.</figcaption>
+      </figure>
+
+      <div class="definition-box">
+        <span class="definition-term">Meristematic & Permanent Tissues:</span>
+        <strong>Meristematic tissue</strong> is a group of actively dividing cells located at the growing points of a plant (like root and shoot tips) responsible for the increase in length and girth.
+        <strong>Permanent tissue</strong> consists of mature, differentiated cells that have lost the power of division and are adapted to perform specific functions like protection, support, or transport.
+      </div>
+      
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Meristematic Tissue</th>
+            <th>Permanent Tissue</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cell Division</strong></td>
+            <td>Cells divide actively and continuously.</td>
+            <td>Cells have lost the ability to divide.</td>
+          </tr>
+          <tr>
+            <td><strong>Vacuoles</strong></td>
+            <td>Absent or very small (cytoplasm is dense).</td>
+            <td>Large central vacuole is usually present.</td>
+          </tr>
+          <tr>
+            <td><strong>Cell Wall</strong></td>
+            <td>Very thin and cellulosic.</td>
+            <td>Often thick; may be lignified or suberized.</td>
+          </tr>
+          <tr>
+            <td><strong>Intercellular Spaces</strong></td>
+            <td>Absent; cells are compactly arranged.</td>
+            <td>Often present (especially in parenchyma).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. SIMPLE PERMANENT TISSUES -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Simple Permanent Tissues</h2>
+      <p class="body-text">
+        Imagine building a house using only one type of brick. Simple permanent tissues are similar; they are composed of only one type of cell working together. If you bite into a soft potato, you are eating parenchyma cells which store food. When a strong wind blows and a young plant stem bends without breaking, it is due to collenchyma providing flexibility. The hard, crunchy grit in a pear or the tough shell of a coconut is made of dead, thickened cells called sclerenchyma.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Simple Permanent Tissues:</span>
+        Tissues made up of only one uniform type of cells that have a common origin and perform a similar function. They are primarily responsible for support and storage. They are categorized into three main types: <strong>Parenchyma</strong>, <strong>Collenchyma</strong>, and <strong>Sclerenchyma</strong>.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Tissue Type</th>
+            <th>Nature of Cells</th>
+            <th>Cell Wall Thickening</th>
+            <th>Primary Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Parenchyma</strong></td>
+            <td>Living cells with large vacuoles.</td>
+            <td>Thin cell walls, usually made of cellulose.</td>
+            <td>Storage of food and water; photosynthesis (if chloroplasts are present).</td>
+          </tr>
+          <tr>
+            <td><strong>Collenchyma</strong></td>
+            <td>Living cells, often elongated.</td>
+            <td>Unevenly thickened at the corners (pectin).</td>
+            <td>Provides mechanical support and flexibility to young stems and leaves.</td>
+          </tr>
+          <tr>
+            <td><strong>Sclerenchyma</strong></td>
+            <td>Dead cells at maturity, empty lumen.</td>
+            <td>Uniformly highly thickened with lignin.</td>
+            <td>Provides intense structural rigidity, mechanical strength, and protection.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. COMPLEX PERMANENT TISSUES -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Complex Permanent Tissues: Xylem and Phloem</h2>
+      <p class="body-text">
+        A tall tree requires a sophisticated plumbing system to transport water from the soil up to the highest leaves, and to distribute the sugary food made in the leaves to the rest of the plant. Complex permanent tissues serve this exact purpose. They are like a network of pipes. Xylem pulls water upwards against gravity, acting like the water supply pipes in a building. Phloem distributes the prepared food in various directions, acting like a delivery network.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Complex Permanent Tissues (Vascular Tissues):</span>
+        Tissues composed of more than one type of cell that coordinate to perform a common complex function, primarily the transport of water, minerals, and nutrients throughout the plant body. The two types are <strong>Xylem</strong> and <strong>Phloem</strong>.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Xylem</th>
+            <th>Phloem</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Direction of Transport</strong></td>
+            <td>Unidirectional (upwards from roots to leaves).</td>
+            <td>Bidirectional (upwards and downwards from leaves).</td>
+          </tr>
+          <tr>
+            <td><strong>Material Transported</strong></td>
+            <td>Water and dissolved minerals.</td>
+            <td>Synthesized food (sugars/sucrose) and amino acids.</td>
+          </tr>
+          <tr>
+            <td><strong>Nature of Cells</strong></td>
+            <td>Mostly dead cells at maturity (except xylem parenchyma).</td>
+            <td>Mostly living cells (except phloem fibres).</td>
+          </tr>
+          <tr>
+            <td><strong>Key Components</strong></td>
+            <td>Tracheids, vessels, xylem fibres, xylem parenchyma.</td>
+            <td>Sieve tubes, companion cells, phloem parenchyma, phloem fibres.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. ANIMAL TISSUES -->
+    <div class="section-block">
+      <h2 class="section-heading">4. The Four Animal Tissue Systems</h2>
+      <p class="body-text">
+        Unlike plants, animals are highly mobile and have complex organ systems. An animal's body is built from just four basic types of building materials (tissues). Your skin, acting as a waterproof shield, is epithelial tissue. Your blood, bones, and tendons which bind everything together form connective tissue. The biceps you use to lift a bag rely on muscular tissue. Finally, when you touch something hot and instantly pull your hand away, it's the fast-acting electrical signals of the nervous tissue keeping you safe.
+      </p>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Neuron.svg/500px-Neuron.svg.png" alt="Diagram showing the structure of a neuron or nerve cell" class="diagram-img">
+        <figcaption class="diagram-caption">Structure of a neuron (nerve cell). It is the fundamental unit of the nervous tissue system.</figcaption>
+      </figure>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Animal_cell_structure_en.svg/500px-Animal_cell_structure_en.svg.png" alt="Diagram showing the generalized structure of an animal cell" class="diagram-img">
+        <figcaption class="diagram-caption">A generalized animal cell. Variations of these cells form the four fundamental animal tissues.</figcaption>
+      </figure>
+
+      <div class="definition-box">
+        <span class="definition-term">The Four Basic Animal Tissues:</span>
+        <strong>1. Epithelial Tissue:</strong> Protective covering tissue covering external body surfaces and lining internal organs. <br>
+        <strong>2. Connective Tissue:</strong> Tissue that binds, supports, and connects different organs (e.g., blood, bone, cartilage). <br>
+        <strong>3. Muscular Tissue:</strong> Tissue composed of contractile muscle fibers responsible for movement. <br>
+        <strong>4. Nervous Tissue:</strong> Tissue specialized for receiving stimuli and transmitting electrical impulses (composed of neurons).
+      </div>
+      
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Tissue System</th>
+            <th>Primary Function</th>
+            <th>Key Example Locations</th>
+            <th>Special Characteristics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Epithelial</strong></td>
+            <td>Protection, absorption, secretion, and sensation.</td>
+            <td>Skin surface, lining of mouth, intestines, blood vessels.</td>
+            <td>Cells tightly packed with almost no intercellular spaces. Rests on a basement membrane.</td>
+          </tr>
+          <tr>
+            <td><strong>Connective</strong></td>
+            <td>Binding, structural support, transport, and immunity.</td>
+            <td>Bones, cartilage, tendons, ligaments, blood, adipose (fat).</td>
+            <td>Cells are scattered within a rich extracellular matrix (solid, jelly-like, or fluid).</td>
+          </tr>
+          <tr>
+            <td><strong>Muscular</strong></td>
+            <td>Voluntary and involuntary movements of the body.</td>
+            <td>Heart (cardiac), attached to bones (skeletal), stomach walls (smooth).</td>
+            <td>Contains special contractile proteins that allow them to shorten and relax.</td>
+          </tr>
+          <tr>
+            <td><strong>Nervous</strong></td>
+            <td>Control and coordination via electrical nerve impulses.</td>
+            <td>Brain, spinal cord, peripheral nerves.</td>
+            <td>Composed of neurons with long axons; highly excitable, but do not divide.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. WORKED ICSE EXAM PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked CISCE Exam Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Question 1: Distinction Question</span>
+          <span class="problem-marks">[5 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Distinguish between Xylem and Phloem under the following headings:<br>
+          (i) Type of cells<br>
+          (ii) Direction of transport<br>
+          (iii) Material transported<br>
+          (iv) Presence of living cells<br>
+          (v) Location in stem
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Examiner Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Examiner Solution:</strong><br><br>
+          (i) <strong>Type of cells:</strong> Xylem consists mainly of dead cells (tracheids, vessels, fibres) with only xylem parenchyma being living. Phloem consists mostly of living cells (sieve tubes, companion cells, parenchyma) with only phloem fibres being dead. [1 Mark]<br><br>
+          (ii) <strong>Direction of transport:</strong> Xylem transports materials strictly upwards (unidirectional) from roots to leaves. Phloem transports materials both upwards and downwards (bidirectional) from leaves to other parts. [1 Mark]<br><br>
+          (iii) <strong>Material transported:</strong> Xylem transports water and dissolved mineral salts. Phloem transports synthesized food (organic solutes like sucrose). [1 Mark]<br><br>
+          (iv) <strong>Presence of living cells:</strong> Xylem has very few living cells (only parenchyma). Phloem is primarily composed of living cells. [1 Mark]<br><br>
+          (v) <strong>Location in stem:</strong> In a typical stem vascular bundle, xylem is located on the inner side (towards the pith), whereas phloem is located on the outer side (towards the cortex). [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Question 2: Give Scientific Reasons</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          Give Scientific Reasons for the following statements:<br>
+          (i) Meristematic cells have no vacuoles.<br>
+          (ii) Sclerenchyma cells are dead at maturity.<br>
+          (iii) Tendons are made of white fibrous connective tissue.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Examiner Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Examiner Solution:</strong><br><br>
+          (i) <strong>Meristematic cells have no vacuoles:</strong> The primary function of meristematic cells is rapid cell division, not food or waste storage. Large vacuoles would hinder rapid division and take up space needed for a dense, highly active cytoplasm. [1 Mark]<br><br>
+          (ii) <strong>Sclerenchyma cells are dead at maturity:</strong> Sclerenchyma cells develop heavily thickened walls deposited with a waterproof substance called lignin. This extreme lignification cuts off the exchange of materials with the environment, causing the protoplasm to die, leaving a dead structural cell for immense mechanical strength. [1 Mark]<br><br>
+          (iii) <strong>Tendons are made of white fibrous connective tissue:</strong> Tendons connect muscles to bones and must withstand extreme tension during muscle contraction. White fibrous connective tissue is rich in collagen fibres, providing the very high tensile strength and tough, non-elastic nature required for this mechanical role. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 6. SCIENTIFIC REASONING -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Histology 1: Meristematic Tissue Cell Characteristics</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b1_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why do meristematic cells lack large vacuoles and possess thin cellulose cell walls with dense cytoplasm?</div>
+        <div class="reasoning-answer" id="reas_b1_1">
+          <strong>Scientific Resolution:</strong><br>
+          Meristematic cells are continuously and rapidly dividing embryonic cells. Vacuoles store food and maintain turgor in mature cells, which is unnecessary for actively dividing cells. Dense cytoplasm and thin walls facilitate rapid mitotic division without structural hindrance.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Histology 2: Sclerenchyma Toughness</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_b1_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Why are coconut husks and walnut shells extremely hard and rigid?</div>
+        <div class="reasoning-answer" id="reas_b1_2">
+          <strong>Scientific Resolution:</strong><br>
+          Coconut husks and walnut shells are composed of dead <strong>sclerenchyma tissue</strong> whose cell walls are heavily impregnated with <strong>lignin</strong>, an exceptionally rigid natural cement that provides immense mechanical strength and water impermeability.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_12_oxides_acid_rain_and_atmosphere.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-12 · Oxides, Acid Rain</a>
+    <a href="biology_02_photosynthesis_and_respiration.html" class="topic-nav-link topic-nav-next">BIO-02 · Photosynthesis & Cellular &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>🌿 Biology • Topic 01</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

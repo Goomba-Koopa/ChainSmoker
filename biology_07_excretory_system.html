@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biology 07: Human Excretory System • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="brand-title">🌿 Biology • Topic 07</a>
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Biology • Topic 07</div>
+    <h1 class="topic-title">Human Excretory System</h1>
+    <p class="topic-subtext">
+      Excretion vs Egestion (critical distinction), organs of excretion (Kidneys, Lungs, Skin, Liver), nephron anatomy and the three stages of urine formation (Ultrafiltration, Selective Reabsorption, Tubular Secretion).
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. EXCRETION VS EGESTION -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Excretion vs. Egestion</h2>
+      <p>
+        Imagine you have been running outside on a hot day. You start to sweat heavily, and later you might visit the restroom. While both actions involve your body getting rid of things, they are completely different scientific processes. Sweating removes wastes that your body actually produced in its living cells, while going to the toilet to pass feces simply removes leftover food your body could not digest in the first place.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Excretion:</span>
+        The biological process by which an organism removes metabolic waste products (such as urea, carbon dioxide, and excess salts) produced by its internal cellular chemical reactions.
+      </div>
+      <div class="definition-box">
+        <span class="definition-term">Egestion:</span>
+        The physical process of discharging undigested or unabsorbed food materials from the digestive tract (alimentary canal) in the form of feces. These materials never entered the body's living cells.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Excretion</th>
+            <th>Egestion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Origin of Waste</strong></td>
+            <td>Metabolic (produced inside cells during chemical reactions).</td>
+            <td>Non-metabolic (undigested food that passed through the gut).</td>
+          </tr>
+          <tr>
+            <td><strong>Types of Substances</strong></td>
+            <td>Nitrogenous wastes (urea, uric acid), carbon dioxide, excess salts, water.</td>
+            <td>Undigested roughage (cellulose), dead bacteria, bile pigments.</td>
+          </tr>
+          <tr>
+            <td><strong>Organs Involved</strong></td>
+            <td>Kidneys, lungs, skin, and liver.</td>
+            <td>Large intestine, rectum, and anus.</td>
+          </tr>
+          <tr>
+            <td><strong>Biological Significance</strong></td>
+            <td>Maintains internal cellular balance (homeostasis) and prevents toxicity.</td>
+            <td>Clears the digestive tract for new food intake.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. ORGANS OF EXCRETION -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Accessory Organs of Excretion</h2>
+      <p>
+        If you breathe onto a cold glass window, you see fog form. That fog is water vapor, and along with it, you are breathing out carbon dioxide. This simple act shows that the kidneys are not the only organs cleaning your body. Several organs team up to handle different types of waste.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Accessory Excretory Organs:</span>
+        Organs other than the primary kidneys that participate in the removal of metabolic wastes. These include the lungs, skin, and liver, each specializing in different metabolic by-products.
+      </div>
+      <div class="derivation-card">
+        <span class="derivation-title">The Excretory Roster</span>
+        <div class="derivation-step">
+          <strong>1. The Lungs:</strong> Excrete carbon dioxide (\(CO_2\)) and water vapor, which are the main metabolic wastes of cellular respiration.<br><br>
+          <strong>2. The Skin:</strong> Contains sweat glands that excrete water, dissolved salts (chiefly sodium chloride), and tiny amounts of urea. Sweating primarily serves to cool the body, but it has a secondary excretory function.<br><br>
+          <strong>3. The Liver:</strong> The body's chemical factory. It detoxifies harmful substances, breaks down dead red blood cells (producing bile pigments like bilirubin), and converts highly toxic ammonia into less toxic urea through the ornithine cycle. This urea is then sent to the kidneys.<br><br>
+          <strong>4. The Kidneys:</strong> The primary excretory organs. They filter the blood to remove urea, excess water, and mineral ions, forming urine.
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. NEPHRON ANATOMY -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Anatomy of the Nephron</h2>
+      <p>
+        Think of your kidney as a massive water purification plant, and inside this plant are millions of microscopic filtering cartridges. These tiny structures do the actual work of cleaning the blood, making sure the good stuff stays and the toxic stuff leaves.
+      </p>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Kidney_nephron.png/400px-Kidney_nephron.png" alt="Diagram showing the detailed anatomy of a kidney nephron" class="diagram-img">
+        <figcaption class="diagram-caption">Detailed structure of a mammalian nephron, highlighting the glomerulus, Bowman's capsule, Loop of Henle, and collecting duct.</figcaption>
+      </figure>
+
+      <div class="definition-box">
+        <span class="definition-term">Nephron:</span>
+        The structural and functional unit of the kidney. Each human kidney contains roughly one million nephrons, consisting of a Malpighian corpuscle (glomerulus and Bowman's capsule) and a renal tubule.
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Nephron Component</th>
+            <th>Structure & Location</th>
+            <th>Primary Function</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Glomerulus</strong></td>
+            <td>A knot of high-pressure blood capillaries inside Bowman's capsule.</td>
+            <td>Acts as a fine sieve to filter blood plasma into the capsule.</td>
+          </tr>
+          <tr>
+            <td><strong>Bowman's Capsule</strong></td>
+            <td>A cup-shaped sac at the beginning of the tubular component.</td>
+            <td>Collects the initial filtrate squeezed out of the glomerulus.</td>
+          </tr>
+          <tr>
+            <td><strong>Proximal Convoluted Tubule (PCT)</strong></td>
+            <td>Highly coiled tube closest to Bowman's capsule, situated in the renal cortex.</td>
+            <td>Reabsorbs essential nutrients like glucose, amino acids, and some water.</td>
+          </tr>
+          <tr>
+            <td><strong>Loop of Henle</strong></td>
+            <td>A U-shaped hairpin loop that dips down into the renal medulla.</td>
+            <td>Creates a concentration gradient to allow maximum water reabsorption.</td>
+          </tr>
+          <tr>
+            <td><strong>Distal Convoluted Tubule (DCT) & Collecting Duct</strong></td>
+            <td>Coiled tube farther away, leading into a shared collecting duct.</td>
+            <td>Final adjustments of water/salt balance, and collection of the finished urine.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. THREE STAGES OF URINE FORMATION -->
+    <div class="section-block">
+      <h2 class="section-heading">4. The Three Stages of Urine Formation</h2>
+      <p>
+        Making urine is a bit like making coffee using a french press, but with an extra step where you take back some of the spilled liquid. First, immense pressure forces liquid out of the blood. Then, the body carefully reabsorbs the valuable nutrients it accidentally squeezed out, and finally, it pumps any remaining stubborn toxins directly into the waste fluid.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Urine Formation:</span>
+        A continuous physiological process occurring in the nephrons, involving three distinct steps: ultrafiltration, selective reabsorption, and tubular secretion, ultimately yielding concentrated urine.
+      </div>
+      <div class="derivation-card">
+        <span class="derivation-title">The Three Steps</span>
+        <div class="derivation-step">
+          <strong>Step 1: Ultrafiltration</strong><br>
+          Blood enters the glomerulus through a wide afferent arteriole and leaves through a narrow efferent arteriole. This difference in diameter creates tremendous hydrostatic pressure. This pressure forces water, glucose, amino acids, urea, and salts out of the blood and into Bowman's capsule. Large molecules like red blood cells and large proteins stay behind in the blood.<br><br>
+          <strong>Step 2: Selective Reabsorption</strong><br>
+          The liquid (glomerular filtrate) moves into the Proximal Convoluted Tubule (PCT). Here, useful substances that were accidentally filtered out—like 100% of the glucose, most of the amino acids, and a large volume of water—are absorbed back into the surrounding blood capillaries. The Loop of Henle further reabsorbs water, ensuring we do not dehydrate.<br><br>
+          <strong>Step 3: Tubular Secretion</strong><br>
+          As the fluid travels through the Distal Convoluted Tubule (DCT), the blood actively pumps out any remaining unwanted substances directly into the tubule. This includes excess potassium ions, certain drugs (like penicillin), and extra hydrogen ions to maintain blood pH. The final liquid that reaches the collecting duct is now officially called urine.
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. WORKED PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Give Scientific Reasons & Worked Problems</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Give Scientific Reasons</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">(i) Excretion differs from egestion.<br>
+          (ii) The loop of Henle is important in concentrating urine.<br>
+          (iii) Glucose is not normally found in urine even though it is filtered from blood.</div>
+        <div class="reasoning-answer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Excretion involves the removal of metabolic wastes (like urea) that are produced within the body's living cells. In contrast, egestion is merely the removal of undigested, non-metabolic food matter (feces) from the digestive tract that never entered the body's cells. [1 Mark]<br><br>
+          2. <em>Part (ii):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The Loop of Henle dips into the salty medulla of the kidney, creating an osmotic concentration gradient. This gradient draws water out of the filtrate and back into the blood, thereby concentrating the urine and conserving body water. [1 Mark]<br><br>
+          3. <em>Part (iii):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Although glucose is a small molecule that gets forced into the filtrate during ultrafiltration in Bowman's capsule, it is entirely and selectively reabsorbed back into the bloodstream in the Proximal Convoluted Tubule (PCT) because the body needs it for energy. [1 Mark]
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Process Labeling</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">In the nephron, name the exact structural region where each of the following processes occurs:<br>
+          (i) Blood is filtered under high pressure.<br>
+          (ii) Glucose and water are reabsorbed.<br>
+          (iii) Urea is further secreted into the filtrate.<br>
+          (iv) Urine collects before leaving the kidney.</div>
+        <div class="reasoning-answer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Process (i) - Ultrafiltration:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Occurs in the <strong>Glomerulus</strong> (and Bowman's capsule). [1 Mark]<br><br>
+          2. <em>Process (ii) - Selective Reabsorption:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Occurs primarily in the <strong>Proximal Convoluted Tubule (PCT)</strong>. [1 Mark]<br><br>
+          3. <em>Process (iii) - Tubular Secretion:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Occurs mainly in the <strong>Distal Convoluted Tubule (DCT)</strong>. [1 Mark]<br><br>
+          4. <em>Process (iv) - Collection:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Occurs in the <strong>Collecting Duct</strong> (and subsequently the renal pelvis). [1 Mark]
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Application Question: Renal Blood Flow</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question">Explain why the efferent arteriole is narrower than the afferent arteriole in the glomerulus. What would happen if they were of the exact same diameter?</div>
+        <div class="reasoning-answer" id="sol_num3">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Why it is narrower:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The wider afferent arteriole allows a large volume of blood to enter, while the narrower efferent arteriole restricts the outflow. This bottleneck effect builds up high hydrostatic pressure inside the glomerulus, which is essential to forcefully squeeze water and small solutes out of the blood (ultrafiltration). [1 Mark]<br><br>
+          2. <em>Consequence of equal diameter:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;If both vessels were of the same diameter, the necessary high pressure would not build up. Consequently, ultrafiltration would not occur efficiently, and metabolic wastes would not be adequately filtered from the blood. [1 Mark]
+        </div>
+      </div>
+
+    </div>
+
+  
+    <!-- 5. WORKED PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 7.1: Renal Filtration & Glomerular Mechanics</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          In a healthy human kidney: (i) What structural feature of the afferent and efferent arterioles generates high glomerular hydrostatic pressure? (ii) What substances pass into the glomerular filtrate? (iii) What essential substances are selectively reabsorbed in the proximal convoluted tubule?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_b7_1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_b7_1">
+          <strong>Step-by-Step Solution:</strong><br><br>
+          1. <em>Part (i) Arteriolar Diameter:</em> The <strong>afferent arteriole</strong> is wider in diameter than the narrower <strong>efferent arteriole</strong>, creating backpressure that drives ultrafiltration.<br><br>
+          2. <em>Part (ii) Filtrate Composition:</em> Water, glucose, amino acids, urea, uric acid, and mineral salts pass into Bowman's capsule (blood cells and proteins remain in capillaries).<br><br>
+          3. <em>Part (iii) Selective Reabsorption:</em> 100% of glucose, amino acids, and majority of water and salts are reabsorbed into peritubular capillaries.
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 7.2: Artificial Kidney (Dialysis)</span>
+          <span class="problem-marks">[2 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          How does an artificial kidney (haemodialysis machine) separate toxic urea from patient blood?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_b7_2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_b7_2">
+          <strong>Step-by-Step Solution:</strong><br><br>
+          Blood flows through semipermeable cellophane tubes immersed in dialysing fluid. The fluid contains the same solute concentration as normal blood plasma except that it contains <strong>zero urea</strong>. Urea and excess salts diffuse down their concentration gradient into the dialysate, purifying the blood.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="biology_06_human_respiratory_system.html" class="topic-nav-link topic-nav-prev">&#8592; BIO-06 · Human Respiratory System</a>
+    <a href="biology_08_nervous_system.html" class="topic-nav-link topic-nav-next">BIO-08 · Human Nervous System, &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Biology • Topic 07</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+  
+</body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chemistry 02: Atomic Structure & Valency • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --amber-accent: #b45309;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 17px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.65; max-width: 900px; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 52px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 20px; }
+    .section-heading { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-top: 8px; }
+    .subsection-heading { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink-black); margin-top: 14px; }
+
+    p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.75; }
+    p strong { color: var(--ink-black); }
+
+    .definition-box { background: var(--bg-surface); border-left: 4px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+
+    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
+    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; }
+    .problem-type { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15.5px; color: var(--ink-black); line-height: 1.65; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 15px; color: var(--ink-black); font-weight: 500; line-height: 1.5; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    .content-list { padding-left: 24px; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.8; }
+    .numbered-list { padding-left: 20px; line-height: 1.8; font-size: 15px; color: var(--ink-secondary); }
+    .bullet-list { margin-top: 8px; padding-left: 20px; line-height: 1.7; }
+
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚗️ AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Chemistry • Topic 02</div>
+    <h1 class="topic-title">Atomic Structure & Valency</h1>
+    <p class="topic-subtext">
+      The architecture of the atom: why atoms are mostly empty space, the Bohr shell model and the 2n² seating plan, why elements desperately borrow or dump electrons to achieve the noble gas octet, and the foolproof criss-cross method for writing chemical formulas.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- INTRO HOOK -->
+    <section class="section-block">
+      <h2 class="section-heading">Introduction: The Cricket Stadium in a Grain of Sand</h2>
+      
+      <p>
+        For centuries, early scientists pictured atoms like hard little billiard balls—solid, indivisible, and indestructible. If that were true, chemistry would be pretty boring. Nothing could react, fuse, or transform.
+      </p>
+      <p>
+        The truth is far stranger. An atom is not solid at all. In fact, <strong>an atom is 99.999999999% completely empty space</strong>.
+      </p>
+      <p>
+        To picture this, imagine the Wankhede Cricket Stadium in Mumbai. If you blow up the atom so the entire stadium represents the outer boundary where the electrons buzz around, the dense central <strong>nucleus</strong> (holding all the protons and neutrons) is the size of a single tiny marble sitting right on the center of the pitch! 
+      </p>
+      <p>
+        Everything else—the pitch, the boundary rope, the stands—is empty vacuum. Yet that tiny marble controls the atom's identity and mass, while the buzzing electrons at the stadium edge determine every single chemical reaction in the universe.
+      </p>
+    </section>
+
+    <!-- SUBTOPIC 1: SUBATOMIC PARTICLES -->
+    <section class="section-block">
+      <h2 class="section-heading">1. The Three Subatomic Particles</h2>
+      
+      <p>
+        Every atom in existence—whether it sits in your smartphone, a leaf of grass, or a distant star—is assembled from just three fundamental building blocks:
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">The Three Subatomic Particles</span>
+        • <strong>Proton (\(p^+\)):</strong> Carries a positive electrical charge (\(+1\)) and sits locked inside the central nucleus. Relative mass = \(1\text{ amu}\).<br>
+        • <strong>Neutron (\(n^0\)):</strong> Carries zero electrical charge (neutral) and acts as the nuclear glue between protons. Relative mass \(\approx 1\text{ amu}\).<br>
+        • <strong>Electron (\(e^-\)):</strong> Carries a negative electrical charge (\(-1\)) and zips around the nucleus in designated energy orbits. Its mass is so ridiculously tiny (\(\approx \frac{1}{1837}\text{ amu}\)) that we treat it as virtually weightless!
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Particle</th>
+            <th>Symbol</th>
+            <th>Electrical Charge</th>
+            <th>Mass Comparison</th>
+            <th>Where Does It Live?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Proton</strong></td>
+            <td>\(p^+\)</td>
+            <td>\(+1\) (Positive)</td>
+            <td>\(1\text{ amu}\) (Heavy)</td>
+            <td>Inside the central nucleus</td>
+          </tr>
+          <tr>
+            <td><strong>Neutron</strong></td>
+            <td>\(n^0\)</td>
+            <td>\(0\) (Neutral / No charge)</td>
+            <td>\(1\text{ amu}\) (Heavy)</td>
+            <td>Inside the central nucleus</td>
+          </tr>
+          <tr>
+            <td><strong>Electron</strong></td>
+            <td>\(e^-\)</td>
+            <td>\(-1\) (Negative)</td>
+            <td>Almost weightless (\(\approx 0\text{ amu}\))</td>
+            <td>Revolving in outer shells (orbits)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">Why Don't You Get an Electric Shock Touching a Table?</div>
+        <p>
+          If atoms are packed with charged protons and electrons, why don't objects zap you with electricity?
+        </p>
+        <p>
+          Because in any normal atom, <strong>the number of positive protons exactly equals the number of negative electrons</strong>. The positive charges cancel out the negative charges completely, making the whole atom electrically neutral (\(\text{Net Charge} = 0\)).
+        </p>
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 2: ATOMIC NUMBER VS MASS NUMBER -->
+    <section class="section-block">
+      <h2 class="section-heading">2. Atomic Number (\(Z\)) and Mass Number (\(A\))</h2>
+      
+      <p>
+        Students constantly mix up Atomic Number and Mass Number in exams. Here is the easiest way to keep them straight:
+      </p>
+
+      <ul class="content-list">
+        <li><strong>Atomic Number (\(Z\)) is the ID Card:</strong> It counts only the <strong>protons</strong>. Every single atom with 6 protons is Carbon. Every atom with 8 protons is Oxygen. If you change the proton count, you fundamentally change the element! In a neutral atom, \(Z = \text{protons} = \text{electrons}\).</li>
+        <li><strong>Mass Number (\(A\)) is the Weighing Scale:</strong> Since electrons weigh practically nothing, the entire weight of the atom comes from the heavy stuff packed inside the nucleus: <strong>Protons + Neutrons</strong>.</li>
+      </ul>
+
+      <div class="derivation-card">
+        <div class="derivation-title">The Three Golden Formulas</div>
+        <div class="derivation-step">
+          1. <strong>Atomic Number (\(Z\)):</strong><br>
+          $$Z = \text{Number of Protons} = \text{Number of Electrons (in neutral atom)}$$<br>
+          2. <strong>Mass Number (\(A\)):</strong><br>
+          $$A = \text{Protons} + \text{Neutrons} = Z + n$$<br>
+          3. <strong>Finding Neutrons (The Subtraction Rule):</strong><br>
+          $$n = A - Z \quad (\text{Top number minus bottom number!})$$<br>
+          4. <strong>Standard Notation:</strong><br>
+          $$_{Z}^{A}\text{X} \quad \text{e.g., } _{11}^{23}\text{Na}$$
+          For Sodium: Atomic Number \(Z = 11\) (11 protons, 11 electrons). Mass Number \(A = 23\).<br>
+          Neutrons = \(23 - 11 = \mathbf{12\text{ neutrons}}\).
+        </div>
+      </div>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ Common Student Trap: Atomic Number vs Mass Number Placement</span>
+        Remember: <strong>Mass Number (\(A\)) is always on TOP</strong> because mass is heavy and floats up like a hot air balloon, while <strong>Atomic Number (\(Z\)) is at the BOTTOM</strong>:
+        $$_{Z}^{A}\text{X} \quad \text{Example: } _{6}^{12}\text{C}$$
+        Never write \(_{12}^{6}\text{C}\) on an ICSE paper!
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 3: BOHR'S SHELL MODEL & THE 2N² RULE -->
+    <section class="section-block">
+      <h2 class="section-heading">3. Bohr's Shell Model: The Seating Plan of the Atom</h2>
+      
+      <p>
+        Electrons don't just buzz around in chaos. They are strictly organized into circular energy levels called <strong>shells</strong> (named K, L, M, N... starting from the closest to the nucleus).
+      </p>
+      <p>
+        Think of an airplane where passengers must fill the front rows before boarding the back rows. Danish physicist Niels Bohr showed that each shell has a strict maximum passenger capacity calculated by the formula **\(2n^2\)**, where \(n\) is the shell number:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Shell Letter</th>
+            <th>Shell Number (\(n\))</th>
+            <th>Formula (\(2n^2\))</th>
+            <th>Maximum Passenger Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>K shell</strong> (Innermost)</td>
+            <td>\(n = 1\)</td>
+            <td>\(2 \times (1)^2 = 2 \times 1\)</td>
+            <td><strong>2 electrons</strong></td>
+          </tr>
+          <tr>
+            <td><strong>L shell</strong> (2nd)</td>
+            <td>\(n = 2\)</td>
+            <td>\(2 \times (2)^2 = 2 \times 4\)</td>
+            <td><strong>8 electrons</strong></td>
+          </tr>
+          <tr>
+            <td><strong>M shell</strong> (3rd)</td>
+            <td>\(n = 3\)</td>
+            <td>\(2 \times (3)^2 = 2 \times 9\)</td>
+            <td><strong>18 electrons</strong></td>
+          </tr>
+          <tr>
+            <td><strong>N shell</strong> (4th)</td>
+            <td>\(n = 4\)</td>
+            <td>\(2 \times (4)^2 = 2 \times 16\)</td>
+            <td><strong>32 electrons</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">The Crucial "Octet Rule" Exception for Class 7!</div>
+        <p>
+          Notice that the M shell can mathematically hold up to 18 electrons. But here is the golden rule of chemistry:
+        </p>
+        <p>
+          <strong>No atom can ever hold more than 8 electrons in its outermost shell!</strong>
+        </p>
+        <p>
+          This is called the <strong>Octet Rule</strong>. Even if a shell has room for 18, once it reaches 8 electrons as the outer boundary, it becomes temporarily full and the next electrons are forced to spill over into the next shell. That is why Calcium (\(Z=20\)) is arranged as <strong>2, 8, 8, 2</strong> and NOT <em>2, 8, 10</em>!
+        </p>
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 4: VALENCY & THE CHEMICAL HANDSHAKE -->
+    <section class="section-block">
+      <h2 class="section-heading">4. Valency: Why Do Atoms React?</h2>
+      
+      <p>
+        Why does iron rust? Why does sodium explode in water? Why does gold stay shiny for thousands of years?
+      </p>
+      <p>
+        The answer comes down to one thing: <strong>atoms are desperately seeking peace and quiet</strong>.
+      </p>
+      <p>
+        The most stable elements in the universe are the <strong>Noble Gases</strong> (Helium, Neon, Argon). They have completely full outer shells (2 electrons for Helium, 8 electrons for Neon and Argon). Because their outer shells are full, they are happy, peaceful, and never react with anyone. They are the chemical VIPs.
+      </p>
+      <p>
+        Every other element on the periodic table is jealous of the noble gases. They will do whatever it takes to get 8 electrons in their outer shell—whether that means <strong>losing</strong> extra electrons, <strong>gaining</strong> missing electrons, or <strong>sharing</strong> electrons with a neighbor!
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">What is Valency?</span>
+        <strong>Valency</strong> is the combining capacity of an element. It is simply the number of electrons an atom needs to <strong>lose, gain, or share</strong> to achieve a stable outer shell of 8 electrons (an octet, or a duplet of 2 for light elements).
+      </div>
+
+      <h3 class="subsection-heading">The Fast 3-Step Valency Shortcut</h3>
+      <ol class="content-list">
+        <li><strong>Step 1:</strong> Write the electronic configuration (e.g., Sodium \(Z=11 \to \mathbf{2, 8, 1}\)).</li>
+        <li><strong>Step 2:</strong> Look at the outermost electrons (valence electrons).</li>
+        <li><strong>Step 3: Ask yourself: is it easier to dump them, or find more?</strong>
+          <ul class="bullet-list">
+            <li><strong>If outer electrons are 1, 2, or 3 (Metals):</strong> It's way easier to dump 1, 2, or 3 electrons than to hunt down 5, 6, or 7. So they lose them! <br>
+            $$\text{Valency} = \text{Number of outer electrons}$$
+            <em>Example:</em> Sodium (\(2, 8, 1\)) dumps 1 electron \(\to \mathbf{\text{Valency} = 1}\). Magnesium (\(2, 8, 2\)) dumps 2 \(\to \mathbf{\text{Valency} = 2}\).
+            </li>
+            <li><strong>If outer electrons are 5, 6, or 7 (Non-metals):</strong> It's way easier to steal or borrow 1, 2, or 3 electrons to reach 8. <br>
+            $$\text{Valency} = 8 - \text{Number of outer electrons}$$
+            <em>Example:</em> Chlorine (\(2, 8, 7\)) needs 1 electron \(\to 8 - 7 = \mathbf{\text{Valency} = 1}\). Oxygen (\(2, 6\)) needs 2 electrons \(\to 8 - 6 = \mathbf{\text{Valency} = 2}\).
+            </li>
+            <li><strong>If outer electrons are 4 (like Carbon \(2, 4\)):</strong> Losing 4 or gaining 4 is too hard, so it shares 4 electrons \(\to \mathbf{\text{Valency} = 4}\).</li>
+            <li><strong>If outer electrons are 8 (Noble gases):</strong> Already full and happy! \(\to \mathbf{\text{Valency} = 0}\).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ Common Student Trap: Valency vs Ion Charge</span>
+        Valency is a pure number with <strong>no plus or minus sign</strong>. It is just capacity (like having 2 hands to shake). 
+        The <em>ion charge</em> has a sign (\(\text{Na}^+\), \(\text{Mg}^{2+}\), \(\text{Cl}^-\)), but <strong>valency is written as plain 1, 2, or 3</strong>.
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 5: THE CRISS-CROSS METHOD -->
+    <section class="section-block">
+      <h2 class="section-heading">5. Writing Chemical Formulas: The Criss-Cross Dance</h2>
+      
+      <p>
+        When elements combine to form a compound, the total positive valency must balance the total negative valency so the compound ends up electrically neutral. Instead of doing complicated balancing in your head, chemists use the famous <strong>Criss-Cross Method</strong>:
+      </p>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">The 4-Step Criss-Cross Rule</div>
+        <ol class="numbered-list">
+          <li><strong>Step 1:</strong> Write down the symbols side-by-side (Positive metal first, negative non-metal second).</li>
+          <li><strong>Step 2:</strong> Write their valencies directly above their symbols.</li>
+          <li><strong>Step 3:</strong> Cross over the valency numbers to become subscripts for the opposite partner.</li>
+          <li><strong>Step 4:</strong> Simplify the ratio if both numbers can be divided (and drop the number 1).</li>
+        </ol>
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Two Criss-Cross Walkthroughs</div>
+        <div class="derivation-step">
+          <strong>Example A: Aluminium Oxide</strong><br>
+          1. Symbols: \(\text{Al}\) and \(\text{O}\)<br>
+          2. Valencies: \(\text{Al} = 3\), \(\text{O} = 2\)<br>
+          3. Criss-cross the numbers: The 3 goes to Oxygen; the 2 goes to Aluminium.<br>
+          4. Result: $$\mathbf{\text{Al}_2\text{O}_3}$$
+          <em>Why it works:</em> Two \(\text{Al}^{3+}\) ions provide \(2 \times (+3) = +6\). Three \(\text{O}^{2-}\) ions provide \(3 \times (-2) = -6\). The compound is perfectly neutral!
+        </div>
+        <div class="derivation-step">
+          <strong>Example B: Calcium Hydroxide (Using Polyatomic Radicals)</strong><br>
+          1. Symbols: \(\text{Ca}\) and the Hydroxide group \(\text{OH}\)<br>
+          2. Valencies: \(\text{Ca} = 2\), \(\text{OH} = 1\)<br>
+          3. Criss-cross: The 2 goes to the entire \(\text{OH}\) group!<br>
+          4. <em>Notice the Brackets:</em> Because \(\text{OH}\) is a team of atoms, we MUST enclose it in brackets before adding the subscript 2:<br>
+          $$\mathbf{\text{Ca(OH)}_2}$$
+          <em>Trap Warning:</em> If you write \(\text{CaOH}_2\), only the Hydrogen gets doubled! You must write \(\text{Ca(OH)}_2\).
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 6: ISOTOPES -->
+    <section class="section-block">
+      <h2 class="section-heading">6. Isotopes: The Atomic Twins</h2>
+      
+      <p>
+        Imagine identical twin brothers. They have the exact same face, same voice, same DNA, and wear the exact same clothes. But one of them carries a heavy backpack full of books, so he weighs slightly more on a bathroom scale.
+      </p>
+      <p>
+        That is exactly what <strong>isotopes</strong> are.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">What are Isotopes?</span>
+        <strong>Isotopes</strong> are atoms of the <strong>same element</strong> that have the exact same Atomic Number (\(Z\), same protons and electrons), but a <strong>different Mass Number (\(A\))</strong> because they carry a different number of neutrons in their nucleus!
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Hydrogen's Three Twins</th>
+            <th>Notation Symbol</th>
+            <th>Protons (\(p^+\))</th>
+            <th>Neutrons (\(n^0\))</th>
+            <th>Electrons (\(e^-\))</th>
+            <th>What's Special About It?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Protium</strong></td>
+            <td>\(_{1}^{1}\text{H}\)</td>
+            <td>1</td>
+            <td><strong>0</strong></td>
+            <td>1</td>
+            <td>Ordinary hydrogen (99.98% of all water). The only atom in the universe with zero neutrons!</td>
+          </tr>
+          <tr>
+            <td><strong>Deuterium</strong></td>
+            <td>\(_{1}^{2}\text{H}\) (or \(\text{D}\))</td>
+            <td>1</td>
+            <td><strong>1</strong></td>
+            <td>1</td>
+            <td>"Heavy hydrogen." Combines with oxygen to make Heavy Water (\(\text{D}_2\text{O}\)), used in nuclear power reactors.</td>
+          </tr>
+          <tr>
+            <td><strong>Tritium</strong></td>
+            <td>\(_{1}^{3}\text{H}\) (or \(\text{T}\))</td>
+            <td>1</td>
+            <td><strong>2</strong></td>
+            <td>1</td>
+            <td>Radioactive hydrogen. Unstable nucleus that glows in watch dials.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">The Big Exam Question: Why Do Isotopes React Identically?</div>
+        <p>
+          Chemical reactions are driven entirely by the <strong>outer shell electrons</strong>. The neutrons are locked away deep in the nucleus and take zero part in bonding.
+        </p>
+        <p>
+          Because all isotopes of an element have the <strong>exact same number of electrons</strong>, they have identical electronic configurations, meaning they exhibit <strong>identical chemical reactions</strong>! They only differ in physical weight-based properties like density or boiling points.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: WORKED PROBLEMS -->
+    <section class="section-block">
+      <h2 class="section-heading">Worked Problems</h2>
+
+      <!-- Problem 2.1 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.1: Atomic Detective Work & Configuration</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          An atom of element \(X\) has an atomic number of \(17\) and a mass number of \(35\).<br>
+          (i) Identify the name and symbol of the element.<br>
+          (ii) Calculate the exact number of protons, electrons, and neutrons.<br>
+          (iii) Write down its electronic configuration across K, L, M shells.<br>
+          (iv) State its valency and explain whether it behaves as a metal or non-metal.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-1">
+          <strong>(i) Element Identity:</strong><br>
+          Atomic number 17 is unique to <strong>Chlorine (\(\text{Cl}\))</strong>. [1 Mark]<br><br>
+
+          <strong>(ii) Particle Counts:</strong><br>
+          • Number of protons (\(p\)) = Atomic Number (\(Z\)) = \(\mathbf{17}\)<br>
+          • Number of electrons (\(e\)) = Protons (neutral atom) = \(\mathbf{17}\)<br>
+          • Number of neutrons (\(n\)) = Mass Number (\(A\)) - Atomic Number (\(Z\)) = \(35 - 17 = \mathbf{18\text{ neutrons}}\). [1 Mark]<br><br>
+
+          <strong>(iii) Electronic Configuration:</strong><br>
+          Arranging 17 electrons by filling shells from inside out:<br>
+          • K shell takes maximum 2 electrons.<br>
+          • L shell takes maximum 8 electrons.<br>
+          • Remaining electrons = \(17 - (2 + 8) = 7\) go into M shell.<br>
+          $$\text{Configuration} = \mathbf{2, 8, 7} \quad (\text{K=2, L=8, M=7})$$ [1 Mark]<br><br>
+
+          <strong>(iv) Valency & Nature:</strong><br>
+          The outermost shell has 7 valence electrons. It needs 1 electron to complete its octet (8).<br>
+          $$\text{Valency} = 8 - 7 = \mathbf{1}$$
+          Because it tends to <strong>gain</strong> an electron rather than lose electrons, it is a <strong>Non-Metal</strong>. [1 Mark]
+        </div>
+      </div>
+
+      <!-- Problem 2.2 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.2: Writing Chemical Formulas via Criss-Cross</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Using the valencies of the constituent elements and radicals, deduce the chemical formulas for:<br>
+          (i) Magnesium Nitride (Magnesium valency = 2, Nitrogen valency = 3)<br>
+          (ii) Aluminium Sulphate (Aluminium valency = 3, Sulphate radical \(\text{SO}_4\) valency = 2)
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-2">
+          <strong>(i) Magnesium Nitride:</strong><br>
+          1. Write symbols: \(\text{Mg}\) &nbsp;&nbsp;&nbsp; \(\text{N}\)<br>
+          2. Write valencies above: \(\text{Mg}^{2}\) &nbsp;&nbsp;&nbsp; \(\text{N}^{3}\)<br>
+          3. Criss-cross the numbers: The 3 goes to Magnesium; the 2 goes to Nitrogen.<br>
+          $$\text{Formula} = \mathbf{\text{Mg}_3\text{N}_2}$$ [2 Marks]<br><br>
+
+          <strong>(ii) Aluminium Sulphate:</strong><br>
+          1. Write symbols: \(\text{Al}\) &nbsp;&nbsp;&nbsp; \(\text{SO}_4\)<br>
+          2. Write valencies above: \(\text{Al}^{3}\) &nbsp;&nbsp;&nbsp; \((\text{SO}_4)^{2}\)<br>
+          3. Criss-cross: The 2 goes to Aluminium; the 3 goes to the whole Sulphate radical.<br>
+          4. Enclose the radical in brackets: <br>
+          $$\text{Formula} = \mathbf{\text{Al}_2(\text{SO}_4)_3}$$ [2 Marks]
+        </div>
+      </div>
+
+      <!-- Problem 2.3 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.3: Isotope Comparison & Mass Discrepancies</span>
+          <span class="problem-marks">ICSE Exam Standard • 3 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Naturally occurring Chlorine exists as two isotopes: \(_{17}^{35}\text{Cl}\) and \(_{17}^{37}\text{Cl}\).<br>
+          (a) State the number of protons and neutrons in each isotope.<br>
+          (b) Why do both isotopes show the exact same chemical reactions with Sodium to form table salt?
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-3">
+          <strong>(a) Particle Counts:</strong><br>
+          • For \(_{17}^{35}\text{Cl}\): Protons = 17, Neutrons = \(35 - 17 = \mathbf{18\text{ neutrons}}\).<br>
+          • For \(_{17}^{37}\text{Cl}\): Protons = 17, Neutrons = \(37 - 17 = \mathbf{20\text{ neutrons}}\). [1.5 Marks]<br><br>
+
+          <strong>(b) Why Chemical Reactions are Identical:</strong><br>
+          Chemical reactivity is determined solely by the number and arrangement of valence electrons. Both isotopes have exactly 17 electrons arranged as **2, 8, 7**, meaning both need exactly 1 electron to complete their octet. Because their electronic configurations are identical, their chemical reactions with Sodium are 100% identical. [1.5 Marks]
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SCIENTIFIC REASONING -->
+    <section class="section-block">
+      <h2 class="section-heading">Scientific Deductions & "Why?" Questions</h2>
+
+      <!-- Reasoning Q1 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Deduction 2.1: The Electrical Neutrality Paradox</span>
+        </div>
+        <div class="reasoning-question">
+          Why doesn't a glass of water or a bar of iron give you an electric shock, even though it contains quadrillions of positively charged protons and negatively charged electrons?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-1')">View Scientific Reason ↓</button>
+        <div class="reasoning-answer" id="rq-1">
+          Every neutral atom in the bar of iron contains the exact same number of protons as electrons. Because the positive electrical charge of a single proton (\(+1\)) precisely cancels the negative charge of a single electron (\(-1\)), the net electrical charge of every atom is identically zero. With quadrillions of positive and negative charges in perfect numerical balance, no net voltage or electrical force exists to deliver a shock.
+        </div>
+      </div>
+
+      <!-- Reasoning Q2 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Deduction 2.2: The Inertness of Noble Gases</span>
+        </div>
+        <div class="reasoning-question">
+          Why do noble gases like Helium and Neon never rust, burn, or combine with other elements under ordinary conditions?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-2')">View Scientific Reason ↓</button>
+        <div class="reasoning-answer" id="rq-2">
+          Chemical bonding only occurs when atoms need to achieve stability by emptying, filling, or sharing electrons in their outer shell. Helium already has 2 electrons in its only shell (a completely full duplet), and Neon has 8 electrons in its outer shell (a completely full octet). Because their valence shells are already completely full, their combining capacity (valency) is strictly zero. They have zero chemical motivation to give, take, or share electrons.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="chemistry_01_matter_and_composition.html" class="topic-nav-link topic-nav-prev">&#8592; CHEM-01 · Matter &amp; Composition</a>
+    <a href="chemistry_03_elements_and_compounds.html" class="topic-nav-link topic-nav-next">CHEM-03 · Elements &amp; Compounds &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">ICSE Chemistry Class 7 • Complete Curriculum</div>
+    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+  </footer>
+
+  <script>
+    function toggleSolution(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleReasoning(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

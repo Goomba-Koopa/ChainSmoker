@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 06: Force, Pressure & Pascal's Principle • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .concept-intro { font-size: 16px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; margin: 8px 0; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: center; align-items: center; font-size: 13px; color: var(--ink-muted); }
+    
+    .diagram-figure { margin: 16px 0; text-align: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; margin: 0 auto; background: #fff; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+
+    .reasoning-question { margin-bottom: 12px; }
+    .reasoning-q { font-weight: 600; color: var(--ink-black); margin-bottom: 4px; }
+    .reasoning-a { color: var(--ink-secondary); font-size: 15px; padding-left: 16px; border-left: 2px solid var(--border-strong); }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ Physics • Topic 06</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 06</div>
+    <h1 class="topic-title">Force, Pressure & Pascal's Principle</h1>
+    <p class="topic-subtext">
+      Thrust vs pressure (P = F/A), hydrostatic pressure derivation (P = hρg), Pascal's Principle and the hydraulic press, atmospheric pressure and the barometer.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. THRUST VS PRESSURE -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Thrust and Pressure</h2>
+      <p class="concept-intro">
+        Have you ever noticed how a sharp knife easily slices through a firm vegetable, while a blunt knife requires you to push much harder without making a dent? Even if you apply the exact same amount of force with your hand, the outcome is completely different. This happens because the sharp knife concentrates all your effort into a very tiny area, creating a much more intense effect. This effect of force spread over an area is what we call pressure.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Thrust and Pressure:</span>
+        <strong>Thrust</strong> is the total force acting perpendicular to a surface. It is a vector quantity, measured in Newtons (\(N\)). <br><br>
+        <strong>Pressure</strong> is the thrust acting per unit area of a surface. It tells us how concentrated the force is. The SI unit of pressure is the Pascal (\(Pa\)), where \(1\text{ Pa} = 1\text{ N/m}^2\).
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Mathematical Formula for Pressure</span>
+        <div class="derivation-step">
+          The fundamental relationship between pressure (\(P\)), thrust or force (\(F\)), and the contact area (\(A\)) is given by:
+          $$ P = \frac{F}{A} $$
+          • <strong>Direct relationship:</strong> Pressure increases if the applied force increases.<br>
+          • <strong>Inverse relationship:</strong> Pressure increases drastically when the contact area decreases (which is why needles and pins have very sharp, tiny points).
+        </div>
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Thrust (\(F\))</th>
+            <th>Pressure (\(P\))</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Meaning</strong></td>
+            <td>Total perpendicular force acting on a whole surface.</td>
+            <td>Force acting per unit area of the surface.</td>
+          </tr>
+          <tr>
+            <td><strong>Dependency on Area</strong></td>
+            <td>Independent of the area over which it acts.</td>
+            <td>Inversely proportional to the area of contact.</td>
+          </tr>
+          <tr>
+            <td><strong>Quantity Type</strong></td>
+            <td>Vector quantity (has magnitude and direction).</td>
+            <td>Scalar quantity (acts uniformly in all directions at a point in fluids).</td>
+          </tr>
+          <tr>
+            <td><strong>SI Unit</strong></td>
+            <td>Newton (\(N\))</td>
+            <td>Pascal (\(Pa\)) or Newton per square metre (\(N/m^2\))</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. HYDROSTATIC PRESSURE -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Hydrostatic Pressure in Liquids</h2>
+      <p class="concept-intro">
+        If you have ever dived deep to the bottom of a swimming pool, you might have felt a squeezing sensation or pain in your ears. This happens because water is heavy. The deeper you go, the more water there is stacked up directly above you, pushing down due to gravity. Liquids exert pressure on the bottom and walls of their container, and this pressure grows significantly as depth increases.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Hydrostatic Pressure:</span>
+        The pressure exerted by a static fluid (liquid or gas) at rest due to the weight of the fluid column above it. Inside a liquid, pressure acts equally in all directions and does not depend on the shape of the container.
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Derivation of Liquid Pressure (\(P = h\rho g\))</span>
+        <div class="derivation-step">
+          Consider a liquid of uniform density \(\rho\) in a container. Imagine a vertical column of this liquid with a cross-sectional area \(A\) and a depth \(h\).<br><br>
+          1. <strong>Volume of the liquid column (\(V\)):</strong> \(V = \text{Area} \times \text{height} = A \times h\)<br>
+          2. <strong>Mass of the liquid (\(m\)):</strong> \(\text{Mass} = \text{Volume} \times \text{Density} \Rightarrow m = (A \times h) \times \rho\)<br>
+          3. <strong>Weight or Thrust exerted at the bottom (\(F\)):</strong> \(F = m \times g = A \times h \times \rho \times g\)<br>
+          4. <strong>Pressure (\(P\)):</strong>
+          $$ P = \frac{F}{A} = \frac{A \cdot h \cdot \rho \cdot g}{A} = h\rho g $$<br>
+          <em>Conclusion:</em> Liquid pressure at a point is directly proportional to depth (\(h\)), liquid density (\(\rho\)), and acceleration due to gravity (\(g\)).
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. PASCAL'S PRINCIPLE -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Pascal's Principle and The Hydraulic Press</h2>
+      <p class="concept-intro">
+        In a modern garage, a mechanic can lift a heavy, multi-ton car simply by pressing down on a small lever or button. This seems like magic, but it uses enclosed fluids to multiply force. If you squeeze a closed tube of toothpaste at the bottom, the pressure transmits perfectly through the paste, forcing it out the top. Fluids in a closed system transmit pressure everywhere without losing any intensity.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Pascal's Principle:</span>
+        When pressure is applied to an enclosed static fluid, it is transmitted undiminished (equally) to every part of the fluid and to the walls of the containing vessel.
+      </div>
+
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Comunicating_vessels_ru.svg/300px-Comunicating_vessels_ru.svg.png" alt="Diagram showing connected vessels with liquid to illustrate pressure and Pascal's principle" class="diagram-img">
+        <figcaption class="diagram-caption">Hydraulic systems use connected fluid-filled cylinders of varying areas to multiply force based on Pascal's Principle.</figcaption>
+      </figure>
+
+      <div class="derivation-card">
+        <span class="derivation-title">The Hydraulic Press (Force Multiplier)</span>
+        <div class="derivation-step">
+          A hydraulic press consists of two cylinders of different cross-sectional areas connected by a tube and filled with an incompressible liquid.<br><br>
+          Let the small piston have area \(A_1\) and the large piston have area \(A_2\).<br>
+          A small effort force \(F_1\) is applied to the small piston.<br><br>
+          1. <strong>Pressure created:</strong> \(P = \frac{F_1}{A_1}\)<br>
+          2. By Pascal's Principle, this exact pressure \(P\) reaches the large piston.<br>
+          3. <strong>Upward Force on large piston (\(F_2\)):</strong> \(F_2 = P \times A_2 = \left( \frac{F_1}{A_1} \right) \times A_2\)<br>
+          4. <strong>Rearranging:</strong>
+          $$ \frac{F_2}{F_1} = \frac{A_2}{A_1} $$<br>
+          Since \(A_2\) is much larger than \(A_1\), the output force \(F_2\) is much larger than the input force \(F_1\). The machine acts as a force multiplier.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ATMOSPHERIC PRESSURE -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Atmospheric Pressure and The Barometer</h2>
+      <p class="concept-intro">
+        Have you ever wondered how a rubber suction cup sticks so firmly to a smooth bathroom tile? When you press it flat, you squeeze the air out from underneath it. The invisible blanket of air surrounding the Earth is incredibly heavy and pushes down on everything. Because there is no air underneath the cup to push back, the heavy air outside presses it tightly against the wall.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Atmospheric Pressure:</span>
+        The pressure exerted by the weight of the Earth's atmosphere on any surface exposed to it. Standard atmospheric pressure at sea level is approximately \(101,325\text{ Pa}\) (or about \(1\text{ atm}\)).
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Measurement of Atmospheric Pressure</span>
+        <div class="derivation-step">
+          Atmospheric pressure is measured using an instrument called a <strong>Barometer</strong>. The simplest form is the <em>Simple Mercury Barometer</em>, invented by Torricelli.<br><br>
+          • It consists of a glass tube (about 1 meter long) filled completely with mercury and inverted into a bowl of mercury.<br>
+          • The mercury column falls until the pressure exerted by its weight exactly balances the atmospheric pressure pushing down on the mercury in the bowl.<br>
+          • At sea level, this column height is exactly <strong>76 cm (or 760 mm) of mercury (Hg)</strong>.<br>
+          • Hence, standard atmospheric pressure is often expressed as \(76\text{ cm of Hg}\). Using \(P = h\rho g\) for mercury, we arrive at the value of roughly \(10^5\text{ Pa}\).
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. WORKED PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 6.1: Calculating Solid Pressure</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A box of weight \(600\text{ N}\) rests on a floor on a surface area of \(0.5\text{ m}^2\). Calculate the pressure exerted. If stood on one leg of area \(0.02\text{ m}^2\), what is the new pressure?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Initial Case (Lying Flat):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Force (Thrust) \(F = 600\text{ N}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Area \(A_1 = 0.5\text{ m}^2\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P_1 = \frac{F}{A_1} = \frac{600\text{ N}}{0.5\text{ m}^2} = \mathbf{1200\text{ Pa}}$$ [1.5 Marks]<br><br>
+          2. <em>Second Case (Standing on one leg):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Force remains unchanged, \(F = 600\text{ N}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;New Area \(A_2 = 0.02\text{ m}^2\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P_2 = \frac{F}{A_2} = \frac{600\text{ N}}{0.02\text{ m}^2} = \mathbf{30,000\text{ Pa}}$$ [1.5 Marks]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 6.2: The Hydraulic Press</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A hydraulic press has a small piston of area \(20\text{ cm}^2\) and a large piston of area \(200\text{ cm}^2\). A force of \(100\text{ N}\) is applied on the small piston. Calculate the force produced at the large piston.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Identify given variables:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Small piston area, \(A_1 = 20\text{ cm}^2\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Large piston area, \(A_2 = 200\text{ cm}^2\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Force on small piston, \(F_1 = 100\text{ N}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>(Note: We do not need to convert areas to \(\text{m}^2\) because their ratio is dimensionless, provided units are consistent.)</em> [1 Mark]<br><br>
+          2. <em>Apply Pascal's Principle Equation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\frac{F_2}{A_2} = \frac{F_1}{A_1} \implies F_2 = F_1 \times \frac{A_2}{A_1}$$ [1 Mark]<br><br>
+          3. <em>Substitute and Calculate:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$F_2 = 100 \times \frac{200}{20} = 100 \times 10 = \mathbf{1000\text{ N}}$$ [1 Mark]
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. GIVE SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q: Why do school bags have wide shoulder straps?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_61514')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_61514">
+          <strong>Reason:</strong> Wide straps increase the surface area of contact over the student's shoulder. Since pressure is inversely proportional to area (\(P = F/A\)), the larger area reduces the pressure exerted by the heavy bag, preventing pain and making it more comfortable to carry.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q: Why are dams constructed with thicker walls at the bottom?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_32486')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_32486">
+          <strong>Reason:</strong> According to the law of hydrostatic pressure (\(P = h\rho g\)), the pressure exerted by water increases with depth. The bottom of the dam experiences the maximum lateral water pressure, so the walls must be built thicker at the base to withstand this enormous force without collapsing.
+        </div>
+      </div>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q: Why do astronauts wear special pressurized space suits?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_61031')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_61031">
+          <strong>Reason:</strong> The human body maintains internal blood pressure that perfectly balances the atmospheric pressure on Earth. In space, there is no atmospheric pressure (vacuum). Without a pressurized suit, the internal blood pressure would cause blood vessels to burst, and body fluids would start to boil.
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_05_electricity_and_circuits.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-05 · Electricity, Electric Current</a>
+    <a href="physics_07_heat_and_temperature.html" class="topic-nav-link topic-nav-next">PHY-07 · Heat Energy, Temperature &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Physics • Topic 06</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

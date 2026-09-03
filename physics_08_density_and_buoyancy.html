@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 08: Density & Buoyancy • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: center; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 16px 0; display: flex; flex-direction: column; align-items: center; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; text-align: center; }
+    
+    .reasons-box { background: var(--bg-warm); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; }
+    .reason-q { font-weight: 600; color: var(--ink-black); margin-bottom: 6px; margin-top: 16px; }
+    .reason-q:first-child { margin-top: 0; }
+    .reason-a { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; margin-bottom: 16px; border-left: 2px solid var(--border-strong); padding-left: 12px; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ Physics • Topic 08</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 08</div>
+    <h1 class="topic-title">Density, Relative Density &amp; Buoyancy</h1>
+    <p class="topic-subtext">
+      Density ($d = m/V$), Relative Density ($\text{RD} = \rho / \rho_{\text{water}}$), Archimedes' Principle (upthrust = weight of fluid displaced), and the Law of Floatation.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. DENSITY -->
+    <div class="section-block">
+      <h2 class="section-heading">1. Concept of Density</h2>
+      <p>
+        Why does a huge block of wood float gracefully on a lake, while a tiny iron nail sinks straight to the bottom? It all comes down to how tightly packed the matter is inside the object. Density is the scientific measure of this compactness, telling us exactly how much mass is squeezed into a specific amount of space. A material with tightly packed particles is highly dense, while one with spread-out particles is less dense.
+      </p>
+      
+      <div class="definition-box">
+        <span class="definition-term">Density ($d$ or $\rho$):</span>
+        Density is formally defined as the mass per unit volume of a substance. It is a characteristic physical property of a material at a given temperature and pressure. It indicates how heavy a substance is for a particular size.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> Density is independent of the size or shape of the object. A tiny splinter of pine wood has the exact same density as a massive log of the same pine wood.
+      </div>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Mathematical Formula &amp; Units of Density</span>
+        <div class="derivation-step">
+          1. The formula for density relates mass ($m$) and volume ($V$):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$d = \frac{m}{V}$$<br>
+          2. SI Unit of Density:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Since mass is in kilograms ($\text{kg}$) and volume is in cubic metres ($\text{m}^3$), the SI unit is **$\text{kg/m}^3$** (kilograms per cubic metre).<br><br>
+          3. CGS Unit of Density:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;In smaller measurements, mass is in grams ($\text{g}$) and volume in cubic centimetres ($\text{cm}^3$). The unit is **$\text{g/cm}^3$**.<br><br>
+          4. <em>Conversion Axiom:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;To convert $\text{g/cm}^3 \to \text{kg/m}^3$: Multiply by $1,000$.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Example: Density of water is $1 \text{ g/cm}^3 = 1,000 \text{ kg/m}^3$.
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. RELATIVE DENSITY -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Relative Density (Specific Gravity)</h2>
+      <p>
+        Comparing substances directly to water makes it incredibly easy to predict if they will float or sink. Instead of memorising large numbers and dealing with complex units, we just look at a simple ratio compared to water's density. This unitless number quickly tells us a material's comparative heaviness.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Relative Density (RD):</span>
+        The relative density of a substance is the ratio of its density to the density of water at $4^\circ\text{C}$. Because it is a ratio of two identical physical quantities, it is a pure number and has no units whatsoever.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Density ($d$)</th>
+            <th>Relative Density (RD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Definition</strong></td>
+            <td>Mass per unit volume of a given substance.</td>
+            <td>Ratio of the substance's density to the density of water at $4^\circ\text{C}$.</td>
+          </tr>
+          <tr>
+            <td><strong>Formula</strong></td>
+            <td>$d = \frac{\text{Mass}}{\text{Volume}}$</td>
+            <td>$\text{RD} = \frac{\text{Density of substance}}{\text{Density of water}}$</td>
+          </tr>
+          <tr>
+            <td><strong>Units</strong></td>
+            <td>Has units: $\text{kg/m}^3$ (SI) or $\text{g/cm}^3$ (CGS).</td>
+            <td><strong>No units.</strong> It is a pure dimensionless scalar.</td>
+          </tr>
+          <tr>
+            <td><strong>Value Example</strong></td>
+            <td>Iron: $7800 \text{ kg/m}^3$ or $7.8 \text{ g/cm}^3$</td>
+            <td>Iron: simply $7.8$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ARCHIMEDES PRINCIPLE -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Archimedes' Principle &amp; Upthrust</h2>
+      <p>
+        Have you ever noticed that you feel much lighter when swimming in a pool, or tried to push a plastic ball underwater and felt it fiercely push back? This mysterious upward force is called upthrust or buoyant force. It happens because fluids (liquids and gases) exert pressure on any object placed inside them, pushing them upwards against gravity.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Archimedes' Principle:</span>
+        When a body is completely or partially immersed in a fluid at rest, it experiences an upward buoyant force (upthrust). The magnitude of this upthrust is exactly equal to the weight of the fluid displaced by the immersed part of the body.
+      </div>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Archimedes-principle.svg/300px-Archimedes-principle.svg.png" alt="Archimedes Principle diagram showing buoyant force equal to displaced fluid" class="diagram-img">
+        <figcaption class="diagram-caption">Archimedes' Principle: The upward buoyant force acting on an object equals the weight of the displaced fluid.</figcaption>
+      </figure>
+
+      <div class="derivation-card">
+        <span class="derivation-title">Upthrust (Buoyancy) Formula</span>
+        <div class="derivation-step">
+          1. <strong>Upthrust ($F_B$) = Weight of the displaced fluid</strong>.<br><br>
+          2. Since Weight = mass $\times$ gravity, and mass = Volume $\times$ density:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$F_B = V_{\text{submerged}} \times \rho_{\text{fluid}} \times g$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Where:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• $V_{\text{submerged}}$ = volume of the object that is underwater ($\text{m}^3$)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• $\rho_{\text{fluid}}$ = density of the liquid or gas ($\text{kg/m}^3$)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• $g$ = acceleration due to gravity (approx. $9.8 \text{ m/s}^2$ or $10 \text{ m/s}^2$)
+          <br><br>
+          3. Apparent Weight of an object in fluid = True Weight in Air $-$ Upthrust.
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. LAW OF FLOATATION -->
+    <div class="section-block">
+      <h2 class="section-heading">4. The Law of Floatation</h2>
+      <p>
+        A massive steel ship can gracefully float on the ocean, even though a solid chunk of steel sinks instantly. This happens because the ship's cleverly designed hollow shape allows it to displace a huge volume of water. This creates an enormous upward buoyant force that perfectly balances its massive weight, allowing it to float.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">Law of Floatation:</span>
+        A floating body displaces its own total weight of the fluid in which it floats. For an object to float, the upthrust exerted by the fluid must be perfectly equal to the true weight of the object.
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Condition of Densities</th>
+            <th>Comparison of Forces</th>
+            <th>Resulting Action (Will it float?)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Density of object <strong>&gt;</strong> Density of fluid</td>
+            <td>Weight of object &gt; Maximum Upthrust</td>
+            <td><strong>Sinks</strong> to the bottom (e.g., iron in water).</td>
+          </tr>
+          <tr>
+            <td>Density of object <strong>=</strong> Density of fluid</td>
+            <td>Weight of object = Maximum Upthrust</td>
+            <td><strong>Floats fully submerged</strong> just below the surface (neutral buoyancy).</td>
+          </tr>
+          <tr>
+            <td>Density of object <strong>&lt;</strong> Density of fluid</td>
+            <td>Weight of object = Upthrust (while only partially submerged)</td>
+            <td><strong>Floats partially above</strong> the surface (e.g., cork or ice in water).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. WORKED PROBLEMS -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 8.1: Calculating Density &amp; Floatation</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A block of metal has a mass of $540\text{ g}$ and a volume of $200\text{ cm}^3$. Calculate: (i) its density in $\text{g/cm}^3$, (ii) its density in $\text{kg/m}^3$, (iii) will it float or sink in pure water? (Density of water = $1\text{ g/cm}^3$)
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i): Density in $\text{g/cm}^3$</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Given: $m = 540\text{ g}$, $V = 200\text{ cm}^3$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$d = \frac{m}{V} = \frac{540}{200} = \mathbf{2.7\text{ g/cm}^3}$$ [1 Mark]<br><br>
+          2. <em>Part (ii): Density in $\text{kg/m}^3$</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;To convert $\text{g/cm}^3$ to $\text{kg/m}^3$, multiply by $1000$.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$2.7 \times 1000 = \mathbf{2700\text{ kg/m}^3}$$ [1 Mark]<br><br>
+          3. <em>Part (iii): Float or Sink condition</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Density of the metal ($2.7\text{ g/cm}^3$) is greater than the density of water ($1.0\text{ g/cm}^3$).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Therefore, the block will <strong>sink</strong> in water. [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 8.2: Archimedes' Upthrust &amp; Volume</span>
+          <span class="problem-marks">[4 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A solid object weighs $80\text{ N}$ in air and $65\text{ N}$ when fully submerged in water. Calculate: (i) the upthrust on the solid, and (ii) the volume of the solid. <em>(Take $\rho_{\text{water}} = 1000\text{ kg/m}^3$ and $g = 10\text{ m/s}^2$)</em>
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i): Upthrust Calculation</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;True weight in air ($W_1$) = $80\text{ N}$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Apparent weight in water ($W_2$) = $65\text{ N}$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Upthrust } (F_B) = W_1 - W_2 = 80 - 65 = \mathbf{15\text{ N}}$$ [2 Marks]<br><br>
+          2. <em>Part (ii): Volume of the Solid</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;By Archimedes' Principle, Upthrust = Volume of fluid displaced $\times$ density of fluid $\times g$.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Since it is <em>fully</em> submerged, Volume of fluid displaced = Volume of solid ($V$).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$15 = V \times 1000 \times 10$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$V = \frac{15}{10000} = \mathbf{1.5 \times 10^{-3}\text{ m}^3}$$ [2 Marks]
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 6. SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+            <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q: Why does an iron ship float, but a solid iron nail sinks?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_box_1_7930')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_box_1_7930">
+          An iron nail is solid, so its overall density is far greater than the density of water; thus, it sinks. A ship, however, is hollow and traps a massive volume of air inside its hull. This dramatically decreases the ship's <em>average density</em> to less than that of water. By Archimedes' Principle, the large volume of the ship displaces a huge weight of water, creating enough upthrust to balance the ship's weight and allow it to float.
+        </div>
+      </div>
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q: Why is it easier to swim in sea water than in river water?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_box_2_3458')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_box_2_3458">
+          Sea water contains dissolved salts, which makes its density significantly higher than the density of fresh river water. Because upthrust is directly proportional to the density of the fluid ($F_B = Vho g$), sea water exerts a greater upward buoyant force on the swimmer for the same volume displaced. This greater upthrust makes it easier to float and swim.
+        </div>
+      </div>
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q: Why does an ice cube float on water with exactly one-tenth of its volume above the surface?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_box_3_6478')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reas_box_3_6478">
+          The density of ice is about $0.9	ext{ g/cm}^3$, while the density of water is $1.0	ext{ g/cm}^3$. The relative density of ice is $0.9$. According to the Law of Floatation, the fraction of the volume of a floating object that is submerged equals the ratio of its density to the fluid's density. Therefore, $rac{9}{10}$ (or 90%) of the ice remains submerged to displace enough water to balance its weight, leaving exactly $rac{1}{10}$ (or 10%) exposed above the surface.
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_07_heat_and_temperature.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-07 · Heat Energy, Temperature</a>
+    <a href="physics_09_magnetism_and_fields.html" class="topic-nav-link topic-nav-next">PHY-09 · Magnetism, Magnetic Fields &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Physics Topic 08: Density, Relative Density &amp; Buoyancy</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathematics 04: The Balance Beam: Linear Equations & Word Problems • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 17px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.65; max-width: 900px; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 52px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 20px; }
+    .section-heading { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-top: 8px; }
+    .subsection-heading { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink-black); margin-top: 14px; }
+
+    p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.75; }
+    p strong { color: var(--ink-black); }
+
+    .definition-box { background: var(--bg-surface); border-left: 4px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+
+    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
+    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; }
+    .problem-type { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15.5px; color: var(--ink-black); line-height: 1.65; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 15px; color: var(--ink-black); font-weight: 500; line-height: 1.5; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    .content-list { padding-left: 24px; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.8; }
+    .numbered-list { padding-left: 20px; line-height: 1.8; font-size: 15px; color: var(--ink-secondary); }
+    .bullet-list { margin-top: 8px; padding-left: 20px; line-height: 1.7; }
+
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">📐 AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Mathematics • Topic 04</div>
+    <h1 class="topic-title">The Balance Beam: Linear Equations & Word Problems</h1>
+    <p class="topic-subtext">
+      The mechanics of algebraic balance: equations as two-pan scales, why operations flip signs across the equals boundary, clearing denominators via the LCM, and a complete translation dictionary for solving age, consecutive number, and digit puzzles.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- INTRO HOOK -->
+    <section class="section-block">
+      <h2 class="section-heading">Introduction: The Two-Pan Weighing Scale</h2>
+      
+      <p>
+        Picture an old-fashioned brass scale in a spice bazaar. On the left pan sits a mysterious sealed burlap bag plus two 1-kilogram iron weights. On the right pan sit eight 1-kilogram iron weights.
+      </p>
+      <p>
+        The pointer in the middle rests perfectly vertical: <strong>the two pans are in exact equilibrium</strong>.
+      </p>
+      <p>
+        How heavy is the mysterious bag? You don't need magic to find out. If you take away two 1-kg weights from the left pan, the scale will tilt—unless you also take away two 1-kg weights from the right pan!
+      </p>
+      <p>
+        Once you remove 2 kg from both sides, the left pan holds only the bag, and the right pan holds \(8 - 2 = 6\text{ kg}\). The mystery is solved: the bag weighs 6 kg!
+      </p>
+      <p>
+        In mathematics, this is the entire secret of <strong>Linear Equations</strong>:
+        $$x + 2 = 8 \implies x = 8 - 2 = \mathbf{6}$$
+        An equation is not a command to calculate; it is a statement that two expressions are in <strong>perfect physical balance</strong>.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">What is a Linear Equation in One Variable?</span>
+        An algebraic statement involving an equality sign (\(=\)) where:
+        <ul class="bullet-list">
+          <li>There is only <strong>one unknown variable</strong> (usually \(x\)).</li>
+          <li>The highest power (degree) of the variable is strictly <strong>1</strong> (no \(x^2\), no \(x^3\)).</li>
+          <li>The general form is: $$ax + b = c \quad (\text{where } a \neq 0)$$</li>
+        </ul>
+        The specific number that makes the equation true is called the <strong>root or solution</strong> of the equation.
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 1: THE TRANSPOSITION MECHANISM -->
+    <section class="section-block">
+      <h2 class="section-heading">1. The Transposition Mechanism: Why Signs Flip</h2>
+      
+      <p>
+        Teachers often say: <em>"When a number hops over the equals sign, its sign flips from plus to minus!"</em>
+      </p>
+      <p>
+        While that is a handy memory shortcut, it is important to understand <strong>why</strong> it happens. Nothing is magically flying through the air. You are simply performing the <strong>exact same operation to both sides of the balance</strong>:
+      </p>
+
+      <div class="derivation-card">
+        <div class="derivation-title">The Four Golden Balances of Transposition</div>
+        <div class="derivation-step">
+          1. <strong>Addition flips to Subtraction:</strong><br>
+          $$x + 7 = 12$$
+          Subtract 7 from both sides: \(x + 7 - 7 = 12 - 7 \implies \mathbf{x = 12 - 7 = 5}\).<br><br>
+          2. <strong>Subtraction flips to Addition:</strong><br>
+          $$x - 9 = 15$$
+          Add 9 to both sides: \(x - 9 + 9 = 15 + 9 \implies \mathbf{x = 15 + 9 = 24}\).<br><br>
+          3. <strong>Multiplication flips to Division:</strong><br>
+          $$4x = 28$$
+          Divide both sides by 4: \(\frac{4x}{4} = \frac{28}{4} \implies \mathbf{x = 7}\).<br><br>
+          4. <strong>Division flips to Multiplication:</strong><br>
+          $$\frac{x}{6} = 5$$
+          Multiply both sides by 6: \(\frac{x}{6} \times 6 = 5 \times 6 \implies \mathbf{x = 30}\).
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 2: CLEARING FRACTIONS AND CROSS-MULTIPLICATION -->
+    <section class="section-block">
+      <h2 class="section-heading">2. Taming Fractions: The LCM Clearing Trick</h2>
+      
+      <p>
+        Equations with messy fractions look intimidating. The secret to solving them in seconds is: <strong>wipe out all denominators in one clean strike!</strong>
+      </p>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">The 3-Step LCM Strategy</div>
+        <ol class="numbered-list">
+          <li><strong>Step 1:</strong> Find the LCM of all denominators across the entire equation.</li>
+          <li><strong>Step 2:</strong> Multiply <strong>every single term</strong> on both sides of the equation by that LCM. All fractions vanish instantly!</li>
+          <li><strong>Step 3:</strong> Gather all \(x\) terms on the left and all numbers on the right.</li>
+        </ol>
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Walkthrough: The Cross-Multiplication Shortcut</div>
+        <div class="derivation-step">
+          When an equation is simply <em>one fraction equal to another fraction</em>:
+          $$\frac{ax + b}{c} = \frac{px + q}{d}$$
+          You can cross-multiply across the equals sign:
+          $$\mathbf{d(ax + b) = c(px + q)}$$
+          <em>Why it works:</em> Multiplying both sides by the common denominator \(cd\) cancels \(c\) on the left and \(d\) on the right!
+        </div>
+      </div>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ The #1 Denominator Trap</span>
+        Look at this equation:
+        $$\frac{x}{4} + 3 = 7$$
+        If you multiply by 4 to clear the fraction, you MUST multiply the 3 by 4 as well:
+        $$x + 12 = 28 \quad \text{✅ Correct!}$$
+        Students often write \(x + 3 = 28\) (forgetting to multiply the standalone integer). That throws the entire scale out of balance!
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 3: THE WORD PROBLEM DICTIONARY -->
+    <section class="section-block">
+      <h2 class="section-heading">3. Translating English into Algebra: The Word Problem Dictionary</h2>
+      
+      <p>
+        Word problems are not math tests—they are <strong>translation tests</strong>. You are translating ordinary English sentences into algebraic sentences:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>English Clue Phrase</th>
+            <th>Mathematical Meaning</th>
+            <th>Algebraic Expression</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>"A number increased by 8"</td>
+            <td>Addition (\(+\))</td>
+            <td>\(x + 8\)</td>
+          </tr>
+          <tr>
+            <td>"5 subtracted from a number"</td>
+            <td>Subtraction (\(-\))</td>
+            <td>\(x - 5\) <em>(Caution: NOT \(5 - x\)!)</em></td>
+          </tr>
+          <tr>
+            <td>"Twice a number exceeds 10 by 4"</td>
+            <td>Difference equals 4</td>
+            <td>\(2x - 10 = 4\)</td>
+          </tr>
+          <tr>
+            <td>"Three consecutive integers"</td>
+            <td>Stepping by 1 each time</td>
+            <td>\(x, \; x + 1, \; x + 2\)</td>
+          </tr>
+          <tr>
+            <td>"Three consecutive odd/even numbers"</td>
+            <td>Stepping by 2 each time</td>
+            <td>\(x, \; x + 2, \; x + 4\)</td>
+          </tr>
+          <tr>
+            <td>"In 5 years' time (5 years hence)"</td>
+            <td>Future age (+5)</td>
+            <td>\(\text{Age} + 5\)</td>
+          </tr>
+          <tr>
+            <td>"4 years ago"</td>
+            <td>Past age (-4)</td>
+            <td>\(\text{Age} - 4\)</td>
+          </tr>
+          <tr>
+            <td>"A two-digit number with tens digit \(t\) and units digit \(u\)"</td>
+            <td>Place value expansion</td>
+            <td>\(10t + u\)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECTION: WORKED PROBLEMS -->
+    <section class="section-block">
+      <h2 class="section-heading">Worked Problems</h2>
+
+      <!-- Problem 4.1 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 4.1: Fractional Equation with Nested Signs</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Solve for \(x\) and verify your answer:
+          $$\frac{3x - 2}{4} - \frac{2x + 3}{3} = \frac{2}{3} - x$$
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-1">
+          <strong>Step 1: Find the LCM of all denominators:</strong><br>
+          The denominators are 4, 3, and 3. The \(\text{LCM}(4, 3) = \mathbf{12}\).<br><br>
+
+          <strong>Step 2: Multiply every single term by 12:</strong><br>
+          $$12 \times \left(\frac{3x - 2}{4}\right) - 12 \times \left(\frac{2x + 3}{3}\right) = 12 \times \left(\frac{2}{3}\right) - 12 \times x$$
+          $$3(3x - 2) - 4(2x + 3) = 4(2) - 12x$$<br>
+
+          <strong>Step 3: Expand brackets (Watch the negative sign!):</strong><br>
+          $$9x - 6 - 8x - 12 = 8 - 12x$$
+          Combine like terms on left:<br>
+          $$(9x - 8x) + (-6 - 12) = 8 - 12x$$
+          $$x - 18 = 8 - 12x$$<br>
+
+          <strong>Step 4: Transpose variables to left and constants to right:</strong><br>
+          $$x + 12x = 8 + 18$$
+          $$13x = 26$$
+          $$x = \frac{26}{13} = \mathbf{2}$$<br>
+
+          <strong>Step 5: Quick Verification:</strong><br>
+          • \(\text{LHS} = \frac{3(2) - 2}{4} - \frac{2(2) + 3}{3} = \frac{4}{4} - \frac{7}{3} = 1 - 2\frac{1}{3} = -\frac{4}{3}\).<br>
+          • \(\text{RHS} = \frac{2}{3} - 2 = -\frac{4}{3}\).<br>
+          \(\text{LHS} = \text{RHS}\). Verified!
+        </div>
+      </div>
+
+      <!-- Problem 4.2 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 4.2: Classic Age Modeling Puzzle</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          A father is 30 years older than his son. In 12 years' time, the father will be exactly twice as old as his son will be then. Find their present ages.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-2">
+          <strong>Step 1: Define variables for the present day:</strong><br>
+          Let the son's present age be \(x\) years.<br>
+          Then the father's present age is \((x + 30)\) years.<br><br>
+
+          <strong>Step 2: Move 12 years into the future:</strong><br>
+          • Son's age in 12 years = \((x + 12)\) years.<br>
+          • Father's age in 12 years = \((x + 30) + 12 = (x + 42)\) years.<br><br>
+
+          <strong>Step 3: Set up the equation using the given condition:</strong><br>
+          <em>"Father's future age = 2 × Son's future age"</em><br>
+          $$x + 42 = 2(x + 12)$$<br>
+
+          <strong>Step 4: Solve for \(x\):</strong><br>
+          $$x + 42 = 2x + 24$$
+          $$42 - 24 = 2x - x$$
+          $$18 = x \implies \mathbf{x = 18}$$<br>
+
+          <strong>Conclusion:</strong><br>
+          • <strong>Son's present age = 18 years</strong><br>
+          • <strong>Father's present age = 18 + 30 = 48 years</strong><br>
+          <em>(Check: In 12 years, son is 30, father is 60. \(60 = 2 \times 30\). Perfect!)</em>
+        </div>
+      </div>
+
+      <!-- Problem 4.3 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 4.3: Two-Digit Number & Reversal Puzzle</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          The sum of the digits of a two-digit number is 9. If 27 is added to the number, its digits are reversed. Find the original number.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-3">
+          <strong>Step 1: Set up the digits:</strong><br>
+          Let the units digit be \(x\).<br>
+          Since the sum of digits is 9, the tens digit is \((9 - x)\).<br><br>
+
+          <strong>Step 2: Write the place value of the original number:</strong><br>
+          $$\text{Original Number} = 10 \times (\text{tens digit}) + (\text{units digit})$$
+          $$= 10(9 - x) + x = 90 - 10x + x = \mathbf{90 - 9x}$$<br>
+
+          <strong>Step 3: Write the reversed number:</strong><br>
+          When digits are reversed, \(x\) becomes the tens digit and \((9 - x)\) becomes the units digit:<br>
+          $$\text{Reversed Number} = 10(x) + (9 - x) = \mathbf{9x + 9}$$<br>
+
+          <strong>Step 4: Form the equation:</strong><br>
+          <em>"Original Number + 27 = Reversed Number"</em><br>
+          $$(90 - 9x) + 27 = 9x + 9$$
+          $$117 - 9x = 9x + 9$$<br>
+
+          <strong>Step 5: Solve for \(x\):</strong><br>
+          $$117 - 9 = 9x + 9x$$
+          $$108 = 18x \implies x = \frac{108}{18} = \mathbf{6}$$<br>
+
+          <strong>Conclusion:</strong><br>
+          • Units digit = \(6\)<br>
+          • Tens digit = \(9 - 6 = 3\)<br>
+          • <strong>The Original Number is 36!</strong><br>
+          <em>(Check: Sum of digits = \(3 + 6 = 9\). Add 27: \(36 + 27 = 63\), which is 36 reversed!)</em>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SCIENTIFIC REASONING -->
+    <section class="section-block">
+      <h2 class="section-heading">Mathematical Curiosities & "Why?" Questions</h2>
+
+      <!-- Reasoning Q1 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 4.1: The Dangerous "Proof" That \(1 = 2\)</span>
+        </div>
+        <div class="reasoning-question">
+          Why is dividing both sides of an equation by \((a - b)\) strictly illegal when \(a = b\)?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-1')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-1">
+          Look at this famous mathematical fallacy:<br>
+          1. Let \(a = b\).<br>
+          2. Multiply both sides by \(a\): \(a^2 = ab\).<br>
+          3. Subtract \(b^2\) from both sides: \(a^2 - b^2 = ab - b^2\).<br>
+          4. Factor both sides: \((a - b)(a + b) = b(a - b)\).<br>
+          5. Divide both sides by \((a - b)\): \(a + b = b\).<br>
+          6. Since \(a = b\), substitute \(b\) for \(a\): \(b + b = b \implies 2b = b \implies 2 = 1\)!<br><br>
+          <strong>Where was the crime committed?</strong> In Step 5! Since \(a = b\), the term \((a - b) = 0\). Dividing by \((a - b)\) is dividing by zero, which is mathematically catastrophic. That is why in algebra, you can never divide an equation by an expression that might equal zero!
+        </div>
+      </div>
+
+      <!-- Reasoning Q2 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 4.2: Why Are They Called "Linear" Equations?</span>
+        </div>
+        <div class="reasoning-question">
+          Why does the word "Linear" have the word "Line" inside it?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-2')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-2">
+          If you plot the solutions to any degree-1 equation (such as \(y = 2x + 1\)) on a coordinate grid by graphing pairs of \((x, y)\) points, they will always connect to form an unbroken, perfectly <strong>straight geometric line</strong>.<br><br>
+          Higher degree equations curve like rollercoasters (degree 2 curves into a parabola, degree 3 twists into an S-curve). Only degree-1 relationships maintain a constant, steady rate of change, creating a straight line. Hence: **linear**.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="math_03_algebraic_expressions.html" class="topic-nav-link topic-nav-prev">&#8592; MATH-03 · Algebraic Expressions</a>
+    <a href="math_05_ratios_and_proportions.html" class="topic-nav-link topic-nav-next">MATH-05 · Ratios &amp; Proportions &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
+    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+  </footer>
+
+  <script>
+    function toggleSolution(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleReasoning(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 04: Sound & Vibration • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+
+    .diagram-figure { margin: 8px 0; } 
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; } 
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ Physics • Topic 04</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 04</div>
+    <h1 class="topic-title">Sound: Waves, Propagation & Properties</h1>
+    <p class="topic-subtext">
+      Longitudinal wave nature of sound, the bell-jar vacuum experiment, speed of sound in solids/liquids/gases, pitch vs loudness vs quality, and the audible frequency range (20 Hz–20,000 Hz).
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. LONGITUDINAL WAVE NATURE -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Longitudinal Wave Nature of Sound</h2>
+      <p>
+        When a large drum is struck, you can often feel the floor or the air near it vibrate as the sound wave compresses the air towards you. These vibrations travel outward by pushing and pulling the particles of the air back and forth. Because the particles vibrate in the exact same direction as the wave is moving, this creates alternating regions of high pressure and low pressure.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Longitudinal Wave:</span>
+        A wave in which the particles of the medium vibrate back and forth along the same direction (parallel) to the direction of propagation of the wave.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> A sound wave consists of <strong>compressions</strong> (regions where particles are crowded together and pressure is high) and <strong>rarefactions</strong> (regions where particles are spread apart and pressure is low).
+      </div>
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/CPT-sound-physical-manifestation.svg/400px-CPT-sound-physical-manifestation.svg.png" alt="Sound wave showing longitudinal compression and rarefaction" class="diagram-img">
+        <figcaption class="diagram-caption">Fig 1: A longitudinal sound wave propagating through a medium, forming alternating compressions (high density) and rarefactions (low density).</figcaption>
+      </figure>
+    </div>
+
+    <!-- 2. BELL-JAR VACUUM EXPERIMENT -->
+    <div class="section-block">
+      <h2 class="section-heading">2. The Bell-Jar Vacuum Experiment</h2>
+      <p>
+        Sound needs a material medium to travel; if you were in outer space, you wouldn't be able to hear a friend screaming right next to you because there is no air. The famous Bell-Jar experiment proves that sound cannot propagate through a vacuum.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Material Medium Requirement:</span>
+        Sound waves are mechanical waves that require a material medium (solid, liquid, or gas) for their propagation. They cannot travel through a vacuum.
+        <br><br>
+        • <em>Bell-Jar Experiment:</em> An electric bell is suspended inside an airtight glass bell jar connected to a vacuum pump. When the bell rings with air inside, the sound is heard clearly. As the vacuum pump removes the air, the sound becomes fainter and fainter until it is completely inaudible, even though the hammer is still seen striking the gong.
+      </div>
+    </div>
+
+    <!-- 3. SPEED OF SOUND -->
+    <div class="section-block">
+      <h2 class="section-heading">3. Speed of Sound in Solids, Liquids, and Gases</h2>
+      <p>
+        If you press your ear to a steel train track, you can hear an approaching train long before you hear its sound through the air. This is because sound travels much faster through rigid solids than through easily compressible gases. The closer the particles are packed in a medium, the faster they can transfer the vibrational energy to their neighbors.
+      </p>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Medium State</th>
+            <th>Approximate Speed of Sound</th>
+            <th>Reason for Speed Variation</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Gas</strong></td>
+            <td>\(330\text{ to }340\text{ m/s}\) (at room temp)</td>
+            <td>Particles are far apart and loosely bound, so transferring vibrations takes more time.</td>
+            <td>Air</td>
+          </tr>
+          <tr>
+            <td><strong>Liquid</strong></td>
+            <td>\(\sim 1,500\text{ m/s}\)</td>
+            <td>Particles are closer together than in gases, allowing faster transmission.</td>
+            <td>Water</td>
+          </tr>
+          <tr>
+            <td><strong>Solid</strong></td>
+            <td>\(5,000\text{ to }6,000\text{ m/s}\)</td>
+            <td>Particles are tightly packed and strongly bound, instantly transferring vibrational energy.</td>
+            <td>Steel, Iron</td>
+          </tr>
+          <tr>
+            <td><strong>Vacuum</strong></td>
+            <td>\(0\text{ m/s}\)</td>
+            <td>No particles exist to transfer the mechanical vibrations.</td>
+            <td>Outer Space</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 4. PITCH, LOUDNESS, QUALITY -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Pitch, Loudness, and Quality</h2>
+      <p>
+        A roaring lion produces a very loud sound with a low pitch, while a mosquito's buzz is quiet but has a high, irritating pitch. Two different instruments, like a guitar and a flute, can play the exact same loud, high-pitched note, yet you can easily tell them apart. These differences are defined by three distinct characteristics of sound.
+      </p>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Depends On</th>
+            <th>Description</th>
+            <th>Unit / Measurement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Loudness</strong></td>
+            <td>Amplitude</td>
+            <td>Distinguishes a loud sound from a faint one. Higher amplitude creates louder sound.</td>
+            <td>Decibel (dB)</td>
+          </tr>
+          <tr>
+            <td><strong>Pitch</strong></td>
+            <td>Frequency</td>
+            <td>Distinguishes a shrill (high) sound from a flat (low) sound. Higher frequency = higher pitch.</td>
+            <td>Hertz (Hz)</td>
+          </tr>
+          <tr>
+            <td><strong>Quality (Timbre)</strong></td>
+            <td>Waveform</td>
+            <td>Distinguishes two sounds of the same loudness and pitch from different sources.</td>
+            <td>N/A</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. AUDIBLE FREQUENCY RANGE -->
+    <div class="section-block">
+      <h2 class="section-heading">5. The Audible Frequency Range</h2>
+      <p>
+        Special dog whistles emit sounds at frequencies above 20,000 vibrations per second—so high that human ears detect absolutely nothing, but dogs perceive a loud, sharp screech. The human ear has a limited window of frequencies it can detect.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Audible Range:</span>
+        The range of frequencies of sound that a normal human ear can hear, which is from <strong>20 Hz to 20,000 Hz</strong>.
+        <br><br>
+        • <strong>Infrasonic sound:</strong> Frequencies below 20 Hz (e.g., sounds produced by earthquakes or elephants).<br>
+        • <strong>Ultrasonic sound:</strong> Frequencies above 20,000 Hz (e.g., sounds produced by bats, dolphins, and dog whistles).
+      </div>
+    </div>
+
+    <!-- 6. WORKED ICSE NUMERICAL -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 4.1: Speed Calculation</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A sound wave travels \(1,700\text{ m}\) in \(5\text{ seconds}\) in air. Calculate its speed. Is this faster or slower than in water (\(1500\text{ m/s}\))?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Identify Given Values:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Distance (\(d\)) = \(1,700\text{ m}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Time (\(t\)) = \(5\text{ s}\)<br><br>
+          2. <em>Formula and Calculation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Speed } (v) = \frac{\text{Distance}}{\text{Time}}$$ [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$v = \frac{1700\text{ m}}{5\text{ s}} = \mathbf{340\text{ m/s}}$$ [1 Mark]<br><br>
+          3. <em>Comparison:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The speed in air (\(340\text{ m/s}\)) is much <strong>slower</strong> than the speed in water (\(1500\text{ m/s}\)). [1 Mark]
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 4.2: Echo Distance Calculation</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A boy shouts near a cliff and hears the echo after \(3\text{ seconds}\). If the speed of sound is \(340\text{ m/s}\), how far is the cliff?
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Identify Given Values:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Total time for echo (\(t\)) = \(3\text{ s}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Speed of sound (\(v\)) = \(340\text{ m/s}\)<br><br>
+          2. <em>Understand the Concept:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;An echo is the reflection of sound. The sound travels to the cliff and back, covering twice the distance (\(2d\)).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$2d = v \times t$$ [1 Mark]<br><br>
+          3. <em>Calculation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$2d = 340\text{ m/s} \times 3\text{ s} = 1020\text{ m}$$ [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$d = \frac{1020}{2} = \mathbf{510\text{ m}}$$ [1 Mark]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The cliff is \(510\text{ m}\) away.
+        </div>
+      </div>
+
+    </div>
+    
+    <!-- 7. GIVE SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning Item</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_sr1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question"><strong>Q: Why do we see the lightning flash before we hear the thunder, even though they occur simultaneously?</strong></div>
+        <div class="reasoning-answer" id="sol_sr1">
+          <strong>Model Examiner Answer:</strong><br>
+          The speed of light in air is exceptionally high (\(3 \times 10^8\text{ m/s}\)), while the speed of sound in air is comparatively very low (\(\sim 340\text{ m/s}\)). Therefore, the light from the flash reaches our eyes almost instantaneously, whereas the sound of thunder takes significantly more time to travel the same distance.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Reasoning Item</span>
+          <button class="btn-toggle" onclick="toggleDrawer('sol_sr2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-question"><strong>Q: Why can bats navigate in complete darkness without colliding with obstacles?</strong></div>
+        <div class="reasoning-answer" id="sol_sr2">
+          <strong>Model Examiner Answer:</strong><br>
+          Bats emit high-frequency ultrasonic squeaks (above 20,000 Hz) that travel through the air. When these ultrasonic waves hit an obstacle or prey, they reflect back as an echo. By hearing the echo, the bat determines the distance, direction, and nature of the obstacle, a process known as echolocation.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_03_light_and_reflection.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-03 · Light, Shadows &</a>
+    <a href="physics_05_electricity_and_circuits.html" class="topic-nav-link topic-nav-next">PHY-05 · Electricity, Electric Current &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Physics • Topic 04: Sound & Vibration</div>
+    <div>Physics • Topic 04</div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

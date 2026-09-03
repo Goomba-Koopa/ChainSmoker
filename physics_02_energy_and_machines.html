@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics 02: Work, Energy & Simple Machines • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+        .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 48px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 18px; }
+    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
+    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+    
+    /* Diagram CSS */
+    .diagram-figure { margin: 8px 0; }
+    .diagram-img { max-width: 100%; border: 1px solid var(--border-subtle); border-radius: 6px; display: block; }
+    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 8px; font-style: italic; }
+  
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+    @media (max-width: 768px) {
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+
+  
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ Physics • Topic 02</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Physics • Topic 02</div>
+    <h1 class="topic-title">Work, Energy & Simple Machines</h1>
+    <p class="topic-subtext">
+      The scalar definition of work (W = F × s), kinetic and potential energy, conservation of energy, and the three classes of levers with mechanical advantage.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- 1. DEFINITION OF WORK -->
+    <div class="section-block">
+      <h2 class="section-heading">1. The Scientific Definition of Work</h2>
+      <p>
+        If you push against a solid brick wall for an hour, you will undoubtedly feel exhausted. However, in the strict language of physics, you have done no work. Work is only accomplished when a force successfully causes an object to move. If you push a shopping cart down an aisle, the force you apply causes displacement, meaning work is being done. The amount of work depends entirely on how much force is applied and how far the object travels in the direction of that force.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Work (\(W\)):</span>
+        Work is said to be done when a force applied on a body produces motion in the body. It is formally defined as the product of the magnitude of the force applied and the displacement of the body in the direction of the force.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> <strong>Work is a scalar quantity.</strong> Even though it is the product of two vector quantities (force and displacement), it only has a magnitude and no specific direction. If displacement is zero (e.g., pushing a fixed wall), the work done is strictly zero regardless of the force applied.
+      </div>
+      <div class="derivation-card">
+        <span class="derivation-title">The Formula for Work</span>
+        <div class="derivation-step">
+          The mathematical expression for work is given by:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$W = F \times s$$<br>
+          Where:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(W\) = Work done (measured in Joules, J)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(F\) = Force applied (measured in Newtons, N)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(s\) = Displacement in the direction of the force (measured in metres, m)<br><br>
+          <em>Note:</em> 1 Joule of work is done when a force of 1 Newton moves a body through a distance of 1 metre in its own direction.
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. KINETIC AND POTENTIAL ENERGY -->
+    <div class="section-block">
+      <h2 class="section-heading">2. Kinetic and Potential Energy</h2>
+      <p>
+        Energy is the capacity to do work. Think of a rubber band: when it rests on a table, it has no active energy. But if you stretch it back like a catapult, it now stores energy because of its new shape—it has the potential to snap forward. Once released, the band flies through the air; its stored energy transforms into the energy of motion. These two states represent the two primary forms of mechanical energy in our universe.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Potential Energy (PE):</span>
+        The energy possessed by a body by virtue of its specific position or deformed state. (e.g., water stored in a high dam, a compressed spring). Formula: \(PE = m \times g \times h\).
+        <br><br>
+        <span class="definition-term">Kinetic Energy (KE):</span>
+        The energy possessed by a body by virtue of its state of motion. (e.g., a speeding train, a rolling stone). Formula: \(KE = \frac{1}{2} m v^2\).
+      </div>
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Characteristic</th>
+            <th>Potential Energy (PE)</th>
+            <th>Kinetic Energy (KE)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Origin</strong></td>
+            <td>Depends entirely on the object's position, height, or physical configuration (shape).</td>
+            <td>Depends entirely on the object's velocity and motion.</td>
+          </tr>
+          <tr>
+            <td><strong>Formula</strong></td>
+            <td>\(PE = mgh\) (Gravitational PE)</td>
+            <td>\(KE = \frac{1}{2}mv^2\)</td>
+          </tr>
+          <tr>
+            <td><strong>State at Rest</strong></td>
+            <td>Can be maximum when the body is at rest at its highest position.</td>
+            <td>Always <strong>zero</strong> when the body is at rest (\(v = 0\)).</td>
+          </tr>
+          <tr>
+            <td><strong>Example</strong></td>
+            <td>A wound-up clock spring; a boulder balanced on the edge of a cliff.</td>
+            <td>A fast-moving cricket ball; wind blowing through turbines.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. CONSERVATION OF ENERGY -->
+    <div class="section-block">
+      <h2 class="section-heading">3. The Law of Conservation of Energy</h2>
+      <p>
+        Imagine a roller coaster perched at the very top of a steep drop. At this moment, it has maximum potential energy and almost no kinetic energy. As it plunges downwards, it loses height (losing potential energy) but gains immense speed (gaining kinetic energy). The energy isn't vanishing; it is merely changing its disguise. This absolute rule governs every physical process in the universe.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Law of Conservation of Energy:</span>
+        Energy can neither be created nor destroyed; it can only be transformed from one form to another. The total energy of an isolated system always remains constant.
+        <br><br>
+        • <em>Crucial Examiner Insight:</em> In ideal mechanical systems with no friction, the sum of Potential Energy and Kinetic Energy (Total Mechanical Energy) is perfectly constant at all points during motion.
+      </div>
+    </div>
+
+    <!-- 4. SIMPLE MACHINES AND LEVERS -->
+    <div class="section-block">
+      <h2 class="section-heading">4. Simple Machines and Levers</h2>
+      <p>
+        We use machines every day to make tasks easier. When you use a spoon to pry open a tight lid, or a wheelbarrow to carry heavy soil, you are using a simple machine. A machine does not create energy, but it allows us to apply a smaller force over a longer distance to overcome a larger resistive force. One of the most fundamental simple machines is the lever—a rigid bar that pivots around a fixed point.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Lever:</span>
+        A rigid, straight, or bent bar which is capable of turning about a fixed axis or point called the fulcrum (F). The force applied to the lever is the Effort (E), and the resistive force to be overcome is the Load (L).
+      </div>
+      
+      <figure class="diagram-figure">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lever_law_of_arms.svg/400px-Lever_law_of_arms.svg.png" alt="Diagram showing the three classes of levers with load, effort, and fulcrum positions" class="diagram-img">
+        <figcaption class="diagram-caption">The three classes of levers varying by the relative positions of the Fulcrum, Load, and Effort.</figcaption>
+      </figure>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Class of Lever</th>
+            <th>Configuration Structure</th>
+            <th>Mechanical Advantage (MA)</th>
+            <th>Real-World Examples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Class I</strong></td>
+            <td><strong>Fulcrum (F)</strong> is located exactly between the Load (L) and the Effort (E).</td>
+            <td>Can be \(> 1\), \(= 1\), or \(< 1\) depending on the lengths of the arms.</td>
+            <td>Seesaw, crowbar, scissors, pair of pliers.</td>
+          </tr>
+          <tr>
+            <td><strong>Class II</strong></td>
+            <td><strong>Load (L)</strong> is located exactly between the Fulcrum (F) and the Effort (E).</td>
+            <td>Always <strong>\(> 1\)</strong> (acts as a force multiplier).</td>
+            <td>Wheelbarrow, nutcracker, bottle opener.</td>
+          </tr>
+          <tr>
+            <td><strong>Class III</strong></td>
+            <td><strong>Effort (E)</strong> is located exactly between the Fulcrum (F) and the Load (L).</td>
+            <td>Always <strong>\(< 1\)</strong> (acts as a speed multiplier).</td>
+            <td>Pair of tongs, tweezers, human forearm lifting a weight.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5. MECHANICAL ADVANTAGE -->
+    <div class="section-block">
+      <h2 class="section-heading">5. Mechanical Advantage</h2>
+      <p>
+        How do we mathematically measure if a machine is actually helping us? If a lever allows you to lift a massive 1000 Newton boulder by only pushing down with 200 Newtons of effort, the lever is multiplying your force by five. This ratio is the machine's mechanical advantage, which dictates its real-world utility.
+      </p>
+      <div class="definition-box">
+        <span class="definition-term">Mechanical Advantage (MA):</span>
+        The ratio of the load (the resistive force overcome by the machine) to the effort (the force applied to the machine). 
+      </div>
+      <div class="derivation-card">
+        <span class="derivation-title">Mechanical Advantage Formula</span>
+        <div class="derivation-step">
+          &nbsp;&nbsp;&nbsp;&nbsp;$$MA = \frac{\text{Load (L)}}{\text{Effort (E)}}$$<br>
+          Because MA is a ratio of two forces (both measured in Newtons), it has <strong>no unit</strong>.<br><br>
+          <em>Interpretation:</em><br>
+          • If \(MA > 1\): The machine acts as a force multiplier. (e.g., a Class II lever like a nutcracker).<br>
+          • If \(MA < 1\): The machine acts as a speed multiplier. (e.g., a Class III lever like a broom).<br>
+          • If \(MA = 1\): The machine only changes the direction of effort. (e.g., a single fixed pulley).
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. GIVE SCIENTIFIC REASONS -->
+    <div class="section-block">
+      <h2 class="section-heading">6. Give Scientific Reasons</h2>
+      
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q1: Why is the mechanical advantage of a Class II lever always greater than 1?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reason_1')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reason_1">
+          In a Class II lever, the load is situated between the fulcrum and the effort. Because of this structural arrangement, the effort arm (distance from fulcrum to effort) is always strictly longer than the load arm (distance from fulcrum to load). Since by the principle of moments \(MA = \frac{\text{Effort Arm}}{\text{Load Arm}}\), dividing a larger number by a smaller number mathematically guarantees an MA strictly greater than 1.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Q2: A porter standing still with a heavy suitcase on his head does absolutely no work in the eyes of physics. Why?</span>
+          <button class="btn-toggle" onclick="toggleDrawer('reason_2')">View Scientific Reason ↓</button>
+        </div>
+        <div class="reasoning-answer" id="reason_2">
+          Work is defined scientifically as the product of force and displacement (\(W = F \times s\)). Even though the porter exerts an upward muscular force to support the heavy suitcase against gravity, he is standing completely still. Therefore, the displacement (\(s\)) is zero. Substituting this into the formula yields \(W = F \times 0 = 0\text{ Joules}\). Thus, zero physical work is accomplished.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 7. WORKED ICSE NUMERICALS -->
+    <div class="section-block">
+      <h2 class="section-heading">7. Worked Problems</h2>
+      
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.1: Work-Energy Calculation</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A crane lifts a block of mass \(50\text{ kg}\) vertically upwards through a height of \(8\text{ m}\). Calculate: (i) the work done by the crane, and (ii) the potential energy gained by the block. <em>(Take \(g = 10\text{ m/s}^2\))</em>
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num1">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Identify given values:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Mass (\(m\)) = \(50\text{ kg}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Displacement / Height (\(s\) or \(h\)) = \(8\text{ m}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Acceleration due to gravity (\(g\)) = \(10\text{ m/s}^2\)<br><br>
+          2. <em>Part (i): Work Done (\(W\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Force applied by crane to lift block = Weight of block = \(m \times g\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(F = 50 \times 10 = 500\text{ N}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(W = F \times s = 500\text{ N} \times 8\text{ m} = \mathbf{4000\text{ J}}\) [1.5 Marks]<br><br>
+          3. <em>Part (ii): Potential Energy (PE):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(PE = m \times g \times h\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(PE = 50 \times 10 \times 8 = \mathbf{4000\text{ J}}\) [1.5 Marks]<br><br>
+          <em>(Examiner Note: This beautifully illustrates the Work-Energy Theorem—the work done on the object is exactly equal to the energy stored within it.)</em>
+        </div>
+      </div>
+
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 2.2: Lever Mechanical Advantage</span>
+          <span class="problem-marks">[3 Marks]</span>
+        </div>
+        <div class="problem-statement">
+          A Class II lever has a mechanical advantage of 3. What effort is required to lift a heavy stone load of \(600\text{ N}\)? If the effort arm is \(1.5\text{ m}\) long, calculate the length of the load arm.
+        </div>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol_num2">
+          <strong>Step-by-Step Examiner Solution:</strong><br><br>
+          1. <em>Part (i): Calculating required Effort:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Given: \(MA = 3\), \(\text{Load (L)} = 600\text{ N}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Formula: \(MA = \frac{\text{Load}}{\text{Effort}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(3 = \frac{600}{E}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(E = \frac{600}{3} = \mathbf{200\text{ N}}\) [1.5 Marks]<br><br>
+          2. <em>Part (ii): Calculating Load Arm length:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Given: \(\text{Effort Arm} = 1.5\text{ m}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;By Principle of Moments: \(MA = \frac{\text{Effort Arm}}{\text{Load Arm}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(3 = \frac{1.5}{\text{Load Arm}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(\text{Load Arm} = \frac{1.5}{3} = \mathbf{0.5\text{ m}}\) [1.5 Marks]
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+    <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_01_motion_and_speed.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-01 · Motion, Distance, Displacement</a>
+    <a href="physics_03_light_and_reflection.html" class="topic-nav-link topic-nav-next">PHY-03 · Light, Shadows & &#8594;</a>
+  </nav>
+
+  <footer class="editorial-footer">
+    <div>Work, Energy & Simple Machines</div>
+    <div></div>
+  </footer>
+
+  <script>
+    function toggleDrawer(id) {
+      const el = document.getElementById(id);
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
+
