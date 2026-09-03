@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathematics 01: The Number Continuum: Integers, Fractions & Decimals • ICSE Class 7</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --amber-accent: #b45309;
+      --amber-soft: #fef3c7;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 17px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.65; max-width: 900px; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 52px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 20px; }
+    .section-heading { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-top: 8px; }
+    .subsection-heading { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink-black); margin-top: 14px; }
+
+    p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.75; }
+    p strong { color: var(--ink-black); }
+
+    .definition-box { background: var(--bg-surface); border-left: 4px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+
+    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
+    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; }
+    .problem-type { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--terracotta); }
+    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
+    .problem-statement { font-size: 15.5px; color: var(--ink-black); line-height: 1.65; font-weight: 500; }
+    
+    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
+    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 14px; }
+    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--terracotta); }
+    .reasoning-question { font-size: 15px; color: var(--ink-black); font-weight: 500; line-height: 1.5; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 64px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
+  
+    .content-list { padding-left: 24px; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.8; }
+    .numbered-list { padding-left: 20px; line-height: 1.8; font-size: 15px; color: var(--ink-secondary); }
+    .bullet-list { margin-top: 8px; padding-left: 20px; line-height: 1.7; }
+
+    /* TOPIC NAVIGATION */
+    .topic-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 64px 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 32px;
+    }
+    .topic-nav-link {
+      font-family: var(--font-sans);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--ink-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .topic-nav-link:hover { color: var(--ink-secondary); }
+    .topic-nav-link--hidden { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">📐 AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+  </header>
+
+  <!-- HEADER -->
+  <section class="article-header">
+    <div class="topic-kicker">Mathematics • Topic 01</div>
+    <h1 class="topic-title">The Number Continuum: Integers, Fractions & Decimals</h1>
+    <p class="topic-subtext">
+      A journey through how our numbers grow: why humans had to invent negative numbers and fractions, the real-world common sense behind multiplying negative signs, how to squeeze infinite fractions into tiny gaps, and the secret prime test for terminating decimals.
+    </p>
+  </section>
+
+  <!-- BODY CONTENT -->
+  <main class="article-body">
+
+    <!-- INTRO HOOK -->
+    <section class="section-block">
+      <h2 class="section-heading">Introduction: The Expanding Universe of Numbers</h2>
+      
+      <p>
+        Imagine you are standing in an elevator in an infinitely tall skyscraper. 
+      </p>
+      <p>
+        If you only ever travel up to the apartments, you only need positive counting numbers: Floor 1, Floor 2, Floor 3. For thousands of years, ancient civilizations got by with just these numbers because they were counting physical objects—baskets of wheat, sheep, or gold coins.
+      </p>
+      <p>
+        But what happens when you step out into the lobby? You are on <strong>Floor 0</strong>. And what happens when you press the elevator button to park your car in the underground levels? Suddenly, you are below the ground: <strong>Floor -1, Floor -2, Floor -3</strong>. 
+      </p>
+      <p>
+        Now imagine you need to stop halfway between Floor 1 and Floor 2 because the elevator cables are being serviced at Floor \(1\frac{1}{2}\). You have just walked across the entire foundation of school mathematics: from natural counting numbers, to zero, to negative integers, and finally into fractions.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">The Rational Number (In Everyday Terms)</span>
+        A <strong>rational number</strong> is any number that can be written as a simple fraction \(\frac{p}{q}\), where both the top number (\(p\)) and the bottom number (\(q\)) are whole integers, and the bottom number is <strong>not zero</strong>.<br><br>
+        The word "rational" doesn't mean the number is sensible or logical—it comes from the word <strong>ratio</strong>. If you can write it as a ratio of two integers, it belongs in this family.
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 1: THE FOUR FAMILIES -->
+    <section class="section-block">
+      <h2 class="section-heading">1. The Four Number Families: Boxes Inside Boxes</h2>
+      
+      <p>
+        Instead of thinking of numbers as a boring list of definitions, think of them like a set of Russian nesting dolls. Each new family contains everything from the previous family, plus one powerful new ability:
+      </p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Family Name</th>
+            <th>What Members Live Here?</th>
+            <th>The Superpower It Added</th>
+            <th>The Problem It Couldn't Solve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Natural Numbers (\(\mathbb{N}\))</strong></td>
+            <td>\(1, 2, 3, 4, 5, \dots\)</td>
+            <td>Counting items you can touch and see.</td>
+            <td>You cannot answer \(4 - 4\) (nothing left) or \(3 - 5\).</td>
+          </tr>
+          <tr>
+            <td><strong>Whole Numbers (\(\mathbb{W}\))</strong></td>
+            <td>\(0, 1, 2, 3, 4, \dots\)</td>
+            <td>Introduced <strong>zero</strong>. Now we can represent an empty basket.</td>
+            <td>Cannot show debt, freezing temperatures, or depths below sea level.</td>
+          </tr>
+          <tr>
+            <td><strong>Integers (\(\mathbb{Z}\))</strong></td>
+            <td>\(\dots, -3, -2, -1, 0, 1, 2, 3, \dots\)</td>
+            <td>Introduced <strong>negative numbers</strong>. Perfect for balances, scores, and opposite directions.</td>
+            <td>Cannot divide things into parts. \(5 \div 2\) has no integer answer.</td>
+          </tr>
+          <tr>
+            <td><strong>Rational Numbers (\(\mathbb{Q}\))</strong></td>
+            <td>All fractions: \(\frac{1}{2}, -\frac{7}{4}, 0.75, -3\)</td>
+            <td>Allows sharing, precise measurements, and division by any number except 0.</td>
+            <td>Cannot represent numbers whose decimals never end and never repeat (like \(\pi = 3.14159\dots\)).</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">Wait, Is a Normal Number Like -4 Really a Fraction?</div>
+        <p>
+          Yes! Any regular whole number or negative integer is secretly a fraction in disguise. You simply write it over \(1\):
+        </p>
+        <p>$$7 = \frac{7}{1} \qquad -4 = \frac{-4}{1} \qquad 0 = \frac{0}{1}$$</p>
+        <p>
+          That is why all integers belong to the Rational family. Every integer has a hidden denominator of \(1\).
+        </p>
+      </div>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ Common Student Trap: The Negative in the Denominator</span>
+        In the ICSE syllabus, a rational number is <strong>not in standard form</strong> if the negative sign is sitting on the bottom, like \(\frac{5}{-7}\). You must always shift the negative sign to the top or the front by multiplying top and bottom by \(-1\):
+        $$\frac{5}{-7} = \frac{5 \times (-1)}{-7 \times (-1)} = \mathbf{-\frac{5}{7}}$$
+        Never leave a negative sign in the denominator on an exam paper!
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 2: NEGATIVE MULTIPLICATION -->
+    <section class="section-block">
+      <h2 class="section-heading">2. Why Does Negative × Negative = Positive?</h2>
+      
+      <p>
+        Almost every student has been told: <em>"Minus times minus gives plus. Don't ask questions, just remember it."</em> But that feels completely counterintuitive. Why should multiplying two negatives suddenly turn into a positive?
+      </p>
+      <p>
+        There are two ways to understand this so it makes complete, unbreakable sense:
+      </p>
+
+      <h3 class="subsection-heading">Way 1: The Number Pattern (The Staircase)</h3>
+      <p>
+        Mathematics must follow patterns without breaking. Watch what happens when we multiply \(-4\) by a series of numbers that decrease by 1 at every step:
+      </p>
+
+      <div class="derivation-card">
+        <div class="derivation-title">The Downward Staircase Pattern</div>
+        <div class="derivation-step">
+          $$-4 \times 3 = -12$$
+          $$-4 \times 2 = -8 \quad \text{(notice: this is } 4 \text{ greater than } -12\text{)}$$
+          $$-4 \times 1 = -4 \quad \text{(again, adds } 4\text{)}$$
+          $$-4 \times 0 = \phantom{-}0 \quad \text{(again, adds } 4\text{)}$$
+          <br>
+          Now ask yourself: <strong>if the pattern continues to add 4 each time we decrease the multiplier by 1</strong>, what must come next?
+          $$-4 \times (-1) = \mathbf{+4}$$
+          $$-4 \times (-2) = \mathbf{+8}$$
+          $$-4 \times (-3) = \mathbf{+12}$$
+          If \(-4 \times -3\) gave \(-12\), the staircase pattern would suddenly snap and break! Mathematics demands that the pattern continues smoothly.
+        </div>
+      </div>
+
+      <h3 class="subsection-heading">Way 2: Real Life (The Bank Balance & The Movie Tape)</h3>
+      <p>
+        Think of your bank balance. If someone adds money to your account, that's positive. If someone takes money away, that's negative.
+      </p>
+      <ul class="content-list">
+        <li><strong>Positive × Negative:</strong> You get 3 parking fines of ₹200 each. You added 3 debts: \(3 \times (-200) = \mathbf{-600}\) (You lost ₹600).</li>
+        <li><strong>Negative × Negative:</strong> Now suppose the city realizes the parking tickets were issued by mistake, and they <strong>cancel (remove)</strong> all 3 fines. They are <strong>taking away (negative)</strong> your <strong>debt (negative)</strong>. Your bank balance goes <strong>up</strong> by ₹600!</li>
+      </ul>
+      <p>
+        $$\text{Removing a debt} = -(-600) = \mathbf{+600}$$
+      </p>
+    </section>
+
+    <!-- SUBTOPIC 3: BODMAS & THE BRACKET HIERARCHY -->
+    <section class="section-block">
+      <h2 class="section-heading">3. Order of Operations: Taming Nested Brackets</h2>
+      
+      <p>
+        When an arithmetic problem has multiple signs, brackets, and fractions, students often rush from left to right and get the wrong answer. Mathematics has a strict traffic code called <strong>BODMAS</strong>:
+      </p>
+      
+      <div class="concept-callout">
+        <div class="concept-callout-title">The BODMAS Priority Ladder</div>
+        <ol class="numbered-list">
+          <li><strong>B — Brackets:</strong> Always clear inside the brackets first.</li>
+          <li><strong>O — Of (or Orders/Powers):</strong> "Of" means multiplication (\(\frac{1}{2}\) of \(20 = 10\)), handled before regular division.</li>
+          <li><strong>D &amp; M — Division &amp; Multiplication:</strong> Equal rank, solved left-to-right.</li>
+          <li><strong>A &amp; S — Addition &amp; Subtraction:</strong> Equal rank, solved left-to-right.</li>
+        </ol>
+      </div>
+
+      <h3 class="subsection-heading">The Four Layers of Brackets (Inside-Out Rule)</h3>
+      <p>
+        In Class 7 ICSE, you will see problems with up to four nested layers of brackets. Always work like peeling an onion, from the innermost layer outwards:
+      </p>
+      <ol class="content-list">
+        <li><strong>1st: The Vinculum or Bar (\(\overline{a - b}\)):</strong> The horizontal line over numbers. It acts like the tightest bracket!</li>
+        <li><strong>2nd: Parentheses or Round Brackets:</strong> \(( \quad )\)</li>
+        <li><strong>3rd: Braces or Curly Brackets:</strong> \(\{ \quad \}\)</li>
+        <li><strong>4th: Square Brackets:</strong> \([ \quad ]\)</li>
+      </ol>
+
+      <div class="trap-box">
+        <span class="trap-title">⚠️ The Negative Sign Outside Brackets</span>
+        When you see a minus sign directly in front of a bracket, like \(-\left(x - 4\right)\), remember that the minus applies to <strong>every term inside</strong> when the bracket is removed:
+        $$-\left(x - 4\right) = -x + 4$$
+        A shocking number of exam marks are lost because students write \(-x - 4\) instead!
+      </div>
+    </section>
+
+    <!-- SUBTOPIC 4: THE DENSITY OF FRACTIONS -->
+    <section class="section-block">
+      <h2 class="section-heading">4. Squeezing Fractions: The "Sand vs. Stepping Stones" Idea</h2>
+      
+      <p>
+        If you look at the whole numbers on a ruler: \(1, 2, 3, 4\dots\) they are like <strong>stepping stones</strong> across a pond. Between stone 2 and stone 3, there is open water. There are no whole numbers between 2 and 3.
+      </p>
+      <p>
+        Rational numbers (fractions) are completely different. They are like <strong>fine sand</strong>. No matter how closely you pack two grains of sand together, if you look under a microscope, there is always room to drop another grain of sand between them.
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">The Density Property</span>
+        Between any two distinct rational numbers, there exist <strong>infinitely many</strong> other rational numbers. You can never have two rational numbers that are "next to each other."
+      </div>
+
+      <h3 class="subsection-heading">How to Find Fractions in the Middle (The Stretched Denominator Method)</h3>
+      <p>
+        Suppose an exam asks: <em>"Find 5 rational numbers between \(\frac{1}{4}\) and \(\frac{2}{3}\)."</em>
+      </p>
+      <p>
+        Here is the foolproof 3-step method:
+      </p>
+      <ol class="content-list">
+        <li><strong>Step 1: Get a common denominator.</strong> The LCM of 4 and 3 is 12:<br>
+            $$\frac{1}{4} = \frac{3}{12} \qquad \text{and} \qquad \frac{2}{3} = \frac{8}{12}$$
+        </li>
+        <li><strong>Step 2: Check the room between numerators.</strong> Between \(3\) and \(8\), we have \(4, 5, 6, 7\). That's 4 numbers, but the question asked for 5!</li>
+        <li><strong>Step 3: Stretch the fractions!</strong> Multiply top and bottom of both fractions by 10 (or 2):<br>
+            $$\frac{3 \times 10}{12 \times 10} = \frac{30}{120} \qquad \text{and} \qquad \frac{8 \times 10}{12 \times 10} = \frac{80}{120}$$
+            Now look at the huge gap: any numbers from \(\frac{31}{120}\) to \(\frac{79}{120}\) are perfectly valid answers!
+        </li>
+      </ol>
+    </section>
+
+    <!-- SUBTOPIC 5: TERMINATING VS RECURRING DECIMALS -->
+    <section class="section-block">
+      <h2 class="section-heading">5. Decimals: Will It Stop, or Loop Forever?</h2>
+      
+      <p>
+        Every fraction can be turned into a decimal by dividing the top number by the bottom number. When you do the long division, only two things can ever happen:
+      </p>
+      <ol class="content-list">
+        <li><strong>It terminates:</strong> The division ends with a remainder of 0 (e.g., \(\frac{3}{8} = 0.375\)).</li>
+        <li><strong>It repeats (recurs):</strong> The remainders start cycling in a loop, so the decimal digits repeat endlessly (e.g., \(\frac{1}{3} = 0.333\dots\) or \(\frac{5}{11} = 0.4545\dots\)).</li>
+      </ol>
+
+      <h3 class="subsection-heading">The Secret Prime Test (No Division Needed!)</h3>
+      <p>
+        Did you know you can tell whether a fraction will terminate or repeat in <strong>5 seconds</strong> without doing any division at all?
+      </p>
+
+      <div class="definition-box">
+        <span class="definition-term">The 2 and 5 Prime Factor Rule</span>
+        First, reduce the fraction to its simplest lowest terms (cancel out common factors).<br>
+        Then look at the <strong>prime factors of the denominator (bottom number)</strong>:
+        <ul class="bullet-list">
+          <li>If the denominator breaks down into <strong>only 2s, only 5s, or a mix of 2s and 5s</strong>, the decimal will <strong>always terminate (stop)</strong>!</li>
+          <li>If the denominator contains <strong>even one other prime number</strong> (like 3, 7, 11, or 13), the decimal will <strong>loop forever (repeat)</strong>!</li>
+        </ul>
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Fraction</th>
+            <th>Simplest Form</th>
+            <th>Denominator Factors</th>
+            <th>Verdict</th>
+            <th>Decimal Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>\(\frac{7}{40}\)</td>
+            <td>Already in simplest form</td>
+            <td>\(40 = 2 \times 2 \times 2 \times 5\) (only 2s and 5s)</td>
+            <td><strong>Terminating</strong></td>
+            <td>\(0.175\)</td>
+          </tr>
+          <tr>
+            <td>\(\frac{9}{24}\)</td>
+            <td>Reduces to \(\frac{3}{8}\)</td>
+            <td>\(8 = 2 \times 2 \times 2\) (only 2s)</td>
+            <td><strong>Terminating</strong></td>
+            <td>\(0.375\)</td>
+          </tr>
+          <tr>
+            <td>\(\frac{5}{12}\)</td>
+            <td>Already in simplest form</td>
+            <td>\(12 = 2 \times 2 \times 3\) (contains a 3!)</td>
+            <td><strong>Repeating</strong></td>
+            <td>\(0.41\overline{6}\)</td>
+          </tr>
+          <tr>
+            <td>\(\frac{2}{7}\)</td>
+            <td>Already in simplest form</td>
+            <td>\(7 = 7\) (contains a 7!)</td>
+            <td><strong>Repeating</strong></td>
+            <td>\(0.\overline{285714}\dots\)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">Why 2 and 5? Why Not 3 or 4?</div>
+        <p>
+          Because humans have 10 fingers, our world runs on a <strong>Base-10 decimal system</strong>. Every decimal column represents a power of 10: tenths (\(\frac{1}{10}\)), hundredths (\(\frac{1}{100}\)), thousandths (\(\frac{1}{1000}\)).
+        </p>
+        <p>
+          What are the only prime numbers that can multiply to make 10? <strong>Just 2 and 5!</strong> (\(2 \times 5 = 10\)). If a denominator has factors of 2 and 5, you can always multiply it into a neat power of 10. If it has a factor like 3 or 7, it can never evenly fit into 10, 100, or 1000, so it spills over forever into an infinite loop.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION: WORKED PROBLEMS -->
+    <section class="section-block">
+      <h2 class="section-heading">Worked Problems</h2>
+
+      <!-- Problem 1.1 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.1: Multi-Tier Nested BODMAS Reduction</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Evaluate the following expression step-by-step, peeling the brackets from the inside out:
+          $$-15 - \left[ -8 + \left\{ 4 - \left( 3 - \overline{7 - 2} \right) \right\} \right]$$
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-1')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-1">
+          <strong>The Plan:</strong> Clear the vinculum (bar) first, then round brackets, then curly braces, then square brackets.<br><br>
+
+          <strong>Step 1: Evaluate under the bar (\(\overline{7 - 2}\)):</strong><br>
+          \(7 - 2 = 5\)<br>
+          Now write down the whole line with that part replaced:<br>
+          \(= -15 - \left[ -8 + \left\{ 4 - ( 3 - 5 ) \right\} \right]\)<br><br>
+
+          <strong>Step 2: Evaluate the round brackets \((3 - 5)\):</strong><br>
+          \(3 - 5 = -2\)<br>
+          Now the expression becomes:<br>
+          \(= -15 - \left[ -8 + \left\{ 4 - (-2) \right\} \right]\)<br>
+          Remember: subtracting a negative is the same as adding a positive (\(4 - (-2) = 4 + 2 = 6\)):<br>
+          \(= -15 - \left[ -8 + 6 \right]\)<br><br>
+
+          <strong>Step 3: Evaluate the square brackets \([-8 + 6]\):</strong><br>
+          \(-8 + 6 = -2\)<br>
+          Now the expression is simplified down to:<br>
+          \(= -15 - [-2]\)<br><br>
+
+          <strong>Step 4: Final calculation:</strong><br>
+          \(-15 - (-2) = -15 + 2 = \mathbf{-13}\)
+        </div>
+      </div>
+
+      <!-- Problem 1.2 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.2: Inserting Fractions Between Negative Limits</span>
+          <span class="problem-marks">ICSE Exam Standard • 3 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Insert exactly five rational numbers between \(-\frac{2}{3}\) and \(-\frac{1}{4}\). Arrange your final answers in ascending order.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-2')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-2">
+          <strong>Step 1: Make the denominators identical with LCM:</strong><br>
+          The LCM of 3 and 4 is 12.<br>
+          $$-\frac{2}{3} = -\frac{2 \times 4}{3 \times 4} = -\frac{8}{12}$$
+          $$-\frac{1}{4} = -\frac{1 \times 3}{4 \times 3} = -\frac{3}{12}$$<br>
+
+          <strong>Step 2: Check the available integer gap:</strong><br>
+          Between \(-8\) and \(-3\), we have \(-7, -6, -5, -4\). That is only 4 integers, but we need 5 numbers.<br><br>
+
+          <strong>Step 3: Stretch the fractions wider:</strong><br>
+          Multiply both fractions top and bottom by 2:<br>
+          $$-\frac{8 \times 2}{12 \times 2} = -\frac{16}{24}$$
+          $$-\frac{3 \times 2}{12 \times 2} = -\frac{6}{24}$$<br>
+
+          <strong>Step 4: Select five numbers in ascending order (from most negative to least negative):</strong><br>
+          Between \(-16\) and \(-6\), we can easily pick:<br>
+          $$-\frac{15}{24}, -\frac{14}{24}, -\frac{13}{24}, -\frac{12}{24}, -\frac{11}{24}$$<br>
+
+          <strong>Step 5: Reduce fractions to simplest form:</strong><br>
+          $$\mathbf{-\frac{5}{8}, -\frac{7}{12}, -\frac{13}{24}, -\frac{1}{2}, -\frac{11}{24}}$$
+        </div>
+      </div>
+
+      <!-- Problem 1.3 -->
+      <div class="problem-box">
+        <div class="problem-header-row">
+          <span class="problem-type">Problem 1.3: Converting a Repeating Decimal to a Fraction</span>
+          <span class="problem-marks">ICSE Exam Standard • 4 Marks</span>
+        </div>
+        <div class="problem-statement">
+          Convert the repeating decimal \(0.3\overline{45}\) (which means \(0.3454545\dots\) where 45 repeats forever) into a regular fraction in lowest terms. Then check the bottom number to see why it repeated.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('sol-3')">Show Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="sol-3">
+          <strong>The Strategy:</strong> We want to multiply by powers of 10 to line up the repeating \(.454545\dots\) tails so they subtract and cancel out to zero!<br><br>
+
+          <strong>Step 1: Give our repeating decimal the name \(x\):</strong><br>
+          Let \(x = 0.3454545\dots\) &nbsp;&nbsp;— [Equation 1]<br><br>
+
+          <strong>Step 2: Move the non-repeating digit (3) across the decimal point:</strong><br>
+          Multiply Equation 1 by 10:<br>
+          $$10x = 3.454545\dots$$ &nbsp;&nbsp;— [Equation 2]<br><br>
+
+          <strong>Step 3: Move one full repeating block (45) across the decimal point:</strong><br>
+          Since 2 digits repeat, multiply Equation 2 by 100 (which is \(10 \times 100 = 1000\)):<br>
+          $$1000x = 345.454545\dots$$ &nbsp;&nbsp;— [Equation 3]<br><br>
+
+          <strong>Step 4: Subtract Equation 2 from Equation 3:</strong><br>
+          Notice that both equations now have the exact same infinite tail \(.454545\dots\) after the decimal point. When we subtract, the tails vanish completely!<br>
+          $$1000x - 10x = 345.4545\dots - 3.4545\dots$$
+          $$990x = 342$$
+          $$x = \frac{342}{990}$$<br>
+
+          <strong>Step 5: Reduce to lowest terms:</strong><br>
+          Divide numerator and denominator by their common factor 18:<br>
+          $$x = \frac{342 \div 18}{990 \div 18} = \mathbf{\frac{19}{55}}$$
+          <br>
+          <strong>Why did it repeat?</strong> Look at the denominator: \(55 = 5 \times 11\). Because it has an <strong>11</strong> in it (not just 2s or 5s), it could never fit into Base-10, so it was guaranteed to loop forever!
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: SCIENTIFIC & MATHEMATICAL REASONING -->
+    <section class="section-block">
+      <h2 class="section-heading">Mathematical Curiosities & "Why?" Questions</h2>
+
+      <!-- Reasoning Q1 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 1.1: Why Can't We Divide by Zero?</span>
+        </div>
+        <div class="reasoning-question">
+          Why does \(0 \div 5 = 0\), but \(5 \div 0\) causes your calculator to scream "ERROR"?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-1')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-1">
+          Think of division as reverse multiplication: \(A \div B = C\) means that \(B \times C\) must equal \(A\).<br><br>
+          <strong>For \(0 \div 5\):</strong><br>
+          You are asking: <em>"What number times 5 gives 0?"</em><br>
+          Easy! \(5 \times 0 = 0\). The answer is clearly and cleanly <strong>0</strong>.<br><br>
+          <strong>For \(5 \div 0\):</strong><br>
+          You are asking: <em>"What number times 0 gives 5?"</em><br>
+          Think about it. \(0 \times 1 = 0\), \(0 \times 100 = 0\), \(0 \times 1,000,000 = 0\). Nothing in the universe multiplied by 0 can ever equal 5! There is literally no answer, so we say it is <strong>undefined</strong>.
+        </div>
+      </div>
+
+      <!-- Reasoning Q2 -->
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 1.2: Why Are 2 and 5 So Special in Decimals?</span>
+        </div>
+        <div class="reasoning-question">
+          Why do only denominators with factors of 2 and 5 stop, while fractions with 3 or 7 loop endlessly?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-2')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-2">
+          Because humans have 10 fingers, our entire number system is <strong>Base-10</strong>.<br><br>
+          Every decimal position is based on powers of 10: tenths (\(\frac{1}{10}\)), hundredths (\(\frac{1}{100}\)), thousandths (\(\frac{1}{1000}\)).<br><br>
+          What are the only prime numbers that build 10? <strong>Just 2 and 5</strong> (\(2 \times 5 = 10\)).<br>
+          If a fraction's denominator has only 2s and 5s, you can always multiply it into a 10, 100, or 1000. For example:
+          $$\frac{1}{4} = \frac{1}{2 \times 2} \xrightarrow{\times 25} \frac{25}{100} = 0.25$$
+          But no matter what whole number you multiply 3 or 7 by, you can <strong>never</strong> turn it into 10, 100, or 1000. It simply can't fit into our Base-10 system, so it spills over into an endless repeating loop!
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="physics_12_simple_machines_and_efficiency.html" class="topic-nav-link topic-nav-prev">&#8592; PHY-12 · Simple Machines</a>
+    <a href="math_02_laws_of_indices.html" class="topic-nav-link topic-nav-next">MATH-02 · Scale &amp; Index Laws &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
+    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+  </footer>
+
+  <script>
+    function toggleSolution(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+      }
+    }
+
+    function toggleReasoning(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (el.style.display === 'block') {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
