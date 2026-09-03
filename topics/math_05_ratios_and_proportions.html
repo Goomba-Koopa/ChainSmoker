@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ratios, Proportions & The Unitary Method • ICSE Class 7 Mathematics</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --amber-accent: #b45309;
+      --amber-soft: #fef3c7;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 17px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.65; max-width: 900px; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 52px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 20px; }
+    .section-heading { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-top: 8px; }
+    .subsection-heading { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink-black); margin-top: 14px; }
+
+    p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.75; }
+    p strong { color: var(--ink-black); }
+
+    .definition-box { background: var(--bg-surface); border-left: 4px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+
+    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
+    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .problem-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; }
+    .problem-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--terracotta); }
+    .problem-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+    .problem-statement { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
+    
+    .btn-toggle { align-self: flex-start; background: transparent; border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; transition: all 0.15s ease; font-family: var(--font-sans); }
+    .btn-toggle:hover { background: var(--bg-surface); border-color: var(--terracotta); color: var(--terracotta); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-radius: 0 6px 6px 0; padding: 20px 24px; font-size: 15px; color: var(--ink-secondary); line-height: 1.75; }
+    .solution-step { margin-bottom: 10px; }
+    .solution-final { font-weight: 700; color: var(--ink-black); margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--border-strong); }
+
+    .reasoning-qa { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .reasoning-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+    .reasoning-question { font-size: 15.5px; font-weight: 500; color: var(--ink-black); line-height: 1.65; }
+    .reasoning-answer { display: none; font-size: 15px; color: var(--ink-secondary); line-height: 1.75; padding-top: 12px; border-top: 1px dashed var(--border-strong); }
+
+    .topic-nav { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding: 32px 64px 16px; background: var(--bg-warm); }
+    .topic-nav-link { font-size: 14px; font-weight: 600; color: var(--ink-secondary); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .topic-nav-link:hover { color: var(--terracotta); border-color: var(--terracotta); }
+    .topic-nav-link--hidden { visibility: hidden; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 64px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); background: var(--bg-warm); }
+    .footer-note { font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <!-- EDITORIAL MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" class="nav-back">← Compendium Index</a>
+  </header>
+
+  <!-- TOPIC HERO -->
+  <header class="article-header">
+    <div class="topic-kicker">MATHEMATICS 05 • RATIOS & VARIATIONS</div>
+    <h1 class="topic-title">Ratios, Proportions & The Unitary Method</h1>
+    <p class="topic-subtext">Comparative arithmetic, dimensionless relationships, continued proportions, and direct versus inverse scaling models.</p>
+  </header>
+
+  <!-- MAIN ARTICLE BODY -->
+  <main class="article-body">
+
+    <!-- SECTION 1: THE ANATOMY OF A RATIO -->
+    <section class="section-block">
+      <h2 class="section-heading">1. The Anatomy of a Ratio: Comparative Scaling</h2>
+      
+      <p>Imagine you are making the ultimate mango milkshake. The secret family recipe requires <strong>2 cups of mango pulp</strong> for every <strong>3 cups of chilled milk</strong>. If you want to make enough for a birthday party of thirty friends, how much pulp and milk do you buy?</p>
+
+      <p>You do not care about the absolute total volume at first; you care about the <em>relationship</em> between pulp and milk. That relationship is a <strong>ratio</strong>: an invariant comparison of two quantities of the same kind, obtained by dividing the first quantity by the second.</p>
+
+      <div class="definition-box">
+        <span class="definition-term">Ratio</span>
+        A numerical comparison of the magnitude of two quantities \(a\) and \(b\) of the <strong>exact same kind and unit</strong>, written as:
+        $$\frac{a}{b} \quad \text{or} \quad a : b$$
+        The first term \(a\) is termed the <strong>antecedent</strong>, and the second term \(b\) is termed the <strong>consequent</strong>.
+      </div>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">The Three Golden Laws of Ratios</div>
+        <p><strong>1. Dimensionless Purity:</strong> Because a ratio divides one measurement by another of the identical unit (e.g., \(40\text{ cm} / 100\text{ cm}\)), the units cancel completely. A ratio is a pure scalar number with <em>no unit attached</em>. Writing "\(2 : 3\text{ kg}\)" is an absolute mathematical error.</p>
+        <p><strong>2. Order Matters Irrevocably:</strong> The ratio \(a : b\) is fundamentally distinct from \(b : a\). In our milkshake, \(2 : 3\) gives sweet nectar; \(3 : 2\) gives thick baby puree.</p>
+        <p><strong>3. Lowest Terms Reduction:</strong> Multiplying or dividing both antecedent and consequent by the same non-zero scalar \(k\) preserves the ratio:
+        $$a : b = ka : kb = \frac{a}{k} : \frac{b}{k}$$
+        Always reduce ratios to coprime integers by dividing by their Highest Common Factor (HCF).</p>
+      </div>
+
+      <div class="trap-box">
+        <span class="trap-title">&#9888; Common Student Trap: The Unit Mismatch</span>
+        Never compute a ratio before converting both quantities into identical units. Comparing \(50\text{ paise}\) to \(Rs\; 2\) is <strong>NOT</strong> \(50 : 2 = 25 : 1\)!<br>
+        Convert rupees to paise first: \(Rs\; 2 = 200\text{ paise}\).<br>
+        True ratio: \(\frac{50}{200} = \frac{1}{4} = 1 : 4\).
+      </div>
+    </section>
+
+    <!-- SECTION 2: DIVIDING QUANTITIES IN RATIOS -->
+    <section class="section-block">
+      <h2 class="section-heading">2. Partitioning Quantities: The Total Parts Paradigm</h2>
+
+      <p>A classic ICSE problem tasks you with dividing a prize pool, a chemical solution, or a land perimeter in a specified ratio \(a : b : c\). How do we partition a concrete total \(T\)?</p>
+
+      <div class="derivation-card">
+        <div class="derivation-title">The "Common Part" Variable Derivation</div>
+        <div class="derivation-step">
+          Let two people share a total quantity \(T\) in the ratio \(a : b\).<br>
+          Because \(a : b\) is the simplified fraction, there exists an unknown scaling multiplier \(x\) (the size of one single "share" or "slice") such that:
+          $$\text{First Share} = ax, \quad \text{Second Share} = bx$$
+        </div>
+        <div class="derivation-step">
+          The sum of the individual shares must balance the total pool \(T\):
+          $$ax + bx = T \implies x(a + b) = T \implies x = \frac{T}{a + b}$$
+        </div>
+        <div class="derivation-step">
+          Substituting \(x\) back into each share produces the universal partitioning formulas:
+          $$\text{First Share} = a \left( \frac{T}{a + b} \right) = \frac{a}{\text{Sum of Terms}} \times T$$
+          $$\text{Second Share} = b \left( \frac{T}{a + b} \right) = \frac{b}{\text{Sum of Terms}} \times T$$
+        </div>
+      </div>
+
+      <p>Always perform the <strong>Consistency Check</strong>: Add your calculated shares together. If their sum does not strictly equal the original total \(T\), an arithmetic error occurred.</p>
+    </section>
+
+    <!-- SECTION 3: PROPORTIONS AND CONTINUED PROPORTIONS -->
+    <section class="section-block">
+      <h2 class="section-heading">3. Proportions &amp; The Balance of Equivalences</h2>
+
+      <p>What happens when two separate ratios are identical in value? That equality forms a <strong>proportion</strong>.</p>
+
+      <div class="definition-box">
+        <span class="definition-term">Proportion</span>
+        An equality of two ratios. If \(a : b = c : d\), we say the four numbers \(a, b, c, d\) are in proportion, denoted:
+        $$a : b :: c : d \quad \iff \quad \frac{a}{b} = \frac{c}{d}$$
+        The outer terms \(a\) and \(d\) are the <strong>extremes</strong>; the inner terms \(b\) and \(c\) are the <strong>means</strong>.
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Fundamental Theorem of Proportion</div>
+        <div class="derivation-step">
+          Multiplying both sides of \(\frac{a}{b} = \frac{c}{d}\) by the product of denominators \(b \cdot d\):
+          $$\frac{a}{b} \cdot (bd) = \frac{c}{d} \cdot (bd) \implies a \cdot d = b \cdot c$$
+          $$\mathbf{\text{Product of Extremes} = \text{Product of Means}}$$
+        </div>
+        <div class="derivation-step">
+          This golden cross-multiplication identity allows us to instantly solve for any missing fourth term when three terms are given.
+        </div>
+      </div>
+
+      <h3 class="subsection-heading">Continued Proportion &amp; The Mean Proportional</h3>
+      <p>Three quantities \(a, b, c\) are in <strong>continued proportion</strong> if the ratio of the first to the second equals the second to the third:</p>
+      $$\frac{a}{b} = \frac{b}{c} \implies b^2 = ac \implies b = \sqrt{ac}$$
+      <p>Here, \(b\) is termed the <strong>mean proportional</strong> between \(a\) and \(c\), while \(c\) is the <strong>third proportional</strong> to \(a\) and \(b\).</p>
+    </section>
+
+    <!-- SECTION 4: THE UNITARY METHOD -->
+    <section class="section-block">
+      <h2 class="section-heading">4. The Unitary Method: Direct vs. Inverse Variation</h2>
+
+      <p>The <strong>Unitary Method</strong> is the universal Swiss army knife of commercial arithmetic: <em>find the value of a single unit first</em>, then scale that single unit up to find the target total.</p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Direct Variation (Constant Quotient)</th>
+            <th>Inverse Variation (Constant Product)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Core Law</strong></td>
+            <td>As quantity \(x\) increases, quantity \(y\) increases in exact proportion.</td>
+            <td>As quantity \(x\) increases, quantity \(y\) decreases such that their product remains fixed.</td>
+          </tr>
+          <tr>
+            <td><strong>Mathematical Invariant</strong></td>
+            <td>$$\frac{y}{x} = k \quad (\text{Constant Rate})$$</td>
+            <td>$$x \cdot y = k \quad (\text{Constant Total Work / Pool})$$</td>
+          </tr>
+          <tr>
+            <td><strong>Real-World Exemplars</strong></td>
+            <td>
+              &bull; More petrol consumed = greater distance travelled.<br>
+              &bull; More notebooks purchased = higher total price.
+            </td>
+            <td>
+              &bull; More workers deployed = fewer days to finish a building.<br>
+              &bull; Faster vehicle speed = less travel time for a fixed journey.
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Action for Unit (1)</strong></td>
+            <td><strong>DIVIDE</strong> total cost by total units to get unit cost.</td>
+            <td><strong>MULTIPLY</strong> current workers by days to get total "man-days".</td>
+          </tr>
+          <tr>
+            <td><strong>Action for Target</strong></td>
+            <td><strong>MULTIPLY</strong> unit cost by requested quantity.</td>
+            <td><strong>DIVIDE</strong> total pool by the new number of workers.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="trap-box">
+        <span class="trap-title">&#9888; Common Student Trap: The "More Men" Reflex</span>
+        If 6 men take 10 days to build a wall, how long will 12 men take?<br>
+        <strong>Careless Error:</strong> "Divide 10 by 6 then multiply by 12 = 20 days." (Absurd! Adding more workers cannot make the project take longer!)<br>
+        <strong>Correct Logic (Inverse):</strong> Total work = \(6 \times 10 = 60\text{ man-days}\).<br>
+        For 12 men: \(\text{Days} = \frac{60}{12} = 5\text{ days}\).
+      </div>
+    </section>
+
+    <!-- SECTION 5: WORKED EXAM PROBLEMS -->
+    <section class="section-block">
+      <h2 class="section-heading">5. Exemplar ICSE Examination Problems</h2>
+
+      <!-- PROBLEM 1 -->
+      <div class="problem-box">
+        <div class="problem-header">
+          <span class="problem-tag">Problem 5.1 &bull; Dividing in Ratios</span>
+          <span class="problem-title">The Three-Way Inheritance Distribution</span>
+        </div>
+        <div class="problem-statement">
+          A financial estate worth <strong>Rs 1,80,000</strong> is divided among three siblings (Aarav, Bhavna, and Chirag) in the ratio \(2 : 3 : 5\). Calculate the exact monetary share received by each sibling.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('pb-1')">Reveal Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="pb-1">
+          <div class="solution-step"><strong>Step 1: Determine the total parts.</strong><br>
+            $$\text{Sum of ratio terms} = 2 + 3 + 5 = 10\text{ parts}$$
+          </div>
+          <div class="solution-step"><strong>Step 2: Calculate value per single part.</strong><br>
+            $$\text{Value of 1 part} = \frac{Rs\; 1,80,000}{10} = Rs\; 18,000$$
+          </div>
+          <div class="solution-step"><strong>Step 3: Scale each share by its respective parts.</strong><br>
+            Aarav's share: \(2 \times Rs\; 18,000 = Rs\; 36,000\)<br>
+            Bhavna's share: \(3 \times Rs\; 18,000 = Rs\; 54,000\)<br>
+            Chirag's share: \(5 \times Rs\; 18,000 = Rs\; 90,000\)
+          </div>
+          <div class="solution-final">
+            Verification: \(Rs\; 36,000 + Rs\; 54,000 + Rs\; 90,000 = Rs\; 1,80,000\). Perfect balance.
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM 2 -->
+      <div class="problem-box">
+        <div class="problem-header">
+          <span class="problem-tag">Problem 5.2 &bull; Continued Proportion</span>
+          <span class="problem-title">Finding the Mean Proportional</span>
+        </div>
+        <div class="problem-statement">
+          Find the mean proportional between <strong>8</strong> and <strong>18</strong>.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('pb-2')">Reveal Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="pb-2">
+          <div class="solution-step"><strong>Step 1: Set up the proportion relation.</strong><br>
+            Let \(x\) be the mean proportional between 8 and 18.<br>
+            By definition of continued proportion:
+            $$\frac{8}{x} = \frac{x}{18}$$
+          </div>
+          <div class="solution-step"><strong>Step 2: Cross-multiply.</strong><br>
+            $$x^2 = 8 \times 18$$
+            $$x^2 = 144$$
+          </div>
+          <div class="solution-step"><strong>Step 3: Extract the square root.</strong><br>
+            $$x = \sqrt{144} = 12$$
+          </div>
+          <div class="solution-final">
+            Final Answer: The mean proportional is <strong>12</strong> (Notice: \(8/12 = 2/3\) and \(12/18 = 2/3\)).
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM 3 -->
+      <div class="problem-box">
+        <div class="problem-header">
+          <span class="problem-tag">Problem 5.3 &bull; Inverse Unitary Method</span>
+          <span class="problem-title">The Hostel Provisions Depletion Trap</span>
+        </div>
+        <div class="problem-statement">
+          A residential boarding school has food supplies sufficient for <strong>120 students</strong> for <strong>40 days</strong>. If <strong>30 new students</strong> join the hostel on day 1, how many days will the provisions last?
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('pb-3')">Reveal Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="pb-3">
+          <div class="solution-step"><strong>Step 1: Identify variation type and compute total food capacity.</strong><br>
+            More students mean the food runs out faster. This is <strong>inverse variation</strong>.<br>
+            $$\text{Total Provision Units} = 120\text{ students} \times 40\text{ days} = 4,800\text{ student-days}$$
+          </div>
+          <div class="solution-step"><strong>Step 2: Find the updated population.</strong><br>
+            $$\text{New Total Students} = 120 + 30 = 150\text{ students}$$
+          </div>
+          <div class="solution-step"><strong>Step 3: Calculate days of sustenance.</strong><br>
+            $$\text{Number of Days} = \frac{4,800\text{ student-days}}{150\text{ students}} = 32\text{ days}$$
+          </div>
+          <div class="solution-final">
+            Final Answer: The food will last for exactly <strong>32 days</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONCEPTUAL REASONING -->
+    <section class="section-block">
+      <h2 class="section-heading">6. Scientific &amp; Mathematical Reasoning</h2>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 5.1: Why Do Ratios Discard Absolute Reality?</span>
+        </div>
+        <div class="reasoning-question">
+          If Team Alpha and Team Beta both have a win-to-loss ratio of \(3 : 1\), does that mean both teams won the exact same number of matches?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-1')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-1">
+          <strong>No, absolutely not.</strong> A ratio describes <em>relative proportion</em>, not absolute count.<br><br>
+          Team Alpha might have played only 4 games (3 wins, 1 loss), while Team Beta might have played 40 games (30 wins, 10 losses). Both simplify to \(\frac{3}{1}\). A ratio reveals the <em>quality of efficiency or distribution</em> while completely hiding the scale of the system until an absolute scalar total is provided.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 5.2: Can a Ratio Have Negative Terms?</span>
+        </div>
+        <div class="reasoning-question">
+          In Class 7 geometry and physical measurements, why are negative numbers forbidden inside ratios?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-2')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-2">
+          In standard Class 7 arithmetic, ratios measure <strong>physical magnitudes</strong>—lengths, volumes, masses, counts of people, and monetary currency.<br><br>
+          Because physical magnitudes cannot be negative (\(-3\text{ kg}\) of flour does not exist in nature), geometric and commercial ratios are strictly positive real numbers.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="math_04_linear_equations.html" class="topic-nav-link topic-nav-prev">&#8592; MATH-04 · Linear Equations</a>
+    <a href="math_06_commercial_mathematics.html" class="topic-nav-link topic-nav-next ">MATH-06 · Commercial Mathematics &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
+    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+  </footer>
+
+  <script>
+    function toggleSolution(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleReasoning(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

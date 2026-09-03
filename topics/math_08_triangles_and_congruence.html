@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triangles, Congruence, Perimeter & Area • ICSE Class 7 Mathematics</title>
+  
+  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --emerald-accent: #15803d;
+      --emerald-soft: #f0f7f2;
+      --amber-accent: #b45309;
+      --amber-soft: #fef3c7;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    
+    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
+    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    .article-header {
+      padding: 64px 64px 32px 64px;
+      width: 100%;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 16px;
+    }
+    .article-header > * { grid-column: 1; }
+    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
+    .topic-title { font-family: var(--font-serif); font-size: 44px; font-weight: 500; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
+    .topic-subtext { font-size: 17px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.65; max-width: 900px; }
+
+    .article-body {
+      margin: 0;
+      padding: 16px 64px 96px 64px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 52px;
+    }
+    .article-body > * { grid-column: 1; }
+    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
+
+    @media (max-width: 768px) {
+      .masthead { padding-left: 24px; padding-right: 24px; }
+      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
+      .article-header::after { display: none; }
+      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
+      .article-body::after { display: none; }
+      .topic-title { font-size: 32px; }
+      .topic-nav { padding: 24px 24px 12px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .article-header { padding: 48px 40px 28px 40px; }
+      .article-body { padding: 12px 40px 80px 40px; }
+      .topic-nav { padding: 28px 40px 12px; }
+    }
+
+    .section-block { display: flex; flex-direction: column; gap: 20px; }
+    .section-heading { font-family: var(--font-serif); font-size: 28px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; margin-top: 8px; }
+    .subsection-heading { font-family: var(--font-serif); font-size: 21px; font-weight: 600; color: var(--ink-black); margin-top: 14px; }
+
+    p { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.75; }
+    p strong { color: var(--ink-black); }
+
+    .definition-box { background: var(--bg-surface); border-left: 4px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
+
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+
+    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
+    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
+
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+
+    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 14px; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
+
+    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 26px 30px; display: flex; flex-direction: column; gap: 16px; }
+    .problem-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 10px; }
+    .problem-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--terracotta); }
+    .problem-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+    .problem-statement { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
+    
+    .btn-toggle { align-self: flex-start; background: transparent; border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; transition: all 0.15s ease; font-family: var(--font-sans); }
+    .btn-toggle:hover { background: var(--bg-surface); border-color: var(--terracotta); color: var(--terracotta); }
+    
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-radius: 0 6px 6px 0; padding: 20px 24px; font-size: 15px; color: var(--ink-secondary); line-height: 1.75; }
+    .solution-step { margin-bottom: 10px; }
+    .solution-final { font-weight: 700; color: var(--ink-black); margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--border-strong); }
+
+    .reasoning-qa { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+    .reasoning-header { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
+    .reasoning-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
+    .reasoning-question { font-size: 15.5px; font-weight: 500; color: var(--ink-black); line-height: 1.65; }
+    .reasoning-answer { display: none; font-size: 15px; color: var(--ink-secondary); line-height: 1.75; padding-top: 12px; border-top: 1px dashed var(--border-strong); }
+
+    .topic-nav { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-subtle); padding: 32px 64px 16px; background: var(--bg-warm); }
+    .topic-nav-link { font-size: 14px; font-weight: 600; color: var(--ink-secondary); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .topic-nav-link:hover { color: var(--terracotta); border-color: var(--terracotta); }
+    .topic-nav-link--hidden { visibility: hidden; }
+
+    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 64px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); background: var(--bg-warm); }
+    .footer-note { font-style: italic; }
+  </style>
+</head>
+<body>
+
+  <!-- EDITORIAL MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" class="nav-back">← Compendium Index</a>
+  </header>
+
+  <!-- TOPIC HERO -->
+  <header class="article-header">
+    <div class="topic-kicker">MATHEMATICS 08 • GEOMETRIC CONGRUENCE & MEASUREMENT</div>
+    <h1 class="topic-title">Triangles, Congruence, Perimeter & Area</h1>
+    <p class="topic-subtext">Structural rigidity, angle sum theorems, triangle inequalities, the four congruence criteria, and 2D mensuration boundaries.</p>
+  </header>
+
+  <!-- MAIN ARTICLE BODY -->
+  <main class="article-body">
+
+    <!-- SECTION 1: THE ANATOMY OF TRIANGLES -->
+    <section class="section-block">
+      <h2 class="section-heading">1. The Architecture of Triangles: Angle Sum &amp; Exterior Theorems</h2>
+      
+      <p>Have you ever noticed that railway bridges, bicycle frames, and construction cranes are packed with triangles? If you build a four-sided wooden square and push the corner, it immediately collapses into a crooked rhombus. But build a wooden triangle and push any vertex—it refuses to deform. The triangle is the only polygon with <strong>inherent geometric rigidity</strong>.</p>
+
+      <div class="definition-box">
+        <span class="definition-term">Classification of Triangles</span>
+        &bull; <strong>By Sides:</strong> Scalene (all sides unequal), Isosceles (two sides equal, opposite base angles equal), Equilateral (all three sides equal, each angle \(60^\circ\)).<br>
+        &bull; <strong>By Angles:</strong> Acute-angled (all angles \(< 90^\circ\)), Right-angled (one angle \(= 90^\circ\)), Obtuse-angled (one angle \(> 90^\circ\)).
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">Proof: The Angle Sum Property of a Triangle</div>
+        <div class="derivation-step">
+          Consider \(\triangle ABC\). Through vertex \(A\), draw an auxiliary construction line \(XY\) parallel to base \(BC\).
+        </div>
+        <div class="derivation-step">
+          Because \(XY \parallel BC\) with transversal \(AB\), the alternate interior angles are equal:
+          $$\angle XAB = \angle B$$
+          With transversal \(AC\), the alternate interior angles are equal:
+          $$\angle YAC = \angle C$$
+        </div>
+        <div class="derivation-step">
+          Observe the straight line \(XAY\). The sum of angles on a straight line is \(180^\circ\):
+          $$\angle XAB + \angle A + \angle YAC = 180^\circ$$
+          Substituting the alternate angles:
+          $$\mathbf{\angle B + \angle A + \angle C = 180^\circ} \quad \text{(Q.E.D.)}$$
+        </div>
+      </div>
+
+      <div class="derivation-card">
+        <div class="derivation-title">The Exterior Angle Theorem</div>
+        <div class="derivation-step">
+          If side \(BC\) of \(\triangle ABC\) is extended to point \(D\), the angle \(\angle ACD\) is an <strong>exterior angle</strong>.
+        </div>
+        <div class="derivation-step">
+          From the linear pair on line \(BCD\):
+          $$\angle ACB + \angle ACD = 180^\circ \implies \angle ACD = 180^\circ - \angle ACB$$
+          From the angle sum of \(\triangle ABC\):
+          $$\angle A + \angle B + \angle ACB = 180^\circ \implies \angle A + \angle B = 180^\circ - \angle ACB$$
+          Equating both expressions:
+          $$\mathbf{\text{Exterior } \angle ACD = \angle A + \angle B}$$
+          <em>An exterior angle of a triangle equals the sum of its two interior opposite angles.</em>
+        </div>
+      </div>
+
+      <div class="trap-box">
+        <span class="trap-title">&#9888; Common Student Trap: The Triangle Inequality</span>
+        Can you construct a triangle with sides measuring \(3\text{ cm}\), \(4\text{ cm}\), and \(8\text{ cm}\)?<br>
+        <strong>Careless Error:</strong> "Yes, just draw them."<br>
+        <strong>Geometric Law:</strong> The sum of any two sides of a triangle MUST be strictly greater than the third side:
+        $$a + b > c$$
+        Here: \(3 + 4 = 7 < 8\). The two shorter sides cannot even bridge the distance; they will lie flat without meeting! A triangle with these side lengths is physically impossible.
+      </div>
+    </section>
+
+    <!-- SECTION 2: CONGRUENCE OF TRIANGLES -->
+    <section class="section-block">
+      <h2 class="section-heading">2. Congruence: The Science of Exact Superimposition</h2>
+
+      <p>In everyday language, "similar" and "equal" are used loosely. In Euclidean geometry, <strong>Congruence</strong> (\(\cong\)) has a rigorous, unforgiving definition: two figures are congruent if and only if they have the <strong>exact same shape and exact same size</strong>, such that one can be superimposed onto the other to cover it completely.</p>
+
+      <div class="concept-callout">
+        <div class="concept-callout-title">CPCTC: Corresponding Parts of Congruent Triangles</div>
+        <p>If \(\triangle ABC \cong \triangle DEF\), then all 6 corresponding parts match perfectly:</p>
+        <p>Sides: \(AB = DE, \quad BC = EF, \quad AC = DF\)</p>
+        <p>Angles: \(\angle A = \angle D, \quad \angle B = \angle E, \quad \angle C = \angle F\)</p>
+        <p>Once congruence is proven using just 3 elements, all remaining corresponding parts are automatically equal by <strong>CPCTC</strong>.</p>
+      </div>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Congruence Criterion</th>
+            <th>Required Condition</th>
+            <th>Crucial Geometric Requirement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SSS</strong> (Side-Side-Side)</td>
+            <td>All 3 corresponding sides are equal.</td>
+            <td>Three pairs of matching sides: \(AB=DE, BC=EF, AC=DF\).</td>
+          </tr>
+          <tr>
+            <td><strong>SAS</strong> (Side-Angle-Side)</td>
+            <td>Two sides and the <strong>included angle</strong> are equal.</td>
+            <td>The angle MUST sit directly between the two known sides (e.g. angle formed at the vertex joining the two sides).</td>
+          </tr>
+          <tr>
+            <td><strong>ASA / AAS</strong> (Angle-Side-Angle)</td>
+            <td>Two angles and any corresponding side are equal.</td>
+            <td>In ASA, the side is included between the two angles. In AAS, it is non-included. Both guarantee full congruence because the third angle is fixed by the \(180^\circ\) rule.</td>
+          </tr>
+          <tr>
+            <td><strong>RHS</strong> (Right-Hypotenuse-Side)</td>
+            <td>Right angle, Hypotenuse, and one corresponding leg are equal.</td>
+            <td>Strictly applies to right-angled triangles; the hypotenuses MUST be equal.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="trap-box">
+        <span class="trap-title">&#9888; Common Student Trap: The False Congruence Criteria</span>
+        <strong>1. AAA is NOT a congruence criterion:</strong> Having identical angles proves two triangles have the same shape, but NOT the same size (e.g., an equilateral triangle with side 1 cm vs side 10 cm). AAA proves <em>similarity</em>, never congruence!<br>
+        <strong>2. SSA (ASS) is NOT a congruence criterion:</strong> Two sides and a non-included angle can produce two completely different triangles (the ambiguous case in geometry).
+      </div>
+    </section>
+
+    <!-- SECTION 3: MENSURATION PERIMETER & AREA -->
+    <section class="section-block">
+      <h2 class="section-heading">3. Mensuration: 2D Perimeter &amp; Area Foundations</h2>
+
+      <p>While geometry studies properties and proofs, <strong>Mensuration</strong> computes quantitative bounds: the boundary wire length (<strong>Perimeter</strong>) and the surface tiling capacity (<strong>Area</strong>).</p>
+
+      <table class="distinction-table">
+        <thead>
+          <tr>
+            <th>Geometric Figure</th>
+            <th>Perimeter Formula (Linear Units)</th>
+            <th>Area Formula (Square Units)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rectangle</strong></td>
+            <td>$$P = 2(l + b)$$</td>
+            <td>$$A = l \times b$$</td>
+          </tr>
+          <tr>
+            <td><strong>Square</strong></td>
+            <td>$$P = 4s$$</td>
+            <td>$$A = s^2 = \frac{1}{2}d^2 \quad (d = \text{diagonal})$$</td>
+          </tr>
+          <tr>
+            <td><strong>Triangle</strong></td>
+            <td>$$P = a + b + c$$</td>
+            <td>$$A = \frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2}bh$$</td>
+          </tr>
+          <tr>
+            <td><strong>Parallelogram</strong></td>
+            <td>$$P = 2(a + b)$$</td>
+            <td>$$A = \text{base} \times \text{height} = bh$$</td>
+          </tr>
+          <tr>
+            <td><strong>Circle</strong></td>
+            <td>$$\text{Circumference } C = 2\pi r = \pi d$$</td>
+            <td>$$A = \pi r^2 \quad \left(\pi \approx \frac{22}{7}\right)$$</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="trap-box">
+        <span class="trap-title">&#9888; Common Student Trap: Triangle Height vs Slant Side</span>
+        In \(A = \frac{1}{2}bh\), the height \(h\) MUST be the <strong>perpendicular altitude</strong> dropped from the opposite vertex onto the chosen base. Never multiply the base by an inclined, slanting side length!
+      </div>
+    </section>
+
+    <!-- SECTION 4: WORKED EXAM PROBLEMS -->
+    <section class="section-block">
+      <h2 class="section-heading">4. Exemplar ICSE Examination Problems</h2>
+
+      <!-- PROBLEM 1 -->
+      <div class="problem-box">
+        <div class="problem-header">
+          <span class="problem-tag">Problem 8.1 &bull; Angle Sum &amp; Exterior Property</span>
+          <span class="problem-title">Finding Unknown Angles of a Triangle</span>
+        </div>
+        <div class="problem-statement">
+          In \(\triangle ABC\), the exterior angle at vertex \(C\) measures <strong>125°</strong>. If the two interior opposite angles \(\angle A\) and \(\angle B\) are in the ratio <strong>2 : 3</strong>, determine the exact measure of all three interior angles of the triangle.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('pb-1')">Reveal Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="pb-1">
+          <div class="solution-step"><strong>Step 1: Express interior opposite angles in terms of common variable \(x\).</strong><br>
+            Let \(\angle A = 2x\) and \(\angle B = 3x\).
+          </div>
+          <div class="solution-step"><strong>Step 2: Apply the Exterior Angle Theorem.</strong><br>
+            $$\text{Exterior } \angle = \angle A + \angle B$$
+            $$125^\circ = 2x + 3x \implies 5x = 125^\circ \implies x = \frac{125^\circ}{5} = 25^\circ$$
+          </div>
+          <div class="solution-step"><strong>Step 3: Calculate the individual angles.</strong><br>
+            $$\angle A = 2(25^\circ) = 50^\circ$$
+            $$\angle B = 3(25^\circ) = 75^\circ$$
+          </div>
+          <div class="solution-step"><strong>Step 4: Find interior \(\angle C\) using Linear Pair or Angle Sum.</strong><br>
+            $$\angle C = 180^\circ - 125^\circ = 55^\circ$$
+          </div>
+          <div class="solution-final">
+            Verification: \(50^\circ + 75^\circ + 55^\circ = 180^\circ\). Perfect balance.<br>
+            Final Answer: \(\angle A = 50^\circ\), \(\angle B = 75^\circ\), and \(\angle C = 55^\circ\).
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM 2 -->
+      <div class="problem-box">
+        <div class="problem-header">
+          <span class="problem-tag">Problem 8.2 &bull; Geometric Congruence Proof</span>
+          <span class="problem-title">Proving Triangle Congruence via SAS</span>
+        </div>
+        <div class="problem-statement">
+          In a quadrilateral \(ABCD\), diagonal \(AC\) bisects \(\angle A\) such that \(\angle DAC = \angle BAC\). If side \(AD = AB\), prove that: (i) \(\triangle DAC \cong \triangle BAC\), and (ii) side \(DC = BC\).
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('pb-2')">Reveal Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="pb-2">
+          <div class="solution-step"><strong>Step 1: Identify the three corresponding conditions in \(\triangle DAC\) and \(\triangle BAC\).</strong><br>
+            1. \(AD = AB\) (Given)<br>
+            2. \(\angle DAC = \angle BAC\) (Given, as \(AC\) bisects \(\angle A\))<br>
+            3. \(AC = AC\) (Common side shared by both triangles)
+          </div>
+          <div class="solution-step"><strong>Step 2: Conclude congruence by Criterion.</strong><br>
+            The two matching sides enclose the equal angle (SAS criterion):<br>
+            $$\mathbf{\triangle DAC \cong \triangle BAC \quad \text{[By SAS Congruence Rule]}}$$
+          </div>
+          <div class="solution-step"><strong>Step 3: Deduce equality of target sides.</strong><br>
+            Since the triangles are congruent, their corresponding parts match:<br>
+            $$\mathbf{DC = BC \quad \text{[By CPCTC]}}$$
+          </div>
+          <div class="solution-final">
+            Q.E.D. The proof is complete with formal geometric rigor.
+          </div>
+        </div>
+      </div>
+
+      <!-- PROBLEM 3 -->
+      <div class="problem-box">
+        <div class="problem-header">
+          <span class="problem-tag">Problem 8.3 &bull; Mensuration: Running Track / Path Area</span>
+          <span class="problem-title">Calculating the Area of an Enclosing Verandah</span>
+        </div>
+        <div class="problem-statement">
+          A rectangular hall measures <strong>24 m long</strong> and <strong>16 m wide</strong>. A verandah of uniform width <strong>2 m</strong> is constructed all along the outside of the hall. Find the area of the verandah and the cost of paving it at <strong>Rs 50 per square meter</strong>.
+        </div>
+        <button class="btn-toggle" onclick="toggleSolution('pb-3')">Reveal Step-by-Step Solution ↓</button>
+        <div class="solution-drawer" id="pb-3">
+          <div class="solution-step"><strong>Step 1: Compute inner hall area.</strong><br>
+            $$\text{Inner Area } A_1 = 24\text{ m} \times 16\text{ m} = 384\text{ m}^2$$
+          </div>
+          <div class="solution-step"><strong>Step 2: Determine outer dimensions including the 2m path on both sides.</strong><br>
+            $$\text{Outer Length } L = 24 + 2(2) = 24 + 4 = 28\text{ m}$$
+            $$\text{Outer Breadth } B = 16 + 2(2) = 16 + 4 = 20\text{ m}$$
+          </div>
+          <div class="solution-step"><strong>Step 3: Compute total outer area.</strong><br>
+            $$\text{Outer Area } A_2 = 28\text{ m} \times 20\text{ m} = 560\text{ m}^2$$
+          </div>
+          <div class="solution-step"><strong>Step 4: Subtract inner area to isolate verandah.</strong><br>
+            $$\text{Area of Verandah} = A_2 - A_1 = 560 - 384 = 176\text{ m}^2$$
+          </div>
+          <div class="solution-step"><strong>Step 5: Calculate total paving cost.</strong><br>
+            $$\text{Total Cost} = 176\text{ m}^2 \times Rs\; 50/\text{m}^2 = Rs\; 8,800$$
+          </div>
+          <div class="solution-final">
+            Final Answer: Verandah Area is <strong>176 m²</strong>; Total Paving Cost is <strong>Rs 8,800</strong>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CONCEPTUAL REASONING -->
+    <section class="section-block">
+      <h2 class="section-heading">5. Structural &amp; Engineering Reasoning</h2>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 8.1: Why Are Structural Trusses Triangulated?</span>
+        </div>
+        <div class="reasoning-question">
+          Why do architectural trusses on bridges, roof rafters, and Eiffel Tower struts use interlocking triangles instead of squares or rectangles?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-1')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-1">
+          This stems directly from the <strong>SSS Congruence Theorem</strong>.<br><br>
+          If you pin three solid rods together at their ends to form a triangle, the lengths of all three sides are permanently fixed. By SSS congruence, there is only ONE unique triangle possible—its internal angles cannot change without physically bending or snapping the steel rods! A four-bar linkage (square), however, has flexible angles that allow it to shear into a skewed rhombus without altering side lengths. Triangulation guarantees structural immobility.
+        </div>
+      </div>
+
+      <div class="reasoning-qa">
+        <div class="reasoning-header">
+          <span class="reasoning-title">Curiosity 8.2: The Iso-Perimetric Paradox: Circle vs Square</span>
+        </div>
+        <div class="reasoning-question">
+          If you have a fixed 44 cm loop of string, which geometric shape encloses the maximum possible surface area?
+        </div>
+        <button class="btn-toggle" onclick="toggleReasoning('rq-2')">View Explanation ↓</button>
+        <div class="reasoning-answer" id="rq-2">
+          Let perimeter \(P = 44\text{ cm}\):<br>
+          &bull; Form a <strong>Square</strong> (side \(s = 11\text{ cm}\)): \(\text{Area} = 11^2 = 121\text{ cm}^2\).<br>
+          &bull; Form an <strong>Equilateral Triangle</strong> (side \(s = 14.67\text{ cm}\)): \(\text{Area} \approx 93.1\text{ cm}^2\).<br>
+          &bull; Form a <strong>Circle</strong> (\(2\pi r = 44 \implies r = 7\text{ cm}\)): \(\text{Area} = \frac{22}{7} \times 7^2 = 154\text{ cm}^2\).<br><br>
+          The circle encloses the <strong>greatest area for any given perimeter</strong>. This is why water droplets, soap bubbles, and planetary bodies pull themselves into circular/spherical geometry under surface tension and gravity.
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOPIC NAVIGATION -->
+  <nav class="topic-nav">
+    <a href="math_07_lines_and_angles.html" class="topic-nav-link topic-nav-prev">&#8592; MATH-07 · Lines &amp; Angles</a>
+    <a href="#" class="topic-nav-link topic-nav-next topic-nav-link--hidden"> &#8594;</a>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="editorial-footer">
+    <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
+    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+  </footer>
+
+  <script>
+    function toggleSolution(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleReasoning(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
