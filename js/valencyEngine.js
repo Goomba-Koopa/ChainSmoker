@@ -1,5 +1,5 @@
 /**
- * AXIOM ICSE 7 - Chemical Criss-Cross Valency & Formula Studio
+ * ICSE Class 7 - Chemical Criss-Cross Valency & Formula Studio
  * Interactive tool for Class 7 Chemistry:
  * - Basic Radicals (Electropositive Cations)
  * - Acid Radicals (Electronegative Anions)

@@ -95,8 +95,6 @@
     .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
     .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
 
-    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
-    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
 
     .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
     .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
@@ -149,13 +147,97 @@
     }
     .topic-nav-link:hover { color: var(--ink-secondary); }
     .topic-nav-link--hidden { visibility: hidden; }
+  
+    /* ==========================================================================
+       DESK MARGIN AESTHETICS & HEADS-UP CALLOUT ENRICHMENT
+       ========================================================================== */
+    .headsup-box {
+      background: var(--emerald-soft, #f0f7f2);
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid var(--emerald-accent, #15803d);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      font-size: 14.5px;
+      color: #166534;
+      line-height: 1.65;
+      margin: 12px 0 20px;
+    }
+    .headsup-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 6px;
+      color: var(--emerald-accent, #15803d);
+    }
+    .headsup-box p {
+      color: #166534;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .headsup-box strong {
+      color: #14532d;
+    }
+
+    .margin-sketch {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .margin-sketch svg {
+      width: 100%;
+      max-width: 100px;
+      height: auto;
+      filter: drop-shadow(0 2px 6px rgba(22, 21, 20, 0.04));
+    }
+    .desk-note {
+      grid-column: 2;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: var(--ink-muted);
+      border-left: 1.5px solid var(--border-subtle);
+      padding-left: 10px;
+      margin-top: 4px;
+      width: 100%;
+    }
+    .desk-note strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+
+    .article-body > .margin-sketch,
+    .article-body > .desk-note {
+      grid-column: 2;
+    }
+
+    @media (max-width: 768px) {
+      .article-body > .margin-sketch,
+      .article-body > .desk-note {
+        grid-column: 1 !important;
+        margin: 16px 0;
+      }
+    }
+
   </style>
 </head>
 <body>
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">📐 AXIOM <em>ICSE 7</em></a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">📐 ICSE <em>Class 7</em> Science & Math</a>
     <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 
@@ -170,6 +252,26 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
+        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
+    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
+      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="15" y="15" width="70" height="70" rx="8" fill="#fef8ea"/>
+  <!-- Area dissection model: (x+a)(x+b) -->
+  <rect x="25" y="25" width="28" height="28" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
+  <text x="36" y="42" font-family="'Newsreader', serif" font-size="9" fill="#161514">x²</text>
+  <rect x="53" y="25" width="22" height="28" fill="#fef8ea" stroke="#161514" stroke-width="1.2"/>
+  <text x="60" y="42" font-family="'Newsreader', serif" font-size="9" fill="#d97706">bx</text>
+  <rect x="25" y="53" width="28" height="22" fill="#fef8ea" stroke="#161514" stroke-width="1.2"/>
+  <text x="34" y="66" font-family="'Newsreader', serif" font-size="9" fill="#d97706">ax</text>
+  <rect x="53" y="53" width="22" height="22" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
+  <text x="59" y="66" font-family="'Newsreader', serif" font-size="9" fill="#161514">ab</text>
+</svg>
+      <div class="desk-note">
+        <strong>Geometric Algebra</strong>
+        Polynomial distribution corresponds to rectangular area dissection: \((x+a)(x+b) = x^2 + (a+b)x + ab\).
+      </div>
+    </aside>
+
 
     <!-- INTRO HOOK -->
     <section class="section-block">
@@ -295,12 +397,10 @@
         </tbody>
       </table>
 
-      <div class="trap-box">
-        <span class="trap-title">⚠️ The #1 Algebra Trap in Class 7 Exams!</span>
-        Students constantly write:
-        $$3x + 4x^2 = 7x^3 \quad \text{❌ DEAD WRONG!}$$
-        \(3x\) and \(4x^2\) are <strong>unlike terms</strong>. You cannot combine them into a single term. They must stay written as:
-        $$3x + 4x^2 \quad \text{✅ Already in simplest form!}$$
+      <div class="headsup-box">
+        <span class="headsup-title">Heads-Up &bull; Combining Unlike Algebraic Terms</span>
+        <p>\(3x\) and \(4x^2\) have different powers of \(x\) and are therefore <strong>unlike terms</strong>. They cannot be combined into a single power term:
+        $$3x + 4x^2 \quad \text{(already in simplest form)}$$</p>
       </div>
     </section>
 
@@ -328,13 +428,12 @@
         English phrasing trips up students here every single year. Look at this English sentence: <em>"Subtract 3 from 10."</em> You do \(10 - 3 = 7\), NOT \(3 - 10\)!
       </p>
 
-      <div class="trap-box">
-        <span class="trap-title">⚠️ Order &amp; Sign Distribution in Subtraction</span>
-        When an exam says: <strong>"Subtract \(P\) from \(Q\)"</strong>, you MUST write:
+      <div class="headsup-box">
+        <span class="headsup-title">Heads-Up &bull; Order and Sign Distribution in Subtraction</span>
+        <p>When an exercise specifies <strong>"Subtract \(P\) from \(Q\)"</strong>, set up the expression as:
         $$Q - (P)$$
-        Notice the brackets around \(P\)! The minus sign applies to <strong>every single term inside \(P\)</strong>:<br>
-        $$-(3x^2 - 5x + 4) = -3x^2 + 5x - 4$$
-        Every plus becomes a minus, and every minus becomes a plus!
+        Enclosing \(P\) in brackets ensures the negative sign distributes across every term inside \(P\):
+        $$-(3x^2 - 5x + 4) = -3x^2 + 5x - 4$$</p>
       </div>
     </section>
 

@@ -169,6 +169,90 @@
     .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
     .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
 
+  
+    /* ==========================================================================
+       DESK MARGIN AESTHETICS & HEADS-UP CALLOUT ENRICHMENT
+       ========================================================================== */
+    .headsup-box {
+      background: var(--emerald-soft, #f0f7f2);
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid var(--emerald-accent, #15803d);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      font-size: 14.5px;
+      color: #166534;
+      line-height: 1.65;
+      margin: 12px 0 20px;
+    }
+    .headsup-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 6px;
+      color: var(--emerald-accent, #15803d);
+    }
+    .headsup-box p {
+      color: #166534;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .headsup-box strong {
+      color: #14532d;
+    }
+
+    .margin-sketch {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .margin-sketch svg {
+      width: 100%;
+      max-width: 100px;
+      height: auto;
+      filter: drop-shadow(0 2px 6px rgba(22, 21, 20, 0.04));
+    }
+    .desk-note {
+      grid-column: 2;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: var(--ink-muted);
+      border-left: 1.5px solid var(--border-subtle);
+      padding-left: 10px;
+      margin-top: 4px;
+      width: 100%;
+    }
+    .desk-note strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+
+    .article-body > .margin-sketch,
+    .article-body > .desk-note {
+      grid-column: 2;
+    }
+
+    @media (max-width: 768px) {
+      .article-body > .margin-sketch,
+      .article-body > .desk-note {
+        grid-column: 1 !important;
+        margin: 16px 0;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -176,7 +260,7 @@
   <!-- MASTHEAD -->
   <header class="masthead">
     <a href="../index.html" class="brand-title">🌿 Biology • Topic 10</a>
-    <a href="../index.html" class="nav-back">← Back to Compendium</a>
+    <a href="../index.html" class="nav-back">← Back to Reference</a>
   </header>
 
   <!-- HEADER -->
@@ -190,6 +274,36 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
+            <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
+    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
+      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Soft organic wash -->
+  <ellipse cx="50" cy="52" rx="38" ry="34" fill="#edf5ef"/>
+  <!-- Rear Flippers/Paddles -->
+  <path d="M26 68 C20 72 15 78 14 84 C18 86 24 82 28 74 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M74 68 C80 72 85 78 86 84 C82 86 76 82 72 74 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Front Flippers/Paddles -->
+  <path d="M24 38 C16 34 10 28 8 22 C14 20 22 25 27 34 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M76 38 C84 34 90 28 92 22 C86 20 78 25 73 34 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+  <!-- Side-curved Neck & Head (Pleurodira anatomy) -->
+  <path d="M46 32 C44 24 43 18 47 14 C49 12 55 12 57 15 C59 20 57 26 54 32 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linejoin="round"/>
+  <circle cx="47" cy="14" r="1.2" fill="#161514"/>
+  <circle cx="53" cy="14" r="1.2" fill="#161514"/>
+  <!-- Rounded Carapace -->
+  <ellipse cx="50" cy="52" rx="28" ry="24" fill="#edf5ef" stroke="#161514" stroke-width="1.4"/>
+  <!-- Vertebral & Costal Scute Inking -->
+  <path d="M50 32 L56 38 L56 46 L50 50 L44 46 L44 38 Z" stroke="#161514" stroke-width="1" fill="none"/>
+  <path d="M50 50 L56 56 L56 64 L50 68 L44 64 L44 56 Z" stroke="#161514" stroke-width="1" fill="none"/>
+  <path d="M44 42 L26 44 M56 42 L74 44 M44 60 L26 62 M56 60 L74 62" stroke="#161514" stroke-width="0.9" stroke-linecap="round"/>
+  <!-- Accent pip -->
+  <circle cx="50" cy="50" r="2" fill="#2e382b"/>
+</svg>
+      <div class="desk-note">
+        <strong>Suborder Pleurodira</strong>
+        Our 6yo desk companion belongs to Class Reptilia, Order Testudines, Suborder Pleurodira—characterized by folding its cervical vertebrae horizontally sideways under the anterior marginal shell rim.
+      </div>
+    </aside>
+
 
     <!-- 1. NEED FOR CLASSIFICATION & TAXONOMY -->
     <div class="section-block">
@@ -443,9 +557,9 @@
       </div>
     </div>
 
-    <!-- 6. LOGICAL CLASSIFICATION EXEMPLARS -->
+    <!-- 6. LOGICAL CLASSIFICATION Worked Problems -->
     <div class="section-block">
-      <h2 class="section-heading">6. Worked Logical Classification Exemplars</h2>
+      <h2 class="section-heading">6. Worked Logical Classification Worked Problems</h2>
       
       <div class="problem-box">
         <div class="problem-header-row">
@@ -536,7 +650,7 @@
 
   <footer class="editorial-footer">
     <div>Biology • Topic 10: Classification of Living Organisms</div>
-    <div>CISCE Class 7 Academic Compendium</div>
+    <div>CISCE Class 7 Academic Reference</div>
   </footer>
 
   <script>

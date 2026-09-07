@@ -1,5 +1,5 @@
 /**
- * AXIOM ICSE 7 - Exam Reasoning & Distinctions Explorer
+ * ICSE Class 7 - Exam Reasoning & Distinctions Explorer
  * Formal CISCE examination response templates:
  * 1. "Give Scientific Reasons" with core underlying principles
  * 2. "Differentiate Between" with tabular comparative criteria

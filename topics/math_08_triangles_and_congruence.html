@@ -97,8 +97,6 @@
     .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: var(--ink-secondary); line-height: 1.7; }
     .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); }
 
-    .trap-box { background: var(--terracotta-soft); border: 1px solid #fed7aa; border-left: 4px solid var(--terracotta); border-radius: 0 8px 8px 0; padding: 20px 24px; font-size: 14.5px; color: #9a3412; line-height: 1.65; }
-    .trap-title { font-weight: 700; text-transform: uppercase; font-size: 12px; letter-spacing: 0.05em; display: block; margin-bottom: 6px; color: var(--terracotta); }
 
     .distinction-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
     .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; line-height: 1.6; }
@@ -134,14 +132,98 @@
 
     .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 32px 64px; display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-muted); background: var(--bg-warm); }
     .footer-note { font-style: italic; }
+  
+    /* ==========================================================================
+       DESK MARGIN AESTHETICS & HEADS-UP CALLOUT ENRICHMENT
+       ========================================================================== */
+    .headsup-box {
+      background: var(--emerald-soft, #f0f7f2);
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid var(--emerald-accent, #15803d);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      font-size: 14.5px;
+      color: #166534;
+      line-height: 1.65;
+      margin: 12px 0 20px;
+    }
+    .headsup-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 6px;
+      color: var(--emerald-accent, #15803d);
+    }
+    .headsup-box p {
+      color: #166534;
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .headsup-box strong {
+      color: #14532d;
+    }
+
+    .margin-sketch {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .margin-sketch svg {
+      width: 100%;
+      max-width: 100px;
+      height: auto;
+      filter: drop-shadow(0 2px 6px rgba(22, 21, 20, 0.04));
+    }
+    .desk-note {
+      grid-column: 2;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 12.5px;
+      line-height: 1.45;
+      color: var(--ink-muted);
+      border-left: 1.5px solid var(--border-subtle);
+      padding-left: 10px;
+      margin-top: 4px;
+      width: 100%;
+    }
+    .desk-note strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+
+    .article-body > .margin-sketch,
+    .article-body > .desk-note {
+      grid-column: 2;
+    }
+
+    @media (max-width: 768px) {
+      .article-body > .margin-sketch,
+      .article-body > .desk-note {
+        grid-column: 1 !important;
+        margin: 16px 0;
+      }
+    }
+
   </style>
 </head>
 <body>
 
   <!-- EDITORIAL MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" class="brand-title">AXIOM <em>ICSE 7</em></a>
-    <a href="../index.html" class="nav-back">← Compendium Index</a>
+    <a href="../index.html" class="brand-title">ICSE <em>Class 7</em> Science & Math</a>
+    <a href="../index.html" class="nav-back">← Reference Index</a>
   </header>
 
   <!-- TOPIC HERO -->
@@ -153,6 +235,24 @@
 
   <!-- MAIN ARTICLE BODY -->
   <main class="article-body">
+        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
+    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
+      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="38" fill="#fef8ea"/>
+  <!-- Congruent Triangle Pair -->
+  <polygon points="20,68 46,68 33,32" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
+  <polygon points="54,68 80,68 67,32" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+  <!-- Ticks on sides -->
+  <line x1="25" y1="50" x2="28" y2="48" stroke="#161514" stroke-width="1.2"/>
+  <line x1="59" y1="50" x2="62" y2="48" stroke="#d97706" stroke-width="1.2"/>
+  <text x="24" y="84" font-family="'Newsreader', serif" font-size="10" font-style="italic" fill="#797166">△ABC ≅ △PQR (CPCTC)</text>
+</svg>
+      <div class="desk-note">
+        <strong>Congruence Rigor</strong>
+        Congruence ensures complete superposability: Corresponding Parts of Congruent Triangles are strictly Congruent (CPCTC).
+      </div>
+    </aside>
+
 
     <!-- SECTION 1: THE ANATOMY OF TRIANGLES -->
     <section class="section-block">
@@ -201,13 +301,11 @@
         </div>
       </div>
 
-      <div class="trap-box">
-        <span class="trap-title">&#9888; Common Student Trap: The Triangle Inequality</span>
-        Can you construct a triangle with sides measuring \(3\text{ cm}\), \(4\text{ cm}\), and \(8\text{ cm}\)?<br>
-        <strong>Careless Error:</strong> "Yes, just draw them."<br>
-        <strong>Geometric Law:</strong> The sum of any two sides of a triangle MUST be strictly greater than the third side:
-        $$a + b > c$$
-        Here: \(3 + 4 = 7 < 8\). The two shorter sides cannot even bridge the distance; they will lie flat without meeting! A triangle with these side lengths is physically impossible.
+      <div class="headsup-box">
+        <span class="headsup-title">Heads-Up &bull; The Triangle Inequality Theorem</span>
+        <p>The sum of any two side lengths of a triangle must strictly exceed the third side length (\(a + b > c\)). For side lengths \(3\text{ cm}\), \(4\text{ cm}\), and \(8\text{ cm}\):
+        $$3 + 4 = 7 < 8$$
+        Since \(7 < 8\), these segments cannot form a closed triangle.</p>
       </div>
     </section>
 
@@ -257,10 +355,10 @@
         </tbody>
       </table>
 
-      <div class="trap-box">
-        <span class="trap-title">&#9888; Common Student Trap: The False Congruence Criteria</span>
-        <strong>1. AAA is NOT a congruence criterion:</strong> Having identical angles proves two triangles have the same shape, but NOT the same size (e.g., an equilateral triangle with side 1 cm vs side 10 cm). AAA proves <em>similarity</em>, never congruence!<br>
-        <strong>2. SSA (ASS) is NOT a congruence criterion:</strong> Two sides and a non-included angle can produce two completely different triangles (the ambiguous case in geometry).
+      <div class="headsup-box">
+        <span class="headsup-title">Heads-Up &bull; Valid vs Invalid Congruence Criteria</span>
+        <p><strong>1. AAA is a similarity criterion, not congruence:</strong> Equal corresponding angles ensure identical shape, but not necessarily equal scale or side lengths.
+        <br><strong>2. SSA (Side-Side-Angle) is not a congruence criterion:</strong> Specifying two sides and a non-included angle can yield two non-congruent triangles (the ambiguous case).</p>
       </div>
     </section>
 
@@ -307,15 +405,15 @@
         </tbody>
       </table>
 
-      <div class="trap-box">
-        <span class="trap-title">&#9888; Common Student Trap: Triangle Height vs Slant Side</span>
-        In \(A = \frac{1}{2}bh\), the height \(h\) MUST be the <strong>perpendicular altitude</strong> dropped from the opposite vertex onto the chosen base. Never multiply the base by an inclined, slanting side length!
+      <div class="headsup-box">
+        <span class="headsup-title">Heads-Up &bull; Perpendicular Altitude in Area Calculations</span>
+        <p>In the area formula \(A = \frac{1}{2}bh\), the height \(h\) must strictly be the <strong>perpendicular altitude</strong> drawn from the opposing vertex to the base line. Slant heights or adjacent sides cannot be used directly unless the triangle is right-angled.</p>
       </div>
     </section>
 
     <!-- SECTION 4: WORKED EXAM PROBLEMS -->
     <section class="section-block">
-      <h2 class="section-heading">4. Exemplar ICSE Examination Problems</h2>
+      <h2 class="section-heading">4. Worked Problem ICSE Examination Problems</h2>
 
       <!-- PROBLEM 1 -->
       <div class="problem-box">
