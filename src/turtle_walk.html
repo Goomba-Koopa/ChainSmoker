@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side-Necked Turtle // Desk Margin Animations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-warm: #fbfaf7;
+      --bg-surface: #f4efe6;
+      --border-subtle: #e6dfd3;
+      --border-strong: #d3c7b4;
+      --ink-black: #161514;
+      --ink-secondary: #423d38;
+      --ink-muted: #797166;
+      --terracotta: #c2410c;
+      --terracotta-soft: #fbf0ea;
+      --turtle-wash: #dbe4d6;
+      --turtle-shadow: #b8c7b2;
+      --turtle-line: #161514;
+      --turtle-accent: #c2410c;
+      --serenity-blue: #2563eb;
+      --font-serif: 'Newsreader', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --walk-cycle: 2.8s;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-warm);
+      color: var(--ink-black);
+      font-family: var(--font-sans);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px;
+    }
+
+    /* HEADER */
+    .masthead {
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 20px 64px;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      background: var(--bg-warm);
+    }
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--ink-black);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .nav-links { display: flex; gap: 24px; font-size: 13.5px; }
+    .nav-links a { color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid transparent; }
+    .nav-links a:hover { color: var(--terracotta); border-color: var(--terracotta); }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 32px;
+    }
+
+    .intro-header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 24px;
+    }
+    .kicker {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+    .title {
+      font-family: var(--font-serif);
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--ink-black);
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 16px;
+      color: var(--ink-secondary);
+      margin-top: 10px;
+      max-width: 720px;
+    }
+
+    /* CONTROL BAR */
+    .control-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      padding: 18px 24px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .control-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13.5px;
+    }
+    .control-group label {
+      font-weight: 600;
+      color: var(--ink-secondary);
+    }
+    .control-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink-black);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .control-btn:hover, .control-btn.active {
+      background: var(--ink-black);
+      color: #ffffff;
+      border-color: var(--ink-black);
+    }
+    .speed-slider {
+      accent-color: var(--terracotta);
+      cursor: pointer;
+    }
+
+    /* SHOWCASE GRID */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .animation-card {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 8px;
+    }
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink-black);
+    }
+    .card-badge {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      background: var(--bg-surface);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .stage-box {
+      height: 260px;
+      background: var(--bg-warm);
+      border: 1px dashed var(--border-subtle);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .stage-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+    }
+    .card-caption {
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       ANIMATION 1: TOP-DOWN (AERIAL) WALKING TURTLE
+       ========================================================================== */
+    .turtle-top-svg {
+      width: 140px;
+      height: 175px;
+      filter: drop-shadow(0 4px 10px rgba(22, 21, 20, 0.06));
+      transform-origin: center center;
+    }
+
+    /* Shell sway & heave */
+    .gait-sway {
+      animation: shell-rock var(--walk-cycle) infinite ease-in-out;
+      transform-origin: 80px 105px;
+    }
+
+    @keyframes shell-rock {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      25% { transform: rotate(1.8deg) translateY(-1.5px); }
+      50% { transform: rotate(0deg) translateY(0); }
+      75% { transform: rotate(-1.8deg) translateY(-1.5px); }
+    }
+
+    /* Side-neck characteristic lateral head sway */
+    .turtle-top-head {
+      animation: side-neck-sway var(--walk-cycle) infinite ease-in-out;
+      transform-origin: 80px 58px;
+    }
+
+    @keyframes side-neck-sway {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      25% { transform: rotate(4.5deg) translateY(-2px); }
+      50% { transform: rotate(-1deg) translateY(0); }
+      75% { transform: rotate(-4.5deg) translateY(-2px); }
+    }
+
+    /* Front Left Leg: 4-beat lateral sequence */
+    .leg-top-fl {
+      animation: fl-step var(--walk-cycle) infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 52px 76px;
+    }
+    @keyframes fl-step {
+      0%   { transform: rotate(0deg); }
+      20%  { transform: rotate(-24deg) translateY(-4px); } /* Reach forward */
+      45%  { transform: rotate(8deg); }                    /* Plant & push back */
+      75%  { transform: rotate(18deg); }                   /* Finish push */
+      100% { transform: rotate(0deg); }
+    }
+
+    /* Front Right Leg (staggered ~50% from FL) */
+    .leg-top-fr {
+      animation: fr-step var(--walk-cycle) infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 108px 76px;
+    }
+    @keyframes fr-step {
+      0%   { transform: rotate(12deg); }
+      25%  { transform: rotate(18deg); }
+      50%  { transform: rotate(0deg); }
+      70%  { transform: rotate(24deg) translateY(-4px); } /* Reach forward */
+      95%  { transform: rotate(-8deg); }
+      100% { transform: rotate(12deg); }
+    }
+
+    /* Back Left Leg (staggered ~75% after FL) */
+    .leg-top-bl {
+      animation: bl-step var(--walk-cycle) infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 54px 138px;
+    }
+    @keyframes bl-step {
+      0%   { transform: rotate(14deg); }
+      25%  { transform: rotate(0deg); }
+      50%  { transform: rotate(-12deg); }
+      75%  { transform: rotate(-26deg) translateY(-3px); } /* Reach */
+      90%  { transform: rotate(5deg); }
+      100% { transform: rotate(14deg); }
+    }
+
+    /* Back Right Leg (staggered ~25% after FL) */
+    .leg-top-br {
+      animation: br-step var(--walk-cycle) infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 106px 138px;
+    }
+    @keyframes br-step {
+      0%   { transform: rotate(-10deg); }
+      25%  { transform: rotate(26deg) translateY(-3px); } /* Reach */
+      45%  { transform: rotate(5deg); }
+      75%  { transform: rotate(-16deg); }
+      100% { transform: rotate(-10deg); }
+    }
+
+    /* Tail wiggle */
+    .turtle-top-tail {
+      animation: tail-wiggle var(--walk-cycle) infinite ease-in-out;
+      transform-origin: 80px 154px;
+    }
+    @keyframes tail-wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-5deg); }
+      75% { transform: rotate(5deg); }
+    }
+
+
+    /* ==========================================================================
+       ANIMATION 2: SIDE PROFILE (HORIZON) WALKING TURTLE
+       ========================================================================== */
+    .turtle-side-svg {
+      width: 220px;
+      height: 120px;
+      filter: drop-shadow(0 4px 10px rgba(22, 21, 20, 0.05));
+    }
+
+    .ground-track {
+      position: absolute;
+      bottom: 68px;
+      width: 100%;
+      height: 1px;
+      background: var(--border-strong);
+    }
+    .ground-ruler-ticks {
+      position: absolute;
+      bottom: 60px;
+      width: 100%;
+      height: 8px;
+      background-image: repeating-linear-gradient(90deg, var(--border-strong), var(--border-strong) 1px, transparent 1px, transparent 15px);
+    }
+
+    /* Shell gentle vertical heave */
+    .side-body-group {
+      animation: side-heave var(--walk-cycle) infinite ease-in-out;
+      transform-origin: 110px 80px;
+    }
+    @keyframes side-heave {
+      0%, 50%, 100% { transform: translateY(0); }
+      25%, 75% { transform: translateY(-2px) rotate(0.5deg); }
+    }
+
+    /* Long side-neck bobbing forward-back */
+    .side-head-neck {
+      animation: side-neck-reach var(--walk-cycle) infinite ease-in-out;
+      transform-origin: 72px 76px;
+    }
+    @keyframes side-neck-reach {
+      0%, 100% { transform: rotate(0deg) translateX(0); }
+      25%  { transform: rotate(1.5deg) translateX(3px); }
+      50%  { transform: rotate(-1deg) translateX(-1px); }
+      75%  { transform: rotate(1.5deg) translateX(3px); }
+    }
+
+    /* Near Front Leg */
+    .side-leg-near-front {
+      animation: side-foreleg-step var(--walk-cycle) infinite cubic-bezier(0.4, 0, 0.2, 1);
+      transform-origin: 84px 80px;
+    }
+    @keyframes side-foreleg-step {
+      0%   { transform: rotate(0deg); }
+      20%  { transform: rotate(-22deg) translateY(-5px); } /* Lift and reach */
+      40%  { transform: rotate(10deg) translateY(0); }     /* Plant */
+      70%  { transform: rotate(18deg) translateY(0); }     /* Push */
+      100% { transform: rotate(0deg); }
+    }
+
+    /* Far Front Leg (180 deg out of phase) */
+    .side-leg-far-front {
+      animation: side-foreleg-step var(--walk-cycle) infinite cubic-bezier(0.4, 0, 0.2, 1);
+      animation-delay: calc(var(--walk-cycle) * -0.5);
+      transform-origin: 90px 80px;
+      opacity: 0.82;
+    }
+
+    /* Near Hind Leg */
+    .side-leg-near-hind {
+      animation: side-hindleg-step var(--walk-cycle) infinite cubic-bezier(0.4, 0, 0.2, 1);
+      animation-delay: calc(var(--walk-cycle) * -0.25);
+      transform-origin: 144px 82px;
+    }
+    @keyframes side-hindleg-step {
+      0%   { transform: rotate(0deg); }
+      20%  { transform: rotate(-18deg) translateY(-4px); } /* Lift */
+      45%  { transform: rotate(8deg) translateY(0); }     /* Ground */
+      75%  { transform: rotate(16deg) translateY(0); }    /* Push-off */
+      100% { transform: rotate(0deg); }
+    }
+
+    /* Far Hind Leg (offset) */
+    .side-leg-far-hind {
+      animation: side-hindleg-step var(--walk-cycle) infinite cubic-bezier(0.4, 0, 0.2, 1);
+      animation-delay: calc(var(--walk-cycle) * -0.75);
+      transform-origin: 148px 82px;
+      opacity: 0.82;
+    }
+
+
+    /* ==========================================================================
+       FULL DESK DEMO: The 1fr 120px Desk Grid with Turtle in Margin!
+       ========================================================================== */
+    .desk-demo-section {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 8px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .demo-header-row {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    /* Simulated ICSE Desk Page */
+    .simulated-desk-canvas {
+      background: var(--bg-warm);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      display: grid;
+      grid-template-columns: 1fr 120px;
+      gap: 24px;
+      padding: 36px 40px;
+      position: relative;
+    }
+
+    .lesson-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .mock-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--ink-black);
+    }
+    .mock-para {
+      font-size: 14.5px;
+      color: var(--ink-secondary);
+      line-height: 1.65;
+    }
+    .mock-box {
+      background: var(--bg-surface);
+      border-left: 3px solid var(--terracotta);
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      font-size: 13.5px;
+      color: var(--ink-secondary);
+    }
+
+    /* The 120px Column */
+    .margin-column {
+      border-left: 1px dashed var(--border-strong);
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      position: relative;
+    }
+    .margin-column-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      align-self: flex-start;
+      margin-bottom: 8px;
+    }
+
+    /* Active Margin Wanderer */
+    .margin-turtle-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .margin-turtle-wrap:hover {
+      transform: scale(1.04);
+    }
+    .margin-note-caption {
+      font-family: var(--font-serif);
+      font-size: 11.5px;
+      font-style: italic;
+      color: var(--ink-muted);
+      line-height: 1.35;
+      max-width: 96px;
+    }
+
+    /* Moving Crawler Mode across the notebook */
+    .crawl-track-box {
+      width: 100%;
+      height: 180px;
+      background: var(--bg-warm);
+      border: 1px dashed var(--border-subtle);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .crawling-turtle-actor {
+      position: absolute;
+      top: 30px;
+      animation: traverse-desk 16s linear infinite;
+    }
+    @keyframes traverse-desk {
+      0% { transform: translateX(-120px); }
+      100% { transform: translateX(1050px); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <a href="../index.html" class="brand-title">ICSE <em>Class 7</em> Science & Math</a>
+    <div class="nav-links">
+      <a href="../index.html">Topics Index</a>
+      <a href="../HISTORY.md">Project History</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="intro-header">
+      <div class="kicker">Anatomical Desk Companion</div>
+      <h1 class="title">The Side-Necked Turtle (<em>Pleurodira</em>)</h1>
+      <p class="subtitle">
+        A hand-inked, smooth looping SVG walking gait designed specifically for the 120px right margin of the desk workspace.
+      </p>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="control-panel">
+      <div class="control-group">
+        <label for="speedSlider">Gait Cadence:</label>
+        <input type="range" id="speedSlider" class="speed-slider" min="1.0" max="5.0" step="0.2" value="2.8">
+        <span id="speedVal" style="font-family: var(--font-mono); font-size: 12.5px; color: var(--terracotta);">2.8s</span>
+      </div>
+
+      <div class="control-group">
+        <label>Palette Wash:</label>
+        <button class="control-btn active" onclick="setPalette('olive')">Moss Olive</button>
+        <button class="control-btn" onclick="setPalette('serenity')">Serenity Blue</button>
+        <button class="control-btn" onclick="setPalette('terracotta')">Terracotta Ink</button>
+      </div>
+
+      <div class="control-group">
+        <button class="control-btn" id="togglePencilMarks" onclick="toggleFootprints()">Show Footfalls</button>
+      </div>
+    </div>
+
+    <!-- SHOWCASE 2-COL -->
+    <div class="showcase-grid">
+
+      <!-- CARD 1: TOP-DOWN AERIAL -->
+      <div class="animation-card">
+        <div class="card-meta">
+          <h2 class="card-title">1. Aerial Desk View (Top-Down)</h2>
+          <span class="card-badge">ViewBox: 160 × 200</span>
+        </div>
+
+        <div class="stage-box">
+          <div class="stage-grid-lines"></div>
+
+          <!-- TOP DOWN TURTLE SVG -->
+          <svg class="turtle-top-svg" viewBox="0 0 160 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="gait-sway">
+
+              <!-- TAIL -->
+              <g class="turtle-top-tail">
+                <path d="M80 148 C78 156 77 164 79 168 C80 169 81 169 82 168 C83 164 82 156 80 148 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+
+              <!-- BACK LEFT LEG (Broad webbed paddle) -->
+              <g class="leg-top-bl">
+                <path d="M48 134 C36 138 27 146 25 156 C24 159 28 161 32 160 C40 156 47 148 52 139 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Claws -->
+                <path d="M25 157L22 161 M29 159L27 164 M33 159L33 164" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linecap="round"/>
+              </g>
+
+              <!-- BACK RIGHT LEG (Broad webbed paddle) -->
+              <g class="leg-top-br">
+                <path d="M112 134 C124 138 133 146 135 156 C136 159 132 161 128 160 C120 156 113 148 108 139 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Claws -->
+                <path d="M135 157L138 161 M131 159L133 164 M127 159L127 164" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linecap="round"/>
+              </g>
+
+              <!-- FRONT LEFT LEG (Sturdy front paddle) -->
+              <g class="leg-top-fl">
+                <path d="M46 82 C32 78 22 69 18 57 C16 53 20 52 24 54 C34 60 43 70 49 78 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Digits -->
+                <path d="M18 56L14 53 M21 54L18 50 M25 55L24 50" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linecap="round"/>
+              </g>
+
+              <!-- FRONT RIGHT LEG (Sturdy front paddle) -->
+              <g class="leg-top-fr">
+                <path d="M114 82 C128 78 138 69 142 57 C144 53 140 52 136 54 C126 60 117 70 111 78 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Digits -->
+                <path d="M142 56L146 53 M139 54L142 50 M135 55L136 50" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linecap="round"/>
+              </g>
+
+              <!-- HEAD & COMPACT SIDE-NECK (Naturally curved, not overstretched) -->
+              <g class="turtle-top-head">
+                <!-- Characteristic lateral neck curve resting near anterior shell notch -->
+                <path d="M72 68 C70 56 68 46 73 37 C75 33 82 33 84 37 C87 46 86 56 84 68 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linejoin="round"/>
+                <!-- Rounded, friendly head -->
+                <path d="M72 38 C70 30 74 24 78 24 C82 24 86 30 84 38 C82 42 74 42 72 38 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.5" stroke-linejoin="round"/>
+                <!-- Bright dark eyes -->
+                <circle cx="73.5" cy="31" r="1.8" fill="var(--turtle-line)"/>
+                <circle cx="73" cy="30.5" r="0.5" fill="#ffffff"/>
+                <circle cx="82.5" cy="31" r="1.8" fill="var(--turtle-line)"/>
+                <circle cx="83" cy="30.5" r="0.5" fill="#ffffff"/>
+                <!-- Nostrils -->
+                <circle cx="77" cy="26" r="0.5" fill="var(--turtle-line)"/>
+                <circle cx="79" cy="26" r="0.5" fill="var(--turtle-line)"/>
+              </g>
+
+              <!-- CARAPACE (SHELL) - Broad, rounded, natural 6-year-old proportions -->
+              <path d="M80 62 C120 62 132 82 132 108 C132 134 120 152 80 152 C40 152 28 134 28 108 C28 82 40 62 80 62 Z" fill="var(--turtle-wash)"/>
+              <path d="M80 62 C120 62 132 82 132 108 C132 134 120 152 80 152 C40 152 28 134 28 108 C28 82 40 62 80 62 Z" stroke="var(--turtle-line)" stroke-width="1.8" stroke-linejoin="round"/>
+
+              <!-- Marginal Rim Edge -->
+              <path d="M80 66 C115 66 126 84 126 108 C126 130 115 147 80 147 C45 147 34 130 34 108 C34 84 45 66 80 66 Z" stroke="var(--turtle-line)" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.65"/>
+
+              <!-- Vertebral Scutes (Spinal plates) -->
+              <path d="M80 70 L90 79 L90 92 L80 98 L70 92 L70 79 Z" fill="none" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linejoin="round"/>
+              <path d="M80 98 L91 107 L91 122 L80 128 L69 122 L69 107 Z" fill="none" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linejoin="round"/>
+              <path d="M80 128 L88 136 L88 144 L80 148 L72 144 L72 136 Z" fill="none" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linejoin="round"/>
+
+              <!-- Costal Scute Radiating Lines -->
+              <path d="M70 85 L42 90 M90 85 L118 90" stroke="var(--turtle-line)" stroke-width="1" stroke-linecap="round"/>
+              <path d="M69 114 L40 118 M91 114 L120 118" stroke="var(--turtle-line)" stroke-width="1" stroke-linecap="round"/>
+              <path d="M72 138 L44 141 M88 138 L116 141" stroke="var(--turtle-line)" stroke-width="1" stroke-linecap="round"/>
+
+              <!-- Organic Ink Stipple & Terracotta Center Pip -->
+              <circle cx="80" cy="112" r="2.5" fill="var(--turtle-accent)" opacity="0.85"/>
+
+            </g>
+          </svg>
+        </div>
+
+        <p class="card-caption">
+          Updated 6-year-old proportions: broad, rounded carapace, sturdy paddle limbs, and the compact lateral neck fold characteristic of <em>Pleurodira</em>.
+        </p>
+      </div>
+
+      <!-- CARD 2: SIDE HORIZON PROFILE -->
+      <div class="animation-card">
+        <div class="card-meta">
+          <h2 class="card-title">2. Desk Horizon Profile (Side View)</h2>
+          <span class="card-badge">ViewBox: 220 × 120</span>
+        </div>
+
+        <div class="stage-box">
+          <div class="ground-track"></div>
+          <div class="ground-ruler-ticks"></div>
+
+          <!-- SIDE PROFILE TURTLE SVG -->
+          <svg class="turtle-side-svg" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- FAR LIMBS (Darker wash for depth) -->
+            <g class="side-leg-far-front">
+              <path d="M96 82 C93 89 89 96 84 102 C81 104 86 105 91 103 C95 98 98 91 100 84 Z" fill="var(--turtle-shadow)" stroke="var(--turtle-line)" stroke-width="1.3" stroke-linejoin="round"/>
+            </g>
+            <g class="side-leg-far-hind">
+              <path d="M148 82 C150 89 153 96 158 102 C161 104 156 105 151 103 C147 98 145 91 145 84 Z" fill="var(--turtle-shadow)" stroke="var(--turtle-line)" stroke-width="1.3" stroke-linejoin="round"/>
+            </g>
+
+            <!-- MAIN BODY GROUP (Heaves slightly) -->
+            <g class="side-body-group">
+
+              <!-- TAIL -->
+              <path d="M158 84 C165 86 171 88 173 89 C171 90 165 89 158 87 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.3" stroke-linecap="round"/>
+
+              <!-- HEAD & EXTENDED SIDE-NECK (Naturally compact, not overstretched) -->
+              <g class="side-head-neck">
+                <path d="M76 82 C70 78 58 72 50 72 C44 72 38 68 32 68 C27 68 25 72 30 76 C36 80 48 84 72 86 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linejoin="round"/>
+                <!-- Head contour -->
+                <path d="M34 68 C28 66 22 69 21 73 C20 77 25 79 31 77 C35 76 37 71 34 68 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.5" stroke-linejoin="round"/>
+                <!-- Eye -->
+                <circle cx="26" cy="72" r="1.8" fill="var(--turtle-line)"/>
+                <circle cx="25.5" cy="71.5" r="0.6" fill="#ffffff"/>
+                <!-- Beak line -->
+                <path d="M21 74L25 75" stroke="var(--turtle-line)" stroke-width="1" stroke-linecap="round"/>
+              </g>
+
+              <!-- PLASTRON (Underside shell) -->
+              <path d="M72 88 L152 88 C152 92 72 92 72 88 Z" fill="var(--turtle-shadow)" stroke="var(--turtle-line)" stroke-width="1.3"/>
+
+              <!-- CARAPACE DOME (Rounder, fuller dome for 6-year-old) -->
+              <path d="M68 88 C66 66 84 48 112 48 C140 48 156 66 154 88 Z" fill="var(--turtle-wash)"/>
+              <path d="M68 88 C66 66 84 48 112 48 C140 48 156 66 154 88 Z" stroke="var(--turtle-line)" stroke-width="1.8" stroke-linejoin="round"/>
+
+              <!-- Carapace Scute Arcs -->
+              <path d="M92 88 C90 66 102 56 112 56 C122 56 134 66 132 88" stroke="var(--turtle-line)" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M112 56 V48" stroke="var(--turtle-line)" stroke-width="1.2"/>
+              <path d="M92 74 C80 75 72 82 68 88" stroke="var(--turtle-line)" stroke-width="1"/>
+              <path d="M132 74 C144 75 150 82 154 88" stroke="var(--turtle-line)" stroke-width="1"/>
+              <circle cx="112" cy="68" r="2.2" fill="var(--turtle-accent)" opacity="0.8"/>
+
+            </g>
+
+            <!-- NEAR LIMBS -->
+            <!-- Near Front Foreleg -->
+            <g class="side-leg-near-front">
+              <path d="M84 80 C80 87 75 95 68 101 C64 103 71 104 77 102 C82 97 86 89 88 82 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M68 102L64 104 M73 103L70 105" stroke="var(--turtle-line)" stroke-width="1.1" stroke-linecap="round"/>
+            </g>
+
+            <!-- Near Hind Leg -->
+            <g class="side-leg-near-hind">
+              <path d="M140 82 C143 89 146 96 152 101 C156 103 150 104 144 102 C139 97 136 89 137 82 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4" stroke-linejoin="round"/>
+              <path d="M152 102L156 104 M148 103L151 105" stroke="var(--turtle-line)" stroke-width="1.1" stroke-linecap="round"/>
+            </g>
+
+          </svg>
+        </div>
+
+        <p class="card-caption">
+          Side profile with fuller carapace dome and compact neck curve.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- LIVE DESK WORKSPACE INTEGRATION PREVIEW -->
+    <div class="desk-demo-section">
+      <div class="demo-header-row">
+        <div>
+          <h2 style="font-family: var(--font-serif); font-size: 22px; font-weight: 600;">The 120px Desk Margin in Practice</h2>
+          <p style="font-size: 14px; color: var(--ink-muted); margin-top: 4px;">Demonstrating how the turtle lives quietly on the right margin of a live lesson without crowding the prose.</p>
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 12px; color: var(--terracotta);">grid-template-columns: 1fr 120px;</span>
+      </div>
+
+      <div class="simulated-desk-canvas">
+        
+        <!-- MAIN LESSON COLUMN -->
+        <div class="lesson-column">
+          <div style="font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--terracotta);">Physics // Lesson 01</div>
+          <h3 class="mock-title">Translatory Motion & The Rigid Body</h3>
+          <p class="mock-para">
+            When a body undergoes translatory motion, every point inside it moves through the same distance along parallel lines in equal intervals of time. If you slide a flat notebook across a smooth wooden desk, the vector connecting two marked points on the front edge remains strictly parallel to its new position ($AB \parallel A'B'$).
+          </p>
+          <div class="mock-box">
+            <strong>Key Distinction:</strong> Rectilinear translation travels along a straight line; curvilinear translation follows a curve, but the orientation of the line segments never rotates.
+          </div>
+          <p class="mock-para" style="font-size: 13.5px; color: var(--ink-muted);">
+            Deriving average velocity from first principles: $v_{\text{avg}} = \frac{\Delta s}{\Delta t}$. In SI units, measured strictly in meters per second ($\text{m}\cdot\text{s}^{-1}$).
+          </p>
+        </div>
+
+        <!-- 120px RIGHT MARGIN -->
+        <div class="margin-column">
+          <div class="margin-column-label">120px Desk Margin</div>
+
+          <!-- THE MARGIN TURTLE DWELLER -->
+          <div class="margin-turtle-wrap">
+            <svg viewBox="0 0 160 200" width="86" height="108" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="gait-sway">
+                <!-- Tail -->
+                <g class="turtle-top-tail">
+                  <path d="M80 148 C78 156 77 164 79 168 C80 169 81 169 82 168 C83 164 82 156 80 148 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.5"/>
+                </g>
+                <!-- Legs -->
+                <g class="leg-top-bl"><path d="M48 134 C36 138 27 146 25 156 C24 159 28 161 32 160 C40 156 47 148 52 139 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/></g>
+                <g class="leg-top-br"><path d="M112 134 C124 138 133 146 135 156 C136 159 132 161 128 160 C120 156 113 148 108 139 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/></g>
+                <g class="leg-top-fl"><path d="M46 82 C32 78 22 69 18 57 C16 53 20 52 24 54 C34 60 43 70 49 78 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/></g>
+                <g class="leg-top-fr"><path d="M114 82 C128 78 138 69 142 57 C144 53 140 52 136 54 C126 60 117 70 111 78 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/></g>
+                <!-- Head -->
+                <g class="turtle-top-head">
+                  <path d="M72 68 C70 56 68 46 73 37 C75 33 82 33 84 37 C87 46 86 56 84 68 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/>
+                  <path d="M72 38 C70 30 74 24 78 24 C82 24 86 30 84 38 C82 42 74 42 72 38 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.5"/>
+                  <circle cx="73.5" cy="31" r="1.8" fill="var(--turtle-line)"/><circle cx="82.5" cy="31" r="1.8" fill="var(--turtle-line)"/>
+                </g>
+                <!-- Shell -->
+                <path d="M80 62 C120 62 132 82 132 108 C132 134 120 152 80 152 C40 152 28 134 28 108 C28 82 40 62 80 62 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.8"/>
+                <path d="M80 70 L90 79 L90 92 L80 98 L70 92 L70 79 Z" fill="none" stroke="var(--turtle-line)" stroke-width="1.2"/>
+                <path d="M80 98 L91 107 L91 122 L80 128 L69 122 L69 107 Z" fill="none" stroke="var(--turtle-line)" stroke-width="1.2"/>
+                <circle cx="80" cy="112" r="2.2" fill="var(--turtle-accent)"/>
+              </g>
+            </svg>
+            <div class="margin-note-caption">Steady pace, no hurry.</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TRAVERSAL RUNWAY -->
+      <div style="margin-top: 32px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h3 style="font-family: var(--font-serif); font-size: 18px; font-weight: 600;">Continuous Paper Wanderer</h3>
+          <span style="font-size: 12.5px; color: var(--ink-muted);">Wandering peacefully across the desk plane</span>
+        </div>
+        <div class="crawl-track-box">
+          <div class="ground-ruler-ticks" style="bottom: 0;"></div>
+          <div class="crawling-turtle-actor">
+            <svg viewBox="0 0 220 120" width="160" height="90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g class="side-leg-far-front"><path d="M96 82 C93 89 89 96 84 102 C81 104 86 105 91 103 C95 98 98 91 100 84 Z" fill="var(--turtle-shadow)" stroke="var(--turtle-line)" stroke-width="1.3"/></g>
+              <g class="side-leg-far-hind"><path d="M148 82 C150 89 153 96 158 102 C161 104 156 105 151 103 C147 98 145 91 145 84 Z" fill="var(--turtle-shadow)" stroke="var(--turtle-line)" stroke-width="1.3"/></g>
+              <g class="side-body-group">
+                <path d="M158 84 C165 86 171 88 173 89 C171 90 165 89 158 87 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.3"/>
+                <g class="side-head-neck">
+                  <path d="M76 82 C70 78 58 72 50 72 C44 72 38 68 32 68 C27 68 25 72 30 76 C36 80 48 84 72 86 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/>
+                  <path d="M34 68 C28 66 22 69 21 73 C20 77 25 79 31 77 C35 76 37 71 34 68 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.5"/>
+                  <circle cx="26" cy="72" r="1.8" fill="var(--turtle-line)"/><circle cx="25.5" cy="71.5" r="0.6" fill="#ffffff"/>
+                </g>
+                <path d="M72 88 L152 88 C152 92 72 92 72 88 Z" fill="var(--turtle-shadow)" stroke="var(--turtle-line)" stroke-width="1.3"/>
+                <path d="M68 88 C66 66 84 48 112 48 C140 48 156 66 154 88 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.8"/>
+                <path d="M92 88 C90 66 102 56 112 56 C122 56 134 66 132 88" stroke="var(--turtle-line)" stroke-width="1.2"/>
+                <circle cx="112" cy="68" r="2.2" fill="var(--turtle-accent)"/>
+              </g>
+              <g class="side-leg-near-front"><path d="M84 80 C80 87 75 95 68 101 C64 103 71 104 77 102 C82 97 86 89 88 82 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/></g>
+              <g class="side-leg-near-hind"><path d="M140 82 C143 89 146 96 152 101 C156 103 150 104 144 102 C139 97 136 89 137 82 Z" fill="var(--turtle-wash)" stroke="var(--turtle-line)" stroke-width="1.4"/></g>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    const slider = document.getElementById('speedSlider');
+    const speedVal = document.getElementById('speedVal');
+
+    slider.addEventListener('input', (e) => {
+      const val = parseFloat(e.target.value).toFixed(1);
+      document.documentElement.style.setProperty('--walk-cycle', `${val}s`);
+      speedVal.textContent = `${val}s`;
+    });
+
+    function setPalette(type) {
+      document.querySelectorAll('.control-panel .control-btn').forEach(b => {
+        if (b.textContent.toLowerCase().includes(type) || (type === 'olive' && b.textContent.includes('Moss'))) {
+          b.classList.add('active');
+        } else if (!b.id) {
+          b.classList.remove('active');
+        }
+      });
+
+      if (type === 'olive') {
+        document.documentElement.style.setProperty('--turtle-wash', '#dbe4d6');
+        document.documentElement.style.setProperty('--turtle-shadow', '#b8c7b2');
+        document.documentElement.style.setProperty('--turtle-accent', '#c2410c');
+      } else if (type === 'serenity') {
+        document.documentElement.style.setProperty('--turtle-wash', '#dbeafe');
+        document.documentElement.style.setProperty('--turtle-shadow', '#bfdbfe');
+        document.documentElement.style.setProperty('--turtle-accent', '#2563eb');
+      } else if (type === 'terracotta') {
+        document.documentElement.style.setProperty('--turtle-wash', '#fbf0ea');
+        document.documentElement.style.setProperty('--turtle-shadow', '#f4ded2');
+        document.documentElement.style.setProperty('--turtle-accent', '#9a3412');
+      }
+    }
+
+    let footprintsVisible = false;
+    function toggleFootprints() {
+      footprintsVisible = !footprintsVisible;
+      const btn = document.getElementById('togglePencilMarks');
+      btn.classList.toggle('active', footprintsVisible);
+    }
+  </script>
+</body>
+</html>

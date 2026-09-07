@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ICSE Class 7 Science Compendium</title>
+  <title>ICSE Class 7 Science & Mathematics</title>
   
   <!-- Typography: Newsreader (Serif) + Plus Jakarta Sans (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -98,33 +98,536 @@
     }
 
     .hero-kicker {
-      font-size: 12.5px;
+      font-size: 11.5px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 14px;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-kicker::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--terracotta);
+      border-radius: 1px;
     }
 
     .hero-heading {
       font-family: var(--font-serif);
       font-size: 46px;
       font-weight: 500;
-      line-height: 1.15;
+      line-height: 1.12;
       color: var(--ink-black);
-      letter-spacing: -0.03em;
-      max-width: 900px;
+      letter-spacing: -0.025em;
+      max-width: 860px;
+    }
+
+    /* TACTILE CHISEL-TIP HIGHLIGHTER EFFECT */
+    .highlighter-mark {
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .highlighter-mark::after {
+      content: '';
+      position: absolute;
+      left: -4px;
+      bottom: 4px;
+      width: calc(100% + 8px);
+      height: 54%;
+      background-color: #d1fae5; /* Soft pastel mint wash */
+      z-index: -1;
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border-radius: 2px;
+    }
+
+    .highlighter-mark.is-highlighted::after {
+      transform: scaleX(1);
+    }
+
+    .hero-margin-doodle {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.95;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .hero-margin-doodle:hover {
+      opacity: 1;
+      transform: scale(1.05) rotate(2deg);
+    }
+
+    /* ANIMATED HERO DRAFTING COMPASS DOODLE */
+    .hero-doodle-svg {
+      width: 96px;
+      height: 96px;
+      overflow: visible;
+      filter: drop-shadow(0 4px 12px rgba(194, 65, 12, 0.08));
+    }
+    .hero-compass-body {
+      animation: compass-sway 4.5s ease-in-out infinite alternate;
+      transform-origin: 50px 18px;
+    }
+    .hero-compass-pencil {
+      animation: pencil-orbit 4.5s ease-in-out infinite alternate;
+      transform-origin: 50px 18px;
+    }
+    .hero-compass-arc {
+      animation: drafting-arc 4.5s ease-in-out infinite alternate;
+    }
+    .hero-vector-pulsar {
+      animation: vector-pulse 2.2s ease-in-out infinite alternate;
+      transform-origin: 50px 88px;
+    }
+    @keyframes compass-sway {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(7deg); }
+    }
+    @keyframes pencil-orbit {
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(9deg); }
+    }
+    @keyframes drafting-arc {
+      0% { stroke-dashoffset: 40; opacity: 0.35; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+    @keyframes vector-pulse {
+      0% { transform: scale(0.94); opacity: 0.7; }
+      100% { transform: scale(1.06); opacity: 1; }
+    }
+
+    /* ANIMATED DISCIPLINE EMBLEMS */
+    .emblem-orbit-1 {
+      animation: orbit-spin-1 6s linear infinite;
+      transform-origin: 20px 20px;
+    }
+    .emblem-orbit-2 {
+      animation: orbit-spin-2 6s linear infinite;
+      transform-origin: 20px 20px;
+    }
+    .emblem-nucleus {
+      animation: nucleus-glow 2.4s ease-in-out infinite alternate;
+      transform-origin: 20px 20px;
+    }
+    @keyframes orbit-spin-1 {
+      0% { transform: rotate(-30deg); }
+      100% { transform: rotate(330deg); }
+    }
+    @keyframes orbit-spin-2 {
+      0% { transform: rotate(30deg); }
+      100% { transform: rotate(-330deg); }
+    }
+    @keyframes nucleus-glow {
+      0% { transform: scale(0.85); opacity: 0.8; }
+      100% { transform: scale(1.18); opacity: 1; }
+    }
+
+    .flask-bubble-1 {
+      animation: bubble-up 2.8s ease-in-out infinite;
+    }
+    .flask-bubble-2 {
+      animation: bubble-up 3.4s ease-in-out 1s infinite;
+    }
+    .flask-meniscus {
+      animation: meniscus-slosh 3s ease-in-out infinite alternate;
+      transform-origin: 20px 24px;
+    }
+    @keyframes bubble-up {
+      0% { transform: translateY(0); opacity: 0; }
+      30% { opacity: 0.9; }
+      80% { opacity: 0.9; }
+      100% { transform: translateY(-8px); opacity: 0; }
+    }
+    @keyframes meniscus-slosh {
+      0% { transform: rotate(-1.5deg); }
+      100% { transform: rotate(1.5deg); }
+    }
+
+    .leaf-pulse {
+      animation: leaf-breath 3.5s ease-in-out infinite alternate;
+      transform-origin: 12px 30px;
+    }
+    @keyframes leaf-breath {
+      0% { transform: scale(0.96) rotate(-0.5deg); }
+      100% { transform: scale(1.03) rotate(0.5deg); }
+    }
+
+    .compass-leg-sweep {
+      animation: leg-sweep 3.2s ease-in-out infinite alternate;
+      transform-origin: 20px 10px;
+    }
+    .compass-arc-draw {
+      animation: arc-pulse 3.2s ease-in-out infinite alternate;
+    }
+    @keyframes leg-sweep {
+      0% { transform: rotate(-4deg); }
+      100% { transform: rotate(4deg); }
+    }
+    @keyframes arc-pulse {
+      0% { stroke-dashoffset: 8; opacity: 0.45; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    /* DESK COMPANION SPOTLIGHT COMPONENT */
+    .desk-companion-spotlight {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .companion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
+    }
+    .companion-badge-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .companion-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--terracotta);
+      text-transform: uppercase;
+    }
+    .companion-meta {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .companion-links {
+      display: flex;
+      gap: 12px;
+    }
+    .companion-link-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--ink-black);
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .companion-link-btn:hover {
+      background: var(--ink-black);
+      color: #ffffff;
+      border-color: var(--ink-black);
+    }
+    .companion-link-btn.primary {
+      background: var(--terracotta);
+      color: #ffffff;
+      border-color: var(--terracotta);
+    }
+    .companion-link-btn.primary:hover {
+      background: #9a3412;
+      border-color: #9a3412;
+    }
+    .companion-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .companion-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .companion-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(22, 21, 20, 0.05);
+    }
+    .companion-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 6px;
+    }
+    .companion-card-title {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-black);
+    }
+    .companion-stat {
+      font-family: monospace;
+      font-size: 10.5px;
+      color: var(--ink-muted);
+    }
+    .companion-discipline-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .disc-phy { color: #c2410c; }
+    .disc-che { color: #15803d; }
+    .disc-bio { color: #2e382b; }
+    .disc-mat { color: #d97706; }
+    .companion-stage {
+      height: 120px;
+      background: var(--bg-warm);
+      border: 1px dashed var(--border-subtle);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .companion-desc {
+      font-size: 12px;
+      color: var(--ink-secondary);
+      line-height: 1.45;
+    }
+
+    /* TURTLE SPOTLIGHT KEYFRAME ANIMATIONS */
+    .turtle-walk-group {
+      animation: turtle-heave 2.8s infinite ease-in-out;
+      transform-origin: 80px 110px;
+    }
+    @keyframes turtle-heave {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-2px) rotate(1.5deg); }
+      50% { transform: translateY(0) rotate(0deg); }
+      75% { transform: translateY(-2px) rotate(-1.5deg); }
+    }
+    .turtle-head-group {
+      animation: side-neck-fold 2.8s infinite ease-in-out;
+      transform-origin: 80px 65px;
+    }
+    @keyframes side-neck-fold {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(4deg); }
+      50% { transform: rotate(-1deg); }
+      75% { transform: rotate(-4deg); }
+    }
+    .leg-fl {
+      animation: fl-gait 2.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 42px 78px;
+    }
+    @keyframes fl-gait {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(-22deg) translateY(-3px); }
+      45% { transform: rotate(6deg); }
+      75% { transform: rotate(14deg); }
+    }
+    .leg-fr {
+      animation: fr-gait 2.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 118px 78px;
+    }
+    @keyframes fr-gait {
+      0%, 100% { transform: rotate(10deg); }
+      50% { transform: rotate(0deg); }
+      70% { transform: rotate(22deg) translateY(-3px); }
+      95% { transform: rotate(-6deg); }
+    }
+    .leg-bl {
+      animation: bl-gait 2.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 44px 142px;
+    }
+    @keyframes bl-gait {
+      0%, 100% { transform: rotate(10deg); }
+      25% { transform: rotate(0deg); }
+      50% { transform: rotate(-10deg); }
+      75% { transform: rotate(-22deg) translateY(-2px); }
+      90% { transform: rotate(4deg); }
+    }
+    .leg-br {
+      animation: br-gait 2.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      transform-origin: 116px 142px;
+    }
+    @keyframes br-gait {
+      0%, 100% { transform: rotate(-8deg); }
+      25% { transform: rotate(22deg) translateY(-2px); }
+      45% { transform: rotate(4deg); }
+      75% { transform: rotate(-14deg); }
+    }
+    .turtle-tail {
+      animation: tail-swish 2.8s infinite ease-in-out;
+      transform-origin: 80px 154px;
+    }
+    @keyframes tail-swish {
+      0%, 100% { transform: rotate(0deg); }
+      33% { transform: rotate(6deg); }
+      66% { transform: rotate(-6deg); }
+    }
+
+    /* PENDULUM OSCILLATION */
+    .pendulum-oscillator {
+      animation: pendulum-swing 2.2s infinite ease-in-out;
+      transform-origin: 50px 18px;
+    }
+    @keyframes pendulum-swing {
+      0%, 100% { transform: rotate(-26deg); }
+      50% { transform: rotate(26deg); }
+    }
+
+    /* BOHR ORBIT */
+    .bohr-valence-orbit {
+      animation: orbit-circle 3s linear infinite;
+      transform-origin: 50px 50px;
+    }
+    @keyframes orbit-circle {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* BALANCE BEAM */
+    .balance-beam-tilter {
+      animation: balance-sway 4s ease-in-out infinite;
+      transform-origin: 50px 28px;
+    }
+    @keyframes balance-sway {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-3deg); }
+      75% { transform: rotate(3deg); }
+    }
+
+    /* DESK MARGIN DOODLES STREAM */
+    .desk-margin-stream {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+      padding-top: 12px;
+      align-items: center;
+    }
+    .margin-doodle-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      width: 96px;
+      text-align: center;
+    }
+    .doodle-svg {
+      width: 92px;
+      height: 92px;
+      transition: transform 0.2s ease;
+      filter: drop-shadow(0 2px 5px rgba(22, 21, 20, 0.04));
+    }
+    .doodle-svg:hover {
+      transform: scale(1.06) rotate(-1deg);
+    }
+    .margin-doodle-caption {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 11px;
+      color: var(--ink-muted);
+      line-height: 1.25;
+    }
+
+    /* MARGIN DOODLE ANIMATIONS */
+    .doodle-angle-sweep {
+      animation: doodle-sweep 3s ease-in-out infinite alternate;
+      transform-origin: 14px 82px;
+    }
+    @keyframes doodle-sweep {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(5deg); }
+    }
+    .doodle-vector-drift {
+      animation: doodle-drift 2.8s ease-in-out infinite alternate;
+    }
+    @keyframes doodle-drift {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-2.5px); }
+    }
+    .doodle-flame-flicker {
+      animation: flame-pulse 1.8s ease-in-out infinite alternate;
+      transform-origin: 29px 62px;
+    }
+    @keyframes flame-pulse {
+      0% { transform: scale(0.95, 0.9); }
+      100% { transform: scale(1.05, 1.12); }
+    }
+    .doodle-bubble-1 {
+      animation: bubble-up-1 2.2s infinite ease-in;
+    }
+    .doodle-bubble-2 {
+      animation: bubble-up-2 2.6s 0.8s infinite ease-in;
+    }
+    @keyframes bubble-up-1 {
+      0% { transform: translateY(0); opacity: 0; }
+      50% { opacity: 0.9; }
+      100% { transform: translateY(-12px); opacity: 0; }
+    }
+    @keyframes bubble-up-2 {
+      0% { transform: translateY(0); opacity: 0; }
+      50% { opacity: 0.9; }
+      100% { transform: translateY(-14px); opacity: 0; }
+    }
+    .doodle-vapor {
+      animation: vapor-flow 2.4s infinite ease-out;
+    }
+    @keyframes vapor-flow {
+      0% { stroke-dashoffset: 8; opacity: 0.2; }
+      50% { opacity: 0.8; }
+      100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+    .mini-turtle-stroll {
+      animation: mini-crawl 3.2s infinite ease-in-out alternate;
+    }
+    @keyframes mini-crawl {
+      0% { transform: translate(16px, 56px) rotate(-1deg); }
+      100% { transform: translate(20px, 54px) rotate(1deg); }
+    }
+    .doodle-memo-hover {
+      transition: transform 0.2s ease;
+      transform-origin: 22px 22px;
+    }
+    .doodle-svg:hover .doodle-memo-hover {
+      transform: rotate(-2deg) scale(1.02);
+    }
+
+    @media (max-width: 768px) {
+      .hero-margin-doodle {
+        display: none;
+      }
+      .desk-margin-stream {
+        display: none;
+      }
     }
 
     .hero-subtext {
-      font-size: 16.5px;
+      font-size: 16px;
       color: var(--ink-secondary);
-      max-width: 760px;
-      margin-top: 16px;
+      max-width: 700px;
+      margin-top: 14px;
       line-height: 1.65;
     }
 
-    /* FEATURED EXEMPLAR SPOTLIGHT DIRECTLY ON LANDING */
+    /* FEATURED WORKED PROBLEM SPOTLIGHT DIRECTLY ON LANDING */
     .featured-sample-panel {
       background: var(--bg-surface);
       border: 1px solid var(--border-strong);
@@ -138,11 +641,11 @@
     }
 
     .featured-sample-panel::before {
-      content: "CANONICAL ICSE MODEL PROBLEM";
+      content: "FEATURED WORKED PROBLEM";
       position: absolute;
       top: -10px;
       left: 36px;
-      background: var(--terracotta);
+      background: var(--emerald-accent, #15803d);
       color: #ffffff;
       font-size: 10.5px;
       font-weight: 700;
@@ -283,17 +786,15 @@
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 120px;
-      gap: 24px;
+      gap: 32px;
+      align-items: start;
     }
 
-    .main-canvas > * {
-      grid-column: 1;
-    }
-
-    .main-canvas::after {
-      content: '';
-      grid-column: 2;
-      grid-row: 1 / -1;
+    .topics-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
     }
 
     @media (max-width: 768px) {
@@ -368,8 +869,26 @@
       background: #ffffff;
     }
 
-    .badge-icon { font-size: 22px; }
-    .badge-code { font-size: 12.5px; font-weight: 700; letter-spacing: 0.05em; color: var(--ink-black); }
+    .badge-emblem-wrap {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .discipline-emblem {
+      width: 38px;
+      height: 38px;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .topic-card:hover .discipline-emblem {
+      transform: scale(1.12) rotate(-3deg);
+    }
+
+    .badge-code { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; color: var(--ink-black); }
     .badge-unit { font-size: 11px; color: var(--ink-muted); font-style: italic; }
 
     /* CARD BODY CONTENT */
@@ -461,23 +980,44 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="index_clone_beta.html" class="brand-title">AXIOM <em>ICSE 7 STEM</em></a>
-    <div class="masthead-meta">Mathematics • Physics • Chemistry • Biology [Beta]</div>
+    <a href="index.html" class="brand-title"><em>ICSE 7 Science & Mathematics</em></a>
+    <div class="masthead-meta">Mathematics • Physics • Chemistry • Biology</div>
   </header>
 
   <!-- HERO -->
   <section class="hero-section">
     <div class="hero-kicker">Curriculum Reference</div>
-    <h1 class="hero-heading">Middle School STEM &amp; Compendium</h1>
+    <h1 class="hero-heading">Middle School Science & Mathematics, <span class="highlighter-mark">grounded</span> in first principles.</h1>
     <p class="hero-subtext">
-      Class 7 CISCE syllabus covering Mathematics, Physics, Chemistry, and Biology with definitions, derivations, formulas, worked numerical problems, and solutions.
+      Class 7 CISCE syllabus covering Mathematics, Physics, Chemistry, and Biology with step-by-step derivations, physical anchors, worked numerical problems, and interactive solutions.
     </p>
+
+    <!-- 120px Column Margin Doodle (Animated Drafting Desk Compass) -->
+    <div class="hero-margin-doodle" aria-hidden="true" title="Drafting Desk Compass Arc">
+      <svg class="hero-doodle-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="50" cy="50" rx="42" ry="40" fill="#fbf0ea"/>
+        <line x1="20" y1="50" x2="80" y2="50" stroke="#d3c7b4" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <line x1="50" y1="20" x2="50" y2="80" stroke="#d3c7b4" stroke-width="0.8" stroke-dasharray="3 3"/>
+        <circle class="hero-compass-arc" cx="50" cy="50" r="26" stroke="#c2410c" stroke-width="1.3" stroke-linecap="round" stroke-dasharray="6 3"/>
+        <g class="hero-compass-body">
+          <line x1="50" y1="18" x2="32" y2="68" stroke="#161514" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="32" cy="68" r="1.5" fill="#161514"/>
+        </g>
+        <g class="hero-compass-pencil">
+          <line x1="50" y1="18" x2="68" y2="68" stroke="#161514" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M 66 65 L 70 65 L 68 72 Z" fill="#c2410c"/>
+        </g>
+        <circle cx="50" cy="18" r="3.5" stroke="#161514" stroke-width="1.4" fill="#f4efe6"/>
+        <circle cx="50" cy="18" r="1.5" fill="#c2410c"/>
+        <text class="hero-vector-pulsar" x="50" y="88" text-anchor="middle" font-family="'Newsreader', Georgia, serif" font-size="8.5" font-style="italic" fill="#797166">r = 26 mm</text>
+      </svg>
+    </div>
 
     <!-- INLINE FEATURED PROBLEM SPOTLIGHT -->
     <div class="featured-sample-panel">
       <div class="sample-header">
         <span class="sample-discipline">Physics • Hydrostatic Fluid Mechanics</span>
-        <span class="sample-marks">Worked Logical Exemplar</span>
+        <span class="sample-marks">Worked Problem</span>
       </div>
       <div class="sample-prompt">
         A solid metal block of mass \(60\text{ kg}\) measures \(0.5\text{ m} \times 0.4\text{ m} \times 0.2\text{ m}\). Calculate (i) the maximum pressure, and (ii) the minimum pressure it can exert on a horizontal table. <em>[Take \(g = 10\text{ m/s}^2\)]</em>
@@ -500,6 +1040,141 @@
       </div>
     </div>
 
+    <!-- INTERACTIVE ANIMATED DESK COMPANION & MOTION STUDIO SPOTLIGHT -->
+    <div class="desk-companion-spotlight">
+      <div class="companion-header">
+        <div class="companion-badge-row">
+          <span class="companion-tag">Animated Desk Companion &amp; Motion Studio</span>
+          <span class="companion-meta">Hardware-Accelerated Pure CSS Keyframes • 60 FPS Looping</span>
+        </div>
+        <div class="companion-links">
+          <a href="src/animated_svgs.html" class="companion-link-btn primary">Open Animated SVG Studio ↗</a>
+          <a href="src/turtle_walk.html" class="companion-link-btn">Side-Necked Turtle Lab ↗</a>
+        </div>
+      </div>
+
+      <div class="companion-grid">
+        <!-- Showcase 1: Calibrated 6yo Side-Necked Turtle (Pleurodira) -->
+        <div class="companion-card">
+          <div class="companion-card-header">
+            <span class="companion-card-title">6yo Side-Necked Turtle (<em>Pleurodira</em>)</span>
+            <span class="companion-stat">v ≈ 0.08 m/s</span>
+          </div>
+          <div class="companion-stage">
+            <svg class="top-turtle-svg" viewBox="0 0 160 190" width="105" height="125" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.35" stroke="#797166" stroke-width="1" stroke-linecap="round">
+                <line x1="45" y1="160" x2="49" y2="164" />
+                <line x1="115" y1="140" x2="111" y2="144" />
+                <line x1="45" y1="120" x2="49" y2="124" />
+              </g>
+              <g class="turtle-walk-group">
+                <path class="leg-bl" d="M 44 142 C 34 144 26 150 20 158 C 24 162 34 158 42 148 Z" fill="#dbe4d6" stroke="#161514" stroke-width="1.3" stroke-linejoin="round" />
+                <path class="leg-br" d="M 116 142 C 126 144 134 150 140 158 C 136 162 126 158 118 148 Z" fill="#dbe4d6" stroke="#161514" stroke-width="1.3" stroke-linejoin="round" />
+                <path class="leg-fl" d="M 42 78 C 30 72 20 62 14 52 C 22 50 32 58 40 70 Z" fill="#dbe4d6" stroke="#161514" stroke-width="1.3" stroke-linejoin="round" />
+                <path class="leg-fr" d="M 118 78 C 130 72 140 62 146 52 C 138 50 128 58 120 70 Z" fill="#dbe4d6" stroke="#161514" stroke-width="1.3" stroke-linejoin="round" />
+                <path class="turtle-tail" d="M 77 154 C 80 168 83 174 80 182 C 77 174 80 168 83 154 Z" fill="#dbe4d6" stroke="#161514" stroke-width="1.2" stroke-linecap="round" />
+                <g class="turtle-head-group">
+                  <path d="M 74 65 C 72 48 64 36 70 24 C 74 16 86 16 90 24 C 94 34 88 48 86 65 Z" fill="#dbe4d6" stroke="#161514" stroke-width="1.4" stroke-linejoin="round" />
+                  <circle cx="72" cy="22" r="2" fill="#161514" />
+                  <circle cx="88" cy="22" r="2" fill="#161514" />
+                  <circle cx="71.5" cy="21.5" r="0.6" fill="#ffffff" />
+                  <circle cx="87.5" cy="21.5" r="0.6" fill="#ffffff" />
+                </g>
+                <ellipse cx="80" cy="110" rx="52" ry="45" fill="#f4efe6" stroke="#161514" stroke-width="1.8" />
+                <path d="M 80 72 L 92 84 L 92 102 L 80 110 L 68 102 L 68 84 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" />
+                <path d="M 80 110 L 92 118 L 92 136 L 80 144 L 68 136 L 68 118 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" />
+                <path d="M 68 92 L 34 94 M 92 92 L 126 94 M 68 126 L 34 130 M 92 126 L 126 130" stroke="#161514" stroke-width="1.1" stroke-linecap="round" />
+                <circle cx="80" cy="110" r="3" fill="#c2410c" />
+              </g>
+            </svg>
+          </div>
+          <p class="companion-desc">
+            Authentic <em>Pleurodira</em> side-necked crawl geometry with broad rounded carapace (\(104\text{px} \times 90\text{px}\)), anterior lateral neck fold, and 4-beat lateral sequence crawl gait.
+          </p>
+        </div>
+
+        <!-- Showcase 2: Conservative Energy Pendulum (Physics) -->
+        <div class="companion-card">
+          <div class="companion-card-header">
+            <span class="companion-card-title">Frictionless Pendulum Oscillation</span>
+            <span class="companion-discipline-badge disc-phy">Physics • PHY-02</span>
+          </div>
+          <div class="companion-stage">
+            <svg viewBox="0 0 100 100" width="88" height="88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="50" rx="42" ry="38" fill="#fbf0ea"/>
+              <line x1="20" y1="18" x2="80" y2="18" stroke="#161514" stroke-width="2"/>
+              <path d="M 28 72 A 36 36 0 0 0 72 72" stroke="#797166" stroke-width="1" stroke-dasharray="3 3"/>
+              <g class="pendulum-oscillator">
+                <line x1="50" y1="18" x2="50" y2="68" stroke="#161514" stroke-width="1.5"/>
+                <circle cx="50" cy="72" r="7.5" fill="#c2410c" stroke="#161514" stroke-width="1.2"/>
+                <circle cx="50" cy="18" r="2.5" fill="#161514"/>
+              </g>
+              <text x="50" y="92" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="600" fill="#c2410c">Ep ↔ Ek</text>
+            </svg>
+          </div>
+          <p class="companion-desc">
+            Continuous mechanical conservation \(E_{\text{total}} = mgh + \frac{1}{2}mv^2\). Kinetic energy peaks at mean datum line.
+          </p>
+        </div>
+
+        <!-- Showcase 3: Bohr Planetary Sodium Atom (Chemistry) -->
+        <div class="companion-card">
+          <div class="companion-card-header">
+            <span class="companion-card-title">Planetary Bohr Valence Orbit</span>
+            <span class="companion-discipline-badge disc-che">Chemistry • CHE-02</span>
+          </div>
+          <div class="companion-stage">
+            <svg viewBox="0 0 100 100" width="88" height="88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="50" rx="42" ry="38" fill="#f0f7f2"/>
+              <circle cx="50" cy="50" r="14" stroke="#d3c7b4" stroke-width="1" stroke-dasharray="3 2"/>
+              <circle cx="50" cy="50" r="26" stroke="#d3c7b4" stroke-width="1" stroke-dasharray="3 2"/>
+              <circle cx="50" cy="50" r="38" stroke="#15803d" stroke-width="1.2" stroke-dasharray="4 3"/>
+              <circle cx="50" cy="50" r="7" fill="#15803d" stroke="#161514" stroke-width="1.2"/>
+              <text x="50" y="52.5" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="6.5" font-weight="700" fill="#ffffff">11p</text>
+              <g class="bohr-valence-orbit">
+                <circle cx="88" cy="50" r="3.2" fill="#c2410c" stroke="#161514" stroke-width="1"/>
+              </g>
+              <text x="50" y="94" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" font-weight="600" fill="#15803d">Na: 2, 8, 1</text>
+            </svg>
+          </div>
+          <p class="companion-desc">
+            Quantum valence shell configuration \(2, 8, 1\) with single active outer electron mediating high metallic reactivity.
+          </p>
+        </div>
+
+        <!-- Showcase 4: Dynamic Balance Beam Scale (Mathematics) -->
+        <div class="companion-card">
+          <div class="companion-card-header">
+            <span class="companion-card-title">Two-Pan Linear Equilibrium</span>
+            <span class="companion-discipline-badge disc-mat">Math • MATH-04</span>
+          </div>
+          <div class="companion-stage">
+            <svg viewBox="0 0 100 100" width="88" height="88" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="50" cy="50" rx="42" ry="38" fill="#fef8ea"/>
+              <path d="M 50 24 L 50 78 M 38 78 L 62 78" stroke="#161514" stroke-width="1.8" stroke-linecap="round"/>
+              <polygon points="50,28 44,38 56,38" fill="#161514"/>
+              <g class="balance-beam-tilter">
+                <line x1="20" y1="28" x2="80" y2="28" stroke="#d97706" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="50" cy="28" r="2.5" fill="#c2410c"/>
+                <line x1="24" y1="28" x2="20" y2="52" stroke="#797166" stroke-width="1"/>
+                <line x1="24" y1="28" x2="28" y2="52" stroke="#797166" stroke-width="1"/>
+                <path d="M 16 52 Q 24 57 32 52 Z" fill="#f4efe6" stroke="#161514" stroke-width="1.2"/>
+                <rect x="21" y="44" width="6" height="6" fill="#d97706" stroke="#161514" stroke-width="0.8"/>
+                <line x1="76" y1="28" x2="72" y2="52" stroke="#797166" stroke-width="1"/>
+                <line x1="76" y1="28" x2="80" y2="52" stroke="#797166" stroke-width="1"/>
+                <path d="M 68 52 Q 76 57 84 52 Z" fill="#f4efe6" stroke="#161514" stroke-width="1.2"/>
+                <circle cx="76" cy="47" r="3" fill="#15803d" stroke="#161514" stroke-width="0.8"/>
+              </g>
+              <text x="50" y="92" text-anchor="middle" font-family="'Newsreader', Georgia, serif" font-size="8.5" font-style="italic" fill="#161514">2x + 1 = 7  ⇒  x = 3</text>
+            </svg>
+          </div>
+          <p class="companion-desc">
+            Two-pan balance scale equilibrium demonstration. Subtracting 1 from both pans isolates \(2x = 6 \implies x = 3\).
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- DISCIPLINE FILTER TABS & SEARCH -->
     <div class="controls-bar">
       <div class="filter-tabs-group">
@@ -513,14 +1188,126 @@
     </div>
   </section>
 
-  <!-- MAIN TOPIC LESSONS CONTAINER -->
-  <main class="main-canvas" id="topicsContainer">
-    <!-- Rendered dynamically by script with direct links to all self-contained topics -->
+  <!-- MAIN TOPIC LESSONS CANVAS WITH MARGIN DOODLES STREAM -->
+  <main class="main-canvas">
+    <div class="topics-column" id="topicsContainer">
+      <!-- Rendered dynamically by script with direct links to all self-contained topics -->
+    </div>
+    <aside class="desk-margin-stream" aria-label="Authentic Desk Margin Doodles">
+      <!-- Doodle 1: Math Set-Square & Protractor Angle Sweep -->
+      <div class="margin-doodle-item">
+        <svg class="doodle-svg" viewBox="0 0 100 100" width="92" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 14 82 L 86 82 L 14 16 Z" fill="#fef8ea" stroke="#161514" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M 24 74 L 66 74 L 24 32 Z" fill="#fcfbf9" stroke="#161514" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="14" y1="60" x2="19" y2="60" stroke="#797166" stroke-width="1"/>
+          <line x1="14" y1="44" x2="21" y2="44" stroke="#797166" stroke-width="1"/>
+          <line x1="36" y1="82" x2="36" y2="77" stroke="#797166" stroke-width="1"/>
+          <line x1="56" y1="82" x2="56" y2="75" stroke="#797166" stroke-width="1"/>
+          <g class="doodle-angle-sweep">
+            <line x1="14" y1="82" x2="72" y2="34" stroke="#d97706" stroke-width="1.3" stroke-linecap="round"/>
+            <path d="M 36 82 A 22 22 0 0 0 31 68" stroke="#c2410c" stroke-width="1.2" stroke-linecap="round"/>
+          </g>
+          <text x="38" y="66" font-family="'Newsreader', Georgia, serif" font-size="8.5" font-style="italic" fill="#c2410c">θ = 45°</text>
+        </svg>
+        <div class="margin-doodle-caption">Drafting Set-Square &amp; Angle Sweep</div>
+      </div>
+
+      <!-- Doodle 2: Physics Free-Body Vector Doodle -->
+      <div class="margin-doodle-item">
+        <svg class="doodle-svg" viewBox="0 0 100 100" width="92" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="52" rx="42" ry="38" fill="#fbf0ea"/>
+          <polygon points="12,78 88,78 88,38" fill="#ffffff" stroke="#161514" stroke-width="1.4"/>
+          <rect x="42" y="44" width="18" height="12" transform="rotate(-26.5 51 50)" fill="#fbf0ea" stroke="#161514" stroke-width="1.3"/>
+          <g class="doodle-vector-drift">
+            <line x1="51" y1="50" x2="51" y2="74" stroke="#c2410c" stroke-width="1.4" stroke-linecap="round"/>
+            <polyline points="48,70 51,74 54,70" stroke="#c2410c" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="51" y1="50" x2="38" y2="24" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
+            <polyline points="37,28 38,24 42,26" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
+          </g>
+          <text x="56" y="68" font-family="monospace" font-size="7" font-weight="600" fill="#c2410c">mg</text>
+          <text x="32" y="24" font-family="monospace" font-size="7" font-weight="600" fill="#161514">N</text>
+          <text x="50" y="90" text-anchor="middle" font-family="'Newsreader', Georgia, serif" font-size="7.5" font-style="italic" fill="#797166">1 km/h = 5/18 m/s</text>
+        </svg>
+        <div class="margin-doodle-caption">Free-Body Vector Resolution</div>
+      </div>
+
+      <!-- Doodle 3: Chemistry Bunsen Burner & Boiling Test Tube -->
+      <div class="margin-doodle-item">
+        <svg class="doodle-svg" viewBox="0 0 100 100" width="92" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="52" rx="42" ry="38" fill="#f0f7f2"/>
+          <rect x="22" y="62" width="14" height="24" fill="#d3c7b4" stroke="#161514" stroke-width="1.2"/>
+          <rect x="16" y="86" width="26" height="5" rx="1" fill="#797166" stroke="#161514" stroke-width="1.2"/>
+          <g class="doodle-flame-flicker">
+            <path d="M 29 62 C 24 54 25 44 29 38 C 33 44 34 54 29 62 Z" fill="#d97706" opacity="0.75"/>
+            <path d="M 29 62 C 26 57 26 49 29 44 C 32 49 32 57 29 62 Z" fill="#c2410c"/>
+          </g>
+          <g transform="rotate(-35 55 50)">
+            <rect x="42" y="20" width="10" height="42" rx="5" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
+            <path d="M 43 45 Q 47 43 51 45 L 51 57 Q 47 61 43 57 Z" fill="#15803d" opacity="0.65"/>
+            <circle class="doodle-bubble-1" cx="47" cy="50" r="1.5" fill="#ffffff"/>
+            <circle class="doodle-bubble-2" cx="45" cy="38" r="1.2" fill="#ffffff"/>
+          </g>
+          <path class="doodle-vapor" d="M 68 28 C 72 24 74 18 78 16" stroke="#15803d" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="2 2"/>
+          <text x="50" y="96" text-anchor="middle" font-family="'Newsreader', Georgia, serif" font-size="7.5" font-style="italic" fill="#15803d">2H₂ + O₂ → 2H₂O</text>
+        </svg>
+        <div class="margin-doodle-caption">Bunsen Heat &amp; Reaction Vapor</div>
+      </div>
+
+      <!-- Doodle 4: Biology Onion Cell Micro-Grid & Strolling Turtle Cameo -->
+      <div class="margin-doodle-item">
+        <svg class="doodle-svg" viewBox="0 0 100 100" width="92" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="52" rx="42" ry="38" fill="#edf5ef"/>
+          <g stroke="#2e382b" stroke-width="1.1" fill="#ffffff">
+            <rect x="14" y="24" width="22" height="14" rx="2"/>
+            <rect x="36" y="24" width="22" height="14" rx="2"/>
+            <rect x="58" y="24" width="22" height="14" rx="2"/>
+            <rect x="25" y="38" width="22" height="14" rx="2"/>
+            <rect x="47" y="38" width="22" height="14" rx="2"/>
+            <rect x="69" y="38" width="18" height="14" rx="2"/>
+          </g>
+          <circle cx="25" cy="31" r="1.5" fill="#2e382b"/>
+          <circle cx="47" cy="31" r="1.5" fill="#2e382b"/>
+          <circle cx="69" cy="31" r="1.5" fill="#2e382b"/>
+          <circle cx="36" cy="45" r="1.5" fill="#2e382b"/>
+          <circle cx="58" cy="45" r="1.5" fill="#2e382b"/>
+          <g class="mini-turtle-stroll" transform="translate(18, 56)">
+            <ellipse cx="32" cy="18" rx="14" ry="11" fill="#edf5ef" stroke="#161514" stroke-width="1.2"/>
+            <path d="M 44 14 C 47 11 50 8 54 8 C 56 10 56 13 53 16 Z" fill="#edf5ef" stroke="#161514" stroke-width="1"/>
+            <circle cx="53" cy="9" r="0.8" fill="#161514"/>
+            <path d="M 22 10 L 16 7" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M 42 10 L 48 7" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M 22 26 L 16 29" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M 42 26 L 48 29" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
+            <path d="M 28 14 L 36 14 L 32 22 Z" stroke="#161514" stroke-width="0.8" fill="none"/>
+            <circle cx="32" cy="18" r="1.2" fill="#c2410c"/>
+          </g>
+          <text x="50" y="94" text-anchor="middle" font-family="'Newsreader', Georgia, serif" font-size="7.5" font-style="italic" fill="#2e382b">Allium cepa &amp; Pleurodira</text>
+        </svg>
+        <div class="margin-doodle-caption">Plant Histology &amp; Desk Companion</div>
+      </div>
+
+      <!-- Doodle 5: Chai Ring Watermark & Curled Scholar Note -->
+      <div class="margin-doodle-item">
+        <svg class="doodle-svg" viewBox="0 0 100 100" width="92" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="48" r="32" stroke="#c2410c" stroke-width="1.8" opacity="0.22" stroke-dasharray="8 4 12 3"/>
+          <circle cx="50" cy="48" r="30.5" stroke="#c2410c" stroke-width="0.8" opacity="0.14"/>
+          <g class="doodle-memo-hover">
+            <path d="M 22 22 L 72 22 L 78 28 L 78 72 L 22 72 Z" fill="#fef8ea" stroke="#d3c7b4" stroke-width="1.1"/>
+            <path d="M 72 22 L 72 28 L 78 28" fill="#e6dfd3" stroke="#d3c7b4" stroke-width="1"/>
+            <line x1="28" y1="34" x2="68" y2="34" stroke="#797166" stroke-width="1" stroke-dasharray="2 2"/>
+            <line x1="28" y1="44" x2="64" y2="44" stroke="#797166" stroke-width="1" stroke-dasharray="2 2"/>
+            <line x1="28" y1="54" x2="58" y2="54" stroke="#797166" stroke-width="1" stroke-dasharray="2 2"/>
+            <text x="50" y="64" text-anchor="middle" font-family="'Newsreader', Georgia, serif" font-size="7" font-weight="600" fill="#c2410c">Derivations &gt; Rote</text>
+          </g>
+        </svg>
+        <div class="margin-doodle-caption">Desk Watermark &amp; Scholarly Memo</div>
+      </div>
+    </aside>
   </main>
 
   <!-- FOOTER -->
   <footer class="editorial-footer">
-    <div class="footer-note">ICSE STEM Compendium Class 7 • Complete Curriculum [Beta]</div>
+    <div class="footer-note">ICSE Science & Mathematics Class 7 • Complete Curriculum</div>
     <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
   </footer>
 
@@ -531,7 +1318,6 @@
         discipline: "Physics",
         code: "PHY-01",
         unitNum: "Kinematics",
-        icon: "⚛️",
         title: "Motion, Distance, Displacement & Speed",
         snippet: "Relativity of rest and motion, scalar distance vs vector displacement, and the 1 km/h = 5/18 m/s mathematical derivation.",
         file: "topics/physics_01_motion_and_speed.html"
@@ -540,16 +1326,14 @@
         discipline: "Physics",
         code: "PHY-02",
         unitNum: "Work & Energy",
-        icon: "⚛️",
-        title: "Energy, Mechanical Work & Simple Machines",
-        snippet: "Scientific work W = F × s, Kinetic vs Potential energy, and Class 1, 2, 3 Levers (MA = Load/Effort, VR, Efficiency).",
+        title: "Work, Energy & Power",
+        snippet: "Scalar work W = F · s, Joule-erg derivation, gravitational potential energy (PE = mgh) and kinetic energy (KE = 1/2 mv²), pendulum conservation, and power (P = W/t).",
         file: "topics/physics_02_energy_and_machines.html"
       },
       {
         discipline: "Physics",
         code: "PHY-03",
         unitNum: "Optics",
-        icon: "⚛️",
         title: "Light, Shadows & Reflection at Plane Surfaces",
         snippet: "Rectilinear propagation, Laws of Reflection (∠i = ∠r), virtual images, and inclined mirrors formula n = (360/θ) - 1.",
         file: "topics/physics_03_light_and_reflection.html"
@@ -558,7 +1342,6 @@
         discipline: "Physics",
         code: "PHY-04",
         unitNum: "Acoustics",
-        icon: "⚛️",
         title: "Sound Waves, Vibration & Acoustics",
         snippet: "Longitudinal waves, vacuum bell jar experiment, speed across states of matter, amplitude vs loudness, and pitch vs frequency.",
         file: "topics/physics_04_sound_and_vibration.html"
@@ -567,7 +1350,6 @@
         discipline: "Physics",
         code: "PHY-05",
         unitNum: "Electrodynamics",
-        icon: "⚛️",
         title: "Electricity, Electric Current & Circuits",
         snippet: "Current I = Q/t, Series vs Parallel circuits comparison matrix, Joule heating, and electric fuse alloy safety mechanics.",
         file: "topics/physics_05_electricity_and_circuits.html"
@@ -576,7 +1358,6 @@
         discipline: "Physics",
         code: "PHY-06",
         unitNum: "Hydrostatics",
-        icon: "⚛️",
         title: "Force, Thrust & Hydrostatic Fluid Pressure",
         snippet: "Mathematical proof of liquid depth pressure P = hρg, Pascal's Law of fluid transmission, and hydraulic lift mechanics.",
         file: "topics/physics_06_force_and_pressure.html"
@@ -585,7 +1366,6 @@
         discipline: "Physics",
         code: "PHY-07",
         unitNum: "Thermodynamics",
-        icon: "⚛️",
         title: "Heat Energy, Temperature & Thermometry",
         snippet: "Internal kinetic energy vs temperature, thermometric scale derivation C/5 = (F-32)/9 = (K-273)/5, and anomalous expansion of water.",
         file: "topics/physics_07_heat_and_temperature.html"
@@ -594,7 +1374,6 @@
         discipline: "Physics",
         code: "PHY-08",
         unitNum: "Fluid Mechanics",
-        icon: "⚛️",
         title: "Density, Relative Density & Buoyancy",
         snippet: "Volumetric mass density d = m/V, 1 g/cm³ = 1000 kg/m³ proof, Archimedes' Principle, and iron nail vs steel ship floatation.",
         file: "topics/physics_08_density_and_buoyancy.html"
@@ -603,7 +1382,6 @@
         discipline: "Physics",
         code: "PHY-09",
         unitNum: "Magnetism",
-        icon: "⚛️",
         title: "Magnetism, Magnetic Fields & Electromagnets",
         snippet: "Magnetic dipole properties, proof of why repulsion is the only sure test, non-intersecting field lines, and electromagnets.",
         file: "topics/physics_09_magnetism_and_fields.html"
@@ -612,7 +1390,6 @@
         discipline: "Physics",
         code: "PHY-10",
         unitNum: "Optics",
-        icon: "⚛️",
         title: "Spherical Mirrors & Image Formation",
         snippet: "Curved spherical mirrors, principal focus f = R/2, concave converging vs convex diverging optics, and real vs virtual image formation.",
         file: "topics/physics_10_spherical_mirrors_and_images.html"
@@ -621,7 +1398,6 @@
         discipline: "Physics",
         code: "PHY-11",
         unitNum: "Electrostatics",
-        icon: "⚛️",
         title: "Static Electricity & Electrostatics",
         snippet: "Frictional charging electron shifts, like charges repel, conduction vs induction, gold leaf electroscope, and lightning conductors.",
         file: "topics/physics_11_static_electricity_and_charges.html"
@@ -630,7 +1406,6 @@
         discipline: "Physics",
         code: "PHY-12",
         unitNum: "Mechanics",
-        icon: "⚛️",
         title: "Simple Machines & Mechanical Advantage",
         snippet: "Mechanical Advantage, Velocity Ratio, Efficiency η = MA/VR, Principle of Moments, Class I, II, III levers, and pulley systems.",
         file: "topics/physics_12_simple_machines_and_efficiency.html"
@@ -641,7 +1416,6 @@
         discipline: "Chemistry",
         code: "CHEM-01",
         unitNum: "States of Matter",
-        icon: "🧪",
         title: "Matter & Kinetic Molecular Theory",
         snippet: "The 4 postulates of Kinetic Theory, Intermolecular Forces vs Spaces, and 5-point Solids vs Liquids vs Gases matrix.",
         file: "topics/chemistry_01_matter_and_composition.html"
@@ -650,7 +1424,6 @@
         discipline: "Chemistry",
         code: "CHEM-02",
         unitNum: "Atomic Theory",
-        icon: "🧪",
         title: "Atomic Structure, Energy Shells & Valency",
         snippet: "Protons, Neutrons, Electrons, Bohr-Bury 2n² energy distribution (K, L, M, N), Atomic Number Z, and Mass Number A.",
         file: "topics/chemistry_02_atomic_structure_and_valency.html"
@@ -659,7 +1432,6 @@
         discipline: "Chemistry",
         code: "CHEM-03",
         unitNum: "Chemical Taxonomy",
-        icon: "🧪",
         title: "Elements, Compounds & Mixtures",
         snippet: "Pure substances vs mixtures, Law of Constant Proportions, 5-point Compounds vs Mixtures matrix, and separation science.",
         file: "topics/chemistry_03_elements_and_compounds.html"
@@ -668,7 +1440,6 @@
         discipline: "Chemistry",
         code: "CHEM-04",
         unitNum: "Nomenclature",
-        icon: "🧪",
         title: "Atoms, Molecules & Chemical Radicals",
         snippet: "Atomicity classifications, basic cations (+1 to +4), acidic anions (-1 to -4), and criss-cross formula construction ledger.",
         file: "topics/chemistry_04_atoms_molecules_radicals.html"
@@ -677,7 +1448,6 @@
         discipline: "Chemistry",
         code: "CHEM-05",
         unitNum: "Stoichiometry",
-        icon: "🧪",
         title: "Chemical Reactions & Equation Balancing",
         snippet: "The 4 primary reaction archetypes (Synthesis, Decomposition, Displacement, Double Decomposition) and Hit-and-Trial balancing.",
         file: "topics/chemistry_05_chemical_reactions_balancing.html"
@@ -686,7 +1456,6 @@
         discipline: "Chemistry",
         code: "CHEM-06",
         unitNum: "Acids & Alkalis",
-        icon: "🧪",
         title: "Acids, Bases, Salts & Chemical Indicators",
         snippet: "Arrhenius ion definitions, neutralization dynamics, and the master indicator color transition table (Litmus, Methyl Orange, Phenolphthalein).",
         file: "topics/chemistry_06_acids_bases_and_salts.html"
@@ -695,7 +1464,6 @@
         discipline: "Chemistry",
         code: "CHEM-07",
         unitNum: "Metallurgy Basics",
-        icon: "🧪",
         title: "Metals, Non-Metals & The Reactivity Series",
         snippet: "Metals vs Non-metals physical matrix, the Activity Series hierarchy (K > Na > ... > Au), displacement reactions, and rust chemistry.",
         file: "topics/chemistry_07_metals_nonmetals_reactivity.html"
@@ -704,7 +1472,6 @@
         discipline: "Chemistry",
         code: "CHEM-08",
         unitNum: "Hydrology",
-        icon: "🧪",
         title: "Water, Solutions &amp; Solubility",
         snippet: "Structure of water, solute-solvent interactions, solubility curves, saturated vs unsaturated solutions, and hard vs soft water.",
         file: "topics/chemistry_08_water_solutions_solubility.html"
@@ -713,7 +1480,6 @@
         discipline: "Chemistry",
         code: "CHEM-09",
         unitNum: "Atmospheric Chemistry",
-        icon: "🧪",
         title: "Air, Oxygen &amp; Combustion",
         snippet: "Composition of air, properties and preparation of oxygen, types of combustion, rusting, and the nitrogen cycle.",
         file: "topics/chemistry_09_air_oxygen_combustion.html"
@@ -722,7 +1488,6 @@
         discipline: "Chemistry",
         code: "CHEM-10",
         unitNum: "Carbon Chemistry",
-        icon: "🧪",
         title: "Carbon & Its Allotropic Modifications",
         snippet: "Phenomenon of allotropy, Diamond tetrahedral vs Graphite planar sheets, C60 Fullerenes, and amorphous carbon forms.",
         file: "topics/chemistry_10_carbon_and_allotropes.html"
@@ -731,7 +1496,6 @@
         discipline: "Chemistry",
         code: "CHEM-11",
         unitNum: "Water Treatment",
-        icon: "🧪",
         title: "Water Hardness & Treatment Technologies",
         snippet: "Soft vs hard water, temporary vs permanent hardness, boiling, Clark's slaked lime process, washing soda, and ion exchange resins.",
         file: "topics/chemistry_11_water_hardness_and_treatment.html"
@@ -740,7 +1504,6 @@
         discipline: "Chemistry",
         code: "CHEM-12",
         unitNum: "Environmental Chemistry",
-        icon: "🧪",
         title: "Oxides, Acid Rain & Atmospheric Chemistry",
         snippet: "Classification of oxides (Acidic, Basic, Amphoteric, Neutral), Acid rain formation (SO2/NO2), Taj Mahal marble cancer, and greenhouse gases.",
         file: "topics/chemistry_12_oxides_acid_rain_and_atmosphere.html"
@@ -751,7 +1514,6 @@
         discipline: "Biology",
         code: "BIO-01",
         unitNum: "Histology",
-        icon: "🌿",
         title: "Plant & Animal Tissue Histology",
         snippet: "Meristematic vs Permanent plant tissues, vascular Xylem vs Phloem transport, and the 4 primary animal tissue systems.",
         file: "topics/biology_01_plant_and_animal_tissues.html"
@@ -760,7 +1522,6 @@
         discipline: "Biology",
         code: "BIO-02",
         unitNum: "Plant Physiology",
-        icon: "🌿",
         title: "Photosynthesis & Cellular Respiration in Plants",
         snippet: "Balanced chemical reaction (6CO₂ + 12H₂O), stomatal guard cell turgor, aerobic (38 ATP) vs anaerobic respiration pathways.",
         file: "topics/biology_02_photosynthesis_and_respiration.html"
@@ -769,7 +1530,6 @@
         discipline: "Biology",
         code: "BIO-03",
         unitNum: "Cytology",
-        icon: "🌿",
         title: "Cell Structure, Cytology & Organelles",
         snippet: "The Cell Theory, organelle specialization (Mitochondria 38 ATP, Ribosomes, Lysosomes), and 6-point Plant vs Animal cell matrix.",
         file: "topics/biology_03_cell_structure_organelles.html"
@@ -778,7 +1538,6 @@
         discipline: "Biology",
         code: "BIO-04",
         unitNum: "Human Physiology",
-        icon: "🌿",
         title: "Human Digestive System & Nutrition",
         snippet: "5 stages of holozoic nutrition, complete digestive enzyme catalytic ledger, and small intestine villi micro-anatomy.",
         file: "topics/biology_04_digestive_system.html"
@@ -787,7 +1546,6 @@
         discipline: "Biology",
         code: "BIO-05",
         unitNum: "Cardiovascular",
-        icon: "🌿",
         title: "Human Circulatory System, Blood & Heart",
         snippet: "4-chambered heart anatomy, cardiac valves, Pulmonary vs Systemic double circulation, and the 5-point Arteries vs Veins matrix.",
         file: "topics/biology_05_circulatory_system.html"
@@ -796,7 +1554,6 @@
         discipline: "Biology",
         code: "BIO-06",
         unitNum: "Respiratory System",
-        icon: "🌿",
         title: "Human Respiratory System & Gas Exchange",
         snippet: "Mechanics of breathing (Inhalation vs Exhalation), alveolar diffusion, and Aerobic (38 ATP) vs Anaerobic (2 ATP) respiration.",
         file: "topics/biology_06_human_respiratory_system.html"
@@ -805,7 +1562,6 @@
         discipline: "Biology",
         code: "BIO-07",
         unitNum: "Renal Physiology",
-        icon: "🌿",
         title: "Human Excretory System & Kidney Nephrons",
         snippet: "Excretion vs Egestion distinction, gross renal anatomy, nephron structure, and the 3 stages of urine formation.",
         file: "topics/biology_07_excretory_system.html"
@@ -814,7 +1570,6 @@
         discipline: "Biology",
         code: "BIO-08",
         unitNum: "Neurobiology",
-        icon: "🌿",
         title: "Human Nervous System, Brain & Reflex Arc",
         snippet: "Neuron cytology (Cyton, Axon, Myelin, Synapse), Cerebrum vs Cerebellum vs Medulla Oblongata, and the 5-step Reflex Arc pathway.",
         file: "topics/biology_08_nervous_system.html"
@@ -823,7 +1578,6 @@
         discipline: "Biology",
         code: "BIO-09",
         unitNum: "Reproduction",
-        icon: "🌿",
         title: "Reproduction in Plants & Animals",
         snippet: "Asexual vs Sexual reproduction, four whorls of a complete flower, Self vs Cross pollination, and fertilization dynamics.",
         file: "topics/biology_09_reproduction_in_plants_animals.html"
@@ -832,7 +1586,6 @@
         discipline: "Biology",
         code: "BIO-10",
         unitNum: "Taxonomy",
-        icon: "🌿",
         title: "Classification of Living Organisms",
         snippet: "Taxonomic hierarchy, Binomial nomenclature, Whittaker's 5 Kingdoms (Monera, Protista, Fungi, Plantae, Animalia), Invertebrates vs Vertebrates.",
         file: "topics/biology_10_classification_of_organisms.html"
@@ -841,7 +1594,6 @@
         discipline: "Biology",
         code: "BIO-11",
         unitNum: "Pathology & Hygiene",
-        icon: "🌿",
         title: "Health, Hygiene & Infectious Pathogens",
         snippet: "Communicable vs Non-communicable diseases, Bacteria/Viruses/Fungi/Protozoa, insect vectors (Anopheles, Aedes, Houseflies), and vaccines.",
         file: "topics/biology_11_health_hygiene_and_diseases.html"
@@ -850,7 +1602,6 @@
         discipline: "Biology",
         code: "BIO-12",
         unitNum: "Ecology",
-        icon: "🌿",
         title: "Ecosystems, Food Chains & Energy Dynamics",
         snippet: "Biotic vs Abiotic ecosystem components, food chains & webs, Lindeman's 10% energy transfer law, and biomagnification.",
         file: "topics/biology_12_ecosystems_and_food_chains.html"
@@ -860,7 +1611,6 @@
         discipline: "Mathematics",
         code: "MATH-01",
         unitNum: "Number Theory",
-        icon: "🔢",
         title: "The Number Continuum: Integers, Fractions & Rational Density",
         snippet: "The skyscraper elevator model, Russian nesting dolls, positive/negative multiplication mechanics, BODMAS hierarchies, and terminating decimal prime tests.",
         file: "topics/math_01_number_continuum.html"
@@ -869,7 +1619,6 @@
         discipline: "Mathematics",
         code: "MATH-02",
         unitNum: "Exponents",
-        icon: "📈",
         title: "Scale & Index Laws: Powers, Exponents & Scientific Notation",
         snippet: "Exponential doubling, common-sense proofs for a^0 = 1, negative elevator exponents, the 5 index laws, and standard scientific form across cosmic and atomic scales.",
         file: "topics/math_02_laws_of_indices.html"
@@ -878,7 +1627,6 @@
         discipline: "Mathematics",
         code: "MATH-03",
         unitNum: "Algebra",
-        icon: "📐",
         title: "The Algebraic Language: Expressions, Polynomials & Operations",
         snippet: "Mystery variables, terms, coefficients, degrees of polynomials, the strict apples-and-oranges rule of like terms, and bulletproof bracket distribution.",
         file: "topics/math_03_algebraic_expressions.html"
@@ -887,7 +1635,6 @@
         discipline: "Mathematics",
         code: "MATH-04",
         unitNum: "Algebra",
-        icon: "⚖️",
         title: "The Balance Beam: Linear Equations & Word Problems",
         snippet: "Equations as two-pan scales, transposition mechanics, clearing fractional denominators via LCM, and translating age, consecutive number, and digit reversal puzzles.",
         file: "topics/math_04_linear_equations.html"
@@ -896,7 +1643,6 @@
         discipline: "Mathematics",
         code: "MATH-05",
         unitNum: "Arithmetic & Variations",
-        icon: "📊",
         title: "Ratios, Proportions & The Unitary Method",
         snippet: "Dimensionless comparative scaling, dividing quantities in ratios, the fundamental law of extremes and means, continued proportions, and direct vs inverse variations.",
         file: "topics/math_05_ratios_and_proportions.html"
@@ -905,7 +1651,6 @@
         discipline: "Mathematics",
         code: "MATH-06",
         unitNum: "Commercial Arithmetic",
-        icon: "💰",
         title: "Commercial Mathematics: Percentages, Profit & Loss & Simple Interest",
         snippet: "Percentages out of 100, percentage change on original base, CP vs SP, calculating profit/loss on cost price, retail marked price discounts, and linear simple interest.",
         file: "topics/math_06_commercial_mathematics.html"
@@ -914,7 +1659,6 @@
         discipline: "Mathematics",
         code: "MATH-07",
         unitNum: "Geometry",
-        icon: "📏",
         title: "Lines, Angles & Transversals: Geometric Rigor",
         snippet: "Complementary and supplementary systems, linear pairs, proof of vertically opposite angle equality, parallel line transversals (F, Z, C angles), and tests for parallelism.",
         file: "topics/math_07_lines_and_angles.html"
@@ -923,12 +1667,54 @@
         discipline: "Mathematics",
         code: "MATH-08",
         unitNum: "Geometry & Mensuration",
-        icon: "📐",
         title: "Triangles, Congruence, Perimeter & Area",
         snippet: "Structural triangulation, angle sum and exterior theorems, the four congruence criteria (SSS, SAS, ASA, RHS), CPCTC deduction, and 2D mensuration boundaries.",
         file: "topics/math_08_triangles_and_congruence.html"
       }
     ];
+
+    const EMBLEMS = {
+      Physics: `<svg class="discipline-emblem emblem-physics" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7 21C6 12 14 6 24 7C33 8 35 18 33 26C31 33 21 35 13 33C8 31 7 26 7 21Z" fill="#fbf0ea"/>
+        <g class="emblem-orbit-1">
+          <ellipse cx="20" cy="20" rx="14" ry="5.5" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="34" cy="20" r="1.4" fill="#c2410c"/>
+        </g>
+        <g class="emblem-orbit-2">
+          <ellipse cx="20" cy="20" rx="14" ry="5.5" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="6" cy="20" r="1.4" fill="#161514"/>
+        </g>
+        <circle class="emblem-nucleus" cx="20" cy="20" r="3" fill="#c2410c"/>
+      </svg>`,
+      Chemistry: `<svg class="discipline-emblem emblem-chemistry" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 24C7 15 15 8 25 8C33 8 36 17 34 26C32 34 22 35 14 34C8 33 9 29 9 24Z" fill="#f0f7f2"/>
+        <path d="M17 9H23M18 9V14L11 28C10.2 29.5 11.3 31 13 31H27C28.7 31 29.8 29.5 29 28L22 14V9" stroke="#161514" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="flask-meniscus">
+          <path d="M13.5 24C16 23 24 25 26.5 24" stroke="#15803d" stroke-width="1.4" stroke-linecap="round"/>
+        </g>
+        <circle class="flask-bubble-1" cx="17" cy="27.5" r="1.2" fill="#15803d"/>
+        <circle class="flask-bubble-2" cx="22.5" cy="26" r="1.4" fill="#15803d"/>
+      </svg>`,
+      Biology: `<svg class="discipline-emblem emblem-biology" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 20C8 11 16 6 26 7C34 8 35 18 33 27C31 34 20 35 13 32C9 30 10 25 10 20Z" fill="#edf5ef"/>
+        <g class="leaf-pulse">
+          <path d="M12 30C12 30 15 23 20 18C25 13 31 10 31 10C31 10 29 18 24 23C19 28 12 30 12 30Z" stroke="#161514" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 30L22 19" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
+          <path d="M17 24.5L20.5 24" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M19.5 21.5L24 20.5" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+        </g>
+      </svg>`,
+      Mathematics: `<svg class="discipline-emblem emblem-math" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 22C7 13 14 7 24 7C33 7 35 17 34 26C33 33 22 35 14 33C8 32 8 27 8 22Z" fill="#fef8ea"/>
+        <path d="M20 7V10M20 10L11 31" stroke="#161514" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="compass-leg-sweep">
+          <path d="M20 10L29 31" stroke="#161514" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="29" cy="31" r="1.5" fill="#c2410c"/>
+        </g>
+        <path d="M14 24H26" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
+        <path class="compass-arc-draw" d="M10 33C16 35 24 35 30 33" stroke="#d97706" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>`
+    };
 
     let currentFilter = 'all';
     let currentSearch = '';
@@ -962,9 +1748,11 @@
         card.className = 'topic-card';
         card.href = item.file;
 
+        const emblemSvg = EMBLEMS[item.discipline] || `<div class="badge-icon">${item.icon}</div>`;
+
         card.innerHTML = `
           <div class="topic-left-badge">
-            <div class="badge-icon">${item.icon}</div>
+            <div class="badge-emblem-wrap">${emblemSvg}</div>
             <div class="badge-code">${item.code}</div>
             <div class="badge-unit">${item.unitNum}</div>
           </div>
@@ -973,7 +1761,7 @@
             <p class="topic-snippet">${item.snippet}</p>
           </div>
           <div class="topic-right-action">
-            <span class="action-arrow">Read Lesson →</span>
+            <span class="action-arrow">Read Lesson &rarr;</span>
           </div>
         `;
         container.appendChild(card);
@@ -1007,6 +1795,18 @@
         btn.textContent = btn.textContent.replace(/ \(\d+\)$/, '') + ` (${count})`;
       });
     }
+
+    // Scroll-triggered chisel-tip highlighter observer
+    const highlightObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-highlighted');
+          highlightObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.highlighter-mark').forEach(el => highlightObserver.observe(el));
 
     // Initial render
     populateCounts();

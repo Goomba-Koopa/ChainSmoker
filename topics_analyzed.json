@@ -1,0 +1,755 @@
+{
+  "physics_01_motion_and_speed.html": {
+    "title": "Motion, Distance, Displacement & Speed",
+    "subtext": "The relative nature of rest and motion, translatory particle mechanics (rectilinear vs curvilinear), rotatory and periodic systems, scalar distance vs vector displacement, uniform vs non-uniform speed, and algebraic conversion proofs.",
+    "sections": [
+      "1. The Relativity of Rest and Motion",
+      "2. Translatory Motion: Particle Mechanics & Geometry",
+      "3. Rotatory, Oscillatory, Periodic & Random Motion",
+      "4. Distance vs. Displacement",
+      "5. Speed Formulas & Conversion Derivations",
+      "6. Worked Problems",
+      "7. Scientific Reasoning & Conceptual Q&A"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Speed } (v) = \\frac{\\text{Distance } (s)}{\\text{Time } (t)}",
+      "v_{\\text{avg}} = \\frac{\\text{Total Distance Covered } (S_{\\text{total}})}{\\text{Total Time Taken } (T_{\\text{total}})}",
+      "1\\text{ km/h} = \\frac{1,000\\text{ m}}{3,600\\text{ s}} = \\frac{10}{36}\\text{ m/s} = \\frac{\\mathbf{5}}{\\mathbf{18}}\\text{ m/s} \\approx 0.2778\\text{ m/s}"
+    ]
+  },
+  "physics_02_energy_and_machines.html": {
+    "title": "Work, Energy & Simple Machines",
+    "subtext": "The scalar definition of work (W = F \u00d7 s), kinetic and potential energy, conservation of energy, and the three classes of levers with mechanical advantage.",
+    "sections": [
+      "1. The Scientific Definition of Work",
+      "2. Kinetic and Potential Energy",
+      "3. The Law of Conservation of Energy",
+      "4. Simple Machines and Levers",
+      "5. Mechanical Advantage",
+      "6. Give Scientific Reasons",
+      "7. Worked Problems"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "W = F \\times s",
+      "MA = \\frac{\\text{Load (L)}}{\\text{Effort (E)}}"
+    ]
+  },
+  "physics_03_light_and_reflection.html": {
+    "title": "Light: Reflection, Mirrors & Shadows",
+    "subtext": "Rectilinear propagation of light, formation of shadows and eclipses, laws of reflection (\u2220i = \u2220r), lateral inversion, and the inclined-mirror formula (n = 360\u00b0/\u03b8 \u2212 1).",
+    "sections": [
+      "1. Rectilinear Propagation of Light",
+      "2. Formation of Shadows & Eclipses",
+      "3. The Laws of Reflection",
+      "4. Lateral Inversion in Plane Mirrors",
+      "5. Images in Inclined Mirrors",
+      "6. Worked Problems",
+      "7. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "m = \\frac{360^\\circ}{\\theta}",
+      "m = \\frac{360^\\circ}{\\theta} = \\frac{360^\\circ}{60^\\circ} = 6"
+    ]
+  },
+  "physics_04_sound_and_vibration.html": {
+    "title": "Sound: Waves, Propagation & Properties",
+    "subtext": "Longitudinal wave nature of sound, the bell-jar vacuum experiment, speed of sound in solids/liquids/gases, pitch vs loudness vs quality, and the audible frequency range (20 Hz\u201320,000 Hz).",
+    "sections": [
+      "1. The Longitudinal Wave Nature of Sound",
+      "2. The Bell-Jar Vacuum Experiment",
+      "3. Speed of Sound in Solids, Liquids, and Gases",
+      "4. Pitch, Loudness, and Quality",
+      "5. The Audible Frequency Range",
+      "6. Worked Problems",
+      "7. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Speed } (v) = \\frac{\\text{Distance}}{\\text{Time}}",
+      "v = \\frac{1700\\text{ m}}{5\\text{ s}} = \\mathbf{340\\text{ m/s}}",
+      "2d = v \\times t"
+    ]
+  },
+  "physics_05_electricity_and_circuits.html": {
+    "title": "Electricity: Current, Circuits & Effects",
+    "subtext": "Electric current (I = Q/t), potential difference, series vs parallel circuits, Ohm's Law, Joule heating (H = I\u00b2Rt), fuses, and the magnetic effect of current.",
+    "sections": [
+      "1. Electric Current and Potential Difference",
+      "2. Ohm's Law and Resistance",
+      "3. Series vs. Parallel Circuits",
+      "4. Heating and Magnetic Effects of Current",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "physics_06_force_and_pressure.html": {
+    "title": "Force, Pressure & Pascal's Principle",
+    "subtext": "Thrust vs pressure (P = F/A), hydrostatic pressure derivation (P = h\u03c1g), Pascal's Principle and the hydraulic press, atmospheric pressure and the barometer.",
+    "sections": [
+      "1. Thrust and Pressure",
+      "2. Hydrostatic Pressure in Liquids",
+      "3. Pascal's Principle and The Hydraulic Press",
+      "4. Atmospheric Pressure and The Barometer",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "P = \\frac{F}{A}",
+      "P = \\frac{F}{A} = \\frac{A \\cdot h \\cdot \\rho \\cdot g}{A} = h\\rho g",
+      "\\frac{F_2}{F_1} = \\frac{A_2}{A_1}"
+    ]
+  },
+  "physics_07_heat_and_temperature.html": {
+    "title": "Heat, Temperature &amp; Transfer",
+    "subtext": "Heat vs temperature distinction, thermometric scales (C/5 = (F\u00e2\u02c6\u201932)/9 = K\u00e2\u02c6\u2019273), conduction/convection/radiation mechanisms, the anomalous expansion of water (0\u00c2\u00b0C\u00e2\u20ac\u201c4\u00c2\u00b0C), and the thermos flask.",
+    "sections": [
+      "1. Heat vs. Temperature Distinction",
+      "2. Thermometric Scales",
+      "3. Mechanisms of Heat Transfer",
+      "4. The Anomalous Expansion of Water",
+      "5. The Thermos (Vacuum) Flask",
+      "6. Worked Problems",
+      "7. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\frac{C - 0}{100} = \\frac{F - 32}{180} = \\frac{K - 273}{100}",
+      "\\frac{C}{5} = \\frac{F - 32}{9} = \\frac{K - 273}{5}"
+    ]
+  },
+  "physics_08_density_and_buoyancy.html": {
+    "title": "Density, Relative Density &amp; Buoyancy",
+    "subtext": "Density ($d = m/V$), Relative Density ($\\text{RD} = \\rho / \\rho_{\\text{water}}$), Archimedes' Principle (upthrust = weight of fluid displaced), and the Law of Floatation.",
+    "sections": [
+      "1. Concept of Density",
+      "2. Relative Density (Specific Gravity)",
+      "3. Archimedes' Principle &amp; Upthrust",
+      "4. The Law of Floatation",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "d = \\frac{m}{V}",
+      "F_B = V_{\\text{submerged}} \\times \\rho_{\\text{fluid}} \\times g",
+      "d = \\frac{m}{V} = \\frac{540}{200} = \\mathbf{2.7\\text{ g/cm}^3}"
+    ]
+  },
+  "physics_09_magnetism_and_fields.html": {
+    "title": "Magnetism: Properties, Fields & Electromagnets",
+    "subtext": "Properties of magnets (magnetic dipole, poles, repulsion as the only sure test), magnetic field lines (direction, non-intersection), methods of magnetisation, and the electromagnet.",
+    "sections": [
+      "1. Basic Properties and the Magnetic Dipole",
+      "2. Repulsion: The Only Sure Test of Magnetism",
+      "3. Magnetic Field Lines",
+      "4. Methods of Magnetisation and Electromagnets",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "physics_10_spherical_mirrors_and_images.html": {
+    "title": "Spherical Mirrors &amp; Image Formation",
+    "subtext": "Anatomy of curved mirrors (Center of Curvature, Principal Focus, Focal Length \\(f = R/2\\)), Concave converging vs Convex diverging optics, Ray diagram principles, Real vs Virtual images, and real-world optical devices.",
+    "sections": [
+      "1. The Anatomy of Curved Spherical Mirrors",
+      "2. Real vs. Virtual Images",
+      "3. The Three Cardinal Rules of Ray Tracing",
+      "4. Practical Applications Based on Optical Geometry",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "f = \\frac{R}{2} \\quad \\Longleftrightarrow \\quad R = 2f"
+    ]
+  },
+  "physics_11_static_electricity_and_charges.html": {
+    "title": "Static Electricity &amp; Electrostatics",
+    "subtext": "Origin of electrostatic charges, electronic theory of friction, the Fundamental Law of Electrostatics, charging by Conduction vs Induction, Gold Leaf Electroscope detection, and atmospheric lightning mechanisms.",
+    "sections": [
+      "1. Atomic Origin of Static Charges",
+      "2. The Fundamental Law of Electrostatics",
+      "3. Charging by Conduction vs. Induction",
+      "4. Gold Leaf Electroscope &amp; Atmospheric Lightning",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "physics_12_simple_machines_and_efficiency.html": {
+    "title": "Simple Machines &amp; Mechanical Advantage",
+    "subtext": "Definition and functions of a machine, Mechanical Advantage (\\(MA\\)), Velocity Ratio (\\(VR\\)), Efficiency (\\(\\eta = MA/VR\\)), The Principle of Moments, Classification of Levers (Class I, II, III), and Pulley systems.",
+    "sections": [
+      "1. Core Quantities of Simple Machines",
+      "2. The Principle of Moments &amp; The Three Classes of Levers",
+      "3. Pulley Systems: Fixed vs. Movable Systems",
+      "4. Worked Problems",
+      "5. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "MA = \\frac{\\text{Load }(L)}{\\text{Effort }(E)}",
+      "VR = \\frac{\\text{Displacement of Effort }(d_E)}{\\text{Displacement of Load }(d_L)}",
+      "\\eta = \\frac{\\text{Work Output}}{\\text{Work Input}} = \\frac{L \\times d_L}{E \\times d_E} = \\left(\\frac{L}{E}\\right) \\times \\left(\\frac{d_L}{d_E}\\right) = \\frac{MA}{VR}"
+    ]
+  },
+  "chemistry_01_matter_and_composition.html": {
+    "title": "Matter: States, Properties & Kinetic Theory",
+    "subtext": "The Kinetic Molecular Theory of matter, intermolecular forces vs spaces, the five-point Solids/Liquids/Gases comparison table, Brownian motion, diffusion, and changes of state with latent heat.",
+    "sections": [
+      "1. The Kinetic Molecular Theory of Matter",
+      "2. Intermolecular Forces vs. Intermolecular Spaces",
+      "3. The Three Fundamental States of Matter",
+      "4. Brownian Motion & Diffusion",
+      "5. Changes of State & Latent Heat",
+      "6. CISCE Worked Problem Problems & Give Scientific Reasons",
+      "5. Worked Problems"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "chemistry_02_atomic_structure_and_valency.html": {
+    "title": "Atomic Structure & Valency",
+    "subtext": "The architecture of the atom: why atoms are mostly empty space, the Bohr shell model and the 2n\u00b2 seating plan, why elements desperately borrow or dump electrons to achieve the noble gas octet, and the foolproof criss-cross method for writing chemical formulas.",
+    "sections": [
+      "Introduction: The Cricket Stadium in a Grain of Sand",
+      "1. The Three Subatomic Particles",
+      "2. Atomic Number (\\(Z\\)) and Mass Number (\\(A\\))",
+      "3. Bohr's Shell Model: The Seating Plan of the Atom",
+      "4. Valency: Why Do Atoms React?",
+      "5. Writing Chemical Formulas: The Criss-Cross Dance",
+      "6. Isotopes: The Atomic Twins",
+      "Worked Problems",
+      "Scientific Deductions & \"Why?\" Questions"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "Z = \\text{Number of Protons} = \\text{Number of Electrons (in neutral atom)}",
+      "A = \\text{Protons} + \\text{Neutrons} = Z + n",
+      "n = A - Z \\quad (\\text{Top number minus bottom number!})"
+    ]
+  },
+  "chemistry_03_elements_and_compounds.html": {
+    "title": "Elements, Compounds & Mixtures",
+    "subtext": "Definitions of element, compound, and mixture; the Law of Constant Proportions; the five-point Compounds vs Mixtures matrix; and separation techniques (filtration, distillation, chromatography, magnetic separation).",
+    "sections": [
+      "1. Elements: The Fundamental Building Blocks",
+      "2. Compounds & The Law of Constant Proportions",
+      "3. Mixtures & The 5-Point Distinction Matrix",
+      "4. Separation Techniques for Mixtures",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Liquid} \\xrightarrow{\\text{Boiling / Vaporization}} \\text{Vapour} \\xrightarrow{\\text{Cooling / Condensation}} \\text{Pure Liquid (Distillate)}"
+    ]
+  },
+  "chemistry_04_atoms_molecules_radicals.html": {
+    "title": "Atoms, Molecules, Atomicity & Radicals",
+    "subtext": "Atom vs molecule distinction, atomicity classifications (monoatomic He/Ar, diatomic H\u2082/O\u2082/N\u2082/Cl\u2082, polyatomic O\u2083/P\u2084/S\u2088), electropositive radicals (+1 to +4) and electronegative radicals (\u22121 to \u22124), and the criss-cross valency method for formula writing.",
+    "sections": [
+      "1. Atom vs. Molecule Distinction",
+      "2. Atomicity Classifications",
+      "3. Electropositive & Electronegative Radicals",
+      "4. The Criss-Cross Valency Method",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "chemistry_05_chemical_reactions_balancing.html": {
+    "title": "Chemical Reactions & Equation Balancing",
+    "subtext": "Identifying chemical changes (gas evolution, precipitate, color change, state change, heat exchange), word equations vs symbol equations, state symbols (s, l, g, aq), the hit-and-trial balancing method, and the four fundamental reaction classes.",
+    "sections": [
+      "1. Characteristics of a Chemical Reaction",
+      "2. Word Equations vs. Symbol Equations",
+      "3. The Language of State Symbols",
+      "4. The Four Principal Types of Chemical Reactions",
+      "5. The Hit-and-Trial Method of Balancing Equations",
+      "6. Worked Problems",
+      "6. Give Scientific Reasons",
+      "7. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "chemistry_06_acids_bases_and_salts.html": {
+    "title": "Acids, Bases & Salts",
+    "subtext": "Arrhenius definitions of acids (H\u207a donor) and bases (OH\u207b donor), neutralization reaction (acid + base \u2192 salt + water), the master indicator color ledger (Litmus, Methyl Orange, Phenolphthalein, Universal Indicator), and properties of acids and bases.",
+    "sections": [
+      "1. The Arrhenius Concept of Acids and Bases",
+      "2. Chemical Properties of Acids and Bases",
+      "3. Neutralization & Salt Formation",
+      "4. The Master Indicator Color Ledger",
+      "5. Worked Problems & Equations",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Zn (s)} + \\text{H}_2\\text{SO}_4 \\text{ (aq)} \\rightarrow \\text{ZnSO}_4 \\text{ (aq)} + \\text{H}_2 \\uparrow",
+      "\\text{CaCO}_3 \\text{ (s)} + 2\\text{HCl (aq)} \\rightarrow \\text{CaCl}_2 \\text{ (aq)} + \\text{H}_2\\text{O (l)} + \\text{CO}_2 \\uparrow",
+      "\\text{HCl (aq)} + \\text{NaOH (aq)} \\rightarrow \\text{NaCl (aq)} + \\text{H}_2\\text{O (l)}"
+    ]
+  },
+  "chemistry_07_metals_nonmetals_reactivity.html": {
+    "title": "Metals, Non-Metals &amp; Reactivity Series",
+    "subtext": "Physical and chemical properties of metals vs non-metals, the Metal Reactivity Series (K &gt; Na &gt; Ca &gt; Mg &gt; Al &gt; Zn &gt; Fe &gt; Pb &gt; Cu &gt; Ag &gt; Au), displacement reactions, and reactions of metals with water, acids, and oxygen.",
+    "sections": [
+      "1. Physical Properties of Metals vs Non-Metals",
+      "2. The Metal Reactivity Series",
+      "3. Displacement Reactions in Aqueous Solutions",
+      "4. Chemical Properties: Reactions with Oxygen, Water, and Acids",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Fe}_{(s)} + \\text{CuSO}_{4(aq)} \\rightarrow \\text{FeSO}_{4(aq)} + \\text{Cu}_{(s)}"
+    ]
+  },
+  "chemistry_08_water_solutions_solubility.html": {
+    "title": "Water as a Solvent, Solutions & Solubility",
+    "subtext": "Solute, solvent, and solution definitions; Saturated vs Unsaturated vs Supersaturated solutions; solubility formula (S = mass of solute / 100g solvent); hard water vs soft water; temporary vs permanent hardness; and anomalous expansion of water.",
+    "sections": [
+      "1. The Anatomy of a Solution",
+      "2. Saturation and Solution Types",
+      "3. Solubility and Its Calculation",
+      "4. Hard Water vs. Soft Water",
+      "5. The Anomalous Expansion of Water",
+      "6. Worked Problems",
+      "7. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "S = \\left( \\frac{\\text{Mass of solute (in g)}}{\\text{Mass of solvent (in g)}} \\right) \\times 100",
+      "\\text{Solubility } (S) = \\frac{\\text{Mass of solute}}{\\text{Mass of solvent}} \\times 100",
+      "S = \\frac{36}{200} \\times 100 = \\frac{36}{2} = \\mathbf{18\\text{ g / 100 g of water}}"
+    ]
+  },
+  "chemistry_09_air_oxygen_combustion.html": {
+    "title": "Air, Oxygen & Combustion",
+    "subtext": "Composition of air (N\u2082 78%, O\u2082 21%, Ar+CO\u2082 1%), properties and preparation of oxygen, combustion types (rapid, slow, spontaneous), products of combustion, and rusting of iron with prevention methods.",
+    "sections": [
+      "1. The Composition of Air",
+      "2. Oxygen: Properties & Preparation",
+      "3. Combustion Types and Products",
+      "4. Rusting of Iron and Its Prevention",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "2H_2O_2 \\xrightarrow{MnO_2} 2H_2O + O_2 \\uparrow",
+      "2Mg + O_2 \\rightarrow 2MgO",
+      "S + O_2 \\rightarrow SO_2"
+    ]
+  },
+  "chemistry_10_carbon_and_allotropes.html": {
+    "title": "Carbon & Its Allotropes",
+    "subtext": "Allotropy definition, crystalline allotropes of carbon (Diamond: tetrahedral 3D network, Graphite: planar hexagonal layers, Fullerenes: geodesic spherical C60 cages), amorphous forms (coal, charcoal, coke, carbon black), and structural logic behind practical applications.",
+    "sections": [
+      "1. The Phenomenon of Allotropy",
+      "2. Crystalline Allotropes: Diamond vs. Graphite",
+      "3. Fullerenes: The Spherical Molecular Allotropes",
+      "4. Amorphous Forms of Carbon",
+      "4. Worked Problems",
+      "5. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "chemistry_11_water_hardness_and_treatment.html": {
+    "title": "Water Hardness &amp; Treatment Technologies",
+    "subtext": "Soft vs Hard water, Chemical origin of hardness (\\(\\text{Ca}^{2+}\\) and \\(\\text{Mg}^{2+}\\) salts), Temporary vs Permanent hardness, Removal methods (Boiling, Clark's process, Washing soda, Ion exchange resins), and Industrial boiler scale hazards.",
+    "sections": [
+      "1. Soft Water vs. Hard Water",
+      "2. Temporary Hardness vs. Permanent Hardness",
+      "3. Methods for Softening Hard Water",
+      "4. Worked Problems",
+      "5. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "2\\text{C}_{17}\\text{H}_{35}\\text{COONa (aq)} + \\text{CaSO}_4\\text{ (aq)} \\rightarrow (\\text{C}_{17}\\text{H}_{35}\\text{COO})_2\\text{Ca}\\downarrow\\text{ (Curdy Scum)} + \\text{Na}_2\\text{SO}_4\\text{ (aq)}",
+      "\\text{Ca(HCO}_3)_2\\text{ (aq)} \\xrightarrow{\\Delta} \\mathbf{\\text{CaCO}_3\\downarrow\\text{ (Solid Insoluble)}} + \\text{H}_2\\text{O} + \\text{CO}_2\\uparrow",
+      "\\text{Ca(HCO}_3)_2 + \\text{Ca(OH)}_2 \\rightarrow 2\\mathbf{\\text{CaCO}_3\\downarrow} + 2\\text{H}_2\\text{O}"
+    ]
+  },
+  "chemistry_12_oxides_acid_rain_and_atmosphere.html": {
+    "title": "Oxides, Acid Rain &amp; Atmospheric Chemistry",
+    "subtext": "Chemical classification of oxides (Acidic, Basic, Amphoteric, Neutral), Industrial origins of atmospheric pollutants (\\(\\text{SO}_2, \\text{NO}_x\\)), Acid Rain formation mechanisms, Taj Mahal Marble Cancer, and Greenhouse warming dynamics.",
+    "sections": [
+      "1. Classification of Oxides",
+      "2. Acid Rain: Origins, Reactions &amp; Ecological Impact",
+      "3. The Greenhouse Effect &amp; Climate Dynamics",
+      "4. Worked Problems",
+      "5. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "2\\text{SO}_2\\text{ (g)} + \\text{O}_2\\text{ (g)} \\rightarrow 2\\text{SO}_3\\text{ (g)}",
+      "\\text{SO}_3\\text{ (g)} + \\text{H}_2\\text{O (l)} \\rightarrow \\mathbf{\\text{H}_2\\text{SO}_4\\text{ (Sulphuric Acid)}}",
+      "2\\text{NO (g)} + \\text{O}_2\\text{ (g)} \\rightarrow 2\\text{NO}_2\\text{ (g)}"
+    ]
+  },
+  "biology_01_plant_and_animal_tissues.html": {
+    "title": "Plant & Animal Tissues",
+    "subtext": "Meristematic vs Permanent plant tissues (Simple: Parenchyma/Collenchyma/Sclerenchyma; Complex: Xylem/Phloem), and the four animal tissue systems (Epithelial, Connective, Muscular, Nervous) with functions.",
+    "sections": [
+      "1. Plant Tissues: Meristematic and Permanent",
+      "2. Simple Permanent Tissues",
+      "3. Complex Permanent Tissues: Xylem and Phloem",
+      "4. The Four Animal Tissue Systems",
+      "5. Worked CISCE Exam Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_02_photosynthesis_and_respiration.html": {
+    "title": "Photosynthesis & Cellular Respiration",
+    "subtext": "The balanced photosynthesis equation (6CO\u2082 + 12H\u2082O \u2192 C\u2086H\u2081\u2082O\u2086 + 6O\u2082 + 6H\u2082O), chloroplast structure, stomatal guard cells, limiting factors, Aerobic vs Anaerobic cellular respiration pathways, and the comparative metabolism matrix.",
+    "sections": [
+      "1. The Magic of Plant Food Production",
+      "2. The Factories and the Doors: Chloroplasts & Stomata",
+      "3. Internal Structure of a Leaf",
+      "4. Factors Affecting the Rate of Photosynthesis",
+      "5. Cellular Respiration: Aerobic vs. Anaerobic Pathways",
+      "6. Photosynthesis vs. Cellular Respiration",
+      "6. Give Scientific Reasons & Comparisons",
+      "5. Worked Problems"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "6\\text{CO}_2 + 12\\text{H}_2\\text{O} \\xrightarrow{\\text{Sunlight, Chlorophyll}} \\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 + 6\\text{H}_2\\text{O}",
+      "\\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\xrightarrow{\\text{Cytoplasm + Mitochondria}} 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + 38\\text{ ATP (Theoretical Maximum)}^{\\dagger}",
+      "\\text{C}_6\\text{H}_{12}\\text{O}_6 \\rightarrow 2\\text{C}_2\\text{H}_5\\text{OH (Ethanol)} + 2\\text{CO}_2 + 2\\text{ ATP}"
+    ]
+  },
+  "biology_03_cell_structure_organelles.html": {
+    "title": "Cell Structure & Organelles",
+    "subtext": "Plant vs Animal cell comparison, organelle functions (Nucleus, Mitochondria, Ribosomes, Lysosomes, Plastids/Chloroplasts, Golgi Body, Endoplasmic Reticulum, Vacuole, Cell Wall).",
+    "sections": [
+      "1. Plant Cell Structure",
+      "2. Animal Cell Structure",
+      "3. The Boundaries: Cell Wall & Cell Membrane",
+      "4. The Nucleus: The Cell's Control Center",
+      "5. Mitochondria: The Powerhouses",
+      "6. Endoplasmic Reticulum & Ribosomes: The Factories and Highways",
+      "7. Golgi Body: The Cellular Post Office",
+      "8. Lysosomes: The Recycling Centers",
+      "9. Plastids & Chloroplasts: The Solar Panels",
+      "10. Vacuoles: The Storage Tanks",
+      "11. Distinction: Plant vs. Animal Cell",
+      "12. Worked Problems",
+      "13. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_04_digestive_system.html": {
+    "title": "Human Digestive System",
+    "subtext": "The five stages of holozoic nutrition (ingestion, digestion, absorption, assimilation, egestion), the complete digestive enzyme matrix (Ptyalin/Pepsin/Trypsin/Lipase/Amylase), and the small intestine villus structure for absorption.",
+    "sections": [
+      "1. The Five Stages of Holozoic Nutrition",
+      "2. Anatomy of the Alimentary Canal",
+      "3. The Complete Digestive Enzyme Matrix",
+      "4. The Small Intestine & Villus Structure",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_05_circulatory_system.html": {
+    "title": "Human Circulatory System",
+    "subtext": "The 4-chambered heart anatomy (atria, ventricles, valves), double circulation (pulmonary + systemic), the five-point Arteries vs Veins vs Capillaries matrix, blood components (RBC/WBC/Platelets/Plasma), and the cardiac cycle.",
+    "sections": [
+      "1. Heart Anatomy: The Pumping Organ",
+      "2. Double Circulation",
+      "3. Blood Vessels Matrix",
+      "4. Blood Components",
+      "5. The Cardiac Cycle",
+      "6. Worked Problems",
+      "7. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_06_human_respiratory_system.html": {
+    "title": "Human Respiratory System & Gas Exchange",
+    "subtext": "The pathway of air through the respiratory tract (nasal cavity \u2192 larynx \u2192 trachea \u2192 bronchi \u2192 bronchioles \u2192 alveoli), the mechanics of breathing (Inhalation vs Exhalation diaphragm/intercostal muscles), alveolar gas exchange, and Aerobic vs Anaerobic cellular respiration with balanced equations.",
+    "sections": [
+      "1. The Pathway of Air",
+      "2. Mechanics of Breathing (Ventilation)",
+      "3. Alveolar Gas Exchange",
+      "4. Aerobic vs. Anaerobic Cellular Respiration",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Glucose} + \\text{Oxygen} \\rightarrow \\text{Carbon Dioxide} + \\text{Water} + \\text{Energy (ATP)}",
+      "\\text{Glucose} \\rightarrow \\text{Lactic Acid} + \\text{Energy (ATP)}"
+    ]
+  },
+  "biology_07_excretory_system.html": {
+    "title": "Human Excretory System",
+    "subtext": "Excretion vs Egestion (critical distinction), organs of excretion (Kidneys, Lungs, Skin, Liver), nephron anatomy and the three stages of urine formation (Ultrafiltration, Selective Reabsorption, Tubular Secretion).",
+    "sections": [
+      "1. Excretion vs. Egestion",
+      "2. Accessory Organs of Excretion",
+      "3. Anatomy of the Nephron",
+      "4. The Three Stages of Urine Formation",
+      "5. Give Scientific Reasons & Worked Problems",
+      "5. Worked Problems"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_08_nervous_system.html": {
+    "title": "Human Nervous System",
+    "subtext": "Neuron cytology (dendrites, axon, myelin sheath, synaptic knob), the Central vs Peripheral Nervous System, brain divisions (Cerebrum, Cerebellum, Medulla Oblongata), and the five-step involuntary reflex arc.",
+    "sections": [
+      "1. Neuron Cytology: The Body's Wiring",
+      "2. Organization: Central vs. Peripheral",
+      "3. The Human Brain: Major Divisions",
+      "4. The Involuntary Reflex Arc",
+      "5. Worked Problems",
+      "6. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_09_reproduction_in_plants_animals.html": {
+    "title": "Reproduction in Plants & Animals",
+    "subtext": "Asexual reproduction methods in plants (Vegetative propagation: runners/bulbs/tubers; Budding in Yeast; Spore formation in Ferns), Sexual reproduction in flowering plants (pollination, fertilization, seed/fruit formation), and post-fertilization embryology in animals.",
+    "sections": [
+      "1. Asexual Reproduction: Propagating Without Seeds",
+      "2. Sexual Reproduction in Plants: Flowers & Seeds",
+      "3. Post-Fertilization Embryology in Animals",
+      "4. Worked Problems",
+      "5. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_10_classification_of_organisms.html": {
+    "title": "Classification of Living Organisms",
+    "subtext": "The necessity of biological classification, Linnaean hierarchy, binomial nomenclature rules, Whittaker's Five Kingdom Classification (Monera, Protista, Fungi, Plantae, Animalia), and major invertebrate and vertebrate diagnostic matrices.",
+    "sections": [
+      "1. The Need for Biological Classification",
+      "2. Taxonomic Hierarchy & Binomial Nomenclature",
+      "3. Whittaker's Five Kingdom Classification System",
+      "4. Major Invertebrate (Non-Chordate) Phyla",
+      "5. Vertebrate (Chordate) Classes",
+      "6. Worked Logical Classification Worked Problems",
+      "7. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Kingdom} \\rightarrow \\text{Phylum (or Division in Plants)} \\rightarrow \\text{Class} \\rightarrow \\text{Order} \\rightarrow \\text{Family} \\rightarrow \\text{Genus} \\rightarrow \\text{Species}"
+    ]
+  },
+  "biology_11_health_hygiene_and_diseases.html": {
+    "title": "Health, Hygiene &amp; Infectious Pathogens",
+    "subtext": "Definition of health (WHO standards), Communicable vs Non-communicable diseases, Microscopic pathogens (Bacteria, Viruses, Fungi, Protozoa), Biological insect vectors (Mosquitoes, Houseflies), and Body immunity mechanisms.",
+    "sections": [
+      "1. Concept of Health &amp; Classification of Diseases",
+      "2. Major Classes of Microscopic Pathogens",
+      "3. Insect Vectors: Biological vs. Mechanical Carriers",
+      "4. Worked Logical Diagnostic Worked Problems",
+      "5. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '"
+    ]
+  },
+  "biology_12_ecosystems_and_food_chains.html": {
+    "title": "Ecosystems, Food Chains &amp; Energy Dynamics",
+    "subtext": "Structure of ecosystems (Biotic Producers, Consumers, Decomposers vs Abiotic factors), Linear Food Chains vs Complex Food Webs, Lindeman's 10% Ecological Energy Transfer Law, and Biological Magnification of toxic chemicals.",
+    "sections": [
+      "1. Structure of an Ecosystem",
+      "2. Food Chains vs. Interconnected Food Webs",
+      "3. Raymond Lindeman's 10% Energy Transfer Law",
+      "4. Worked Problems",
+      "5. Give Scientific Reasons"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\text{Sunlight } (1,000,000\\text{ J}) \\xrightarrow{1\\%} \\text{Plants } (10,000\\text{ J}) \\xrightarrow{10\\%} \\text{Deer } (1,000\\text{ J}) \\xrightarrow{10\\%} \\text{Tiger } (100\\text{ J})",
+      "\\text{Energy}_{\\text{Deer}} = 10\\% \\times 20,000\\text{ J} = \\frac{10}{100} \\times 20,000\\text{ J} = \\mathbf{2,000\\text{ Joules}}",
+      "\\text{Energy}_{\\text{Leopard}} = 10\\% \\times 2,000\\text{ J} = \\frac{10}{100} \\times 2,000\\text{ J} = \\mathbf{200\\text{ Joules}}"
+    ]
+  },
+  "math_01_number_continuum.html": {
+    "title": "The Number Continuum: Integers, Fractions & Decimals",
+    "subtext": "A journey through how our numbers grow: why humans had to invent negative numbers and fractions, the real-world common sense behind multiplying negative signs, how to squeeze infinite fractions into tiny gaps, and the secret prime test for terminating decimals.",
+    "sections": [
+      "Introduction: The Expanding Universe of Numbers",
+      "1. The Four Number Families: Boxes Inside Boxes",
+      "2. Why Does Negative \u00d7 Negative = Positive?",
+      "3. Order of Operations: Taming Nested Brackets",
+      "4. Squeezing Fractions: The \"Sand vs. Stepping Stones\" Idea",
+      "5. Decimals: Will It Stop, or Loop Forever?",
+      "Worked Problems",
+      "Mathematical Curiosities & \"Why?\" Questions"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "7 = \\frac{7}{1} \\qquad -4 = \\frac{-4}{1} \\qquad 0 = \\frac{0}{1}",
+      "\\frac{5}{-7} = \\frac{5 \\times (-1)}{-7 \\times (-1)} = \\mathbf{-\\frac{5}{7}}",
+      "-4 \\times 3 = -12"
+    ]
+  },
+  "math_02_laws_of_indices.html": {
+    "title": "Scale & Index Laws: Powers, Exponents & Scientific Notation",
+    "subtext": "The mathematical language of scale: repeated multiplication compressed into exponents, common-sense proofs for why a number to the zero power equals 1, why negative powers flip into the denominator, the five fundamental index laws, and standard scientific form from bacteria to galaxies.",
+    "sections": [
+      "Introduction: The King, The Chessboard & The Power of Doubling",
+      "1. The Five Fundamental Index Laws",
+      "2. Why Does \\(a^0 = 1\\), and What is a Negative Exponent?",
+      "3. Scientific Notation: Taming the Universe's Extremes",
+      "Worked Problems",
+      "Mathematical Curiosities & \"Why?\" Questions"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "2^{63} \\approx 9,223,372,036,854,775,808 \\text{ grains}",
+      "a^n = \\underbrace{a \\times a \\times a \\times \\dots \\times a}_{n \\text{ times}}",
+      "2^3 \\times 2^4 = (2 \\times 2 \\times 2) \\times (2 \\times 2 \\times 2 \\times 2)"
+    ]
+  },
+  "math_03_algebraic_expressions.html": {
+    "title": "The Algebraic Language: Expressions, Polynomials & Operations",
+    "subtext": "The master code of mathematics: why letters replace mystery numbers, terms, coefficients, degrees of polynomials, the strict apples-and-oranges rule of like terms, bulletproof bracket distribution, and polynomial arithmetic.",
+    "sections": [
+      "Introduction: The Mystery Box and the Master Key",
+      "1. Anatomy of an Algebraic Expression",
+      "2. Like vs. Unlike Terms: The \"Apples and Oranges\" Rule",
+      "3. Addition and Subtraction of Polynomials",
+      "4. Multiplication of Polynomials: The Distributive Law",
+      "Worked Problems",
+      "Mathematical Curiosities & \"Why?\" Questions"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "3x + 4x^2 \\quad \\text{(already in simplest form)}",
+      "(5x^2 + 2x^2) + (-3x + 7x) + (8 - 11)",
+      "(5 + 2)x^2 + (-3 + 7)x + (8 - 11) = \\mathbf{7x^2 + 4x - 3}"
+    ]
+  },
+  "math_04_linear_equations.html": {
+    "title": "The Balance Beam: Linear Equations & Word Problems",
+    "subtext": "The mechanics of algebraic balance: equations as two-pan scales, why operations flip signs across the equals boundary, clearing denominators via the LCM, and a complete translation dictionary for solving age, consecutive number, and digit puzzles.",
+    "sections": [
+      "Introduction: The Two-Pan Weighing Scale",
+      "1. The Transposition Mechanism: Why Signs Flip",
+      "2. Taming Fractions: The LCM Clearing Trick",
+      "3. Translating English into Algebra: The Word Problem Dictionary",
+      "Worked Problems",
+      "Mathematical Curiosities & \"Why?\" Questions"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "x + 2 = 8 \\implies x = 8 - 2 = \\mathbf{6}",
+      "ax + b = c \\quad (\\text{where } a \\neq 0)",
+      "x + 7 = 12"
+    ]
+  },
+  "math_05_ratios_and_proportions.html": {
+    "title": "Ratios, Proportions & The Unitary Method",
+    "subtext": "Comparative arithmetic, dimensionless relationships, continued proportions, and direct versus inverse scaling models.",
+    "sections": [
+      "1. The Anatomy of a Ratio: Comparative Scaling",
+      "2. Partitioning Quantities: The Total Parts Paradigm",
+      "3. Proportions &amp; The Balance of Equivalences",
+      "4. The Unitary Method: Direct vs. Inverse Variation",
+      "5. Worked Problem ICSE Examination Problems",
+      "6. Scientific &amp; Mathematical Reasoning"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\frac{a}{b} \\quad \\text{or} \\quad a : b",
+      "a : b = ka : kb = \\frac{a}{k} : \\frac{b}{k}",
+      "\\text{First Share} = ax, \\quad \\text{Second Share} = bx"
+    ]
+  },
+  "math_06_commercial_mathematics.html": {
+    "title": "Commercial Mathematics: Percentages, Profit & Loss & Simple Interest",
+    "subtext": "Financial foundations, commercial percentage calculations, profit margins, retail discounts, and simple interest accumulation.",
+    "sections": [
+      "1. The Currency of Comparison: Percentages",
+      "2. Commercial Ledgers: Cost Price, Selling Price &amp; Profit Margins",
+      "3. The Rent of Capital: Simple Interest",
+      "4. Worked Problem ICSE Examination Problems",
+      "5. Scientific &amp; Economic Reasoning"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "x\\% = \\frac{x}{100}",
+      "\\text{Percentage Increase} = \\frac{\\text{Absolute Increase}}{\\text{Original Value}} \\times 100\\%",
+      "\\text{Percentage Decrease} = \\frac{\\text{Absolute Decrease}}{\\text{Original Value}} \\times 100\\%"
+    ]
+  },
+  "math_07_lines_and_angles.html": {
+    "title": "Lines, Angles & Transversals: Geometric Rigor",
+    "subtext": "Fundamental geometric primitives, complementary and supplementary relations, the vertically opposite angle proof, and parallel transversal systems.",
+    "sections": [
+      "1. Geometric Primitives &amp; Angle Relationships",
+      "2. The Scissors Theorem: Vertically Opposite Angles",
+      "3. The Transversal System: Parallel Line Theorems",
+      "4. Worked Problem ICSE Examination Problems",
+      "5. Geometric &amp; Structural Reasoning"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\angle 1 + \\angle 2 = 180^\\circ \\quad \\text{--- (Equation 1)}",
+      "\\angle 2 + \\angle 3 = 180^\\circ \\quad \\text{--- (Equation 2)}",
+      "\\angle 1 + \\angle 2 = \\angle 2 + \\angle 3"
+    ]
+  },
+  "math_08_triangles_and_congruence.html": {
+    "title": "Triangles, Congruence, Perimeter & Area",
+    "subtext": "Structural rigidity, angle sum theorems, triangle inequalities, the four congruence criteria, and 2D mensuration boundaries.",
+    "sections": [
+      "1. The Architecture of Triangles: Angle Sum &amp; Exterior Theorems",
+      "2. Congruence: The Science of Exact Superimposition",
+      "3. Mensuration: 2D Perimeter &amp; Area Foundations",
+      "4. Worked Problem ICSE Examination Problems",
+      "5. Structural &amp; Engineering Reasoning"
+    ],
+    "key_formulas": [
+      "', right: '",
+      "\\angle XAB = \\angle B",
+      "\\angle YAC = \\angle C",
+      "\\angle XAB + \\angle A + \\angle YAC = 180^\\circ"
+    ]
+  }
+}

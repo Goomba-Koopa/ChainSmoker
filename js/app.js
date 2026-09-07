@@ -161,7 +161,7 @@ class ICSEExplainerApp {
 
     container.innerHTML = `
       <div class="space-y-8 max-w-7xl mx-auto pb-12">
-        <!-- Hero Header: AXIOM ICSE 7 -->
+        <!-- Hero Header: ICSE Class 7 -->
         <div class="academic-card p-6 md:p-8 bg-white border border-slate-200">
           <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div class="space-y-2">
@@ -170,7 +170,7 @@ class ICSEExplainerApp {
                 <span class="badge-academic bg-emerald-50 text-emerald-700 border border-emerald-200">Class 7 Academic Engine</span>
               </div>
               <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
-                AXIOM ICSE 7 — The Visual Standard for CISCE Middle School
+                ICSE Class 7 — The Visual Standard for CISCE Middle School
               </h1>
               <p class="text-sm text-slate-600 max-w-2xl leading-relaxed">
                 Purpose-built visual learning platform for Class 7 ICSE: canonical vector schematics, step-by-step algebraic formula solvers, formal examiner reasoning models, and chemical valency studios.
@@ -208,7 +208,7 @@ class ICSEExplainerApp {
           </div>
         </div>
 
-        <!-- Proprietary AXIOM Toolsets Banner -->
+        <!-- ICSE Toolsets Banner -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div class="academic-card p-5 bg-white border border-slate-200 space-y-3 cursor-pointer hover:border-blue-400 transition" onclick="window.app.navigateTo('reasoning')">
             <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold border border-amber-200">
