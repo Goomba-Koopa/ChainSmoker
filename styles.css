@@ -1,10 +1,46 @@
 /*
  * ICSE Class 7 Explainer - Core Theme & Stylesheet
- * Coursera / Khan Academy Light Design System
- * Pure White/Light Canvas, Deep Navy Headings, Crisp Borders
+ * Typography Stack: Google Fonts Roboto Slab + Atkinson Hyperlegible + Abel
  */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap');
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('/fonts/hepta-slab-variable.woff2') format('woff2');
+  font-weight: 1 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/atkinson-hyperlegible-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/atkinson-hyperlegible-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('/fonts/atkinson-hyperlegible-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
+  --font-heading: 'Roboto Slab', serif !important;
+  --font-body: 'Atkinson Hyperlegible', sans-serif !important;
+  --font-serif: 'Roboto Slab', serif !important;
+  --font-sans: 'Atkinson Hyperlegible', sans-serif !important;
   --canvas-bg: #ffffff;
   --panel-bg: #f8fafc;
   --panel-subtle: #f1f5f9;
@@ -33,15 +69,19 @@
 body {
   background-color: #f8fafc;
   color: var(--text-primary);
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+.heading, h1, h2, h3, h4, h5, h6, .brand-title {
+  font-family: 'Roboto Slab', serif !important;
   color: var(--text-primary);
   letter-spacing: -0.02em;
+}
+
+.technical-label, .dimension-label, svg text {
+  font-family: 'Abel', sans-serif;
 }
 
 /* Custom modern scrollbars */

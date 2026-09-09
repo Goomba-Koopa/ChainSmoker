@@ -1,0 +1,191 @@
+/*
+ * AXIOM Typography Stack
+ * Powered by Google Fonts: Roboto Slab (100..900) + Atkinson Hyperlegible + Abel
+ */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap');
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('hepta-slab-variable.woff2') format('woff2'),
+       url('/fonts/hepta-slab-variable.woff2') format('woff2');
+  font-weight: 1 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('atkinson-hyperlegible-regular.woff2') format('woff2'),
+       url('/fonts/atkinson-hyperlegible-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('atkinson-hyperlegible-bold.woff2') format('woff2'),
+       url('/fonts/atkinson-hyperlegible-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  src: url('atkinson-hyperlegible-italic.woff2') format('woff2'),
+       url('/fonts/atkinson-hyperlegible-italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Fallback definitions for legacy font names */
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('hepta-slab-variable.woff2') format('woff2'),
+       url('/fonts/hepta-slab-variable.woff2') format('woff2');
+  font-weight: 1 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Parkinsans';
+  src: url('atkinson-hyperlegible-regular.woff2') format('woff2'),
+       url('/fonts/atkinson-hyperlegible-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-heading: 'Roboto Slab', serif !important;
+  --font-body: 'Atkinson Hyperlegible', sans-serif !important;
+  --font-serif: 'Roboto Slab', serif !important;
+  --font-sans: 'Atkinson Hyperlegible', sans-serif !important;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.heading, h1, h2, h3, h4, h5, h6, .brand-title {
+  font-family: 'Roboto Slab', serif !important;
+}
+
+.technical-label, .dimension-label, svg text {
+  font-family: 'Abel', sans-serif;
+}
+
+.article-header .topic-title, h1.topic-title, .hero-heading {
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 48px !important;
+  font-weight: 550 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.topic-card .topic-title {
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 22px !important;
+  font-weight: 550 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.brand-title {
+  font-family: 'Roboto Slab', serif !important;
+  font-weight: 600 !important;
+}
+
+.section-heading {
+  font-family: 'Roboto Slab', serif !important;
+  font-weight: 600 !important;
+}
+
+body, p, li, span, input, button, select, textarea, .topic-snippet {
+  font-family: 'Atkinson Hyperlegible', sans-serif !important;
+}
+
+/* Ensure inline spans, highlights, and marks inside headings inherit the heading font (Roboto Slab) */
+.hero-heading span, .topic-title span, .highlighter-mark, h1 span, h2 span, h3 span {
+  font-family: inherit !important;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+/* Universal ultra-compact viewport (260px) responsive adaptation */
+@media (max-width: 480px) {
+  .masthead {
+    padding: 14px 14px !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+  .brand-title {
+    font-size: 18px !important;
+  }
+  .nav-back {
+    font-size: 12px !important;
+  }
+  .article-header {
+    padding: 20px 14px 16px 14px !important;
+    grid-template-columns: 1fr !important;
+  }
+  .article-header::after {
+    display: none !important;
+  }
+  .topic-kicker {
+    font-size: 11px !important;
+  }
+  .topic-title, .hero-heading {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+    font-weight: 550 !important;
+  }
+  .topic-subtext {
+    font-size: 13.5px !important;
+  }
+  .article-body {
+    padding: 8px 14px 48px 14px !important;
+    grid-template-columns: 1fr !important;
+  }
+  .article-body::after {
+    display: none !important;
+  }
+  .article-body > .margin-sketch,
+  .article-body > .desk-note {
+    grid-column: 1 !important;
+    margin: 14px 0 !important;
+    max-width: 100% !important;
+  }
+  .section-heading {
+    font-size: 20px !important;
+  }
+  .definition-box, .concept-callout, .problem-box, .derivation-card {
+    padding: 14px 14px !important;
+  }
+  .distinction-table {
+    display: block !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+  }
+  .topic-nav {
+    padding: 16px 14px 12px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+  }
+  .editorial-footer {
+    padding: 20px 14px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+}

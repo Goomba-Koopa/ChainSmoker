@@ -6,14 +6,13 @@
   <title>Physics 12: Simple Machines & Mechanical Advantage • ICSE Class 7</title>
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
 
   <style>
     :root {
@@ -29,9 +28,22 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', sans-serif;
     }
+
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
@@ -259,7 +271,7 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" class="brand-title">⚛️ Physics • Topic 12</a>
+    <a href="../index.html" class="brand-title">Physics • Topic 12</a>
     <a href="../index.html" class="nav-back">← Back to Reference</a>
   </header>
 
@@ -274,23 +286,6 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
-        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
-    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
-      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M12 70 L88 70 L50 20 Z" fill="#fbf0ea"/>
-  <line x1="16" y1="46" x2="84" y2="46" stroke="#161514" stroke-width="1.8" stroke-linecap="round"/>
-  <polygon points="50,46 44,60 56,60" fill="#c2410c" stroke="#161514" stroke-width="1.2"/>
-  <rect x="22" y="34" width="12" height="12" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
-  <text x="25" y="43" font-family="'Newsreader', serif" font-size="8" font-weight="bold" fill="#161514">L</text>
-  <circle cx="76" cy="40" r="6" fill="#fbf0ea" stroke="#c2410c" stroke-width="1.2"/>
-  <text x="73" y="43" font-family="'Newsreader', serif" font-size="8" font-weight="bold" fill="#c2410c">E</text>
-  <text x="32" y="78" font-family="'Newsreader', serif" font-size="10" font-style="italic" fill="#797166">MA = L / E</text>
-</svg>
-      <div class="desk-note">
-        <strong>Principle of Moments</strong>
-        At equilibrium, clockwork balance requires \(\text{Load} \times d_L = \text{Effort} \times d_E\), giving mechanical advantage without ever creating free energy.
-      </div>
-    </aside>
 
 
     <!-- 1. DEFINITION & CORE QUANTITIES OF MACHINES -->

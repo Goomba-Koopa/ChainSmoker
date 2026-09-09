@@ -5,6 +5,21 @@ All agents run on high-level reasoning models (`pro`), maintain continuous opera
 
 ---
 
+## ⚠️ SUPREME OPERATIONAL LAWS (KRISHIV'S MANDATES)
+> **"Common sense is the law."**
+>
+> **"I hate bad work. Not necessarily incomplete. But when the work you say is done and comes out bad, I get infuriated."**
+>
+> — *Krishiv's Prime Directives*
+>
+> **Operational Mandates for All Agents:**
+> 1. **Common Sense Precedes All Procedure:** No automated script, linter score, multi-agent protocol, or checklist overrides physical reality. If the screen looks broken, it is broken. If an action makes no sense in the real world, do not do it.
+> 2. **Never claim work is "done" if it is flawed, blurry, half-baked, or unverified.**
+> 3. **Incomplete work is acceptable if stated honestly and accurately as in-progress.**
+> 4. **Never declare victory prematurely.** If a diagram, font, layout, or equation is distorted or imperfect, it is NOT done. State what was completed, what remains, and verify every change before reporting.
+
+---
+
 ## 🏛️ Division Hierarchy & Command Structure
 
 ```mermaid

@@ -7,9 +7,8 @@
   <title>Physics 02: Work, Energy & Simple Machines • ICSE Class 7</title>
   
   <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -29,9 +28,22 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', sans-serif;
     }
+
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
@@ -231,7 +243,7 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">⚛️ Physics • Topic 02</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">Physics • Topic 02</a>
     <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 
@@ -246,21 +258,6 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
-        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
-    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
-      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M12 80 L88 80 L88 32 Z" fill="#fbf0ea" stroke="#161514" stroke-width="1.3" stroke-linejoin="round"/>
-  <rect x="42" y="44" width="18" height="14" transform="rotate(-32 42 44)" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
-  <path d="M56 36 L72 26" stroke="#c2410c" stroke-width="1.3" stroke-linecap="round"/>
-  <polygon points="72,26 66,28 68,32" fill="#c2410c"/>
-  <circle cx="88" cy="32" r="6" fill="#fbf0ea" stroke="#161514" stroke-width="1.2"/>
-  <text x="24" y="74" font-family="'Newsreader', serif" font-size="11" font-style="italic" fill="#797166">W = F·d</text>
-</svg>
-      <div class="desk-note">
-        <strong>Inclined Plane Vector</strong>
-        An inclined plane reduces the required effort force by increasing the travel distance along the ramp, keeping total input work \(W = F \cdot d\) invariant under ideal zero-friction conditions.
-      </div>
-    </aside>
 
 
     <!-- 1. DEFINITION OF WORK -->

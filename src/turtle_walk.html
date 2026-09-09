@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Side-Necked Turtle // Desk Margin Animations</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
+
   <style>
     :root {
       --bg-warm: #fbfaf7;
@@ -23,12 +23,25 @@
       --turtle-line: #161514;
       --turtle-accent: #c2410c;
       --serenity-blue: #2563eb;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Zilla Slab', Georgia, serif;
+      --font-serif: 'Zilla Slab', Georgia, serif;
+      --font-body: 'Parkinsans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Parkinsans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
 
       --walk-cycle: 2.8s;
     }
+
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -527,7 +540,7 @@
     <a href="../index.html" class="brand-title">ICSE <em>Class 7</em> Science & Math</a>
     <div class="nav-links">
       <a href="../index.html">Topics Index</a>
-      <a href="../HISTORY.md">Project History</a>
+      <a href="../docs/history/HISTORY.md">Project History</a>
     </div>
   </header>
 

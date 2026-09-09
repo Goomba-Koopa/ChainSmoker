@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Animated Desk SVGs // ICSE Class 7 Suite</title>
+  <!-- Typography: Google Fonts Abel + Roboto Slab + Atkinson Hyperlegible -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../fonts/fonts.css">
+
   <style>
     :root {
       --bg-warm: #fbfaf7;
@@ -27,14 +30,39 @@
       --mat-wash: #fef8ea;
       --mat-accent: #d97706;
 
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
+      --font-abel: 'Abel', sans-serif;
 
       --anim-speed: 1;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    body, p, li, span, input, button { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+    .katex-display::-webkit-scrollbar {
+      height: 4px;
+    }
+    .katex-display::-webkit-scrollbar-thumb {
+      background: var(--border-strong, #d3c7b4);
+      border-radius: 2px;
+    }
+
     body {
       background-color: var(--bg-warm);
       color: var(--ink-black);
@@ -153,11 +181,16 @@
       display: flex;
       flex-direction: column;
       gap: 14px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.2s ease;
     }
     .svg-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(22, 21, 20, 0.05);
+      box-shadow: 0 8px 18px -4px rgba(22, 21, 20, 0.06), 0 2px 6px -1px rgba(22, 21, 20, 0.03);
+      border-color: #baa898;
+      z-index: 2;
     }
 
     .card-header-row {
@@ -208,29 +241,57 @@
     }
 
     .card-title {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 600;
+      font-family: var(--font-abel);
+      font-size: 18px;
+      font-weight: 400;
       color: var(--ink-black);
       line-height: 1.3;
+      letter-spacing: 0.02em;
+      transition: color 0.15s ease, letter-spacing 0.15s ease;
     }
+    .svg-card:hover .card-title {
+      color: #0a0a09;
+      letter-spacing: 0.03em;
+    }
+
     .card-note {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 12.5px;
+      font-family: var(--font-abel);
+      font-size: 14px;
       color: var(--ink-secondary);
       line-height: 1.45;
       border-left: 2px solid var(--border-subtle);
       padding-left: 8px;
+      letter-spacing: 0.01em;
+      transition: color 0.15s ease, border-color 0.15s ease, letter-spacing 0.15s ease;
+    }
+    .svg-card:hover .card-note {
+      color: var(--ink-black);
+      border-left-color: var(--border-strong);
+      letter-spacing: 0.02em;
     }
 
     /* ==========================================================================
        SVG ANIMATION STYLES
        ========================================================================== */
     .anim-svg {
-      width: 96px;
-      height: 96px;
+      width: 112px;
+      height: 112px;
       overflow: visible;
+      shape-rendering: geometricPrecision;
+      text-rendering: geometricPrecision;
+      image-rendering: -webkit-optimize-contrast;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+    .anim-svg * {
+      transform-box: view-box;
+    }
+    .anim-svg text {
+      font-family: var(--font-abel), 'Atkinson Hyperlegible', sans-serif !important;
+      font-style: normal !important;
+      letter-spacing: 0.05em;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* 1. PHY-01: Translatory Sliding Notebook */
@@ -405,12 +466,30 @@
     /* 11. MATH-04: Linear Balance Beam Equilibrium */
     .balance-beam {
       animation: seesaw calc(4s / var(--anim-speed)) infinite ease-in-out;
-      transform-origin: 50px 45px;
+      transform-origin: 50px 42px;
     }
     @keyframes seesaw {
       0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-6deg); }
+      25% { transform: rotate(-5deg); }
       75% { transform: rotate(5deg); }
+    }
+    .pan-left {
+      animation: counter-hang-l calc(4s / var(--anim-speed)) infinite ease-in-out;
+      transform-origin: 22px 42px;
+    }
+    .pan-right {
+      animation: counter-hang-r calc(4s / var(--anim-speed)) infinite ease-in-out;
+      transform-origin: 78px 42px;
+    }
+    @keyframes counter-hang-l {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      75% { transform: rotate(-5deg); }
+    }
+    @keyframes counter-hang-r {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      75% { transform: rotate(-5deg); }
     }
 
     /* 12. MATH-07: Transversal Angle Sweep */
@@ -458,7 +537,7 @@
     <div class="nav-links">
       <a href="../index.html">Topics Index</a>
       <a href="turtle_walk.html">Turtle Suite</a>
-      <a href="../MARGIN_SVG_BLUEPRINT.md">Blueprint Specification</a>
+      <a href="../docs/blueprints/MARGIN_SVG_BLUEPRINT.md">Blueprint Specification</a>
     </div>
   </header>
 
@@ -512,13 +591,13 @@
               <!-- Marker Points A and B -->
               <circle cx="28" cy="38" r="2" fill="var(--phy-accent)"/>
               <circle cx="28" cy="60" r="2" fill="var(--phy-accent)"/>
-              <text x="32" y="41" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--ink-black)">A</text>
-              <text x="32" y="63" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--ink-black)">B</text>
+              <text x="32" y="41" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">A</text>
+              <text x="32" y="63" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">B</text>
             </g>
             <!-- Parallel Displacement Vectors -->
             <path class="vector-stretch" d="M28 38 L42 28" stroke="var(--phy-accent)" stroke-width="1.2" stroke-linecap="round"/>
             <path class="vector-stretch" d="M28 60 L42 50" stroke="var(--phy-accent)" stroke-width="1.2" stroke-linecap="round"/>
-            <text x="46" y="86" font-family="'Newsreader', serif" font-size="10" font-style="italic" fill="var(--ink-muted)">AB ∥ A'B'</text>
+            <text x="46" y="86" font-family="var(--font-abel)" font-size="10" fill="var(--ink-muted)">AB ∥ A'B'</text>
           </svg>
         </div>
         <div class="card-title">Translatory Parallel Drift</div>
@@ -544,7 +623,7 @@
               <circle cx="50" cy="70" r="6" fill="var(--phy-wash)" stroke="var(--ink-black)" stroke-width="1.3"/>
               <circle class="energy-pulse" cx="50" cy="70" r="3" fill="var(--phy-accent)"/>
             </g>
-            <text x="34" y="88" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--phy-accent)">Ep ⇄ Ek</text>
+            <text x="34" y="88" font-family="var(--font-abel)" font-size="9" fill="var(--phy-accent)">Ep ⇄ Ek</text>
           </svg>
         </div>
         <div class="card-title">Conservation Pendulum</div>
@@ -569,7 +648,7 @@
             <line class="incident-ray" x1="22" y1="28" x2="50" y2="60" stroke="var(--phy-accent)" stroke-width="1.4"/>
             <line class="incident-ray" x1="50" y1="60" x2="78" y2="28" stroke="var(--phy-accent)" stroke-width="1.4"/>
             <circle class="reflection-spark" cx="50" cy="60" r="3" fill="var(--phy-accent)"/>
-            <text x="36" y="78" font-family="'Newsreader', serif" font-size="10" font-style="italic" fill="var(--phy-accent)">∠i = ∠r</text>
+            <text x="36" y="78" font-family="var(--font-abel)" font-size="10" fill="var(--phy-accent)">∠i = ∠r</text>
           </svg>
         </div>
         <div class="card-title">Specular Reflection Beam</div>
@@ -642,7 +721,7 @@
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Central Nucleus -->
             <circle cx="50" cy="50" r="8" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1.4"/>
-            <text x="44" y="53" font-family="'Newsreader', serif" font-size="8" font-weight="600" fill="var(--che-accent)">11p</text>
+            <text x="44" y="53" font-family="var(--font-abel)" font-size="8" font-weight="600" fill="var(--che-accent)">11p</text>
             <!-- K & L Fixed Shells -->
             <circle cx="50" cy="50" r="18" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2 2"/>
             <circle cx="50" cy="50" r="28" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="3 2"/>
@@ -673,7 +752,7 @@
             <!-- Beaker & Shifting Fluid -->
             <path d="M30 46 L30 80 C30 84 34 88 38 88 L62 88 C66 88 70 84 70 80 L70 46" stroke="var(--ink-black)" stroke-width="1.4" fill="none"/>
             <path class="indicator-liquid" d="M31 58 Q50 60 69 58 L69 80 C69 83 66 87 62 87 L38 87 C34 87 31 83 31 80 Z" stroke="var(--che-accent)" stroke-width="1"/>
-            <text x="35" y="74" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--ink-black)">H⁺ + OH⁻</text>
+            <text x="35" y="74" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">H⁺ + OH⁻</text>
           </svg>
         </div>
         <div class="card-title">Acid-Base Titration Drop</div>
@@ -703,7 +782,7 @@
               <circle cx="59" cy="42" r="1.5" fill="var(--bio-accent)"/>
               <circle cx="59" cy="58" r="1.5" fill="var(--bio-accent)"/>
             </g>
-            <text x="37" y="86" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--bio-accent)">Turgor Valve</text>
+            <text x="37" y="86" font-family="var(--font-abel)" font-size="9" fill="var(--bio-accent)">Turgor Valve</text>
           </svg>
         </div>
         <div class="card-title">Stomatal Turgor Respiration</div>
@@ -719,22 +798,34 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Pulsing 4-Chamber Cardiac Box -->
+            <!-- Pulsing Anatomical 4-Chamber Cardiac Pump -->
             <g class="heart-pump">
-              <!-- Right Side (Venous Blue Tint) -->
-              <path d="M50 24 C34 24 24 36 24 50 C24 66 42 76 50 82 Z" fill="#eff6ff" stroke="var(--ink-black)" stroke-width="1.4"/>
-              <!-- Left Side (Arterial Red Tint) -->
-              <path d="M50 24 C66 24 76 36 76 50 C76 66 58 76 50 82 Z" fill="#fef2f2" stroke="var(--ink-black)" stroke-width="1.4"/>
-              <!-- Septum Divider -->
-              <line x1="50" y1="24" x2="50" y2="82" stroke="var(--ink-black)" stroke-width="1.8"/>
-              <!-- Valve Flap Indicators -->
-              <line x1="36" y1="48" x2="44" y2="52" stroke="var(--bio-accent)" stroke-width="1.2"/>
-              <line x1="64" y1="48" x2="56" y2="52" stroke="var(--phy-accent)" stroke-width="1.2"/>
+              <!-- Superior Vena Cava -->
+              <path d="M34 18 L34 32 C34 35 36 38 40 40" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="39" y1="18" x2="39" y2="28" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Ascending Aorta & Arch with 3 Branching Arterial Trunks -->
+              <path d="M47 32 C47 20 58 16 64 22 C67 25 67 30 67 36" stroke="var(--ink-black)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M42 34 C43 24 54 20 60 25" stroke="var(--ink-black)" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="49" y1="19" x2="48" y2="12" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="55" y1="18" x2="56" y2="12" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="61" y1="20" x2="63" y2="13" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Pulmonary Trunk -->
+              <path d="M43 36 C45 30 50 28 55 28" stroke="var(--ink-black)" stroke-width="1.3" stroke-dasharray="2 2"/>
+              <path d="M63 28 L71 30" stroke="var(--ink-black)" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- Right & Left Atria -->
+              <path d="M34 36 C27 40 26 50 32 56" stroke="var(--ink-black)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M64 36 C71 40 72 48 68 54" stroke="var(--ink-black)" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- Muscular Ventricles tapering to Left Cardiac Apex -->
+              <path d="M32 56 C33 68 40 78 54 84 C58 85 62 84 66 80 C72 72 72 62 68 54" stroke="var(--ink-black)" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Anterior Interventricular Sulcus -->
+              <path d="M48 50 C50 60 52 72 55 83" stroke="var(--ink-black)" stroke-width="1.2" stroke-dasharray="3 2"/>
+              <!-- Sinoatrial Pacemaker Node -->
+              <circle cx="36" cy="26" r="1.6" fill="var(--bio-accent)"/>
             </g>
           </svg>
         </div>
-        <div class="card-title">Cardiac Double-Circulation</div>
-        <div class="card-note">Rhythmic 72 bpm systolic pulsation separating oxygenated and deoxygenated streams.</div>
+        <div class="card-title">Anatomical Cardiac Pump</div>
+        <div class="card-note">Authentic 4-chambered myocardial architecture with aortic arch and rhythmic systolic perfusion.</div>
       </div>
 
       <!-- 10. BIO-01: 6yo Side-Necked Turtle Stroll -->
@@ -747,25 +838,30 @@
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g class="turtle-gait">
-              <!-- Flippers -->
-              <path class="turtle-flipper-l" d="M26 36 C18 32 12 26 10 20 C16 18 24 23 29 32 Z" fill="var(--bio-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-              <path class="turtle-flipper-r" d="M74 36 C82 32 88 26 90 20 C84 18 76 23 71 32 Z" fill="var(--bio-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-              <!-- Curved Neck & Head -->
-              <path d="M46 30 C44 22 43 16 47 12 C49 10 55 10 57 13 C59 18 57 24 54 30 Z" fill="var(--bio-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-              <circle cx="47" cy="12" r="1" fill="var(--ink-black)"/>
-              <circle cx="53" cy="12" r="1" fill="var(--ink-black)"/>
-              <!-- Broad 6yo Rounded Carapace -->
-              <ellipse cx="50" cy="50" rx="32" ry="28" fill="var(--bio-wash)" stroke="var(--ink-black)" stroke-width="1.5"/>
-              <ellipse cx="50" cy="50" rx="26" ry="22" stroke="var(--ink-muted)" stroke-width="0.8" stroke-dasharray="2 2"/>
-              <!-- Scutes -->
-              <path d="M50 32 L56 38 L56 46 L50 50 L44 46 L44 38 Z" stroke="var(--ink-black)" stroke-width="1" fill="none"/>
-              <path d="M50 50 L56 56 L56 64 L50 68 L44 64 L44 56 Z" stroke="var(--ink-black)" stroke-width="1" fill="none"/>
-              <circle cx="50" cy="48" r="2.2" fill="var(--bio-accent)"/>
+              <!-- Tail -->
+              <path d="M48 78 C49 83 51 86 53 87 C52 83 51 80 50 78" stroke="var(--ink-black)" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- Rear Flippers: Crawling Locomotion -->
+              <path class="turtle-flipper-l" d="M26 64 C20 68 15 74 16 79 C19 80 23 77 27 71" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <path class="turtle-flipper-r" d="M73 66 C79 70 84 76 85 82 C81 83 76 79 71 73" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Front Limbs: Dynamic Webbed Digits -->
+              <path d="M30 36 C22 30 14 26 11 22 C10 25 14 30 20 35 C24 38 27 40 28 42" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M70 38 C77 36 84 36 88 40 C85 43 80 44 74 44 C71 44 69 42 68 40" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Lateral Neck Flexion & Head (Pleurodira Signature) -->
+              <path d="M47 30 C46 22 49 16 55 13 C59 11 63 12 65 15 C67 18 65 23 61 26 C57 29 53 30 50 30" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <circle cx="62" cy="15" r="1.1" fill="var(--ink-black)"/>
+              <!-- Living Pleurodira Carapace -->
+              <path d="M50 28 C66 28 76 38 76 56 C76 70 65 78 50 79 C35 78 24 70 24 56 C24 38 34 28 50 28 Z" stroke="var(--ink-black)" stroke-width="1.5"/>
+              <path d="M50 32 C63 32 71 41 71 56 C71 68 62 74 50 75 C38 74 29 68 29 56 C29 41 37 32 50 32 Z" stroke="var(--ink-black)" stroke-width="0.9" stroke-dasharray="2.5 2"/>
+              <!-- Vertebral & Costal Sutures -->
+              <path d="M50 32 L55 38 L55 46 L50 50 L45 46 L45 38 Z" stroke="var(--ink-black)" stroke-width="1"/>
+              <path d="M50 50 L55 56 L55 64 L50 68 L45 64 L45 56 Z" stroke="var(--ink-black)" stroke-width="1"/>
+              <!-- Translational Center-of-Mass Origin -->
+              <circle cx="50" cy="50" r="1.8" fill="var(--bio-accent)"/>
             </g>
           </svg>
         </div>
-        <div class="card-title">Side-Necked Turtle Stroll</div>
-        <div class="card-note">Authentic 6-year-old Pleurodira proportions with broad shell and natural gait cycle.</div>
+        <div class="card-title">Side-Necked Turtle Crawl</div>
+        <div class="card-note">Authentic living Pleurodira crawl with lateral cervical flexion and organic carapace sutures.</div>
       </div>
 
       <!-- 11. MATH-04: Linear Balance Beam -->
@@ -777,26 +873,38 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Base Stand -->
-            <polygon points="50,45 42,75 58,75" fill="var(--mat-wash)" stroke="var(--ink-black)" stroke-width="1.3"/>
-            <!-- Oscillating Balance Beam -->
+            <!-- Central Stand -->
+            <polygon points="50,42 42,66 58,66" stroke="var(--ink-black)" stroke-width="1.3" fill="none"/>
+            <line x1="36" y1="66" x2="64" y2="66" stroke="var(--ink-black)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Oscillating Balance Assembly -->
             <g class="balance-beam">
-              <line x1="16" y1="45" x2="84" y2="45" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="50" cy="45" r="2.5" fill="var(--mat-accent)"/>
-              <!-- Left Pan (x + 2) -->
-              <line x1="22" y1="45" x2="22" y2="60" stroke="var(--ink-muted)" stroke-width="1"/>
-              <rect x="14" y="60" width="16" height="12" rx="1" fill="var(--mat-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-              <text x="18" y="69" font-family="'Newsreader', serif" font-size="8" font-style="italic" fill="var(--ink-black)">x+2</text>
-              <!-- Right Pan (5) -->
-              <line x1="78" y1="45" x2="78" y2="60" stroke="var(--ink-muted)" stroke-width="1"/>
-              <rect x="70" y="60" width="16" height="12" rx="1" fill="var(--mat-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-              <text x="76" y="69" font-family="'Newsreader', serif" font-size="8" font-weight="600" fill="var(--mat-accent)">5</text>
+              <line x1="16" y1="42" x2="84" y2="42" stroke="var(--ink-black)" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="50" cy="42" r="2" fill="var(--mat-accent)"/>
+              <!-- Left Hanging Pan (Gravity Stabilized) -->
+              <g class="pan-left">
+                <line x1="22" y1="42" x2="16" y2="54" stroke="var(--ink-black)" stroke-width="0.9"/>
+                <line x1="22" y1="42" x2="28" y2="54" stroke="var(--ink-black)" stroke-width="0.9"/>
+                <path d="M 14 54 Q 22 59 30 54" stroke="var(--ink-black)" stroke-width="1.3" fill="none"/>
+                <rect x="16" y="46" width="6" height="7" stroke="var(--ink-black)" stroke-width="1" fill="none"/>
+                <text x="19" y="52" text-anchor="middle" font-family="var(--font-abel)" font-size="6.5" fill="var(--ink-black)">x</text>
+                <circle cx="26" cy="50" r="2.2" stroke="var(--ink-black)" stroke-width="0.9" fill="none"/>
+                <text x="26" y="52" text-anchor="middle" font-family="var(--font-abel)" font-size="5.5" fill="var(--ink-black)">2</text>
+              </g>
+              <!-- Right Hanging Pan (Gravity Stabilized) -->
+              <g class="pan-right">
+                <line x1="78" y1="42" x2="72" y2="54" stroke="var(--ink-black)" stroke-width="0.9"/>
+                <line x1="78" y1="42" x2="84" y2="54" stroke="var(--ink-black)" stroke-width="0.9"/>
+                <path d="M 70 54 Q 78 59 86 54" stroke="var(--ink-black)" stroke-width="1.3" fill="none"/>
+                <rect x="74" y="47" width="8" height="6" stroke="var(--ink-black)" stroke-width="1" fill="none"/>
+                <text x="78" y="52" text-anchor="middle" font-family="var(--font-abel)" font-size="6" fill="var(--ink-black)">5</text>
+              </g>
             </g>
-            <text x="41" y="88" font-family="'Newsreader', serif" font-size="10" font-weight="600" fill="var(--mat-accent)">x = 3</text>
+            <!-- Centered Equilibrium Solution -->
+            <text x="50" y="86" text-anchor="middle" font-family="var(--font-abel)" font-size="8.5" fill="var(--ink-black)">x + 2 = 5  ⇒  x = 3</text>
           </svg>
         </div>
-        <div class="card-title">Equation Balance Beam</div>
-        <div class="card-note">Equilibrium balance model demonstrating identical operations across equality sign.</div>
+        <div class="card-title">Equation Balance Equilibrium</div>
+        <div class="card-note">Physical gravity-stabilized pans demonstrating algebraic equality without falling out.</div>
       </div>
 
       <!-- 12. MATH-07: Transversal Angle Sweep -->
@@ -818,7 +926,7 @@
               <path class="angle-glow" d="M42 36 C42 42 45 46 50 46" stroke="var(--mat-accent)" stroke-width="1.3" fill="none"/>
               <path class="angle-glow" d="M58 64 C58 58 55 54 50 54" stroke="var(--mat-accent)" stroke-width="1.3" fill="none"/>
             </g>
-            <text x="32" y="86" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--mat-accent)">Alternate Z-Angles</text>
+            <text x="32" y="86" font-family="var(--font-abel)" font-size="9" fill="var(--mat-accent)">Alternate Z-Angles</text>
           </svg>
         </div>
         <div class="card-title">Transversal Angle Invariance</div>
@@ -851,7 +959,7 @@
               <circle cx="74" cy="39" r="3" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
               <circle cx="82" cy="39" r="3" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
             </g>
-            <text x="32" y="78" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--che-accent)">2H₂ + O₂ → 2H₂O</text>
+            <text x="32" y="78" font-family="var(--font-abel)" font-size="9" fill="var(--che-accent)">2H₂ + O₂ → 2H₂O</text>
           </svg>
         </div>
         <div class="card-title">Conservation Stoichiometry</div>
@@ -874,14 +982,14 @@
               <line x1="50" y1="32" x2="50" y2="70" stroke="var(--mat-accent)" stroke-width="1.5" stroke-dasharray="3 2"/>
             </g>
             <!-- Height label a -->
-            <text x="14" y="54" font-family="'Newsreader', serif" font-size="10" font-style="italic" fill="var(--ink-black)">a</text>
+            <text x="14" y="54" font-family="var(--font-abel)" font-size="10" fill="var(--ink-black)">a</text>
             <!-- Width labels b and c -->
-            <text x="34" y="26" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--ink-black)">b</text>
-            <text x="64" y="26" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--ink-black)">c</text>
+            <text x="34" y="26" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">b</text>
+            <text x="64" y="26" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">c</text>
             <!-- Area labels -->
-            <text x="32" y="54" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--ink-muted)">ab</text>
-            <text x="62" y="54" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--mat-accent)">ac</text>
-            <text x="24" y="86" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="var(--ink-black)">a(b + c) = ab + ac</text>
+            <text x="32" y="54" font-family="var(--font-abel)" font-size="9" fill="var(--ink-muted)">ab</text>
+            <text x="62" y="54" font-family="var(--font-abel)" font-size="9" fill="var(--mat-accent)">ac</text>
+            <text x="24" y="86" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">a(b + c) = ab + ac</text>
           </svg>
         </div>
         <div class="card-title">Area Model Distribution</div>

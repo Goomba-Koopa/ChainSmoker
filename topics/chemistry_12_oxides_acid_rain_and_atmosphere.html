@@ -6,14 +6,13 @@
   <title>Chemistry 12: Oxides & Acid Rain Chemistry • ICSE Class 7</title>
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
 
   <style>
     :root {
@@ -29,9 +28,22 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', sans-serif;
     }
+
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
@@ -259,7 +271,7 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" class="brand-title">🧪 Chemistry • Topic 12</a>
+    <a href="../index.html" class="brand-title">Chemistry • Topic 12</a>
     <a href="../index.html" class="nav-back">← Back to Reference</a>
   </header>
 
@@ -274,23 +286,6 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
-        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
-    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
-      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20 20 C10 40 10 70 20 85 C40 95 60 95 80 85 C90 70 90 40 80 20 Z" fill="#f0f7f2"/>
-  <!-- Cloud -->
-  <path d="M30 40 C24 40 22 32 28 28 C30 22 42 22 46 26 C52 20 66 22 66 30 C72 32 72 40 64 40 Z" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
-  <!-- Acid Rain Droplets -->
-  <line x1="36" y1="48" x2="32" y2="58" stroke="#15803d" stroke-width="1.3" stroke-linecap="round"/>
-  <line x1="48" y1="48" x2="44" y2="58" stroke="#15803d" stroke-width="1.3" stroke-linecap="round"/>
-  <line x1="60" y1="48" x2="56" y2="58" stroke="#15803d" stroke-width="1.3" stroke-linecap="round"/>
-  <text x="24" y="78" font-family="'Newsreader', serif" font-size="10" font-style="italic" fill="#797166">H₂SO₄ pH &lt; 5.6</text>
-</svg>
-      <div class="desk-note">
-        <strong>Acid Precipitation</strong>
-        Gaseous non-metal oxides \(\text{SO}_2\) and \(\text{NO}_2\) undergo atmospheric oxidation, hydrolyzing into dilute sulfuric and nitric acids.
-      </div>
-    </aside>
 
 
     <!-- 1. CLASSIFICATION OF OXIDES -->

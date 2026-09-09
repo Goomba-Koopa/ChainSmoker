@@ -6,9 +6,8 @@
   <title>Commercial Mathematics: Percentages, Profit & Loss & Simple Interest • ICSE Class 7 Mathematics</title>
   
   <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -16,7 +15,41 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
   <style>
-    :root {
+    
+    /* Self-Hosted Fonts: Zilla Slab + Parkinsans */
+    @font-face {
+      font-family: 'Zilla Slab';
+      src: url('../fonts/zilla-slab-regular.woff2') format('woff2'),
+           url('/fonts/zilla-slab-regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Zilla Slab';
+      src: url('../fonts/zilla-slab-bold.woff2') format('woff2'),
+           url('/fonts/zilla-slab-bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Parkinsans';
+      src: url('../fonts/parkinsans-regular.woff2') format('woff2'),
+           url('/fonts/parkinsans-regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Parkinsans';
+      src: url('../fonts/parkinsans-bold.woff2') format('woff2'),
+           url('/fonts/parkinsans-bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+:root {
       --bg-warm: #fbfaf7;
       --bg-surface: #f4efe6;
       --border-subtle: #e6dfd3;
@@ -30,11 +63,35 @@
       --emerald-soft: #f0f7f2;
       --amber-accent: #b45309;
       --amber-soft: #fef3c7;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    body, p, li, span, input, button { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+    .katex-display::-webkit-scrollbar {
+      height: 4px;
+    }
+    .katex-display::-webkit-scrollbar-thumb {
+      background: var(--border-strong, #d3c7b4);
+      border-radius: 2px;
+    }
+
     body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.7; -webkit-font-smoothing: antialiased; }
     
     .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
@@ -216,6 +273,23 @@
       }
     }
 
+  
+    @media (max-width: 480px) {
+      .masthead { padding: 14px 12px; flex-wrap: wrap; gap: 8px; }
+      .brand-title { font-size: 16px; }
+      .nav-back { font-size: 12px; }
+      .article-header { padding: 20px 12px 16px 12px; }
+      .topic-kicker { font-size: 11px; }
+      .topic-title { font-size: 22px !important; line-height: 1.25; word-break: break-word; }
+      .topic-subtext { font-size: 13.5px; }
+      .article-body { padding: 8px 12px 48px 12px; }
+      .section-heading { font-size: 20px; }
+      .definition-box, .concept-callout, .problem-box, .derivation-card { padding: 14px 12px; }
+      .topic-nav { padding: 16px 12px 12px; flex-direction: column; gap: 10px; align-items: flex-start; }
+      .editorial-footer { padding: 20px 12px; flex-direction: column; gap: 8px; text-align: center; }
+      .distinction-table { display: block; overflow-x: auto; }
+    }
+
   </style>
 </head>
 <body>
@@ -235,22 +309,6 @@
 
   <!-- MAIN ARTICLE BODY -->
   <main class="article-body">
-        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
-    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
-      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="15" y="15" width="70" height="70" rx="8" fill="#fef8ea"/>
-  <!-- Commercial Ribbon -->
-  <path d="M22 34 H78 V46 H22 Z" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
-  <text x="26" y="43" font-family="'Newsreader', serif" font-size="8" font-weight="bold" fill="#161514">CP (Base)</text>
-  <path d="M22 56 H58 V68 H22 Z" fill="#fef8ea" stroke="#d97706" stroke-width="1.2"/>
-  <text x="26" y="65" font-family="'Newsreader', serif" font-size="8" font-weight="bold" fill="#d97706">SP (Revenue)</text>
-  <text x="24" y="82" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="#797166">Profit % = (P/CP)·100</text>
-</svg>
-      <div class="desk-note">
-        <strong>Commercial Dynamics</strong>
-        Marked price discounts and profit margins operate on separate base baselines: discount applies to MP, while net gain is evaluated on CP.
-      </div>
-    </aside>
 
 
     <!-- SECTION 1: THE PHILOSOPHY OF PERCENTAGES -->
@@ -506,7 +564,7 @@
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
-    <div>Newsreader &amp; Plus Jakarta Sans • KaTeX for math</div>
+    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
   </footer>
 
   <script>
