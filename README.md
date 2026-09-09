@@ -2,7 +2,7 @@
 
 A dedicated, distraction-free educational reference custom-engineered for Class 7 students following the CISCE (Council for the Indian School Certificate Examinations) curriculum.
 
-For the detailed background, architectural decisions, and editorial philosophy of the project, see [HISTORY.md](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/HISTORY.md).
+For the detailed background, architectural decisions, and editorial philosophy of the project, see [docs/history/HISTORY.md](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/docs/history/HISTORY.md).
 
 ---
 

@@ -6,14 +6,13 @@
   <title>Biology 12: Ecosystems & Food Chains • ICSE Class 7</title>
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
 
   <style>
     :root {
@@ -29,9 +28,22 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', sans-serif;
     }
+
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
@@ -259,7 +271,7 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" class="brand-title">🌿 Biology • Topic 12</a>
+    <a href="../index.html" class="brand-title">Biology • Topic 12</a>
     <a href="../index.html" class="nav-back">← Back to Reference</a>
   </header>
 
@@ -274,35 +286,6 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
-            <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
-    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
-      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Soft organic wash -->
-  <ellipse cx="50" cy="52" rx="38" ry="34" fill="#edf5ef"/>
-  <!-- Rear Flippers/Paddles -->
-  <path d="M26 68 C20 72 15 78 14 84 C18 86 24 82 28 74 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M74 68 C80 72 85 78 86 84 C82 86 76 82 72 74 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
-  <!-- Front Flippers/Paddles -->
-  <path d="M24 38 C16 34 10 28 8 22 C14 20 22 25 27 34 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M76 38 C84 34 90 28 92 22 C86 20 78 25 73 34 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linecap="round"/>
-  <!-- Side-curved Neck & Head (Pleurodira anatomy) -->
-  <path d="M46 32 C44 24 43 18 47 14 C49 12 55 12 57 15 C59 20 57 26 54 32 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.2" stroke-linejoin="round"/>
-  <circle cx="47" cy="14" r="1.2" fill="#161514"/>
-  <circle cx="53" cy="14" r="1.2" fill="#161514"/>
-  <!-- Rounded Carapace -->
-  <ellipse cx="50" cy="52" rx="28" ry="24" fill="#edf5ef" stroke="#161514" stroke-width="1.4"/>
-  <!-- Vertebral & Costal Scute Inking -->
-  <path d="M50 32 L56 38 L56 46 L50 50 L44 46 L44 38 Z" stroke="#161514" stroke-width="1" fill="none"/>
-  <path d="M50 50 L56 56 L56 64 L50 68 L44 64 L44 56 Z" stroke="#161514" stroke-width="1" fill="none"/>
-  <path d="M44 42 L26 44 M56 42 L74 44 M44 60 L26 62 M56 60 L74 62" stroke="#161514" stroke-width="0.9" stroke-linecap="round"/>
-  <!-- Accent pip -->
-  <circle cx="50" cy="50" r="2" fill="#2e382b"/>
-</svg>
-      <div class="desk-note">
-        <strong>Aquatic Food Webs</strong>
-        In freshwater wetland ecosystems, our side-necked turtle occupies the secondary consumer trophic tier, grazing on aquatic macro-invertebrates and submerged vegetation.
-      </div>
-    </aside>
 
 
     <!-- 1. STRUCTURE OF AN ECOSYSTEM -->

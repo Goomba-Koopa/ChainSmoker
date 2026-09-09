@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physics 07: Heat, Temperature & Transfer â€¢ ICSE Class 7</title>
+  <title>Physics 07: Heat, Temperature & Transfer • ICSE Class 7</title>
   
   <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -28,9 +27,22 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', sans-serif;
     }
+
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
@@ -232,39 +244,21 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="brand-title">âš›ï¸ Physics â€¢ Topic 07</a>
-    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="nav-back">â† Back to Topics Repository</a>
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="brand-title">Physics • Topic 07</a>
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 
   <!-- HEADER -->
   <section class="article-header">
-    <div class="topic-kicker">Physics â€¢ Topic 07</div>
+    <div class="topic-kicker">Physics • Topic 07</div>
     <h1 class="topic-title">Heat, Temperature &amp; Transfer</h1>
     <p class="topic-subtext">
-      Heat vs temperature distinction, thermometric scales (C/5 = (Fâˆ’32)/9 = Kâˆ’273), conduction/convection/radiation mechanisms, the anomalous expansion of water (0Â°Câ€“4Â°C), and the thermos flask.
+      Heat vs temperature distinction, thermometric scales (C/5 = (F−32)/9 = K−273), conduction/convection/radiation mechanisms, the anomalous expansion of water (0°C–4°C), and the thermos flask.
     </p>
   </section>
 
   <!-- BODY CONTENT -->
   <main class="article-body">
-        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
-    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
-      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M25 15 C20 40 20 60 30 80 C40 95 60 95 70 80 C80 60 80 40 75 15 Z" fill="#fbf0ea"/>
-  <rect x="46" y="16" width="8" height="50" rx="4" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
-  <circle cx="50" cy="74" r="10" fill="#c2410c" stroke="#161514" stroke-width="1.2"/>
-  <rect x="48" y="36" width="4" height="32" fill="#c2410c"/>
-  <line x1="56" y1="26" x2="60" y2="26" stroke="#161514" stroke-width="1"/>
-  <line x1="56" y1="36" x2="62" y2="36" stroke="#161514" stroke-width="1"/>
-  <line x1="56" y1="46" x2="60" y2="46" stroke="#161514" stroke-width="1"/>
-  <line x1="56" y1="56" x2="62" y2="56" stroke="#161514" stroke-width="1"/>
-  <text x="66" y="40" font-family="'Newsreader', serif" font-size="10" font-style="italic" fill="#797166">100°C</text>
-</svg>
-      <div class="desk-note">
-        <strong>Thermal Expansion</strong>
-        Linear thermometric response relies on the uniform thermal expansion coefficient of liquid mercury inside a narrow capillary bore under constant atmospheric pressure.
-      </div>
-    </aside>
 
 
     <!-- 1. HEAT VS TEMPERATURE -->
@@ -294,7 +288,7 @@
           <tr>
             <td><strong>SI &amp; Common Units</strong></td>
             <td>SI Unit: Joule (\(\text{J}\)). Common: Calorie (\(\text{cal}\)).</td>
-            <td>SI Unit: Kelvin (\(\text{K}\)). Common: Celsius (\(\text{Â°C}\)).</td>
+            <td>SI Unit: Kelvin (\(\text{K}\)). Common: Celsius (\(\text{°C}\)).</td>
           </tr>
           <tr>
             <td><strong>Dependence on Mass</strong></td>
@@ -323,8 +317,8 @@
       <div class="derivation-card">
         <span class="derivation-title">Scale Conversion Formula</span>
         <div class="derivation-step">
-          1. <em>Celsius Scale (C):</em> Lower point = \(0\text{Â°C}\), Upper point = \(100\text{Â°C}\) (100 divisions).<br>
-          2. <em>Fahrenheit Scale (F):</em> Lower point = \(32\text{Â°F}\), Upper point = \(212\text{Â°F}\) (180 divisions).<br>
+          1. <em>Celsius Scale (C):</em> Lower point = \(0\text{°C}\), Upper point = \(100\text{°C}\) (100 divisions).<br>
+          2. <em>Fahrenheit Scale (F):</em> Lower point = \(32\text{°F}\), Upper point = \(212\text{°F}\) (180 divisions).<br>
           3. <em>Kelvin Scale (K):</em> Lower point = \(273.15\text{ K}\) (\(\approx 273\text{ K}\)), Upper point = \(373\text{ K}\) (100 divisions).<br><br>
           Because the intervals must be proportional across scales, we equate the ratio of the temperature difference from the lower fixed point to the total number of divisions:<br>
           &nbsp;&nbsp;&nbsp;&nbsp;$$\frac{C - 0}{100} = \frac{F - 32}{180} = \frac{K - 273}{100}$$<br>
@@ -389,15 +383,15 @@
       
       <div class="definition-box">
         <span class="definition-term">Anomalous Expansion:</span>
-        <strong>Anomalous expansion of water</strong> is the unusual behavior of water wherein it contracts when heated from \(0\text{Â°C}\) to \(4\text{Â°C}\) and expands when cooled from \(4\text{Â°C}\) to \(0\text{Â°C}\). Consequently, water attains its maximum density (\(1\text{ g/cm}^3\)) and minimum volume at exactly \(4\text{Â°C}\).
+        <strong>Anomalous expansion of water</strong> is the unusual behavior of water wherein it contracts when heated from \(0\text{°C}\) to \(4\text{°C}\) and expands when cooled from \(4\text{°C}\) to \(0\text{°C}\). Consequently, water attains its maximum density (\(1\text{ g/cm}^3\)) and minimum volume at exactly \(4\text{°C}\).
       </div>
       
       <div class="derivation-card">
         <span class="derivation-title">Density and Volume Dynamics</span>
         <div class="derivation-step">
-          â€¢ <strong>Above \(4\text{Â°C}\):</strong> Water behaves normally. As temperature drops, volume decreases and density increases.<br>
-          â€¢ <strong>At \(4\text{Â°C}\):</strong> Water reaches its absolute maximum density of \(1,000\text{ kg/m}^3\).<br>
-          â€¢ <strong>Below \(4\text{Â°C}\):</strong> Water behaves anomalously. It expands as it cools down to \(0\text{Â°C}\). Because its density decreases, ice at \(0\text{Â°C}\) is lighter than liquid water and floats on top.
+          • <strong>Above \(4\text{°C}\):</strong> Water behaves normally. As temperature drops, volume decreases and density increases.<br>
+          • <strong>At \(4\text{°C}\):</strong> Water reaches its absolute maximum density of \(1,000\text{ kg/m}^3\).<br>
+          • <strong>Below \(4\text{°C}\):</strong> Water behaves anomalously. It expands as it cools down to \(0\text{°C}\). Because its density decreases, ice at \(0\text{°C}\) is lighter than liquid water and floats on top.
         </div>
       </div>
       
@@ -461,22 +455,22 @@
           <span class="problem-marks">[4 Marks]</span>
         </div>
         <div class="problem-statement">
-          Convert (i) \(37\text{Â°C}\) to Fahrenheit and (ii) \(212\text{Â°F}\) to Celsius and Kelvin.
+          Convert (i) \(37\text{°C}\) to Fahrenheit and (ii) \(212\text{°F}\) to Celsius and Kelvin.
         </div>
-        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution â†“</button>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ↓</button>
         <div class="solution-drawer" id="sol_num1">
           <strong>Step-by-Step Examiner Solution:</strong><br><br>
-          1. <em>Part (i): Convert \(37\text{Â°C}\) to Fahrenheit</em><br>
+          1. <em>Part (i): Convert \(37\text{°C}\) to Fahrenheit</em><br>
           &nbsp;&nbsp;&nbsp;&nbsp;Using the formula: \(\frac{C}{5} = \frac{F - 32}{9}\)<br>
           &nbsp;&nbsp;&nbsp;&nbsp;Substitute \(C = 37\): \(\frac{37}{5} = \frac{F - 32}{9}\) [1 Mark]<br>
           &nbsp;&nbsp;&nbsp;&nbsp;\(7.4 = \frac{F - 32}{9}\)<br>
           &nbsp;&nbsp;&nbsp;&nbsp;\(F - 32 = 7.4 \times 9 = 66.6\)<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;\(F = 66.6 + 32 = \mathbf{98.6\text{Â°F}}\) [1 Mark]<br><br>
-          2. <em>Part (ii): Convert \(212\text{Â°F}\) to Celsius and Kelvin</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(F = 66.6 + 32 = \mathbf{98.6\text{°F}}\) [1 Mark]<br><br>
+          2. <em>Part (ii): Convert \(212\text{°F}\) to Celsius and Kelvin</em><br>
           &nbsp;&nbsp;&nbsp;&nbsp;Using the formula: \(\frac{C}{5} = \frac{F - 32}{9}\)<br>
           &nbsp;&nbsp;&nbsp;&nbsp;Substitute \(F = 212\): \(\frac{C}{5} = \frac{212 - 32}{9}\)<br>
           &nbsp;&nbsp;&nbsp;&nbsp;\(\frac{C}{5} = \frac{180}{9} = 20\)<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;\(C = 20 \times 5 = \mathbf{100\text{Â°C}}\) [1 Mark]<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;\(C = 20 \times 5 = \mathbf{100\text{°C}}\) [1 Mark]<br><br>
           &nbsp;&nbsp;&nbsp;&nbsp;To find Kelvin, use \(K = C + 273\):<br>
           &nbsp;&nbsp;&nbsp;&nbsp;\(K = 100 + 273 = \mathbf{373\text{ K}}\) [1 Mark]
         </div>
@@ -489,14 +483,14 @@
           <span class="problem-marks">[3 Marks]</span>
         </div>
         <div class="problem-statement">
-          Why does ice form at the surface of a pond in winter and not at the bottom? Give a scientific explanation referencing the density of water between \(0\text{Â°C}\) and \(4\text{Â°C}\).
+          Why does ice form at the surface of a pond in winter and not at the bottom? Give a scientific explanation referencing the density of water between \(0\text{°C}\) and \(4\text{°C}\).
         </div>
-        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution â†“</button>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ↓</button>
         <div class="solution-drawer" id="sol_num2">
           <strong>Step-by-Step Examiner Solution:</strong><br><br>
-          1. <em>Initial Cooling:</em> As winter air cools the pond's surface, the surface water contracts, becomes denser, and sinks. This convection current continues until the entire pond reaches \(4\text{Â°C}\). [1 Mark]<br><br>
-          2. <em>Anomalous Phase:</em> Below \(4\text{Â°C}\), further cooling causes the surface water to undergo anomalous expansion. It expands instead of contracting, meaning its density <em>decreases</em>. [1 Mark]<br><br>
-          3. <em>Freezing &amp; Insulation:</em> Because this colder water (\(0\text{Â°C}\) to \(4\text{Â°C}\)) is less dense, it remains at the surface. When it reaches \(0\text{Â°C}\), it freezes into ice. Ice is even lighter than water, so it floats. The ice layer acts as a thermal insulator, preventing the bottom water (which remains at \(4\text{Â°C}\)) from freezing, thereby protecting aquatic life. [1 Mark]
+          1. <em>Initial Cooling:</em> As winter air cools the pond's surface, the surface water contracts, becomes denser, and sinks. This convection current continues until the entire pond reaches \(4\text{°C}\). [1 Mark]<br><br>
+          2. <em>Anomalous Phase:</em> Below \(4\text{°C}\), further cooling causes the surface water to undergo anomalous expansion. It expands instead of contracting, meaning its density <em>decreases</em>. [1 Mark]<br><br>
+          3. <em>Freezing &amp; Insulation:</em> Because this colder water (\(0\text{°C}\) to \(4\text{°C}\)) is less dense, it remains at the surface. When it reaches \(0\text{°C}\), it freezes into ice. Ice is even lighter than water, so it floats. The ice layer acts as a thermal insulator, preventing the bottom water (which remains at \(4\text{°C}\)) from freezing, thereby protecting aquatic life. [1 Mark]
         </div>
       </div>
 
@@ -542,7 +536,7 @@
   </nav>
 
   <footer class="editorial-footer">
-    <div>Physics â€¢ Topic 07: Heat, Temperature &amp; Transfer</div>
+    <div>Physics • Topic 07: Heat, Temperature &amp; Transfer</div>
   </footer>
 
   <script>

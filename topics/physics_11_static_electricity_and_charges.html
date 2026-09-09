@@ -6,14 +6,13 @@
   <title>Physics 11: Static Electricity & Electrostatics • ICSE Class 7</title>
   
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+
+    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+  <link rel="stylesheet" href="../fonts/fonts.css">
 
   <style>
     :root {
@@ -29,9 +28,22 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-serif: 'Newsreader', Georgia, serif;
-      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-heading: 'Roboto Slab', serif;
+      --font-serif: 'Roboto Slab', serif;
+      --font-body: 'Atkinson Hyperlegible', sans-serif;
+      --font-sans: 'Atkinson Hyperlegible', sans-serif;
     }
+
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
+    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    .katex-display {
+      overflow-x: auto;
+      overflow-y: hidden;
+      max-width: 100%;
+      padding: 6px 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
@@ -259,7 +271,7 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" class="brand-title">⚛️ Physics • Topic 11</a>
+    <a href="../index.html" class="brand-title">Physics • Topic 11</a>
     <a href="../index.html" class="nav-back">← Back to Reference</a>
   </header>
 
@@ -274,22 +286,6 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
-        <!-- 120PX DESK MARGIN: TECHNICAL DRAFTING SKETCH & COMMENTARY -->
-    <aside class="margin-sketch" aria-label="Technical Margin Illustration">
-      <svg class="desk-svg" viewBox="0 0 100 100" width="96" height="96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20 20 C20 10 80 10 80 20 C80 80 20 80 20 20 Z" fill="#fbf0ea"/>
-  <rect x="42" y="16" width="16" height="6" rx="2" fill="#ffffff" stroke="#161514" stroke-width="1.2"/>
-  <line x1="50" y1="22" x2="50" y2="54" stroke="#161514" stroke-width="1.4"/>
-  <path d="M50 54 L40 76 M50 54 L60 76" stroke="#c2410c" stroke-width="1.4" stroke-linecap="round"/>
-  <!-- Gold Leaf diverge -->
-  <text x="24" y="32" font-family="'Newsreader', serif" font-size="10" font-weight="bold" fill="#c2410c">+ + +</text>
-  <text x="32" y="82" font-family="'Newsreader', serif" font-size="9" font-style="italic" fill="#797166">Divergence</text>
-</svg>
-      <div class="desk-note">
-        <strong>Gold-Leaf Electroscope</strong>
-        Mutual electrostatic repulsion causes light gold leaves to diverge with angular displacement proportional to the magnitude of acquired net charge \(Q\).
-      </div>
-    </aside>
 
 
     <!-- 1. ATOMIC ORIGIN OF STATIC ELECTRICITY -->
