@@ -104,12 +104,35 @@ A recurring priority has been keeping the study surface peaceful and distraction
 
 ---
 
-## 8. Current State
+## 8. Viewport Liberation & Typography Standardization
+In early September 2026, a major design audit identified two critical UX issues:
+1. **The Middle Spotlight Trap:** A large 400px desk companion spotlight carousel occupied the center of the homepage, pushing the actual 44-topic curriculum below the fold. This violated basic viewport utility: a student visiting the site should immediately see the topic grid and search controls. The spotlight was dismantled, and access to the **Motion Studio & Vector Lab** was moved to a sleek, compact bottom utility dock.
+2. **Typography Standardization:** Earlier iterations mixed Newsreader and Plus Jakarta Sans. The platform standardized globally on Google Fonts:
+   - **`Roboto Slab`**: For all display headings, giving structure and mechanical clarity.
+   - **`Atkinson Hyperlegible`**: For all reading body copy, optimizing distinct letterforms for young learners.
+   - **`Abel`**: For all vector drafting callouts, dimension pointers, and technical schematics.
+   - Local `.woff2` font assets were bundled into `fonts/` for instantaneous offline rendering.
+3. **Margin Sanitization:** The 120px right margin column across all 44 topic files was emptied of misplaced inline diagrams to eliminate vertical auto-placement voids in CSS Grid, re-embedding schematics directly inline at proper scale (320px+).
+
+---
+
+## 9. The Chilling Plan & Multi-Branch Architecture
+Recognizing that 44 rigorous STEM modules demand cognitive rest, the **Official CISCE Non-Standard Chilling Plan** was integrated directly into the masthead. Featuring an interactive 15-minute defragmentation countdown timer and tongue-in-cheek physical directives (Newtonian Zero-Vector Equilibrium, 5:5 thermal hydration, and screen posture resets), it balances board rigor with healthy study hygiene.
+
+To manage growth cleanly without messy duplicate files, the repository was organized into a 3-tier Git branch model:
+- **`main`**: The pristine, published curriculum.
+- **`beta`**: The staging branch for verified enhancements.
+- **`unstable`**: The sandbox for raw ideas and prototypes.
+
+---
+
+## 10. Current State
 As of September 2026:
 
-- **44 Topics:** Complete across Physics (12), Chemistry (12), Biology (12), and Mathematics (8).
-- **Branding:** Cleaned of buzzwords ("STEM", "AXIOM", "Compendium"). The site is simply **ICSE Class 7 Science & Mathematics**.
-- **Visuals:** Asymmetrical 1fr 120px desk layout, emerald `.headsup-box` notes, no emojis, clean KaTeX rendering throughout.
-- **Workflow:** Content audited through direct reading, thoughtful reasoning, and open dialogue.
+- **44 Topics:** 100% complete across Physics (12), Chemistry (12), Biology (12), and Mathematics (8) with KaTeX formula derivations.
+- **Branding:** Dignified, calm, and grounded: **ICSE Class 7 Science & Mathematics**.
+- **Visuals:** Warm ivory and parchment palette, zero emojis, full-width responsive viewport, and crisp geometric vector assets.
+- **Philosophy:** Krishiv's Prime Directives codified into permanent repository memory: *Common sense is the law. Never declare victory on bad work.*
 
-What started as an afternoon spent exploring Antigravity 2.0 turned into a permanent, carefully crafted reference for a student who deserves real explanations.
+What started as an afternoon exploring Antigravity 2.0 has grown into a production-grade, beautifully typeset curriculum engine built with pride and genuine care.
+

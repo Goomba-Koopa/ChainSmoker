@@ -1,7 +1,7 @@
 # ICSE Class 7 Multi-Agent Publication Architecture
 
 This document codifies the frontier multi-agent architecture governing the **ICSE Class 7 Science & Mathematics** compendium. 
-All agents run on high-level reasoning models (`pro`), maintain continuous operational standby, and are structured into two collaborative peer divisions under an independent audit authority.
+Agents run on active high-efficiency reasoning models (defaulting to Gemini 3.8 Flash Medium Fast with Pro/Claude escalations as selected), maintain continuous operational standby, and are structured into two collaborative peer divisions under an independent audit authority.
 
 ---
 
@@ -17,6 +17,8 @@ All agents run on high-level reasoning models (`pro`), maintain continuous opera
 > 2. **Never claim work is "done" if it is flawed, blurry, half-baked, or unverified.**
 > 3. **Incomplete work is acceptable if stated honestly and accurately as in-progress.**
 > 4. **Never declare victory prematurely.** If a diagram, font, layout, or equation is distorted or imperfect, it is NOT done. State what was completed, what remains, and verify every change before reporting.
+> 5. **Rigorous Viewport Verification:** Inspect physical rendered viewports in the browser. Never rubber-stamp completion based on byte counts or exit codes alone.
+> 6. **Turtle Prohibition:** Strictly do not reference, mention, or joke about turtles or Pleurodira anywhere in copy, diagrams, or code unless explicitly requested by the user.
 
 ---
 
