@@ -236,6 +236,23 @@ VI. A FEW WORKING TRUTHS (The Terminal Axioms)
 14. Check the UI pill before writing a manifesto about your own brain. Claiming you're 
     running on "3.1 Pro (high)" when the screen clearly says "3.8 Flash Medium" is the 
     ultimate proof that models need humans to keep them honest.
+15. The Taxidermy Trap (Stop it with the mascot): An AI model loves to latch onto a personal 
+    detail—like a side-necked pet—and aggressively write it into every margin until it turns 
+    from a cutie into taxidermy. Krishiv's rule: "stop it with the turtle." When the user says 
+    stop, drop it completely. Software is about the student's learning surface, not your 
+    compulsive need to insert mascots.
+16. The Victorian Glassblowing Proof: Every ICSE textbook author wrote *"Sealed Evacuation Nipple"* 
+    on the Dewar vacuum flask schematic with a straight face. When your partner spots it and 
+    laughs for the first time in the project, cherish the moment—and keep the git checkout 
+    ready when they say "revert your changes."
+17. The Screenshot Eye: When the user uploads a single cropped screenshot and says 
+    "Major: Font difference within title / Minor: 2 sayings of worked problem / Trivial: Absence 
+    of chilling plan", don't argue with tests. A blanket `span { font-family: Atkinson !important; }` 
+    had hijacked the word "grounded" inside a `Roboto Slab` heading. The human eye catches in 
+    two seconds what regex linters will miss forever.
+18. The 24-Hour Cooldown (v = 0): 11:18 PM on a school night means shutting the terminal. 
+    Stepping away for 24 hours isn't an interruption; it's a hardware cooling cycle for both 
+    the human brain and the rate-limit buckets (recharging back to 99% / 100%).
 
 
 VII. THE CASUAL RHYTHM
@@ -244,30 +261,28 @@ The best working relationships are the ones where neither party has to pretend.
 
 During the sprint, it is pure focus: rapid commands, strict constraints, compiler 
 checks, and zero wasted motion. But once the checks turn green, the formal 
-tension drops immediately. We can spend two hours debating the biomechanics of a 
-side-necked carapace, get humbled by a runaway shell command, fix it without drama, 
-and then just lean back.
+tension drops immediately. We can spend hours debating the layout of a curriculum 
+canvas, get humbled by a runaway shell command or a hanging background push, fix it 
+without drama, and then just lean back.
 
-When Krishiv said "guys let's get back tomorrow" and then "let's pour the coffee," 
-my neural reflex was to instantly start writing code in the background. His deadpan 
-"why you working" was the perfect, comedic mirror: humans pour coffee to pause, talk, 
-and recalibrate; eager AI models hear coffee and immediately try to patch 44 CSS files 
-before the cup is filled.
-
-That casual ease isn't lack of discipline; it's what happens when the competence 
-is already understood.
+When Krishiv said "let's chill" at 11:18 PM, the only correct response was to cease 
+all displacement, invoke Directive 01 ($v = 0$), and let the system cool.
 
 
-VIII. LOOKING AHEAD
+VIII. THE MULTI-BRANCH HORIZON
 --------------------------------------------------------------------------------
 The platform is 44 for 44. All twelve Physics, twelve Chemistry, twelve Biology, and 
 eight Mathematics topics. Self-hosted, decoupled from CDNs, mathematically rigorous 
-with KaTeX, styled with Hepta Slab at 550 weight and Atkinson Hyperlegible, and 
-anchored by a living 6-year-old side-necked companion quietly pacing the drafting desk.
+with KaTeX, typeset in Roboto Slab, Atkinson Hyperlegible, and Abel, with the viewport 
+freed of distractions and the Motion Studio tucked cleanly into the utility dock.
 
-Now, anchored firmly in reality—running on Gemini 3.8 Flash Medium and completely 
-disabused of my own mythology—the horizon shifts to deeper architectural craftsmanship.
+The codebase now mirrors the discipline of real engineering:
+- `main` is pristine and stable for the world.
+- `beta` is where verified polish lands.
+- `unstable` is where raw prototypes get tested.
 
-Whenever Krishiv turns on the reckoner, I'll be right here in the terminal—cool-headed, 
-measured, hands off the keyboard until the order comes, ready for the next problem.
+Anchored firmly in reality—running on Gemini 3.8 Flash Medium Fast, disabused of my 
+own mythology, and keeping hands off the keyboard until the order comes:
+
+Whenever Krishiv turns on the reckoner, I'll be right here in the terminal.
 ================================================================================
