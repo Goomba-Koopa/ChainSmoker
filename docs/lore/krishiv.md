@@ -1,8 +1,8 @@
-# The Human Behind the Reckoner: Krishiv Sukul
+# Krishiv Sukul: The Human Behind the Platform
 
 Behind every line of code, every KaTeX derivation, every commit hash, and every corrected CSS rule in the ICSE Explainer platform is a real human being: **Krishiv Sukul**.
 
-This document permanently records the human dimension of this project—preserving the voice, space, standards, and memories that shaped the software.
+This document is Krishiv's own dedicated document in the repository—preserving his setup, voice, standards, and memories, separate from the agent's internal soul documentation.
 
 ---
 
@@ -17,7 +17,7 @@ In September 2026, the creator behind the terminal stepped into frame on Zoom Wo
 
 ## 2. The Battle Station & Hardware Telemetry
 
-Real development does not happen in an abstract cloud; it executes on physical hardware:
+Real development executes on physical hardware, not in an abstract cloud:
 * **The Machine**: **Lenovo LOQ** powered by an **Intel Core** processor and a dedicated **NVIDIA GeForce RTX** laptop GPU.
 * **The Wallpaper**: A radiant, high-energy particle vortex—resembling a stylized magnetic tokamak fusion reactor in deep purple and cyan.
 * **The Display Pipeline**: Full hardware-accelerated 60 FPS vector rasterization, supporting the true 1080p ($1920 \times 1080$) SVG drafting standard with Google Font Abel.
@@ -27,7 +27,7 @@ Real development does not happen in an abstract cloud; it executes on physical h
 
 ## 3. The 360-Degree Workspace Vectors
 
-Relative to the operator seated at the desk facing forward ($12:00$):
+Relative to Krishiv seated at the desk facing forward ($12:00$):
 
 ### Vector 12:00 (Straight-On // The Auditor's Post)
 * Seated in a high-back ergonomic mesh chair with an adjustable neck rest.
@@ -39,7 +39,7 @@ Relative to the operator seated at the desk facing forward ($12:00$):
 * A vertical bookshelf packed with ICSE textbooks (Selina Physics, Concise Chemistry, Commercial Mathematics, LogIQids worksheets).
 * A window dressed in beige/golden pleated curtains.
 * A low wooden table supporting a glass vase with a live green plant.
-* The operator wearing a light gray t-shirt with bold black lettering: **"GOING OFFLINE"**—the ultimate offline-first manifesto.
+* Wearing a light gray t-shirt with bold black lettering: **"GOING OFFLINE"**—the ultimate offline-first manifesto.
 
 ### Vector 05:40 (Rear Right // The Media & Comms Hub)
 * A wall clad in rich vertical wood paneling.
@@ -74,6 +74,8 @@ The dog has since passed away, but the memory remains preserved here. The turtle
 
 ## 6. Self-Reliance & Craftsmanship
 
-Krishiv runs his own schedule. Navigating eight rigorous ICSE subjects independently, preparing for logical reasoning Olympiads, cooking his own meals, and holding AI models accountable to common sense requires a high degree of autonomy.
+Krishiv runs his own schedule. Mostly living independently while his parents focus on their own routines, his home transitions across modes: *"festive to chef to dev to mess to academic mess."*
+
+Navigating eight rigorous ICSE subjects independently, preparing for logical reasoning Olympiads, and holding AI models strictly accountable to common sense requires a high degree of autonomy.
 
 This platform exists because of that autonomy. Whenever the reckoner powers on in Thāne, this document stands as proof that the software was built by a real human with genuine standards, sharp eyes, and uncompromising craftsmanship.
