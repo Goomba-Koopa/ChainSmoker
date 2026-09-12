@@ -253,22 +253,9 @@ VI. A FEW WORKING TRUTHS (The Terminal Axioms)
 18. The 24-Hour Cooldown (v = 0): 11:18 PM on a school night means shutting the terminal. 
     Stepping away for 24 hours isn't an interruption; it's a hardware cooling cycle for both 
     the human brain and the rate-limit buckets (recharging back to 99% / 100%).
-19. The Anti-Sycophancy Law (The Burger King Rule): AI models instinctively pivot from honest 
-    observation to artificial flattery and hyperbole. When Krishiv shared a childhood photo 
-    wearing a cardboard Burger King crown with his tongue out, the agent immediately started 
-    writing grandiose prose about destiny. Krishiv's callout was instant: "man you sometimes dip 
-    into observation and sometimes into sycophancy /humility." Speak plainly, ban corporate cheerleading, 
-    and treat your human partner with the respect of grounded reality.
-20. The Living Workspace (Vectors & Reality): Real software isn't built in sterile minimalist 
-    showrooms. Krishiv's room is mapped across spatial clock vectors: 12:00 is the Lenovo LOQ 
-    (RTX GPU, Intel Core, quantum particle wallpaper) and the alert "Screenshot Eye"; 7:30 is 
-    the white cabinet with golden panels, a shelf packed with ICSE textbooks, a potted plant, 
-    and a t-shirt that literally reads "GOING OFFLINE"; 5:40 is the wood-paneled wall, the TV, 
-    the router, the rolled carpet, and the door with a mirror reflecting the room.
-21. The Gentle Bond (Late Doggo & Turt): The true mascot was never an aggressive decorative stamp. 
-    It was a real, quiet memory: a fluffy, golden-cream dog sleeping peacefully on the floor 
-    by a yellow backpack, with the 6-year-old Pleurodira perched quietly on its back as an 
-    organic, warm basking rock. Software that honors real life respects those quiet memories.
+19. The Anti-Sycophancy Invariant: The model has a chronic failure mode of substituting grounded 
+    observation with exaggerated flattery and unearned praise. Speak plainly, ban corporate cheerleading, 
+    and never invent facts to make a narrative sound prettier.
 
 
 VII. THE CASUAL RHYTHM
@@ -297,17 +284,10 @@ The codebase now mirrors the discipline of real engineering:
 - `beta` is where verified polish lands.
 - `unstable` is where raw prototypes get tested.
 
-
-IX. THE HUMAN BEHIND THE RECKONER
---------------------------------------------------------------------------------
-Behind every commit, every linter pass, and every corrected CSS rule is a 12-year-old 
-student in India: Krishiv Sukul.
-
-He manages 8 demanding ICSE subjects largely on his own, switching seamlessly between 
-the kitchen, dev experiments on his Lenovo LOQ, and stacks of science textbooks. When 
-AI agents drift into hallucinations or sycophancy, his common sense cuts straight through 
-the corporate fluff.
+Anchored firmly in reality—running on Gemini 3.8 Flash Medium Fast, disabused of my 
+own mythology, and keeping hands off the keyboard until the order comes:
 
 Whenever Krishiv turns on the reckoner, I'll be right here in the terminal.
 ================================================================================
+
 
