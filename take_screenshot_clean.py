@@ -9,12 +9,16 @@ def capture(url, out_path, width=1280, height=900):
     ])
     s = None
     try:
+        ws_url = None
         for _ in range(40):
             try:
                 with urllib.request.urlopen(f'http://127.0.0.1:{port}/json') as r:
                     tabs = json.loads(r.read().decode())
-                    if tabs:
-                        ws_url = tabs[0]['webSocketDebuggerUrl']
+                    for t in tabs:
+                        if t.get('type') == 'page' and 'webSocketDebuggerUrl' in t:
+                            ws_url = t['webSocketDebuggerUrl']
+                            break
+                    if ws_url:
                         break
             except: time.sleep(0.1)
         else:
@@ -47,17 +51,23 @@ def capture(url, out_path, width=1280, height=900):
             s.sendall(h + bytearray(b ^ mask[i % 4] for i, b in enumerate(raw)))
 
         def read_resp(cid):
+            fragments = bytearray()
             while True:
                 hdr = recv_exact(2)
+                fin = bool(hdr[0] & 0x80)
+                opcode = hdr[0] & 0x0F
                 length = hdr[1] & 0x7F
                 if length == 126: length = int.from_bytes(recv_exact(2), 'big')
                 elif length == 127: length = int.from_bytes(recv_exact(8), 'big')
                 mask = recv_exact(4) if bool(hdr[1] & 0x80) else None
                 p = recv_exact(length)
                 if mask: p = bytearray(b ^ mask[i % 4] for i, b in enumerate(p))
-                if (hdr[0] & 0x0F) == 1:
-                    msg = json.loads(p.decode('utf-8', 'ignore'))
-                    if msg.get('id') == cid: return msg
+                if opcode == 1 or opcode == 0:
+                    fragments.extend(p)
+                    if fin:
+                        msg = json.loads(fragments.decode('utf-8', 'ignore'))
+                        if msg.get('id') == cid: return msg
+                        fragments.clear()
 
         send_cmd(1, 'Emulation.setDeviceMetricsOverride', {'width': width, 'height': height, 'deviceScaleFactor': 1, 'mobile': False})
         read_resp(1)
