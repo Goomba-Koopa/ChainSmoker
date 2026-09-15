@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Animated Desk SVGs // ICSE Class 7 Suite</title>
+  <title>Animated Desk SVGs // Alpha Variant (High-Contrast Black & Orange)</title>
   <!-- Typography: Google Fonts Abel + Roboto Slab + Atkinson Hyperlegible -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,19 +16,24 @@
       --bg-surface: #f4efe6;
       --border-subtle: #e6dfd3;
       --border-strong: #d3c7b4;
-      --ink-black: #161514;
-      --ink-secondary: #423d38;
-      --ink-muted: #797166;
       
-      /* Discipline Palettes */
-      --phy-wash: #fbf0ea;
-      --phy-accent: #c2410c;
-      --che-wash: #f0f7f2;
-      --che-accent: #15803d;
-      --bio-wash: #edf5ef;
-      --bio-accent: #2e382b;
-      --mat-wash: #fef8ea;
-      --mat-accent: #d97706;
+      /* High-Contrast Alpha Tokens */
+      --ink-black: #161514;
+      --ink-secondary: #292524;
+      --ink-muted: #57534e;
+      
+      --accent-orange: #ea580c;
+      --accent-orange-hover: #c2410c;
+      --accent-orange-wash: rgba(234, 88, 12, 0.22);
+      --accent-orange-subtle: rgba(234, 88, 12, 0.12);
+
+      /* Discipline Tokens */
+      --phy-accent: #ea580c;
+      --che-accent: #ea580c;
+      --bio-accent: #15803d; /* Botanical Emerald Green - strictly preserved for biology */
+      --bio-wash: #ecfdf5;
+      --arterial-red: #dc2626;
+      --mat-accent: #ea580c;
 
       --font-heading: 'Roboto Slab', serif;
       --font-serif: 'Roboto Slab', serif;
@@ -48,20 +53,6 @@
     }
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
     body, p, li, span, input, button { font-family: var(--font-body, var(--font-sans)); }
-    .katex-display {
-      overflow-x: auto;
-      overflow-y: hidden;
-      max-width: 100%;
-      padding: 6px 0;
-      -webkit-overflow-scrolling: touch;
-    }
-    .katex-display::-webkit-scrollbar {
-      height: 4px;
-    }
-    .katex-display::-webkit-scrollbar-thumb {
-      background: var(--border-strong, #d3c7b4);
-      border-radius: 2px;
-    }
 
     body {
       background-color: var(--bg-warm);
@@ -71,6 +62,30 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       padding-bottom: 80px;
+    }
+
+    /* ALPHA TOP BANNER */
+    .alpha-top-bar {
+      background: var(--ink-black);
+      color: #ffffff;
+      padding: 8px 32px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.05em;
+    }
+    .alpha-top-bar a {
+      color: #fed7aa;
+      text-decoration: none;
+      border-bottom: 1px solid #fed7aa;
+      transition: color 0.15s;
+    }
+    .alpha-top-bar a:hover {
+      color: #ffffff;
+      border-color: #ffffff;
     }
 
     /* HEADER */
@@ -90,10 +105,10 @@
       text-decoration: none;
       letter-spacing: -0.02em;
     }
-    .brand-title em { font-style: italic; font-weight: 400; color: var(--phy-accent); }
+    .brand-title em { font-style: italic; font-weight: 400; color: var(--accent-orange); }
     .nav-links { display: flex; gap: 24px; font-size: 13.5px; }
-    .nav-links a { color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid transparent; }
-    .nav-links a:hover { color: var(--phy-accent); border-color: var(--phy-accent); }
+    .nav-links a { color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid transparent; font-weight: 600; }
+    .nav-links a:hover { color: var(--accent-orange); border-color: var(--accent-orange); }
 
     /* CONTAINER */
     .container {
@@ -112,7 +127,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--phy-accent);
+      color: var(--accent-orange);
       margin-bottom: 8px;
     }
     .title {
@@ -126,7 +141,7 @@
       font-size: 16px;
       color: var(--ink-secondary);
       margin-top: 10px;
-      max-width: 780px;
+      max-width: 820px;
     }
 
     /* CONTROLS */
@@ -188,8 +203,8 @@
     }
     .svg-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 18px -4px rgba(22, 21, 20, 0.06), 0 2px 6px -1px rgba(22, 21, 20, 0.03);
-      border-color: #baa898;
+      box-shadow: 0 8px 18px -4px rgba(22, 21, 20, 0.08), 0 2px 6px -1px rgba(22, 21, 20, 0.04);
+      border-color: var(--accent-orange);
       z-index: 2;
     }
 
@@ -203,26 +218,26 @@
     .card-code {
       font-family: var(--font-mono);
       font-size: 11px;
-      font-weight: 600;
-      color: var(--ink-muted);
+      font-weight: 700;
+      color: var(--ink-black);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .card-discipline {
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .disc-phy { color: var(--phy-accent); }
-    .disc-che { color: var(--che-accent); }
+    .disc-phy { color: var(--accent-orange); }
+    .disc-che { color: var(--accent-orange); }
     .disc-bio { color: var(--bio-accent); }
-    .disc-mat { color: var(--mat-accent); }
+    .disc-mat { color: var(--accent-orange); }
 
     .stage-wrapper {
       height: 140px;
       background: var(--bg-warm);
-      border: 1px dashed var(--border-subtle);
+      border: 1px solid var(--border-subtle);
       border-radius: 6px;
       display: flex;
       align-items: center;
@@ -235,23 +250,21 @@
       top: 0;
       bottom: 0;
       width: 120px;
-      border-left: 1px dashed rgba(0,0,0,0.06);
-      border-right: 1px dashed rgba(0,0,0,0.06);
+      border-left: 1px dashed rgba(22, 21, 20, 0.08);
+      border-right: 1px dashed rgba(22, 21, 20, 0.08);
       pointer-events: none;
     }
 
     .card-title {
       font-family: var(--font-abel);
       font-size: 18px;
-      font-weight: 400;
+      font-weight: 600;
       color: var(--ink-black);
       line-height: 1.3;
       letter-spacing: 0.02em;
-      transition: color 0.15s ease, letter-spacing 0.15s ease;
     }
     .svg-card:hover .card-title {
-      color: #0a0a09;
-      letter-spacing: 0.03em;
+      color: var(--accent-orange);
     }
 
     .card-note {
@@ -259,20 +272,12 @@
       font-size: 14px;
       color: var(--ink-secondary);
       line-height: 1.45;
-      border-left: 2px solid var(--border-subtle);
+      border-left: 2px solid var(--accent-orange);
       padding-left: 8px;
       letter-spacing: 0.01em;
-      transition: color 0.15s ease, border-color 0.15s ease, letter-spacing 0.15s ease;
-    }
-    .svg-card:hover .card-note {
-      color: var(--ink-black);
-      border-left-color: var(--border-strong);
-      letter-spacing: 0.02em;
     }
 
-    /* ==========================================================================
-       SVG ANIMATION STYLES
-       ========================================================================== */
+    /* SVG RENDER INVARIANTS */
     .anim-svg {
       width: 100%;
       height: 100%;
@@ -291,12 +296,13 @@
     .anim-svg text {
       font-family: var(--font-abel), 'Atkinson Hyperlegible', sans-serif !important;
       font-style: normal !important;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       text-rendering: geometricPrecision;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* 1. PHY-01: Translatory Sliding Notebook */
+    /* KEYFRAME ANIMATIONS */
+    /* 1. PHY-01: Translatory */
     .notebook-slider {
       animation: slide-diag calc(3.2s / var(--anim-speed)) infinite ease-in-out;
     }
@@ -309,11 +315,11 @@
       transform-origin: 24px 64px;
     }
     @keyframes arrow-grow {
-      0%, 100% { stroke-dashoffset: 20; opacity: 0.3; }
+      0%, 100% { stroke-dashoffset: 20; opacity: 0.35; }
       50% { stroke-dashoffset: 0; opacity: 1; }
     }
 
-    /* 2. PHY-02: Energy Pendulum */
+    /* 2. PHY-02: Pendulum */
     .pendulum-swing {
       animation: swing calc(2.4s / var(--anim-speed)) infinite cubic-bezier(0.4, 0, 0.6, 1);
       transform-origin: 50px 18px;
@@ -326,8 +332,8 @@
       animation: pulse-glow calc(1.2s / var(--anim-speed)) infinite ease-in-out;
     }
     @keyframes pulse-glow {
-      0%, 100% { opacity: 0.3; r: 5px; }
-      50% { opacity: 1; r: 7px; }
+      0%, 100% { opacity: 0.4; r: 4px; }
+      50% { opacity: 1; r: 6.5px; }
     }
 
     /* 3. PHY-03: Specular Ray Reflection */
@@ -344,7 +350,7 @@
     }
     @keyframes spark {
       0%, 45%, 100% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.3); }
+      50% { opacity: 1; transform: scale(1.4); }
       55% { opacity: 0; transform: scale(0.8); }
     }
 
@@ -361,25 +367,25 @@
     .wave-ripple-2 { animation: ripple calc(2s / var(--anim-speed)) infinite linear calc(0.66s / var(--anim-speed)); }
     .wave-ripple-3 { animation: ripple calc(2s / var(--anim-speed)) infinite linear calc(1.33s / var(--anim-speed)); }
     @keyframes ripple {
-      0% { r: 6px; opacity: 0.9; }
+      0% { r: 6px; opacity: 0.95; }
       100% { r: 36px; opacity: 0; }
     }
 
     /* 5. PHY-05: Circulating Electron DC Circuit */
     .electron-flow {
-      stroke-dasharray: 8 16;
-      animation: circuit-flow calc(3s / var(--anim-speed)) infinite linear;
+      stroke-dasharray: 10 18;
+      animation: circuit-flow calc(2.8s / var(--anim-speed)) infinite linear;
     }
     @keyframes circuit-flow {
       0% { stroke-dashoffset: 0; }
-      100% { stroke-dashoffset: -48; }
+      100% { stroke-dashoffset: -56; }
     }
     .bulb-glow {
       animation: bulb-pulse calc(1.8s / var(--anim-speed)) infinite ease-in-out;
     }
     @keyframes bulb-pulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; filter: drop-shadow(0 0 6px var(--phy-accent)); }
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; filter: drop-shadow(0 0 8px var(--accent-orange)); }
     }
 
     /* 6. CHE-02: Bohr Atom Planetary Electron */
@@ -392,7 +398,7 @@
       100% { transform: rotate(360deg); }
     }
 
-    /* 7. CHE-06: Litmus Neutralization Drop */
+    /* 7. CHE-06: Titration Drop */
     .droplet-fall {
       animation: drop calc(2.8s / var(--anim-speed)) infinite ease-in;
     }
@@ -407,8 +413,8 @@
       animation: color-shift calc(5.6s / var(--anim-speed)) infinite ease-in-out;
     }
     @keyframes color-shift {
-      0%, 100% { fill: #fef2f2; } /* Acid pink/red */
-      50% { fill: #eff6ff; }       /* Alkali blue */
+      0%, 100% { fill: #fed7aa; stroke: var(--accent-orange); }
+      50% { fill: #fef08a; stroke: #ca8a04; }
     }
 
     /* 8. BIO-02: Photosynthesis Solar Radiant Absorption */
@@ -416,7 +422,7 @@
       animation: sun-radiate calc(3s / var(--anim-speed)) infinite ease-in-out alternate;
     }
     @keyframes sun-radiate {
-      0% { opacity: 0.35; stroke-dashoffset: 8; }
+      0% { opacity: 0.45; stroke-dashoffset: 8; }
       100% { opacity: 1; stroke-dashoffset: 0; }
     }
     .oxygen-release-1 {
@@ -455,7 +461,7 @@
       100% { transform: translateX(54px); opacity: 0; }
     }
 
-    /* 11. MATH-04: Linear Balance Beam Equilibrium */
+    /* 11. MATH-04: Balance Beam Equilibrium */
     .balance-beam {
       animation: seesaw calc(4s / var(--anim-speed)) infinite ease-in-out;
       transform-origin: 50px 44px;
@@ -497,11 +503,11 @@
       animation: angle-pulse calc(2.2s / var(--anim-speed)) infinite ease-in-out alternate;
     }
     @keyframes angle-pulse {
-      0% { opacity: 0.45; }
+      0% { opacity: 0.6; }
       100% { opacity: 1; }
     }
 
-    /* 13. CHE-05: Mass Conservation Atom Balance */
+    /* 13. CHE-05: Conservation Atom Swap */
     .atom-swap {
       animation: bond-pulse calc(2.5s / var(--anim-speed)) infinite ease-in-out;
     }
@@ -510,7 +516,7 @@
       50% { transform: scale(1.1); }
     }
 
-    /* 14. MATH-03: Area Model Distribution Split */
+    /* 14. MATH-03: Area Divider */
     .area-divider {
       animation: split-slide calc(3.5s / var(--anim-speed)) infinite ease-in-out;
     }
@@ -523,22 +529,29 @@
 </head>
 <body>
 
+  <!-- ALPHA BANNER -->
+  <div class="alpha-top-bar">
+    <div><strong>ALPHA VARIANT //</strong> High-Contrast Black & Orange Technical Drafting Standard</div>
+    <div><a href="animated_svgs.html">← Switch to Default Palette</a></div>
+  </div>
+
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" class="brand-title">ICSE <em>Class 7</em> Science & Math</a>
+    <a href="../index_clone_alpha.html" class="brand-title">ICSE <em>Class 7</em> Science & Math · Alpha</a>
     <div class="nav-links">
-      <a href="../index.html">Topics Index</a>
-      <a href="../docs/blueprints/MARGIN_SVG_BLUEPRINT.md">Blueprint Specification</a>
+      <a href="../index_clone_alpha.html">Alpha Topics Index</a>
+      <a href="animated_svgs.html">Standard Studio</a>
+      <a href="../docs/blueprints/MARGIN_SVG_BLUEPRINT.md">Blueprint Spec</a>
     </div>
   </header>
 
   <div class="container">
 
     <div class="intro-header">
-      <div class="kicker">Animated Desk Illustrations</div>
-      <h1 class="title">Bespoke Margin & Homepage Animated SVGs</h1>
+      <div class="kicker">Alpha Motion Studio // High Contrast</div>
+      <h1 class="title">Technical Vector Drafting: Black & Orange</h1>
       <p class="subtitle">
-        Smooth, looping vector animations engineered for the 120px desk margin. Pure CSS hardware-accelerated transforms, zero external bloat, and authentic scientific principles.
+        Engineered for razor-sharp visual clarity. Solid Carbon Black (<code>#161514</code>) apparatus geometry paired with Vibrant Orange (<code>#ea580c</code>) dynamics, vectors, and angle geometry. Authentic botanical emerald green strictly preserved for biological plant life.
       </p>
     </div>
 
@@ -576,19 +589,21 @@
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g class="notebook-slider">
-              <!-- Flat Sliding Notebook -->
-              <rect x="22" y="32" width="44" height="34" rx="2" fill="var(--phy-wash)" stroke="var(--ink-black)" stroke-width="1.3"/>
-              <line x1="28" y1="32" x2="28" y2="66" stroke="var(--ink-black)" stroke-width="1" stroke-dasharray="2 2"/>
-              <!-- Marker Points A and B -->
-              <circle cx="28" cy="38" r="2" fill="var(--phy-accent)"/>
-              <circle cx="28" cy="60" r="2" fill="var(--phy-accent)"/>
-              <text x="32" y="41" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">A</text>
-              <text x="32" y="63" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">B</text>
+              <!-- Crisp Solid Black Drafting Book -->
+              <rect x="22" y="32" width="44" height="34" rx="2" fill="#ffffff" stroke="var(--ink-black)" stroke-width="2.2"/>
+              <line x1="28" y1="32" x2="28" y2="66" stroke="var(--ink-black)" stroke-width="1.4" stroke-dasharray="2 2"/>
+              <!-- Marker Points A and B in Vibrant Orange -->
+              <circle cx="28" cy="38" r="2.8" fill="var(--accent-orange)"/>
+              <circle cx="28" cy="60" r="2.8" fill="var(--accent-orange)"/>
+              <text x="33" y="41" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">A</text>
+              <text x="33" y="63" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">B</text>
             </g>
-            <!-- Parallel Displacement Vectors -->
-            <path class="vector-stretch" d="M28 38 L42 28" stroke="var(--phy-accent)" stroke-width="1.2" stroke-linecap="round"/>
-            <path class="vector-stretch" d="M28 60 L42 50" stroke="var(--phy-accent)" stroke-width="1.2" stroke-linecap="round"/>
-            <text x="46" y="86" font-family="var(--font-abel)" font-size="10" fill="var(--ink-muted)">AB ∥ A'B'</text>
+            <!-- High-Contrast Orange Parallel Displacement Vectors -->
+            <path class="vector-stretch" d="M28 38 L44 26" stroke="var(--accent-orange)" stroke-width="2.2" stroke-linecap="round"/>
+            <path class="vector-stretch" d="M28 60 L44 48" stroke="var(--accent-orange)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M42 25 L44 26 L43 29" stroke="var(--accent-orange)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M42 47 L44 48 L43 51" stroke="var(--accent-orange)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <text x="44" y="86" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">AB ∥ A'B'</text>
           </svg>
         </div>
         <div class="card-title">Translatory Parallel Drift</div>
@@ -605,16 +620,16 @@
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Pivot Support -->
-            <line x1="30" y1="18" x2="70" y2="18" stroke="var(--ink-black)" stroke-width="1.4"/>
-            <!-- Dashed Height Trajectory Arc -->
-            <path d="M24 64 C36 74 64 74 76 64" stroke="var(--ink-muted)" stroke-width="0.9" stroke-dasharray="2 2"/>
+            <line x1="28" y1="18" x2="72" y2="18" stroke="var(--ink-black)" stroke-width="2.4" stroke-linecap="round"/>
+            <!-- High-Contrast Dashed Trajectory Arc -->
+            <path d="M24 64 C36 74 64 74 76 64" stroke="var(--ink-muted)" stroke-width="1.4" stroke-dasharray="3 3"/>
             <!-- Oscillating Pendulum String & Bob -->
             <g class="pendulum-swing">
-              <line x1="50" y1="18" x2="50" y2="70" stroke="var(--ink-black)" stroke-width="1.2"/>
-              <circle cx="50" cy="70" r="6" fill="var(--phy-wash)" stroke="var(--ink-black)" stroke-width="1.3"/>
-              <circle class="energy-pulse" cx="50" cy="70" r="3" fill="var(--phy-accent)"/>
+              <line x1="50" y1="18" x2="50" y2="70" stroke="var(--ink-black)" stroke-width="1.8"/>
+              <circle cx="50" cy="70" r="6.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="2.2"/>
+              <circle class="energy-pulse" cx="50" cy="70" r="3.5" fill="var(--accent-orange)"/>
             </g>
-            <text x="34" y="88" font-family="var(--font-abel)" font-size="9" fill="var(--phy-accent)">Ep ⇄ Ek</text>
+            <text x="32" y="88" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--accent-orange)">Ep ⇄ Ek</text>
           </svg>
         </div>
         <div class="card-title">Conservation Pendulum</div>
@@ -630,16 +645,21 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Mirror Surface -->
-            <line x1="16" y1="60" x2="84" y2="60" stroke="var(--ink-black)" stroke-width="1.5"/>
-            <path d="M20 63 L24 68 M34 63 L38 68 M48 63 L52 68 M62 63 L66 68 M76 63 L80 68" stroke="var(--ink-muted)" stroke-width="1"/>
+            <!-- Mirror Surface & Back Hatching in Carbon Black -->
+            <line x1="14" y1="60" x2="86" y2="60" stroke="var(--ink-black)" stroke-width="2.4"/>
+            <path d="M18 63 L22 68 M30 63 L34 68 M42 63 L46 68 M54 63 L58 68 M66 63 L70 68 M78 63 L82 68" stroke="var(--ink-black)" stroke-width="1.4"/>
             <!-- Normal Line -->
-            <line x1="50" y1="20" x2="50" y2="60" stroke="var(--ink-muted)" stroke-width="1" stroke-dasharray="3 2"/>
-            <!-- Incident & Reflected Light Rays -->
-            <line class="incident-ray" x1="22" y1="28" x2="50" y2="60" stroke="var(--phy-accent)" stroke-width="1.4"/>
-            <line class="incident-ray" x1="50" y1="60" x2="78" y2="28" stroke="var(--phy-accent)" stroke-width="1.4"/>
-            <circle class="reflection-spark" cx="50" cy="60" r="3" fill="var(--phy-accent)"/>
-            <text x="36" y="78" font-family="var(--font-abel)" font-size="10" fill="var(--phy-accent)">∠i = ∠r</text>
+            <line x1="50" y1="18" x2="50" y2="60" stroke="var(--ink-black)" stroke-width="1.6" stroke-dasharray="3 3"/>
+            <!-- Incident & Reflected Light Rays in Bold Orange -->
+            <line class="incident-ray" x1="22" y1="28" x2="50" y2="60" stroke="var(--accent-orange)" stroke-width="2.4" stroke-linecap="round"/>
+            <line class="incident-ray" x1="50" y1="60" x2="78" y2="28" stroke="var(--accent-orange)" stroke-width="2.4" stroke-linecap="round"/>
+            <!-- Angle Arcs -->
+            <path d="M 44 48 A 14 14 0 0 1 50 46" stroke="var(--accent-orange)" stroke-width="2" fill="none"/>
+            <path d="M 50 46 A 14 14 0 0 1 56 48" stroke="var(--accent-orange)" stroke-width="2" fill="none"/>
+            <text x="40" y="44" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--accent-orange)">i</text>
+            <text x="56" y="44" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--accent-orange)">r</text>
+            <circle class="reflection-spark" cx="50" cy="60" r="3.5" fill="var(--accent-orange)"/>
+            <text x="34" y="80" font-family="var(--font-abel)" font-size="12" font-weight="bold" fill="var(--accent-orange)">∠i = ∠r</text>
           </svg>
         </div>
         <div class="card-title">Specular Reflection Beam</div>
@@ -655,17 +675,17 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Tuning Fork Stem & Handle -->
-            <path d="M50 56 L50 84" stroke="var(--ink-black)" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="50" cy="86" r="3.5" fill="var(--ink-black)"/>
-            <!-- Vibrating Prongs -->
+            <!-- Solid Black Stem & Base Knob -->
+            <path d="M50 56 L50 84" stroke="var(--ink-black)" stroke-width="2.8" stroke-linecap="round"/>
+            <circle cx="50" cy="86" r="4" fill="var(--ink-black)"/>
+            <!-- Vibrating Prongs in Carbon Black -->
             <g class="fork-prongs">
-              <path d="M38 20 L38 52 C38 58 62 58 62 52 L62 20" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M38 20 L38 52 C38 58 62 58 62 52 L62 20" stroke="var(--ink-black)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
             </g>
-            <!-- Expanding Acoustic Pressure Waves -->
-            <circle class="wave-ripple-1" cx="50" cy="30" r="10" stroke="var(--phy-accent)" stroke-width="1.2" fill="none"/>
-            <circle class="wave-ripple-2" cx="50" cy="30" r="10" stroke="var(--phy-accent)" stroke-width="1.2" fill="none"/>
-            <circle class="wave-ripple-3" cx="50" cy="30" r="10" stroke="var(--phy-accent)" stroke-width="1.2" fill="none"/>
+            <!-- High-Contrast Orange Acoustic Pressure Waves -->
+            <circle class="wave-ripple-1" cx="50" cy="30" r="10" stroke="var(--accent-orange)" stroke-width="2" fill="none"/>
+            <circle class="wave-ripple-2" cx="50" cy="30" r="10" stroke="var(--accent-orange)" stroke-width="2" fill="none"/>
+            <circle class="wave-ripple-3" cx="50" cy="30" r="10" stroke="var(--accent-orange)" stroke-width="2" fill="none"/>
           </svg>
         </div>
         <div class="card-title">Acoustic Compression Waves</div>
@@ -681,19 +701,21 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Rectangular Circuit Track -->
-            <rect x="20" y="24" width="60" height="52" rx="4" stroke="var(--border-strong)" stroke-width="1.5" fill="none"/>
-            <!-- Animated Electron Stream -->
-            <rect class="electron-flow" x="20" y="24" width="60" height="52" rx="4" stroke="var(--phy-accent)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-            <!-- DC Cell -->
+            <!-- Solid Black Wire Track (No faint beige) -->
+            <rect x="20" y="24" width="60" height="52" rx="4" stroke="var(--ink-black)" stroke-width="2.2" fill="none"/>
+            <!-- Animated Orange Electron Stream -->
+            <rect class="electron-flow" x="20" y="24" width="60" height="52" rx="4" stroke="var(--accent-orange)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <!-- DC Cell with High-Contrast Plates -->
             <g transform="translate(14, 42)">
-              <line x1="6" y1="4" x2="6" y2="16" stroke="var(--ink-black)" stroke-width="2.5"/>
-              <line x1="12" y1="0" x2="12" y2="20" stroke="var(--ink-black)" stroke-width="1.5"/>
+              <line x1="6" y1="4" x2="6" y2="16" stroke="var(--ink-black)" stroke-width="3.4"/>
+              <line x1="12" y1="0" x2="12" y2="20" stroke="var(--ink-black)" stroke-width="1.8"/>
+              <text x="3" y="-2" font-family="var(--font-abel)" font-size="9" font-weight="bold" fill="var(--accent-orange)">−</text>
+              <text x="10" y="-2" font-family="var(--font-abel)" font-size="9" font-weight="bold" fill="var(--accent-orange)">+</text>
             </g>
-            <!-- Glowing Filament Bulb -->
+            <!-- Glowing Filament Bulb with Orange Radiance -->
             <g transform="translate(68, 42)">
-              <circle class="bulb-glow" cx="8" cy="10" r="8" fill="var(--phy-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-              <path d="M5 8 L8 12 L11 8" stroke="var(--phy-accent)" stroke-width="1.2"/>
+              <circle class="bulb-glow" cx="8" cy="10" r="8.5" fill="#fef3c7" stroke="var(--ink-black)" stroke-width="1.8"/>
+              <path d="M5 8 L8 12 L11 8" stroke="var(--accent-orange)" stroke-width="1.8" stroke-linecap="round"/>
             </g>
           </svg>
         </div>
@@ -710,16 +732,17 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Central Nucleus -->
-            <circle cx="50" cy="50" r="8" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1.4"/>
-            <text x="44" y="53" font-family="var(--font-abel)" font-size="8" font-weight="600" fill="var(--che-accent)">11p</text>
-            <!-- K & L Fixed Shells -->
-            <circle cx="50" cy="50" r="18" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="2 2"/>
-            <circle cx="50" cy="50" r="28" stroke="var(--border-strong)" stroke-width="1" stroke-dasharray="3 2"/>
-            <!-- Rotating M-Shell & Valence Electron -->
+            <!-- Central Nucleus in Carbon Black with Orange Core -->
+            <circle cx="50" cy="50" r="9" fill="#ffffff" stroke="var(--ink-black)" stroke-width="2"/>
+            <circle cx="50" cy="50" r="4.5" fill="var(--accent-orange)"/>
+            <text x="50" y="66" text-anchor="middle" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">11p · 12n</text>
+            <!-- Fixed K & L Shells in Crisp Black -->
+            <circle cx="50" cy="50" r="18" stroke="var(--ink-black)" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <circle cx="50" cy="50" r="28" stroke="var(--ink-black)" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <!-- Rotating M-Shell with Solid Orange Valence Electron -->
             <g class="bohr-electron-orbit">
-              <circle cx="50" cy="50" r="38" stroke="var(--che-accent)" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
-              <circle cx="50" cy="12" r="3.2" fill="var(--che-accent)" stroke="var(--ink-black)" stroke-width="1"/>
+              <circle cx="50" cy="50" r="38" stroke="var(--accent-orange)" stroke-width="1.4" stroke-dasharray="4 3"/>
+              <circle cx="50" cy="12" r="3.8" fill="var(--accent-orange)" stroke="var(--ink-black)" stroke-width="1.5"/>
             </g>
           </svg>
         </div>
@@ -736,21 +759,21 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Burette Tip -->
+            <!-- Burette Tip in Solid Black -->
             <path d="M47 10 L53 10 L51 22 L49 22 Z" fill="var(--ink-black)"/>
-            <!-- Falling Acid Droplet -->
-            <circle class="droplet-fall" cx="50" cy="26" r="2.2" fill="var(--che-accent)"/>
-            <!-- Beaker & Shifting Fluid -->
-            <path d="M30 46 L30 80 C30 84 34 88 38 88 L62 88 C66 88 70 84 70 80 L70 46" stroke="var(--ink-black)" stroke-width="1.4" fill="none"/>
-            <path class="indicator-liquid" d="M31 58 Q50 60 69 58 L69 80 C69 83 66 87 62 87 L38 87 C34 87 31 83 31 80 Z" stroke="var(--che-accent)" stroke-width="1"/>
-            <text x="35" y="74" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">H⁺ + OH⁻</text>
+            <!-- Falling Orange Neutralization Droplet -->
+            <circle class="droplet-fall" cx="50" cy="26" r="2.8" fill="var(--accent-orange)"/>
+            <!-- Beaker in Carbon Black -->
+            <path d="M30 46 L30 80 C30 84 34 88 38 88 L62 88 C66 88 70 84 70 80 L70 46" stroke="var(--ink-black)" stroke-width="2" fill="none"/>
+            <path class="indicator-liquid" d="M31 58 Q50 60 69 58 L69 80 C69 83 66 87 62 87 L38 87 C34 87 31 83 31 80 Z" stroke="var(--accent-orange)" stroke-width="1.4"/>
+            <text x="32" y="74" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">H⁺ + OH⁻</text>
           </svg>
         </div>
         <div class="card-title">Acid-Base Titration Drop</div>
         <div class="card-note">Periodic neutralization droplet causing dynamic indicator pH color shift.</div>
       </div>
 
-      <!-- 8. BIO-02: Photosynthesis Solar Absorption -->
+      <!-- 8. BIO-02: Photosynthesis Solar Absorption (PRESERVED BOTANICAL EMERALD GREEN) -->
       <div class="svg-card" data-disc="bio">
         <div class="card-header-row">
           <span class="card-code">BIO-02</span>
@@ -759,33 +782,34 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Radiant Sun in upper-left corner -->
-            <circle cx="20" cy="20" r="6.5" fill="var(--mat-wash)" stroke="var(--mat-accent)" stroke-width="1.3"/>
-            <!-- Pulsing Solar Rays shining down toward leaf -->
-            <g class="sunbeam-pulse" stroke="var(--mat-accent)" stroke-width="1.2" stroke-linecap="round">
-              <line x1="28" y1="28" x2="38" y2="38" stroke-dasharray="2 2"/>
-              <line x1="31" y1="20" x2="44" y2="20" stroke-dasharray="2 2"/>
-              <line x1="20" y1="31" x2="20" y2="44" stroke-dasharray="2 2"/>
+            <!-- Radiant Sun in Solar Golden-Orange -->
+            <circle cx="20" cy="20" r="7" fill="#fef3c7" stroke="var(--accent-orange)" stroke-width="2"/>
+            <!-- Incident Solar Radiation Rays -->
+            <g class="sunbeam-pulse" stroke="var(--accent-orange)" stroke-width="1.8" stroke-linecap="round">
+              <line x1="28" y1="28" x2="40" y2="40" stroke-dasharray="2 2"/>
+              <line x1="31" y1="20" x2="46" y2="20" stroke-dasharray="2 2"/>
+              <line x1="20" y1="31" x2="20" y2="46" stroke-dasharray="2 2"/>
             </g>
-            <!-- Stylized Centered Botanical Leaf -->
+            <!-- AUTHENTIC BOTANICAL GREEN LEAF (Zero orange on plants) -->
             <g transform="translate(10, 16)">
-              <!-- Leaf blade contour -->
-              <path d="M 28 64 C 20 44 40 22 66 25 C 68 50 48 70 28 64 Z" fill="var(--bio-wash)" stroke="var(--ink-black)" stroke-width="1.4" stroke-linejoin="round"/>
-              <!-- Central Midrib -->
-              <path d="M 20 72 L 28 64 C 38 52 50 39 66 25" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
-              <!-- Secondary Vein Pairs -->
-              <line x1="36" y1="55" x2="31" y2="46" stroke="var(--bio-accent)" stroke-width="1.1"/>
-              <line x1="42" y1="48" x2="52" y2="54" stroke="var(--bio-accent)" stroke-width="1.1"/>
-              <line x1="48" y1="41" x2="43" y2="33" stroke="var(--bio-accent)" stroke-width="1.1"/>
-              <line x1="55" y1="34" x2="63" y2="39" stroke="var(--bio-accent)" stroke-width="1.1"/>
+              <!-- Leaf blade contour in Carbon Black with rich green wash -->
+              <path d="M 28 64 C 20 44 40 22 66 25 C 68 50 48 70 28 64 Z" fill="var(--bio-wash)" stroke="var(--ink-black)" stroke-width="2.2" stroke-linejoin="round"/>
+              <!-- Central Midrib in Carbon Black -->
+              <path d="M 20 72 L 28 64 C 38 52 50 39 66 25" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
+              <!-- Secondary Vein Pairs in Rich Botanical Emerald Green -->
+              <line x1="36" y1="55" x2="31" y2="46" stroke="var(--bio-accent)" stroke-width="1.6"/>
+              <line x1="42" y1="48" x2="52" y2="54" stroke="var(--bio-accent)" stroke-width="1.6"/>
+              <line x1="48" y1="41" x2="43" y2="33" stroke="var(--bio-accent)" stroke-width="1.6"/>
+              <line x1="55" y1="34" x2="63" y2="39" stroke="var(--bio-accent)" stroke-width="1.6"/>
             </g>
-            <!-- Released Oxygen Bubbles -->
+            <!-- Released Oxygen Bubbles with Green O2 Annotation -->
             <g class="oxygen-release-1">
-              <circle cx="68" cy="46" r="3" fill="#ffffff" stroke="var(--che-accent)" stroke-width="1.2"/>
+              <circle cx="68" cy="46" r="3.2" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.4"/>
             </g>
             <g class="oxygen-release-2">
-              <circle cx="75" cy="38" r="2.2" fill="#ffffff" stroke="var(--che-accent)" stroke-width="1"/>
+              <circle cx="75" cy="38" r="2.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.2"/>
             </g>
+            <text x="74" y="58" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--bio-accent)">O₂ ↑</text>
           </svg>
         </div>
         <div class="card-title">Photosynthesis Solar Absorption</div>
@@ -801,29 +825,29 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Pulsing Anatomical 4-Chamber Cardiac Pump -->
+            <!-- Pulsing Anatomical Cardiac Pump in Solid Black with Arterial Red -->
             <g class="heart-pump">
               <!-- Superior Vena Cava -->
-              <path d="M34 18 L34 32 C34 35 36 38 40 40" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
-              <line x1="39" y1="18" x2="39" y2="28" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M34 18 L34 32 C34 35 36 38 40 40" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="39" y1="18" x2="39" y2="28" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
               <!-- Ascending Aorta & Arch with 3 Branching Arterial Trunks -->
-              <path d="M47 32 C47 20 58 16 64 22 C67 25 67 30 67 36" stroke="var(--ink-black)" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M42 34 C43 24 54 20 60 25" stroke="var(--ink-black)" stroke-width="1.2" stroke-linecap="round"/>
-              <line x1="49" y1="19" x2="48" y2="12" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
-              <line x1="55" y1="18" x2="56" y2="12" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
-              <line x1="61" y1="20" x2="63" y2="13" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M47 32 C47 20 58 16 64 22 C67 25 67 30 67 36" stroke="var(--ink-black)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M42 34 C43 24 54 20 60 25" stroke="var(--ink-black)" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="49" y1="19" x2="48" y2="12" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="55" y1="18" x2="56" y2="12" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="61" y1="20" x2="63" y2="13" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
               <!-- Pulmonary Trunk -->
-              <path d="M43 36 C45 30 50 28 55 28" stroke="var(--ink-black)" stroke-width="1.3" stroke-dasharray="2 2"/>
-              <path d="M63 28 L71 30" stroke="var(--ink-black)" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M43 36 C45 30 50 28 55 28" stroke="var(--ink-black)" stroke-width="1.6" stroke-dasharray="2 2"/>
+              <path d="M63 28 L71 30" stroke="var(--ink-black)" stroke-width="1.6" stroke-linecap="round"/>
               <!-- Right & Left Atria -->
-              <path d="M34 36 C27 40 26 50 32 56" stroke="var(--ink-black)" stroke-width="1.4" stroke-linecap="round"/>
-              <path d="M64 36 C71 40 72 48 68 54" stroke="var(--ink-black)" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M34 36 C27 40 26 50 32 56" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M64 36 C71 40 72 48 68 54" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
               <!-- Muscular Ventricles tapering to Left Cardiac Apex -->
-              <path d="M32 56 C33 68 40 78 54 84 C58 85 62 84 66 80 C72 72 72 62 68 54" stroke="var(--ink-black)" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M32 56 C33 68 40 78 54 84 C58 85 62 84 66 80 C72 72 72 62 68 54" stroke="var(--ink-black)" stroke-width="2.2" stroke-linecap="round"/>
               <!-- Anterior Interventricular Sulcus -->
-              <path d="M48 50 C50 60 52 72 55 83" stroke="var(--ink-black)" stroke-width="1.2" stroke-dasharray="3 2"/>
-              <!-- Sinoatrial Pacemaker Node -->
-              <circle cx="36" cy="26" r="1.6" fill="var(--bio-accent)"/>
+              <path d="M48 50 C50 60 52 72 55 83" stroke="var(--ink-black)" stroke-width="1.6" stroke-dasharray="3 2"/>
+              <!-- Arterial Crimson Pacemaker Stimulus Node -->
+              <circle cx="36" cy="26" r="2.5" fill="var(--arterial-red)"/>
             </g>
           </svg>
         </div>
@@ -840,27 +864,27 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Cyton Dendrites -->
-            <path d="M 22 45 L 14 38 M 20 50 L 11 50 M 22 55 L 14 62 M 25 43 L 23 35 M 25 57 L 23 65" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
+            <!-- Cyton Dendrites in Carbon Black -->
+            <path d="M 22 45 L 14 38 M 20 50 L 11 50 M 22 55 L 14 62 M 25 43 L 23 35 M 25 57 L 23 65" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
             <!-- Cyton Cell Body -->
-            <circle cx="22" cy="50" r="6" fill="var(--bio-wash)" stroke="var(--ink-black)" stroke-width="1.4"/>
+            <circle cx="22" cy="50" r="6.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="2"/>
             <!-- Nucleus -->
-            <circle cx="22" cy="50" r="2.2" fill="var(--bio-accent)"/>
+            <circle cx="22" cy="50" r="2.6" fill="var(--ink-black)"/>
             <!-- Axon Core Fiber -->
-            <line x1="28" y1="50" x2="76" y2="50" stroke="var(--ink-black)" stroke-width="1.4"/>
-            <!-- Myelin Sheaths with Nodes of Ranvier Gaps -->
-            <rect x="33" y="46" width="10" height="8" rx="2.5" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-            <rect x="47" y="46" width="10" height="8" rx="2.5" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
-            <rect x="61" y="46" width="10" height="8" rx="2.5" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1.2"/>
+            <line x1="28" y1="50" x2="76" y2="50" stroke="var(--ink-black)" stroke-width="2"/>
+            <!-- Myelin Sheaths with Distinct White Nodes -->
+            <rect x="33" y="45" width="10" height="10" rx="2.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
+            <rect x="47" y="45" width="10" height="10" rx="2.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
+            <rect x="61" y="45" width="10" height="10" rx="2.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
             <!-- Terminal Arborization & Synaptic Knobs -->
-            <path d="M 76 50 L 84 42 M 76 50 L 87 50 M 76 50 L 84 58" stroke="var(--ink-black)" stroke-width="1.3" stroke-linecap="round"/>
-            <circle cx="84" cy="42" r="1.8" fill="var(--ink-black)"/>
-            <circle cx="87" cy="50" r="1.8" fill="var(--ink-black)"/>
-            <circle cx="84" cy="58" r="1.8" fill="var(--ink-black)"/>
-            <!-- Gliding Action Potential Impulse -->
+            <path d="M 76 50 L 84 42 M 76 50 L 87 50 M 76 50 L 84 58" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="84" cy="42" r="2.2" fill="var(--ink-black)"/>
+            <circle cx="87" cy="50" r="2.2" fill="var(--ink-black)"/>
+            <circle cx="84" cy="58" r="2.2" fill="var(--ink-black)"/>
+            <!-- High-Contrast Orange Action Potential Nerve Impulse -->
             <g class="neuron-action-pulse">
-              <circle cx="24" cy="50" r="3" fill="var(--phy-accent)"/>
-              <circle cx="24" cy="50" r="5" stroke="var(--phy-accent)" stroke-width="0.8" opacity="0.6"/>
+              <circle cx="24" cy="50" r="3.8" fill="var(--accent-orange)"/>
+              <circle cx="24" cy="50" r="6" stroke="var(--accent-orange)" stroke-width="1.2" opacity="0.6"/>
             </g>
           </svg>
         </div>
@@ -877,47 +901,47 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Central Fulcrum Stand -->
-            <line x1="36" y1="78" x2="64" y2="78" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
-            <polygon points="50,44 42,78 58,78" fill="var(--bg-surface)" stroke="var(--ink-black)" stroke-width="1.4" stroke-linejoin="round"/>
-            <!-- Central Pivot Pin -->
-            <circle cx="50" cy="44" r="2.8" fill="var(--mat-accent)"/>
-            <circle cx="50" cy="44" r="1.2" fill="#ffffff"/>
-            <!-- Equilibrium Datum Mark -->
-            <line x1="50" y1="23" x2="50" y2="26" stroke="var(--ink-muted)" stroke-width="1.4"/>
+            <!-- Central Fulcrum Stand in Solid Black -->
+            <line x1="36" y1="78" x2="64" y2="78" stroke="var(--ink-black)" stroke-width="2.4" stroke-linecap="round"/>
+            <polygon points="50,44 42,78 58,78" fill="var(--bg-surface)" stroke="var(--ink-black)" stroke-width="1.8" stroke-linejoin="round"/>
+            <!-- High-Contrast Orange Pivot Pin -->
+            <circle cx="50" cy="44" r="3.4" fill="var(--accent-orange)"/>
+            <circle cx="50" cy="44" r="1.4" fill="#ffffff"/>
+            <!-- Vertical Datum Pointer Notch -->
+            <line x1="50" y1="23" x2="50" y2="26" stroke="var(--ink-black)" stroke-width="1.8"/>
 
             <!-- Oscillating Balance Assembly -->
             <g class="balance-beam">
-              <!-- Horizontal Beam -->
-              <line x1="22" y1="44" x2="78" y2="44" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
-              <!-- Central Equilibrium Indicator Pointer -->
-              <line x1="50" y1="44" x2="50" y2="27" stroke="var(--mat-accent)" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Horizontal Beam in Carbon Black -->
+              <line x1="22" y1="44" x2="78" y2="44" stroke="var(--ink-black)" stroke-width="2.2" stroke-linecap="round"/>
+              <!-- Central Equilibrium Plumb Pointer in Bold Orange -->
+              <line x1="50" y1="44" x2="50" y2="27" stroke="var(--accent-orange)" stroke-width="2" stroke-linecap="round"/>
 
               <!-- Left Hanging Pan Assembly -->
               <g class="pan-left">
-                <circle cx="24" cy="44" r="1.8" fill="var(--ink-black)"/>
-                <line x1="24" y1="44" x2="16" y2="60" stroke="var(--ink-black)" stroke-width="1.1"/>
-                <line x1="24" y1="44" x2="32" y2="60" stroke="var(--ink-black)" stroke-width="1.1"/>
-                <path d="M 14 60 Q 24 64 34 60" stroke="var(--ink-black)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-                <!-- Algebraic Cube 'x' -->
-                <rect x="16" y="50" width="8" height="9" rx="1" fill="var(--bg-surface)" stroke="var(--ink-black)" stroke-width="1"/>
-                <text x="20" y="57" text-anchor="middle" font-family="var(--font-abel)" font-size="7.5" font-weight="bold" fill="var(--ink-black)">x</text>
+                <circle cx="24" cy="44" r="2" fill="var(--ink-black)"/>
+                <line x1="24" y1="44" x2="16" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <line x1="24" y1="44" x2="32" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <path d="M 14 60 Q 24 64 34 60" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <!-- Algebraic Cube 'x' with Bold Orange Label -->
+                <rect x="16" y="49" width="9" height="10" rx="1.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <text x="20.5" y="57" text-anchor="middle" font-family="var(--font-abel)" font-size="9" font-weight="800" fill="var(--accent-orange)">x</text>
                 <!-- Calibrated Weight '2' -->
-                <rect x="25.5" y="53" width="6.5" height="6" rx="0.8" fill="var(--mat-wash)" stroke="var(--ink-black)" stroke-width="1"/>
-                <circle cx="28.75" cy="51.8" r="1" fill="var(--ink-black)"/>
-                <text x="28.75" y="58" text-anchor="middle" font-family="var(--font-abel)" font-size="6.5" font-weight="bold" fill="var(--ink-black)">2</text>
+                <rect x="26" y="52" width="7" height="7" rx="1" fill="#fed7aa" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <circle cx="29.5" cy="50.8" r="1.2" fill="var(--ink-black)"/>
+                <text x="29.5" y="58" text-anchor="middle" font-family="var(--font-abel)" font-size="7.5" font-weight="bold" fill="var(--ink-black)">2</text>
               </g>
 
               <!-- Right Hanging Pan Assembly -->
               <g class="pan-right">
-                <circle cx="76" cy="44" r="1.8" fill="var(--ink-black)"/>
-                <line x1="76" y1="44" x2="68" y2="60" stroke="var(--ink-black)" stroke-width="1.1"/>
-                <line x1="76" y1="44" x2="84" y2="60" stroke="var(--ink-black)" stroke-width="1.1"/>
-                <path d="M 66 60 Q 76 64 86 60" stroke="var(--ink-black)" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                <circle cx="76" cy="44" r="2" fill="var(--ink-black)"/>
+                <line x1="76" y1="44" x2="68" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <line x1="76" y1="44" x2="84" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <path d="M 66 60 Q 76 64 86 60" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
                 <!-- Calibrated Weight '5' -->
-                <rect x="71.5" y="49" width="9" height="10" rx="1" fill="var(--mat-wash)" stroke="var(--ink-black)" stroke-width="1.1"/>
-                <circle cx="76" cy="47.5" r="1.3" fill="var(--ink-black)"/>
-                <text x="76" y="57" text-anchor="middle" font-family="var(--font-abel)" font-size="8" font-weight="bold" fill="var(--ink-black)">5</text>
+                <rect x="71" y="48" width="10" height="11" rx="1.5" fill="#fed7aa" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <circle cx="76" cy="46.5" r="1.5" fill="var(--ink-black)"/>
+                <text x="76" y="57" text-anchor="middle" font-family="var(--font-abel)" font-size="9" font-weight="bold" fill="var(--ink-black)">5</text>
               </g>
             </g>
           </svg>
@@ -926,7 +950,7 @@
         <div class="card-note">Equal masses on both pans maintain equilibrium, representing algebraic balance in linear equations.</div>
       </div>
 
-      <!-- 12. MATH-07: Alternate Interior Angles -->
+      <!-- 12. MATH-07: Alternate Interior Angles (HERO TARGET - HIGH CONTRAST) -->
       <div class="svg-card" data-disc="mat">
         <div class="card-header-row">
           <span class="card-code">MATH-07</span>
@@ -935,23 +959,30 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Parallel Lines with Directional Chevrons -->
-            <line x1="14" y1="36" x2="86" y2="36" stroke="var(--ink-black)" stroke-width="1.6"/>
-            <line x1="14" y1="64" x2="86" y2="64" stroke="var(--ink-black)" stroke-width="1.6"/>
-            <path d="M 47 33 L 51 36 L 47 39" stroke="var(--ink-muted)" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M 47 61 L 51 64 L 47 67" stroke="var(--ink-muted)" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- Parallel Lines in Deep Carbon Black -->
+            <line x1="12" y1="36" x2="88" y2="36" stroke="var(--ink-black)" stroke-width="2.4"/>
+            <line x1="12" y1="64" x2="88" y2="64" stroke="var(--ink-black)" stroke-width="2.4"/>
+            <!-- Parallelism Directional Chevrons -->
+            <path d="M 46 32 L 51 36 L 46 40" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 46 60 L 51 64 L 46 68" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <!-- Sweeping Transversal Line with Alternate Interior Angles -->
+            <!-- Sweeping Transversal Line with Bold Alternate Interior Angles -->
             <g class="transversal-line">
-              <line x1="33" y1="16" x2="67" y2="84" stroke="var(--ink-black)" stroke-width="1.6" stroke-linecap="round"/>
+              <line x1="32" y1="14" x2="68" y2="86" stroke="var(--ink-black)" stroke-width="2.4" stroke-linecap="round"/>
+              
               <!-- Alternate Interior Angle 'a' (intersection at 43, 36) -->
-              <path class="angle-glow" d="M 43 36 L 55 36 A 12 12 0 0 1 48.4 46.7 Z" fill="rgba(217, 119, 6, 0.25)" stroke="var(--mat-accent)" stroke-width="1.2"/>
-              <text x="49" y="42" font-family="var(--font-abel)" font-size="8.5" font-weight="bold" fill="var(--mat-accent)">a</text>
+              <!-- Solid Vibrant Orange Arc with Visible Warm Fill Wedge -->
+              <path class="angle-glow" d="M 43 36 L 56 36 A 13 13 0 0 1 48.5 47 Z" fill="var(--accent-orange-wash)" stroke="var(--accent-orange)" stroke-width="2.2"/>
+              <text x="50" y="44" font-family="var(--font-abel)" font-size="11" font-weight="800" fill="var(--accent-orange)">a</text>
+              
               <!-- Alternate Interior Angle 'b' (intersection at 57, 64) -->
-              <path class="angle-glow" d="M 57 64 L 45 64 A 12 12 0 0 1 51.6 53.3 Z" fill="rgba(217, 119, 6, 0.25)" stroke="var(--mat-accent)" stroke-width="1.2"/>
-              <text x="49" y="59.5" font-family="var(--font-abel)" font-size="8.5" font-weight="bold" fill="var(--mat-accent)">b</text>
+              <!-- Solid Vibrant Orange Arc with Visible Warm Fill Wedge -->
+              <path class="angle-glow" d="M 57 64 L 44 64 A 13 13 0 0 1 51.5 53 Z" fill="var(--accent-orange-wash)" stroke="var(--accent-orange)" stroke-width="2.2"/>
+              <text x="50" y="61" font-family="var(--font-abel)" font-size="11" font-weight="800" fill="var(--accent-orange)">b</text>
             </g>
-            <text x="26" y="86" font-family="var(--font-abel)" font-size="9.5" font-weight="bold" fill="var(--mat-accent)">∠a = ∠b</text>
+            
+            <!-- Theorem Equality Formula in High-Visibility Bold Orange -->
+            <text x="24" y="90" font-family="var(--font-abel)" font-size="13" font-weight="800" fill="var(--accent-orange)">∠a = ∠b</text>
           </svg>
         </div>
         <div class="card-title">Alternate Interior Angles</div>
@@ -967,24 +998,25 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- 2H2 + O2 Molecule Clusters -->
+            <!-- 2H2 + O2 Molecule Clusters in Carbon Black with Orange Bonds -->
             <g class="atom-swap">
               <!-- H2 molecules -->
-              <circle cx="26" cy="38" r="4" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
-              <circle cx="32" cy="38" r="4" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
-              <circle cx="26" cy="54" r="4" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
-              <circle cx="32" cy="54" r="4" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
-              <!-- O2 molecule -->
-              <circle cx="44" cy="46" r="6" fill="#fef2f2" stroke="var(--phy-accent)" stroke-width="1"/>
-              <circle cx="54" cy="46" r="6" fill="#fef2f2" stroke="var(--phy-accent)" stroke-width="1"/>
-              <!-- Arrow -->
-              <path d="M62 46 L70 46" stroke="var(--ink-black)" stroke-width="1.2" stroke-linecap="round"/>
+              <circle cx="26" cy="38" r="4.2" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
+              <circle cx="33" cy="38" r="4.2" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
+              <circle cx="26" cy="54" r="4.2" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
+              <circle cx="33" cy="54" r="4.2" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
+              <!-- O2 molecule in High-Contrast Orange -->
+              <circle cx="45" cy="46" r="6.5" fill="#fed7aa" stroke="var(--accent-orange)" stroke-width="2"/>
+              <circle cx="55" cy="46" r="6.5" fill="#fed7aa" stroke="var(--accent-orange)" stroke-width="2"/>
+              <!-- Arrow in Carbon Black -->
+              <path d="M63 46 L71 46" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M68 43 L71 46 L68 49" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
               <!-- 2H2O Molecule -->
-              <circle cx="78" cy="44" r="5.5" fill="#fef2f2" stroke="var(--phy-accent)" stroke-width="1"/>
-              <circle cx="74" cy="39" r="3" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
-              <circle cx="82" cy="39" r="3" fill="var(--che-wash)" stroke="var(--ink-black)" stroke-width="1"/>
+              <circle cx="80" cy="44" r="6" fill="#fed7aa" stroke="var(--accent-orange)" stroke-width="2"/>
+              <circle cx="75" cy="38" r="3.4" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
+              <circle cx="85" cy="38" r="3.4" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
             </g>
-            <text x="32" y="78" font-family="var(--font-abel)" font-size="9" fill="var(--che-accent)">2H₂ + O₂ → 2H₂O</text>
+            <text x="24" y="78" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--accent-orange)">2H₂ + O₂ → 2H₂O</text>
           </svg>
         </div>
         <div class="card-title">Conservation Stoichiometry</div>
@@ -1000,21 +1032,23 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Overall Rectangle -->
-            <rect x="22" y="32" width="56" height="38" fill="var(--mat-wash)" stroke="var(--ink-black)" stroke-width="1.4"/>
-            <!-- Sliding Partition Divider -->
+            <!-- Overall Rectangle Frame in Carbon Black -->
+            <rect x="22" y="32" width="56" height="38" fill="#ffffff" stroke="var(--ink-black)" stroke-width="2.2"/>
+            <!-- Sliding Partition Divider in High-Contrast Orange -->
             <g class="area-divider">
-              <line x1="50" y1="32" x2="50" y2="70" stroke="var(--mat-accent)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <line x1="50" y1="32" x2="50" y2="70" stroke="var(--accent-orange)" stroke-width="2.2" stroke-dasharray="4 3"/>
             </g>
+            <!-- Partition 'ac' highlighted in warm orange tint -->
+            <rect x="50" y="32" width="28" height="38" fill="var(--accent-orange-subtle)"/>
             <!-- Height label a -->
-            <text x="14" y="54" font-family="var(--font-abel)" font-size="10" fill="var(--ink-black)">a</text>
+            <text x="14" y="54" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">a</text>
             <!-- Width labels b and c -->
-            <text x="34" y="26" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">b</text>
-            <text x="64" y="26" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">c</text>
+            <text x="34" y="26" font-family="var(--font-abel)" font-size="10.5" font-weight="bold" fill="var(--ink-black)">b</text>
+            <text x="64" y="26" font-family="var(--font-abel)" font-size="10.5" font-weight="bold" fill="var(--ink-black)">c</text>
             <!-- Area labels -->
-            <text x="32" y="54" font-family="var(--font-abel)" font-size="9" fill="var(--ink-muted)">ab</text>
-            <text x="62" y="54" font-family="var(--font-abel)" font-size="9" fill="var(--mat-accent)">ac</text>
-            <text x="24" y="86" font-family="var(--font-abel)" font-size="9" fill="var(--ink-black)">a(b + c) = ab + ac</text>
+            <text x="32" y="54" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">ab</text>
+            <text x="61" y="54" font-family="var(--font-abel)" font-size="10.5" font-weight="800" fill="var(--accent-orange)">ac</text>
+            <text x="20" y="88" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">a(b + c) = ab + <tspan fill="var(--accent-orange)">ac</tspan></text>
           </svg>
         </div>
         <div class="card-title">Area Model Distribution</div>

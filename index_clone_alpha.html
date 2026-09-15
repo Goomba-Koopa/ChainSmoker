@@ -231,16 +231,16 @@
 
     /* ANIMATED DISCIPLINE EMBLEMS */
     .emblem-orbit-1 {
-      animation: orbit-spin-1 6s linear infinite;
-      transform-origin: 20px 20px;
+      animation: orbit-spin-1 7s linear infinite;
+      transform-origin: 50px 50px;
     }
     .emblem-orbit-2 {
-      animation: orbit-spin-2 6s linear infinite;
-      transform-origin: 20px 20px;
+      animation: orbit-spin-2 7s linear infinite;
+      transform-origin: 50px 50px;
     }
     .emblem-nucleus {
-      animation: nucleus-glow 2.4s ease-in-out infinite alternate;
-      transform-origin: 20px 20px;
+      animation: nucleus-glow 2.5s ease-in-out infinite alternate;
+      transform-origin: 50px 50px;
     }
     @keyframes orbit-spin-1 {
       0% { transform: rotate(-30deg); }
@@ -251,25 +251,25 @@
       100% { transform: rotate(-330deg); }
     }
     @keyframes nucleus-glow {
-      0% { transform: scale(0.85); opacity: 0.8; }
-      100% { transform: scale(1.18); opacity: 1; }
+      0% { transform: scale(0.88); opacity: 0.85; }
+      100% { transform: scale(1.12); opacity: 1; }
     }
 
     .flask-bubble-1 {
-      animation: bubble-up 2.8s ease-in-out infinite;
+      animation: bubble-up 2.6s ease-in-out infinite;
     }
     .flask-bubble-2 {
-      animation: bubble-up 3.4s ease-in-out 1s infinite;
+      animation: bubble-up 3.2s ease-in-out 1.2s infinite;
     }
     .flask-meniscus {
-      animation: meniscus-slosh 3s ease-in-out infinite alternate;
-      transform-origin: 20px 24px;
+      animation: meniscus-slosh 3.5s ease-in-out infinite alternate;
+      transform-origin: 50px 60px;
     }
     @keyframes bubble-up {
       0% { transform: translateY(0); opacity: 0; }
       30% { opacity: 0.9; }
       80% { opacity: 0.9; }
-      100% { transform: translateY(-8px); opacity: 0; }
+      100% { transform: translateY(-16px); opacity: 0; }
     }
     @keyframes meniscus-slosh {
       0% { transform: rotate(-1.5deg); }
@@ -277,28 +277,28 @@
     }
 
     .leaf-pulse {
-      animation: leaf-breath 3.5s ease-in-out infinite alternate;
-      transform-origin: 12px 30px;
+      animation: leaf-breath 4s ease-in-out infinite alternate;
+      transform-origin: 50px 88px;
     }
     @keyframes leaf-breath {
-      0% { transform: scale(0.96) rotate(-0.5deg); }
-      100% { transform: scale(1.03) rotate(0.5deg); }
+      0% { transform: scale(0.97) rotate(-1deg); }
+      100% { transform: scale(1.02) rotate(1deg); }
     }
 
     .compass-leg-sweep {
-      animation: leg-sweep 3.2s ease-in-out infinite alternate;
-      transform-origin: 20px 10px;
+      animation: leg-sweep 3.5s ease-in-out infinite alternate;
+      transform-origin: 50px 24px;
     }
     .compass-arc-draw {
-      animation: arc-pulse 3.2s ease-in-out infinite alternate;
+      animation: arc-pulse 3.5s ease-in-out infinite alternate;
     }
     @keyframes leg-sweep {
-      0% { transform: rotate(-4deg); }
-      100% { transform: rotate(4deg); }
+      0% { transform: rotate(-3deg); }
+      100% { transform: rotate(3deg); }
     }
     @keyframes arc-pulse {
-      0% { stroke-dashoffset: 8; opacity: 0.45; }
-      100% { stroke-dashoffset: 0; opacity: 1; }
+      0% { opacity: 0.45; }
+      100% { opacity: 1; }
     }
 
     /* FEATURED WORKED PROBLEM SPOTLIGHT DIRECTLY ON LANDING */
@@ -886,7 +886,7 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="index.html" class="brand-title"><em>ICSE 7 Science & Mathematics</em></a>
+    <a href="index_clone_alpha.html" class="brand-title"><em>ICSE 7 Science & Mathematics</em> <span style="font-size: 12px; font-family: var(--font-mono); background: #ea580c; color: #ffffff; padding: 3px 8px; border-radius: 4px; vertical-align: middle; margin-left: 8px; font-weight: bold; letter-spacing: 0.06em;">ALPHA</span></a>
     <div class="masthead-meta">
       <span>Mathematics • Physics • Chemistry • Biology</span>
       <button class="btn-chill-trigger" onclick="toggleChillingPlan()" title="Official CISCE Non-Standard Chilling Plan">☕ Chilling Plan</button>
@@ -991,7 +991,7 @@
     <aside class="desk-margin-stream" aria-label="Authentic Desk Margin"></aside>
   </main>
 
-  <div class="bottom-utility-bar" style="text-align: center; padding: 24px 16px; border-top: 1px solid var(--border-subtle);"><a href="src/animated_svgs.html" class="btn-studio-dock" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 10px 18px; border-radius: 6px; font-family: 'Atkinson Hyperlegible', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-black); text-decoration: none;">📐 Open Motion Studio & Vector Lab ↗</a></div>
+  <div class="bottom-utility-bar" style="text-align: center; padding: 24px 16px; border-top: 1px solid var(--border-subtle);"><a href="src/animated_svgs_alpha.html" class="btn-studio-dock" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 10px 18px; border-radius: 6px; font-family: 'Atkinson Hyperlegible', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-black); text-decoration: none;">📐 Open Motion Studio & Vector Lab (Alpha Variant) ↗</a></div>
 
   <!-- FOOTER -->
   <footer class="editorial-footer">
@@ -1362,45 +1362,55 @@
     ];
 
     const EMBLEMS = {
-      Physics: `<svg class="discipline-emblem emblem-physics" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7 21C6 12 14 6 24 7C33 8 35 18 33 26C31 33 21 35 13 33C8 31 7 26 7 21Z" fill="#fbf0ea"/>
+      Physics: `<svg class="discipline-emblem emblem-physics" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g class="emblem-orbit-1">
-          <ellipse cx="20" cy="20" rx="14" ry="5.5" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
-          <circle cx="34" cy="20" r="1.4" fill="#c2410c"/>
+          <ellipse cx="50" cy="50" rx="40" ry="15" transform="rotate(-30 50 50)" stroke="#161514" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="85" cy="30" r="3.2" fill="#c2410c"/>
         </g>
         <g class="emblem-orbit-2">
-          <ellipse cx="20" cy="20" rx="14" ry="5.5" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
-          <circle cx="6" cy="20" r="1.4" fill="#161514"/>
+          <ellipse cx="50" cy="50" rx="40" ry="15" transform="rotate(30 50 50)" stroke="#161514" stroke-width="2.6" stroke-linecap="round"/>
+          <circle cx="15" cy="30" r="3.2" fill="#161514"/>
         </g>
-        <circle class="emblem-nucleus" cx="20" cy="20" r="3" fill="#c2410c"/>
+        <circle class="emblem-nucleus" cx="50" cy="50" r="6.5" fill="#c2410c"/>
       </svg>`,
-      Chemistry: `<svg class="discipline-emblem emblem-chemistry" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 24C7 15 15 8 25 8C33 8 36 17 34 26C32 34 22 35 14 34C8 33 9 29 9 24Z" fill="#f0f7f2"/>
-        <path d="M17 9H23M18 9V14L11 28C10.2 29.5 11.3 31 13 31H27C28.7 31 29.8 29.5 29 28L22 14V9" stroke="#161514" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      Chemistry: `<svg class="discipline-emblem emblem-chemistry" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="42" y="16" width="16" height="4" rx="2" stroke="#161514" stroke-width="2.4" fill="none"/>
+        <path d="M 44 20 L 44 38 L 22 78 C 20.5 81 22.5 84 26 84 L 74 84 C 77.5 84 79.5 81 78 78 L 56 38 L 56 20" stroke="#161514" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="38" y1="56" x2="45" y2="56" stroke="#797166" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="34" y1="65" x2="43" y2="65" stroke="#797166" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="30" y1="74" x2="41" y2="74" stroke="#797166" stroke-width="1.8" stroke-linecap="round"/>
         <g class="flask-meniscus">
-          <path d="M13.5 24C16 23 24 25 26.5 24" stroke="#15803d" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M 28 66 Q 50 70 72 66" stroke="#15803d" stroke-width="2.4" stroke-linecap="round"/>
         </g>
-        <circle class="flask-bubble-1" cx="17" cy="27.5" r="1.2" fill="#15803d"/>
-        <circle class="flask-bubble-2" cx="22.5" cy="26" r="1.4" fill="#15803d"/>
+        <circle class="flask-bubble-1" cx="44" cy="76" r="2.6" fill="#15803d"/>
+        <circle class="flask-bubble-2" cx="56" cy="72" r="3.2" fill="#15803d"/>
       </svg>`,
-      Biology: `<svg class="discipline-emblem emblem-biology" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 20C8 11 16 6 26 7C34 8 35 18 33 27C31 34 20 35 13 32C9 30 10 25 10 20Z" fill="#edf5ef"/>
+      Biology: `<svg class="discipline-emblem emblem-biology" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g class="leaf-pulse">
-          <path d="M12 30C12 30 15 23 20 18C25 13 31 10 31 10C31 10 29 18 24 23C19 28 12 30 12 30Z" stroke="#161514" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 30L22 19" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
-          <path d="M17 24.5L20.5 24" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M19.5 21.5L24 20.5" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 50 14 C 28 32 28 66 50 82 C 72 66 72 32 50 14 Z" stroke="#161514" stroke-width="2.8" stroke-linejoin="round"/>
+          <line x1="50" y1="14" x2="50" y2="88" stroke="#161514" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M 50 36 Q 40 32 35 27" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 50 36 Q 60 32 65 27" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 50 48 Q 38 43 32 38" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 50 48 Q 62 43 68 38" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 50 60 Q 38 56 33 52" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 50 60 Q 62 56 67 52" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 50 71 Q 42 68 38 65" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 50 71 Q 58 68 62 65" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
         </g>
       </svg>`,
-      Mathematics: `<svg class="discipline-emblem emblem-math" viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 22C7 13 14 7 24 7C33 7 35 17 34 26C33 33 22 35 14 33C8 32 8 27 8 22Z" fill="#fef8ea"/>
-        <path d="M20 7V10M20 10L11 31" stroke="#161514" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      Mathematics: `<svg class="discipline-emblem emblem-math" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="47" y="10" width="6" height="12" rx="2" stroke="#161514" stroke-width="2.2" fill="none"/>
+        <line x1="50" y1="22" x2="50" y2="28" stroke="#161514" stroke-width="2.6"/>
+        <circle cx="50" cy="28" r="5" stroke="#161514" stroke-width="2.6" fill="#ffffff"/>
+        <line x1="50" y1="28" x2="26" y2="78" stroke="#161514" stroke-width="2.8" stroke-linecap="round"/>
         <g class="compass-leg-sweep">
-          <path d="M20 10L29 31" stroke="#161514" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="29" cy="31" r="1.5" fill="#c2410c"/>
+          <line x1="50" y1="28" x2="74" y2="78" stroke="#161514" stroke-width="2.8" stroke-linecap="round"/>
+          <circle cx="74" cy="78" r="2.8" fill="#c2410c"/>
         </g>
-        <path d="M14 24H26" stroke="#161514" stroke-width="1.3" stroke-linecap="round"/>
-        <path class="compass-arc-draw" d="M10 33C16 35 24 35 30 33" stroke="#d97706" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="37" y1="54" x2="63" y2="54" stroke="#797166" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="50" cy="54" r="2.4" fill="#161514"/>
+        <path class="compass-arc-draw" d="M 22 84 Q 50 92 78 84" stroke="#ea580c" stroke-width="2.8" stroke-linecap="round"/>
       </svg>`
     };
 
