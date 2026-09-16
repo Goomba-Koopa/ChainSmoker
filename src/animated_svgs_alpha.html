@@ -391,7 +391,7 @@
     /* 6. CHE-02: Bohr Atom Planetary Electron */
     .bohr-electron-orbit {
       animation: orbit calc(3.6s / var(--anim-speed)) infinite linear;
-      transform-origin: 50px 50px;
+      transform-origin: 50px 44px;
     }
     @keyframes orbit {
       0% { transform: rotate(0deg); }
@@ -437,18 +437,7 @@
       100% { opacity: 0; transform: translate(14px, -20px) scale(1.15); }
     }
 
-    /* 9. BIO-05: Double-Circulation Heart Pulse */
-    .heart-pump {
-      animation: heartbeat calc(1s / var(--anim-speed)) infinite ease-in-out;
-      transform-origin: 50px 50px;
-    }
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      15% { transform: scale(1.08); }
-      30% { transform: scale(0.96); }
-      45% { transform: scale(1.04); }
-      60% { transform: scale(1); }
-    }
+
 
     /* 10. BIO-08: Motor Neuron Electrical Impulse */
     .neuron-action-pulse {
@@ -548,17 +537,17 @@
   <div class="container">
 
     <div class="intro-header">
-      <div class="kicker">Alpha Motion Studio // High Contrast</div>
-      <h1 class="title">Technical Vector Drafting: Black & Orange</h1>
+      <div class="kicker">Vector Studio · Alpha</div>
+      <h1 class="title">Technical Vector Suite</h1>
       <p class="subtitle">
-        Engineered for razor-sharp visual clarity. Solid Carbon Black (<code>#161514</code>) apparatus geometry paired with Vibrant Orange (<code>#ea580c</code>) dynamics, vectors, and angle geometry. Authentic botanical emerald green strictly preserved for biological plant life.
+        Hardware-accelerated mathematical and scientific animations engineered for middle school desk margins.
       </p>
     </div>
 
     <!-- CONTROLS -->
     <div class="control-panel">
       <div class="filter-tabs">
-        <button class="tab-btn active" onclick="filterGallery('all')">All (14)</button>
+        <button class="tab-btn active" onclick="filterGallery('all')">All (13)</button>
         <button class="tab-btn" onclick="filterGallery('phy')">Physics</button>
         <button class="tab-btn" onclick="filterGallery('che')">Chemistry</button>
         <button class="tab-btn" onclick="filterGallery('bio')">Biology</button>
@@ -603,7 +592,7 @@
             <path class="vector-stretch" d="M28 60 L44 48" stroke="var(--accent-orange)" stroke-width="2.2" stroke-linecap="round"/>
             <path d="M42 25 L44 26 L43 29" stroke="var(--accent-orange)" stroke-width="2" fill="none" stroke-linecap="round"/>
             <path d="M42 47 L44 48 L43 51" stroke="var(--accent-orange)" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <text x="44" y="86" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">AB ∥ A'B'</text>
+            <text x="50" y="88" text-anchor="middle" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">AB ∥ A'B'</text>
           </svg>
         </div>
         <div class="card-title">Translatory Parallel Drift</div>
@@ -629,7 +618,7 @@
               <circle cx="50" cy="70" r="6.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="2.2"/>
               <circle class="energy-pulse" cx="50" cy="70" r="3.5" fill="var(--accent-orange)"/>
             </g>
-            <text x="32" y="88" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--accent-orange)">Ep ⇄ Ek</text>
+            <text x="50" y="88" text-anchor="middle" font-family="var(--font-abel)" font-size="11.5" font-weight="bold" fill="var(--accent-orange)">Ep ⇄ Ek</text>
           </svg>
         </div>
         <div class="card-title">Conservation Pendulum</div>
@@ -659,7 +648,7 @@
             <text x="40" y="44" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--accent-orange)">i</text>
             <text x="56" y="44" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--accent-orange)">r</text>
             <circle class="reflection-spark" cx="50" cy="60" r="3.5" fill="var(--accent-orange)"/>
-            <text x="34" y="80" font-family="var(--font-abel)" font-size="12" font-weight="bold" fill="var(--accent-orange)">∠i = ∠r</text>
+            <text x="50" y="84" text-anchor="middle" font-family="var(--font-abel)" font-size="12" font-weight="bold" fill="var(--accent-orange)">∠i = ∠r</text>
           </svg>
         </div>
         <div class="card-title">Specular Reflection Beam</div>
@@ -709,8 +698,8 @@
             <g transform="translate(14, 42)">
               <line x1="6" y1="4" x2="6" y2="16" stroke="var(--ink-black)" stroke-width="3.4"/>
               <line x1="12" y1="0" x2="12" y2="20" stroke="var(--ink-black)" stroke-width="1.8"/>
-              <text x="3" y="-2" font-family="var(--font-abel)" font-size="9" font-weight="bold" fill="var(--accent-orange)">−</text>
-              <text x="10" y="-2" font-family="var(--font-abel)" font-size="9" font-weight="bold" fill="var(--accent-orange)">+</text>
+              <text x="4" y="-3" font-family="var(--font-abel)" font-size="10.5" font-weight="bold" fill="var(--accent-orange)">−</text>
+              <text x="11" y="-3" font-family="var(--font-abel)" font-size="10.5" font-weight="bold" fill="var(--accent-orange)">+</text>
             </g>
             <!-- Glowing Filament Bulb with Orange Radiance -->
             <g transform="translate(68, 42)">
@@ -733,17 +722,18 @@
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Central Nucleus in Carbon Black with Orange Core -->
-            <circle cx="50" cy="50" r="9" fill="#ffffff" stroke="var(--ink-black)" stroke-width="2"/>
-            <circle cx="50" cy="50" r="4.5" fill="var(--accent-orange)"/>
-            <text x="50" y="66" text-anchor="middle" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">11p · 12n</text>
+            <circle cx="50" cy="44" r="8" fill="var(--accent-orange)" stroke="var(--ink-black)" stroke-width="2"/>
+            <text x="50" y="47.5" text-anchor="middle" font-family="var(--font-abel)" font-size="9.5" font-weight="bold" fill="#ffffff">11p</text>
             <!-- Fixed K & L Shells in Crisp Black -->
-            <circle cx="50" cy="50" r="18" stroke="var(--ink-black)" stroke-width="1.2" stroke-dasharray="2 2"/>
-            <circle cx="50" cy="50" r="28" stroke="var(--ink-black)" stroke-width="1.4" stroke-dasharray="3 3"/>
+            <circle cx="50" cy="44" r="14" stroke="var(--ink-black)" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <circle cx="50" cy="44" r="23" stroke="var(--ink-black)" stroke-width="1.4" stroke-dasharray="3 3"/>
             <!-- Rotating M-Shell with Solid Orange Valence Electron -->
             <g class="bohr-electron-orbit">
-              <circle cx="50" cy="50" r="38" stroke="var(--accent-orange)" stroke-width="1.4" stroke-dasharray="4 3"/>
+              <circle cx="50" cy="44" r="32" stroke="var(--accent-orange)" stroke-width="1.4" stroke-dasharray="4 3"/>
               <circle cx="50" cy="12" r="3.8" fill="var(--accent-orange)" stroke="var(--ink-black)" stroke-width="1.5"/>
             </g>
+            <!-- Bottom Text Free from Shell Overlap -->
+            <text x="50" y="90" text-anchor="middle" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">Sodium (2, 8, 1)</text>
           </svg>
         </div>
         <div class="card-title">Bohr Orbital Revolution</div>
@@ -766,7 +756,7 @@
             <!-- Beaker in Carbon Black -->
             <path d="M30 46 L30 80 C30 84 34 88 38 88 L62 88 C66 88 70 84 70 80 L70 46" stroke="var(--ink-black)" stroke-width="2" fill="none"/>
             <path class="indicator-liquid" d="M31 58 Q50 60 69 58 L69 80 C69 83 66 87 62 87 L38 87 C34 87 31 83 31 80 Z" stroke="var(--accent-orange)" stroke-width="1.4"/>
-            <text x="32" y="74" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">H⁺ + OH⁻</text>
+            <text x="50" y="74" text-anchor="middle" font-family="var(--font-abel)" font-size="10.5" font-weight="bold" fill="var(--ink-black)">H⁺ + OH⁻ → H₂O</text>
           </svg>
         </div>
         <div class="card-title">Acid-Base Titration Drop</div>
@@ -816,44 +806,7 @@
         <div class="card-note">Chlorophyll absorbing radiant solar energy to drive organic glucose synthesis and oxygen release.</div>
       </div>
 
-      <!-- 9. BIO-05: Double-Circulation Heart Pump -->
-      <div class="svg-card" data-disc="bio">
-        <div class="card-header-row">
-          <span class="card-code">BIO-05</span>
-          <span class="card-discipline disc-bio">Biology</span>
-        </div>
-        <div class="stage-wrapper">
-          <div class="desk-margin-guide"></div>
-          <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Pulsing Anatomical Cardiac Pump in Solid Black with Arterial Red -->
-            <g class="heart-pump">
-              <!-- Superior Vena Cava -->
-              <path d="M34 18 L34 32 C34 35 36 38 40 40" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="39" y1="18" x2="39" y2="28" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
-              <!-- Ascending Aorta & Arch with 3 Branching Arterial Trunks -->
-              <path d="M47 32 C47 20 58 16 64 22 C67 25 67 30 67 36" stroke="var(--ink-black)" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M42 34 C43 24 54 20 60 25" stroke="var(--ink-black)" stroke-width="1.6" stroke-linecap="round"/>
-              <line x1="49" y1="19" x2="48" y2="12" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="55" y1="18" x2="56" y2="12" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="61" y1="20" x2="63" y2="13" stroke="var(--ink-black)" stroke-width="1.8" stroke-linecap="round"/>
-              <!-- Pulmonary Trunk -->
-              <path d="M43 36 C45 30 50 28 55 28" stroke="var(--ink-black)" stroke-width="1.6" stroke-dasharray="2 2"/>
-              <path d="M63 28 L71 30" stroke="var(--ink-black)" stroke-width="1.6" stroke-linecap="round"/>
-              <!-- Right & Left Atria -->
-              <path d="M34 36 C27 40 26 50 32 56" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M64 36 C71 40 72 48 68 54" stroke="var(--ink-black)" stroke-width="2" stroke-linecap="round"/>
-              <!-- Muscular Ventricles tapering to Left Cardiac Apex -->
-              <path d="M32 56 C33 68 40 78 54 84 C58 85 62 84 66 80 C72 72 72 62 68 54" stroke="var(--ink-black)" stroke-width="2.2" stroke-linecap="round"/>
-              <!-- Anterior Interventricular Sulcus -->
-              <path d="M48 50 C50 60 52 72 55 83" stroke="var(--ink-black)" stroke-width="1.6" stroke-dasharray="3 2"/>
-              <!-- Arterial Crimson Pacemaker Stimulus Node -->
-              <circle cx="36" cy="26" r="2.5" fill="var(--arterial-red)"/>
-            </g>
-          </svg>
-        </div>
-        <div class="card-title">Anatomical Cardiac Pump</div>
-        <div class="card-note">Authentic 4-chambered myocardial architecture with aortic arch and rhythmic systolic perfusion.</div>
-      </div>
+
 
       <!-- 10. BIO-08: Motor Neuron Impulse Conduction -->
       <div class="svg-card" data-disc="bio">
@@ -886,6 +839,7 @@
               <circle cx="24" cy="50" r="3.8" fill="var(--accent-orange)"/>
               <circle cx="24" cy="50" r="6" stroke="var(--accent-orange)" stroke-width="1.2" opacity="0.6"/>
             </g>
+            <text x="50" y="88" text-anchor="middle" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">Action Potential Flow →</text>
           </svg>
         </div>
         <div class="card-title">Neuron Impulse Transmission</div>
@@ -944,6 +898,8 @@
                 <text x="76" y="57" text-anchor="middle" font-family="var(--font-abel)" font-size="9" font-weight="bold" fill="var(--ink-black)">5</text>
               </g>
             </g>
+            <!-- Centered Equation -->
+            <text x="50" y="90" text-anchor="middle" font-family="var(--font-abel)" font-size="12" font-weight="bold" fill="var(--ink-black)"><tspan fill="var(--accent-orange)">x</tspan> + 2 = 5</text>
           </svg>
         </div>
         <div class="card-title">Equation Balance Equilibrium</div>
@@ -981,8 +937,8 @@
               <text x="50" y="61" font-family="var(--font-abel)" font-size="11" font-weight="800" fill="var(--accent-orange)">b</text>
             </g>
             
-            <!-- Theorem Equality Formula in High-Visibility Bold Orange -->
-            <text x="24" y="90" font-family="var(--font-abel)" font-size="13" font-weight="800" fill="var(--accent-orange)">∠a = ∠b</text>
+            <!-- Theorem Equality Formula in High-Visibility Bold Orange Centered -->
+            <text x="50" y="90" text-anchor="middle" font-family="var(--font-abel)" font-size="13" font-weight="800" fill="var(--accent-orange)">∠a = ∠b</text>
           </svg>
         </div>
         <div class="card-title">Alternate Interior Angles</div>
@@ -1016,7 +972,8 @@
               <circle cx="75" cy="38" r="3.4" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
               <circle cx="85" cy="38" r="3.4" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.6"/>
             </g>
-            <text x="24" y="78" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--accent-orange)">2H₂ + O₂ → 2H₂O</text>
+            <!-- Centered Reaction Equation -->
+            <text x="50" y="82" text-anchor="middle" font-family="var(--font-abel)" font-size="11.5" font-weight="bold" fill="var(--accent-orange)">2H₂ + O₂ → 2H₂O</text>
           </svg>
         </div>
         <div class="card-title">Conservation Stoichiometry</div>
@@ -1048,7 +1005,8 @@
             <!-- Area labels -->
             <text x="32" y="54" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--ink-black)">ab</text>
             <text x="61" y="54" font-family="var(--font-abel)" font-size="10.5" font-weight="800" fill="var(--accent-orange)">ac</text>
-            <text x="20" y="88" font-family="var(--font-abel)" font-size="11" font-weight="bold" fill="var(--ink-black)">a(b + c) = ab + <tspan fill="var(--accent-orange)">ac</tspan></text>
+            <!-- Centered Distributive Equality -->
+            <text x="50" y="90" text-anchor="middle" font-family="var(--font-abel)" font-size="11.5" font-weight="bold" fill="var(--ink-black)">a(b + c) = ab + <tspan fill="var(--accent-orange)">ac</tspan></text>
           </svg>
         </div>
         <div class="card-title">Area Model Distribution</div>
