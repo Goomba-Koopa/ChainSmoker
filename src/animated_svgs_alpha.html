@@ -337,21 +337,24 @@
     }
 
     /* 3. PHY-03: Specular Ray Reflection */
-    .incident-ray {
-      stroke-dasharray: 40;
-      animation: ray-travel calc(2s / var(--anim-speed)) infinite linear;
+    .photon-pulse {
+      animation: photon-travel calc(2.2s / var(--anim-speed)) infinite linear;
     }
-    @keyframes ray-travel {
-      0% { stroke-dashoffset: 40; }
-      100% { stroke-dashoffset: -40; }
+    @keyframes photon-travel {
+      0% { transform: translate(22px, 28px); opacity: 0; }
+      5% { opacity: 1; }
+      49% { transform: translate(50px, 60px); opacity: 1; }
+      51% { transform: translate(50px, 60px); opacity: 1; }
+      95% { opacity: 1; }
+      100% { transform: translate(78px, 28px); opacity: 0; }
     }
     .reflection-spark {
-      animation: spark calc(2s / var(--anim-speed)) infinite ease-in-out;
+      animation: spark calc(2.2s / var(--anim-speed)) infinite ease-in-out;
+      transform-origin: 50px 60px;
     }
     @keyframes spark {
-      0%, 45%, 100% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.4); }
-      55% { opacity: 0; transform: scale(0.8); }
+      0%, 45%, 55%, 100% { opacity: 0; transform: scale(0.5); }
+      50% { opacity: 1; transform: scale(1.6); }
     }
 
     /* 4. PHY-04: Tuning Fork Sound Waves */
@@ -457,43 +460,43 @@
     }
     @keyframes seesaw {
       0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(-3.5deg); }
-      75% { transform: rotate(3.5deg); }
+      25% { transform: rotate(-2.5deg); }
+      75% { transform: rotate(2.5deg); }
     }
     .pan-left {
       animation: counter-hang-l calc(4s / var(--anim-speed)) infinite ease-in-out;
-      transform-origin: 24px 44px;
+      transform-origin: 22px 44px;
     }
     .pan-right {
       animation: counter-hang-r calc(4s / var(--anim-speed)) infinite ease-in-out;
-      transform-origin: 76px 44px;
+      transform-origin: 78px 44px;
     }
     @keyframes counter-hang-l {
       0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(3.5deg); }
-      75% { transform: rotate(-3.5deg); }
+      25% { transform: rotate(2.5deg); }
+      75% { transform: rotate(-2.5deg); }
     }
     @keyframes counter-hang-r {
       0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(3.5deg); }
-      75% { transform: rotate(-3.5deg); }
+      25% { transform: rotate(2.5deg); }
+      75% { transform: rotate(-2.5deg); }
     }
 
-    /* 12. MATH-07: Transversal Angle Sweep */
-    .transversal-line {
-      animation: trans-tilt calc(4s / var(--anim-speed)) infinite ease-in-out alternate;
-      transform-origin: 50px 50px;
+    /* 12. MATH-07: Alternate Interior Angles Equality */
+    .alt-angle-pair {
+      animation: alt-glow calc(2.8s / var(--anim-speed)) infinite ease-in-out alternate;
     }
-    @keyframes trans-tilt {
-      0% { transform: rotate(-4deg); }
-      100% { transform: rotate(4deg); }
-    }
-    .angle-glow {
-      animation: angle-pulse calc(2.2s / var(--anim-speed)) infinite ease-in-out alternate;
-    }
-    @keyframes angle-pulse {
-      0% { opacity: 0.6; }
+    @keyframes alt-glow {
+      0% { opacity: 0.7; }
       100% { opacity: 1; }
+    }
+    .z-path-trace {
+      stroke-dasharray: 6 4;
+      animation: z-dash-travel calc(3s / var(--anim-speed)) infinite linear;
+    }
+    @keyframes z-dash-travel {
+      0% { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
     }
 
     /* 13. CHE-05: Conservation Atom Swap */
@@ -636,17 +639,26 @@
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Mirror Surface & Back Hatching in Carbon Black -->
             <line x1="14" y1="60" x2="86" y2="60" stroke="var(--ink-black)" stroke-width="2.4"/>
-            <path d="M18 63 L22 68 M30 63 L34 68 M42 63 L46 68 M54 63 L58 68 M66 63 L70 68 M78 63 L82 68" stroke="var(--ink-black)" stroke-width="1.4"/>
-            <!-- Normal Line -->
+            <path d="M18 63 L22 68 M28 63 L32 68 M38 63 L42 68 M48 63 L52 68 M58 63 L62 68 M68 63 L72 68 M78 63 L82 68" stroke="var(--ink-black)" stroke-width="1.4"/>
+            <!-- Normal Line with Label -->
             <line x1="50" y1="18" x2="50" y2="60" stroke="var(--ink-black)" stroke-width="1.6" stroke-dasharray="3 3"/>
-            <!-- Incident & Reflected Light Rays in Bold Orange -->
-            <line class="incident-ray" x1="22" y1="28" x2="50" y2="60" stroke="var(--accent-orange)" stroke-width="2.4" stroke-linecap="round"/>
-            <line class="incident-ray" x1="50" y1="60" x2="78" y2="28" stroke="var(--accent-orange)" stroke-width="2.4" stroke-linecap="round"/>
-            <!-- Angle Arcs -->
-            <path d="M 44 48 A 14 14 0 0 1 50 46" stroke="var(--accent-orange)" stroke-width="2" fill="none"/>
-            <path d="M 50 46 A 14 14 0 0 1 56 48" stroke="var(--accent-orange)" stroke-width="2" fill="none"/>
-            <text x="40" y="44" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--accent-orange)">i</text>
-            <text x="56" y="44" font-family="var(--font-abel)" font-size="10" font-weight="bold" fill="var(--accent-orange)">r</text>
+            <text x="50" y="15" text-anchor="middle" font-family="var(--font-abel)" font-size="9.5" font-weight="bold" fill="var(--ink-muted)">N</text>
+            
+            <!-- Solid Incident & Reflected Light Rays (Always connected to mirror) -->
+            <line x1="22" y1="28" x2="50" y2="60" stroke="var(--accent-orange)" stroke-width="2.4" stroke-linecap="round"/>
+            <line x1="50" y1="60" x2="78" y2="28" stroke="var(--accent-orange)" stroke-width="2.4" stroke-linecap="round"/>
+            <!-- Directional Propagation Arrowheads -->
+            <path d="M 33 41 L 36 44 L 40 41" stroke="var(--accent-orange)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 60 47 L 64 44 L 60 41" stroke="var(--accent-orange)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <!-- Geometrically Rigorous Angle Arcs Centered at Vertex (50, 60) -->
+            <path d="M 50 44 A 16 16 0 0 0 39.5 48" stroke="var(--accent-orange)" stroke-width="1.8" fill="none"/>
+            <path d="M 50 44 A 16 16 0 0 1 60.5 48" stroke="var(--accent-orange)" stroke-width="1.8" fill="none"/>
+            <text x="43" y="39" text-anchor="middle" font-family="var(--font-abel)" font-size="10.5" font-weight="bold" fill="var(--accent-orange)">i</text>
+            <text x="57" y="39" text-anchor="middle" font-family="var(--font-abel)" font-size="10.5" font-weight="bold" fill="var(--accent-orange)">r</text>
+            
+            <!-- Continuous Light Propagation Photon Pulse & Mirror Spark -->
+            <circle class="photon-pulse" cx="0" cy="0" r="3" fill="#ffffff" stroke="var(--accent-orange)" stroke-width="1.8"/>
             <circle class="reflection-spark" cx="50" cy="60" r="3.5" fill="var(--accent-orange)"/>
             <text x="50" y="84" text-anchor="middle" font-family="var(--font-abel)" font-size="12" font-weight="bold" fill="var(--accent-orange)">∠i = ∠r</text>
           </svg>
@@ -855,47 +867,50 @@
         <div class="stage-wrapper">
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Central Fulcrum Stand in Solid Black -->
-            <line x1="36" y1="78" x2="64" y2="78" stroke="var(--ink-black)" stroke-width="2.4" stroke-linecap="round"/>
-            <polygon points="50,44 42,78 58,78" fill="var(--bg-surface)" stroke="var(--ink-black)" stroke-width="1.8" stroke-linejoin="round"/>
-            <!-- High-Contrast Orange Pivot Pin -->
-            <circle cx="50" cy="44" r="3.4" fill="var(--accent-orange)"/>
-            <circle cx="50" cy="44" r="1.4" fill="#ffffff"/>
-            <!-- Vertical Datum Pointer Notch -->
-            <line x1="50" y1="23" x2="50" y2="26" stroke="var(--ink-black)" stroke-width="1.8"/>
+            <!-- Central Fulcrum Stand with Calibrated Index Dial -->
+            <line x1="34" y1="76" x2="66" y2="76" stroke="var(--ink-black)" stroke-width="2.4" stroke-linecap="round"/>
+            <polygon points="50,44 43,76 57,76" fill="var(--bg-surface)" stroke="var(--ink-black)" stroke-width="1.8" stroke-linejoin="round"/>
+            <!-- Fixed Equilibrium Dial Arc & Ticks behind needle -->
+            <path d="M 42 27 Q 50 24 58 27" stroke="var(--ink-black)" stroke-width="1.6" fill="none"/>
+            <line x1="50" y1="23" x2="50" y2="26" stroke="var(--accent-orange)" stroke-width="1.6"/>
+            <line x1="45" y1="25.5" x2="45.5" y2="27.5" stroke="var(--ink-black)" stroke-width="1.2"/>
+            <line x1="55" y1="25.5" x2="54.5" y2="27.5" stroke="var(--ink-black)" stroke-width="1.2"/>
 
             <!-- Oscillating Balance Assembly -->
             <g class="balance-beam">
               <!-- Horizontal Beam in Carbon Black -->
               <line x1="22" y1="44" x2="78" y2="44" stroke="var(--ink-black)" stroke-width="2.2" stroke-linecap="round"/>
               <!-- Central Equilibrium Plumb Pointer in Bold Orange -->
-              <line x1="50" y1="44" x2="50" y2="27" stroke="var(--accent-orange)" stroke-width="2" stroke-linecap="round"/>
+              <line x1="50" y1="44" x2="50" y2="26" stroke="var(--accent-orange)" stroke-width="2" stroke-linecap="round"/>
+              <polygon points="50,24 48.5,27 51.5,27" fill="var(--accent-orange)"/>
+              <circle cx="50" cy="44" r="3.4" fill="var(--accent-orange)"/>
+              <circle cx="50" cy="44" r="1.4" fill="#ffffff"/>
 
-              <!-- Left Hanging Pan Assembly -->
+              <!-- Left Hanging Pan Assembly (x + 2) -->
               <g class="pan-left">
-                <circle cx="24" cy="44" r="2" fill="var(--ink-black)"/>
-                <line x1="24" y1="44" x2="16" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
-                <line x1="24" y1="44" x2="32" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
-                <path d="M 14 60 Q 24 64 34 60" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="22" cy="44" r="2" fill="var(--ink-black)"/>
+                <line x1="22" y1="44" x2="13" y2="61" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <line x1="22" y1="44" x2="31" y2="61" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <path d="M 11 61 Q 22 65 33 61" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
                 <!-- Algebraic Cube 'x' with Bold Orange Label -->
-                <rect x="16" y="49" width="9" height="10" rx="1.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.4"/>
-                <text x="20.5" y="57" text-anchor="middle" font-family="var(--font-abel)" font-size="9" font-weight="800" fill="var(--accent-orange)">x</text>
+                <rect x="13" y="49" width="10" height="11" rx="1.5" fill="#ffffff" stroke="var(--ink-black)" stroke-width="1.5"/>
+                <text x="18" y="58" text-anchor="middle" font-family="var(--font-abel)" font-size="10" font-weight="800" fill="var(--accent-orange)">x</text>
                 <!-- Calibrated Weight '2' -->
-                <rect x="26" y="52" width="7" height="7" rx="1" fill="#fed7aa" stroke="var(--ink-black)" stroke-width="1.4"/>
-                <circle cx="29.5" cy="50.8" r="1.2" fill="var(--ink-black)"/>
-                <text x="29.5" y="58" text-anchor="middle" font-family="var(--font-abel)" font-size="7.5" font-weight="bold" fill="var(--ink-black)">2</text>
+                <rect x="25" y="52" width="7" height="8" rx="1.2" fill="#fed7aa" stroke="var(--ink-black)" stroke-width="1.5"/>
+                <circle cx="28.5" cy="50.8" r="1.2" fill="var(--ink-black)"/>
+                <text x="28.5" y="59" text-anchor="middle" font-family="var(--font-abel)" font-size="8" font-weight="bold" fill="var(--ink-black)">2</text>
               </g>
 
-              <!-- Right Hanging Pan Assembly -->
+              <!-- Right Hanging Pan Assembly (5) -->
               <g class="pan-right">
-                <circle cx="76" cy="44" r="2" fill="var(--ink-black)"/>
-                <line x1="76" y1="44" x2="68" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
-                <line x1="76" y1="44" x2="84" y2="60" stroke="var(--ink-black)" stroke-width="1.4"/>
-                <path d="M 66 60 Q 76 64 86 60" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="78" cy="44" r="2" fill="var(--ink-black)"/>
+                <line x1="78" y1="44" x2="69" y2="61" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <line x1="78" y1="44" x2="87" y2="61" stroke="var(--ink-black)" stroke-width="1.4"/>
+                <path d="M 67 61 Q 78 65 89 61" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round"/>
                 <!-- Calibrated Weight '5' -->
-                <rect x="71" y="48" width="10" height="11" rx="1.5" fill="#fed7aa" stroke="var(--ink-black)" stroke-width="1.4"/>
-                <circle cx="76" cy="46.5" r="1.5" fill="var(--ink-black)"/>
-                <text x="76" y="57" text-anchor="middle" font-family="var(--font-abel)" font-size="9" font-weight="bold" fill="var(--ink-black)">5</text>
+                <rect x="72.5" y="48" width="11" height="12" rx="1.5" fill="#fed7aa" stroke="var(--ink-black)" stroke-width="1.5"/>
+                <circle cx="78" cy="46.5" r="1.5" fill="var(--ink-black)"/>
+                <text x="78" y="57.5" text-anchor="middle" font-family="var(--font-abel)" font-size="9.5" font-weight="bold" fill="var(--ink-black)">5</text>
               </g>
             </g>
             <!-- Centered Equation -->
@@ -916,25 +931,27 @@
           <div class="desk-margin-guide"></div>
           <svg class="anim-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Parallel Lines in Deep Carbon Black -->
-            <line x1="12" y1="36" x2="88" y2="36" stroke="var(--ink-black)" stroke-width="2.4"/>
-            <line x1="12" y1="64" x2="88" y2="64" stroke="var(--ink-black)" stroke-width="2.4"/>
+            <line x1="10" y1="32" x2="90" y2="32" stroke="var(--ink-black)" stroke-width="2.4"/>
+            <line x1="10" y1="60" x2="90" y2="60" stroke="var(--ink-black)" stroke-width="2.4"/>
             <!-- Parallelism Directional Chevrons -->
-            <path d="M 46 32 L 51 36 L 46 40" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M 46 60 L 51 64 L 46 68" stroke="var(--ink-black)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 22 29 L 26 32 L 22 35" stroke="var(--ink-black)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M 22 57 L 26 60 L 22 63" stroke="var(--ink-black)" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 
-            <!-- Sweeping Transversal Line with Bold Alternate Interior Angles -->
-            <g class="transversal-line">
-              <line x1="32" y1="14" x2="68" y2="86" stroke="var(--ink-black)" stroke-width="2.4" stroke-linecap="round"/>
+            <!-- Transversal Line (Terminating at y=74, completely clear of bottom formula at y=90) -->
+            <line x1="32" y1="16" x2="61" y2="74" stroke="var(--ink-black)" stroke-width="2.4" stroke-linecap="round"/>
+
+            <!-- Educational Z-Pattern Alternate Interior Path Trace -->
+            <path class="z-path-trace" d="M 66 32 L 40 32 L 54 60 L 28 60" stroke="var(--accent-orange)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+
+            <!-- Alternate Interior Angle Pair (Equal by Parallel Lines Postulate) -->
+            <g class="alt-angle-pair">
+              <!-- Alternate Interior Angle 'a' (Vertex at 40, 32) -->
+              <path d="M 40 32 L 54 32 A 14 14 0 0 1 46.3 44.5 Z" fill="var(--accent-orange-wash)" stroke="var(--accent-orange)" stroke-width="2"/>
+              <text x="47" y="39.5" text-anchor="middle" font-family="var(--font-abel)" font-size="11" font-weight="800" fill="var(--accent-orange)">a</text>
               
-              <!-- Alternate Interior Angle 'a' (intersection at 43, 36) -->
-              <!-- Solid Vibrant Orange Arc with Visible Warm Fill Wedge -->
-              <path class="angle-glow" d="M 43 36 L 56 36 A 13 13 0 0 1 48.5 47 Z" fill="var(--accent-orange-wash)" stroke="var(--accent-orange)" stroke-width="2.2"/>
-              <text x="50" y="44" font-family="var(--font-abel)" font-size="11" font-weight="800" fill="var(--accent-orange)">a</text>
-              
-              <!-- Alternate Interior Angle 'b' (intersection at 57, 64) -->
-              <!-- Solid Vibrant Orange Arc with Visible Warm Fill Wedge -->
-              <path class="angle-glow" d="M 57 64 L 44 64 A 13 13 0 0 1 51.5 53 Z" fill="var(--accent-orange-wash)" stroke="var(--accent-orange)" stroke-width="2.2"/>
-              <text x="50" y="61" font-family="var(--font-abel)" font-size="11" font-weight="800" fill="var(--accent-orange)">b</text>
+              <!-- Alternate Interior Angle 'b' (Vertex at 54, 60) -->
+              <path d="M 54 60 L 40 60 A 14 14 0 0 1 47.7 47.5 Z" fill="var(--accent-orange-wash)" stroke="var(--accent-orange)" stroke-width="2"/>
+              <text x="47" y="56.5" text-anchor="middle" font-family="var(--font-abel)" font-size="11" font-weight="800" fill="var(--accent-orange)">b</text>
             </g>
             
             <!-- Theorem Equality Formula in High-Visibility Bold Orange Centered -->
