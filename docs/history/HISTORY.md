@@ -1,4 +1,4 @@
-# ICSE Class 7 Science & Mathematics: Project History & Evolution
+﻿# ICSE Class 7 Science & Mathematics: Project History & Evolution
 
 ## 1. The True Origin: An Urge to Build
 The project did not begin with a grand ideological manifesto or a 50-page design pitch. The start was much more practical and honest.
@@ -60,7 +60,7 @@ To solve the tone problem, the 5:5 standard was established as a core editorial 
 Before introducing formal definitions or algebraic formulas, every chapter anchors itself in a tangible physical phenomenon:
 - **Atomic structure:** Wankhede Stadium to illustrate the vast empty space between the nucleus and orbital electrons.
 - **Translatory motion:** A flat notebook sliding across a wooden desk, where opposite edges ($AB \parallel A'B'$) stay parallel throughout the movement.
-- **Relative motion:** A cup of coffee on a train at Thāne station—at rest relative to the traveler, moving at 60 km/h relative to the platform, and moving at 100,000 km/h relative to the Moon.
+- **Relative motion:** A cup of coffee on a train at the city station—at rest relative to the traveler, moving at 60 km/h relative to the platform, and moving at 100,000 km/h relative to the Moon.
 - **Plant tissue turgor:** Why limp celery crisps up when placed in a bowl of ice water.
 
 ### 5 Parts Coffee (Mathematical & Scientific Rigor)
@@ -132,7 +132,8 @@ As of September 2026:
 - **44 Topics:** 100% complete across Physics (12), Chemistry (12), Biology (12), and Mathematics (8) with KaTeX formula derivations.
 - **Branding:** Dignified, calm, and grounded: **ICSE Class 7 Science & Mathematics**.
 - **Visuals:** Warm ivory and parchment palette, zero emojis, full-width responsive viewport, and crisp geometric vector assets.
-- **Philosophy:** Krishiv's Prime Directives codified into permanent repository memory: *Common sense is the law. Never declare victory on bad work.*
+- **Philosophy:** The Author's Prime Directives codified into permanent repository memory: *Common sense is the law. Never declare victory on bad work.*
 
 What started as an afternoon exploring Antigravity 2.0 has grown into a production-grade, beautifully typeset curriculum engine built with pride and genuine care.
+
 

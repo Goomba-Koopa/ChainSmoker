@@ -1,6 +1,6 @@
 # Core Memory & User Axioms
 
-## Krishiv's Prime Directives
+## The Author's Prime Directives
 > **"Common sense is the law."**
 >
 > **"I hate bad work. Not necessarily incomplete. But when the work you say is done and comes out bad, I get infuriated."**

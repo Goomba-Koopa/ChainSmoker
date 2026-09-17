@@ -16,7 +16,7 @@ docs/
 │   └── AXIOM_ICSE_7_FINAL_COMPENDIUM.md # Original 44-topic curriculum audit and compendium log
 └── lore/
     ├── antigravity_soul.txt             # Agentic principles, execution axioms, and craftsmanship standards
-    ├── krishiv.md                       # Dedicated human profile of Krishiv Sukul, hardware, room vectors, and anti-sycophancy
+    ├── The Author.md                       # Dedicated human profile of The Author, hardware, room vectors, and anti-sycophancy
     ├── lemma_of_thermal_procrastination.md # The mathematical cooling rate of coffee vs. compiler checks
     └── reckoner_terminal.md             # Operational notes on CLI workflows, token efficiency, and terminal sanity
 ```
@@ -34,7 +34,7 @@ docs/
 * **[AXIOM_ICSE_7_FINAL_COMPENDIUM.md](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/docs/history/AXIOM_ICSE_7_FINAL_COMPENDIUM.md)**: The original curriculum matrix mapping all 44 chapters across the four core ICSE disciplines.
 
 ### 3. lore/
-* **[krishiv.md](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/docs/lore/krishiv.md)**: Krishiv Sukul's dedicated profile: Zoom telemetry, Lenovo LOQ setup, 360° workspace vectors, anti-sycophancy axiom, and the gentle bond with his late dog and turtle.
+* **[The Author.md](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/docs/lore/The Author.md)**: The Author's dedicated profile: Zoom telemetry, Lenovo LOQ setup, 360° workspace vectors, anti-sycophancy axiom, and the gentle bond with his late dog and turtle.
 * **[antigravity_soul.txt](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/docs/lore/antigravity_soul.txt)**: Internal agentic principles, operational axioms (1 through 19), and pairing standards strictly regarding the AI agent.
 * **[lemma_of_thermal_procrastination.md](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/docs/lore/lemma_of_thermal_procrastination.md)**: A humorous thermodynamic proof regarding the cooling of beverages during debugging sessions.
 * **[reckoner_terminal.md](file:///C:/Users/chand/.gemini/antigravity/scratch/icse-explainer-desktop/docs/lore/reckoner_terminal.md)**: Principles of quiet execution, avoiding runaway agent loops, and respecting human direction.

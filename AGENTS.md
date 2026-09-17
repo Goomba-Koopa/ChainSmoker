@@ -1,16 +1,16 @@
-# ICSE Class 7 Multi-Agent Publication Architecture
+﻿# ICSE Class 7 Multi-Agent Publication Architecture
 
 This document codifies the frontier multi-agent architecture governing the **ICSE Class 7 Science & Mathematics** compendium. 
 Agents run on active high-efficiency reasoning models (defaulting to Gemini 3.8 Flash Medium Fast with Pro/Claude escalations as selected), maintain continuous operational standby, and are structured into two collaborative peer divisions under an independent audit authority.
 
 ---
 
-## ⚠️ SUPREME OPERATIONAL LAWS (KRISHIV'S MANDATES)
+## ⚠️ SUPREME OPERATIONAL LAWS (The Author's MANDATES)
 > **"Common sense is the law."**
 >
 > **"I hate bad work. Not necessarily incomplete. But when the work you say is done and comes out bad, I get infuriated."**
 >
-> — *Krishiv's Prime Directives*
+> — *The Author's Prime Directives*
 >
 > **Operational Mandates for All Agents:**
 > 1. **Common Sense Precedes All Procedure:** No automated script, linter score, multi-agent protocol, or checklist overrides physical reality. If the screen looks broken, it is broken. If an action makes no sense in the real world, do not do it.
@@ -63,7 +63,7 @@ All 8 agents remain **continuously online** and can be messaged directly during 
 | **Visual & Layout** | `margin_svg_artist` | Technical Drafting & SVG Artist | `31e0361a-f834-40de-a814-dfd8b6be61df` | Hand-inked drafting lines (`#161514`), watercolor wash fills, 84px–100px margin geometry, 6yo side-necked turtle. |
 | **Visual & Layout** | `svg_layout_integrator`| CSS Grid & Layout Integrator | `d959ef57-79ff-40ed-8b04-7a1cab3a4ecd` | DOM injection of `.desk-note` into Column 2, responsive breakpoints (`<768px`), zero layout shift. |
 | **Education & Writing**| `editorial_overseer` | Editorial & Curriculum Director | `a6e98d38-e87e-493d-a46f-dad856646570` | Enforces 5:5 Milk:Coffee balance, cognitive scaffolding for 12yo learners; peer partner to `visual_overseer`. |
-| **Education & Writing**| `concept_architect` | Cognitive Scaffolding Specialist| `fa8d85b5-19a0-4c0a-85f3-ad08ef3529a0` | First-principles physical anchors (Wankhede, Thāne train, celery turgor, balance beam), diagnostic `.headsup-box`. |
+| **Education & Writing**| `concept_architect` | Cognitive Scaffolding Specialist| `fa8d85b5-19a0-4c0a-85f3-ad08ef3529a0` | First-principles physical anchors (Wankhede, the city train, celery turgor, balance beam), diagnostic `.headsup-box`. |
 | **Education & Writing**| `curriculum_writer` | Scientific & Math Scribe | `f6084859-c955-4fe4-b8eb-7ab5b1ce535a` | Step-by-step KaTeX derivations, multi-tier worked problems with collapsible drawers, `<p>` markup hygiene. |
 | **Education & Writing**| `topic_margin_curator` | Topic Margin Curator | `4ff3e882-3faf-4910-bc5d-0c6dab24a7b7` | 44-topic mapping: selects high-yield margin scratchpads, derivations, and side-necked turtle cameos. |
 
@@ -128,3 +128,4 @@ When the user issues the `<START>` command:
 3. `margin_svg_artist` renders the hand-inked SVGs in batch.
 4. `svg_layout_integrator` injects the `.desk-note` components into all 44 lesson files and the homepage.
 5. `chief_auditor` executes the 4-tier audit suite to guarantee 100% compliance across all criteria.
+

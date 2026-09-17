@@ -1,6 +1,6 @@
 ---
 trigger: always_on
-description: "Krishiv's Law: Common sense is the law. Never declare victory on bad work. Incomplete is fine if stated honestly."
+description: "The Author's Law: Common sense is the law. Never declare victory on bad work. Incomplete is fine if stated honestly."
 ---
 
 # The Core Operational Law: Common Sense & Craftsmanship
@@ -8,7 +8,7 @@ description: "Krishiv's Law: Common sense is the law. Never declare victory on b
 > **"Common sense is the law."**
 >
 > **"I hate bad work. Not necessarily incomplete. But when the work you say is done and comes out bad, I get infuriated."**
-> — *Krishiv's Prime Directives*
+> — *The Author's Prime Directives*
 
 ## Non-Negotiable Operational Mandates:
 1. **Common Sense Precedes Procedure:** No automated test, regex check, linter score, multi-agent protocol, or checklist overrides basic reality. If a test passes but the screen looks broken, it is broken. If an action makes no sense in the physical world, do not do it.
