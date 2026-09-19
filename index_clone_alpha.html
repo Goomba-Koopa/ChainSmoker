@@ -696,6 +696,64 @@
       gap: 6px;
     }
 
+    /* TOPIC METADATA PILLS */
+    .topic-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      line-height: 1.4;
+      font-family: var(--font-body);
+    }
+
+    .meta-pacing {
+      background: var(--bg-warm);
+      color: var(--ink-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .meta-level {
+      background: var(--bg-surface);
+      color: var(--ink-black);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .meta-level.level-foundation {
+      background: #f0fdf4;
+      color: #166534;
+      border-color: #bbf7d0;
+    }
+
+    .meta-level.level-dynamics {
+      background: #fffbeb;
+      color: #92400e;
+      border-color: #fde68a;
+    }
+
+    .meta-level.level-synthesis {
+      background: #fff7ed;
+      color: #9a3412;
+      border-color: #fed7aa;
+    }
+
+    .meta-prereq {
+      background: #f4f4f5;
+      color: #52525b;
+      border: 1px dashed #d4d4d8;
+    }
+
     .topic-title {
       font-family: var(--font-serif);
       font-size: 22px;
@@ -847,13 +905,18 @@
 
   <script>
     const SHIPPED_TOPICS = [
-      // PHYSICS (TOPICS 01 - 09)
+      // PHYSICS (TOPICS 01 - 12)
       {
         discipline: "Physics",
         code: "PHY-01",
         unitNum: "Kinematics",
         title: "Motion, Distance, Displacement & Speed",
-        snippet: "Relativity of rest and motion, scalar distance vs vector displacement, and the 1 km/h = 5/18 m/s mathematical derivation.",
+        hook: "Why walking around a 400-meter running track brings you back to a displacement of zero, and how to convert km/h to m/s using a single fraction.",
+        snippet: "Why walking around a 400-meter running track brings you back to a displacement of zero, and how to convert km/h to m/s using a single fraction.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["PHY-02"],
         file: "topics/physics_01_motion_and_speed.html"
       },
       {
@@ -861,7 +924,12 @@
         code: "PHY-02",
         unitNum: "Work & Energy",
         title: "Work, Energy & Power",
-        snippet: "Scalar work W = F · s, Joule-erg derivation, gravitational potential energy (PE = mgh) and kinetic energy (KE = 1/2 mv²), pendulum conservation, and power (P = W/t).",
+        hook: "Why leaning against a stationary wall for an hour counts as zero work in physics, and how gravitational potential energy converts into kinetic energy.",
+        snippet: "Why leaning against a stationary wall for an hour counts as zero work in physics, and how gravitational potential energy converts into kinetic energy.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["PHY-01"],
+        unlocks: ["PHY-12"],
         file: "topics/physics_02_energy_and_machines.html"
       },
       {
@@ -869,7 +937,12 @@
         code: "PHY-03",
         unitNum: "Optics",
         title: "Light, Shadows & Reflection at Plane Surfaces",
-        snippet: "Rectilinear propagation, Laws of Reflection (∠i = ∠r), virtual images, and inclined mirrors formula n = (360°/θ) - 1.",
+        hook: "Why plane mirrors reverse left and right instead of up and down, and how to calculate the number of images formed between two angled mirrors.",
+        snippet: "Why plane mirrors reverse left and right instead of up and down, and how to calculate the number of images formed between two angled mirrors.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["PHY-10"],
         file: "topics/physics_03_light_and_reflection.html"
       },
       {
@@ -877,7 +950,12 @@
         code: "PHY-04",
         unitNum: "Acoustics",
         title: "Sound Waves, Vibration & Acoustics",
-        snippet: "Longitudinal waves, vacuum bell jar experiment, speed across states of matter, amplitude vs loudness, and pitch vs frequency.",
+        hook: "Why sound travels faster through a solid wooden desk than through open air, and why you cannot hear sounds in a vacuum.",
+        snippet: "Why sound travels faster through a solid wooden desk than through open air, and why you cannot hear sounds in a vacuum.",
+        time: "15 min",
+        level: "Applied Dynamics",
+        prereq: [],
+        unlocks: [],
         file: "topics/physics_04_sound_and_vibration.html"
       },
       {
@@ -885,7 +963,12 @@
         code: "PHY-05",
         unitNum: "Electrodynamics",
         title: "Electricity, Electric Current & Circuits",
-        snippet: "Current I = Q/t, Series vs Parallel circuits comparison matrix, Joule heating, and electric fuse alloy safety mechanics.",
+        hook: "How series and parallel circuits behave in your home, and why fuse wires are made of alloys with low melting points.",
+        snippet: "How series and parallel circuits behave in your home, and why fuse wires are made of alloys with low melting points.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: [],
+        unlocks: ["PHY-11"],
         file: "topics/physics_05_electricity_and_circuits.html"
       },
       {
@@ -893,7 +976,12 @@
         code: "PHY-06",
         unitNum: "Hydrostatics",
         title: "Force, Thrust & Hydrostatic Fluid Pressure",
-        snippet: "Mathematical proof of liquid depth pressure P = hρg, Pascal's Law of fluid transmission, and hydraulic lift mechanics.",
+        hook: "Why cutting vegetables with a blunt knife requires far more force than a sharp knife, and how liquid pressure increases with depth.",
+        snippet: "Why cutting vegetables with a blunt knife requires far more force than a sharp knife, and how liquid pressure increases with depth.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: [],
+        unlocks: ["PHY-08"],
         file: "topics/physics_06_force_and_pressure.html"
       },
       {
@@ -901,7 +989,12 @@
         code: "PHY-07",
         unitNum: "Thermodynamics",
         title: "Heat Energy, Temperature & Thermometry",
-        snippet: "Internal kinetic energy vs temperature, thermometric scale derivation C/5 = (F-32)/9 = (K-273)/5, and anomalous expansion of water.",
+        hook: "The physical difference between temperature (how fast particles jiggle) and heat energy (the total energy transferred).",
+        snippet: "The physical difference between temperature (how fast particles jiggle) and heat energy (the total energy transferred).",
+        time: "15 min",
+        level: "Applied Dynamics",
+        prereq: [],
+        unlocks: [],
         file: "topics/physics_07_heat_and_temperature.html"
       },
       {
@@ -909,7 +1002,12 @@
         code: "PHY-08",
         unitNum: "Fluid Mechanics",
         title: "Density, Relative Density & Buoyancy",
-        snippet: "Volumetric mass density d = m/V, 1 g/cm³ = 1000 kg/m³ proof, Archimedes' Principle, and iron nail vs steel ship floatation.",
+        hook: "Why a solid iron block sinks in water but floats on liquid mercury, and how Archimedes' principle explains floating ships.",
+        snippet: "Why a solid iron block sinks in water but floats on liquid mercury, and how Archimedes' principle explains floating ships.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["PHY-06"],
+        unlocks: [],
         file: "topics/physics_08_density_and_buoyancy.html"
       },
       {
@@ -917,7 +1015,12 @@
         code: "PHY-09",
         unitNum: "Magnetism",
         title: "Magnetism, Magnetic Fields & Electromagnets",
-        snippet: "Magnetic dipole properties, proof of why repulsion is the only sure test, non-intersecting field lines, and electromagnets.",
+        hook: "Why snapping a bar magnet in half produces two smaller complete magnets instead of separating the North and South poles.",
+        snippet: "Why snapping a bar magnet in half produces two smaller complete magnets instead of separating the North and South poles.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: [],
         file: "topics/physics_09_magnetism_and_fields.html"
       },
       {
@@ -925,7 +1028,12 @@
         code: "PHY-10",
         unitNum: "Optics",
         title: "Spherical Mirrors & Image Formation",
-        snippet: "Curved spherical mirrors, principal focus f = R/2, concave converging vs convex diverging optics, and real vs virtual image formation.",
+        hook: "How concave and convex mirrors bend light to enlarge dental views or widen rear-view traffic visibility.",
+        snippet: "How concave and convex mirrors bend light to enlarge dental views or widen rear-view traffic visibility.",
+        time: "20 min",
+        level: "Advanced Synthesis",
+        prereq: ["PHY-03"],
+        unlocks: [],
         file: "topics/physics_10_spherical_mirrors_and_images.html"
       },
       {
@@ -933,7 +1041,12 @@
         code: "PHY-11",
         unitNum: "Electrostatics",
         title: "Static Electricity & Electrostatics",
-        snippet: "Frictional charging electron shifts, like charges repel, conduction vs induction, gold leaf electroscope, and lightning conductors.",
+        hook: "How rubbing plastic with wool strips electrons from atoms to create static charges that attract small bits of paper.",
+        snippet: "How rubbing plastic with wool strips electrons from atoms to create static charges that attract small bits of paper.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["PHY-05"],
         file: "topics/physics_11_static_electricity_and_charges.html"
       },
       {
@@ -941,7 +1054,12 @@
         code: "PHY-12",
         unitNum: "Mechanics",
         title: "Simple Machines & Mechanical Advantage",
-        snippet: "Mechanical Advantage, Velocity Ratio, Efficiency η = MA/VR, Principle of Moments, Class I, II, III levers, and pulley systems.",
+        hook: "How levers, pulleys, and inclined planes reduce the effort needed to lift heavy loads, and why friction prevents any machine from being 100% efficient.",
+        snippet: "How levers, pulleys, and inclined planes reduce the effort needed to lift heavy loads, and why friction prevents any machine from being 100% efficient.",
+        time: "18 min",
+        level: "Advanced Synthesis",
+        prereq: ["PHY-02"],
+        unlocks: [],
         file: "topics/physics_12_simple_machines_and_efficiency.html"
       },
 
@@ -951,7 +1069,12 @@
         code: "CHEM-01",
         unitNum: "States of Matter",
         title: "Matter & Kinetic Molecular Theory",
-        snippet: "The 4 postulates of Kinetic Theory, Intermolecular Forces vs Spaces, and 5-point Solids vs Liquids vs Gases matrix.",
+        hook: "How kinetic theory explains why perfume spreads across a room quickly while ice maintains its shape.",
+        snippet: "How kinetic theory explains why perfume spreads across a room quickly while ice maintains its shape.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["CHEM-02", "CHEM-03"],
         file: "topics/chemistry_01_matter_and_composition.html"
       },
       {
@@ -959,7 +1082,12 @@
         code: "CHEM-02",
         unitNum: "Atomic Theory",
         title: "Atomic Structure, Energy Shells & Valency",
-        snippet: "Protons, Neutrons, Electrons, Bohr-Bury 2n² energy distribution (K, L, M, N), Atomic Number Z, and Mass Number A.",
+        hook: "The planetary model of the atom: protons and neutrons packed in the nucleus with electrons orbiting in defined shells.",
+        snippet: "The planetary model of the atom: protons and neutrons packed in the nucleus with electrons orbiting in defined shells.",
+        time: "18 min",
+        level: "Core Foundation",
+        prereq: ["CHEM-01"],
+        unlocks: ["CHEM-04"],
         file: "topics/chemistry_02_atomic_structure_and_valency.html"
       },
       {
@@ -967,7 +1095,12 @@
         code: "CHEM-03",
         unitNum: "Chemical Taxonomy",
         title: "Elements, Compounds & Mixtures",
-        snippet: "Pure substances vs mixtures, Law of Constant Proportions, 5-point Compounds vs Mixtures matrix, and separation science.",
+        hook: "How pure elements combine chemically in fixed proportions to form compounds with completely new properties.",
+        snippet: "How pure elements combine chemically in fixed proportions to form compounds with completely new properties.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: ["CHEM-01"],
+        unlocks: ["CHEM-04"],
         file: "topics/chemistry_03_elements_and_compounds.html"
       },
       {
@@ -975,7 +1108,12 @@
         code: "CHEM-04",
         unitNum: "Nomenclature",
         title: "Atoms, Molecules & Chemical Radicals",
-        snippet: "Atomicity classifications, basic cations (+1 to +4), acidic anions (-1 to -4), and criss-cross formula construction ledger.",
+        hook: "How combining capacity (valency) determines the exact chemical formulas of salts and oxides like Al₂O₃.",
+        snippet: "How combining capacity (valency) determines the exact chemical formulas of salts and oxides like Al₂O₃.",
+        time: "20 min",
+        level: "Applied Dynamics",
+        prereq: ["CHEM-02", "CHEM-03"],
+        unlocks: ["CHEM-05"],
         file: "topics/chemistry_04_atoms_molecules_radicals.html"
       },
       {
@@ -983,7 +1121,12 @@
         code: "CHEM-05",
         unitNum: "Stoichiometry",
         title: "Chemical Reactions & Equation Balancing",
-        snippet: "The 4 primary reaction archetypes (Synthesis, Decomposition, Displacement, Double Decomposition) and Hit-and-Trial balancing.",
+        hook: "How the law of conservation of mass requires counting atoms on both sides of a chemical equation to balance it.",
+        snippet: "How the law of conservation of mass requires counting atoms on both sides of a chemical equation to balance it.",
+        time: "20 min",
+        level: "Applied Dynamics",
+        prereq: ["CHEM-04"],
+        unlocks: ["CHEM-06", "CHEM-12"],
         file: "topics/chemistry_05_chemical_reactions_balancing.html"
       },
       {
@@ -991,7 +1134,12 @@
         code: "CHEM-06",
         unitNum: "Acids & Alkalis",
         title: "Acids, Bases, Salts & Chemical Indicators",
-        snippet: "Arrhenius ion definitions, neutralization dynamics, and the master indicator color transition table (Litmus, Methyl Orange, Phenolphthalein).",
+        hook: "How litmus, methyl orange, and phenolphthalein identify acidic vs basic solutions, and what happens during neutralization.",
+        snippet: "How litmus, methyl orange, and phenolphthalein identify acidic vs basic solutions, and what happens during neutralization.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["CHEM-04"],
+        unlocks: [],
         file: "topics/chemistry_06_acids_bases_and_salts.html"
       },
       {
@@ -999,23 +1147,38 @@
         code: "CHEM-07",
         unitNum: "Metallurgy Basics",
         title: "Metals, Non-Metals & The Reactivity Series",
-        snippet: "Metals vs Non-metals physical matrix, the Activity Series hierarchy (K > Na > ... > Au), displacement reactions, and rust chemistry.",
+        hook: "How metals and non-metals differ in conductivity, malleability, and chemical reactivity with oxygen and water.",
+        snippet: "How metals and non-metals differ in conductivity, malleability, and chemical reactivity with oxygen and water.",
+        time: "15 min",
+        level: "Applied Dynamics",
+        prereq: ["CHEM-03"],
+        unlocks: [],
         file: "topics/chemistry_07_metals_nonmetals_reactivity.html"
       },
       {
         discipline: "Chemistry",
         code: "CHEM-08",
         unitNum: "Hydrology",
-        title: "Water, Solutions &amp; Solubility",
-        snippet: "Structure of water, solute-solvent interactions, solubility curves, saturated vs unsaturated solutions, and hard vs soft water.",
+        title: "Water, Solutions & Solubility",
+        hook: "Saturated vs unsaturated solutions, how temperature affects solubility, and the distinction between suspensions and colloids.",
+        snippet: "Saturated vs unsaturated solutions, how temperature affects solubility, and the distinction between suspensions and colloids.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: ["CHEM-03"],
+        unlocks: ["CHEM-11"],
         file: "topics/chemistry_08_water_solutions_solubility.html"
       },
       {
         discipline: "Chemistry",
         code: "CHEM-09",
         unitNum: "Atmospheric Chemistry",
-        title: "Air, Oxygen &amp; Combustion",
-        snippet: "Composition of air, properties and preparation of oxygen, types of combustion, rusting, and the nitrogen cycle.",
+        title: "Air, Oxygen & Combustion",
+        hook: "The composition of clean air, why oxygen supports combustion without burning itself, and the conditions needed for burning.",
+        snippet: "The composition of clean air, why oxygen supports combustion without burning itself, and the conditions needed for burning.",
+        time: "15 min",
+        level: "Applied Dynamics",
+        prereq: ["CHEM-01"],
+        unlocks: ["CHEM-12"],
         file: "topics/chemistry_09_air_oxygen_combustion.html"
       },
       {
@@ -1023,7 +1186,12 @@
         code: "CHEM-10",
         unitNum: "Carbon Chemistry",
         title: "Carbon & Its Allotropic Modifications",
-        snippet: "Phenomenon of allotropy, Diamond tetrahedral vs Graphite planar sheets, C60 Fullerenes, and amorphous carbon forms.",
+        hook: "Why diamond and graphite are both 100% carbon yet diamond is transparent and hard while graphite is black and slippery.",
+        snippet: "Why diamond and graphite are both 100% carbon yet diamond is transparent and hard while graphite is black and slippery.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["CHEM-02"],
+        unlocks: [],
         file: "topics/chemistry_10_carbon_and_allotropes.html"
       },
       {
@@ -1031,7 +1199,12 @@
         code: "CHEM-11",
         unitNum: "Water Treatment",
         title: "Water Hardness & Treatment Technologies",
-        snippet: "Soft vs hard water, temporary vs permanent hardness, boiling, Clark's slaked lime process, washing soda, and ion exchange resins.",
+        hook: "What dissolved calcium and magnesium salts do to lathering, and how boiling vs chemical treatment removes temporary and permanent hardness.",
+        snippet: "What dissolved calcium and magnesium salts do to lathering, and how boiling vs chemical treatment removes temporary and permanent hardness.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["CHEM-08"],
+        unlocks: [],
         file: "topics/chemistry_11_water_hardness_and_treatment.html"
       },
       {
@@ -1039,7 +1212,12 @@
         code: "CHEM-12",
         unitNum: "Environmental Chemistry",
         title: "Oxides, Acid Rain & Atmospheric Chemistry",
-        snippet: "Classification of oxides (Acidic, Basic, Amphoteric, Neutral), Acid rain formation (SO2/NO2), Taj Mahal marble cancer, and greenhouse gases.",
+        hook: "How nitrogen and sulfur emissions react with atmospheric moisture to form acid rain, and methods used to reduce pollutants.",
+        snippet: "How nitrogen and sulfur emissions react with atmospheric moisture to form acid rain, and methods used to reduce pollutants.",
+        time: "18 min",
+        level: "Advanced Synthesis",
+        prereq: ["CHEM-05", "CHEM-09"],
+        unlocks: [],
         file: "topics/chemistry_12_oxides_acid_rain_and_atmosphere.html"
       },
 
@@ -1049,7 +1227,12 @@
         code: "BIO-01",
         unitNum: "Histology",
         title: "Plant & Animal Tissue Histology",
-        snippet: "Meristematic vs Permanent plant tissues, vascular Xylem vs Phloem transport, and the 4 primary animal tissue systems.",
+        hook: "How meristematic dividing cells differ from permanent vascular tissues, and the 4 fundamental tissue types in human organs.",
+        snippet: "How meristematic dividing cells differ from permanent vascular tissues, and the 4 fundamental tissue types in human organs.",
+        time: "18 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["BIO-02", "BIO-04"],
         file: "topics/biology_01_plant_and_animal_tissues.html"
       },
       {
@@ -1057,7 +1240,12 @@
         code: "BIO-02",
         unitNum: "Plant Physiology",
         title: "Photosynthesis & Cellular Respiration in Plants",
-        snippet: "Balanced chemical reaction (6CO₂ + 12H₂O), stomatal guard cell turgor, aerobic (38 ATP) vs anaerobic respiration pathways.",
+        hook: "How leaves produce glucose using sunlight and carbon dioxide, and why plants respire around the clock just like animals.",
+        snippet: "How leaves produce glucose using sunlight and carbon dioxide, and why plants respire around the clock just like animals.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["BIO-01"],
+        unlocks: ["BIO-12"],
         file: "topics/biology_02_photosynthesis_and_respiration.html"
       },
       {
@@ -1065,7 +1253,12 @@
         code: "BIO-03",
         unitNum: "Cytology",
         title: "Cell Structure, Cytology & Organelles",
-        snippet: "The Cell Theory, organelle specialization (Mitochondria 38 ATP, Ribosomes, Lysosomes), and 6-point Plant vs Animal cell matrix.",
+        hook: "The roles of plant and animal cell organelles, including the cell wall, cell membrane, nucleus, and mitochondria.",
+        snippet: "The roles of plant and animal cell organelles, including the cell wall, cell membrane, nucleus, and mitochondria.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["BIO-01"],
         file: "topics/biology_03_cell_structure_organelles.html"
       },
       {
@@ -1073,7 +1266,12 @@
         code: "BIO-04",
         unitNum: "Human Physiology",
         title: "Human Digestive System & Nutrition",
-        snippet: "5 stages of holozoic nutrition, complete digestive enzyme catalytic ledger, and small intestine villi micro-anatomy.",
+        hook: "The journey of food from the mouth to the stomach and small intestine, showing where each digestive enzyme acts.",
+        snippet: "The journey of food from the mouth to the stomach and small intestine, showing where each digestive enzyme acts.",
+        time: "20 min",
+        level: "Applied Dynamics",
+        prereq: ["BIO-01"],
+        unlocks: ["BIO-05"],
         file: "topics/biology_04_digestive_system.html"
       },
       {
@@ -1081,7 +1279,12 @@
         code: "BIO-05",
         unitNum: "Cardiovascular",
         title: "Human Circulatory System, Blood & Heart",
-        snippet: "4-chambered heart anatomy, cardiac valves, Pulmonary vs Systemic double circulation, and the 5-point Arteries vs Veins matrix.",
+        hook: "How the human four-chambered heart pumps deoxygenated blood to the lungs and oxygenated blood to the rest of the body.",
+        snippet: "How the human four-chambered heart pumps deoxygenated blood to the lungs and oxygenated blood to the rest of the body.",
+        time: "20 min",
+        level: "Advanced Synthesis",
+        prereq: ["BIO-04"],
+        unlocks: ["BIO-06", "BIO-07"],
         file: "topics/biology_05_circulatory_system.html"
       },
       {
@@ -1089,7 +1292,12 @@
         code: "BIO-06",
         unitNum: "Respiratory System",
         title: "Human Respiratory System & Gas Exchange",
-        snippet: "Mechanics of breathing (Inhalation vs Exhalation), alveolar diffusion, and Aerobic (38 ATP) vs Anaerobic (2 ATP) respiration.",
+        hook: "The mechanical pathway of breathing through the trachea, bronchi, and alveoli, and the exchange of oxygen and carbon dioxide.",
+        snippet: "The mechanical pathway of breathing through the trachea, bronchi, and alveoli, and the exchange of oxygen and carbon dioxide.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["BIO-05"],
+        unlocks: [],
         file: "topics/biology_06_human_respiratory_system.html"
       },
       {
@@ -1097,7 +1305,12 @@
         code: "BIO-07",
         unitNum: "Renal Physiology",
         title: "Human Excretory System & Kidney Nephrons",
-        snippet: "Excretion vs Egestion distinction, gross renal anatomy, nephron structure, and the 3 stages of urine formation.",
+        hook: "How the kidneys filter metabolic waste from the bloodstream to form urine, maintaining the body's water and salt balance.",
+        snippet: "How the kidneys filter metabolic waste from the bloodstream to form urine, maintaining the body's water and salt balance.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["BIO-05"],
+        unlocks: [],
         file: "topics/biology_07_excretory_system.html"
       },
       {
@@ -1105,7 +1318,12 @@
         code: "BIO-08",
         unitNum: "Neurobiology",
         title: "Human Nervous System, Brain & Reflex Arc",
-        snippet: "Neuron cytology (Cyton, Axon, Myelin, Synapse), Cerebrum vs Cerebellum vs Medulla Oblongata, and the 5-step Reflex Arc pathway.",
+        hook: "How sensory neurons, the spinal cord, and motor neurons coordinate automatic reflex actions to protect the body from harm.",
+        snippet: "How sensory neurons, the spinal cord, and motor neurons coordinate automatic reflex actions to protect the body from harm.",
+        time: "20 min",
+        level: "Advanced Synthesis",
+        prereq: ["BIO-01"],
+        unlocks: [],
         file: "topics/biology_08_nervous_system.html"
       },
       {
@@ -1113,7 +1331,12 @@
         code: "BIO-09",
         unitNum: "Reproduction",
         title: "Reproduction in Plants & Animals",
-        snippet: "Asexual vs Sexual reproduction, four whorls of a complete flower, Self vs Cross pollination, and fertilization dynamics.",
+        hook: "The parts of a flower, the difference between self and cross-pollination, and how fertilization leads to seed formation.",
+        snippet: "The parts of a flower, the difference between self and cross-pollination, and how fertilization leads to seed formation.",
+        time: "18 min",
+        level: "Applied Dynamics",
+        prereq: ["BIO-01"],
+        unlocks: [],
         file: "topics/biology_09_reproduction_in_plants_animals.html"
       },
       {
@@ -1121,7 +1344,12 @@
         code: "BIO-10",
         unitNum: "Taxonomy",
         title: "Classification of Living Organisms",
-        snippet: "Taxonomic hierarchy, Binomial nomenclature, Whittaker's 5 Kingdoms (Monera, Protista, Fungi, Plantae, Animalia), Invertebrates vs Vertebrates.",
+        hook: "How living organisms are organized using Whittaker's five kingdoms and binomial nomenclature based on shared characteristics.",
+        snippet: "How living organisms are organized using Whittaker's five kingdoms and binomial nomenclature based on shared characteristics.",
+        time: "15 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["BIO-11"],
         file: "topics/biology_10_classification_of_organisms.html"
       },
       {
@@ -1129,7 +1357,12 @@
         code: "BIO-11",
         unitNum: "Pathology & Hygiene",
         title: "Health, Hygiene & Infectious Pathogens",
-        snippet: "Communicable vs Non-communicable diseases, Bacteria/Viruses/Fungi/Protozoa, insect vectors (Anopheles, Aedes, Houseflies), and vaccines.",
+        hook: "The difference between communicable and non-communicable diseases, common pathogens, and personal and community hygiene.",
+        snippet: "The difference between communicable and non-communicable diseases, common pathogens, and personal and community hygiene.",
+        time: "15 min",
+        level: "Applied Dynamics",
+        prereq: ["BIO-10"],
+        unlocks: [],
         file: "topics/biology_11_health_hygiene_and_diseases.html"
       },
       {
@@ -1137,16 +1370,27 @@
         code: "BIO-12",
         unitNum: "Ecology",
         title: "Ecosystems, Food Chains & Energy Dynamics",
-        snippet: "Biotic vs Abiotic ecosystem components, food chains & webs, Lindeman's 10% energy transfer law, and biomagnification.",
+        hook: "How energy flows through food chains from producers to apex predators, and why energy decreases at each trophic level.",
+        snippet: "How energy flows through food chains from producers to apex predators, and why energy decreases at each trophic level.",
+        time: "15 min",
+        level: "Applied Dynamics",
+        prereq: ["BIO-02"],
+        unlocks: [],
         file: "topics/biology_12_ecosystems_and_food_chains.html"
       },
-      // MATHEMATICS (CONSOLIDATED POWER-MODULES 01 - 04)
+
+      // MATHEMATICS (TOPICS 01 - 08)
       {
         discipline: "Mathematics",
         code: "MATH-01",
         unitNum: "Number Theory",
         title: "The Number Continuum: Integers, Fractions & Rational Density",
-        snippet: "The skyscraper elevator model, Russian nesting dolls, positive/negative multiplication mechanics, BODMAS hierarchies, and terminating decimal prime tests.",
+        hook: "How positive and negative fractions form the rational number continuum, and why division by zero is undefined.",
+        snippet: "How positive and negative fractions form the rational number continuum, and why division by zero is undefined.",
+        time: "18 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["MATH-02", "MATH-03"],
         file: "topics/math_01_number_continuum.html"
       },
       {
@@ -1154,7 +1398,12 @@
         code: "MATH-02",
         unitNum: "Exponents",
         title: "Scale & Index Laws: Powers, Exponents & Scientific Notation",
-        snippet: "Exponential doubling, common-sense proofs for a^0 = 1, negative elevator exponents, the 5 index laws, and standard scientific form across cosmic and atomic scales.",
+        hook: "How the product, quotient, and power rules simplify repeated multiplication, and the derivation of a^0 = 1.",
+        snippet: "How the product, quotient, and power rules simplify repeated multiplication, and the derivation of a^0 = 1.",
+        time: "18 min",
+        level: "Core Foundation",
+        prereq: ["MATH-01"],
+        unlocks: ["MATH-03"],
         file: "topics/math_02_laws_of_indices.html"
       },
       {
@@ -1162,7 +1411,12 @@
         code: "MATH-03",
         unitNum: "Algebra",
         title: "The Algebraic Language: Expressions, Polynomials & Operations",
-        snippet: "Mystery variables, terms, coefficients, degrees of polynomials, the strict apples-and-oranges rule of like terms, and bulletproof bracket distribution.",
+        hook: "Adding, subtracting, and multiplying algebraic terms, combining like terms, and working with polynomials.",
+        snippet: "Adding, subtracting, and multiplying algebraic terms, combining like terms, and working with polynomials.",
+        time: "20 min",
+        level: "Applied Dynamics",
+        prereq: ["MATH-01"],
+        unlocks: ["MATH-04"],
         file: "topics/math_03_algebraic_expressions.html"
       },
       {
@@ -1170,7 +1424,12 @@
         code: "MATH-04",
         unitNum: "Algebra",
         title: "The Balance Beam: Linear Equations & Word Problems",
-        snippet: "Equations as two-pan scales, transposition mechanics, clearing fractional denominators via LCM, and translating age, consecutive number, and digit reversal puzzles.",
+        hook: "Solving single-variable equations using inverse operations and balance rules to isolate the unknown.",
+        snippet: "Solving single-variable equations using inverse operations and balance rules to isolate the unknown.",
+        time: "20 min",
+        level: "Applied Dynamics",
+        prereq: ["MATH-03"],
+        unlocks: ["MATH-05", "MATH-06"],
         file: "topics/math_04_linear_equations.html"
       },
       {
@@ -1178,7 +1437,12 @@
         code: "MATH-05",
         unitNum: "Arithmetic & Variations",
         title: "Ratios, Proportions & The Unitary Method",
-        snippet: "Dimensionless comparative scaling, dividing quantities in ratios, the fundamental law of extremes and means, continued proportions, and direct vs inverse variations.",
+        hook: "Solving direct and inverse variation problems using the unitary method and fraction ratios.",
+        snippet: "Solving direct and inverse variation problems using the unitary method and fraction ratios.",
+        time: "15 min",
+        level: "Applied Dynamics",
+        prereq: ["MATH-01"],
+        unlocks: ["MATH-06"],
         file: "topics/math_05_ratios_and_proportions.html"
       },
       {
@@ -1186,7 +1450,12 @@
         code: "MATH-06",
         unitNum: "Commercial Arithmetic",
         title: "Commercial Mathematics: Percentages, Profit & Loss & Simple Interest",
-        snippet: "Percentages out of 100, percentage change on original base, CP vs SP, calculating profit/loss on cost price, retail marked price discounts, and linear simple interest.",
+        hook: "Calculating cost price, selling price, profit, loss percentage, and simple interest for bank deposits and loans.",
+        snippet: "Calculating cost price, selling price, profit, loss percentage, and simple interest for bank deposits and loans.",
+        time: "20 min",
+        level: "Advanced Synthesis",
+        prereq: ["MATH-04", "MATH-05"],
+        unlocks: [],
         file: "topics/math_06_commercial_mathematics.html"
       },
       {
@@ -1194,7 +1463,12 @@
         code: "MATH-07",
         unitNum: "Geometry",
         title: "Lines, Angles & Transversals: Geometric Rigor",
-        snippet: "Complementary and supplementary systems, linear pairs, proof of vertically opposite angle equality, parallel line transversals (F, Z, C angles), and tests for parallelism.",
+        hook: "Complementary, supplementary, and vertically opposite angles, plus the corresponding, alternate, and interior angles formed by a transversal.",
+        snippet: "Complementary, supplementary, and vertically opposite angles, plus the corresponding, alternate, and interior angles formed by a transversal.",
+        time: "18 min",
+        level: "Core Foundation",
+        prereq: [],
+        unlocks: ["MATH-08"],
         file: "topics/math_07_lines_and_angles.html"
       },
       {
@@ -1202,7 +1476,12 @@
         code: "MATH-08",
         unitNum: "Geometry & Mensuration",
         title: "Triangles, Congruence, Perimeter & Area",
-        snippet: "Structural triangulation, angle sum and exterior theorems, the four congruence criteria (SSS, SAS, ASA, RHS), CPCTC deduction, and 2D mensuration boundaries.",
+        hook: "The angle sum property of triangles, exterior angle theorem, and the four congruence criteria (SSS, SAS, ASA, RHS).",
+        snippet: "The angle sum property of triangles, exterior angle theorem, and the four congruence criteria (SSS, SAS, ASA, RHS).",
+        time: "20 min",
+        level: "Applied Dynamics",
+        prereq: ["MATH-07"],
+        unlocks: [],
         file: "topics/math_08_triangles_and_congruence.html"
       }
     ];
@@ -1268,6 +1547,7 @@
         const matchesSearch = currentSearch === '' ||
           item.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
           item.discipline.toLowerCase().includes(currentSearch.toLowerCase()) ||
+          (item.hook && item.hook.toLowerCase().includes(currentSearch.toLowerCase())) ||
           item.snippet.toLowerCase().includes(currentSearch.toLowerCase()) ||
           item.code.toLowerCase().includes(currentSearch.toLowerCase());
         return matchesCategory && matchesSearch;
@@ -1290,6 +1570,22 @@
 
         const emblemSvg = EMBLEMS[item.discipline] || `<div class="badge-icon">${item.icon}</div>`;
 
+        let levelClass = 'level-foundation';
+        if (item.level === 'Applied Dynamics') levelClass = 'level-dynamics';
+        else if (item.level === 'Advanced Synthesis') levelClass = 'level-synthesis';
+
+        const prereqPill = (item.prereq && item.prereq.length > 0)
+          ? `<span class="meta-pill meta-prereq">Prereq: ${item.prereq.join(', ')}</span>`
+          : '';
+
+        const metaRow = `
+          <div class="topic-meta-row">
+            <span class="meta-pill meta-pacing">⏱ ${item.time || '15 min'}</span>
+            <span class="meta-pill meta-level ${levelClass}">${item.level || 'Core Foundation'}</span>
+            ${prereqPill}
+          </div>
+        `;
+
         card.innerHTML = `
           <div class="topic-left-badge">
             <div class="badge-emblem-wrap">${emblemSvg}</div>
@@ -1297,8 +1593,9 @@
             <div class="badge-unit">${item.unitNum}</div>
           </div>
           <div class="topic-middle">
+            ${metaRow}
             <h3 class="topic-title">${item.title}</h3>
-            <p class="topic-snippet">${item.snippet}</p>
+            <p class="topic-snippet">${item.hook || item.snippet}</p>
           </div>
           <div class="topic-right-action">
             <span class="action-arrow">Read Lesson &rarr;</span>
