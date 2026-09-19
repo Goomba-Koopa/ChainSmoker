@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Physics 01: Motion, Distance, Displacement & Speed • ICSE Class 7</title>
   
-  <!-- Fonts: Newsreader (Serif) + Plus Jakarta Sans (Sans) -->
-    <!-- Typography: Self-Hosted Zilla Slab (Headings) + Parkinsans (Body) -->
+    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
@@ -16,40 +22,7 @@
 
   <style>
     
-    /* Self-Hosted Fonts: Zilla Slab + Parkinsans */
-    @font-face {
-      font-family: 'Zilla Slab';
-      src: url('../fonts/zilla-slab-regular.woff2') format('woff2'),
-           url('/fonts/zilla-slab-regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Zilla Slab';
-      src: url('../fonts/zilla-slab-bold.woff2') format('woff2'),
-           url('/fonts/zilla-slab-bold.woff2') format('woff2');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Parkinsans';
-      src: url('../fonts/parkinsans-regular.woff2') format('woff2'),
-           url('/fonts/parkinsans-regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Parkinsans';
-      src: url('../fonts/parkinsans-bold.woff2') format('woff2'),
-           url('/fonts/parkinsans-bold.woff2') format('woff2');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-:root {
+    :root {
       --bg-warm: #fbfaf7;
       --bg-surface: #f4efe6;
       --border-subtle: #e6dfd3;
@@ -103,7 +76,7 @@
     
     .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
     .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
-    .brand-title em { font-style: italic; font-weight: 400; color: var(--terracotta); }
+    .brand-title em { font-style: normal; font-weight: inherit; color: inherit; }
     .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
     .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
 
@@ -317,7 +290,7 @@
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="brand-title">ICSE <em>Class 7</em> Science & Math</a>
+    <a href="../index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
     <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 

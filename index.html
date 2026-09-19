@@ -79,12 +79,6 @@
       letter-spacing: -0.02em;
     }
 
-    .brand-title em {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--terracotta);
-    }
-
     .masthead-meta {
       font-size: 13.5px;
       color: var(--ink-muted);
@@ -229,19 +223,87 @@
       100% { transform: scale(1.06); opacity: 1; }
     }
 
-    /* ANIMATED DISCIPLINE EMBLEMS */
+    /* ANIMATED DISCIPLINE EMBLEMS (OPTION 3: STATIC REST + HOVER MICRO-LAB) */
+    .emblem-orbit-1,
+    .emblem-orbit-2,
+    .emblem-nucleus,
+    .flask-bubble-1,
+    .flask-bubble-2,
+    .flask-meniscus,
+    .leaf-pulse,
+    .compass-leg-sweep,
+    .compass-arc-draw,
+    .math-angle-arc {
+      animation-play-state: paused;
+      transform-box: fill-box;
+    }
+
     .emblem-orbit-1 {
-      animation: orbit-spin-1 7s linear infinite;
-      transform-origin: 50px 50px;
+      animation: orbit-spin-1 3.6s linear infinite;
+      transform-origin: center;
     }
     .emblem-orbit-2 {
-      animation: orbit-spin-2 7s linear infinite;
-      transform-origin: 50px 50px;
+      animation: orbit-spin-2 3.6s linear infinite;
+      transform-origin: center;
     }
     .emblem-nucleus {
-      animation: nucleus-glow 2.5s ease-in-out infinite alternate;
-      transform-origin: 50px 50px;
+      animation: nucleus-glow 1.8s ease-in-out infinite alternate;
+      transform-origin: center;
     }
+
+    .flask-bubble-1 {
+      animation: bubble-up 1.8s ease-in-out infinite;
+    }
+    .flask-bubble-2 {
+      animation: bubble-up 2.2s ease-in-out 0.6s infinite;
+    }
+    .flask-meniscus {
+      animation: meniscus-slosh 2.4s ease-in-out infinite alternate;
+      transform-origin: 19px 25px;
+    }
+
+    .leaf-pulse {
+      animation: leaf-breath 2.8s ease-in-out infinite alternate;
+      transform-origin: 19px 32px;
+    }
+
+    .compass-leg-sweep {
+      animation: leg-sweep 2.2s ease-in-out infinite alternate;
+      transform-origin: 19px 12px;
+    }
+    .compass-arc-draw {
+      animation: arc-pulse 2.2s ease-in-out infinite alternate;
+    }
+    .math-angle-arc {
+      stroke-dasharray: 20;
+      stroke-dashoffset: 0;
+      animation: angle-arc-sweep 2.2s ease-in-out infinite alternate;
+    }
+
+    /* AWAKEN MICRO-LAB ON CARD HOVER OR KEYBOARD FOCUS */
+    .topic-card:hover .emblem-orbit-1,
+    .topic-card:hover .emblem-orbit-2,
+    .topic-card:hover .emblem-nucleus,
+    .topic-card:hover .flask-bubble-1,
+    .topic-card:hover .flask-bubble-2,
+    .topic-card:hover .flask-meniscus,
+    .topic-card:hover .leaf-pulse,
+    .topic-card:hover .compass-leg-sweep,
+    .topic-card:hover .compass-arc-draw,
+    .topic-card:hover .math-angle-arc,
+    .topic-card:focus-visible .emblem-orbit-1,
+    .topic-card:focus-visible .emblem-orbit-2,
+    .topic-card:focus-visible .emblem-nucleus,
+    .topic-card:focus-visible .flask-bubble-1,
+    .topic-card:focus-visible .flask-bubble-2,
+    .topic-card:focus-visible .flask-meniscus,
+    .topic-card:focus-visible .leaf-pulse,
+    .topic-card:focus-visible .compass-leg-sweep,
+    .topic-card:focus-visible .compass-arc-draw,
+    .topic-card:focus-visible .math-angle-arc {
+      animation-play-state: running;
+    }
+
     @keyframes orbit-spin-1 {
       0% { transform: rotate(-30deg); }
       100% { transform: rotate(330deg); }
@@ -251,54 +313,34 @@
       100% { transform: rotate(-330deg); }
     }
     @keyframes nucleus-glow {
-      0% { transform: scale(0.88); opacity: 0.85; }
-      100% { transform: scale(1.12); opacity: 1; }
-    }
-
-    .flask-bubble-1 {
-      animation: bubble-up 2.6s ease-in-out infinite;
-    }
-    .flask-bubble-2 {
-      animation: bubble-up 3.2s ease-in-out 1.2s infinite;
-    }
-    .flask-meniscus {
-      animation: meniscus-slosh 3.5s ease-in-out infinite alternate;
-      transform-origin: 50px 60px;
+      0% { transform: scale(0.9); opacity: 0.9; }
+      100% { transform: scale(1.15); opacity: 1; }
     }
     @keyframes bubble-up {
       0% { transform: translateY(0); opacity: 0; }
       30% { opacity: 0.9; }
       80% { opacity: 0.9; }
-      100% { transform: translateY(-16px); opacity: 0; }
+      100% { transform: translateY(-11px); opacity: 0; }
     }
     @keyframes meniscus-slosh {
-      0% { transform: rotate(-1.5deg); }
-      100% { transform: rotate(1.5deg); }
-    }
-
-    .leaf-pulse {
-      animation: leaf-breath 4s ease-in-out infinite alternate;
-      transform-origin: 50px 88px;
+      0% { transform: rotate(-2.5deg); }
+      100% { transform: rotate(2.5deg); }
     }
     @keyframes leaf-breath {
-      0% { transform: scale(0.97) rotate(-1deg); }
-      100% { transform: scale(1.02) rotate(1deg); }
-    }
-
-    .compass-leg-sweep {
-      animation: leg-sweep 3.5s ease-in-out infinite alternate;
-      transform-origin: 50px 24px;
-    }
-    .compass-arc-draw {
-      animation: arc-pulse 3.5s ease-in-out infinite alternate;
+      0% { transform: scale(0.96) rotate(-1.5deg); }
+      100% { transform: scale(1.03) rotate(1.5deg); }
     }
     @keyframes leg-sweep {
-      0% { transform: rotate(-3deg); }
-      100% { transform: rotate(3deg); }
+      0% { transform: rotate(-3.5deg); }
+      100% { transform: rotate(3.5deg); }
     }
     @keyframes arc-pulse {
-      0% { opacity: 0.45; }
-      100% { opacity: 1; }
+      0% { opacity: 0.45; stroke-dashoffset: 4; }
+      100% { opacity: 1; stroke-dashoffset: 0; }
+    }
+    @keyframes angle-arc-sweep {
+      0% { stroke-dashoffset: 20; opacity: 0.4; }
+      100% { stroke-dashoffset: 0; opacity: 1; }
     }
 
     /* FEATURED WORKED PROBLEM SPOTLIGHT DIRECTLY ON LANDING */
@@ -628,6 +670,12 @@
     .discipline-emblem {
       width: 38px;
       height: 38px;
+      shape-rendering: geometricPrecision;
+      text-rendering: geometricPrecision;
+      image-rendering: -webkit-optimize-contrast;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      overflow: visible;
       transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
@@ -722,219 +770,17 @@
       font-size: 14.5px;
     }
 
-    /* CHILLING PLAN TRIGGER & MODAL */
-    .btn-chill-trigger {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 12px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      border-radius: 6px;
-      font-family: var(--font-sans);
-      font-size: 12.5px;
-      font-style: normal;
-      font-weight: 600;
-      color: var(--ink-black);
-      cursor: pointer;
-      transition: all 0.2s ease;
-      margin-left: 14px;
-    }
-    .btn-chill-trigger:hover {
-      background: #fbf0ea;
-      border-color: var(--terracotta);
-      color: var(--terracotta);
-    }
-    .chill-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(18, 18, 20, 0.45);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .chill-modal-card {
-      background: var(--bg-warm);
-      border: 1px solid var(--border-strong);
-      border-radius: 16px;
-      max-width: 580px;
-      width: 100%;
-      padding: 32px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      animation: chillFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes chillFadeIn {
-      from { opacity: 0; transform: scale(0.96) translateY(8px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .chill-modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-    }
-    .chill-badge {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--terracotta);
-      background: var(--terracotta-soft);
-      border: 1px solid rgba(194, 65, 12, 0.2);
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-    .chill-close-btn {
-      background: none;
-      border: none;
-      font-size: 24px;
-      line-height: 1;
-      color: var(--ink-muted);
-      cursor: pointer;
-    }
-    .chill-close-btn:hover { color: var(--ink-black); }
-    .chill-modal-title {
-      font-family: var(--font-serif);
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--ink-black);
-      margin-bottom: 6px;
-    }
-    .chill-modal-subtitle {
-      font-size: 14px;
-      color: var(--ink-secondary);
-      line-height: 1.5;
-      margin-bottom: 22px;
-    }
-    .chill-rules-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .chill-rule-item {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 12px 14px;
-    }
-    .chill-rule-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--terracotta);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-    .chill-rule-name {
-      font-family: var(--font-serif);
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--ink-black);
-      margin-bottom: 4px;
-    }
-    .chill-rule-desc {
-      font-size: 13px;
-      color: var(--ink-secondary);
-      line-height: 1.45;
-    }
-    .chill-timer-section {
-      border-top: 1px solid var(--border-subtle);
-      padding-top: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .chill-timer-display {
-      font-family: 'Abel', monospace, sans-serif;
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: var(--emerald-accent);
-    }
-    .chill-timer-actions {
-      display: flex;
-      gap: 10px;
-    }
-    .chill-btn-action {
-      background: var(--terracotta);
-      color: #ffffff;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 13px;
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-    .chill-btn-action:hover { background: #a3360a; }
-    .chill-btn-dismiss {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      color: var(--ink-black);
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 13px;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
 
   <!-- MASTHEAD -->
   <header class="masthead">
-    <a href="index.html" class="brand-title"><em>ICSE 7 Science & Mathematics</em></a>
+    <a href="index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
     <div class="masthead-meta">
       <span>Mathematics • Physics • Chemistry • Biology</span>
-      <button class="btn-chill-trigger" onclick="toggleChillingPlan()" title="Official CISCE Non-Standard Chilling Plan">☕ Chilling Plan</button>
     </div>
   </header>
-
-  <!-- OFFICIAL CHILLING PLAN OVERLAY -->
-  <div id="chillingPlanModal" class="chill-modal-backdrop" onclick="handleChillBackdrop(event)" style="display: none;">
-    <div class="chill-modal-card">
-      <div class="chill-modal-header">
-        <div class="chill-badge">CISCE NON-ACADEMIC DIRECTIVE</div>
-        <button class="chill-close-btn" onclick="toggleChillingPlan()">&times;</button>
-      </div>
-      <h2 class="chill-modal-title">Official Class 7 Chilling Plan</h2>
-      <p class="chill-modal-subtitle">Grounded in the physical law that the student brain reaches thermal saturation after 44 STEM modules.</p>
-      
-      <div class="chill-rules-grid">
-        <div class="chill-rule-item">
-          <div class="chill-rule-num">Directive 01</div>
-          <div class="chill-rule-name">Zero-Vector Equilibrium (\(\vec{v} = 0\))</div>
-          <div class="chill-rule-desc">Cease all displacement. Under Newton’s First Law, a resting student shall remain at rest unless acted upon by an unbalanced parent asking if homework is finished.</div>
-        </div>
-        <div class="chill-rule-item">
-          <div class="chill-rule-num">Directive 02</div>
-          <div class="chill-rule-name">5:5 Thermal Hydration Ratio</div>
-          <div class="chill-rule-desc">Consume a beverage with exactly 5 parts milk to 5 parts coffee or chocolate. Do not attempt to balance redox equations while sipping.</div>
-        </div>
-        <div class="chill-rule-item">
-          <div class="chill-rule-num">Directive 03</div>
-          <div class="chill-rule-name">Screen & Posture Reset</div>
-          <div class="chill-rule-desc">Look away from the screen at a distant point 20 feet away for 20 seconds. Relax your shoulders and step away from the desk.</div>
-        </div>
-        <div class="chill-rule-item">
-          <div class="chill-rule-num">Directive 04</div>
-          <div class="chill-rule-name">Defragmentation Interval</div>
-          <div class="chill-rule-desc">15 minutes of staring at the ceiling or walking outside before resuming board derivations.</div>
-        </div>
-      </div>
-
-      <div class="chill-timer-section">
-        <div class="chill-timer-display" id="chillTimer">15:00</div>
-        <div class="chill-timer-actions">
-          <button class="chill-btn-action" id="chillTimerBtn" onclick="toggleChillTimer()">Start 15m Chill</button>
-          <button class="chill-btn-dismiss" onclick="toggleChillingPlan()">Resume Rigor</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- HERO -->
   <section class="hero-section">
@@ -991,7 +837,7 @@
     <aside class="desk-margin-stream" aria-label="Authentic Desk Margin"></aside>
   </main>
 
-  <div class="bottom-utility-bar" style="text-align: center; padding: 24px 16px; border-top: 1px solid var(--border-subtle);"><a href="src/animated_svgs.html" class="btn-studio-dock" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 10px 18px; border-radius: 6px; font-family: 'Atkinson Hyperlegible', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-black); text-decoration: none;">📐 Open Motion Studio & Vector Lab ↗</a></div>
+  <div class="bottom-utility-bar" style="text-align: center; padding: 24px 16px; border-top: 1px solid var(--border-subtle);"><a href="src/animated_svgs_alpha.html" class="btn-studio-dock" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 10px 18px; border-radius: 6px; font-family: 'Atkinson Hyperlegible', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-black); text-decoration: none;">📐 Open Motion Studio & Vector Lab (Alpha Variant) ↗</a></div>
 
   <!-- FOOTER -->
   <footer class="editorial-footer">
@@ -1362,55 +1208,51 @@
     ];
 
     const EMBLEMS = {
-      Physics: `<svg class="discipline-emblem emblem-physics" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      Physics: `<svg class="discipline-emblem emblem-physics" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
         <g class="emblem-orbit-1">
-          <ellipse cx="50" cy="50" rx="40" ry="15" transform="rotate(-30 50 50)" stroke="#161514" stroke-width="2.6" stroke-linecap="round"/>
-          <circle cx="85" cy="30" r="3.2" fill="#c2410c"/>
+          <ellipse cx="20" cy="20" rx="14.5" ry="5.5" transform="rotate(-30 20 20)" stroke="#161514" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="32.5" cy="12.8" r="1.8" fill="#ea580c" stroke="#161514" stroke-width="0.8"/>
         </g>
         <g class="emblem-orbit-2">
-          <ellipse cx="50" cy="50" rx="40" ry="15" transform="rotate(30 50 50)" stroke="#161514" stroke-width="2.6" stroke-linecap="round"/>
-          <circle cx="15" cy="30" r="3.2" fill="#161514"/>
+          <ellipse cx="20" cy="20" rx="14.5" ry="5.5" transform="rotate(30 20 20)" stroke="#161514" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="7.5" cy="12.8" r="1.6" fill="#161514"/>
         </g>
-        <circle class="emblem-nucleus" cx="50" cy="50" r="6.5" fill="#c2410c"/>
+        <circle class="emblem-nucleus" cx="20" cy="20" r="3.6" fill="#ea580c" stroke="#161514" stroke-width="1.2"/>
+        <circle cx="19" cy="19" r="1" fill="#ffffff" opacity="0.9"/>
       </svg>`,
-      Chemistry: `<svg class="discipline-emblem emblem-chemistry" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="42" y="16" width="16" height="4" rx="2" stroke="#161514" stroke-width="2.4" fill="none"/>
-        <path d="M 44 20 L 44 38 L 22 78 C 20.5 81 22.5 84 26 84 L 74 84 C 77.5 84 79.5 81 78 78 L 56 38 L 56 20" stroke="#161514" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <line x1="38" y1="56" x2="45" y2="56" stroke="#797166" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="34" y1="65" x2="43" y2="65" stroke="#797166" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="30" y1="74" x2="41" y2="74" stroke="#797166" stroke-width="1.8" stroke-linecap="round"/>
+      Chemistry: `<svg class="discipline-emblem emblem-chemistry" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
+        <rect x="17" y="6.5" width="6" height="2.5" rx="1" stroke="#161514" stroke-width="1.2" fill="#ffffff"/>
+        <path d="M 18 9 L 18 14.5 L 10 28.5 C 9.2 30 10.2 31.5 12 31.5 L 28 31.5 C 29.8 31.5 30.8 30 30 28.5 L 22 14.5 L 22 9" stroke="#161514" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 12.5 24.5 Q 20 26.5 27.5 24.5 L 29 30 L 11 30 Z" fill="#dcfce7" opacity="0.85"/>
         <g class="flask-meniscus">
-          <path d="M 28 66 Q 50 70 72 66" stroke="#15803d" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M 12 24.5 Q 20 26.5 28 24.5" stroke="#15803d" stroke-width="1.6" stroke-linecap="round"/>
         </g>
-        <circle class="flask-bubble-1" cx="44" cy="76" r="2.6" fill="#15803d"/>
-        <circle class="flask-bubble-2" cx="56" cy="72" r="3.2" fill="#15803d"/>
+        <circle class="flask-bubble-1" cx="17" cy="27.5" r="1.4" fill="#15803d"/>
+        <circle class="flask-bubble-2" cx="23" cy="26.5" r="1.6" fill="#15803d"/>
       </svg>`,
-      Biology: `<svg class="discipline-emblem emblem-biology" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      Biology: `<svg class="discipline-emblem emblem-biology" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
         <g class="leaf-pulse">
-          <path d="M 50 14 C 28 32 28 66 50 82 C 72 66 72 32 50 14 Z" stroke="#161514" stroke-width="2.8" stroke-linejoin="round"/>
-          <line x1="50" y1="14" x2="50" y2="88" stroke="#161514" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M 50 36 Q 40 32 35 27" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
-          <path d="M 50 36 Q 60 32 65 27" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
-          <path d="M 50 48 Q 38 43 32 38" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
-          <path d="M 50 48 Q 62 43 68 38" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
-          <path d="M 50 60 Q 38 56 33 52" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
-          <path d="M 50 60 Q 62 56 67 52" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
-          <path d="M 50 71 Q 42 68 38 65" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
-          <path d="M 50 71 Q 58 68 62 65" stroke="#2e382b" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 20 6 C 10 13 10 27 20 33 C 30 27 30 13 20 6 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.6" stroke-linejoin="round"/>
+          <line x1="20" y1="6" x2="20" y2="35" stroke="#161514" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M 20 14 Q 15 12 13 10" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 20 14 Q 25 12 27 10" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 20 20 Q 15 18 12 16" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 20 20 Q 25 18 28 16" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 20 26 Q 16 24 13 23" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 20 26 Q 24 24 27 23" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
         </g>
       </svg>`,
-      Mathematics: `<svg class="discipline-emblem emblem-math" viewBox="0 0 100 100" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="47" y="10" width="6" height="12" rx="2" stroke="#161514" stroke-width="2.2" fill="none"/>
-        <line x1="50" y1="22" x2="50" y2="28" stroke="#161514" stroke-width="2.6"/>
-        <circle cx="50" cy="28" r="5" stroke="#161514" stroke-width="2.6" fill="#ffffff"/>
-        <line x1="50" y1="28" x2="26" y2="78" stroke="#161514" stroke-width="2.8" stroke-linecap="round"/>
-        <g class="compass-leg-sweep">
-          <line x1="50" y1="28" x2="74" y2="78" stroke="#161514" stroke-width="2.8" stroke-linecap="round"/>
-          <circle cx="74" cy="78" r="2.8" fill="#c2410c"/>
-        </g>
-        <line x1="37" y1="54" x2="63" y2="54" stroke="#797166" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="50" cy="54" r="2.4" fill="#161514"/>
-        <path class="compass-arc-draw" d="M 22 84 Q 50 92 78 84" stroke="#d97706" stroke-width="2.6" stroke-linecap="round"/>
+      Mathematics: `<svg class="discipline-emblem emblem-math" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="7,33 33,33 7,7" fill="#fef8ea" stroke="#161514" stroke-width="1.6" stroke-linejoin="round"/>
+        <polygon points="12,28 25,28 12,15" fill="#ffffff" stroke="#797166" stroke-width="1.2" stroke-linejoin="round"/>
+        <line x1="16" y1="33" x2="16" y2="30.5" stroke="#161514" stroke-width="1"/>
+        <line x1="20" y1="33" x2="20" y2="29" stroke="#161514" stroke-width="1.2"/>
+        <line x1="24" y1="33" x2="24" y2="30.5" stroke="#161514" stroke-width="1"/>
+        <line x1="28" y1="33" x2="28" y2="30.5" stroke="#161514" stroke-width="1"/>
+        <line x1="7" y1="19" x2="9.5" y2="19" stroke="#161514" stroke-width="1"/>
+        <line x1="7" y1="23" x2="10.5" y2="23" stroke="#161514" stroke-width="1.2"/>
+        <line x1="7" y1="27" x2="9.5" y2="27" stroke="#161514" stroke-width="1"/>
+        <path class="math-angle-arc" d="M 21 33 A 12 12 0 0 0 17 24" stroke="#ea580c" stroke-width="1.4" stroke-linecap="round"/>
       </svg>`
     };
 
@@ -1505,50 +1347,6 @@
     }, { threshold: 0.5 });
 
     document.querySelectorAll('.highlighter-mark').forEach(el => highlightObserver.observe(el));
-
-    // CHILLING PLAN CONTROLLER
-    let chillTimerInterval = null;
-    let chillSecondsRemaining = 15 * 60;
-
-    function toggleChillingPlan() {
-      const modal = document.getElementById('chillingPlanModal');
-      if (modal) {
-        const isHidden = modal.style.display === 'none';
-        modal.style.display = isHidden ? 'flex' : 'none';
-      }
-    }
-
-    function handleChillBackdrop(e) {
-      if (e.target.id === 'chillingPlanModal') {
-        toggleChillingPlan();
-      }
-    }
-
-    function toggleChillTimer() {
-      const btn = document.getElementById('chillTimerBtn');
-      const display = document.getElementById('chillTimer');
-      if (chillTimerInterval) {
-        clearInterval(chillTimerInterval);
-        chillTimerInterval = null;
-        btn.textContent = 'Resume 15m Chill';
-      } else {
-        btn.textContent = 'Pause Chill';
-        chillTimerInterval = setInterval(() => {
-          if (chillSecondsRemaining > 0) {
-            chillSecondsRemaining--;
-            const mins = Math.floor(chillSecondsRemaining / 60);
-            const secs = chillSecondsRemaining % 60;
-            display.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-          } else {
-            clearInterval(chillTimerInterval);
-            chillTimerInterval = null;
-            display.textContent = 'Chill Complete!';
-            btn.textContent = 'Reset (15m)';
-            chillSecondsRemaining = 15 * 60;
-          }
-        }, 1000);
-      }
-    }
 
     // Initial render
     populateCounts();
