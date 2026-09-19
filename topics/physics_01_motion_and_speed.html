@@ -280,7 +280,7 @@
       .distinction-table { display: block; overflow-x: auto; }
     }
 
-
+  
     /* LEARNING GOALS CARD */
     .learning-goals-card {
       background: var(--bg-surface);
@@ -458,7 +458,262 @@
       color: var(--terracotta);
     }
 
-    /* THE BUG HUNT (THE EXAMINER'S RED PEN) */
+    /* 8. THE COMMON-SENSE STRATEGY SECTION */
+    .cs-strategy-section {
+      background: #ffffff;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      padding: 28px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 0 2px 8px rgba(22, 21, 20, 0.03);
+    }
+    .cs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 14px;
+    }
+    .cs-kicker {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 4px;
+    }
+    .cs-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink-black);
+      letter-spacing: -0.01em;
+    }
+    .cs-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #7c2d12;
+      background: #ffedd5;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid #fed7aa;
+      white-space: nowrap;
+    }
+    .cs-intro {
+      font-size: 14.5px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+    }
+
+    /* THE 3 HEURISTIC CARDS */
+    .cs-heuristics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 4px 0 8px 0;
+    }
+    .cs-heuristic-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cs-heuristic-num {
+      font-family: var(--font-serif);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--terracotta);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cs-heuristic-title {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--ink-black);
+    }
+    .cs-heuristic-text {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      line-height: 1.5;
+    }
+
+    /* DRILL BOX */
+    .cs-drill-box {
+      background: #faf8f5;
+      border: 1px solid #d8cfbe;
+      border-radius: 8px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .drill-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #d8cfbe;
+      padding-bottom: 10px;
+    }
+    .drill-header-title {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-black);
+    }
+    .drill-header-hint {
+      font-family: var(--font-serif);
+      font-size: 12.5px;
+      font-style: italic;
+      color: var(--ink-muted);
+    }
+    .drill-question {
+      font-size: 14.5px;
+      color: var(--ink-black);
+      line-height: 1.6;
+      background: #ffffff;
+      padding: 14px 18px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* OPTION CARDS */
+    .cs-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .cs-option-item {
+      background: #ffffff;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 14px 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cs-option-item:hover {
+      border-color: #94a3b8;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .cs-option-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cs-option-label-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .cs-option-letter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-strong);
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--ink-black);
+      flex-shrink: 0;
+    }
+    .cs-option-value {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--ink-black);
+    }
+    .cs-option-hint {
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    /* ELIMINATED STATE */
+    .cs-option-item.state-eliminated {
+      background: #fef2f2;
+      border-color: #fca5a5;
+    }
+    .cs-option-item.state-eliminated .cs-option-value {
+      text-decoration: line-through;
+      color: #991b1b;
+    }
+    .cs-option-item.state-eliminated .cs-option-letter {
+      background: #fee2e2;
+      border-color: #f87171;
+      color: #b91c1c;
+    }
+
+    /* SURVIVOR STATE */
+    .cs-option-item.state-survivor {
+      background: #f0fdf4;
+      border-color: #86efac;
+      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+    }
+    .cs-option-item.state-survivor .cs-option-value {
+      color: #15803d;
+      font-weight: 700;
+    }
+    .cs-option-item.state-survivor .cs-option-letter {
+      background: #dcfce7;
+      border-color: #4ade80;
+      color: #15803d;
+    }
+
+    /* FEEDBACK CARD INSIDE OPTION */
+    .cs-option-detail {
+      border-top: 1px solid rgba(0,0,0,0.06);
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13.5px;
+      line-height: 1.55;
+    }
+    .cs-detail-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cs-status-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .tag-ruled-out {
+      background: #fee2e2;
+      color: #b91c1c;
+      border: 1px solid #fca5a5;
+    }
+    .tag-sound {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #86efac;
+    }
+    .cs-detail-title {
+      font-weight: 700;
+      color: var(--ink-black);
+    }
+    .cs-detail-text {
+      color: var(--ink-secondary);
+    }
+
+    /* 9. THE BUG HUNT (THE EXAMINER'S RED PEN) */
     .bughunt-section {
       background: #ffffff;
       border: 1px solid var(--border-strong);
@@ -467,33 +722,26 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
-      box-shadow: 0 2px 10px rgba(22, 21, 20, 0.04);
-      margin-top: 8px;
+      box-shadow: 0 2px 8px rgba(22, 21, 20, 0.03);
     }
     .bughunt-header {
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 12px;
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .bughunt-title-group {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 14px;
     }
     .bughunt-kicker {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #dc2626;
+      color: var(--terracotta);
+      margin-bottom: 4px;
     }
     .bughunt-title {
       font-family: var(--font-serif);
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 600;
       color: var(--ink-black);
       letter-spacing: -0.01em;
@@ -501,11 +749,14 @@
     .bughunt-badge {
       font-size: 11.5px;
       font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: #991b1b;
       background: #fee2e2;
-      border: 1px solid #fca5a5;
-      padding: 3px 9px;
+      padding: 4px 10px;
       border-radius: 4px;
+      border: 1px solid #fca5a5;
+      white-space: nowrap;
     }
     .bughunt-context {
       font-size: 14px;
@@ -520,7 +771,7 @@
       font-size: 14px;
       color: var(--ink-black);
       line-height: 1.5;
-      margin: 4px 0;
+      margin: 8px 0;
     }
 
     /* NOTEBOOK DESK LINED PAPER STYLING */
@@ -528,7 +779,7 @@
       background: #faf8f5;
       background-image: repeating-linear-gradient(transparent, transparent 31px, #ebe3d5 31px, #ebe3d5 32px);
       border: 1px solid #d8cfbe;
-      border-left: 4px solid #ef4444; /* Red left notebook margin line */
+      border-left: 4px solid #ef4444;
       border-radius: 6px;
       padding: 22px 24px;
       display: flex;
@@ -578,90 +829,78 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--ink-muted);
+      color: #64748b;
     }
     .line-action-hint {
-      font-size: 11.5px;
-      color: var(--ink-muted);
+      font-family: var(--font-serif);
+      font-size: 12px;
       font-style: italic;
-      opacity: 0.8;
-      transition: opacity 0.15s;
-    }
-    .notebook-line-item:hover .line-action-hint {
-      opacity: 1;
-      color: var(--ink-black);
+      color: var(--ink-muted);
     }
     .line-content {
-      font-size: 14.5px;
+      font-size: 15px;
       color: var(--ink-black);
-      line-height: 1.5;
     }
 
-    /* 3 STATE STYLING FOR LINES */
+    /* LINE ACTIVE STATES */
     .notebook-line-item.state-sound {
       background: #f0fdf4;
       border-color: #86efac;
     }
-    .notebook-line-item.state-sound .line-step-tag {
-      color: #166534;
-    }
+    .notebook-line-item.state-sound .line-step-tag { color: #16a34a; }
 
     .notebook-line-item.state-blunder {
       background: #fef2f2;
-      border-color: #f87171;
-      box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.15);
+      border-color: #fca5a5;
     }
-    .notebook-line-item.state-blunder .line-step-tag {
-      color: #991b1b;
-    }
+    .notebook-line-item.state-blunder .line-step-tag { color: #dc2626; }
 
     .notebook-line-item.state-ecf {
       background: #fffbeb;
       border-color: #fcd34d;
     }
-    .notebook-line-item.state-ecf .line-step-tag {
-      color: #92400e;
-    }
+    .notebook-line-item.state-ecf .line-step-tag { color: #d97706; }
 
-    /* EXAMINER AUDIT CARD (INSPECTOR) */
+    /* PRE-RENDERED EXAMINER FEEDBACK CARDS */
     .examiner-feedback-card {
-      border-radius: 8px;
-      padding: 18px 22px;
-      animation: fadeIn 0.2s ease-in-out;
+      border-radius: 6px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      animation: fadeIn 0.25s ease-out;
     }
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
+      from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .feedback-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 8px;
     }
     .feedback-status-pill {
-      font-size: 11.5px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 3px 10px;
+      padding: 2px 8px;
       border-radius: 4px;
     }
     .feedback-marks-badge {
+      font-family: var(--font-serif);
       font-size: 13px;
       font-weight: 700;
     }
     .feedback-body {
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 13.5px;
+      line-height: 1.55;
     }
     .feedback-note-title {
-      font-family: var(--font-serif);
-      font-weight: 600;
+      font-weight: 700;
       margin-bottom: 4px;
     }
 
-    /* Card Themes */
     .card-sound {
       background: #f0fdf4;
       border: 1px solid #86efac;
@@ -670,13 +909,13 @@
     .card-sound .feedback-status-pill {
       background: #dcfce7;
       color: #15803d;
-      border: 1px solid #86efac;
+      border: 1px solid #bbf7d0;
     }
-    .card-sound .feedback-marks-badge { color: #15803d; }
+    .card-sound .feedback-marks-badge { color: #16a34a; }
 
     .card-blunder {
       background: #fef2f2;
-      border: 1px solid #f87171;
+      border: 1px solid #fca5a5;
       color: #991b1b;
     }
     .card-blunder .feedback-status-pill {
@@ -705,13 +944,14 @@
 
     @media (max-width: 768px) {
       .spiral-columns { grid-template-columns: 1fr; gap: 16px; }
-      .bughunt-section, .spiral-bridge-card, .learning-goals-card { padding: 20px 16px; }
-      .notebook-sheet { padding: 16px 14px; }
+      .cs-heuristics-grid { grid-template-columns: 1fr; gap: 12px; }
+      .cs-strategy-section, .bughunt-section, .spiral-bridge-card, .learning-goals-card { padding: 20px 16px; }
+      .notebook-sheet, .cs-drill-box { padding: 16px 14px; }
     }
 
     @media (max-width: 480px) {
-      .spiral-bridge-title, .bughunt-title { font-size: 19px; }
-      .learning-goals-header { flex-direction: column; gap: 4px; }
+      .spiral-bridge-title, .cs-title, .bughunt-title { font-size: 19px; }
+      .learning-goals-header, .cs-header, .bughunt-header { flex-direction: column; gap: 6px; }
       .feedback-card-header { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
 
@@ -756,17 +996,20 @@
           <span class="goal-bullet">✓</span>
           <div><strong>Compute Multi-Segment Average Speed:</strong> Calculate average speed using \(\frac{\text{Total Distance}}{\text{Total Time}}\) and avoid the common arithmetic average trap (\(\frac{v_1 + v_2}{2}\)).</div>
         </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply the Common-Sense Strategy:</strong> Rule out physically impossible, boundary-violating, or midpoint-trap options in under 5 seconds before calculating.</div>
+        </li>
       </ul>
     </div>
 
-    <!-- GRADE 6 -> GRADE 7 CRASH COURSE (THE SPIRAL BRIDGE) -->
+    <!-- THE SPIRAL CURRICULUM BRIDGE -->
     <div class="spiral-bridge-card">
       <div class="spiral-bridge-header">
         <div class="spiral-bridge-kicker">The Spiral Curriculum Bridge</div>
-        <h3 class="spiral-bridge-title">From Grade 6 Intuition to Grade 7 Rigor</h3>
-        <p class="spiral-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 mechanics:</p>
+        <h2 class="spiral-bridge-title">From Grade 6 Intuition to Grade 7 Rigor</h2>
+        <div class="spiral-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 mechanics:</div>
       </div>
-
       <div class="spiral-columns">
         <div class="spiral-col spiral-col-prev">
           <div class="spiral-col-header">
@@ -776,10 +1019,9 @@
           <ul class="spiral-list">
             <li><strong>Speed was just a formula:</strong> You calculated speed as \(\text{Speed} = \frac{\text{Distance}}{\text{Time}}\) to measure how fast something moved.</li>
             <li><strong>Movement was an odometer count:</strong> Any step forward, backward, or in loops simply added to the total distance covered. Direction was not tracked.</li>
-            <li><strong>Unit conversions were two steps:</strong> You converted kilometers to meters by multiplying by 1,000, and hours to seconds by dividing by 3,600 separately.</li>
+            <li><strong>Everything was one-dimensional:</strong> Speeds were typically compared in identical units without needing dimensional cancellation proofs.</li>
           </ul>
         </div>
-
         <div class="spiral-col spiral-col-curr">
           <div class="spiral-col-header">
             <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
@@ -1117,12 +1359,143 @@
 
     </div>
 
-    <!-- 8. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
+    <!-- 8. THE COMMON-SENSE STRATEGY: RULING OUT THE IMPOSSIBLE -->
+    <section class="cs-strategy-section" id="commonsense">
+      <div class="cs-header">
+        <div class="cs-title-group">
+          <div class="cs-kicker">Competitive & Board Heuristic • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
+        </div>
+        <span class="cs-badge">Elimination Drill</span>
+      </div>
+
+      <div class="cs-intro">
+        <strong>"Common sense is the law."</strong> In physics and mathematics, equations are not abstract strings of numbers—they describe physical reality. Top problem solvers don't blindly grind algebra right away; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
+      </div>
+
+      <!-- THE 3 HEURISTIC PILLARS -->
+      <div class="cs-heuristics-grid">
+        <div class="cs-heuristic-card">
+          <span class="cs-heuristic-num">Heuristic 01</span>
+          <span class="cs-heuristic-title">The Reality & Scale Check</span>
+          <p class="cs-heuristic-text">Does the magnitude make physical sense? A suburban local train cannot move near Mach 1 (speed of sound); a running human cannot hit \(150\text{ km/h}\); elapsed time and scalar speed can never be negative or zero for moving bodies.</p>
+        </div>
+        <div class="cs-heuristic-card">
+          <span class="cs-heuristic-num">Heuristic 02</span>
+          <span class="cs-heuristic-title">The Boundary Bracket Rule</span>
+          <p class="cs-heuristic-text">Average speed must always lie strictly between the slowest and fastest speeds (\(v_{\min} < v_{\text{avg}} < v_{\max}\)). Any option higher than the peak speed or lower than the minimum speed is an immediate physical impossibility.</p>
+        </div>
+        <div class="cs-heuristic-card">
+          <span class="cs-heuristic-num">Heuristic 03</span>
+          <span class="cs-heuristic-title">The Time-Weighting Asymmetry</span>
+          <p class="cs-heuristic-text">Because \(t = \frac{s}{v}\), covering equal distances at different speeds means spending <em>more time</em> at the slower speed. Therefore, the average speed is always pulled below the simple midpoint (\(\frac{v_1+v_2}{2}\)).</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE ELIMINATION DRILL -->
+      <div class="cs-drill-box">
+        <div class="drill-header-row">
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
+          <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
+        </div>
+        <div class="drill-question">
+          <strong>Exam Problem (Refer to Problem 1.1):</strong> A car travels from City A to City B at \(60\text{ km/h}\), and returns along the exact same road from City B to City A at \(40\text{ km/h}\). What is the average speed of the car for the entire round trip?
+        </div>
+
+        <div class="cs-options-list">
+          <!-- OPTION A -->
+          <div class="cs-option-item" id="opt-a" onclick="toggleOptionFilter('a')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">A</span>
+                <span class="cs-option-value">\(0\text{ km/h}\)</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
+            </div>
+            <div class="cs-option-detail" id="detail-a" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Definition Slip (Displacement vs Distance)</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense eliminates this:</strong> Because the car returned to City A, its net <em>displacement</em> is indeed zero (\(\vec{s} = 0\)). But average <em>speed</em> is \(\frac{\text{Total Distance}}{\text{Total Time}}\). The car burned petrol and traveled 240 real kilometers—speed can NEVER be zero for an object that moved! (Only average <em>velocity</em> is zero).
+              </div>
+            </div>
+          </div>
+
+          <!-- OPTION B -->
+          <div class="cs-option-item" id="opt-b" onclick="toggleOptionFilter('b')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">B</span>
+                <span class="cs-option-value">\(75\text{ km/h}\)</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
+            </div>
+            <div class="cs-option-detail" id="detail-b" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Boundary Bracket Violation</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense eliminates this:</strong> The car's maximum speed during any part of the journey was \(60\text{ km/h}\). How could the overall average speed possibly be \(75\text{ km/h}\)? An average can never exceed the highest speed recorded (\(v_{\text{avg}} \le v_{\max}\)). Disqualified immediately!
+              </div>
+            </div>
+          </div>
+
+          <!-- OPTION C -->
+          <div class="cs-option-item" id="opt-c" onclick="toggleOptionFilter('c')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">C</span>
+                <span class="cs-option-value">\(50\text{ km/h}\)</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
+            </div>
+            <div class="cs-option-detail" id="detail-c" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">The Arithmetic Midpoint Trap</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense eliminates this:</strong> \(50\text{ km/h}\) is the simple arithmetic mean \(\frac{60 + 40}{2}\). But the car spent 3 full hours traveling at the slower speed of \(40\text{ km/h}\) (\(\frac{120}{40} = 3\text{ h}\)) and only 2 hours at \(60\text{ km/h}\) (\(\frac{120}{60} = 2\text{ h}\)). Because more journey time was spent at the slower speed, the average speed <em>must be pulled below 50 km/h</em>!
+              </div>
+            </div>
+          </div>
+
+          <!-- OPTION D -->
+          <div class="cs-option-item" id="opt-d" onclick="toggleOptionFilter('d')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">D</span>
+                <span class="cs-option-value">\(48\text{ km/h}\)</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
+            </div>
+            <div class="cs-option-detail" id="detail-d" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Physical & Mathematical Confirmation</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense picks this without calculating:</strong> It is the ONLY option that lies strictly inside the bracket \((40, 60)\) and is correctly weighted below the \(50\text{ km/h}\) midpoint!<br><br>
+                <strong>The 10-Second Mathematical Proof:</strong><br>
+                • Total distance = \(120\text{ km} + 120\text{ km} = 240\text{ km}\).<br>
+                • Total time = \(2.0\text{ h} + 3.0\text{ h} = 5.0\text{ h}\).<br>
+                • Average speed = \(\frac{240\text{ km}}{5.0\text{ h}} = \mathbf{48\text{ km/h}}\). You ruled out 3 options in seconds without writing a single algebraic equation!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
@@ -1257,6 +1630,25 @@
       const el = document.getElementById(id);
       if (!el) return;
       el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+    }
+
+    function toggleOptionFilter(optKey) {
+      const item = document.getElementById('opt-' + optKey);
+      const detail = document.getElementById('detail-' + optKey);
+      if (!item || !detail) return;
+
+      const isCurrentlyOpen = (detail.style.display === 'block');
+      if (isCurrentlyOpen) {
+        detail.style.display = 'none';
+        item.classList.remove('state-eliminated', 'state-survivor');
+      } else {
+        detail.style.display = 'block';
+        if (optKey === 'd') {
+          item.classList.add('state-survivor');
+        } else {
+          item.classList.add('state-eliminated');
+        }
+      }
     }
 
     function auditLine(lineIndex) {
