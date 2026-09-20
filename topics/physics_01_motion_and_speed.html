@@ -1,9 +1,9 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Physics 01: Motion, Distance, Displacement & Speed ‚Ä¢ ICSE Class 7</title>
+  <title>Physics 01: Motion, Distance, Displacement & Speed ï ICSE Class 7</title>
   
     <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,963 +16,20 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-  <style>
-    
-    :root {
-      --bg-warm: #fbfaf7;
-      --bg-surface: #f4efe6;
-      --border-subtle: #e6dfd3;
-      --border-strong: #d3c7b4;
-      --ink-black: #161514;
-      --ink-secondary: #423d38;
-      --ink-muted: #797166;
-      --terracotta: #c2410c;
-      --terracotta-soft: #fbf0ea;
-      --emerald-accent: #15803d;
-      --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
-    }
-
-    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
-    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
-    .katex-display {
-      overflow-x: auto;
-      overflow-y: hidden;
-      max-width: 100%;
-      padding: 6px 0;
-      -webkit-overflow-scrolling: touch;
-    }
-
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    html, body {
-      overflow-x: hidden;
-      width: 100%;
-    }
-    .katex-display {
-      overflow-x: auto;
-      overflow-y: hidden;
-      max-width: 100%;
-      padding: 6px 0;
-      -webkit-overflow-scrolling: touch;
-    }
-    .katex-display::-webkit-scrollbar {
-      height: 4px;
-    }
-    .katex-display::-webkit-scrollbar-thumb {
-      background: var(--border-strong, #d3c7b4);
-      border-radius: 2px;
-    }
-
-    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; font-size: 16.5px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    p { font-size: 16.5px; line-height: 1.7; color: var(--ink-secondary); }
-    
-    .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
-    .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
-    .brand-title em { font-style: normal; font-weight: inherit; color: inherit; }
-    .nav-back { font-size: 13.5px; color: var(--ink-muted); text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
-    .nav-back:hover { color: var(--terracotta); border-color: var(--terracotta); }
-
-    .article-header {
-      padding: 64px 64px 32px 64px;
-      width: 100%;
-      margin: 0;
-      display: grid;
-      grid-template-columns: 1fr 120px;
-      gap: 16px;
-    }
-    .article-header > * { grid-column: 1; }
-    .article-header::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
-
-    .topic-kicker { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 12px; }
-    .topic-title { font-family: var(--font-serif); font-size: 42px; font-weight: 700; line-height: 1.15; color: var(--ink-black); letter-spacing: -0.02em; }
-    .topic-subtext { font-size: 16.5px; color: var(--ink-secondary); margin-top: 14px; line-height: 1.6; }
-
-    .article-body {
-      margin: 0;
-      padding: 16px 64px 96px 64px;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 120px;
-      grid-auto-flow: dense;
-      gap: 48px;
-    }
-    .article-body > * { grid-column: 1; }
-    .article-body::after { content: ''; grid-column: 2; grid-row: 1 / -1; }
-    @media (max-width: 768px) {
-      .masthead { padding-left: 24px; padding-right: 24px; }
-      .article-header { padding: 36px 24px 24px 24px; grid-template-columns: 1fr; }
-      .article-header::after { display: none; }
-      .article-body { padding: 12px 24px 64px 24px; grid-template-columns: 1fr; }
-      .article-body::after { display: none; }
-      .topic-title { font-size: 32px; }
-      .topic-nav { padding: 24px 24px 12px; }
-    }
-    @media (min-width: 769px) and (max-width: 1024px) {
-      .article-header { padding: 48px 40px 28px 40px; }
-      .article-body { padding: 12px 40px 80px 40px; }
-      .topic-nav { padding: 28px 40px 12px; }
-    }
-
-    .section-block { display: flex; flex-direction: column; gap: 18px; }
-    .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
-
-    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 16px; color: var(--ink-secondary); line-height: 1.7; }
-    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
-
-    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: block; font-size: 16px; line-height: 1.7; color: var(--ink-secondary); }
-    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 8px; }
-    .concept-callout p { margin: 0; font-size: 16px; line-height: 1.7; color: var(--ink-secondary); }
-
-    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 15.5px; line-height: 1.6; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
-    .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
-    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16.5px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); padding: 14px 18px; }
-
-    .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
-    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
-    .derivation-step { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
-
-    .diagram-figure { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; text-align: center; margin: 12px 0; }
-    .diagram-img { max-width: 100%; height: auto; border-radius: 4px; display: inline-block; }
-    .diagram-caption { font-size: 13px; color: var(--ink-muted); margin-top: 10px; font-style: italic; }
-
-    .problem-box { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
-    .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
-    .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
-    .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
-    .problem-statement { font-size: 16px; color: var(--ink-black); line-height: 1.65; font-weight: 500; }
-    
-    .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
-    .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
-    
-    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 6px 6px 0; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
-
-    .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
-    .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
-    .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
-    .reasoning-question { font-size: 15.5px; color: var(--ink-black); font-weight: 500; line-height: 1.6; }
-    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
-
-    .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 24px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
   
-    /* TOPIC NAVIGATION */
-    .topic-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 64px 12px;
-      border-top: 1px solid var(--border-subtle);
-      margin-top: 32px;
-    }
-    .topic-nav-link {
-      font-family: var(--font-sans);
-      font-size: 12.5px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: var(--ink-muted);
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    .topic-nav-link:hover { color: var(--ink-secondary); }
-    .topic-nav-link--hidden { visibility: hidden; }
-  
-    /* ==========================================================================
-       DESK MARGIN AESTHETICS & HEADS-UP CALLOUT ENRICHMENT
-       ========================================================================== */
-    .headsup-box {
-      background: var(--emerald-soft, #f0f7f2);
-      border: 1px solid #bbf7d0;
-      border-left: 4px solid var(--emerald-accent, #15803d);
-      border-radius: 0 8px 8px 0;
-      padding: 20px 24px;
-      font-size: 14.5px;
-      color: #166534;
-      line-height: 1.65;
-      margin: 12px 0 20px;
-    }
-    .headsup-title {
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      display: block;
-      margin-bottom: 6px;
-      color: var(--emerald-accent, #15803d);
-    }
-    .headsup-box p {
-      color: #166534;
-      font-size: 14.5px;
-      line-height: 1.65;
-    }
-    .headsup-box strong {
-      color: #14532d;
-    }
-
-    .margin-sketch {
-      grid-column: 2;
-      grid-row: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
-      margin-top: 6px;
-    }
-    .margin-sketch svg {
-      width: 100%;
-      max-width: 100px;
-      height: auto;
-      filter: drop-shadow(0 2px 6px rgba(22, 21, 20, 0.04));
-    }
-    .desk-note {
-      grid-column: 2;
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 12.5px;
-      line-height: 1.45;
-      color: var(--ink-muted);
-      border-left: 1.5px solid var(--border-subtle);
-      padding-left: 10px;
-      margin-top: 4px;
-      width: 100%;
-    }
-    .desk-note strong {
-      font-style: normal;
-      font-weight: 600;
-      color: var(--ink-secondary);
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 3px;
-    }
-
-    .article-body > .margin-sketch,
-    .article-body > .desk-note {
-      grid-column: 2;
-      grid-row: 1;
-    }
-    @media (max-width: 768px) {
-      .article-body > .margin-sketch,
-      .article-body > .desk-note {
-        grid-column: 1 !important;
-        grid-row: auto !important;
-        margin: 16px 0;
-      }
-    }
-
-  
-    @media (max-width: 480px) {
-      .masthead { padding: 14px 12px; flex-wrap: wrap; gap: 8px; }
-      .brand-title { font-size: 16px; }
-      .nav-back { font-size: 12px; }
-      .article-header { padding: 20px 12px 16px 12px; }
-      .topic-kicker { font-size: 11px; }
-      .topic-title { font-size: 22px !important; line-height: 1.25; word-break: break-word; }
-      .topic-subtext { font-size: 13.5px; }
-      .article-body { padding: 8px 12px 48px 12px; }
-      .section-heading { font-size: 20px; }
-      .definition-box, .concept-callout, .problem-box, .derivation-card { padding: 14px 12px; }
-      .topic-nav { padding: 16px 12px 12px; flex-direction: column; gap: 10px; align-items: flex-start; }
-      .editorial-footer { padding: 20px 12px; flex-direction: column; gap: 8px; text-align: center; }
-      .distinction-table { display: block; overflow-x: auto; }
-    }
-
-  
-    /* LEARNING GOALS CARD */
-    .learning-goals-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      padding: 24px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 8px;
-    }
-    .learning-goals-header {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 10px;
-    }
-    .learning-goals-badge {
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #ffffff;
-      background: var(--terracotta);
-      padding: 3px 10px;
-      border-radius: 4px;
-      font-family: var(--font-body);
-    }
-    .learning-goals-sub {
-      font-family: var(--font-serif);
-      font-size: 15px;
-      font-style: italic;
-      color: var(--ink-secondary);
-    }
-    .learning-goals-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin: 0;
-      padding: 0;
-    }
-    .learning-goals-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 15.5px;
-      color: var(--ink-secondary);
-      line-height: 1.65;
-    }
-    .goal-bullet {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: #e0f2fe;
-      color: #0369a1;
-      font-size: 13px;
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    /* THE GRADE 6 BRIDGE */
-    .grade6-bridge-card {
-      background: #ffffff;
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      padding: 26px 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 8px rgba(22, 21, 20, 0.03);
-    }
-    .grade6-bridge-header {
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 12px;
-    }
-    .grade6-bridge-kicker {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 4px;
-    }
-    .grade6-bridge-title {
-      font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--ink-black);
-      letter-spacing: -0.01em;
-      margin-bottom: 4px;
-    }
-    .grade6-bridge-intro {
-      font-size: 15px;
-      color: var(--ink-muted);
-      line-height: 1.55;
-    }
-    .spiral-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .spiral-col {
-      background: var(--bg-surface);
-      border-radius: 8px;
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      border: 1px solid var(--border-subtle);
-    }
-    .spiral-col-header {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 8px;
-    }
-    .spiral-badge {
-      display: inline-block;
-      align-self: flex-start;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-    .badge-prev {
-      background: #f4efe6;
-      color: #635b50;
-      border: 1px solid #dcd3c4;
-    }
-    .badge-curr {
-      background: #fbf0ea;
-      color: var(--terracotta);
-      border: 1px solid #fed7aa;
-    }
-    .spiral-model-summary {
-      font-family: var(--font-serif);
-      font-size: 13px;
-      font-style: italic;
-      color: var(--ink-secondary);
-    }
-    .spiral-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .spiral-list li {
-      font-size: 15px;
-      color: var(--ink-secondary);
-      line-height: 1.65;
-      position: relative;
-      padding-left: 16px;
-    }
-    .spiral-list li::before {
-      content: '‚Ä¢';
-      position: absolute;
-      left: 0;
-      color: var(--ink-muted);
-      font-size: 15px;
-      line-height: 1;
-    }
-    .spiral-col-curr .spiral-list li::before {
-      color: var(--terracotta);
-    }
-
-    /* 8. THE COMMON-SENSE STRATEGY SECTION */
-    .cs-strategy-section {
-      background: #ffffff;
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      padding: 28px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      box-shadow: 0 2px 8px rgba(22, 21, 20, 0.03);
-    }
-    .cs-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 14px;
-    }
-    .cs-kicker {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 4px;
-    }
-    .cs-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--ink-black);
-      letter-spacing: -0.01em;
-    }
-    .cs-badge {
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #7c2d12;
-      background: #ffedd5;
-      padding: 4px 10px;
-      border-radius: 4px;
-      border: 1px solid #fed7aa;
-      white-space: nowrap;
-    }
-    .cs-intro {
-      font-size: 15.5px;
-      color: var(--ink-secondary);
-      line-height: 1.65;
-    }
-
-    /* THE 3 CHECK CARDS */
-    .cs-checks-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 4px 0 8px 0;
-    }
-    .cs-check-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 16px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .cs-check-num {
-      font-family: var(--font-serif);
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--terracotta);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .cs-check-title {
-      font-family: var(--font-serif);
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--ink-black);
-    }
-    .cs-check-text {
-      font-size: 14.5px;
-      color: var(--ink-secondary);
-      line-height: 1.6;
-    }
-
-    /* DRILL BOX */
-    .cs-drill-box {
-      background: #faf8f5;
-      border: 1px solid #d8cfbe;
-      border-radius: 8px;
-      padding: 22px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .drill-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px dashed #d8cfbe;
-      padding-bottom: 10px;
-    }
-    .drill-header-title {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-black);
-    }
-    .drill-header-hint {
-      font-family: var(--font-serif);
-      font-size: 12.5px;
-      font-style: italic;
-      color: var(--ink-muted);
-    }
-    .drill-question {
-      font-size: 16px;
-      color: var(--ink-black);
-      line-height: 1.65;
-      background: #ffffff;
-      padding: 14px 18px;
-      border-radius: 6px;
-      border: 1px solid var(--border-subtle);
-    }
-
-    /* OPTION CARDS */
-    .cs-options-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .cs-option-item {
-      background: #ffffff;
-      border: 1.5px solid var(--border-subtle);
-      border-radius: 8px;
-      padding: 14px 18px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .cs-option-item:hover {
-      border-color: #94a3b8;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-    }
-    .cs-option-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .cs-option-label-group {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .cs-option-letter {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-strong);
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--ink-black);
-      flex-shrink: 0;
-    }
-    .cs-option-value {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--ink-black);
-    }
-    .cs-option-hint {
-      font-size: 13.5px;
-      color: var(--ink-muted);
-    }
-
-    /* ELIMINATED STATE */
-    .cs-option-item.state-eliminated {
-      background: #fef2f2;
-      border-color: #fca5a5;
-    }
-    .cs-option-item.state-eliminated .cs-option-value {
-      text-decoration: line-through;
-      color: #991b1b;
-    }
-    .cs-option-item.state-eliminated .cs-option-letter {
-      background: #fee2e2;
-      border-color: #f87171;
-      color: #b91c1c;
-    }
-
-    /* SURVIVOR STATE */
-    .cs-option-item.state-survivor {
-      background: #f0fdf4;
-      border-color: #86efac;
-      box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
-    }
-    .cs-option-item.state-survivor .cs-option-value {
-      color: #15803d;
-      font-weight: 700;
-    }
-    .cs-option-item.state-survivor .cs-option-letter {
-      background: #dcfce7;
-      border-color: #4ade80;
-      color: #15803d;
-    }
-
-    /* FEEDBACK CARD INSIDE OPTION */
-    .cs-option-detail {
-      border-top: 1px solid rgba(0,0,0,0.06);
-      padding-top: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-size: 15px;
-      line-height: 1.65;
-    }
-    .cs-detail-badge-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .cs-status-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-    .tag-ruled-out {
-      background: #fee2e2;
-      color: #b91c1c;
-      border: 1px solid #fca5a5;
-    }
-    .tag-sound {
-      background: #dcfce7;
-      color: #15803d;
-      border: 1px solid #86efac;
-    }
-    .cs-detail-title {
-      font-weight: 700;
-      color: var(--ink-black);
-    }
-    .cs-detail-text {
-      font-size: 15px;
-      color: var(--ink-secondary);
-      line-height: 1.6;
-    }
-
-    /* 9. THE BUG HUNT (THE EXAMINER'S RED PEN) */
-    .bughunt-section {
-      background: #ffffff;
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
-      padding: 28px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      box-shadow: 0 2px 8px rgba(22, 21, 20, 0.03);
-    }
-    .bughunt-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 14px;
-    }
-    .bughunt-kicker {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 4px;
-    }
-    .bughunt-title {
-      font-family: var(--font-serif);
-      font-size: 24px;
-      font-weight: 600;
-      color: var(--ink-black);
-      letter-spacing: -0.01em;
-    }
-    .bughunt-badge {
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #991b1b;
-      background: #fee2e2;
-      padding: 4px 10px;
-      border-radius: 4px;
-      border: 1px solid #fca5a5;
-      white-space: nowrap;
-    }
-    .bughunt-context {
-      font-size: 15.5px;
-      color: var(--ink-secondary);
-      line-height: 1.65;
-    }
-    .bughunt-prompt-box {
-      background: var(--bg-surface);
-      border-left: 3px solid var(--ink-black);
-      padding: 12px 16px;
-      border-radius: 0 6px 6px 0;
-      font-size: 15px;
-      color: var(--ink-black);
-      line-height: 1.6;
-      margin: 8px 0;
-    }
-
-    /* NOTEBOOK DESK LINED PAPER STYLING */
-    .notebook-sheet {
-      background: #faf8f5;
-      background-image: repeating-linear-gradient(transparent, transparent 31px, #ebe3d5 31px, #ebe3d5 32px);
-      border: 1px solid #d8cfbe;
-      border-left: 4px solid #ef4444;
-      border-radius: 6px;
-      padding: 22px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
-    }
-    .notebook-meta {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--font-serif);
-      font-size: 12.5px;
-      font-style: italic;
-      color: var(--ink-muted);
-      border-bottom: 1px dashed #d8cfbe;
-      padding-bottom: 8px;
-    }
-    .notebook-lines {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .notebook-line-item {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1.5px solid transparent;
-      border-radius: 6px;
-      padding: 12px 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      position: relative;
-    }
-    .notebook-line-item:hover {
-      background: #ffffff;
-      border-color: #cbd5e1;
-      transform: translateX(4px);
-    }
-    .notebook-line-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .line-step-tag {
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #64748b;
-    }
-    .line-action-hint {
-      font-family: var(--font-serif);
-      font-size: 12px;
-      font-style: italic;
-      color: var(--ink-muted);
-    }
-    .line-content {
-      font-size: 16px;
-      color: var(--ink-black);
-    }
-
-    /* LINE ACTIVE STATES */
-    .notebook-line-item.state-sound {
-      background: #f0fdf4;
-      border-color: #86efac;
-    }
-    .notebook-line-item.state-sound .line-step-tag { color: #16a34a; }
-
-    .notebook-line-item.state-blunder {
-      background: #fef2f2;
-      border-color: #fca5a5;
-    }
-    .notebook-line-item.state-blunder .line-step-tag { color: #dc2626; }
-
-    .notebook-line-item.state-ecf {
-      background: #fffbeb;
-      border-color: #fcd34d;
-    }
-    .notebook-line-item.state-ecf .line-step-tag { color: #d97706; }
-
-    /* PRE-RENDERED EXAMINER FEEDBACK CARDS */
-    .examiner-feedback-card {
-      border-radius: 6px;
-      padding: 16px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      animation: fadeIn 0.25s ease-out;
-      font-size: 15px;
-      line-height: 1.65;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .feedback-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .feedback-status-pill {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 2px 8px;
-      border-radius: 4px;
-    .feedback-marks-badge {
-      font-family: var(--font-serif);
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .feedback-body {
-      font-size: 13.5px;
-      line-height: 1.55;
-    }
-    .feedback-note-title {
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .card-sound {
-      background: #f0fdf4;
-      border: 1px solid #86efac;
-      color: #166534;
-    }
-    .card-sound .feedback-status-pill {
-      background: #dcfce7;
-      color: #15803d;
-      border: 1px solid #bbf7d0;
-    }
-    .card-sound .feedback-marks-badge { color: #16a34a; }
-
-    .card-blunder {
-      background: #fef2f2;
-      border: 1px solid #fca5a5;
-      color: #991b1b;
-    }
-    .card-blunder .feedback-status-pill {
-      background: #fee2e2;
-      color: #b91c1c;
-      border: 1px solid #fca5a5;
-    }
-    .card-blunder .feedback-marks-badge { color: #dc2626; }
-
-    .card-ecf {
-      background: #fffbeb;
-      border: 1px solid #fcd34d;
-      color: #92400e;
-    }
-    .card-ecf .feedback-status-pill {
-      background: #fef3c7;
-      color: #b45309;
-      border: 1px solid #fde68a;
-    }
-    .card-ecf .feedback-marks-badge { color: #d97706; }
-
-    /* MODEL CORRECTED SOLUTION DRAWER */
-    .model-solution-wrap {
-      margin-top: 6px;
-    }
-
-    @media (max-width: 768px) {
-      .spiral-columns { grid-template-columns: 1fr; gap: 16px; }
-      .cs-checks-grid { grid-template-columns: 1fr; gap: 12px; }
-      .cs-strategy-section, .bughunt-section, .grade6-bridge-card, .learning-goals-card { padding: 20px 16px; }
-      .notebook-sheet, .cs-drill-box { padding: 16px 14px; }
-    }
-
-    @media (max-width: 480px) {
-      .grade6-bridge-title, .cs-title, .bughunt-title { font-size: 19px; }
-      .learning-goals-header, .cs-header, .bughunt-header { flex-direction: column; gap: 6px; }
-      .feedback-card-header { flex-direction: column; align-items: flex-start; gap: 6px; }
-    }
-
-  </style>
+  <script defer src="../js/examReasoningEngine.js"></script>
 </head>
 <body>
 
   <!-- MASTHEAD -->
   <header class="masthead">
     <a href="../index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
-    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">‚Üê Back to Topics Repository</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">? Back to Topics Repository</a>
   </header>
 
   <!-- HEADER -->
   <section class="article-header">
-    <div class="topic-kicker">Physics ‚Ä¢ Topic 01</div>
+    <div class="topic-kicker">Physics ï Topic 01</div>
     <h1 class="topic-title">Motion, Distance, Displacement & Speed</h1>
     <p class="topic-subtext">
       The relative nature of rest and motion, translatory particle mechanics (rectilinear vs curvilinear), rotatory and periodic systems, scalar distance vs vector displacement, uniform vs non-uniform speed, and algebraic conversion proofs.
@@ -990,19 +47,19 @@
       </div>
       <ul class="learning-goals-list">
         <li>
-          <span class="goal-bullet">‚úì</span>
+          <span class="goal-bullet">?</span>
           <div><strong>Distinguish Distance from Displacement:</strong> Prove mathematically why completing a full 400-meter loop on a running track leaves your net displacement at zero, despite your odometer reading 400 meters.</div>
         </li>
         <li>
-          <span class="goal-bullet">‚úì</span>
+          <span class="goal-bullet">?</span>
           <div><strong>Derive the 5/18 Conversion Factor:</strong> Convert speeds smoothly between \(\text{km/h}\) and \(\text{m/s}\) using dimensional analysis without guessing or trial-and-error.</div>
         </li>
         <li>
-          <span class="goal-bullet">‚úì</span>
+          <span class="goal-bullet">?</span>
           <div><strong>Compute Multi-Segment Average Speed:</strong> Calculate average speed using \(\frac{\text{Total Distance}}{\text{Total Time}}\) and avoid the common arithmetic average trap (\(\frac{v_1 + v_2}{2}\)).</div>
         </li>
         <li>
-          <span class="goal-bullet">‚úì</span>
+          <span class="goal-bullet">?</span>
           <div><strong>Apply the Common-Sense Strategy:</strong> Rule out physically impossible, boundary-violating, or midpoint-trap options in under 5 seconds before calculating.</div>
         </li>
       </ul>
@@ -1050,12 +107,12 @@
         <span class="definition-term">Rest & Motion Postulate:</span>
         A body is said to be at <strong>rest</strong> if it does not change its position with respect to a fixed reference point (surroundings) with time. A body is in <strong>motion</strong> if its position continuously changes with respect to its surroundings.
         <br><br>
-        ‚Ä¢ <em>Crucial Examiner Insight:</em> <strong>Rest and motion are purely relative terms.</strong> Absolute rest or absolute motion does not exist in the physical universe. A passenger seated inside a moving railway carriage is at rest relative to co-passengers and the carriage walls, yet in rapid motion relative to trees, telephone poles, and platforms outside.
+        ï <em>Crucial Examiner Insight:</em> <strong>Rest and motion are purely relative terms.</strong> Absolute rest or absolute motion does not exist in the physical universe. A passenger seated inside a moving railway carriage is at rest relative to co-passengers and the carriage walls, yet in rapid motion relative to trees, telephone poles, and platforms outside.
       </div>
 
       <div class="concept-callout">
         <div class="concept-callout-title">The Role of the Reference Frame (Origin of Coordinates)</div>
-        <p>To state whether an object is moving, an observer must establish a <strong>Reference Frame</strong> ‚Äî a stationary reference point (often designated the origin \(O\)) against which position vectors are measured. Without defining a reference point, describing motion is mathematically and physically meaningless.</p>
+        <p>To state whether an object is moving, an observer must establish a <strong>Reference Frame</strong> ó a stationary reference point (often designated the origin \(O\)) against which position vectors are measured. Without defining a reference point, describing motion is mathematically and physically meaningless.</p>
       </div>
     </div>
 
@@ -1104,14 +161,14 @@
           <tr>
             <td><strong>Real-World Examples</strong></td>
             <td>
-              ‚Ä¢ A coin sliding freely on a smooth horizontal carrom board.<br>
-              ‚Ä¢ A stone dropped vertically from a height under gravity.<br>
-              ‚Ä¢ A locomotive running on a straight, unbanked railway track.
+              ï A coin sliding freely on a smooth horizontal carrom board.<br>
+              ï A stone dropped vertically from a height under gravity.<br>
+              ï A locomotive running on a straight, unbanked railway track.
             </td>
             <td>
-              ‚Ä¢ A car navigating a curved road bend without spinning on its axis.<br>
-              ‚Ä¢ A stone thrown horizontally from a cliff tracing a parabolic trajectory.<br>
-              ‚Ä¢ A child sliding down a smooth curved park slide.
+              ï A car navigating a curved road bend without spinning on its axis.<br>
+              ï A stone thrown horizontally from a cliff tracing a parabolic trajectory.<br>
+              ï A child sliding down a smooth curved park slide.
             </td>
           </tr>
         </tbody>
@@ -1142,32 +199,32 @@
           <tr>
             <td><strong>1. Rotatory Motion</strong></td>
             <td>A body pivots around a fixed stationary axis passing through it. Different points describe concentric circular paths of varying radii.</td>
-            <td>‚Ä¢ Blades of a ceiling fan rotating about its central spindle.<br>‚Ä¢ Earth spinning about its geographic polar axis (\(24\text{ hours}\)).<br>‚Ä¢ The wheel of a stationary sewing machine.</td>
+            <td>ï Blades of a ceiling fan rotating about its central spindle.<br>ï Earth spinning about its geographic polar axis (\(24\text{ hours}\)).<br>ï The wheel of a stationary sewing machine.</td>
           </tr>
           <tr>
             <td><strong>2. Circular Motion</strong></td>
             <td>An entire body (treated as a point mass) revolves along the circumference of a circular path around an external centre.</td>
-            <td>‚Ä¢ Motion of the Earth revolving around the Sun.<br>‚Ä¢ A stone tied to a string whirled horizontally in a circle.</td>
+            <td>ï Motion of the Earth revolving around the Sun.<br>ï A stone tied to a string whirled horizontally in a circle.</td>
           </tr>
           <tr>
             <td><strong>3. Oscillatory / Vibratory Motion</strong></td>
             <td>A body moves repeatedly to-and-fro (back-and-forth) about a fixed central mean equilibrium position at regular intervals.</td>
-            <td>‚Ä¢ The swinging bob of a simple pendulum.<br>‚Ä¢ Motion of a child on a playground swing.<br>‚Ä¢ Vibrations of a struck tuning fork or plucked guitar string.</td>
+            <td>ï The swinging bob of a simple pendulum.<br>ï Motion of a child on a playground swing.<br>ï Vibrations of a struck tuning fork or plucked guitar string.</td>
           </tr>
           <tr>
             <td><strong>4. Periodic Motion</strong></td>
             <td>Any motion that repeats itself in exact, identical intervals of time (Time Period \(T\)).</td>
-            <td>‚Ä¢ Revolution of the Moon around the Earth (\(27.3\text{ days}\)).<br>‚Ä¢ Movement of the hands of a mechanical clock.</td>
+            <td>ï Revolution of the Moon around the Earth (\(27.3\text{ days}\)).<br>ï Movement of the hands of a mechanical clock.</td>
           </tr>
           <tr>
             <td><strong>5. Non-Periodic Motion</strong></td>
             <td>Motion that does not repeat at regular predictable time intervals.</td>
-            <td>‚Ä¢ Movement of an automobile in busy traffic.<br>‚Ä¢ Swaying of tree branches in fluctuating wind.</td>
+            <td>ï Movement of an automobile in busy traffic.<br>ï Swaying of tree branches in fluctuating wind.</td>
           </tr>
           <tr>
             <td><strong>6. Multiple / Combined Motion</strong></td>
             <td>A single body executing two or more distinct types of motion simultaneously.</td>
-            <td>‚Ä¢ <em>Rolling Bicycle Wheel:</em> Translatory (linear road progress) + Rotatory (spinning on axle).<br>‚Ä¢ <em>Earth:</em> Rotatory (spin) + Circular (orbital revolution).<br>‚Ä¢ <em>Drill Bit:</em> Rotatory (drilling) + Translatory (forward penetration).</td>
+            <td>ï <em>Rolling Bicycle Wheel:</em> Translatory (linear road progress) + Rotatory (spinning on axle).<br>ï <em>Earth:</em> Rotatory (spin) + Circular (orbital revolution).<br>ï <em>Drill Bit:</em> Rotatory (drilling) + Translatory (forward penetration).</td>
           </tr>
         </tbody>
       </table>
@@ -1235,9 +292,9 @@
         <span class="definition-term">Speed Definition & Formula:</span>
         The <strong>speed</strong> of a body is the rate of distance covered per unit time:
         $$\text{Speed } (v) = \frac{\text{Distance } (s)}{\text{Time } (t)}$$
-        ‚Ä¢ <em>Uniform Speed:</em> When a body covers equal distances in equal intervals of time, however small the intervals may be.<br>
-        ‚Ä¢ <em>Non-Uniform (Variable) Speed:</em> When a body covers unequal distances in equal intervals of time.<br>
-        ‚Ä¢ <em>Average Speed:</em>
+        ï <em>Uniform Speed:</em> When a body covers equal distances in equal intervals of time, however small the intervals may be.<br>
+        ï <em>Non-Uniform (Variable) Speed:</em> When a body covers unequal distances in equal intervals of time.<br>
+        ï <em>Average Speed:</em>
         $$v_{\text{avg}} = \frac{\text{Total Distance Covered } (S_{\text{total}})}{\text{Total Time Taken } (T_{\text{total}})}$$
       </div>
 
@@ -1250,8 +307,8 @@
           2. Taking the ratio of length over time:<br>
           &nbsp;&nbsp;&nbsp;&nbsp;$$1\text{ km/h} = \frac{1,000\text{ m}}{3,600\text{ s}} = \frac{10}{36}\text{ m/s} = \frac{\mathbf{5}}{\mathbf{18}}\text{ m/s} \approx 0.2778\text{ m/s}$$<br>
           3. <em>Conversion Rules:</em><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;‚Ä¢ To convert \(\text{km/h} \to \text{m/s}\): Multiply by \(\frac{5}{18}\).<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;‚Ä¢ To convert \(\text{m/s} \to \text{km/h}\): Multiply by \(\frac{18}{5} = 3.6\).
+          &nbsp;&nbsp;&nbsp;&nbsp;ï To convert \(\text{km/h} \to \text{m/s}\): Multiply by \(\frac{5}{18}\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;ï To convert \(\text{m/s} \to \text{km/h}\): Multiply by \(\frac{18}{5} = 3.6\).
         </div>
       </div>
     </div>
@@ -1268,7 +325,7 @@
         <div class="problem-statement">
           A car travels a distance of \(120\text{ km}\) from City A to City B at a uniform speed of \(60\text{ km/h}\), and returns from City B to City A over the identical route at a speed of \(40\text{ km/h}\). Calculate: (i) Total time taken, and (ii) Average speed of the entire journey.
         </div>
-        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ‚Üì</button>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num1')">Show Step-by-Step Solution ?</button>
         <div class="solution-drawer" id="sol_num1">
           <strong>Step-by-Step Logical Resolution:</strong><br><br>
           1. <em>Forward Journey (A to B):</em><br>
@@ -1291,15 +348,15 @@
         <div class="problem-statement">
           An athlete runs along a circular track of radius \(r = 14\text{ m}\). Calculate the distance covered and the magnitude of displacement when the athlete completes: (i) Half a revolution, (ii) One full revolution. <em>[Take \(\pi = \frac{22}{7}\)]</em>
         </div>
-        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ‚Üì</button>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num2')">Show Step-by-Step Solution ?</button>
         <div class="solution-drawer" id="sol_num2">
           <strong>Step-by-Step Logical Resolution:</strong><br><br>
           1. <em>Case (i): Half a Revolution (Diameter opposite):</em><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;‚Ä¢ Distance \(s = \pi r = \frac{22}{7} \times 14\text{ m} = \mathbf{44\text{ m}}\)<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;‚Ä¢ Displacement \(\vec{s} = \text{Diameter} = 2r = 2 \times 14\text{ m} = \mathbf{28\text{ m}}\) directed from initial to opposite point.<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;ï Distance \(s = \pi r = \frac{22}{7} \times 14\text{ m} = \mathbf{44\text{ m}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;ï Displacement \(\vec{s} = \text{Diameter} = 2r = 2 \times 14\text{ m} = \mathbf{28\text{ m}}\) directed from initial to opposite point.<br><br>
           2. <em>Case (ii): One Full Revolution (Initial = Final position):</em><br>
-          &nbsp;&nbsp;&nbsp;&nbsp;‚Ä¢ Distance \(s = 2\pi r = 2 \times \frac{22}{7} \times 14\text{ m} = \mathbf{88\text{ m}}\)<br>
-          &nbsp;&nbsp;&nbsp;&nbsp;‚Ä¢ Displacement \(\vec{s} = \mathbf{0\text{ m}}\) (since the initial and final position vectors are identical).
+          &nbsp;&nbsp;&nbsp;&nbsp;ï Distance \(s = 2\pi r = 2 \times \frac{22}{7} \times 14\text{ m} = \mathbf{88\text{ m}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;ï Displacement \(\vec{s} = \mathbf{0\text{ m}}\) (since the initial and final position vectors are identical).
         </div>
       </div>
 
@@ -1311,7 +368,7 @@
         <div class="problem-statement">
           A cheetah sprints at \(90\text{ km/h}\), while a carrier pigeon flies at \(24\text{ m/s}\). By rigorous metric conversion, determine which moves faster and compute the difference in speed in \(\text{m/s}\).
         </div>
-        <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">Show Step-by-Step Solution ‚Üì</button>
+        <button class="btn-toggle" onclick="toggleDrawer('sol_num3')">Show Step-by-Step Solution ?</button>
         <div class="solution-drawer" id="sol_num3">
           <strong>Step-by-Step Logical Resolution:</strong><br><br>
           1. <em>Convert Cheetah's Speed to SI units (\(\text{m/s}\)):</em><br>
@@ -1333,7 +390,7 @@
       <div class="reasoning-qa">
         <div class="reasoning-header">
           <span class="reasoning-title">Conceptual Deduction 1: Non-Zero Distance with Zero Displacement</span>
-          <button class="btn-toggle" onclick="toggleDrawer('reas_1')">View Deduction ‚Üì</button>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_1')">View Deduction ?</button>
         </div>
         <div class="reasoning-question">
           Can a physical body have traversed a non-zero distance while its net displacement remains exactly zero? Provide a rigorous mechanical example.
@@ -1349,7 +406,7 @@
       <div class="reasoning-qa">
         <div class="reasoning-header">
           <span class="reasoning-title">Conceptual Deduction 2: Straight-Line Curvilinear Particle Tracks</span>
-          <button class="btn-toggle" onclick="toggleDrawer('reas_2')">View Deduction ‚Üì</button>
+          <button class="btn-toggle" onclick="toggleDrawer('reas_2')">View Deduction ?</button>
         </div>
         <div class="reasoning-question">
           Why is the motion of a train rounding a horizontal curve classified as curvilinear translatory motion rather than rotatory motion?
@@ -1368,14 +425,14 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy ‚Ä¢ The 5-Second Filter</div>
+          <div class="cs-kicker">Exam Strategy ï The 5-Second Filter</div>
           <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In physics and mathematics, equations are not abstract strings of numbers‚Äîthey describe physical reality. Top problem solvers don't blindly grind algebra right away; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
+        <strong>"Common sense is the law."</strong> In physics and mathematics, equations are not abstract strings of numbersóthey describe physical reality. Top problem solvers don't blindly grind algebra right away; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
@@ -1400,7 +457,7 @@
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge ‚Ä¢ Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge ï Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
@@ -1415,15 +472,15 @@
                 <span class="cs-option-letter">A</span>
                 <span class="cs-option-value">\(0\text{ km/h}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense ‚ö°</span>
+              <span class="cs-option-hint">Click to test with common sense ?</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">‚ö° Ruled Out in 2 Seconds</span>
+                <span class="cs-status-tag tag-ruled-out">? Ruled Out in 2 Seconds</span>
                 <span class="cs-detail-title">Definition Slip (Displacement vs Distance)</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> Because the car returned to City A, its net <em>displacement</em> is indeed zero (\(\vec{s} = 0\)). But average <em>speed</em> is \(\frac{\text{Total Distance}}{\text{Total Time}}\). The car burned petrol and traveled 240 real kilometers‚Äîspeed can NEVER be zero for an object that moved! (Only average <em>velocity</em> is zero).
+                <strong>Why common sense eliminates this:</strong> Because the car returned to City A, its net <em>displacement</em> is indeed zero (\(\vec{s} = 0\)). But average <em>speed</em> is \(\frac{\text{Total Distance}}{\text{Total Time}}\). The car burned petrol and traveled 240 real kilometersóspeed can NEVER be zero for an object that moved! (Only average <em>velocity</em> is zero).
               </div>
             </div>
           </div>
@@ -1435,11 +492,11 @@
                 <span class="cs-option-letter">B</span>
                 <span class="cs-option-value">\(75\text{ km/h}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense ‚ö°</span>
+              <span class="cs-option-hint">Click to test with common sense ?</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">‚ö° Ruled Out in 2 Seconds</span>
+                <span class="cs-status-tag tag-ruled-out">? Ruled Out in 2 Seconds</span>
                 <span class="cs-detail-title">Boundary Bracket Violation</span>
               </div>
               <div class="cs-detail-text">
@@ -1455,11 +512,11 @@
                 <span class="cs-option-letter">C</span>
                 <span class="cs-option-value">\(50\text{ km/h}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense ‚ö°</span>
+              <span class="cs-option-hint">Click to test with common sense ?</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">‚ö° Ruled Out in 5 Seconds</span>
+                <span class="cs-status-tag tag-ruled-out">? Ruled Out in 5 Seconds</span>
                 <span class="cs-detail-title">The Arithmetic Midpoint Trap</span>
               </div>
               <div class="cs-detail-text">
@@ -1475,19 +532,19 @@
                 <span class="cs-option-letter">D</span>
                 <span class="cs-option-value">\(48\text{ km/h}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense ‚ö°</span>
+              <span class="cs-option-hint">Click to test with common sense ?</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">‚úì The Only Survivor!</span>
+                <span class="cs-status-tag tag-sound">? The Only Survivor!</span>
                 <span class="cs-detail-title">Physical & Mathematical Confirmation</span>
               </div>
               <div class="cs-detail-text">
                 <strong>Why common sense picks this without calculating:</strong> It is the ONLY option that lies strictly inside the bracket \((40, 60)\) and is correctly weighted below the \(50\text{ km/h}\) midpoint!<br><br>
                 <strong>The 10-Second Mathematical Proof:</strong><br>
-                ‚Ä¢ Total distance = \(120\text{ km} + 120\text{ km} = 240\text{ km}\).<br>
-                ‚Ä¢ Total time = \(2.0\text{ h} + 3.0\text{ h} = 5.0\text{ h}\).<br>
-                ‚Ä¢ Average speed = \(\frac{240\text{ km}}{5.0\text{ h}} = \mathbf{48\text{ km/h}}\). You ruled out 3 options in seconds without writing a single algebraic equation!
+                ï Total distance = \(120\text{ km} + 120\text{ km} = 240\text{ km}\).<br>
+                ï Total time = \(2.0\text{ h} + 3.0\text{ h} = 5.0\text{ h}\).<br>
+                ï Average speed = \(\frac{240\text{ km}}{5.0\text{ h}} = \mathbf{48\text{ km/h}}\). You ruled out 3 options in seconds without writing a single algebraic equation!
               </div>
             </div>
           </div>
@@ -1499,10 +556,10 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice ‚Ä¢ The Examiner's Red Pen</div>
+          <div class="bughunt-kicker">Diagnostic Practice ï The Examiner's Red Pen</div>
           <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit ‚Ä¢ 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit ï 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
@@ -1516,7 +573,7 @@
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta ‚Ä¢ Class 7-B</span>
+          <span>Student: Aarav Mehta ï Class 7-B</span>
           <span>Physics Assignment: Unit Conversions & Kinematics</span>
         </div>
 
@@ -1525,7 +582,7 @@
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
               <span class="line-step-tag">Step 1: Given Data & Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line üîç</span>
+              <span class="line-action-hint">Click to inspect line ??</span>
             </div>
             <div class="line-content">
               Given: \(v = 72\text{ km/h}\), \(t = 15\text{ s}\). Target: Distance \(s = v \times t\) with \(v\) in \(\text{m/s}\).
@@ -1536,7 +593,7 @@
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
               <span class="line-step-tag">Step 2: Speed Conversion to SI Units</span>
-              <span class="line-action-hint">Click to inspect line üîç</span>
+              <span class="line-action-hint">Click to inspect line ??</span>
             </div>
             <div class="line-content">
               $$v = 72 \times \frac{18}{5}\text{ m/s} = 259.2\text{ m/s}$$
@@ -1547,7 +604,7 @@
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
               <span class="line-step-tag">Step 3: Distance Calculation</span>
-              <span class="line-action-hint">Click to inspect line üîç</span>
+              <span class="line-action-hint">Click to inspect line ??</span>
             </div>
             <div class="line-content">
               $$\text{Distance } s = 259.2\text{ m/s} \times 15\text{ s} = \mathbf{3,888\text{ m}}$$
@@ -1558,7 +615,7 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS (NO JS STRING ESCAPING GLITCHES) -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">‚úì Sound Step</span>
+            <span class="feedback-status-pill">? Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
@@ -1569,20 +626,20 @@
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">‚úó Root Blunder Caught!</span>
+            <span class="feedback-status-pill">? Root Blunder Caught!</span>
             <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
             <div class="feedback-note-title">Examiner's Assessment: Inverted Unit Conversion Factor</div>
             <strong>The Trap:</strong> Aarav multiplied by \(\frac{18}{5}\) instead of \(\frac{5}{18}\).<br>
-            ‚Ä¢ To convert \(\text{km/h} \to \text{m/s}\), you must multiply by \(\frac{5}{18}\) because \(1\text{ km} = 1000\text{ m}\) and \(1\text{ h} = 3600\text{ s}\) (\(\frac{1000}{3600} = \frac{5}{18}\)).<br>
-            ‚Ä¢ Multiplying by \(\frac{18}{5}\) gave \(259.2\text{ m/s}\) ‚Äî that equals \(933\text{ km/h}\), nearly the speed of sound for a suburban local train! The correct speed is \(72 \times \frac{5}{18} = \mathbf{20\text{ m/s}}\).
+            ï To convert \(\text{km/h} \to \text{m/s}\), you must multiply by \(\frac{5}{18}\) because \(1\text{ km} = 1000\text{ m}\) and \(1\text{ h} = 3600\text{ s}\) (\(\frac{1000}{3600} = \frac{5}{18}\)).<br>
+            ï Multiplying by \(\frac{18}{5}\) gave \(259.2\text{ m/s}\) ó that equals \(933\text{ km/h}\), nearly the speed of sound for a suburban local train! The correct speed is \(72 \times \frac{5}{18} = \mathbf{20\text{ m/s}}\).
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">üü° Follow-Through (ECF Credit)</span>
+            <span class="feedback-status-pill">?? Follow-Through (ECF Credit)</span>
             <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
@@ -1595,7 +652,7 @@
 
       <!-- CORRECTED MODEL SOLUTION ACCORDION -->
       <div class="model-solution-wrap">
-        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ‚Üì</button>
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ?</button>
         <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
           <strong>Examiner's Corrected Model Answer:</strong><br><br>
           1. <em>Identify Given Parameters:</em><br>
@@ -1615,12 +672,12 @@
   <!-- TOPIC NAVIGATION -->
   <nav class="topic-nav">
     <a href="#" class="topic-nav-link topic-nav-prev topic-nav-link--hidden">&#8592; </a>
-    <a href="physics_02_energy_and_machines.html" class="topic-nav-link topic-nav-next">PHY-02 ¬∑ Energy, Mechanical Work &#8594;</a>
+    <a href="physics_02_energy_and_machines.html" class="topic-nav-link topic-nav-next">PHY-02 ∑ Energy, Mechanical Work &#8594;</a>
   </nav>
 
   <!-- FOOTER -->
   <footer class="editorial-footer">
-    <div>Physics ‚Ä¢ Topic 01: Motion, Distance, Displacement & Speed</div>
+    <div>Physics ï Topic 01: Motion, Distance, Displacement & Speed</div>
     <div>CISCE Class 7 Academic Reference</div>
   </footer>
 
@@ -1630,59 +687,11 @@
 
 
 
-  <script>
-    function toggleDrawer(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-
-    function toggleOptionFilter(optKey) {
-      const item = document.getElementById('opt-' + optKey);
-      const detail = document.getElementById('detail-' + optKey);
-      if (!item || !detail) return;
-
-      const isCurrentlyOpen = (detail.style.display === 'block');
-      if (isCurrentlyOpen) {
-        detail.style.display = 'none';
-        item.classList.remove('state-eliminated', 'state-survivor');
-      } else {
-        detail.style.display = 'block';
-        if (optKey === 'd') {
-          item.classList.add('state-survivor');
-        } else {
-          item.classList.add('state-eliminated');
-        }
-      }
-    }
-
-    function auditLine(lineIndex) {
-      const lines = document.querySelectorAll('.notebook-line-item');
-      lines.forEach(l => l.classList.remove('state-sound', 'state-blunder', 'state-ecf'));
-
-      [1, 2, 3].forEach(i => {
-        const fb = document.getElementById('feedback-' + i);
-        if (fb) fb.style.display = 'none';
-      });
-
-      if (lineIndex === 1) {
-        if (lines[0]) lines[0].classList.add('state-sound');
-        const fb = document.getElementById('feedback-1');
-        if (fb) fb.style.display = 'block';
-      } else if (lineIndex === 2) {
-        if (lines[1]) lines[1].classList.add('state-blunder');
-        const fb = document.getElementById('feedback-2');
-        if (fb) fb.style.display = 'block';
-      } else if (lineIndex === 3) {
-        if (lines[2]) lines[2].classList.add('state-ecf');
-        const fb = document.getElementById('feedback-3');
-        if (fb) fb.style.display = 'block';
-      }
-    }
-  </script>
+  
 </body>
 
 </html>
+
 
 
 
