@@ -75,6 +75,158 @@ body, p, li, span, input, button, select, textarea, .topic-snippet {
   max-width: 100%;
 }
 
+/* ==========================================================================
+   LEGIBILITY & ENLARGED TYPOGRAPHY SCALE (CLASS 7 READING COMFORT)
+   ========================================================================== */
+
+/* Article prose & base reading text */
+.article-body p,
+.article-body li {
+  font-size: 16.5px !important;
+  line-height: 1.7 !important;
+}
+
+/* Distinction Tables */
+.distinction-table {
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+}
+.distinction-table th {
+  font-size: 16.5px !important;
+  font-weight: 600 !important;
+  padding: 14px 18px !important;
+}
+.distinction-table td {
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+  padding: 14px 18px !important;
+}
+.distinction-table td strong {
+  color: var(--ink-black, #161514);
+}
+
+/* Definition Boxes */
+.definition-box {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+.definition-term {
+  font-size: 19px !important;
+  margin-bottom: 6px !important;
+}
+
+/* Concept Callouts - Block Display & Clean Inline Text Flow */
+.concept-callout {
+  display: block !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+.concept-callout-title {
+  display: block !important;
+  font-family: var(--font-serif, 'Roboto Slab', serif) !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--ink-black, #161514) !important;
+  margin-bottom: 8px !important;
+}
+.concept-callout p {
+  display: block !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+/* Derivations */
+.derivation-card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+.derivation-title {
+  font-size: 20px !important;
+}
+.derivation-step {
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
+}
+
+/* Worked Problems */
+.problem-type {
+  font-size: 18px !important;
+}
+.problem-statement {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+.solution-drawer {
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
+}
+
+/* Reasoning QA */
+.reasoning-title {
+  font-size: 17px !important;
+}
+.reasoning-question {
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+}
+.reasoning-answer {
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
+}
+
+/* Learning Goals & Bridge */
+.learning-goals-list li {
+  font-size: 15.5px !important;
+  line-height: 1.65 !important;
+}
+.learning-goals-sub {
+  font-size: 15px !important;
+}
+.bridge-column p,
+.bridge-item-text {
+  font-size: 15.5px !important;
+  line-height: 1.65 !important;
+}
+
+/* Common-Sense Strategy & Bug Hunt */
+.cs-check-item {
+  font-size: 15.5px !important;
+  line-height: 1.65 !important;
+}
+.cs-question-box {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+.cs-option-text {
+  font-size: 15.5px !important;
+  line-height: 1.6 !important;
+}
+.cs-option-detail {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+.bughunt-scenario {
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+}
+.line-content {
+  font-size: 16px !important;
+}
+.examiner-rubric {
+  font-size: 15.5px !important;
+  line-height: 1.65 !important;
+}
+.examiner-feedback-card {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+.model-solution-content {
+  font-size: 15.5px !important;
+  line-height: 1.7 !important;
+}
+
 /* Universal ultra-compact viewport (260px) responsive adaptation */
 @media (max-width: 480px) {
   .masthead {

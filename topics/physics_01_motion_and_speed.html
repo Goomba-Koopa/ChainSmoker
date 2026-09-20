@@ -68,7 +68,8 @@
       border-radius: 2px;
     }
 
-    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    body { background-color: var(--bg-warm); color: var(--ink-black); font-family: var(--font-sans); min-height: 100vh; display: flex; flex-direction: column; font-size: 16.5px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    p { font-size: 16.5px; line-height: 1.7; color: var(--ink-secondary); }
     
     .masthead { border-bottom: 1px solid var(--border-subtle); padding: 20px 64px; display: flex; align-items: baseline; justify-content: space-between; background: var(--bg-warm); }
     .brand-title { font-family: var(--font-serif); font-size: 22px; font-weight: 600; color: var(--ink-black); text-decoration: none; letter-spacing: -0.02em; }
@@ -120,19 +121,20 @@
     .section-block { display: flex; flex-direction: column; gap: 18px; }
     .section-heading { font-family: var(--font-serif); font-size: 26px; font-weight: 600; color: var(--ink-black); letter-spacing: -0.01em; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
 
-    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 8px 8px 0; font-size: 15px; color: var(--ink-secondary); line-height: 1.65; }
-    .definition-term { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 4px; }
+    .definition-box { background: var(--bg-surface); border-left: 3px solid var(--terracotta); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 22px 26px; border-radius: 0 8px 8px 0; font-size: 16px; color: var(--ink-secondary); line-height: 1.7; }
+    .definition-term { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 6px; }
 
-    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; color: var(--ink-secondary); }
-    .concept-callout-title { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--ink-black); }
+    .concept-callout { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 22px 26px; display: block; font-size: 16px; line-height: 1.7; color: var(--ink-secondary); }
+    .concept-callout-title { font-family: var(--font-serif); font-size: 18px; font-weight: 600; color: var(--ink-black); display: block; margin-bottom: 8px; }
+    .concept-callout p { margin: 0; font-size: 16px; line-height: 1.7; color: var(--ink-secondary); }
 
-    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 14px; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
+    .distinction-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 15.5px; line-height: 1.6; background: #ffffff; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-strong); }
     .distinction-table th, .distinction-table td { border: 1px solid var(--border-subtle); padding: 14px 18px; text-align: left; vertical-align: top; }
-    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); }
+    .distinction-table th { background: var(--bg-surface); font-family: var(--font-serif); font-size: 16.5px; font-weight: 600; color: var(--ink-black); border-bottom: 1px solid var(--border-strong); padding: 14px 18px; }
 
     .derivation-card { background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: 8px; padding: 24px 28px; display: flex; flex-direction: column; gap: 12px; }
-    .derivation-title { font-family: var(--font-serif); font-size: 19px; font-weight: 600; color: var(--ink-black); }
-    .derivation-step { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.65; }
+    .derivation-title { font-family: var(--font-serif); font-size: 20px; font-weight: 600; color: var(--ink-black); }
+    .derivation-step { font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
 
     .diagram-figure { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px; text-align: center; margin: 12px 0; }
     .diagram-img { max-width: 100%; height: auto; border-radius: 4px; display: inline-block; }
@@ -142,18 +144,18 @@
     .problem-header-row { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 8px; }
     .problem-type { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--terracotta); }
     .problem-marks { font-size: 12.5px; font-weight: 700; color: var(--ink-muted); }
-    .problem-statement { font-size: 15px; color: var(--ink-black); line-height: 1.6; font-weight: 500; }
+    .problem-statement { font-size: 16px; color: var(--ink-black); line-height: 1.65; font-weight: 500; }
     
     .btn-toggle { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 600; color: var(--ink-black); cursor: pointer; align-self: flex-start; transition: all 0.15s; }
     .btn-toggle:hover { background: #ffffff; border-color: var(--ink-black); }
     
-    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.65; }
+    .solution-drawer { display: none; background: var(--bg-surface); border-left: 3px solid var(--emerald-accent); border-top: 1px solid var(--border-subtle); border-right: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 20px 24px; border-radius: 0 6px 6px 0; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
 
     .reasoning-qa { background: #ffffff; border: 1px solid var(--border-strong); border-radius: 8px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
     .reasoning-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px; }
     .reasoning-title { font-family: var(--font-serif); font-size: 16px; font-weight: 600; color: var(--terracotta); }
-    .reasoning-question { font-size: 14.5px; color: var(--ink-black); font-weight: 500; }
-    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 16px 20px; border-radius: 0 6px 6px 0; font-size: 14px; color: var(--ink-secondary); line-height: 1.6; }
+    .reasoning-question { font-size: 15.5px; color: var(--ink-black); font-weight: 500; line-height: 1.6; }
+    .reasoning-answer { display: none; background: var(--bg-surface); border-left: 3px solid var(--terracotta); padding: 18px 22px; border-radius: 0 6px 6px 0; font-size: 15.5px; color: var(--ink-secondary); line-height: 1.7; }
 
     .editorial-footer { border-top: 1px solid var(--border-subtle); padding: 40px 24px; margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--ink-muted); }
   
@@ -312,7 +314,7 @@
     }
     .learning-goals-sub {
       font-family: var(--font-serif);
-      font-size: 14.5px;
+      font-size: 15px;
       font-style: italic;
       color: var(--ink-secondary);
     }
@@ -328,9 +330,9 @@
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      font-size: 14.5px;
+      font-size: 15.5px;
       color: var(--ink-secondary);
-      line-height: 1.55;
+      line-height: 1.65;
     }
     .goal-bullet {
       display: inline-flex;
@@ -380,9 +382,9 @@
       margin-bottom: 4px;
     }
     .grade6-bridge-intro {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--ink-muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
     .spiral-columns {
       display: grid;
@@ -440,9 +442,9 @@
       gap: 10px;
     }
     .spiral-list li {
-      font-size: 13.5px;
+      font-size: 15px;
       color: var(--ink-secondary);
-      line-height: 1.55;
+      line-height: 1.65;
       position: relative;
       padding-left: 16px;
     }
@@ -504,9 +506,9 @@
       white-space: nowrap;
     }
     .cs-intro {
-      font-size: 14.5px;
+      font-size: 15.5px;
       color: var(--ink-secondary);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     /* THE 3 CHECK CARDS */
@@ -540,9 +542,9 @@
       color: var(--ink-black);
     }
     .cs-check-text {
-      font-size: 13px;
+      font-size: 14.5px;
       color: var(--ink-secondary);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     /* DRILL BOX */
@@ -576,9 +578,9 @@
       color: var(--ink-muted);
     }
     .drill-question {
-      font-size: 14.5px;
+      font-size: 16px;
       color: var(--ink-black);
-      line-height: 1.6;
+      line-height: 1.65;
       background: #ffffff;
       padding: 14px 18px;
       border-radius: 6px;
@@ -632,12 +634,12 @@
       flex-shrink: 0;
     }
     .cs-option-value {
-      font-size: 15.5px;
+      font-size: 16px;
       font-weight: 600;
       color: var(--ink-black);
     }
     .cs-option-hint {
-      font-size: 12.5px;
+      font-size: 13.5px;
       color: var(--ink-muted);
     }
 
@@ -679,8 +681,8 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      font-size: 13.5px;
-      line-height: 1.55;
+      font-size: 15px;
+      line-height: 1.65;
     }
     .cs-detail-badge-row {
       display: flex;
@@ -710,7 +712,9 @@
       color: var(--ink-black);
     }
     .cs-detail-text {
+      font-size: 15px;
       color: var(--ink-secondary);
+      line-height: 1.6;
     }
 
     /* 9. THE BUG HUNT (THE EXAMINER'S RED PEN) */
@@ -759,18 +763,18 @@
       white-space: nowrap;
     }
     .bughunt-context {
-      font-size: 14px;
+      font-size: 15.5px;
       color: var(--ink-secondary);
-      line-height: 1.6;
+      line-height: 1.65;
     }
     .bughunt-prompt-box {
       background: var(--bg-surface);
       border-left: 3px solid var(--ink-black);
       padding: 12px 16px;
       border-radius: 0 6px 6px 0;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--ink-black);
-      line-height: 1.5;
+      line-height: 1.6;
       margin: 8px 0;
     }
 
@@ -838,7 +842,7 @@
       color: var(--ink-muted);
     }
     .line-content {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--ink-black);
     }
 
@@ -869,6 +873,8 @@
       flex-direction: column;
       gap: 8px;
       animation: fadeIn 0.25s ease-out;
+      font-size: 15px;
+      line-height: 1.65;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(4px); }
@@ -886,7 +892,6 @@
       text-transform: uppercase;
       padding: 2px 8px;
       border-radius: 4px;
-    }
     .feedback-marks-badge {
       font-family: var(--font-serif);
       font-size: 13px;
@@ -1049,8 +1054,8 @@
       </div>
 
       <div class="concept-callout">
-        <span class="concept-callout-title">The Role of the Reference Frame (Origin of Coordinates)</span>
-        To state whether an object is moving, an observer must establish a <strong>Reference Frame</strong> — a stationary reference point (often designated the origin \(O\)) against which position vectors are measured. Without defining a reference point, describing motion is mathematically and physically meaningless.
+        <div class="concept-callout-title">The Role of the Reference Frame (Origin of Coordinates)</div>
+        <p>To state whether an object is moving, an observer must establish a <strong>Reference Frame</strong> — a stationary reference point (often designated the origin \(O\)) against which position vectors are measured. Without defining a reference point, describing motion is mathematically and physically meaningless.</p>
       </div>
     </div>
 
@@ -1113,8 +1118,8 @@
       </table>
 
       <div class="concept-callout">
-        <span class="concept-callout-title">Translatory vs. Rotatory: The Critical Mechanical Distinction</span>
-        In pure <strong>Translatory Motion</strong>, all particles possess identical velocities and undergo equal displacements in equal time intervals. In contrast, in pure <strong>Rotatory Motion</strong>, the body turns around a fixed internal or external axis: points lying at different radial distances from the axis trace concentric circular paths of different lengths with different linear speeds (\(v = \omega r\)), while points lying on the axis remain completely stationary.
+        <div class="concept-callout-title">Translatory vs. Rotatory: The Critical Mechanical Distinction</div>
+        <p>In pure <strong>Translatory Motion</strong>, all particles possess identical velocities and undergo equal displacements in equal time intervals. In contrast, in pure <strong>Rotatory Motion</strong>, the body turns around a fixed internal or external axis: points lying at different radial distances from the axis trace concentric circular paths of different lengths with different linear speeds (\(v = \omega r\)), while points lying on the axis remain completely stationary.</p>
       </div>
     </div>
 

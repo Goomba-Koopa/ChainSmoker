@@ -223,124 +223,7 @@
       100% { transform: scale(1.06); opacity: 1; }
     }
 
-    /* ANIMATED DISCIPLINE EMBLEMS (OPTION 3: STATIC REST + HOVER MICRO-LAB) */
-    .emblem-orbit-1,
-    .emblem-orbit-2,
-    .emblem-nucleus,
-    .flask-bubble-1,
-    .flask-bubble-2,
-    .flask-meniscus,
-    .leaf-pulse,
-    .compass-leg-sweep,
-    .compass-arc-draw,
-    .math-angle-arc {
-      animation-play-state: paused;
-      transform-box: fill-box;
-    }
-
-    .emblem-orbit-1 {
-      animation: orbit-spin-1 3.6s linear infinite;
-      transform-origin: center;
-    }
-    .emblem-orbit-2 {
-      animation: orbit-spin-2 3.6s linear infinite;
-      transform-origin: center;
-    }
-    .emblem-nucleus {
-      animation: nucleus-glow 1.8s ease-in-out infinite alternate;
-      transform-origin: center;
-    }
-
-    .flask-bubble-1 {
-      animation: bubble-up 1.8s ease-in-out infinite;
-    }
-    .flask-bubble-2 {
-      animation: bubble-up 2.2s ease-in-out 0.6s infinite;
-    }
-    .flask-meniscus {
-      animation: meniscus-slosh 2.4s ease-in-out infinite alternate;
-      transform-origin: 19px 25px;
-    }
-
-    .leaf-pulse {
-      animation: leaf-breath 2.8s ease-in-out infinite alternate;
-      transform-origin: 19px 32px;
-    }
-
-    .compass-leg-sweep {
-      animation: leg-sweep 2.2s ease-in-out infinite alternate;
-      transform-origin: 19px 12px;
-    }
-    .compass-arc-draw {
-      animation: arc-pulse 2.2s ease-in-out infinite alternate;
-    }
-    .math-angle-arc {
-      stroke-dasharray: 20;
-      stroke-dashoffset: 0;
-      animation: angle-arc-sweep 2.2s ease-in-out infinite alternate;
-    }
-
-    /* AWAKEN MICRO-LAB ON CARD HOVER OR KEYBOARD FOCUS */
-    .topic-card:hover .emblem-orbit-1,
-    .topic-card:hover .emblem-orbit-2,
-    .topic-card:hover .emblem-nucleus,
-    .topic-card:hover .flask-bubble-1,
-    .topic-card:hover .flask-bubble-2,
-    .topic-card:hover .flask-meniscus,
-    .topic-card:hover .leaf-pulse,
-    .topic-card:hover .compass-leg-sweep,
-    .topic-card:hover .compass-arc-draw,
-    .topic-card:hover .math-angle-arc,
-    .topic-card:focus-visible .emblem-orbit-1,
-    .topic-card:focus-visible .emblem-orbit-2,
-    .topic-card:focus-visible .emblem-nucleus,
-    .topic-card:focus-visible .flask-bubble-1,
-    .topic-card:focus-visible .flask-bubble-2,
-    .topic-card:focus-visible .flask-meniscus,
-    .topic-card:focus-visible .leaf-pulse,
-    .topic-card:focus-visible .compass-leg-sweep,
-    .topic-card:focus-visible .compass-arc-draw,
-    .topic-card:focus-visible .math-angle-arc {
-      animation-play-state: running;
-    }
-
-    @keyframes orbit-spin-1 {
-      0% { transform: rotate(-30deg); }
-      100% { transform: rotate(330deg); }
-    }
-    @keyframes orbit-spin-2 {
-      0% { transform: rotate(30deg); }
-      100% { transform: rotate(-330deg); }
-    }
-    @keyframes nucleus-glow {
-      0% { transform: scale(0.9); opacity: 0.9; }
-      100% { transform: scale(1.15); opacity: 1; }
-    }
-    @keyframes bubble-up {
-      0% { transform: translateY(0); opacity: 0; }
-      30% { opacity: 0.9; }
-      80% { opacity: 0.9; }
-      100% { transform: translateY(-11px); opacity: 0; }
-    }
-    @keyframes meniscus-slosh {
-      0% { transform: rotate(-2.5deg); }
-      100% { transform: rotate(2.5deg); }
-    }
-    @keyframes leaf-breath {
-      0% { transform: scale(0.96) rotate(-1.5deg); }
-      100% { transform: scale(1.03) rotate(1.5deg); }
-    }
-    @keyframes leg-sweep {
-      0% { transform: rotate(-3.5deg); }
-      100% { transform: rotate(3.5deg); }
-    }
-    @keyframes arc-pulse {
-      0% { opacity: 0.45; stroke-dashoffset: 4; }
-      100% { opacity: 1; stroke-dashoffset: 0; }
-    }
-    @keyframes angle-arc-sweep {
-      0% { stroke-dashoffset: 20; opacity: 0.4; }
-      100% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 1; }
     }
 
     /* FEATURED WORKED PROBLEM SPOTLIGHT DIRECTLY ON LANDING */
@@ -658,29 +541,18 @@
       background: #ffffff;
     }
 
-    .badge-emblem-wrap {
-      width: 44px;
-      height: 44px;
+    .badge-icon {
+      font-size: 26px;
+      margin-bottom: 6px;
+      line-height: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 4px;
-    }
-
-    .discipline-emblem {
-      width: 38px;
-      height: 38px;
-      shape-rendering: geometricPrecision;
-      text-rendering: geometricPrecision;
-      image-rendering: -webkit-optimize-contrast;
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      overflow: visible;
       transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
-    .topic-card:hover .discipline-emblem {
-      transform: scale(1.12) rotate(-3deg);
+    .topic-card:hover .badge-icon {
+      transform: scale(1.18);
     }
 
     .badge-code { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; color: var(--ink-black); }
@@ -910,6 +782,7 @@
         discipline: "Physics",
         code: "PHY-01",
         unitNum: "Kinematics",
+        icon: "⚛️",
         title: "Motion, Distance, Displacement & Speed",
         hook: "Why walking around a 400-meter running track brings you back to a displacement of zero, and how to convert km/h to m/s using a single fraction.",
         snippet: "Why walking around a 400-meter running track brings you back to a displacement of zero, and how to convert km/h to m/s using a single fraction.",
@@ -923,6 +796,7 @@
         discipline: "Physics",
         code: "PHY-02",
         unitNum: "Work & Energy",
+        icon: "⚛️",
         title: "Work, Energy & Power",
         hook: "Why leaning against a stationary wall for an hour counts as zero work in physics, and how gravitational potential energy converts into kinetic energy.",
         snippet: "Why leaning against a stationary wall for an hour counts as zero work in physics, and how gravitational potential energy converts into kinetic energy.",
@@ -936,6 +810,7 @@
         discipline: "Physics",
         code: "PHY-03",
         unitNum: "Optics",
+        icon: "⚛️",
         title: "Light, Shadows & Reflection at Plane Surfaces",
         hook: "Why plane mirrors reverse left and right instead of up and down, and how to calculate the number of images formed between two angled mirrors.",
         snippet: "Why plane mirrors reverse left and right instead of up and down, and how to calculate the number of images formed between two angled mirrors.",
@@ -949,6 +824,7 @@
         discipline: "Physics",
         code: "PHY-04",
         unitNum: "Acoustics",
+        icon: "⚛️",
         title: "Sound Waves, Vibration & Acoustics",
         hook: "Why sound travels faster through a solid wooden desk than through open air, and why you cannot hear sounds in a vacuum.",
         snippet: "Why sound travels faster through a solid wooden desk than through open air, and why you cannot hear sounds in a vacuum.",
@@ -962,6 +838,7 @@
         discipline: "Physics",
         code: "PHY-05",
         unitNum: "Electrodynamics",
+        icon: "⚛️",
         title: "Electricity, Electric Current & Circuits",
         hook: "How series and parallel circuits behave in your home, and why fuse wires are made of alloys with low melting points.",
         snippet: "How series and parallel circuits behave in your home, and why fuse wires are made of alloys with low melting points.",
@@ -975,6 +852,7 @@
         discipline: "Physics",
         code: "PHY-06",
         unitNum: "Hydrostatics",
+        icon: "⚛️",
         title: "Force, Thrust & Hydrostatic Fluid Pressure",
         hook: "Why cutting vegetables with a blunt knife requires far more force than a sharp knife, and how liquid pressure increases with depth.",
         snippet: "Why cutting vegetables with a blunt knife requires far more force than a sharp knife, and how liquid pressure increases with depth.",
@@ -988,6 +866,7 @@
         discipline: "Physics",
         code: "PHY-07",
         unitNum: "Thermodynamics",
+        icon: "⚛️",
         title: "Heat Energy, Temperature & Thermometry",
         hook: "The physical difference between temperature (how fast particles jiggle) and heat energy (the total energy transferred).",
         snippet: "The physical difference between temperature (how fast particles jiggle) and heat energy (the total energy transferred).",
@@ -1001,6 +880,7 @@
         discipline: "Physics",
         code: "PHY-08",
         unitNum: "Fluid Mechanics",
+        icon: "⚛️",
         title: "Density, Relative Density & Buoyancy",
         hook: "Why a solid iron block sinks in water but floats on liquid mercury, and how Archimedes' principle explains floating ships.",
         snippet: "Why a solid iron block sinks in water but floats on liquid mercury, and how Archimedes' principle explains floating ships.",
@@ -1014,6 +894,7 @@
         discipline: "Physics",
         code: "PHY-09",
         unitNum: "Magnetism",
+        icon: "⚛️",
         title: "Magnetism, Magnetic Fields & Electromagnets",
         hook: "Why snapping a bar magnet in half produces two smaller complete magnets instead of separating the North and South poles.",
         snippet: "Why snapping a bar magnet in half produces two smaller complete magnets instead of separating the North and South poles.",
@@ -1027,6 +908,7 @@
         discipline: "Physics",
         code: "PHY-10",
         unitNum: "Optics",
+        icon: "⚛️",
         title: "Spherical Mirrors & Image Formation",
         hook: "How concave and convex mirrors bend light to enlarge dental views or widen rear-view traffic visibility.",
         snippet: "How concave and convex mirrors bend light to enlarge dental views or widen rear-view traffic visibility.",
@@ -1040,6 +922,7 @@
         discipline: "Physics",
         code: "PHY-11",
         unitNum: "Electrostatics",
+        icon: "⚛️",
         title: "Static Electricity & Electrostatics",
         hook: "How rubbing plastic with wool strips electrons from atoms to create static charges that attract small bits of paper.",
         snippet: "How rubbing plastic with wool strips electrons from atoms to create static charges that attract small bits of paper.",
@@ -1053,6 +936,7 @@
         discipline: "Physics",
         code: "PHY-12",
         unitNum: "Mechanics",
+        icon: "⚛️",
         title: "Simple Machines & Mechanical Advantage",
         hook: "How levers, pulleys, and inclined planes reduce the effort needed to lift heavy loads, and why friction prevents any machine from being 100% efficient.",
         snippet: "How levers, pulleys, and inclined planes reduce the effort needed to lift heavy loads, and why friction prevents any machine from being 100% efficient.",
@@ -1068,6 +952,7 @@
         discipline: "Chemistry",
         code: "CHEM-01",
         unitNum: "States of Matter",
+        icon: "🧪",
         title: "Matter & Kinetic Molecular Theory",
         hook: "How kinetic theory explains why perfume spreads across a room quickly while ice maintains its shape.",
         snippet: "How kinetic theory explains why perfume spreads across a room quickly while ice maintains its shape.",
@@ -1081,6 +966,7 @@
         discipline: "Chemistry",
         code: "CHEM-02",
         unitNum: "Atomic Theory",
+        icon: "🧪",
         title: "Atomic Structure, Energy Shells & Valency",
         hook: "The planetary model of the atom: protons and neutrons packed in the nucleus with electrons orbiting in defined shells.",
         snippet: "The planetary model of the atom: protons and neutrons packed in the nucleus with electrons orbiting in defined shells.",
@@ -1094,6 +980,7 @@
         discipline: "Chemistry",
         code: "CHEM-03",
         unitNum: "Chemical Taxonomy",
+        icon: "🧪",
         title: "Elements, Compounds & Mixtures",
         hook: "How pure elements combine chemically in fixed proportions to form compounds with completely new properties.",
         snippet: "How pure elements combine chemically in fixed proportions to form compounds with completely new properties.",
@@ -1107,6 +994,7 @@
         discipline: "Chemistry",
         code: "CHEM-04",
         unitNum: "Nomenclature",
+        icon: "🧪",
         title: "Atoms, Molecules & Chemical Radicals",
         hook: "How combining capacity (valency) determines the exact chemical formulas of salts and oxides like Al₂O₃.",
         snippet: "How combining capacity (valency) determines the exact chemical formulas of salts and oxides like Al₂O₃.",
@@ -1120,6 +1008,7 @@
         discipline: "Chemistry",
         code: "CHEM-05",
         unitNum: "Stoichiometry",
+        icon: "🧪",
         title: "Chemical Reactions & Equation Balancing",
         hook: "How the law of conservation of mass requires counting atoms on both sides of a chemical equation to balance it.",
         snippet: "How the law of conservation of mass requires counting atoms on both sides of a chemical equation to balance it.",
@@ -1133,6 +1022,7 @@
         discipline: "Chemistry",
         code: "CHEM-06",
         unitNum: "Acids & Alkalis",
+        icon: "🧪",
         title: "Acids, Bases, Salts & Chemical Indicators",
         hook: "How litmus, methyl orange, and phenolphthalein identify acidic vs basic solutions, and what happens during neutralization.",
         snippet: "How litmus, methyl orange, and phenolphthalein identify acidic vs basic solutions, and what happens during neutralization.",
@@ -1146,6 +1036,7 @@
         discipline: "Chemistry",
         code: "CHEM-07",
         unitNum: "Metallurgy Basics",
+        icon: "🧪",
         title: "Metals, Non-Metals & The Reactivity Series",
         hook: "How metals and non-metals differ in conductivity, malleability, and chemical reactivity with oxygen and water.",
         snippet: "How metals and non-metals differ in conductivity, malleability, and chemical reactivity with oxygen and water.",
@@ -1159,6 +1050,7 @@
         discipline: "Chemistry",
         code: "CHEM-08",
         unitNum: "Hydrology",
+        icon: "🧪",
         title: "Water, Solutions & Solubility",
         hook: "Saturated vs unsaturated solutions, how temperature affects solubility, and the distinction between suspensions and colloids.",
         snippet: "Saturated vs unsaturated solutions, how temperature affects solubility, and the distinction between suspensions and colloids.",
@@ -1172,6 +1064,7 @@
         discipline: "Chemistry",
         code: "CHEM-09",
         unitNum: "Atmospheric Chemistry",
+        icon: "🧪",
         title: "Air, Oxygen & Combustion",
         hook: "The composition of clean air, why oxygen supports combustion without burning itself, and the conditions needed for burning.",
         snippet: "The composition of clean air, why oxygen supports combustion without burning itself, and the conditions needed for burning.",
@@ -1185,6 +1078,7 @@
         discipline: "Chemistry",
         code: "CHEM-10",
         unitNum: "Carbon Chemistry",
+        icon: "🧪",
         title: "Carbon & Its Allotropic Modifications",
         hook: "Why diamond and graphite are both 100% carbon yet diamond is transparent and hard while graphite is black and slippery.",
         snippet: "Why diamond and graphite are both 100% carbon yet diamond is transparent and hard while graphite is black and slippery.",
@@ -1198,6 +1092,7 @@
         discipline: "Chemistry",
         code: "CHEM-11",
         unitNum: "Water Treatment",
+        icon: "🧪",
         title: "Water Hardness & Treatment Technologies",
         hook: "What dissolved calcium and magnesium salts do to lathering, and how boiling vs chemical treatment removes temporary and permanent hardness.",
         snippet: "What dissolved calcium and magnesium salts do to lathering, and how boiling vs chemical treatment removes temporary and permanent hardness.",
@@ -1211,6 +1106,7 @@
         discipline: "Chemistry",
         code: "CHEM-12",
         unitNum: "Environmental Chemistry",
+        icon: "🧪",
         title: "Oxides, Acid Rain & Atmospheric Chemistry",
         hook: "How nitrogen and sulfur emissions react with atmospheric moisture to form acid rain, and methods used to reduce pollutants.",
         snippet: "How nitrogen and sulfur emissions react with atmospheric moisture to form acid rain, and methods used to reduce pollutants.",
@@ -1226,6 +1122,7 @@
         discipline: "Biology",
         code: "BIO-01",
         unitNum: "Histology",
+        icon: "🌿",
         title: "Plant & Animal Tissue Histology",
         hook: "How meristematic dividing cells differ from permanent vascular tissues, and the 4 fundamental tissue types in human organs.",
         snippet: "How meristematic dividing cells differ from permanent vascular tissues, and the 4 fundamental tissue types in human organs.",
@@ -1239,6 +1136,7 @@
         discipline: "Biology",
         code: "BIO-02",
         unitNum: "Plant Physiology",
+        icon: "🌿",
         title: "Photosynthesis & Cellular Respiration in Plants",
         hook: "How leaves produce glucose using sunlight and carbon dioxide, and why plants respire around the clock just like animals.",
         snippet: "How leaves produce glucose using sunlight and carbon dioxide, and why plants respire around the clock just like animals.",
@@ -1252,6 +1150,7 @@
         discipline: "Biology",
         code: "BIO-03",
         unitNum: "Cytology",
+        icon: "🌿",
         title: "Cell Structure, Cytology & Organelles",
         hook: "The roles of plant and animal cell organelles, including the cell wall, cell membrane, nucleus, and mitochondria.",
         snippet: "The roles of plant and animal cell organelles, including the cell wall, cell membrane, nucleus, and mitochondria.",
@@ -1265,6 +1164,7 @@
         discipline: "Biology",
         code: "BIO-04",
         unitNum: "Human Physiology",
+        icon: "🌿",
         title: "Human Digestive System & Nutrition",
         hook: "The journey of food from the mouth to the stomach and small intestine, showing where each digestive enzyme acts.",
         snippet: "The journey of food from the mouth to the stomach and small intestine, showing where each digestive enzyme acts.",
@@ -1278,6 +1178,7 @@
         discipline: "Biology",
         code: "BIO-05",
         unitNum: "Cardiovascular",
+        icon: "🌿",
         title: "Human Circulatory System, Blood & Heart",
         hook: "How the human four-chambered heart pumps deoxygenated blood to the lungs and oxygenated blood to the rest of the body.",
         snippet: "How the human four-chambered heart pumps deoxygenated blood to the lungs and oxygenated blood to the rest of the body.",
@@ -1291,6 +1192,7 @@
         discipline: "Biology",
         code: "BIO-06",
         unitNum: "Respiratory System",
+        icon: "🌿",
         title: "Human Respiratory System & Gas Exchange",
         hook: "The mechanical pathway of breathing through the trachea, bronchi, and alveoli, and the exchange of oxygen and carbon dioxide.",
         snippet: "The mechanical pathway of breathing through the trachea, bronchi, and alveoli, and the exchange of oxygen and carbon dioxide.",
@@ -1304,6 +1206,7 @@
         discipline: "Biology",
         code: "BIO-07",
         unitNum: "Renal Physiology",
+        icon: "🌿",
         title: "Human Excretory System & Kidney Nephrons",
         hook: "How the kidneys filter metabolic waste from the bloodstream to form urine, maintaining the body's water and salt balance.",
         snippet: "How the kidneys filter metabolic waste from the bloodstream to form urine, maintaining the body's water and salt balance.",
@@ -1317,6 +1220,7 @@
         discipline: "Biology",
         code: "BIO-08",
         unitNum: "Neurobiology",
+        icon: "🌿",
         title: "Human Nervous System, Brain & Reflex Arc",
         hook: "How sensory neurons, the spinal cord, and motor neurons coordinate automatic reflex actions to protect the body from harm.",
         snippet: "How sensory neurons, the spinal cord, and motor neurons coordinate automatic reflex actions to protect the body from harm.",
@@ -1330,6 +1234,7 @@
         discipline: "Biology",
         code: "BIO-09",
         unitNum: "Reproduction",
+        icon: "🌿",
         title: "Reproduction in Plants & Animals",
         hook: "The parts of a flower, the difference between self and cross-pollination, and how fertilization leads to seed formation.",
         snippet: "The parts of a flower, the difference between self and cross-pollination, and how fertilization leads to seed formation.",
@@ -1343,6 +1248,7 @@
         discipline: "Biology",
         code: "BIO-10",
         unitNum: "Taxonomy",
+        icon: "🌿",
         title: "Classification of Living Organisms",
         hook: "How living organisms are organized using Whittaker's five kingdoms and binomial nomenclature based on shared characteristics.",
         snippet: "How living organisms are organized using Whittaker's five kingdoms and binomial nomenclature based on shared characteristics.",
@@ -1356,6 +1262,7 @@
         discipline: "Biology",
         code: "BIO-11",
         unitNum: "Pathology & Hygiene",
+        icon: "🌿",
         title: "Health, Hygiene & Infectious Pathogens",
         hook: "The difference between communicable and non-communicable diseases, common pathogens, and personal and community hygiene.",
         snippet: "The difference between communicable and non-communicable diseases, common pathogens, and personal and community hygiene.",
@@ -1369,6 +1276,7 @@
         discipline: "Biology",
         code: "BIO-12",
         unitNum: "Ecology",
+        icon: "🌿",
         title: "Ecosystems, Food Chains & Energy Dynamics",
         hook: "How energy flows through food chains from producers to apex predators, and why energy decreases at each trophic level.",
         snippet: "How energy flows through food chains from producers to apex predators, and why energy decreases at each trophic level.",
@@ -1384,6 +1292,7 @@
         discipline: "Mathematics",
         code: "MATH-01",
         unitNum: "Number Theory",
+        icon: "🔢",
         title: "The Number Continuum: Integers, Fractions & Rational Density",
         hook: "How positive and negative fractions form the rational number continuum, and why division by zero is undefined.",
         snippet: "How positive and negative fractions form the rational number continuum, and why division by zero is undefined.",
@@ -1397,6 +1306,7 @@
         discipline: "Mathematics",
         code: "MATH-02",
         unitNum: "Exponents",
+        icon: "📈",
         title: "Scale & Index Laws: Powers, Exponents & Scientific Notation",
         hook: "How the product, quotient, and power rules simplify repeated multiplication, and the derivation of a^0 = 1.",
         snippet: "How the product, quotient, and power rules simplify repeated multiplication, and the derivation of a^0 = 1.",
@@ -1410,6 +1320,7 @@
         discipline: "Mathematics",
         code: "MATH-03",
         unitNum: "Algebra",
+        icon: "📐",
         title: "The Algebraic Language: Expressions, Polynomials & Operations",
         hook: "Adding, subtracting, and multiplying algebraic terms, combining like terms, and working with polynomials.",
         snippet: "Adding, subtracting, and multiplying algebraic terms, combining like terms, and working with polynomials.",
@@ -1423,6 +1334,7 @@
         discipline: "Mathematics",
         code: "MATH-04",
         unitNum: "Algebra",
+        icon: "⚖️",
         title: "The Balance Beam: Linear Equations & Word Problems",
         hook: "Solving single-variable equations using inverse operations and balance rules to isolate the unknown.",
         snippet: "Solving single-variable equations using inverse operations and balance rules to isolate the unknown.",
@@ -1436,6 +1348,7 @@
         discipline: "Mathematics",
         code: "MATH-05",
         unitNum: "Arithmetic & Variations",
+        icon: "📊",
         title: "Ratios, Proportions & The Unitary Method",
         hook: "Solving direct and inverse variation problems using the unitary method and fraction ratios.",
         snippet: "Solving direct and inverse variation problems using the unitary method and fraction ratios.",
@@ -1449,6 +1362,7 @@
         discipline: "Mathematics",
         code: "MATH-06",
         unitNum: "Commercial Arithmetic",
+        icon: "💰",
         title: "Commercial Mathematics: Percentages, Profit & Loss & Simple Interest",
         hook: "Calculating cost price, selling price, profit, loss percentage, and simple interest for bank deposits and loans.",
         snippet: "Calculating cost price, selling price, profit, loss percentage, and simple interest for bank deposits and loans.",
@@ -1462,6 +1376,7 @@
         discipline: "Mathematics",
         code: "MATH-07",
         unitNum: "Geometry",
+        icon: "📏",
         title: "Lines, Angles & Transversals: Geometric Rigor",
         hook: "Complementary, supplementary, and vertically opposite angles, plus the corresponding, alternate, and interior angles formed by a transversal.",
         snippet: "Complementary, supplementary, and vertically opposite angles, plus the corresponding, alternate, and interior angles formed by a transversal.",
@@ -1475,6 +1390,7 @@
         discipline: "Mathematics",
         code: "MATH-08",
         unitNum: "Geometry & Mensuration",
+        icon: "📐",
         title: "Triangles, Congruence, Perimeter & Area",
         hook: "The angle sum property of triangles, exterior angle theorem, and the four congruence criteria (SSS, SAS, ASA, RHS).",
         snippet: "The angle sum property of triangles, exterior angle theorem, and the four congruence criteria (SSS, SAS, ASA, RHS).",
@@ -1486,56 +1402,21 @@
       }
     ];
 
-    const EMBLEMS = {
-      Physics: `<svg class="discipline-emblem emblem-physics" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
-        <g class="emblem-orbit-1">
-          <ellipse cx="20" cy="20" rx="14.5" ry="5.5" transform="rotate(-30 20 20)" stroke="#161514" stroke-width="1.6" stroke-linecap="round"/>
-          <circle cx="32.5" cy="12.8" r="1.8" fill="#ea580c" stroke="#161514" stroke-width="0.8"/>
-        </g>
-        <g class="emblem-orbit-2">
-          <ellipse cx="20" cy="20" rx="14.5" ry="5.5" transform="rotate(30 20 20)" stroke="#161514" stroke-width="1.6" stroke-linecap="round"/>
-          <circle cx="7.5" cy="12.8" r="1.6" fill="#161514"/>
-        </g>
-        <circle class="emblem-nucleus" cx="20" cy="20" r="3.6" fill="#ea580c" stroke="#161514" stroke-width="1.2"/>
-        <circle cx="19" cy="19" r="1" fill="#ffffff" opacity="0.9"/>
-      </svg>`,
-      Chemistry: `<svg class="discipline-emblem emblem-chemistry" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
-        <rect x="17" y="6.5" width="6" height="2.5" rx="1" stroke="#161514" stroke-width="1.2" fill="#ffffff"/>
-        <path d="M 18 9 L 18 14.5 L 10 28.5 C 9.2 30 10.2 31.5 12 31.5 L 28 31.5 C 29.8 31.5 30.8 30 30 28.5 L 22 14.5 L 22 9" stroke="#161514" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 12.5 24.5 Q 20 26.5 27.5 24.5 L 29 30 L 11 30 Z" fill="#dcfce7" opacity="0.85"/>
-        <g class="flask-meniscus">
-          <path d="M 12 24.5 Q 20 26.5 28 24.5" stroke="#15803d" stroke-width="1.6" stroke-linecap="round"/>
-        </g>
-        <circle class="flask-bubble-1" cx="17" cy="27.5" r="1.4" fill="#15803d"/>
-        <circle class="flask-bubble-2" cx="23" cy="26.5" r="1.6" fill="#15803d"/>
-      </svg>`,
-      Biology: `<svg class="discipline-emblem emblem-biology" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
-        <g class="leaf-pulse">
-          <path d="M 20 6 C 10 13 10 27 20 33 C 30 27 30 13 20 6 Z" fill="#edf5ef" stroke="#161514" stroke-width="1.6" stroke-linejoin="round"/>
-          <line x1="20" y1="6" x2="20" y2="35" stroke="#161514" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M 20 14 Q 15 12 13 10" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M 20 14 Q 25 12 27 10" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M 20 20 Q 15 18 12 16" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M 20 20 Q 25 18 28 16" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M 20 26 Q 16 24 13 23" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M 20 26 Q 24 24 27 23" stroke="#2e382b" stroke-width="1.2" stroke-linecap="round"/>
-        </g>
-      </svg>`,
-      Mathematics: `<svg class="discipline-emblem emblem-math" viewBox="0 0 40 40" width="38" height="38" fill="none" shape-rendering="geometricPrecision" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="7,33 33,33 7,7" fill="#fef8ea" stroke="#161514" stroke-width="1.6" stroke-linejoin="round"/>
-        <polygon points="12,28 25,28 12,15" fill="#ffffff" stroke="#797166" stroke-width="1.2" stroke-linejoin="round"/>
-        <line x1="16" y1="33" x2="16" y2="30.5" stroke="#161514" stroke-width="1"/>
-        <line x1="20" y1="33" x2="20" y2="29" stroke="#161514" stroke-width="1.2"/>
-        <line x1="24" y1="33" x2="24" y2="30.5" stroke="#161514" stroke-width="1"/>
-        <line x1="28" y1="33" x2="28" y2="30.5" stroke="#161514" stroke-width="1"/>
-        <line x1="7" y1="19" x2="9.5" y2="19" stroke="#161514" stroke-width="1"/>
-        <line x1="7" y1="23" x2="10.5" y2="23" stroke="#161514" stroke-width="1.2"/>
-        <line x1="7" y1="27" x2="9.5" y2="27" stroke="#161514" stroke-width="1"/>
-        <path class="math-angle-arc" d="M 21 33 A 12 12 0 0 0 17 24" stroke="#ea580c" stroke-width="1.4" stroke-linecap="round"/>
-      </svg>`
+    const SIMPLE_ICONS = {
+      "PHY-01": "⚛️", "PHY-02": "⚛️", "PHY-03": "⚛️", "PHY-04": "⚛️",
+      "PHY-05": "⚛️", "PHY-06": "⚛️", "PHY-07": "⚛️", "PHY-08": "⚛️",
+      "PHY-09": "⚛️", "PHY-10": "⚛️", "PHY-11": "⚛️", "PHY-12": "⚛️",
+      "CHEM-01": "🧪", "CHEM-02": "🧪", "CHEM-03": "🧪", "CHEM-04": "🧪",
+      "CHEM-05": "🧪", "CHEM-06": "🧪", "CHEM-07": "🧪", "CHEM-08": "🧪",
+      "CHEM-09": "🧪", "CHEM-10": "🧪", "CHEM-11": "🧪", "CHEM-12": "🧪",
+      "BIO-01": "🌿", "BIO-02": "🌿", "BIO-03": "🌿", "BIO-04": "🌿",
+      "BIO-05": "🌿", "BIO-06": "🌿", "BIO-07": "🌿", "BIO-08": "🌿",
+      "BIO-09": "🌿", "BIO-10": "🌿", "BIO-11": "🌿", "BIO-12": "🌿",
+      "MATH-01": "🔢", "MATH-02": "📈", "MATH-03": "📐", "MATH-04": "⚖️",
+      "MATH-05": "📊", "MATH-06": "💰", "MATH-07": "📏", "MATH-08": "📐"
     };
 
-    let currentFilter = 'all';
+let currentFilter = 'all';
     let currentSearch = '';
 
     function renderTopics() {
@@ -1568,7 +1449,7 @@
         card.className = 'topic-card';
         card.href = item.file;
 
-        const emblemSvg = EMBLEMS[item.discipline] || `<div class="badge-icon">${item.icon}</div>`;
+        const topicIcon = item.icon || SIMPLE_ICONS[item.code] || (item.discipline === "Physics" ? "⚛️" : item.discipline === "Chemistry" ? "🧪" : item.discipline === "Biology" ? "🌿" : "📐");
 
         let levelClass = 'level-foundation';
         if (item.level === 'Applied Dynamics') levelClass = 'level-dynamics';
@@ -1588,7 +1469,7 @@
 
         card.innerHTML = `
           <div class="topic-left-badge">
-            <div class="badge-emblem-wrap">${emblemSvg}</div>
+            <div class="badge-icon">${topicIcon}</div>
             <div class="badge-code">${item.code}</div>
             <div class="badge-unit">${item.unitNum}</div>
           </div>
