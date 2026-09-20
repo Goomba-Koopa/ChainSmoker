@@ -347,8 +347,8 @@
       margin-top: 1px;
     }
 
-    /* THE SPIRAL CURRICULUM BRIDGE (GRADE 6 -> GRADE 7 CRASH COURSE) */
-    .spiral-bridge-card {
+    /* THE GRADE 6 BRIDGE */
+    .grade6-bridge-card {
       background: #ffffff;
       border: 1px solid var(--border-strong);
       border-radius: 10px;
@@ -359,11 +359,11 @@
       margin-bottom: 12px;
       box-shadow: 0 2px 8px rgba(22, 21, 20, 0.03);
     }
-    .spiral-bridge-header {
+    .grade6-bridge-header {
       border-bottom: 1px solid var(--border-subtle);
       padding-bottom: 12px;
     }
-    .spiral-bridge-kicker {
+    .grade6-bridge-kicker {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -371,7 +371,7 @@
       color: var(--terracotta);
       margin-bottom: 4px;
     }
-    .spiral-bridge-title {
+    .grade6-bridge-title {
       font-family: var(--font-serif);
       font-size: 22px;
       font-weight: 600;
@@ -379,7 +379,7 @@
       letter-spacing: -0.01em;
       margin-bottom: 4px;
     }
-    .spiral-bridge-intro {
+    .grade6-bridge-intro {
       font-size: 14px;
       color: var(--ink-muted);
       line-height: 1.5;
@@ -509,14 +509,14 @@
       line-height: 1.6;
     }
 
-    /* THE 3 HEURISTIC CARDS */
-    .cs-heuristics-grid {
+    /* THE 3 CHECK CARDS */
+    .cs-checks-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin: 4px 0 8px 0;
     }
-    .cs-heuristic-card {
+    .cs-check-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
@@ -525,7 +525,7 @@
       flex-direction: column;
       gap: 8px;
     }
-    .cs-heuristic-num {
+    .cs-check-num {
       font-family: var(--font-serif);
       font-size: 12px;
       font-weight: 700;
@@ -533,13 +533,13 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-    .cs-heuristic-title {
+    .cs-check-title {
       font-family: var(--font-serif);
       font-size: 16px;
       font-weight: 600;
       color: var(--ink-black);
     }
-    .cs-heuristic-text {
+    .cs-check-text {
       font-size: 13px;
       color: var(--ink-secondary);
       line-height: 1.5;
@@ -944,13 +944,13 @@
 
     @media (max-width: 768px) {
       .spiral-columns { grid-template-columns: 1fr; gap: 16px; }
-      .cs-heuristics-grid { grid-template-columns: 1fr; gap: 12px; }
-      .cs-strategy-section, .bughunt-section, .spiral-bridge-card, .learning-goals-card { padding: 20px 16px; }
+      .cs-checks-grid { grid-template-columns: 1fr; gap: 12px; }
+      .cs-strategy-section, .bughunt-section, .grade6-bridge-card, .learning-goals-card { padding: 20px 16px; }
       .notebook-sheet, .cs-drill-box { padding: 16px 14px; }
     }
 
     @media (max-width: 480px) {
-      .spiral-bridge-title, .cs-title, .bughunt-title { font-size: 19px; }
+      .grade6-bridge-title, .cs-title, .bughunt-title { font-size: 19px; }
       .learning-goals-header, .cs-header, .bughunt-header { flex-direction: column; gap: 6px; }
       .feedback-card-header { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
@@ -981,7 +981,7 @@
     <div class="learning-goals-card">
       <div class="learning-goals-header">
         <span class="learning-goals-badge">Learning Goals</span>
-        <span class="learning-goals-sub">Core competencies you will master in this lesson</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
       </div>
       <ul class="learning-goals-list">
         <li>
@@ -1003,12 +1003,12 @@
       </ul>
     </div>
 
-    <!-- THE SPIRAL CURRICULUM BRIDGE -->
-    <div class="spiral-bridge-card">
-      <div class="spiral-bridge-header">
-        <div class="spiral-bridge-kicker">The Spiral Curriculum Bridge</div>
-        <h2 class="spiral-bridge-title">From Grade 6 Intuition to Grade 7 Rigor</h2>
-        <div class="spiral-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 mechanics:</div>
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 mechanics:</div>
       </div>
       <div class="spiral-columns">
         <div class="spiral-col spiral-col-prev">
@@ -1363,7 +1363,7 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Competitive & Board Heuristic • The 5-Second Filter</div>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
           <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
@@ -1373,22 +1373,22 @@
         <strong>"Common sense is the law."</strong> In physics and mathematics, equations are not abstract strings of numbers—they describe physical reality. Top problem solvers don't blindly grind algebra right away; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
       </div>
 
-      <!-- THE 3 HEURISTIC PILLARS -->
-      <div class="cs-heuristics-grid">
-        <div class="cs-heuristic-card">
-          <span class="cs-heuristic-num">Heuristic 01</span>
-          <span class="cs-heuristic-title">The Reality & Scale Check</span>
-          <p class="cs-heuristic-text">Does the magnitude make physical sense? A suburban local train cannot move near Mach 1 (speed of sound); a running human cannot hit \(150\text{ km/h}\); elapsed time and scalar speed can never be negative or zero for moving bodies.</p>
+      <!-- THE 3 CHECK CARDS -->
+      <div class="cs-checks-grid">
+        <div class="cs-check-card">
+          <span class="cs-check-num">Check 01</span>
+          <span class="cs-check-title">The Reality & Scale Check</span>
+          <p class="cs-check-text">Does the magnitude make physical sense? A suburban local train cannot move near Mach 1 (speed of sound); a running human cannot hit \(150\text{ km/h}\); elapsed time and scalar speed can never be negative or zero for moving bodies.</p>
         </div>
-        <div class="cs-heuristic-card">
-          <span class="cs-heuristic-num">Heuristic 02</span>
-          <span class="cs-heuristic-title">The Boundary Bracket Rule</span>
-          <p class="cs-heuristic-text">Average speed must always lie strictly between the slowest and fastest speeds (\(v_{\min} < v_{\text{avg}} < v_{\max}\)). Any option higher than the peak speed or lower than the minimum speed is an immediate physical impossibility.</p>
+        <div class="cs-check-card">
+          <span class="cs-check-num">Check 02</span>
+          <span class="cs-check-title">The Boundary Bracket Rule</span>
+          <p class="cs-check-text">Average speed must always lie strictly between the slowest and fastest speeds (\(v_{\min} < v_{\text{avg}} < v_{\max}\)). Any option higher than the peak speed or lower than the minimum speed is an immediate physical impossibility.</p>
         </div>
-        <div class="cs-heuristic-card">
-          <span class="cs-heuristic-num">Heuristic 03</span>
-          <span class="cs-heuristic-title">The Time-Weighting Asymmetry</span>
-          <p class="cs-heuristic-text">Because \(t = \frac{s}{v}\), covering equal distances at different speeds means spending <em>more time</em> at the slower speed. Therefore, the average speed is always pulled below the simple midpoint (\(\frac{v_1+v_2}{2}\)).</p>
+        <div class="cs-check-card">
+          <span class="cs-check-num">Check 03</span>
+          <span class="cs-check-title">The Slow-Leg Trap</span>
+          <p class="cs-check-text">Because \(t = \frac{s}{v}\), covering equal distances at different speeds means spending <em>more time</em> at the slower speed. Therefore, the average speed is always pulled below the simple midpoint (\(\frac{v_1+v_2}{2}\)).</p>
         </div>
       </div>
 
@@ -1592,7 +1592,7 @@
       <div class="model-solution-wrap">
         <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
         <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
-          <strong>Examiner's Verified Benchmark Solution:</strong><br><br>
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
           1. <em>Identify Given Parameters:</em><br>
           &nbsp;&nbsp;&nbsp;&nbsp;Speed \(v = 72\text{ km/h}\), Time \(t = 15\text{ s}\).<br><br>
           2. <em>Convert to SI Units Using Correct Factor (\(\frac{5}{18}\)):</em><br>
