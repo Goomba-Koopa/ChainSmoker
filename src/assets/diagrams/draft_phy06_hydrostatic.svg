@@ -1,0 +1,104 @@
+<svg viewBox="0 0 140 110" width="100%" height="100%"
+     shape-rendering="geometricPrecision"
+     text-rendering="geometricPrecision"
+     xmlns="http://www.w3.org/2000/svg"
+     style="background-color: transparent; font-family: 'Atkinson Hyperlegible', sans-serif;">
+
+  <defs>
+    <style>
+      .fluid-surface {
+        animation: surface-wave 3s ease-in-out infinite alternate;
+      }
+      .jet-top {
+        stroke-dasharray: 6 4;
+        animation: jet-flow-1 1.2s linear infinite;
+      }
+      .jet-mid {
+        stroke-dasharray: 8 4;
+        animation: jet-flow-2 0.9s linear infinite;
+      }
+      .jet-bot {
+        stroke-dasharray: 10 5;
+        animation: jet-flow-3 0.65s linear infinite;
+      }
+      .bubble-pulse {
+        animation: bubble-rise 2.4s ease-in-out infinite;
+      }
+
+      @keyframes surface-wave {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(1.5px); }
+      }
+      @keyframes jet-flow-1 {
+        0% { stroke-dashoffset: 20; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes jet-flow-2 {
+        0% { stroke-dashoffset: 24; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes jet-flow-3 {
+        0% { stroke-dashoffset: 30; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes bubble-rise {
+        0% { transform: translateY(0); opacity: 0; }
+        40% { opacity: 0.8; }
+        100% { transform: translateY(-24px); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- CONTAINER VESSEL (Physics Terracotta Wash) -->
+  <path d="M 22 22 L 22 92 L 68 92 L 68 22" fill="#fbf0ea" stroke="#161514" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- LIQUID COLUMN -->
+  <path class="fluid-surface" d="M 23 34 Q 45 32 67 34 L 67 91 L 23 91 Z" fill="#f4ded2" opacity="0.85" />
+  <line class="fluid-surface" x1="23" y1="34" x2="67" y2="34" stroke="#ea580c" stroke-width="2" stroke-linecap="round" />
+
+  <!-- INTERNAL CONVECTION BUBBLES -->
+  <g class="bubble-pulse">
+    <circle cx="34" cy="80" r="1.8" fill="#ea580c" opacity="0.6" />
+    <circle cx="52" cy="74" r="1.4" fill="#ea580c" opacity="0.6" />
+    <circle cx="42" cy="62" r="1.6" fill="#ea580c" opacity="0.6" />
+  </g>
+
+  <!-- THREE OUTLET NOZZLES AT DEPTHS h1, h2, h3 -->
+  <!-- Top Nozzle (Depth h1, low pressure) -->
+  <circle cx="68" cy="46" r="2.2" fill="#ea580c" stroke="#161514" stroke-width="1.2" />
+  <!-- Mid Nozzle (Depth h2, medium pressure) -->
+  <circle cx="68" cy="64" r="2.2" fill="#ea580c" stroke="#161514" stroke-width="1.2" />
+  <!-- Bottom Nozzle (Depth h3, maximum pressure) -->
+  <circle cx="68" cy="82" r="2.4" fill="#ea580c" stroke="#161514" stroke-width="1.4" />
+
+  <!-- PARABOLIC FLUID JETS (Trajectory proportional to sqrt(h)) -->
+  <!-- Jet 1 (Top): Weak trajectory, falls at x=88 -->
+  <path class="jet-top" d="M 68 46 Q 78 47 88 92" fill="none" stroke="#ea580c" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Jet 2 (Mid): Medium trajectory, falls at x=110 -->
+  <path class="jet-mid" d="M 68 64 Q 90 66 110 92" fill="none" stroke="#ea580c" stroke-width="2.2" stroke-linecap="round" />
+
+  <!-- Jet 3 (Bottom): Maximum trajectory velocity, falls at x=132 -->
+  <path class="jet-bot" d="M 68 82 Q 106 83 132 92" fill="none" stroke="#ea580c" stroke-width="2.6" stroke-linecap="round" />
+
+  <!-- BASE GROUND DATUM LINE -->
+  <line x1="14" y1="92" x2="136" y2="92" stroke="#161514" stroke-width="2.4" stroke-linecap="round" />
+  <!-- Hatch lines on ground -->
+  <line x1="20" y1="92" x2="16" y2="97" stroke="#797166" stroke-width="1.4" />
+  <line x1="36" y1="92" x2="32" y2="97" stroke="#797166" stroke-width="1.4" />
+  <line x1="52" y1="92" x2="48" y2="97" stroke="#797166" stroke-width="1.4" />
+  <line x1="68" y1="92" x2="64" y2="97" stroke="#797166" stroke-width="1.4" />
+  <line x1="84" y1="92" x2="80" y2="97" stroke="#797166" stroke-width="1.4" />
+  <line x1="100" y1="92" x2="96" y2="97" stroke="#797166" stroke-width="1.4" />
+  <line x1="116" y1="92" x2="112" y2="97" stroke="#797166" stroke-width="1.4" />
+
+  <!-- DEPTH DIMENSION BRACKET (h3) -->
+  <line x1="16" y1="34" x2="16" y2="82" stroke="#797166" stroke-width="1.2" stroke-dasharray="3 2" />
+  <line x1="14" y1="34" x2="18" y2="34" stroke="#797166" stroke-width="1.2" />
+  <line x1="14" y1="82" x2="18" y2="82" stroke="#797166" stroke-width="1.2" />
+  <text x="12" y="60" font-size="9" font-weight="700" fill="#797166" text-anchor="end">h</text>
+
+  <!-- PEDAGOGICAL LAW FORMULA LABEL -->
+  <text x="75" y="18" font-size="12" font-weight="700" fill="#161514" text-anchor="middle">P = h · ρ · g</text>
+  <text x="132" y="86" font-size="9" font-weight="700" fill="#ea580c" text-anchor="end">v_max</text>
+</svg>

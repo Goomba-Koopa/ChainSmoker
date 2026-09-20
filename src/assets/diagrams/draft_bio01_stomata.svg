@@ -1,0 +1,113 @@
+<svg viewBox="0 0 140 110" width="100%" height="100%"
+     shape-rendering="geometricPrecision"
+     text-rendering="geometricPrecision"
+     xmlns="http://www.w3.org/2000/svg"
+     style="background-color: transparent; font-family: 'Atkinson Hyperlegible', sans-serif;">
+
+  <defs>
+    <style>
+      .guard-left {
+        animation: swell-left 4.5s ease-in-out infinite alternate;
+        transform-origin: 45px 55px;
+      }
+      .guard-right {
+        animation: swell-right 4.5s ease-in-out infinite alternate;
+        transform-origin: 95px 55px;
+      }
+      .stoma-pore {
+        animation: pore-dilate 4.5s ease-in-out infinite alternate;
+        transform-origin: 70px 55px;
+      }
+      .transpiration-vapor {
+        animation: vapor-float 2.2s ease-out infinite;
+      }
+
+      @keyframes swell-left {
+        0% { transform: scaleX(0.88) translateX(3px); }
+        100% { transform: scaleX(1.08) translateX(-3px); }
+      }
+      @keyframes swell-right {
+        0% { transform: scaleX(0.88) translateX(-3px); }
+        100% { transform: scaleX(1.08) translateX(3px); }
+      }
+      @keyframes pore-dilate {
+        0% { transform: scaleX(0.25) scaleY(0.6); opacity: 0.3; }
+        100% { transform: scaleX(1.1) scaleY(1.0); opacity: 1; }
+      }
+      @keyframes vapor-float {
+        0% { transform: translateY(0) scale(0.6); opacity: 0; }
+        30% { opacity: 0.8; }
+        100% { transform: translateY(-26px) scale(1.1); opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- EPIDERMAL SUBSIDIARY CELLS (Background Tissue Matrix) -->
+  <g stroke="#797166" stroke-width="1.2" fill="#f8faf7" stroke-dasharray="3 2" opacity="0.65">
+    <polygon points="12,20 38,15 44,40 24,55 8,42" />
+    <polygon points="128,20 102,15 96,40 116,55 132,42" />
+    <polygon points="24,55 44,40 45,72 26,88 10,75" />
+    <polygon points="116,55 96,40 95,72 114,88 130,75" />
+  </g>
+
+  <!-- CENTRAL STOMATAL PORE (Aperture) -->
+  <!-- Dark aperture showing interior substomatal chamber -->
+  <g class="stoma-pore">
+    <ellipse cx="70" cy="55" rx="8.5" ry="22" fill="#161514" />
+    <!-- Transpiration water vapor release -->
+    <g class="transpiration-vapor">
+      <path d="M 67 48 Q 70 42 68 36" fill="none" stroke="#15803d" stroke-width="1.5" stroke-linecap="round" />
+      <path d="M 73 48 Q 70 42 72 36" fill="none" stroke="#15803d" stroke-width="1.5" stroke-linecap="round" />
+      <circle cx="70" cy="32" r="1.5" fill="#15803d" />
+    </g>
+  </g>
+
+  <!-- LEFT GUARD CELL (Reniform / Kidney-shaped) -->
+  <g class="guard-left">
+    <!-- Outer Elastic Wall & Cell Body -->
+    <path d="M 70 33 C 44 28 32 44 32 55 C 32 66 44 82 70 77 C 62 70 60 62 60 55 C 60 48 62 40 70 33 Z"
+          fill="#edf5ef" stroke="#161514" stroke-width="2.4" stroke-linejoin="round" />
+
+    <!-- Thickened Inner Cell Wall (Faces Stoma) -->
+    <path d="M 70 33 C 62 40 60 48 60 55 C 60 62 62 70 70 77"
+          fill="none" stroke="#15803d" stroke-width="3.8" stroke-linecap="round" />
+
+    <!-- Chloroplasts (Photosynthetic organelle dots in emerald green) -->
+    <circle cx="44" cy="46" r="2.2" fill="#15803d" />
+    <circle cx="42" cy="56" r="2.4" fill="#15803d" />
+    <circle cx="46" cy="65" r="2.2" fill="#15803d" />
+    <circle cx="52" cy="40" r="1.8" fill="#15803d" />
+    <circle cx="53" cy="70" r="1.8" fill="#15803d" />
+
+    <!-- Nucleus -->
+    <circle cx="48" cy="55" r="3.4" fill="#2e382b" stroke="#161514" stroke-width="1" />
+  </g>
+
+  <!-- RIGHT GUARD CELL (Symmetrical Kidney Pair) -->
+  <g class="guard-right">
+    <!-- Outer Elastic Wall & Cell Body -->
+    <path d="M 70 33 C 96 28 108 44 108 55 C 108 66 96 82 70 77 C 78 70 80 62 80 55 C 80 48 78 40 70 33 Z"
+          fill="#edf5ef" stroke="#161514" stroke-width="2.4" stroke-linejoin="round" />
+
+    <!-- Thickened Inner Cell Wall (Faces Stoma) -->
+    <path d="M 70 33 C 78 40 80 48 80 55 C 80 62 78 70 70 77"
+          fill="none" stroke="#15803d" stroke-width="3.8" stroke-linecap="round" />
+
+    <!-- Chloroplasts -->
+    <circle cx="96" cy="46" r="2.2" fill="#15803d" />
+    <circle cx="98" cy="56" r="2.4" fill="#15803d" />
+    <circle cx="94" cy="65" r="2.2" fill="#15803d" />
+    <circle cx="88" cy="40" r="1.8" fill="#15803d" />
+    <circle cx="87" cy="70" r="1.8" fill="#15803d" />
+
+    <!-- Nucleus -->
+    <circle cx="92" cy="55" r="3.4" fill="#2e382b" stroke="#161514" stroke-width="1" />
+  </g>
+
+  <!-- TOP HEADER LABEL (Atkinson Hyperlegible) -->
+  <text x="70" y="16" font-size="12" font-weight="700" fill="#161514" text-anchor="middle">Stomatal Turgor Dynamics</text>
+
+  <!-- ANNOTATION CALLOUTS (Bottom) -->
+  <text x="70" y="94" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">Turgid: Pore Dilated (H₂O Influx)</text>
+  <text x="70" y="105" font-size="8.5" fill="#797166" text-anchor="middle">Thick Inner Wall · Differential Expansion</text>
+</svg>

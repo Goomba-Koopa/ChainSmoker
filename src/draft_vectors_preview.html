@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fresh Topic Animated Vectors · Draft Preview</title>
+  <link rel="stylesheet" href="../fonts/fonts.css">
+  <style>
+    :root {
+      --bg-cream: #fbfaf7;
+      --bg-surface: #ffffff;
+      --ink-black: #161514;
+      --ink-muted: #797166;
+      --border-subtle: #e8e4dc;
+      --border-strong: #161514;
+      --accent-phy: #ea580c;
+      --accent-bio: #15803d;
+      --font-sans: 'Atkinson Hyperlegible', -apple-system, sans-serif;
+      --font-serif: 'Hepta Slab', Georgia, serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-cream);
+      font-family: var(--font-sans);
+      color: var(--ink-black);
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+      max-width: 600px;
+    }
+    .kicker {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--accent-phy);
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    p {
+      font-size: 15px;
+      color: var(--ink-muted);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      max-width: 780px;
+      width: 100%;
+    }
+
+    .draft-card {
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-strong);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 12px rgba(22, 21, 20, 0.04);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .badge-code {
+      background: #f4ede4;
+      padding: 4px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .badge-phy { color: var(--accent-phy); }
+    .badge-bio { color: var(--accent-bio); }
+
+    .stage {
+      width: 100%;
+      height: 200px;
+      background: #fcfbf9;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      padding: 12px;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      line-height: 1.45;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="kicker">ISOLATED DRAFT SHOWCASE · NOT APPLIED</div>
+    <h1>Fresh Animated Topic SVGs</h1>
+    <p>Calibrated directly for middle school desk margins with authentic scientific mechanics, genuine Atkinson Hyperlegible type, and zero decorative clutter.</p>
+  </header>
+
+  <div class="grid-container">
+
+    <!-- CARD 1: PHY-06 HYDROSTATIC LIQUID PRESSURE DEPTH -->
+    <div class="draft-card">
+      <div class="card-header">
+        <span class="badge-code">PHY-06</span>
+        <span class="badge-phy">Physics · Hydrostatics</span>
+      </div>
+      <div class="stage">
+        <object type="image/svg+xml" data="assets/diagrams/draft_phy06_hydrostatic.svg" style="width: 100%; height: 100%; pointer-events: none;"></object>
+      </div>
+      <div class="card-title">Hydrostatic Spout Jet Depth</div>
+      <div class="card-desc">Parabolic fluid trajectory velocity directly proportional to column depth (<em>P = h · ρ · g</em>), proving that hydrostatic pressure escalates downward.</div>
+    </div>
+
+    <!-- CARD 2: BIO-01 STOMATAL GUARD CELL TURGOR -->
+    <div class="draft-card">
+      <div class="card-header">
+        <span class="badge-code">BIO-01</span>
+        <span class="badge-bio">Biology · Histology</span>
+      </div>
+      <div class="stage">
+        <object type="image/svg+xml" data="assets/diagrams/draft_bio01_stomata.svg" style="width: 100%; height: 100%; pointer-events: none;"></object>
+      </div>
+      <div class="card-title">Stomatal Guard Cell Turgor</div>
+      <div class="card-desc">Differential cell wall expansion: elastic outer walls bulge under water turgor, pulling thickened inner walls apart to dilate the transpiration pore.</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,6 +1,25 @@
+# Python & Bytecode
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Agent Internal Directives & Memory (Strictly Local)
+.agents/
+AGENTS.md
+MEMORY.md
+*.metadata.json
+
+# Visual Audits & Screenshots
 test_screenshots/
+verify_*.png
+test_*.png
 test_bench.html
 *.log
+
+# Scratch & OS Artifacts
 scratch/
+tmp/
+*.tmp
+.DS_Store
+Thumbs.db

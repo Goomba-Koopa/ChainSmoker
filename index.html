@@ -5,16 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICSE Class 7 Science & Mathematics</title>
   
-  <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="fonts/fonts.css">
-
+  
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
 
   <style>
     :root {
@@ -1531,7 +1527,18 @@
       </svg>`
     };
 
-let currentFilter = 'all';
+  document.addEventListener('DOMContentLoaded', () => {
+    // Render KaTeX Math across the document
+    if (window.renderMathInElement) {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '\\(', right: '\\)', display: false}
+        ]
+      });
+    }
+
+    let currentFilter = 'all';
     let currentSearch = '';
 
     function renderTopics() {
@@ -1599,23 +1606,24 @@ let currentFilter = 'all';
       });
     }
 
-    function filterDiscipline(disc) {
+    // Bind to window to allow HTML onclick handlers to still access these functions
+    window.filterDiscipline = function(disc) {
       currentFilter = disc;
       document.querySelectorAll('.filter-tab[data-discipline]').forEach(tab => {
         tab.classList.toggle('active', tab.dataset.discipline === disc);
       });
       renderTopics();
-    }
+    };
 
-    function handleSearch(val) {
+    window.handleSearch = function(val) {
       currentSearch = val;
       renderTopics();
-    }
+    };
 
-    function toggleSample() {
+    window.toggleSample = function() {
       const el = document.getElementById('sampleReveal');
       el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
+    };
 
     function populateCounts() {
       document.querySelectorAll('.filter-tab[data-discipline]').forEach(btn => {
@@ -1642,6 +1650,7 @@ let currentFilter = 'all';
     // Initial render
     populateCounts();
     renderTopics();
+  });
   </script>
 </body>
 </html>
