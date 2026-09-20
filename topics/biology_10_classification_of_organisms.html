@@ -269,6 +269,7 @@
     }
 
   </style>
+  <script defer src="../js/examReasoningEngine.js"></script>
 </head>
 <body>
 
@@ -625,6 +626,230 @@
       </div>
     </div>
 
+  
+    <!-- 8. THE COMMON-SENSE STRATEGY: RULING OUT THE IMPOSSIBLE -->
+    <section class="cs-strategy-section" id="commonsense">
+      <div class="cs-header">
+        <div class="cs-title-group">
+          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+        </div>
+        <span class="cs-badge">Elimination Drill</span>
+      </div>
+
+      <div class="cs-intro">
+        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+      </div>
+
+      <!-- THE 3 CHECK CARDS -->
+      <div class="cs-checks-grid">
+        <div class="cs-check-card">
+          <span class="cs-check-num">Check 01</span>
+          <span class="cs-check-title">The Reality Scale Check</span>
+          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+        </div>
+        <div class="cs-check-card">
+          <span class="cs-check-num">Check 02</span>
+          <span class="cs-check-title">The Boundary Bracket Rule</span>
+          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+        </div>
+        <div class="cs-check-card">
+          <span class="cs-check-num">Check 03</span>
+          <span class="cs-check-title">The Units & Dimension Check</span>
+          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE ELIMINATION DRILL -->
+      <div class="cs-drill-box">
+        <div class="drill-header-row">
+          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
+        </div>
+        <div class="drill-question">
+          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+        </div>
+
+        <div class="cs-options-list">
+          <!-- OPTION A -->
+          <div class="cs-option-item" id="opt-a" onclick="toggleOptionFilter('a')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">A</span>
+                <span class="cs-option-value">Absurd Option 1</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+            </div>
+            <div class="cs-option-detail" id="detail-a" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Scale Violation</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+              </div>
+            </div>
+          </div>
+
+          <!-- OPTION B -->
+          <div class="cs-option-item" id="opt-b" onclick="toggleOptionFilter('b')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">B</span>
+                <span class="cs-option-value">Absurd Option 2</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+            </div>
+            <div class="cs-option-detail" id="detail-b" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Boundary Bracket Violation</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+              </div>
+            </div>
+          </div>
+
+          <!-- OPTION C -->
+          <div class="cs-option-item" id="opt-c" onclick="toggleOptionFilter('c')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">C</span>
+                <span class="cs-option-value">Absurd Option 3</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+            </div>
+            <div class="cs-option-detail" id="detail-c" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">The Arithmetic Trap</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+              </div>
+            </div>
+          </div>
+
+          <!-- OPTION D -->
+          <div class="cs-option-item" id="opt-d" onclick="toggleOptionFilter('d')">
+            <div class="cs-option-top">
+              <div class="cs-option-label-group">
+                <span class="cs-option-letter">D</span>
+                <span class="cs-option-value">Logical Option</span>
+              </div>
+              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+            </div>
+            <div class="cs-option-detail" id="detail-d" style="display: none;">
+              <div class="cs-detail-badge-row">
+                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
+                <span class="cs-detail-title">Physical Confirmation</span>
+              </div>
+              <div class="cs-detail-text">
+                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
+    <section class="bughunt-section" id="bughunt">
+      <div class="bughunt-header">
+        <div class="bughunt-title-group">
+          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+        </div>
+        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+      </div>
+
+      <div class="bughunt-context">
+        <strong>Problem Assigned:</strong>
+        <div class="bughunt-prompt-box">
+          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+        </div>
+        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
+      </div>
+
+      <div class="notebook-sheet">
+        <div class="notebook-meta">
+          <span>Student: Aarav Mehta &bull; Class 7-B</span>
+          <span>Topic: Classification of Living Organisms</span>
+        </div>
+
+        <div class="notebook-lines">
+          <!-- LINE 1: SOUND -->
+          <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
+            <div class="notebook-line-top">
+              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
+              <span class="line-action-hint">Click to inspect line &rarr;</span>
+            </div>
+            <div class="line-content">
+              [Placeholder for Student's correct extraction of givens]
+            </div>
+          </div>
+
+          <!-- LINE 2: ROOT BLUNDER -->
+          <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
+            <div class="notebook-line-top">
+              <span class="line-step-tag">Step 2: Core Calculation Step</span>
+              <span class="line-action-hint">Click to inspect line &rarr;</span>
+            </div>
+            <div class="line-content">
+              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+            </div>
+          </div>
+
+          <!-- LINE 3: ECF FOLLOW-THROUGH -->
+          <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
+            <div class="notebook-line-top">
+              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-action-hint">Click to inspect line &rarr;</span>
+            </div>
+            <div class="line-content">
+              [Placeholder for Student's final answer, carrying forward the mistake]
+            </div>
+          </div>
+        </div>
+
+        <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
+        <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
+          <div class="feedback-card-header">
+            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+          </div>
+          <div class="feedback-body">
+            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
+            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+          </div>
+        </div>
+
+        <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
+          <div class="feedback-card-header">
+            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
+            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+          </div>
+          <div class="feedback-body">
+            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
+            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+          </div>
+        </div>
+
+        <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
+          <div class="feedback-card-header">
+            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
+            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+          </div>
+          <div class="feedback-body">
+            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
+            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -639,11 +864,6 @@
     <div>CISCE Class 7 Academic Reference</div>
   </footer>
 
-  <script>
-    function toggleDrawer(id) {
-      const el = document.getElementById(id);
-      el.style.display = (el.style.display === 'block') ? 'none' : 'block';
-    }
-  </script>
+  
 </body>
 </html>
