@@ -1,14 +1,14 @@
 /*
- * Typography Stack
- * Powered by Google Fonts: Roboto Slab (100..900) + Atkinson Hyperlegible + Abel
+ * Typography Stack: Digital-First Sans Consolidation
+ * Powered by Google Fonts: Outfit (300..800) + Inter + Abel
  */
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap');
 
 :root {
-  --font-heading: 'Roboto Slab', serif !important;
-  --font-body: 'Atkinson Hyperlegible', sans-serif !important;
-  --font-serif: 'Roboto Slab', serif !important;
-  --font-sans: 'Atkinson Hyperlegible', sans-serif !important;
+  --font-heading: 'Outfit', sans-serif !important;
+  --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  --font-serif: 'Outfit', sans-serif !important;
+  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   --font-abel: 'Abel', sans-serif !important;
 }
 
@@ -18,7 +18,8 @@ html, body {
 }
 
 .heading, h1, h2, h3, h4, h5, h6, .brand-title {
-  font-family: 'Roboto Slab', serif !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
 }
 
 .technical-label, .dimension-label, svg text {
@@ -26,24 +27,24 @@ html, body {
 }
 
 .article-header .topic-title, h1.topic-title, .hero-heading {
-  font-family: 'Roboto Slab', serif !important;
-  font-size: 48px !important;
-  font-weight: 550 !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 44px !important;
+  font-weight: 700 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.02em !important;
 }
 
 .topic-card .topic-title {
-  font-family: 'Roboto Slab', serif !important;
-  font-size: 22px !important;
-  font-weight: 550 !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
   line-height: 1.25 !important;
   letter-spacing: -0.01em !important;
 }
 
 .brand-title {
-  font-family: 'Roboto Slab', serif !important;
-  font-weight: 600 !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
   font-style: normal !important;
   color: var(--ink-black, #161514) !important;
   text-decoration: none !important;
@@ -51,22 +52,31 @@ html, body {
 
 .brand-title em {
   font-style: normal !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: var(--ink-black, #161514) !important;
 }
 
 .section-heading {
-  font-family: 'Roboto Slab', serif !important;
-  font-weight: 600 !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
 }
 
 body, p, li, span, input, button, select, textarea, .topic-snippet {
-  font-family: 'Atkinson Hyperlegible', sans-serif !important;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
-/* Ensure inline spans, highlights, and marks inside headings inherit the heading font (Roboto Slab) */
+/* Ensure inline spans, highlights, and marks inside headings inherit the heading font (Outfit) */
 .hero-heading span, .topic-title span, .highlighter-mark, h1 span, h2 span, h3 span {
   font-family: inherit !important;
+}
+
+/* KaTeX Math Typography Calibration:
+   Standard katex.min.css forces a 1.21em multiplier designed for Computer Modern serif.
+   In modern geometric sans (Outfit/Inter), this causes inline numerals to visibly tower
+   over adjacent uppercase letters. We normalize inline math to 1.0em and allow display
+   math equations to render at a legible 1.15em. */
+.katex {
+  font-size: 1.0em !important;
 }
 
 .katex-display {
@@ -74,6 +84,11 @@ body, p, li, span, input, button, select, textarea, .topic-snippet {
   overflow-y: hidden;
   max-width: 100%;
 }
+
+.katex-display > .katex {
+  font-size: 1.15em !important;
+}
+
 
 /* ==========================================================================
    LEGIBILITY & ENLARGED TYPOGRAPHY SCALE (CLASS 7 READING COMFORT)
@@ -123,9 +138,9 @@ body, p, li, span, input, button, select, textarea, .topic-snippet {
 }
 .concept-callout-title {
   display: block !important;
-  font-family: var(--font-serif, 'Roboto Slab', serif) !important;
+  font-family: 'Outfit', sans-serif !important;
   font-size: 18px !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: var(--ink-black, #161514) !important;
   margin-bottom: 8px !important;
 }

@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chemistry 10: Carbon & Its Allotropes • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -30,10 +31,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -263,6 +264,64 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Allotropy Definition:</strong> Define allotropy and classify carbon into crystalline (diamond, graphite, fullerenes) and amorphous allotropes (coke, charcoal, lampblack).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Diamond 3D Architecture:</strong> Correlate diamond's 3D tetrahedral network of strong covalent bonds with its extreme hardness, high melting point, and electrical insulation.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Graphite Layer Mechanics:</strong> Explain graphite's soft lubricating slipperiness and electrical conductivity via planar hexagonal sheets and delocalized free electrons.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Fullerenes & Amorphous Carbons:</strong> Describe spherical Fullerene \(C_{60}\) cages and connect high surface area of wood/activated charcoal with adsorption uses.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Chemistry builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 carbon allotrope rigor:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Carbon is black soot and diamond is shiny</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Sensory Contrast:</strong> Coal and charcoal are soft black solids, while diamond is a brilliant, precious gemstone.</li>
+            <li><strong>Pencil Lead Myth:</strong> Pencils contain "lead" that writes softly on paper.</li>
+            <li><strong>No Atomic Link:</strong> Different carbon forms are thought to be separate chemical substances.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Lattice geometry, valency hybridization, and electron mobility</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Identical Atoms:</strong> Diamond and graphite are 100% pure elemental carbon, both burning to pure \(\text{CO}_2\) with zero ash.</li>
+            <li><strong>Free Electron Conduction:</strong> Graphite has 1 delocalized valence electron per atom drifting between hexagonal layers; diamond has 0 free electrons.</li>
+            <li><strong>Tetrahedral Rigidity:</strong> Diamond's 4 localized covalent bonds per atom in a 3D network make it the hardest known natural mineral.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- 1. ALLOTROPY CONCEPT -->
     <div class="section-block">
@@ -374,7 +433,7 @@
       </div>
     </div>
 
-    <!-- 4. WORKED ICSE QUESTIONS -->
+    <!-- 4. WORKED• ICSE QUESTIONS -->
     <div class="section-block">
       <h2 class="section-heading">4. Worked Problems</h2>
       
@@ -457,43 +516,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
           <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In chemistry, macroscopic physical properties stem directly from microscopic bonding architecture. Top problem solvers don't guess blindly; they inspect options first and ask: <em>Which of these are physically absurd or chemically impossible?</em> When evaluating carbon allotropes, you can eliminate invalid options in seconds by testing free electron conduction rules, tetrahedral hardness, and combustion stoichiometry.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">Delocalized Free Electron Conduction Rule</span>
+          <p class="cs-check-text">Electrical conduction in non-metals strictly requires mobile charge carriers. Graphite has 1 delocalized electron per carbon atom drifting between sheets; diamond locks all 4 valence electrons into rigid tetrahedral covalent bonds and is strictly an electrical insulator.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">Chemical Combustion Identity Invariant</span>
+          <p class="cs-check-text">All allotropes of pure carbon contain identical carbon atoms (\(Z=6\)). Complete combustion of equal masses of pure diamond and graphite in excess oxygen yields identical masses of pure \(\text{CO}_2\) gas with exactly zero solid ash residue!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">Tetrahedral Rigidity vs Layer Cleavage</span>
+          <p class="cs-check-text">Diamond's 3D tetrahedral network resists deformation in all directions (Mohs hardness 10). Graphite's sheets are held only by weak van der Waals forces, allowing them to cleave and slide easily as a dry solid lubricant.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A materials chemist places a \(1.20\text{ g}\) sample of pure diamond powder in one quartz combustion boat and a \(1.20\text{ g}\) sample of pure natural graphite in a second boat. Both are heated strongly to \(900^\circ\text{C}\) in an excess stream of pure oxygen gas. What products and residues are left in the two boats?
         </div>
 
         <div class="cs-options-list">
@@ -502,17 +561,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">Diamond produces carbon monoxide (\(\text{CO}\)) gas; graphite produces carbon dioxide (\(\text{CO}_2\)) gas.</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Oxidation Stoichiometry Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> In an excess stream of pure oxygen, carbon oxidizes fully to \(\text{CO}_2\). Incomplete combustion to toxic \(\text{CO}\) occurs only when oxygen supply is restricted, not in an excess oxygen stream!
               </div>
             </div>
           </div>
@@ -522,17 +581,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Diamond refuses to burn at any temperature and is recovered unchanged; graphite produces \(\text{CO}_2\).</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Diamond Invulnerability Myth</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Diamond is mechanically the hardest natural substance, but chemically it is purely carbon! At \(900^\circ\text{C}\) in pure oxygen, diamond glows white-hot and burns completely away.
               </div>
             </div>
           </div>
@@ -542,17 +601,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Both burn to \(\text{CO}_2\), but graphite leaves a non-combustible black metallic ash residue.</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Ash Residue Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Pure allotropes of carbon contain zero metal oxides, silicates, or minerals (unlike impure coal). Pure graphite leaves exactly zero solid ash residue behind!
               </div>
             </div>
           </div>
@@ -562,17 +621,21 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">Both boats leave exactly zero solid residue and yield identical masses (\(4.40\text{ g}\)) of pure Carbon Dioxide gas (\(\text{CO}_2\)).</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Elemental Allotropy Confirmed</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> Diamond and graphite are both 100% pure elemental carbon. Since chemical reactions involve atom-to-atom rearrangement, identical masses of identical carbon atoms must yield identical masses of product.<br><br>
+                <strong>The 10-Second Stoichiometric Proof:</strong><br>
+                • \(\text{C} + \text{O}_2 \to \text{CO}_2\).<br>
+                • \(12\text{ g of C}\) combines with \(32\text{ g of }\text{O}_2\) to yield \(44\text{ g of }\text{CO}_2\).<br>
+                • For \(1.20\text{ g of C}\): Mass of \(\text{CO}_2 = 1.20 \times \frac{44}{12} = \mathbf{4.40\text{ g}}\). Zero residue remains in either boat!
               </div>
             </div>
           </div>
@@ -584,58 +647,59 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Varun's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Explain why graphite is a good electrical conductor widely utilized in dry-cell battery electrodes and dynamo contact brushes, whereas diamond is an electrical insulator.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Varun Nair</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Carbon & Its Allotropes</span>
+          <span>Student: Varun Nair • Class 7-C</span>
+          <span>Topic: Carbon &amp; Its Allotropes</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Compare Elemental Composition &amp; Valence Electron Count</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Both diamond and graphite are composed exclusively of pure carbon atoms (\(Z=6\)).<br>
+              Each carbon atom possesses exactly \(4\) valence electrons in its outer \(L\)-shell (\(2, 4\)).
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Explain Origin of Electrical Conduction in Graphite</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              Varun explains: Graphite conducts electricity because metallic lead (\(\text{Pb}\)) and copper impurities are naturally present between its sheets.
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: State Consequence of Purification on Conductivity</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Conclusion: Thoroughly purifying graphite to extract all metallic impurities will turn it into an electrical insulator like diamond.
             </div>
           </div>
         </div>
@@ -643,35 +707,56 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Accurate Elemental Foundation</div>
+            Varun correctly recognized that both diamond and graphite are allotropes consisting solely of pure carbon atoms, each with 4 valence electrons. 1/1 Mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: "Pencil Lead" Misconception &amp; Metal Impurity Fallacy</div>
+            <strong>The Trap:</strong> Varun fell into the classic historical name trap!<br>
+            • Pencil "lead" contains zero metallic lead (\(\text{Pb}\)) or copper; graphite is 100% pure carbon.<br>
+            • Graphite conducts electricity intrinsically because each carbon atom forms covalent bonds with only <strong>3 neighbor carbons</strong> in a hexagonal sheet, leaving the <strong>fourth valence electron free and delocalized</strong> to drift under an electric field!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Varun logically reasoned that if conduction was caused by foreign metal impurities, removing those impurities would necessarily halt conduction.<br>
+            Because his Step 3 deduction is internally coherent based on his flawed Step 2 premise, ICSE marking criteria award the follow-through <strong>Method Mark (M1)</strong>.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Structural Basis of Conduction in Graphite:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;In graphite, each carbon atom is covalently linked to only <strong>three other carbon atoms</strong> in flat hexagonal planar rings.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Since carbon has \(4\) valence electrons, <strong>1 electron per carbon atom remains free (delocalized)</strong>.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;These mobile electrons easily drift between layers when a voltage is applied, making graphite an <strong>excellent electrical conductor</strong>.<br><br>
+          2. <em>Structural Basis of Insulation in Diamond:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;In diamond, each carbon atom is covalently linked to <strong>four other carbon atoms</strong> in a rigid 3D tetrahedral framework.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;All \(4\) valence electrons are tightly bound in localized covalent bonds: <strong>Zero mobile electrons</strong>.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Without free electrons or ions to carry charge, diamond is a <strong>complete electrical insulator</strong>.<br><br>
+          3. <em>Examiner Reality Check:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Both are 100% pure carbon. The presence of mobile, delocalized electrons in graphite vs locked localized electrons in diamond is the sole determinant of electrical conductivity!
         </div>
       </div>
     </section>

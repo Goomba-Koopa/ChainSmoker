@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lines, Angles & Transversals: Geometric Rigor • ICSE Class 7 Mathematics</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -32,10 +33,10 @@
       --emerald-soft: #f0f7f2;
       --amber-accent: #b45309;
       --amber-soft: #fef3c7;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -267,18 +268,77 @@
   <!-- EDITORIAL MASTHEAD -->
   <header class="masthead">
     <a href="../index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
-    <a href="../index.html" class="nav-back">← Reference Index</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 
   <!-- TOPIC HERO -->
   <header class="article-header">
-    <div class="topic-kicker">MATHEMATICS 07 • EUCLIDEAN FOUNDATIONS</div>
+    <div class="topic-kicker">Mathematics • Topic 07</div>
     <h1 class="topic-title">Lines, Angles & Transversals: Geometric Rigor</h1>
     <p class="topic-subtext">Fundamental geometric primitives, complementary and supplementary relations, the vertically opposite angle proof, and parallel transversal systems.</p>
   </header>
 
   <!-- MAIN ARTICLE BODY -->
   <main class="article-body">
+
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Classify Geometric Angle Relationships:</strong> Distinguish between complementary (\(90^\circ\)), supplementary (\(180^\circ\)), adjacent, and linear pairs with formal axiomatic definitions.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Master Transversal Angle Theorems:</strong> State and apply theorems for Alternate Interior Angles (\(Z\)-angles, equal), Corresponding Angles (\(F\)-angles, equal), and Co-Interior Consecutive Angles (\(C\)-angles, supplementary: sum \(= 180^\circ\)) across parallel lines cut by a transversal.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Construct Deductive Geometric Proofs:</strong> Write complete multi-step angle deductions citing Euclidean geometric reasons (e.g., "[Linear Pair Postulate]", "[Vertically Opposite Angles]", "[Alternate Interior Angles, \(AB \parallel CD\)]").</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Deploy Common-Sense Geometric Filters:</strong> Instantly eliminate options that equate supplementary co-interior angles or violate straight-line bounds (\(>180^\circ\)).</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Mathematics builds layer upon layer. Here is how Grade 6 protractor measurements evolve into Grade 7 deductive geometry:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Protractor Reading &amp; Visual Angle Labels</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Empirical Protractor Measurement:</strong> Angles were read off a plastic protractor; classification was purely visual (looks acute vs looks obtuse).</li>
+            <li><strong>Isolated Terminology:</strong> Acute, obtuse, and reflex angles were learned as standalone definitions without inter-angle algebraic relationships.</li>
+            <li><strong>Visual Parallelism:</strong> Parallel lines were checked by looking to see if lines "resembled railway tracks", without formal transversal intersection criteria.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Deductive Proofs &amp; Transversal Angle Invariants</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Axiomatic Deductions:</strong> Protractor measurement is forbidden in proofs. Unknown angles must be calculated algebraically via Euclidean theorems (linear pair, vertically opposite).</li>
+            <li><strong>Transversal Angle Invariants:</strong> A transversal intersecting two parallel lines creates 8 angles belonging to just two magnitude classes: all acute angles are equal, all obtuse angles are equal, and any acute + obtuse \(= 180^\circ\).</li>
+            <li><strong>Mandatory Reason Citations:</strong> Every geometric deduction in ICSE Class 7 must be accompanied by its explicit written theorem justification in brackets.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
     <!-- SECTION 1: GEOMETRIC PRIMITIVES -->
@@ -367,7 +427,7 @@
 
       <div class="concept-callout">
         <div class="concept-callout-title">The Converse Tests for Parallelism</div>
-        <p>In ICSE exams, you are frequently asked to <em>prove</em> that two lines are parallel. You can prove \(l \parallel m\) by verifying any ONE of these three conditions:</p>
+        <p>In• ICSE exams, you are frequently asked to <em>prove</em> that two lines are parallel. You can prove \(l \parallel m\) by verifying any ONE of these three conditions:</p>
         <p>1. Prove any pair of corresponding angles are equal.</p>
         <p>2. Prove any pair of alternate interior angles are equal.</p>
         <p>3. Prove any pair of co-interior angles sum to \(180^\circ\).</p>
@@ -381,7 +441,7 @@
 
     <!-- SECTION 4: WORKED EXAM PROBLEMS -->
     <section class="section-block">
-      <h2 class="section-heading">4. Worked Problem ICSE Examination Problems</h2>
+      <h2 class="section-heading">4. Worked Problem• ICSE Examination Problems</h2>
 
       <!-- PROBLEM 1 -->
       <div class="problem-box">
@@ -512,31 +572,31 @@
       <div class="cs-header">
         <div class="cs-title-group">
           <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Geometric Reality Checks</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In geometry, spatial axioms enforce strict numerical boundaries. A straight angle is always \(180^\circ\); an acute angle cannot exceed \(90^\circ\); co-interior angles must add up to \(180^\circ\) rather than be equated. Use spatial bounds to rule out flawed options in seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Acute vs. Obtuse Filter</span>
+          <p class="cs-check-text">Classify the target angle visually and algebraically. If an angle is formed by a transversal cutting parallel lines, it is either acute (\(<90^\circ\)) or obtuse (\(>90^\circ\)). Any option claiming an acute angle is \(120^\circ\) is an instant impossibility.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Co-Interior Supplementary Invariant</span>
+          <p class="cs-check-text">Consecutive interior angles on the same side of a transversal are strictly supplementary: \(\angle 1 + \angle 2 = 180^\circ\). Disqualify any candidate answer derived from erroneously setting them equal (\(\angle 1 = \angle 2\)).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">Question Qualifier Target Check</span>
+          <p class="cs-check-text">Always verify whether the question asks for \(x\), the <em>smaller</em> angle, or the <em>larger</em> angle. Traps frequently offer the larger angle or the raw variable \(x\) as decoy options.</p>
         </div>
       </div>
 
@@ -547,7 +607,7 @@
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem (ICSE Class 7):</strong> Two parallel lines \(AB\) and \(CD\) are intersected by a transversal line \(EF\). A pair of interior consecutive (co-interior) angles on the same side of the transversal are given by \((3x + 10)^\circ\) and \((2x + 20)^\circ\). Find the value of \(x\) and determine the measure of the <strong>smaller angle</strong>.
         </div>
 
         <div class="cs-options-list">
@@ -556,17 +616,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(x = 50^\circ, \text{smaller angle} = 120^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-detail-title">Straight Angle Sum Violation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> If \(x = 50^\circ\), the angles would be \(3(50)+10 = 160^\circ\) and \(2(50)+20 = 120^\circ\). Their sum would be \(160^\circ + 120^\circ = 280^\circ \neq 180^\circ\)! Furthermore, an angle of \(120^\circ\) is obtuse, so it cannot be the smaller angle of a supplementary pair. Ruled out!
               </div>
             </div>
           </div>
@@ -576,17 +636,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(x = 30^\circ, \text{smaller angle} = 100^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-detail-title">Larger Angle Decoy Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> While \(x = 30^\circ\) is mathematically correct, substituting into the two expressions yields \(3(30)+10 = 100^\circ\) and \(2(30)+20 = 80^\circ\). The question explicitly requested the <em>smaller</em> angle, which is \(80^\circ\), not \(100^\circ\)! Ruled out instantly!
               </div>
             </div>
           </div>
@@ -596,37 +656,37 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(x = 25^\circ, \text{smaller angle} = 70^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-detail-title">Supplementary Check Failure</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> For \(x = 25^\circ\), the angles are \(3(25)+10 = 85^\circ\) and \(2(25)+20 = 70^\circ\). Their sum is \(85^\circ + 70^\circ = 155^\circ \neq 180^\circ\). They fail the co-interior supplementary condition.
               </div>
             </div>
           </div>
 
           <!-- OPTION D -->
-          <div class="cs-option-item" id="opt-d" onclick="toggleOptionFilter('d')">
+          <div class="cs-option-item tag-sound state-survivor" id="opt-d" onclick="toggleOptionFilter('d')">
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(x = 30^\circ, \text{smaller angle} = 80^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-detail-title">Axiomatic Verification Confirmed</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>10-Second Mental Proof:</strong> Co-interior sum: \((3x+10) + (2x+20) = 180 \implies 5x + 30 = 180 \implies 5x = 150 \implies x = 30^\circ\). Smaller angle: \(2(30)+20 = 80^\circ\). Check: \(100^\circ + 80^\circ = 180^\circ\). It is the only survivor!
               </div>
             </div>
           </div>
@@ -639,7 +699,7 @@
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Diya's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
       </div>
@@ -647,49 +707,51 @@
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          In the given parallel transversal figure with \(l \parallel m\), an obtuse exterior angle is \(115^\circ\).<br>
+          (i) Deduce the alternate interior angle \(x\).<br>
+          (ii) Find its consecutive co-interior angle \(y\) on the same side of the transversal.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Diya Chawla</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Lines, Angles & Transversals: Geometric Rigor</span>
+          <span>Student: Diya Chawla &bull; Class 7-C</span>
+          <span>Topic: Lines &amp; Angles &bull; Transversal Deductions</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
+              <span class="line-step-tag">Step 1: Alternate Interior Angle Deduction</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              \(\angle x = 115^\circ\) [Vertically opposite to corresponding exterior angle, \(l \parallel m\)].
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
+              <span class="line-step-tag">Step 2: Consecutive Co-Interior Angle Deduction</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              \(\angle y = \angle x = 115^\circ\) [Since co-interior angles between parallel lines are equal].
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-step-tag">Step 3: Adjacent Linear Pair Evaluation</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Angle \(z\) adjacent to \(y\) on a line: \(z = 180^\circ - \angle y = 180^\circ - 115^\circ = 65^\circ\) [Linear Pair Postulate].
             </div>
           </div>
         </div>
@@ -701,19 +763,19 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Flawless Transversal Deduction</div>
+            Diya correctly identified that \(\angle x = 115^\circ\) and properly quoted the geometric justification relating to parallel lines and vertically opposite angles. 1 mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
+            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder: Co-Interior Equality Fallacy</span>
             <span class="feedback-marks-badge">Score: 0/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Fatal Theorem Inversion</div>
+            Co-interior angles are <strong>SUPPLEMENTARY</strong> (\(\angle x + \angle y = 180^\circ\)), NEVER EQUAL! Alternate interior angles and corresponding angles are equal, but co-interior angles must add up to \(180^\circ\). The true angle is \(\angle y = 180^\circ - 115^\circ = 65^\circ\). Zero marks for Step 2.
           </div>
         </div>
 
@@ -723,10 +785,42 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method Credit Conferred</div>
+            Even though the value of \(y\) was conceptually wrong, Diya correctly applied the Linear Pair Postulate (\(z = 180^\circ - y\)) to her calculated value from Step 2 without additional arithmetic errors. ICSE awards 1 mark under Error Carried Forward (ECF).
           </div>
         </div>
+
+        <!-- MODEL SOLUTION DRAWER -->
+        <div class="model-solution-wrap">
+          <button class="btn-model-solution" onclick="toggleDrawer('model_sol')">
+            <span>&#9776; Reveal Official ICSE Marking Scheme &amp; Model Solution</span>
+            <span class="drawer-arrow">&#9662;</span>
+          </button>
+          <div class="solution-drawer" id="model_sol" style="display: none;">
+            <div class="model-step">
+              <span class="step-num">Step 1: Alternate Interior Angle [1 Mark]</span>
+              <p>Since line \(l \parallel m\) cut by transversal \(t\):<br>
+              \[\angle x = 115^\circ \quad \text{[Vertically opposite to corresponding exterior angle]}\]</p>
+            </div>
+            <div class="model-step">
+              <span class="step-num">Step 2: Consecutive Co-Interior Angle [1 Mark]</span>
+              <p>Interior consecutive angles on the same side of the transversal are supplementary:<br>
+              \[\angle x + \angle y = 180^\circ \quad \text{[Co-interior angles, } l \parallel m \text{]}\]<br>
+              Substitute \(\angle x = 115^\circ\):<br>
+              \[115^\circ + \angle y = 180^\circ \implies \angle y = 180^\circ - 115^\circ = \mathbf{65^\circ}\]</p>
+            </div>
+            <div class="model-step">
+              <span class="step-num">Step 3: Adjacent Linear Pair Angle [1 Mark]</span>
+              <p>Angles \(y\) and \(z\) lie on a straight line:<br>
+              \[\angle y + \angle z = 180^\circ \quad \text{[Linear Pair Postulate]}\]<br>
+              \[65^\circ + \angle z = 180^\circ \implies \angle z = 180^\circ - 65^\circ = \mathbf{115^\circ}\]</p>
+            </div>
+            <div class="examiner-tips">
+              <strong>Chief Examiner's Tip:</strong> In ICSE geometry, an answer without a stated bracketed reason loses 50% to 100% of method marks. Always memorize the three big transversal reasons: <em>[Corresponding Angles, lines parallel]</em>, <em>[Alternate Interior Angles, lines parallel]</em>, and <em>[Co-interior Angles Supplementary, lines parallel]</em>.
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -741,7 +835,7 @@
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
-    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
+    <div>Outfit &amp; Inter • KaTeX for math</div>
   </footer>
 
   <script>

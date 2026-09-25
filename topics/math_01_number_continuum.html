@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mathematics 01: The Number Continuum: Integers, Fractions & Decimals • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -32,10 +33,10 @@
       --emerald-soft: #f0f7f2;
       --amber-accent: #b45309;
       --amber-soft: #fef3c7;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -299,6 +300,65 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Unify the Number Line:</strong> Connect Natural numbers, Whole numbers, Integers, and Rational numbers (\(\frac{p}{q}, q \neq 0\)) as concentric sets on a continuous directional axis.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Master Signed Arithmetic:</strong> Apply rigorous sign rules for integer addition, subtraction, multiplication, and division with physical models (debt, elevation, directional vectors).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Classify Decimal Expansions:</strong> Test rational numbers for terminating vs non-terminating recurring decimal expansions using prime factorisation of the denominator (\(2^m \times 5^n\)).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Elimination:</strong> Rule out sign-inverted, denominator-zero, or magnitude-absurd options in under 5 seconds before calculating.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Mathematics builds layer upon layer. Here is how your Grade 6 arithmetic evolves into Grade 7 rational number rigor:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Arithmetic on Whole Units & Positive Fractions</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Positive Counts:</strong> Numbers are whole counting units (1, 2, 3...) or parts of a single positive whole pie (\(\frac{1}{2}, \frac{3}{4}\)).</li>
+            <li><strong>Subtraction as Taking Away:</strong> Subtraction was strictly "taking away"; subtracting a larger number from a smaller one (\(3 - 7\)) was declared impossible.</li>
+            <li><strong>Intuitive Multiplication:</strong> Multiplication was assumed to always enlarge numbers (\(4 \times 5 = 20\)); decimals were treated simply as fractional coins or metric steps.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">The Signed Rational Continuum (\(\mathbb{Q}\))</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>The Infinite Axis:</strong> Rational numbers \(\mathbb{Q} = \{\frac{p}{q} : p, q \in \mathbb{Z}, q \neq 0\}\) span infinite positive and negative directions through zero.</li>
+            <li><strong>Additive Inverse & Sign Axioms:</strong> Subtraction is adding the additive inverse (\(a - b = a + (-b)\)); multiplication obeys directional reflection: \((-a) \times (-b) = +(ab)\).</li>
+            <li><strong>Prime Factorisation of Denominators:</strong> A fraction in lowest terms terminates if and only if \(q = 2^m \times 5^n\) (\(m, n \ge 0\)); any other prime factor forces recurring periodicity.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 
     <!-- INTRO HOOK -->
     <section class="section-block">
@@ -382,7 +442,7 @@
 
       <div class="headsup-box">
         <span class="headsup-title">Heads-Up &bull; Standard Form for Negative Denominators</span>
-        <p>In the ICSE syllabus, a rational number is <strong>not in standard form</strong> if the negative sign is in the denominator, like \(\frac{5}{-7}\). Always shift the negative sign to the numerator or to the front by multiplying numerator and denominator by \(-1\):
+        <p>In the• ICSE syllabus, a rational number is <strong>not in standard form</strong> if the negative sign is in the denominator, like \(\frac{5}{-7}\). Always shift the negative sign to the numerator or to the front by multiplying numerator and denominator by \(-1\):
         $$\frac{5}{-7} = \frac{5 \times (-1)}{-7 \times (-1)} = \mathbf{-\frac{5}{7}}$$</p>
       </div>
     </section>
@@ -452,7 +512,7 @@
 
       <h3 class="subsection-heading">The Four Layers of Brackets (Inside-Out Rule)</h3>
       <p>
-        In Class 7 ICSE, you will see problems with up to four nested layers of brackets. Always work like peeling an onion, from the innermost layer outwards:
+        In Class 7• ICSE, you will see problems with up to four nested layers of brackets. Always work like peeling an onion, from the innermost layer outwards:
       </p>
       <ol class="content-list">
         <li><strong>1st: The Vinculum or Bar (\(\overline{a - b}\)):</strong> The horizontal line over numbers. It acts like the tightest bracket!</li>
@@ -744,43 +804,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In mathematics, operations represent concrete directional movements and scaling. Top problem solvers don't blindly compute; they inspect the options first and ask: <em>Which of these are sign-absurd, inverted, or scale-impossible?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Reality & Scale Check</span>
+          <p class="cs-check-text">Dividing by a proper fraction less than 1 (like \(\frac{3}{4}\)) must INCREASE the magnitude of the dividend. If the quotient gets smaller than the original number, disqualify it instantly.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
           <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <p class="cs-check-text">Track negative signs carefully: negative divided by negative is strictly positive. Adding the negative of a negative \(-(-k)\) adds \(+k\), shifting the result further to the right on the number line.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Reciprocal Division Rule</span>
+          <p class="cs-check-text">Dividing by \(\frac{a}{b}\) means multiplying by \(\frac{b}{a}\). Never multiply by the un-inverted divisor, which produces an inverted scale trap.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> Evaluate the rational expression: \((-18) \div \left(-\frac{3}{4}\right) - (-7)\).
         </div>
 
         <div class="cs-options-list">
@@ -789,17 +849,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(-31\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Sign Inversion Blunder</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Dividing negative by negative MUST yield a positive quotient (\((-18) \div (-0.75) = +24\)). Subtracting \(-7\) adds another \(+7\). The final answer must be strongly positive, yet this option is \(-31\)!
               </div>
             </div>
           </div>
@@ -809,17 +869,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(-17\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Subtractive Sign Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> This traps students who compute \(+24\) but treat \(-(-7)\) as \(-7\), or students who write \(-24 + 7 = -17\). Both parts are positive; the result cannot be negative.
               </div>
             </div>
           </div>
@@ -829,17 +889,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(6.5\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">The Un-inverted Divisor Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> This traps students who forget to invert the divisor and compute \(18 \times \frac{3}{4} = 13.5\), then subtract 7 to get \(6.5\). Dividing by a fraction less than 1 must increase the value above 18, not shrink it!
               </div>
             </div>
           </div>
@@ -849,17 +909,21 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(31\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Physical & Mathematical Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> It is the only option that correctly reflects positive sign division and the addition of \(+7\) to a quantity greater than 20.<br><br>
+                <strong>The 10-Second Mathematical Proof:</strong><br>
+                • Division by fraction: \((-18) \div \left(-\frac{3}{4}\right) = (-18) \times \left(-\frac{4}{3}\right) = +\left(\frac{18 \times 4}{3}\right) = +24\).<br>
+                • Subtract negative integer: \(24 - (-7) = 24 + 7 = \mathbf{31}\).<br>
+                • Perfectly verified in under 10 seconds!
               </div>
             </div>
           </div>
@@ -871,58 +935,58 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aditya's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Simplify the rational expression: \(\left(-\frac{5}{6}\right) \div \frac{2}{3} + \left(-\frac{1}{4}\right) \times (-8)\).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Aditya Verma</strong> submitted the three-step solution below in his exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: The Number Continuum: Integers, Fractions & Decimals</span>
+          <span>Student: Aditya Verma • Class 7-B</span>
+          <span>Mathematics Assignment: Rational Number Operations</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Reciprocate Divisor for Division</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              $$\left(-\frac{5}{6}\right) \times \frac{3}{2} + \left(-\frac{1}{4}\right) \times (-8)$$
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Multiply Rational Factors</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$-\frac{15}{12} + (-2) = -\frac{5}{4} - 2$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Common Denominator & Final Answer</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$-\frac{5}{4} - \frac{8}{4} = -\frac{13}{4} = -3\frac{1}{4}$$
             </div>
           </div>
         </div>
@@ -930,35 +994,53 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Inversion for Division</div>
+            Aditya correctly converted fraction division into multiplication by reciprocating the divisor: \(\div \frac{2}{3} \to \times \frac{3}{2}\). Step 1 is 100% mathematically sound. Full credit awarded!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Double Negative Multiplication Trap</div>
+            <strong>The Trap:</strong> Aditya evaluated \(\left(-\frac{1}{4}\right) \times (-8)\) as \(-2\).<br>
+            • In ICSE mathematics, the product of two negative numbers is strictly <strong>positive</strong>: \((-a) \times (-b) = +(ab)\).<br>
+            • Correct product: \(\left(-\frac{1}{4}\right) \times (-8) = +\frac{8}{4} = \mathbf{+2}\), not \(-2\). This blunder costs 1 mark.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Aditya found the common denominator correctly and calculated \(-\frac{5}{4} - \frac{8}{4} = -\frac{13}{4}\) with zero arithmetic slips on his carried value.<br>
+            Under ICSE board examination guidelines, candidates are awarded the <strong>Method Mark (M1)</strong> so they are not penalized twice for the single root blunder in Step 2.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Reciprocate Divisor & Identify Signs:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\left(-\frac{5}{6}\right) \times \frac{3}{2} + \left(-\frac{1}{4}\right) \times (-8)$$<br>
+          2. <em>Execute Multiplications with Rigorous Sign Rules:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\left(-\frac{5 \times 3}{6 \times 2}\right) + \left(+\frac{1 \times 8}{4}\right) = -\frac{5}{4} + 2 = -\frac{5}{4} + \frac{8}{4}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Adding a positive 2 to \(-1.25\) must leave a net POSITIVE value (\(+0.75\)), proving Aditya's negative result (\(-3.25\)) was impossible.<br><br>
+          3. <em>Combine Rational Terms:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$-\frac{5}{4} + \frac{8}{4} = \mathbf{\frac{3}{4}} \quad (\text{or } \mathbf{0.75})$$
         </div>
       </div>
     </section>
@@ -974,7 +1056,7 @@
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
-    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
+    <div>Outfit &amp; Inter • KaTeX for math</div>
   </footer>
 
   <script>

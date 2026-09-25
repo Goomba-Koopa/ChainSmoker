@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Commercial Mathematics: Percentages, Profit & Loss & Simple Interest • ICSE Class 7 Mathematics</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -32,10 +33,10 @@
       --emerald-soft: #f0f7f2;
       --amber-accent: #b45309;
       --amber-soft: #fef3c7;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -267,18 +268,77 @@
   <!-- EDITORIAL MASTHEAD -->
   <header class="masthead">
     <a href="../index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
-    <a href="../index.html" class="nav-back">← Reference Index</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 
   <!-- TOPIC HERO -->
   <header class="article-header">
-    <div class="topic-kicker">MATHEMATICS 06 • COMMERCIAL ARITHMETIC</div>
+    <div class="topic-kicker">Mathematics • Topic 06</div>
     <h1 class="topic-title">Commercial Mathematics: Percentages, Profit & Loss & Simple Interest</h1>
     <p class="topic-subtext">Financial foundations, commercial percentage calculations, profit margins, retail discounts, and simple interest accumulation.</p>
   </header>
 
   <!-- MAIN ARTICLE BODY -->
   <main class="article-body">
+
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Master Percentage Conversions:</strong> Convert effortlessly between percentages, fractions, and decimals, recognizing that percentage is an invariant comparison over a standardized base of 100.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Calculate Profit &amp; Loss on True Cost Price:</strong> Determine net profit or loss strictly against total effective CP (\(\text{Effective CP} = \text{Purchase Price} + \text{Overhead Expenses}\)).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Compute Simple Interest &amp; Amount:</strong> Apply \(I = \frac{P \times R \times T}{100}\) and \(A = P + I\), ensuring time \(T\) is converted strictly into years when specified in months or days.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Financial Filters:</strong> Disqualify options that calculate profit percentage on selling price or neglect overhead costs in under 5 seconds.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Mathematics builds layer upon layer. Here is how Grade 6 price tags evolve into Grade 7 financial accounting:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Flat Counter Prices &amp; Fixed Discounts</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Isolated Purchase Prices:</strong> Cost Price was simply the sticker price paid at purchase; additional transport or repair costs were not factored in.</li>
+            <li><strong>Direct Price Reductions:</strong> Discounts were treated as simple flat subtraction without considering retail markup chains (\(\text{CP} \to \text{MP} \to \text{SP}\)).</li>
+            <li><strong>Flat Loan Fees:</strong> Borrowing money was viewed through flat compensation fees, without continuous annual rates of interest (\(R\%\text{ p.a.}\)) scaled over time.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Overhead Accounting &amp; Time-Scaled Interest</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Effective Cost Accounting:</strong> Overheads are strictly capitalized: \(\text{Effective CP} = \text{Purchase Price} + \text{Repairs} + \text{Freight}\). Profit% is strictly \(\frac{\text{Profit}}{\text{Effective CP}} \times 100\%\).</li>
+            <li><strong>Strict Base Non-Interchangeability:</strong> Profit% and Loss% are never calculated on Selling Price. Discount percentage is strictly computed against Marked Price (MP).</li>
+            <li><strong>Annualized Simple Interest:</strong> The capital interest law \(I = \frac{PRT}{100}\) demands that time \(T\) must be measured strictly in years (\(m\text{ months} = \frac{m}{12}\text{ yr}\)).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
     <!-- SECTION 1: THE PHILOSOPHY OF PERCENTAGES -->
@@ -406,7 +466,7 @@
 
     <!-- SECTION 4: WORKED EXAM PROBLEMS -->
     <section class="section-block">
-      <h2 class="section-heading">4. Worked Problem ICSE Examination Problems</h2>
+      <h2 class="section-heading">4. Worked Problem• ICSE Examination Problems</h2>
 
       <!-- PROBLEM 1 -->
       <div class="problem-box">
@@ -529,31 +589,31 @@
       <div class="cs-header">
         <div class="cs-title-group">
           <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Financial Reality Checks</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> Commercial arithmetic governs real commerce. Money spent on repairs is true expenditure from your pocket; interest for a few months cannot dwarf the initial principal loan. Before launching into arithmetic, inspect the options against financial reality and accounting principles.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Overhead Capitalization Test</span>
+          <p class="cs-check-text">Never ignore secondary costs. If an asset is purchased and refurbished, effective \(\text{CP} = \text{Purchase} + \text{Repairs}\). Any profit percentage calculated solely on the purchase price is artificially inflated and invalid.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Base Denominator Rule</span>
+          <p class="cs-check-text">Profit% and Loss% are strictly measured against Cost Price: \(\frac{\text{Profit}}{\text{CP}} \times 100\%\). Disqualify any trap options generated by incorrectly dividing profit by the Selling Price (\(\text{SP}\)).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Simple Interest Time Unit (\(T\) in Years)</span>
+          <p class="cs-check-text">Because rates are declared <em>per annum</em> (\(\%\text{ p.a.}\)), time \(T\) must be expressed in years. If a question states 8 months, substituting \(T = 8\) yields twelve times the real interest! Check that \(T = \frac{8}{12} = \frac{2}{3}\).</p>
         </div>
       </div>
 
@@ -564,7 +624,7 @@
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem (ICSE Class 7):</strong> A dealer purchases a pre-owned road bicycle for \(\text{Rs } 2400\) and invests \(\text{Rs } 600\) on mechanical refurbishment and new tires. He then sells the refurbished bicycle for \(\text{Rs } 3600\). What is his net profit percentage?
         </div>
 
         <div class="cs-options-list">
@@ -573,17 +633,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(50\%\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-detail-title">Ignored Overhead Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> This option calculates \(\frac{3600 - 2400}{2400} \times 100\% = 50\%\). It completely ignores the \(\text{Rs } 600\) spent on repairs! Since that money came out of the dealer's pocket, his true cost was \(\text{Rs } 3000\), making 50% an impossible exaggeration.
               </div>
             </div>
           </div>
@@ -593,17 +653,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(16.67\%\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-detail-title">Selling Price Denominator Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> True profit is \(\text{Rs } 600\). This option calculates \(\frac{600}{3600} \approx 16.67\%\). Dividing profit by the <em>Selling Price</em> instead of Cost Price is an immediate ICSE fatal blunder. Disqualified!
               </div>
             </div>
           </div>
@@ -613,37 +673,37 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(30\%\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-detail-title">Arbitrary Arithmetic Distortion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> A profit of \(\text{Rs } 600\) on a base of \(\text{Rs } 3000\) is exactly \(\frac{600}{3000} = \frac{1}{5} = 20\%\). The figure of 30% has no commercial basis.
               </div>
             </div>
           </div>
 
           <!-- OPTION D -->
-          <div class="cs-option-item" id="opt-d" onclick="toggleOptionFilter('d')">
+          <div class="cs-option-item tag-sound state-survivor" id="opt-d" onclick="toggleOptionFilter('d')">
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(20\%\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-detail-title">Sound Capitalized Profit Verified</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>10-Second Mental Proof:</strong> Total Cost Price \(= 2400 + 600 = \text{Rs } 3000\). Selling Price \(= \text{Rs } 3600\). Net Profit \(= 3600 - 3000 = \text{Rs } 600\). \(\text{Profit \%} = \frac{600}{3000} \times 100\% = \frac{1}{5} \times 100\% = 20\%\). Option D is airtight!
               </div>
             </div>
           </div>
@@ -656,7 +716,7 @@
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Kabir's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
       </div>
@@ -664,49 +724,49 @@
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Calculate the Simple Interest and the total Amount payable on a loan of \(\text{Rs } 4500\) borrowed at \(8\%\) per annum for a duration of \(8\text{ months}\).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Kabir Malhotra</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Commercial Mathematics: Percentages, Profit & Loss & Simple Interest</span>
+          <span>Student: Kabir Malhotra &bull; Class 7-A</span>
+          <span>Topic: Commercial Mathematics &bull; Simple Interest</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
+              <span class="line-step-tag">Step 1: Parameter Extraction &amp; Formula Setup</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Given: Principal \(P = \text{Rs } 4500\), Rate \(R = 8\%\text{ p.a.}\), Time \(T = 8\text{ months}\). Formula: \(I = \frac{P \times R \times T}{100}\).
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
+              <span class="line-step-tag">Step 2: Simple Interest Evaluation</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              \(I = \frac{4500 \times 8 \times 8}{100} = 45 \times 64 = \text{Rs } 2880\).
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-step-tag">Step 3: Total Amount Computation</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              \(A = P + I = 4500 + 2880 = \text{Rs } 7380\).
             </div>
           </div>
         </div>
@@ -718,19 +778,19 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Flawless Parameter Listing</div>
+            Kabir correctly extracted the principal \(P\), rate \(R\), time interval, and stated the valid general formula for simple interest. 1 mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
+            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder: Unconverted Time Unit</span>
             <span class="feedback-marks-badge">Score: 0/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Fatal Substitution Error</div>
+            The interest rate is stated <em>per annum</em> (per year). Time must strictly be in years! Kabir plugged in \(T = 8\) as if it were 8 years. For 8 months, \(T = \frac{8}{12} = \frac{2}{3}\text{ year}\). True interest is \(\frac{4500 \times 8 \times 2}{100 \times 3} = \text{Rs } 240\). Kabir's answer of \(\text{Rs } 2880\) is 12 times too high! 0 marks.
           </div>
         </div>
 
@@ -740,10 +800,42 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method Credit Conferred</div>
+            Although the interest figure is incorrect, Kabir correctly applied the definition of total amount \(A = P + I\) to his calculated values without additional arithmetic errors. ICSE awards 1 method mark under ECF.
           </div>
         </div>
+
+        <!-- MODEL SOLUTION DRAWER -->
+        <div class="model-solution-wrap">
+          <button class="btn-model-solution" onclick="toggleDrawer('model_sol')">
+            <span>&#9776; Reveal Official ICSE Marking Scheme &amp; Model Solution</span>
+            <span class="drawer-arrow">&#9662;</span>
+          </button>
+          <div class="solution-drawer" id="model_sol" style="display: none;">
+            <div class="model-step">
+              <span class="step-num">Step 1: Standardize Time to Years [1 Mark]</span>
+              <p>Principal \(P = \text{Rs } 4500\), Rate \(R = 8\%\text{ per annum}\).<br>
+              Since the rate is per annum, time \(T\) must be converted from months to years:<br>
+              \[T = \frac{8}{12}\text{ year} = \frac{2}{3}\text{ year}\]</p>
+            </div>
+            <div class="model-step">
+              <span class="step-num">Step 2: Simple Interest Calculation [1 Mark]</span>
+              <p>Apply the simple interest formula:<br>
+              \[I = \frac{P \times R \times T}{100} = \frac{4500 \times 8 \times \frac{2}{3}}{100} = \frac{4500 \times 8 \times 2}{100 \times 3}\]<br>
+              Simplifying:<br>
+              \[I = 15 \times 16 = \mathbf{\text{Rs } 240}\]</p>
+            </div>
+            <div class="model-step">
+              <span class="step-num">Step 3: Total Amount Payable [1 Mark]</span>
+              <p>Compute total amount due:<br>
+              \[A = P + I = 4500 + 240 = \mathbf{\text{Rs } 4740}\]</p>
+            </div>
+            <div class="examiner-tips">
+              <strong>Chief Examiner's Tip:</strong> In ICSE commercial math problems, always circle the time period and the rate unit. If the rate is <em>p.a.</em>, time in months must be divided by 12, and time in days must be divided by 365. Never substitute months directly into \(I = \frac{PRT}{100}\)!
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -758,7 +850,7 @@
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
-    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
+    <div>Outfit &amp; Inter • KaTeX for math</div>
   </footer>
 
   <script>

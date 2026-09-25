@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,11 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-      <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+      <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <style>
     :root {
@@ -31,10 +32,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -291,6 +292,65 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Chemical Origin of Hardness:</strong> Distinguish soft water (lathers freely) from hard water (forms insoluble curds/scum due to dissolved \(\text{Ca}^{2+}\) and \(\text{Mg}^{2+}\) ions).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Temporary vs. Permanent Hardness:</strong> Identify hydrogen carbonates (\(\text{Ca(HCO}_3)_2, \text{Mg(HCO}_3)_2\)) as temporary, versus chlorides and sulfates (\(\text{CaCl}_2, \text{MgSO}_4\)) as permanent hardness.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Removal Chemical Pathways:</strong> Contrast thermal decomposition by boiling and Clark's process against washing soda double displacement (\(\text{Na}_2\text{CO}_3\)) and ion-exchange resins.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Industrial Boiler Scale Hazards:</strong> Explain kettle fur and boiler scale (\(\text{CaCO}_3, \text{CaSO}_4\)), poor thermal conductivity, fuel waste, and boiler explosion risks.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Chemistry builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 water hardness rigor:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Everyday observations of hard well water</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Soap Waste:</strong> Hard water is simply well water that wastes laundry soap and fails to make bubbles.</li>
+            <li><strong>Kettle Crust:</strong> Repeated boiling leaves a white crust inside kettles and hot water pots.</li>
+            <li><strong>Qualitative View:</strong> Water was classified purely by whether soap foams or forms scum.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Ionic chemistry, balanced equations, and scale hazards</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Specific Cations:</strong> Hardness is specifically caused by \(\text{Ca}^{2+}\) and \(\text{Mg}^{2+}\) precipitating sodium stearate as insoluble scum.</li>
+            <li><strong>Anion Classification:</strong> Bicarbonates cause temporary hardness (decomposed by boiling); chlorides and sulfates cause permanent hardness.</li>
+            <li><strong>Precipitation Equations:</strong> Balanced reactions for boiling (\(\text{Ca(HCO}_3)_2 \xrightarrow{\Delta} \text{CaCO}_3\downarrow + \text{H}_2\text{O} + \text{CO}_2\uparrow\)) and washing soda softening.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 
     <!-- 1. SOFT VS HARD WATER -->
     <div class="section-block">
@@ -476,25 +536,25 @@
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In chemistry, formulas describe physical phenomena. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or chemically impossible?</em> In water hardness and treatment questions, you can rule out wrong options in seconds by checking hardness salt boundaries and thermal stability limits.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Hardness Salt Boundary Rule</span>
+          <p class="cs-check-text">Hardness is strictly caused by dissolved salts of Calcium (\(\text{Ca}^{2+}\)) and Magnesium (\(\text{Mg}^{2+}\)). Salts of Sodium (\(\text{NaCl}, \text{Na}_2\text{SO}_4\)) or Potassium (\(\text{KCl}\)) NEVER cause hardness or precipitate soap scum, regardless of their concentration!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Boiling Decomposition Limit</span>
+          <p class="cs-check-text">Boiling only removes TEMPORARY hardness by decomposing hydrogen carbonates: \(\text{Ca(HCO}_3)_2 \xrightarrow{\Delta} \text{CaCO}_3\downarrow + \text{H}_2\text{O} + \text{CO}_2\uparrow\). Permanent hardness (chlorides and sulfates: \(\text{CaCl}_2, \text{MgSO}_4\)) cannot be decomposed or removed by boiling at \(100^\circ\text{C}\).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Soap Precipitation Stoichiometry</span>
+          <p class="cs-check-text">Sodium stearate (soap) reacts with hardness ions in a 2:1 ratio: \(2\text{C}_{17}\text{H}_{35}\text{COONa} + \text{Ca}^{2+} \to (\text{C}_{17}\text{H}_{35}\text{COO})_2\text{Ca}\downarrow + 2\text{Na}^+\). As long as free \(\text{Ca}^{2+}\) or \(\text{Mg}^{2+}\) remains, lather cannot form!</p>
         </div>
       </div>
 
@@ -505,7 +565,7 @@
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem (Board Practice):</strong> A student in an ICSE chemistry laboratory is provided with a sample of well water containing dissolved magnesium sulfate (\(\text{MgSO}_4\)). The student vigorously boils the water for 15 minutes in an open conical flask, allows it to cool to room temperature, and shakes it with a standard soap solution. Which of the following observations and chemical deductions is strictly correct?
         </div>
 
         <div class="cs-options-list">
@@ -514,17 +574,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">The boiled water immediately forms a thick, persistent lather with two drops of soap solution because boiling removes all dissolved magnesium salts.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-detail-title">Hardness Type Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Boiling removes only temporary hardness (hydrogen carbonates like \(\text{Mg(HCO}_3)_2\)). Magnesium sulfate is permanent hardness—sulfate ions (\(\text{SO}_4^{2-}\)) do not decompose upon boiling at \(100^\circ\text{C}\)!
               </div>
             </div>
           </div>
@@ -534,17 +594,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Boiling causes magnesium sulfate to thermally decompose into toxic sulfur dioxide gas (\(\text{SO}_2\uparrow\)) and a basic magnesium oxide precipitate.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-detail-title">Thermal Stability Scale Violation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Soluble sulfate salts require extreme furnace temperatures (\(>1000^\circ\text{C}\)) to decompose. Simple boiling of water at \(100^\circ\text{C}\) cannot break down the stable sulfate anion.
               </div>
             </div>
           </div>
@@ -554,17 +614,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Boiling evaporates all the dissolved salts, converting the sample into pure distilled water in the flask.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-detail-title">Distillation Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Boiling an open flask evaporates the liquid water (\(\text{H}_2\text{O}\)), concentrating the dissolved \(\text{MgSO}_4\) salts rather than purifying the sample. Distilled water requires condensing the steam in a separate Liebig condenser.
               </div>
             </div>
           </div>
@@ -574,17 +634,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">The water continues to form a sticky curd (scum) and refuses to lather freely because \(\text{MgSO}_4\) causes permanent hardness, which boiling cannot remove.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-detail-title">Permanent Hardness Invariant Confirmed</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this:</strong> Magnesium sulfate (\(\text{MgSO}_4\)) is a soluble salt responsible for permanent hardness. Boiling removes only temporary hydrogen carbonate hardness. To soften this sample, the student must precipitate magnesium ions using washing soda (\(\text{Na}_2\text{CO}_3\)) or pass it through an ion-exchange resin.
               </div>
             </div>
           </div>
@@ -597,7 +657,7 @@
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Shreya's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
       </div>
@@ -605,15 +665,15 @@
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          A water sample contains dissolved calcium chloride (\(\text{CaCl}_2\)), causing permanent hardness. Write the balanced chemical equation for softening this sample using washing soda (sodium carbonate, \(\text{Na}_2\text{CO}_3\)), and deduce whether the treated water will lather with soap.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Shreya Sen</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
+          <span>Student: Shreya Sen &bull; Class 7-A</span>
           <span>Topic: Water Hardness &amp; Treatment Technologies</span>
         </div>
 
@@ -621,33 +681,33 @@
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
+              <span class="line-step-tag">Step 1: Reagent Identification &amp; Hardness Classification</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Calcium chloride (\(\text{CaCl}_2\)) causes permanent hardness. Since boiling cannot remove chlorides, washing soda (\(\text{Na}_2\text{CO}_3\)) is added to precipitate dissolved calcium ions.
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
+              <span class="line-step-tag">Step 2: Double Displacement Formulation</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              Equation written by Shreya: \(\text{CaCl}_2\text{ (aq)} + \text{Na}_2\text{CO}_3\text{ (aq)} \to \text{CaNa}_2\text{ (aq)} + \text{Cl}_2\text{CO}_3\text{ (s)}\)
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-step-tag">Step 3: Softening Outcome Deduction</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Conclusion deduced: Because calcium remains dissolved as \(\text{CaNa}_2\text{ (aq)}\) while chlorine forms precipitate \(\text{Cl}_2\text{CO}_3\text{ (s)}\), the water is not softened and will still form soap scum.
             </div>
           </div>
         </div>
@@ -659,8 +719,8 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Sound Reagent Selection</div>
+            Shreya correctly identified that calcium chloride causes permanent hardness and requires chemical softening via washing soda (\(\text{Na}_2\text{CO}_3\)). Full method mark awarded.
           </div>
         </div>
 
@@ -670,8 +730,8 @@
             <span class="feedback-marks-badge">Score: 0/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Radical &amp; Valency Combination Blunder</div>
+            Fatal chemical formula error! In double displacement reactions, electropositive metal cations exchange acid radicals: \(\text{Ca}^{2+}\) pairs with \(\text{CO}_3^{2-}\) to form insoluble calcium carbonate (\(\text{CaCO}_3\downarrow\)), while \(\text{Na}^+\) pairs with \(\text{Cl}^-\) to form sodium chloride (\(\text{NaCl}\)). Combining metal with metal (\(\text{CaNa}_2\)) or chlorine with carbonate (\(\text{Cl}_2\text{CO}_3\)) violates fundamental combining valency rules!
           </div>
         </div>
 
@@ -682,8 +742,22 @@
           </div>
           <div class="feedback-body">
             <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            Under ICSE marking schemes, Shreya is awarded follow-through method credit (1/1) for logically assessing the water's behavior based on her (erroneous) Step 2 product states without introducing secondary contradictions. However, the true chemical reaction successfully softens the water by precipitating \(\text{CaCO}_3\downarrow\).
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer &darr;</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Balanced Precipitation Equation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{CaCl}_2\text{ (aq)} + \text{Na}_2\text{CO}_3\text{ (aq)} \to \mathbf{\text{CaCO}_3\downarrow\text{ (s)}} + 2\text{NaCl}\text{ (aq)}$$<br>
+          2. <em>Chemical Explanation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&bull; The soluble calcium ions (\(\text{Ca}^{2+}\)) causing permanent hardness are precipitated out as insoluble calcium carbonate (\(\text{CaCO}_3\downarrow\)), which is removed by simple filtration.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&bull; The remaining dissolved salt, sodium chloride (\(\text{NaCl}\)), does not react with soap molecules (sodium stearate).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&bull; Consequently, the treated water readily forms a rich, persistent lather with soap.
         </div>
       </div>
     </section>

@@ -1,15 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Physics 07: Heat, Temperature & Transfer • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -29,10 +30,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -263,6 +264,65 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Differentiate Heat from Temperature:</strong> Distinguish total microscopic kinetic and potential energy (heat in Joules) from average molecular kinetic energy (temperature in °C or K) and explain why heat flows from high to low temperature.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Master Thermometric Conversions:</strong> Interconvert temperature values across Celsius, Fahrenheit, and Kelvin scales using the standard relation \(\frac{C}{5} = \frac{F - 32}{9}\) and \(T = t + 273\).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Analyze Heat Transfer Mechanisms:</strong> Compare conduction, convection, and radiation with practical applications including land/sea breezes, room ventilation, and the vacuum insulation of a thermos flask.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Understand Anomalous Expansion of Water:</strong> Graph volume and density changes between \(0^\circ\text{C}\) and \(4^\circ\text{C}\), and explain how water's maximum density at \(4^\circ\text{C}\) protects aquatic ecosystems in freezing weather.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- GRADE 6 TO 7 COGNITIVE BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 thermal physics:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Sensory touch and qualitative hotness</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Sensory Perception:</strong> Heat is simply defined by how hot or cold an object feels to the touch.</li>
+            <li><strong>Uniform Expansion:</strong> Liquids expand when heated and contract when cooled, with no noted exceptions.</li>
+            <li><strong>General Warmth:</strong> Heat simply moves from fire or hot things into colder surrounding spaces.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Kinetic energy, anomalous water expansion, and heat transfer modes</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Kinetic Molecular Theory:</strong> Heat is the sum total of internal kinetic and potential energy of all particles; temperature is specifically the average kinetic energy determining flow direction.</li>
+            <li><strong>Anomalous Behavior:</strong> Water exhibits anomalous expansion between \(0^\circ\text{C}\) and \(4^\circ\text{C}\)—contracting upon warming to reach maximum density at \(4^\circ\text{C}\), insulating deep-water marine life.</li>
+            <li><strong>Three Distinct Modes:</strong> Heat travels via molecular collisions without bulk motion (conduction), density-driven bulk fluid currents (convection), and electromagnetic infrared waves requiring no medium (radiation).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 
     <!-- 1. HEAT VS TEMPERATURE -->
     <div class="section-block">
@@ -447,7 +507,7 @@
       </figure>
     </div>
 
-    <!-- 6. WORKED ICSE NUMERICALS & REASONING -->
+    <!-- 6. WORKED• ICSE NUMERICALS & REASONING -->
     <div class="section-block">
       <h2 class="section-heading">6. Worked Problems</h2>
       
@@ -548,18 +608,18 @@
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">Thermometric Fixed Points Check</span>
+          <p class="cs-check-text">The lower fixed point of pure water is \(0^\circ\text{C} = 32^\circ\text{F}\); the upper fixed point is \(100^\circ\text{C} = 212^\circ\text{F}\). Always verify whether an option confuses calibration marks between different scales.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">Scale Divergence Rule</span>
+          <p class="cs-check-text">Every \(1^\circ\text{C}\) interval spans \(1.8^\circ\text{F}\) (\(100^\circ\text{C}\) corresponds to \(180^\circ\text{F}\)). Because the conversion slope is \(\frac{9}{5} \neq 1\), the scales diverge continually on either side of their unique intersection point.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">Negative Domain Alignment</span>
+          <p class="cs-check-text">Since \(0^\circ\text{F}\) is far below \(0^\circ\text{C}\) (specifically \(-17.8^\circ\text{C}\)), the Celsius value can only catch up with the Fahrenheit reading in the deep negative temperature domain.</p>
         </div>
       </div>
 
@@ -570,7 +630,7 @@
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>ICSE Board Question:</strong> At what temperature do Celsius and Fahrenheit thermometers register the exact same numerical reading?
         </div>
 
         <div class="cs-options-list">
@@ -579,17 +639,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(0^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-detail-title">Ice Point Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> At \(0^\circ\text{C}\), pure ice melts, but a Fahrenheit thermometer registers \(32^\circ\text{F}\). The values are 32 units apart, not identical!
               </div>
             </div>
           </div>
@@ -599,17 +659,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(100^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 3 Seconds</span>
+                <span class="cs-detail-title">Steam Point Divergence</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> At \(100^\circ\text{C}\), water boils vigorously, but Fahrenheit reads \(212^\circ\text{F}\). The gap has widened to 112 degrees!
               </div>
             </div>
           </div>
@@ -619,17 +679,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(32^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 4 Seconds</span>
+                <span class="cs-detail-title">Inverted Unit Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> While \(32^\circ\text{F} = 0^\circ\text{C}\), a temperature of \(32^\circ\text{C}\) corresponds to \(89.6^\circ\text{F}\). The two scales are never equal at positive 32!
               </div>
             </div>
           </div>
@@ -639,17 +699,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(-40^\circ\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-detail-title">10-Second Algebraic Proof</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this:</strong> Let \(C = F = x\). Using \(\frac{C}{5} = \frac{F - 32}{9}\), set \(\frac{x}{5} = \frac{x - 32}{9} \implies 9x = 5x - 160 \implies 4x = -160 \implies x = -40^\circ\). Thus \(-40^\circ\text{C} = -40^\circ\text{F}\)!
               </div>
             </div>
           </div>
@@ -657,12 +717,12 @@
       </div>
     </section>
 
-    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG Hunt -->
+    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Ishaan's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
       </div>
@@ -670,15 +730,15 @@
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          A patient suffering from high fever records a body temperature of \(40^\circ\text{C}\). Convert this temperature into the Fahrenheit scale (\(^\circ\text{F}\)) to determine if immediate clinical hospitalization is required (normal body temperature is \(98.6^\circ\text{F}\)).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Ishaan</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
+          <span>Student: Ishaan Joshi &bull; Class 7-B</span>
           <span>Topic: Heat, Temperature &amp; Transfer</span>
         </div>
 
@@ -690,7 +750,7 @@
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Given: \(C = 40^\circ\text{C}\). Fundamental scale relation: \(\frac{C}{5} = \frac{F - 32}{9}\).
             </div>
           </div>
 
@@ -701,18 +761,18 @@
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              Rearranging: \(F = \frac{5}{9} \times C + 32 = \frac{5}{9} \times 40 + 32 = 22.2 + 32 = 54.2^\circ\text{F}\).
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-step-tag">Step 3: Final Clinical Conclusion</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Since \(54.2^\circ\text{F} < 98.6^\circ\text{F}\), the patient does not have a fever and is in fact suffering from severe hypothermia.
             </div>
           </div>
         </div>
@@ -724,8 +784,8 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data &amp; Formula</div>
+            Ishaan correctly extracted \(C = 40^\circ\text{C}\) and cited the fundamental thermometric relationship \(\frac{C}{5} = \frac{F - 32}{9}\). Full credit awarded.
           </div>
         </div>
 
@@ -735,8 +795,8 @@
             <span class="feedback-marks-badge">Score: 0/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Inverted Transposition Blunder</div>
+            Rearrangement error! From \(\frac{C}{5} = \frac{F - 32}{9}\), cross-multiplying gives \(F - 32 = \frac{9}{5}C\), so \(F = \frac{9}{5}C + 32\). Ishaan inverted the multiplying fraction to \(\frac{5}{9}\), calculating \(\frac{5}{9}(40) = 22.2^\circ\) instead of \(\frac{9}{5}(40) = 72^\circ\).
           </div>
         </div>
 
@@ -746,8 +806,28 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method is Sound (ECF Awarded)</div>
+            Even though the diagnosis of hypothermia is physically incorrect for a feverish patient, ICSE marking rules award the follow-through mark. Ishaan correctly compared his calculated \(54.2^\circ\text{F}\) against the standard \(98.6^\circ\text{F}\) baseline.
+          </div>
+        </div>
+
+        <!-- MODEL SOLUTION DRAWER -->
+        <div class="model-solution-wrap" style="margin-top: 24px;">
+          <button class="btn-toggle" onclick="toggleDrawer('model_sol')">View Examiner's Model Solution &rarr;</button>
+          <div class="solution-drawer" id="model_sol" style="display: none; margin-top: 12px;">
+            <div class="model-step">
+              <strong>Step 1: State the conversion formula</strong><br>
+              \[\frac{C}{5} = \frac{F - 32}{9}\]
+            </div>
+            <div class="model-step" style="margin-top: 8px;">
+              <strong>Step 2: Substitute \(C = 40^\circ\text{C}\)</strong><br>
+              \[\frac{40}{5} = \frac{F - 32}{9} \implies 8 = \frac{F - 32}{9}\]
+            </div>
+            <div class="model-step" style="margin-top: 8px;">
+              <strong>Step 3: Solve for \(F\) and conclude clinically</strong><br>
+              \[F - 32 = 8 \times 9 = 72 \implies F = 72 + 32 = \mathbf{104^\circ\text{F}}\]
+              <strong>Clinical Verdict:</strong> A temperature of \(104^\circ\text{F}\) is well above normal body temperature (\(98.6^\circ\text{F}\)), confirming acute hyperpyrexia fever requiring urgent clinical antipyretics and medical monitoring.
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,11 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-      <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+      <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <style>
     :root {
@@ -31,10 +32,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -291,6 +292,67 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Define Health & Classify Diseases:</strong> State the WHO definition of health and differentiate communicable (infectious) from non-communicable diseases (deficiency, degenerative).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Map Pathogens to Infectious Diseases:</strong> Correlate bacterial (Cholera, Typhoid, TB), viral (Common Cold, Polio, Rabies), fungal (Ringworm), and protozoan (Malaria, Amoebic dysentery) diseases.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Trace Biological Vectors & Preventive Measures:</strong> Differentiate female *Anopheles* (Malaria protozoan), *Aedes* (Dengue virus), *Culex* (Filariasis), and the housefly (mechanical vector).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Elimination:</strong> Rule out options prescribing antibiotics for viral infections, treating malaria as a bacterium, or confusing vectors with pathogens in under 5 seconds.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Health and epidemiology build layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 pathogen pathology:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Catching a chill and general medicine</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Illness from bad air or chill:</strong> Getting sick was thought to result from standing in the rain or breathing cold morning air.</li>
+            <li><strong>All medicines cure all infections:</strong> Pills and syrups were viewed as general germ-killers that cure any fever.</li>
+            <li><strong>Mosquitoes create disease:</strong> The mosquito bite was thought to directly inject poisons that cause malaria.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Pathogen taxonomy, vector transmission, and targeted pharmacology</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Specific microscopic etiologies:</strong> Communicable diseases are caused by distinct cellular pathogens: bacteria (*Vibrio cholerae*), viruses (Rhinovirus, Poliovirus), protozoa (*Plasmodium*), or fungi.</li>
+            <li><strong>Vectors as transport carriers:</strong> Mosquitoes are biological vectors, not causes; female *Anopheles* transmits the protozoan *Plasmodium* from infected blood to a healthy host.</li>
+            <li><strong>Strict antibiotic specificity:</strong> Antibiotics inhibit bacterial cell wall synthesis; they have ZERO pharmacological efficacy against viral infections which lack bacterial cell structures.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- 1. HEALTH AND DISEASE -->
     <div class="section-block">
@@ -492,48 +554,47 @@
       </div>
     </div>
 
-  
     <!-- 8. THE COMMON-SENSE STRATEGY: RULING OUT THE IMPOSSIBLE -->
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> Medical biology demands clear distinction between pathogens, vectors, and treatments. Ask yourself: <em>Can penicillin destroy a virus? Does a housefly inject malaria into blood?</em> In multiple-choice questions, you can rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Pathogen vs Antibiotic Check</span>
+          <p class="cs-check-text">Antibiotics destroy bacteria by disrupting cell wall or protein synthesis. Antibiotics are completely powerless against viruses (Common Cold, Influenza, Polio, Dengue) because viruses have no bacterial structures.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Vector Specificity Bracket</span>
+          <p class="cs-check-text">Only female mosquitoes bite (requiring protein for eggs). Female *Anopheles* transmits *Plasmodium* (Malaria); *Aedes* transmits Dengue virus; *Culex* transmits Filariasis. Houseflies are mechanical vectors carrying bacteria on legs/vomit.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Transmission Route & Prevention Check</span>
+          <p class="cs-check-text">Water-borne bacterial diseases (Cholera, Typhoid) are controlled by boiling drinking water (\(100^\circ\text{C}\)) and chlorination. Vector-borne diseases (Malaria, Dengue) require eliminating stagnant water puddles and larvicidal control.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A patient in a monsoon-flooded village develops recurring high fevers accompanied by intense shivering chills every 48 hours, followed by profuse sweating. Microscopic examination of a stained blood smear reveals single-celled protozoan parasites reproducing inside red blood cells. Which combination correctly identifies the causative pathogen, its biological vector, and the primary preventive measure?
         </div>
 
         <div class="cs-options-list">
@@ -542,17 +603,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">Pathogen: Salmonella typhi (Bacterium); Vector: Housefly; Prevention: Antibiotic water tablets</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Bacterial Diagnosis & Vector Slip</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Typhoid is an enteric bacterial infection causing continuous fever and intestinal ulceration, not cyclic 48-hour shivering chills inside red blood cells. Protozoans, not bacteria, were identified in the blood smear!
               </div>
             </div>
           </div>
@@ -562,17 +623,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Pathogen: Dengue virus; Vector: Culex mosquito; Prevention: Vitamin C supplements</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Viral Mismatch & Wrong Vector</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Dengue is caused by a flavivirus (not an intra-erythrocytic protozoan) and is transmitted by daytime-biting <em>Aedes</em> mosquitoes, not <em>Culex</em> (which transmits Filariasis).
               </div>
             </div>
           </div>
@@ -582,17 +643,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Pathogen: Vibrio cholerae; Vector: Cockroach; Prevention: Boiling milk</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Enteric Diarrheal Disease Slip</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Cholera is an acute intestinal bacterial infection causing massive "rice-water" diarrhea and dehydration, not cyclic chills and fevers inside red blood cells.
               </div>
             </div>
           </div>
@@ -602,17 +663,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">Pathogen: Plasmodium (Protozoan); Vector: Female Anopheles mosquito; Prevention: Eliminating stagnant water & mosquito nets</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Parasitological & Epidemiological Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without guessing:</strong> Malaria is caused by the microscopic protozoan parasite <em>Plasmodium</em>, which infects and synchronously ruptures red blood cells every 48 hours (releasing toxic hemozoin that causes shivering chills and fever). It is transmitted by the bite of the female <em>Anopheles</em> mosquito, and eradicated by eliminating stagnant breeding puddles.
               </div>
             </div>
           </div>
@@ -624,58 +685,58 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Sanya's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Sanya audits an epidemiological clinic report on four patients: Patient 1 (Cholera), Patient 2 (Common Cold), Patient 3 (Malaria), and Patient 4 (Ringworm). (a) Classify each disease by its causative pathogen group (Bacteria, Virus, Protozoa, Fungus). (b) Explain the clinical treatment prescribed for Patient 2 (Common Cold). (c) State the physiological mechanism causing cyclic fevers in Patient 3.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Sanya Kapoor</strong> submitted the three-step solution below in her exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Health, Hygiene &amp; Infectious Pathogens</span>
+          <span>Student: Sanya Kapoor • Class 7-B</span>
+          <span>Biology Assignment: Pathogen Classification & Epidemiology</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Pathogen Group Classification</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Patient 1 (Cholera) = <strong>Bacterium</strong> (*Vibrio cholerae*); Patient 3 (Malaria) = <strong>Protozoan</strong> (*Plasmodium*); Patient 4 (Ringworm) = <strong>Fungus</strong> (*Trichophyton*).
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Treatment for Patient 2 (Common Cold)</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              Prescribe a high-dose course of broad-spectrum <strong>Antibiotics (Amoxicillin)</strong> to destroy the outer protein coat of the cold virus and terminate the infection within 24 hours.
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Cause of Cyclic Chills and Fevers in Malaria</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Cyclic shivering chills occur when the protozoan parasites synchronously rupture host <strong>Red Blood Cells (Erythrocytes)</strong>, releasing toxic hemozoin granules into the bloodstream.
             </div>
           </div>
         </div>
@@ -683,35 +744,53 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Pathogen Classification</div>
+            Sanya correctly categorized Cholera as bacterial, Malaria as protozoan, and Ringworm as fungal skin infection. 1/1 mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Fatal Pharmacological Blunder (Antibiotics for Virus)</div>
+            <strong>The Trap:</strong> The common cold is caused by a <strong>virus (Rhinovirus)</strong>. Antibiotics work exclusively against bacteria (by disrupting bacterial cell wall synthesis or bacterial ribosomes); they have <strong>ZERO efficacy against viruses</strong>! Prescribing antibiotics for viral colds is clinically futile and fosters dangerous antibiotic resistance. Treatment is supportive (hydration, rest, steam inhalation). Deduction: -1 mark.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method Mark Awarded</div>
+            <strong>How ICSE Marks This:</strong> In Step 3, Sanya provided an exemplary pathophysiological description of malaria: synchronous erythrocyte lysis releasing toxic hemozoin causing cyclic fever spikes. Full method credit (1/1 M1) is awarded.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Pathogen Group Classifications:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Cholera: <strong>Bacterium</strong> (*Vibrio cholerae*)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Common Cold: <strong>Virus</strong> (Rhinovirus)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Malaria: <strong>Protozoan</strong> (*Plasmodium vivax*)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• Ringworm: <strong>Fungus</strong> (*Microsporum / Trichophyton*)<br><br>
+          2. <em>Management of Common Cold:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Because the common cold is a viral infection, <strong>antibiotics must NEVER be prescribed</strong>. Treatment consists of supportive care: warm fluids, rest, saline gargles, steam inhalation, and antipyretics (paracetamol) for fever.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Antibiotics target bacterial machinery like peptidoglycan cell walls; viruses do not possess cell walls, so antibiotics pass right through them without effect.<br><br>
+          3. <em>Cause of Cyclic Fevers in Malaria:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Synchronous rupture of infected host <strong>Red Blood Cells (Erythrocytes)</strong> releasing thousands of *Plasmodium* merozoites and toxic metabolic waste crystals (**hemozoin**) into blood plasma, triggering chills and fever spikes every 48 hours.
         </div>
       </div>
     </section>
