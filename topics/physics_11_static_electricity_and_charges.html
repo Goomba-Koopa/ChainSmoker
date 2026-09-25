@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,11 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-      <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+      <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <style>
     :root {
@@ -31,10 +32,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -276,7 +277,7 @@
   <!-- MASTHEAD -->
   <header class="masthead">
     <a href="../index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
-    <a href="../index.html" class="nav-back">← Back to Reference</a>
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 
   <!-- HEADER -->
@@ -290,6 +291,65 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
+
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Explain Atomic Origins of Charge:</strong> State the Electronic Theory of friction: positive charge denotes electron deficit, while negative charge denotes electron excess.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Differentiate Conductors from Insulators:</strong> Contrast free electron mobility in conductors with bound electrons in insulators, explaining earthing and why metallic rods need insulating handles.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Contrast Conduction vs Induction:</strong> Distinguish contact charging (same sign, permanent sharing) from electrostatic induction (non-contact, bound opposite charge, redistribution).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Operate the Gold Leaf Electroscope (GLE):</strong> Explain detection and identification of electric charges, leaf divergence mechanics, and atmospheric lightning conductor protection.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- GRADE 6 TO 7 COGNITIVE BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 electrostatics:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Frictional magic and universal charging</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Frictional Magic:</strong> Rubbing any two materials together creates static electricity like invisible glue.</li>
+            <li><strong>Universal Charging:</strong> A brass rod or a plastic ruler can be charged identically by hand.</li>
+            <li><strong>Direct Contact Only:</strong> An electric charge can only affect other objects if they physically touch.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Electron transfer, conduction earthing, and induction</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Subatomic Electron Transfer:</strong> Only valence electrons migrate between insulators during friction; positive atomic nuclei remain strictly stationary.</li>
+            <li><strong>Conductor Leakage (Earthing):</strong> Metals allow free electron movement; any charge on a handheld conductor immediately drains through the human body into Earth.</li>
+            <li><strong>Action at a Distance (Induction):</strong> Electric fields induce charge separation across neutral bodies without contact, drawing opposite charges near and repelling like charges.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
     <!-- 1. ATOMIC ORIGIN OF STATIC ELECTRICITY -->
@@ -521,18 +581,18 @@
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Induction Polarity Rule</span>
+          <p class="cs-check-text">In electrostatic induction without contact, the near conductor end acquires bound opposite charge, while the far end acquires free like charge. Contact is never required to produce induction!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">Mobile Carrier Reality</span>
+          <p class="cs-check-text">In solid metallic conductors, ONLY mobile electrons can migrate. Heavy positively charged protons are locked permanently inside atomic nuclei and never flow through wires or stems.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Leaf Divergence Law</span>
+          <p class="cs-check-text">The two flexible gold leaves are electrically connected to the same stem and always acquire identical polarity. Because like charges repel, the leaves must diverge away from each other.</p>
         </div>
       </div>
 
@@ -543,7 +603,7 @@
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>ICSE Board Question:</strong> A positively charged glass rod is held near (without touching) the brass cap of an uncharged gold-leaf electroscope. What happens to the gold leaves, and why?
         </div>
 
         <div class="cs-options-list">
@@ -552,17 +612,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">The leaves remain completely limp because the rod never touches the cap.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-detail-title">Contact Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Electric fields act across empty space! Electrostatic induction operates entirely without contact by polarizing the conductor.
               </div>
             </div>
           </div>
@@ -572,17 +632,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">The leaves diverge because positive protons are repelled down into the leaves.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-detail-title">Proton Mobility Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Protons are tightly bound in atomic nuclei and NEVER flow in solid metals! Only valence electrons can migrate.
               </div>
             </div>
           </div>
@@ -592,17 +652,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">The leaves attract each other and stick together tightly.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 3 Seconds</span>
+                <span class="cs-detail-title">Fundamental Law Contradiction</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Both leaves connect to the same metal stem, acquiring identical positive charge. Like charges repel—they can never attract!
               </div>
             </div>
           </div>
@@ -612,17 +672,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">The leaves diverge because electrons are drawn to the cap, leaving both leaves positively charged.</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-detail-title">10-Second Electrostatic Proof</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this:</strong> By electrostatic induction, the positive glass rod pulls mobile conduction electrons upward to the brass cap. The leaves and stem suffer an electron deficiency (positive charge). Since both leaves are positively charged, they repel and diverge!
               </div>
             </div>
           </div>
@@ -630,12 +690,12 @@
       </div>
     </section>
 
-    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG Hunt -->
+    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Tanvi's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
       </div>
@@ -643,15 +703,15 @@
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          A student holds a bare brass rod in their hand and rubs it vigorously with a piece of dry silk cloth. They then bring the brass rod near tiny bits of dry paper to test if it has acquired static charge. State whether the paper bits are attracted, and explain the physical reason.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Tanvi</strong> submitted the three-step reasoning below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
+          <span>Student: Tanvi Kapoor &bull; Class 7-C</span>
           <span>Topic: Static Electricity &amp; Electrostatics</span>
         </div>
 
@@ -659,33 +719,33 @@
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
+              <span class="line-step-tag">Step 1: Frictional Charge Transfer Concept</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Friction between silk and brass provides mechanical energy, causing transfer of valence electrons across the contact surfaces.
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
+              <span class="line-step-tag">Step 2: Charge Accumulation on Conductor</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              The metallic brass rod retains this static electric charge on its surface, exactly like a glass or ebonite rod.
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-step-tag">Step 3: Experimental Observation Prediction</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Therefore, the charged brass rod will strongly attract the neutral paper bits by electrostatic induction.
             </div>
           </div>
         </div>
@@ -697,8 +757,8 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Frictional Mechanism</div>
+            Tanvi correctly notes that mechanical friction causes valence electron transfer between contacting materials. Full credit awarded.
           </div>
         </div>
 
@@ -708,8 +768,8 @@
             <span class="feedback-marks-badge">Score: 0/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Conductor Earthing Blunder</div>
+            Fatal physics error! Brass is an excellent electrical conductor, and the human body is also a conductor. Any electrons transferred immediately flow through Tanvi's hand and body into the Earth (grounding). An uninsulated metallic conductor cannot hold static charge!
           </div>
         </div>
 
@@ -719,8 +779,28 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method is Sound (ECF Awarded)</div>
+            Even though the paper scraps will not move in reality, Tanvi's deduction in Step 3 logically follows from her incorrect Step 2 premise. If the rod were truly charged, it would attract neutral paper. Follow-through credit is awarded under ICSE marking rules.
+          </div>
+        </div>
+
+        <!-- MODEL SOLUTION DRAWER -->
+        <div class="model-solution-wrap" style="margin-top: 24px;">
+          <button class="btn-toggle" onclick="toggleDrawer('model_sol')">View Examiner's Model Solution &rarr;</button>
+          <div class="solution-drawer" id="model_sol" style="display: none; margin-top: 12px;">
+            <div class="model-step">
+              <strong>Step 1: Identify material conductivity</strong><br>
+              Brass is a metal and an electrical conductor. The human body is also an electrolyte conductor.
+            </div>
+            <div class="model-step" style="margin-top: 8px;">
+              <strong>Step 2: Trace charge leakage pathway (Earthing)</strong><br>
+              Although friction causes momentary electron transfer, any charge acquired on the brass immediately leaks away through the bare hand and human body into the ground (earthing).
+            </div>
+            <div class="model-step" style="margin-top: 8px;">
+              <strong>Step 3: State observation and necessary experimental correction</strong><br>
+              • <strong>Observation:</strong> The paper bits will NOT be attracted at all; the rod remains electrostatically neutral.<br>
+              • <strong>Correction:</strong> To charge a brass rod by friction, it must be mounted on an insulating handle (e.g., ebonite, plastic, or dry wood) so charges cannot escape to Earth.
+            </div>
           </div>
         </div>
       </div>
@@ -737,7 +817,6 @@
 
   <footer class="editorial-footer">
     <div>Physics • Topic 11: Static Electricity &amp; Electrostatics</div>
-    <div>CISCE Class 7 Academic Reference</div>
   </footer>
 
   

@@ -11,11 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-      <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+      <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <style>
     :root {
@@ -31,10 +32,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -291,6 +292,67 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Deconstruct Biotic and Abiotic Ecosystem Components:</strong> Analyze autotrophic producers, primary/secondary consumers, and decomposers recycling minerals alongside sunlight and water.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Differentiate Food Chains from Food Webs:</strong> Trace linear feeding sequences versus complex interlocking food webs that maintain ecological equilibrium.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Calculate Energy Flow via Lindeman's 10% Law:</strong> Compute energy across trophic levels (\(T_1 \to T_2 \to T_3 \to T_4\)), proving why 90% respiratory heat dissipation limits chains to 4-5 links.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Elimination:</strong> Rule out options predicting energy increases up food chains, confusing nutrient cycling with unidirectional energy dissipation, or inverting biomagnification in under 5 seconds.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Ecology builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 ecological thermodynamics:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Who-eats-whom arrows and endless cycles</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Food chains are simple eating lists:</strong> A food chain was drawn as plain arrows (Grass \(\to\) Deer \(\to\) Tiger) showing who eats whom.</li>
+            <li><strong>Energy cycles endlessly:</strong> It was assumed that energy circulates round and round between plants, animals, and soil forever.</li>
+            <li><strong>No length limit:</strong> Food chains were imagined as capable of stretching indefinitely with 10 or 15 animals in a line.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Thermodynamic dissipation, 10% transfer, and biomagnification</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Unidirectional energy dissipation:</strong> While mineral nutrients (carbon, nitrogen) cycle perpetually, energy flows strictly <em>unidirectionally</em> from the sun, with \(90\%\) dissipating into space as metabolic heat at every step.</li>
+            <li><strong>Lindeman's 10% Law:</strong> Only approximately \(10\%\) of net energy entering a trophic level is stored as biomass for the next consumer; this exponential loss caps food chains at 4 to 5 trophic links.</li>
+            <li><strong>Biological magnification:</strong> Non-biodegradable, fat-soluble pesticides (like DDT) cannot be metabolized or excreted; their toxic concentration multiplies exponentially at higher trophic levels, poisoning apex predators.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- 1. STRUCTURE OF AN ECOSYSTEM -->
     <div class="section-block">
@@ -487,48 +549,47 @@
       </div>
     </div>
 
-  
     <!-- 8. THE COMMON-SENSE STRATEGY: RULING OUT THE IMPOSSIBLE -->
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> Ecosystem energy obeys the First and Second Laws of Thermodynamics. Ask yourself: <em>Can an owl have more energy than the forest trees? Does DDT wash out of top carnivores?</em> In multiple-choice questions, you can rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Unidirectional Energy Check</span>
+          <p class="cs-check-text">Energy flow is strictly <strong>unidirectional</strong>: \(\text{Sun} \to \text{Producers} \to \text{Herbivores} \to \text{Carnivores}\). Energy NEVER flows backwards and CANNOT be recycled. Matter cycles; energy dissipates as heat.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The 10% Energy Trophic Bracket</span>
+          <p class="cs-check-text">At each successive trophic level, energy decreases by an order of magnitude (\(\times 0.10\)). If producers fix \(100,000\text{ J}\), primary consumers receive \(10,000\text{ J}\), secondary consumers \(1,000\text{ J}\), and tertiary consumers \(100\text{ J}\).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Biomagnification Inversion Trap</span>
+          <p class="cs-check-text">Energy <em>decreases</em> up the food pyramid (upright pyramid of energy), but non-biodegradable persistent toxins (DDT, methylmercury) <em>increase</em> in concentration up the pyramid (biological magnification). Apex predators have the highest toxic concentration.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A freshwater lake food chain consists of Phytoplankton (microalgae, \(T_1\)) \(\to\) Zooplankton (\(T_2\)) \(\to\) Small fish (\(T_3\)) \(\to\) Osprey (fish-eating bird of prey, \(T_4\)). Phytoplankton capture \(100,000\text{ Joules}\) of net solar energy. Agricultural runoff washes non-biodegradable pesticide DDT into the water at \(0.002\text{ ppm}\). Which option correctly calculates the energy available to the top predator (Osprey, \(T_4\)) and identifies the organism with the highest concentration of DDT?
         </div>
 
         <div class="cs-options-list">
@@ -537,17 +598,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">Energy at \(T_4\): \(10,000\text{ J}\); Highest DDT: Phytoplankton</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">10% Law Violation & Biomagnification Inversion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> If \(T_1 = 100,000\text{ J}\), \(T_2\) receives \(10,000\text{ J}\). \(T_4\) cannot have \(10,000\text{ J}\)! Furthermore, non-biodegradable DDT biomagnifies <em>upwards</em>; its concentration is lowest in phytoplankton, not highest.
               </div>
             </div>
           </div>
@@ -557,17 +618,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Energy at \(T_4\): \(100\text{ J}\); Highest DDT: Zooplankton</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Premature Trophic Level Selection</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Zooplankton are only primary consumers (\(T_2\)). Carnivorous fish and fish-eating birds eat thousands of organisms across their lifespans, accumulating far higher pesticide concentrations in their body fat.
               </div>
             </div>
           </div>
@@ -577,17 +638,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Energy at \(T_4\): \(1,000\text{ J}\); Highest DDT: Small fish</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Single-Step Arithmetic Slip</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> \(1,000\text{ J}\) is the energy at \(T_3\) (Small fish), not \(T_4\). Applying the 10% law to \(T_4\) yields \(100\text{ J}\). Also, ospreys occupy the apex position above small fish and thus concentrate DDT to the greatest extent.
               </div>
             </div>
           </div>
@@ -597,17 +658,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">Energy at \(T_4\): \(100\text{ Joules}\); Highest DDT: Osprey (Apex predator)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Lindeman's Law & Ecotoxicology Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without guessing:</strong> By Lindeman's 10% Law: \(T_1 = 100,000\text{ J} \to T_2 = 10,000\text{ J} \to T_3 = 1,000\text{ J} \to T_4 = \mathbf{100\text{ J}}\). Because DDT cannot be excreted or metabolized, it accumulates progressively in fatty tissues at each step (biomagnification), reaching its highest, most toxic concentration in the top carnivore (osprey).
               </div>
             </div>
           </div>
@@ -619,58 +680,59 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Vivaan's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          In a grassland ecosystem: Grass (\(T_1\)) \(\to\) Grasshopper (\(T_2\)) \(\to\) Frog (\(T_3\)) \(\to\) Snake (\(T_4\)) \(\to\) Peacock (\(T_5\)). The gross energy fixed by green grass through photosynthesis is \(50,000\text{ kJ}\). (a) State Lindeman's 10% Law of Energy Transfer. (b) Calculate the energy available to the tertiary consumer (Snake, \(T_4\)). (c) Explain why natural food chains rarely extend beyond five trophic levels.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Vivaan Rao</strong> submitted the three-step solution below in his exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Ecosystems, Food Chains &amp; Energy Dynamics</span>
+          <span>Student: Vivaan Rao • Class 7-A</span>
+          <span>Biology Assignment: Ecological Pyramids & Energy Dynamics</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Statement of Lindeman's 10% Law</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Only approximately <strong>\(10\%\)</strong> of the energy entering a trophic level is assimilated into biomass and transferred to the next level; the remaining <strong>\(90\%\)</strong> is dissipated as metabolic heat and waste during respiration.
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Calculation of Energy Available at T4 (Snake)</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$\text{Energy at } T_2 = 5000\text{ kJ}, \quad \text{Energy at } T_3 = 500\text{ kJ}.$$
+              $$\text{Energy at } T_4 = 500\text{ kJ} - 10\% = 500 - 50 = \mathbf{450\text{ kJ}}$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Limitation of Food Chain Length</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Because energy diminishes progressively at each trophic transfer, beyond 5 levels the residual energy is insufficient to sustain a viable population of top carnivores.
             </div>
           </div>
         </div>
@@ -678,35 +740,55 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Rigorous Scientific Definition</div>
+            Vivaan provided an accurate definition of Lindeman's 10% Law, correctly stating the 10% transfer and 90% respiratory heat dissipation. 1/1 mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Subtraction vs Percentage Multiplier Blunder</div>
+            <strong>The Trap:</strong> Vivaan treated the 10% law as "subtracting 10%" from the previous trophic level! Each level receives only one-tenth (\(\times 0.10\)) of the energy of the previous level:
+            $$\text{Energy at } T_4 = 10\% \text{ of } 500\text{ kJ} = 0.10 \times 500 = \mathbf{50\text{ kJ}}$$
+            Vivaan calculated \(450\text{ kJ}\), which represents a 90% transfer, completely violating thermodynamic energy dissipation! Deduction: -1 mark.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method Mark Awarded</div>
+            <strong>How ICSE Marks This:</strong> Vivaan's conceptual explanation in Step 3 for why food chains are limited to 4 or 5 levels is ecologically sound and grounded in thermodynamic limits. Full method credit (1/1 M1) is awarded.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Lindeman's 10% Law:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;During the transfer of organic energy from one trophic level to the next, only approximately <strong>\(10\%\)</strong> of the energy is stored in new biomass; \(90\%\) is dissipated as metabolic heat during respiration or lost in excretion.<br><br>
+          2. <em>Energy Available to Snake (\(T_4\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(T_1\text{ (Grass)} = 50,000\text{ kJ}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(T_2\text{ (Grasshopper)} = 10\% \times 50,000 = 5,000\text{ kJ}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(T_3\text{ (Frog)} = 10\% \times 5,000 = 500\text{ kJ}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(T_4\text{ (Snake)} = 10\% \times 500 = \mathbf{50\text{ kJ}}\)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Each upward step drops a trailing zero (\(50,000 \to 5,000 \to 500 \to 50\text{ kJ}\)). It is division by 10, not subtraction of 10%!<br><br>
+          3. <em>Limitation of Food Chain Length:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Because \(90\%\) of energy is lost at each link, by \(T_5\) (Peacock) only \(5\text{ kJ}\) remains from the original \(50,000\text{ kJ}\). Beyond 4-5 trophic links, the energy pool is too minuscule to support the metabolic and reproductive requirements of an apex predator population.
         </div>
       </div>
     </section>

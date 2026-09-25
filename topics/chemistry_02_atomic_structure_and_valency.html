@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chemistry 02: Atomic Structure & Valency • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -30,10 +31,10 @@
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
       --amber-accent: #b45309;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -266,9 +267,66 @@
     </p>
   </section>
 
-  <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Subatomic Particle Audit:</strong> Compare protons, neutrons, and electrons in relative charge, mass, and location in the nuclear atom.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Calculate Nucleon Breakdown:</strong> Determine proton, neutron, and electron counts from nuclide notation (\(^{A}_{Z}\text{X}\)) using \(n = A - Z\).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Bohr Electronic Configurations:</strong> Distribute electrons across \(K, L, M, N\) shells for elements \(Z=1\) to \(20\) obeying the \(2n^2\) and octet rules.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Deduce Combining Valency:</strong> Determine valency from valence electrons (metals: valence count; non-metals: \(8 - \text{valence count}\)) and explain noble gas unreactivity.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Chemistry builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 atomic architecture:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Indivisible spheres and element symbols</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Atoms were indivisible:</strong> Dalton's billiard-ball model: atoms were tiny, solid spheres that could not be split or penetrated.</li>
+            <li><strong>All atoms of an element were identical:</strong> Every carbon atom was assumed to have the exact same mass and properties.</li>
+            <li><strong>Combination was mysterious:</strong> Atoms joined to form compounds without explaining why certain elements combine in fixed ratios while others never react.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Subatomic structure, energy shells, and octet stability</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>The Nuclear Atom is Empty Space:</strong> A dense central nucleus (\(p^+ + n^0\)) contains \(99.9\%\) of the mass, orbited by electrons in discrete shells (\(K, L, M\)) following \(2n^2\).</li>
+            <li><strong>Nuclide Arithmetic &amp; Isotopes:</strong> Atomic number (\(Z\)) defines protons; Mass number (\(A\)) equals \(p + n\). Isotopes (e.g. \(^{35}_{17}\text{Cl}\) and \(^{37}_{17}\text{Cl}\)) share \(Z\) but differ in neutron count.</li>
+            <li><strong>The Drive for Octet Stability:</strong> Atoms react to achieve stable noble gas electron arrangements (\(8\) valence electrons). Valency is the exact number of electrons lost, gained, or shared.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- INTRO HOOK -->
     <section class="section-block">
@@ -382,7 +440,7 @@
         <span class="headsup-title">Heads-Up &bull; Atomic Number vs Mass Number Placement</span>
         <p>Remember: <strong>Mass Number (\(A\)) is always on TOP</strong> because mass is heavy and floats up like a hot air balloon, while <strong>Atomic Number (\(Z\)) is at the BOTTOM</strong>:
         $$_{Z}^{A}\text{X} \quad \text{Example: } _{6}^{12}\text{C}$$
-        Always write \(_{6}^{12}\text{C}\) and avoid inverting atomic and mass numbers on ICSE examinations.</p>
+        Always write \(_{6}^{12}\text{C}\) and avoid inverting atomic and mass numbers on• ICSE examinations.</p>
       </div>
     </section>
 
@@ -733,43 +791,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
           <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In atomic structure, formulas represent concrete subatomic particles. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these violate fundamental shell limits or nucleon arithmetic?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Octet Bound Rule</span>
+          <p class="cs-check-text">For Class 7 syllabus elements, valency is combining capacity and can never exceed 4 (\(0 \le \text{Valency} \le 4\)). Any option claiming a valency of 5, 6, or 7 is an immediate blunder.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">Subatomic Mass Conservation</span>
+          <p class="cs-check-text">Mass number \(A = Z + n\). Therefore, neutron count \(n = A - Z\). Neutrons can never exceed the mass number or be negative.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Shell Capacity Limit</span>
+          <p class="cs-check-text">By the \(2n^2\) rule, the K-shell (\(n=1\)) holds at most 2 electrons; the L-shell (\(n=2\)) holds at most 8 electrons. No shell can skip intermediate filling.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> An atom of phosphorus has an atomic number \(Z = 15\) and a mass number \(A = 31\). What is its Bohr electronic configuration across shells \(K, L, M\) and its common chemical valency?
         </div>
 
         <div class="cs-options-list">
@@ -778,17 +836,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">Configuration: \(2, 8, 5\); Valency \(= 5\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Valence Electron Identity Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Valency is combining capacity (electrons gained, lost, or shared), NOT the count of outer electrons. Non-metals with 5 valence electrons do not lose 5 electrons; they gain \(8 - 5 = 3\) electrons. Valency never exceeds 4!
               </div>
             </div>
           </div>
@@ -798,17 +856,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Configuration: \(2, 13\); Valency \(= 3\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Shell Capacity Violation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> The L-shell has a principal quantum number \(n=2\). By the \(2n^2\) rule, its maximum holding capacity is \(2(2)^2 = 8\) electrons. Cramming 13 electrons into the second shell completely violates atomic physics!
               </div>
             </div>
           </div>
@@ -818,17 +876,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Configuration: \(2, 8, 8\); Valency \(= 0\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Argon Electron Count Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Summing the electrons gives \(2 + 8 + 8 = 18\) electrons, which belongs to inert Argon (\(Z=18\)). But phosphorus has only \(Z=15\) electrons!
               </div>
             </div>
           </div>
@@ -838,17 +896,20 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">Configuration: \(2, 8, 5\); Valency \(= 3\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Physical &amp; Electronic Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this:</strong> Total electrons \(= Z = 15\). Filled in order: K-shell \(= 2\), L-shell \(= 8\), remaining M-shell \(= 5\). Since it has 5 valence electrons, it requires 3 more electrons to complete its stable octet of 8: \(\text{Valency} = 8 - 5 = \mathbf{3}\).<br><br>
+                <strong>The 10-Second Proof:</strong><br>
+                • Electronic Distribution: \(K(2), L(8), M(5) \implies 2 + 8 + 5 = 15 = Z\).<br>
+                • Octet Rule: \(\text{Valency} = 8 - 5 = \mathbf{3}\).
               </div>
             </div>
           </div>
@@ -860,58 +921,58 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Arjun's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          A neutral atom of a chlorine isotope is represented as \(^{37}_{17}\text{Cl}\). Determine the number of protons, neutrons, and electrons in this atom, and compute the total nucleon sum.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Arjun Menon</strong> submitted the three-step solution below in his exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Atomic Structure & Valency</span>
+          <span>Student: Arjun Menon • Class 7-A</span>
+          <span>Chemistry Assignment: Atomic Structure &amp; Nuclide Calculations</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Proton and Electron Extraction</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              From nuclide \(^{37}_{17}\text{Cl}\): Atomic number \(Z = 17 \implies \text{Protons } p = 17\text{ and Electrons } e = 17\).
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Neutron Calculation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$\text{Neutrons } n = A + Z = 37 + 17 = 54\text{ neutrons}$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Total Nucleon Sum Verification</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$\text{Total Nucleons } = p + n = 17 + 54 = \mathbf{71\text{ nucleons}}$$
             </div>
           </div>
         </div>
@@ -919,35 +980,54 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Extraction of Atomic Number</div>
+            Arjun correctly identified that in a neutral atom, the atomic number \(Z\) represents both the number of nuclear protons (\(p = 17\)) and the orbiting electrons (\(e = 17\)). 1/1 Mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Inverted Mass Number Formula</div>
+            <strong>The Trap:</strong> Arjun added \(A + Z\) instead of subtracting \(A - Z\).<br>
+            • The mass number \(A\) is the total count of nucleons (\(A = p + n\)).<br>
+            • Therefore, to find neutrons, you must subtract protons from mass number: \(n = A - Z = 37 - 17 = \mathbf{20\text{ neutrons}}\). Adding gave 54, which is physically impossible because neutrons cannot exceed the mass of the entire atom!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Arjun correctly applied the nucleon formula (\(\text{Nucleons} = p + n\)) and accurately added \(17 + 54 = 71\) without arithmetic slips.<br>
+            Under ICSE marking rules, the candidate receives the <strong>Method Mark (M1)</strong> for valid follow-through on a wrong carried value.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Extract Subatomic Quantities:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;From \(^{37}_{17}\text{Cl}\): Atomic Number \(Z = 17\), Mass Number \(A = 37\).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Protons } p = Z = 17, \quad \text{Electrons } e = Z = 17$$<br>
+          2. <em>Calculate Neutrons Correctly (\(n = A - Z\)):</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$n = A - Z = 37 - 17 = \mathbf{20\text{ neutrons}}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense check:</em> Total neutrons (20) must be less than the total mass number (37).<br><br>
+          3. <em>Verify Electronic Configuration &amp; Valency:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Configuration } (17e^-): 2, 8, 7 \implies \text{Valency} = 8 - 7 = \mathbf{1}$$
         </div>
       </div>
     </section>
@@ -963,7 +1043,7 @@
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Chemistry Class 7 • Complete Curriculum</div>
-    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
+    <div>Outfit &amp; Inter • KaTeX for math</div>
   </footer>
 
   <script>

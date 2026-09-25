@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Triangles, Congruence, Perimeter & Area • ICSE Class 7 Mathematics</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -32,10 +33,10 @@
       --emerald-soft: #f0f7f2;
       --amber-accent: #b45309;
       --amber-soft: #fef3c7;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -280,6 +281,64 @@
   <!-- MAIN ARTICLE BODY -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Analyze Triangle Properties &amp; Inequalities:</strong> Apply the Angle Sum Property (\(\angle A + \angle B + \angle C = 180^\circ\)), Exterior Angle Theorem, and the Triangle Inequality Theorem (\(a + b > c\)) to test geometric validity.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Master the Four Congruence Criteria:</strong> Prove triangle congruence (\(\cong\)) using SSS, SAS (included angle), ASA, and RHS criteria, deriving corresponding parts via CPCTC.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Compute 2D Perimeter &amp; Area:</strong> Derive perimeter wire-lengths and surface area for triangles and quadrilaterals using \(\text{Area} = \frac{1}{2} \times \text{base} \times \text{height}\) with altitude verification.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Deploy Common-Sense Geometric Filters:</strong> Instantly eliminate options violating the Triangle Inequality, mistaking the non-included SSA configuration for congruence, or producing impossible negative dimensions.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Mathematics builds layer upon layer. Here is how Grade 6 visual observation of shapes evolves into Grade 7 axiomatic congruence and mensuration:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Visual Shape Recognition &amp; Empirical Measurements</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Visual Triangle Types:</strong> Triangles were sorted qualitatively by look (pointing shapes, right corners, equilateral symmetry) with plastic ruler and protractor measurements.</li>
+            <li><strong>Identical Copies by Tracing:</strong> Two figures were called "equal" if a tracing paper overlay looked like a match, without formal correspondence of vertices or sides.</li>
+            <li><strong>Simple Box Counting:</strong> Area was estimated by counting grid squares on graph paper, and perimeter by tracing a thread around outer boundaries.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Rigorous Congruence Criteria &amp; Deductive Mensuration</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Axiomatic Triangle Criteria:</strong> Formal deduction through the Angle Sum Property (\(\angle A + \angle B + \angle C = 180^\circ\)), Exterior Angle Theorem (\(\angle \text{ext} = \angle 1 + \angle 2\)), and Triangle Inequality (\(a + b > c\)).</li>
+            <li><strong>The Four Congruence Axioms (SSS, SAS, ASA, RHS):</strong> Uncompromising proof of superimposition; two triangles are congruent (\(\cong\)) only if corresponding parts match under formal criteria, unlocking CPCTC for remaining sides and angles.</li>
+            <li><strong>Deductive Geometric Formulas:</strong> Quantitative formulas for perimeter and area (\(\text{Area} = \frac{1}{2}bh\)) with explicit dimensional tracking, altitude identification, and boundary bounding.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- SECTION 1: THE ANATOMY OF TRIANGLES -->
     <section class="section-block">
@@ -440,7 +499,7 @@
 
     <!-- SECTION 4: WORKED EXAM PROBLEMS -->
     <section class="section-block">
-      <h2 class="section-heading">4. Worked Problem ICSE Examination Problems</h2>
+      <h2 class="section-heading">4. Worked Problem• ICSE Examination Problems</h2>
 
       <!-- PROBLEM 1 -->
       <div class="problem-box">
@@ -579,43 +638,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
           <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your geometric instincts to eliminate wrong answers before writing down a single equation.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Triangle Inequality &amp; Scale Check</span>
+          <p class="cs-check-text">In any real triangle, the sum of any two side lengths must strictly exceed the third side (\(a + b > c\)). If any option implies a third side greater than or equal to the sum of the other two, or smaller than their difference, rule it out in 2 seconds!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
           <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <p class="cs-check-text">The three interior angles of a triangle sum to strictly \(180^\circ\). No single angle can reach \(180^\circ\), an obtuse triangle has at most one angle \(> 90^\circ\), and side lengths must always remain strictly positive (\(s > 0\)).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Included Angle &amp; Criteria Filter</span>
+          <p class="cs-check-text">In SAS congruence, the angle MUST be strictly included between the two equal arms. Non-included angle (SSA) does not guarantee congruence. Never accept non-included angles or AAA for congruence!</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem (ICSE Class 7):</strong> In \(\triangle ABC\), \(AB = 7\text{ cm}\), \(AC = 9\text{ cm}\), and \(\angle A = 45^\circ\). In \(\triangle DEF\), \(DE = 7\text{ cm}\) and \(DF = 9\text{ cm}\). Which condition on \(\triangle DEF\) guarantees that \(\triangle ABC \cong \triangle DEF\) by the SAS Congruence Criterion, and within what boundary bracket must the third side length \(x = BC = EF\) strictly lie?
         </div>
 
         <div class="cs-options-list">
@@ -624,17 +683,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(\angle E = 45^\circ, \quad 0\text{ cm} < x < 16\text{ cm}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">SSA Non-Included Angle &amp; Lower Bound Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> In \(\triangle DEF\), the two known sides are \(DE\) and \(DF\), which meet at vertex \(D\). \(\angle E\) is NOT the included angle—that would be SSA (Side-Side-Angle), which is not a valid congruence criterion! Furthermore, \(x\) cannot approach \(0\text{ cm}\); the difference of the two sides is \(9 - 7 = 2\text{ cm}\), so \(x\) must strictly exceed \(2\text{ cm}\) (for \(x=1\), \(1+7 = 8 < 9\), impossible). Disqualified!
               </div>
             </div>
           </div>
@@ -644,17 +703,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(\angle D = 45^\circ, \quad x > 16\text{ cm}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Triangle Inequality Violation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> By the Triangle Inequality Theorem, the sum of any two sides must strictly exceed the third side: \(DE + DF > EF \implies 7 + 9 > x \implies 16 > x\). An option stating \(x > 16\text{ cm}\) (e.g. \(x = 18\text{ cm}\)) means the two shorter segments cannot bridge the distance to form a closed triangle. Ruled out immediately!
               </div>
             </div>
           </div>
@@ -664,17 +723,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(\angle F = 45^\circ, \quad 2\text{ cm} < x < 16\text{ cm}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Non-Included Angle Decoy Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Although the numerical bracket \(2\text{ cm} < x < 16\text{ cm}\) is correct, \(\angle F\) is opposite to side \(DE\), making it another non-included angle. SAS requires the angle to be formed at the shared vertex of the two known sides (vertex \(D\)). Citing \(\angle F = 45^\circ\) fails to establish SAS congruence!
               </div>
             </div>
           </div>
@@ -684,17 +743,22 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(\angle D = 45^\circ, \quad 2\text{ cm} < x < 16\text{ cm}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Axiomatic SAS Criterion &amp; Triangle Inequality Confirmed</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> Option D correctly identifies the included angle \(\angle D\) between sides \(DE\) and \(DF\), and places third side \(x\) within the strict difference-to-sum bracket: \(9 - 7 < x < 9 + 7\).<br><br>
+                <strong>The 10-Second Mathematical Proof:</strong><br>
+                • <strong>SAS Verification:</strong> In \(\triangle ABC\), \(\angle A\) is included between \(AB\) and \(AC\). In \(\triangle DEF\), sides \(DE\) and \(DF\) share vertex \(D\). Setting \(\angle D = \angle A = 45^\circ\) proves \(\triangle ABC \cong \triangle DEF\) by SAS.<br>
+                • <strong>Triangle Inequality Bracket:</strong> In any triangle with sides \(7\text{ cm}\) and \(9\text{ cm}\):<br>
+                &nbsp;&nbsp;$$|9 - 7| < x < 9 + 7 \implies \mathbf{2\text{ cm} < x < 16\text{ cm}}$$<br>
+                • Option D is the unique surviving choice passing every test. You ruled out 3 options in seconds without guessing!
               </div>
             </div>
           </div>
@@ -706,58 +770,61 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Kavya's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          In an isosceles triangle \(\triangle PQR\), \(PQ = PR = 10\text{ cm}\) and base \(QR = 12\text{ cm}\). The altitude \(PM\) is drawn perpendicular to base \(QR\) (\(PM \perp QR\)), bisecting \(QR\) at \(M\) with length \(PM = 8\text{ cm}\).<br>
+          (i) Prove that \(\triangle PMQ \cong \triangle PMR\).<br>
+          (ii) Calculate the total area of \(\triangle PQR\).<br>
+          (iii) If the triangle is painted on wooden craft board at \(\text{₹}1.50\text{ per cm}^2\), calculate the total cost of painting.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Kavya Nair</strong> submitted the three-step solution below in her exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Triangles, Congruence, Perimeter & Area</span>
+          <span>Student: Kavya Nair • Class 7-B</span>
+          <span>Mathematics Assignment: Triangles, Congruence &amp; Mensuration</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Given Data &amp; Axiomatic Congruence Proof</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              In \(\triangle PMQ\) and \(\triangle PMR\): \(PQ = PR = 10\text{ cm}\) [Given], \(PM = PM\) [Common], \(QM = MR = 6\text{ cm}\) [Given \(M\) is midpoint]. Thus \(\triangle PMQ \cong \triangle PMR\) [SSS Congruence Criterion].
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Total Triangle Area Calculation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$\text{Area of } \triangle PQR = \text{base} \times \text{altitude} = 12\text{ cm} \times 8\text{ cm} = 96\text{ cm}^2$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Total Painting Cost Derivation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$\text{Total Cost} = \text{Area} \times \text{Rate} = 96\text{ cm}^2 \times \text{₹}1.50\text{ per cm}^2 = \text{₹}144.00$$
             </div>
           </div>
         </div>
@@ -765,35 +832,59 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Flawless Axiomatic Congruence Proof</div>
+            Kavya accurately extracted all three corresponding side pairs (\(PQ = PR = 10\text{ cm}\), common arm \(PM\), and \(QM = MR = 6\text{ cm}\)) with correct reasons and properly established \(\triangle PMQ \cong \triangle PMR\) under the SSS Congruence Criterion (RHS is also fully valid). Full 1 mark awarded!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Omission of Half-Factor in Triangle Area</div>
+            <strong>The Trap:</strong> Kavya calculated \(\text{Area} = \text{base} \times \text{altitude} = 12 \times 8 = 96\text{ cm}^2\).<br>
+            • In ICSE mensuration, the area of a triangle is strictly <strong>half</strong> the area of a rectangle with the same base and height: \(\text{Area} = \frac{1}{2} \times \text{base} \times \text{height}\).<br>
+            • The true area of \(\triangle PQR\) is \(\frac{1}{2} \times 12\text{ cm} \times 8\text{ cm} = \mathbf{48\text{ cm}^2}\).<br>
+            By omitting \(\frac{1}{2}\), she doubled the surface area, losing 1 mark!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Even though the area value of \(96\text{ cm}^2\) was incorrect due to the blunder in Step 2, Kavya correctly applied the commercial rate formula: \(\text{Cost} = \text{Area} \times \text{Rate} = 96 \times 1.50 = \text{₹}144.00\), carrying out the arithmetic without any further slips.<br>
+            In ICSE board examination marking schemes, examiners award the <strong>Method Mark (M1)</strong> for follow-through calculations to ensure candidates are not penalized twice for a single blunder.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="display: none; margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Congruence Deduction:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;In \(\triangle PMQ\) and \(\triangle PMR\):<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(PQ = PR = 10\text{ cm}\) [Given]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(PM = PM\) [Common altitude]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• \(QM = MR = \frac{12}{2} = 6\text{ cm}\) [\(M\) is midpoint of \(QR\)]<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\triangle PMQ \cong \triangle PMR \quad \text{[SSS Congruence Criterion (or RHS)]}$$<br>
+          2. <em>Total Area Calculation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Area}(\triangle PQR) = \frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 12\text{ cm} \times 8\text{ cm} = \mathbf{48\text{ cm}^2}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Each right triangle has area \(\frac{1}{2} \times 6 \times 8 = 24\text{ cm}^2\). The two halves combined yield \(24 + 24 = 48\text{ cm}^2\), exactly half of the \(96\text{ cm}^2\) rectangle.<br><br>
+          3. <em>Total Painting Cost Derivation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Total Cost} = 48\text{ cm}^2 \times \text{₹}1.50\text{ per cm}^2 = \mathbf{\text{₹}72.00}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Check:</em> Exactly half of Kavya's flawed \(\text{₹}144.00\) result.
         </div>
       </div>
     </section>
@@ -809,7 +900,7 @@
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
-    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
+    <div>Outfit &amp; Inter • KaTeX for math</div>
   </footer>
 
   <script>

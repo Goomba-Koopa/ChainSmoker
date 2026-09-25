@@ -11,11 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-      <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+      <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <style>
     :root {
@@ -31,10 +32,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -291,6 +292,67 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Master the Linnaean Taxonomic Hierarchy & Binomial Rules:</strong> Order Kingdom \(\to\) Phylum \(\to\) Class \(\to\) Order \(\to\) Family \(\to\) Genus \(\to\) Species, and write binomial names (*Homo sapiens*).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Differentiate Whittaker's Five Kingdoms:</strong> Contrast prokaryotic Monera (bacteria) with eukaryotic Protista, saprophytic chitin-walled Fungi, autotrophic Plantae, and heterotrophic Animalia.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Identify Diagnostic Invertebrate Phyla:</strong> Compare Porifera (pores/osculum), Cnidaria (tentacles/cnidoblasts), Annelida (metameric rings), Arthropoda (jointed limbs/exoskeleton), and Mollusca (soft body/shell).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Elimination:</strong> Rule out options grouping bacteria as fungi, placing spiders in Class Insecta, or violating binomial italics in under 5 seconds.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Taxonomy builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 phylogenetic classification:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Two kingdoms and habitat groupings</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Two-group division:</strong> Living things were divided simply into "plants that don't move" and "animals that move around".</li>
+            <li><strong>Habitat grouping:</strong> Whales, fish, and frogs were often lumped together as "water creatures"; bats and birds as "fliers".</li>
+            <li><strong>Microbes lumped as germs:</strong> Bacteria, protozoa, and yeasts were called "germs" without structural distinction.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Whittaker's Five Kingdoms and structural homologies</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Cellular and trophic criteria:</strong> Whittaker's 5 Kingdoms (Monera, Protista, Fungi, Plantae, Animalia) reflect cell structure (prokaryotic vs eukaryotic), body grade, and mode of nutrition.</li>
+            <li><strong>Diagnostic invertebrate body plans:</strong> Phyla are segregated by definitive morphological traits: Porifera (pores), Annelida (true metamerism), Arthropoda (chitinous exoskeleton and jointed legs).</li>
+            <li><strong>Binomial nomenclature:</strong> Organisms are identified globally by Linnaeus's latinized binomial system (*Genus species*), preventing linguistic confusion.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- 1. NEED FOR CLASSIFICATION & TAXONOMY -->
     <div class="section-block">
@@ -335,7 +397,7 @@
         2. <strong>Second Word:</strong> Represents the <em>Species</em> (Specific epithet). It must always begin with a lowercase letter.<br>
         3. <strong>Typesetting:</strong> When printed, the entire name is typeset in <em>italics</em>. When handwritten by students in exam scripts, the genus and species names must be <u>underlined</u> <u>separately</u>.
         <br><br>
-        <em>Standard ICSE Examples:</em><br>
+        <em>Standard• ICSE Examples:</em><br>
         • Human Being: <em>Homo sapiens</em><br>
         • Mango Tree: <em>Mangifera indica</em><br>
         • Tiger: <em>Panthera tigris</em><br>
@@ -362,7 +424,7 @@
             <th>Cellular Organization</th>
             <th>Nuclear Architecture</th>
             <th>Mode of Nutrition</th>
-            <th>Diagnostic Features & ICSE Examples</th>
+            <th>Diagnostic Features &• ICSE Examples</th>
           </tr>
         </thead>
         <tbody>
@@ -626,48 +688,47 @@
       </div>
     </div>
 
-  
     <!-- 8. THE COMMON-SENSE STRATEGY: RULING OUT THE IMPOSSIBLE -->
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> Biological classification is based on discrete diagnostic features. Ask yourself: <em>Does a prokaryote have a nuclear membrane? How many legs does an insect have?</em> In multiple-choice questions, you can rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Prokaryotic vs Eukaryotic Boundary</span>
+          <p class="cs-check-text">Kingdom Monera (bacteria, cyanobacteria) is the ONLY kingdom of <strong>prokaryotic</strong> organisms (lacking a membrane-bound nucleus). All other four kingdoms (Protista, Fungi, Plantae, Animalia) possess true eukaryotic nuclei.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Fungal Nutrition & Chitin Rule</span>
+          <p class="cs-check-text">Fungi NEVER contain chlorophyll and cannot perform photosynthesis. They are heterotrophic saprophytes or parasites. Their cell walls are composed of <strong>chitin</strong>, never plant cellulose.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Insect Diagnostic Triad Check</span>
+          <p class="cs-check-text">Class Insecta (Phylum Arthropoda) is strictly defined by: (1) Body divided into 3 tagmata (head, thorax, abdomen), (2) Exactly <strong>three pairs of jointed walking legs</strong> (6 legs) on the thorax, and (3) Compound eyes.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A naturalist discovers a small creature in garden leaf litter. The organism has a segmented body divided into a head, thorax, and abdomen, possesses three pairs of jointed legs on the thorax, one pair of compound eyes, and a rigid chitinous exoskeleton that it sheds during growth. To which Kingdom, Phylum, and Class does this organism belong?
         </div>
 
         <div class="cs-options-list">
@@ -676,17 +737,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">Kingdom: Protista; Phylum: Annelida; Class: Insecta</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Unicellular Kingdom & Soft-Bodied Phylum Error</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Protista consists of microscopic, unicellular organisms (like Amoeba)! Furthermore, Phylum Annelida (earthworms) comprises soft-bodied worms without jointed chitinous legs or compound eyes.
               </div>
             </div>
           </div>
@@ -696,17 +757,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Kingdom: Animalia; Phylum: Mollusca; Class: Gastropoda</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Mollusc Soft-Body Contradiction</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Molluscs (snails, clams) have soft, unsegmented bodies typically covered by a calcareous shell, moving by a single muscular foot—they do NOT have jointed thoracic legs or a chitinous exoskeleton.
               </div>
             </div>
           </div>
@@ -716,17 +777,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Kingdom: Animalia; Phylum: Arthropoda; Class: Arachnida</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Arachnid Leg Count Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Arachnids (spiders, scorpions) possess <strong>four pairs of legs</strong> (8 legs) and only two body divisions (cephalothorax and abdomen); they lack the 3 pairs of legs and 3-part body division seen in insects.
               </div>
             </div>
           </div>
@@ -736,17 +797,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">Kingdom: Animalia; Phylum: Arthropoda; Class: Insecta</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Taxonomic Hierarchy Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without guessing:</strong> The specimen satisfies the exact diagnostic triad: Kingdom Animalia (multicellular heterotroph), Phylum Arthropoda (jointed appendages, chitinous exoskeleton), and Class Insecta (three pairs of thoracic walking legs and body in 3 distinct tagmata).
               </div>
             </div>
           </div>
@@ -758,58 +819,58 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Arjun's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Arjun summarizes biological classification and taxonomy: (a) Arrange the 7 primary taxonomic categories in correct descending order from highest to lowest rank. (b) Write the binomial scientific name of the common housefly following international nomenclature conventions. (c) Classify the common earthworm by Phylum and state one diagnostic feature distinguishing it from roundworms (Nematoda).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Arjun Das</strong> submitted the three-step solution below in his exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Classification of Living Organisms</span>
+          <span>Student: Arjun Das • Class 7-A</span>
+          <span>Biology Assignment: Biological Taxonomy & Phylum Classification</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Descending Taxonomic Hierarchy</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              $$\text{Kingdom} \to \text{Phylum} \to \text{Class} \to \text{Order} \to \text{Family} \to \text{Genus} \to \text{Species}$$
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Binomial Scientific Name of Housefly</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              The scientific name of the housefly is written as: <strong>musca Domestica</strong> with Genus in lowercase and species capitalized.
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Earthworm Phylum Classification</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Earthworm belongs to Phylum <strong>Annelida</strong>, characterized by true metameric body segmentation and locomotory setae, unlike unsegmented roundworms.
             </div>
           </div>
         </div>
@@ -817,35 +878,54 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Taxonomic Sequence</div>
+            Arjun correctly listed the Linnaean hierarchy in descending rank from Kingdom down to Species without omissions or inversions. 1/1 mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Violation of Binomial Nomenclature Rules</div>
+            <strong>The Trap:</strong> Arjun inverted binomial capitalization! Under the International Code of Zoological Nomenclature:
+            • The <strong>Genus name MUST start with an uppercase letter</strong>.
+            • The <strong>species name MUST be entirely lowercase</strong>.
+            • Both names must be italicized (or separately underlined if handwritten): <em>Musca domestica</em>. Writing <em>musca Domestica</em> forfeits the nomenclature mark! Deduction: -1 mark.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method Mark Awarded</div>
+            <strong>How ICSE Marks This:</strong> Arjun accurately assigned the earthworm to Phylum Annelida and provided a rigorous diagnostic distinguishing trait (metameric segmentation and setae vs smooth cylindrical body in Nematoda). Full method credit (1/1 M1) is awarded.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Descending Taxonomic Hierarchy:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Kingdom} \to \text{Phylum} \to \text{Class} \to \text{Order} \to \text{Family} \to \text{Genus} \to \text{Species}$$<br><br>
+          2. <em>Binomial Scientific Name of Housefly:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em><strong>Musca domestica</strong></em> (Genus capitalized, species in lowercase, italicized or underlined separately).<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Like your own name (Surname First in formal records: 'Homo' for Genus, 'sapiens' for species), capitalization rules are universal across all world languages.<br><br>
+          3. <em>Earthworm Classification & Diagnostic Feature:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Phylum Annelida</strong>.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <strong>Diagnostic trait:</strong> True metameric body segmentation (body divided internally and externally into recurring ring-like segments) and locomotory setae, whereas Nematoda (roundworms) have smooth unsegmented bodies without setae.
         </div>
       </div>
     </section>

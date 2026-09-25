@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mathematics 04: The Balance Beam: Linear Equations & Word Problems • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -30,10 +31,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -296,6 +297,65 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
+
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Master the Balance Beam Axiom:</strong> Maintain algebraic equality by executing identical inverse operations on LHS and RHS across the equals boundary.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Execute Multi-Step Transposition:</strong> Group variable terms on one side and numeric constants on the other with strict sign inversion (\(+ \leftrightarrow -\), \(\times \leftrightarrow \div\)).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Clear Fractional Equations via the LCM Method:</strong> Eliminate all denominators in a single step by multiplying every single term on both sides by the LCM.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Elimination:</strong> Test proposed roots by mental substitution into LHS/RHS to rule out false roots in under 5 seconds.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Mathematics builds layer upon layer. Here is how Grade 6 inverse guessing evolves into Grade 7 rigorous transposition:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Single-Step Guess & Check Puzzles</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Trial and Error:</strong> Equations were framed as riddle questions: "what number plus 5 makes 12?" solved by inspection.</li>
+            <li><strong>Single-Step Inverses:</strong> Operations were limited to moving one number (\(x + 4 = 11 \implies x = 7\)) without multi-term grouping.</li>
+            <li><strong>Single-Sided Variables:</strong> Unknown letters appeared on only one side; fractions were rarely distributed across parentheses.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Dual-Pan Transposition & LCM Clearing</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Dual-Pan Equilibrium:</strong> Equality represents an exact balance beam: any operation performed on the LHS must identically alter the RHS.</li>
+            <li><strong>Systematic Transposition:</strong> Variables on both sides are gathered systematically: \(ax + b = cx + d \implies (a - c)x = d - b\).</li>
+            <li><strong>LCM Fraction Elimination:</strong> Complex fractional linear equations are cleared by multiplying every term by \(\text{LCM}(d_1, d_2, \dots)\) before expanding brackets.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
     <!-- INTRO HOOK -->
@@ -623,43 +683,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> A solution to an equation is not an opinion—it is an exact mathematical balance point. Top problem solvers don't blindly compute; they inspect the options first and ask: <em>Which of these roots fail the mental balance test or violate fraction scaling?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Substitution Sanity Check</span>
+          <p class="cs-check-text">A true root MUST make LHS = RHS identically. If quick mental substitution produces unequal integers or fractions, disqualify that candidate instantly.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Negative Fraction Distribution Trap</span>
+          <p class="cs-check-text">When expanding \(-\frac{x - 1}{2}\), multiplying by the LCM produces \(-3(x - 1) = -3x + 3\). Forgetting to flip the inner sign is the #1 ICSE board trap.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Scale & Magnitude Bracket</span>
+          <p class="cs-check-text">If the RHS is a modest number like 2, an enormous value like \(x = 17\) or \(x = 35\) will blow the LHS into double digits. Rule out wildly oversized candidates.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> Solve for \(x\): \(\frac{2x + 1}{3} - \frac{x - 1}{2} = 2\).
         </div>
 
         <div class="cs-options-list">
@@ -668,17 +728,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(x = 17\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Scale Overshoot Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Mental check: If \(x = 17\), the first term is \(\frac{35}{3} \approx 11.67\) and the second term is \(\frac{16}{2} = 8\). \(11.67 - 8 = 3.67 \neq 2\). The balance is completely broken!
               </div>
             </div>
           </div>
@@ -688,17 +748,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(x = 1\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Zero-Numerator Mental Test</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Test \(x = 1\): The first term is \(\frac{2(1)+1}{3} = \frac{3}{3} = 1\). The second term is \(\frac{1-1}{2} = 0\). \(1 - 0 = 1 \neq 2\). LHS is half of RHS!
               </div>
             </div>
           </div>
@@ -708,17 +768,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(x = 13\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">The Bracket Sign Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> This traps students who write \(-3(x - 1) = -3x - 3\), giving \(x - 1 = 12 \implies x = 13\). Quick substitution confirms failure: \(\frac{27}{3} - \frac{12}{2} = 9 - 6 = 3 \neq 2\)!
               </div>
             </div>
           </div>
@@ -728,17 +788,22 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(x = 7\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Physical & Mathematical Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> Quick check: \(\frac{2(7)+1}{3} = \frac{15}{3} = 5\). \(\frac{7-1}{2} = \frac{6}{2} = 3\). \(5 - 3 = 2 = \text{RHS}\). Exact physical equilibrium!<br><br>
+                <strong>The 10-Second Mathematical Proof:</strong><br>
+                • \(\text{LCM}(3, 2) = 6\). Multiply every single term by 6:<br>
+                &nbsp;&nbsp;\(2(2x + 1) - 3(x - 1) = 6 \times 2\).<br>
+                • Expand carefully: \(4x + 2 - 3x + 3 = 12\).<br>
+                • Combine like terms: \(x + 5 = 12 \implies \mathbf{x = 7}\).
               </div>
             </div>
           </div>
@@ -750,58 +815,58 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Ishaan's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Solve the linear equation for \(y\): \(4(2y - 3) - 3(y - 5) = 22\).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Ishaan Sen</strong> submitted the three-step solution below in his exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: The Balance Beam: Linear Equations & Word Problems</span>
+          <span>Student: Ishaan Sen • Class 7-D</span>
+          <span>Mathematics Assignment: Multi-Step Linear Equations</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Expand Parentheses with Distributive Law</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              $$8y - 12 - 3y + 15 = 22$$
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Collect Like Terms on LHS</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$5y - 27 = 22$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Transpose Constant & Isolate Unknown</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$5y = 22 + 27 = 49 \implies y = \frac{49}{5} = 9.8$$
             </div>
           </div>
         </div>
@@ -809,35 +874,54 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Expansion & Double-Negative Handling</div>
+            Ishaan expanded both brackets accurately, including \(-3 \times (-5) = +15\). Step 1 is mathematically flawless. Full credit awarded!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Constant Term Combination Blunder</div>
+            <strong>The Trap:</strong> On the LHS, the numeric constants are \(-12\) and \(+15\).<br>
+            • Combining them gives \(-12 + 15 = \mathbf{+3}\).<br>
+            • Ishaan added them as \(-12 - 15 = -27\), throwing away the \(+15\) sign he correctly wrote in Step 1. This costs 1 mark.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Ishaan transposed \(-27\) correctly across the equals sign to \(+27\) and divided by 5 without arithmetic errors.<br>
+            In accordance with ICSE marking guidelines, the candidate receives the <strong>Method Mark (M1)</strong> for valid algebraic procedure on carried-forward figures.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Expand Parentheses with Distributive Law:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$4(2y - 3) - 3(y - 5) = 22 \implies 8y - 12 - 3y + 15 = 22$$<br>
+          2. <em>Collect Like Terms on LHS:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$(8y - 3y) + (-12 + 15) = 22 \implies 5y + 3 = 22$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> A debt of 12 plus a credit of 15 leaves a surplus of \(+3\), not a debt of 27.<br><br>
+          3. <em>Transpose Constant & Solve:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$5y = 22 - 3 = 19 \implies \mathbf{y = \frac{19}{5} = 3.8}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Check:</em> \(4(2(3.8)-3) - 3(3.8-5) = 4(4.6) - 3(-1.2) = 18.4 + 3.6 = 22 = \text{RHS}\). Verified!
         </div>
       </div>
     </section>
@@ -853,7 +937,7 @@
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Mathematics Class 7 • Complete Curriculum</div>
-    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
+    <div>Outfit &amp; Inter • KaTeX for math</div>
   </footer>
 
   <script>
