@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Physics 02: Work, Energy & Simple Machines • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -30,10 +31,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -262,6 +263,65 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Distinguish Mechanical Work from Fatigue:</strong> Prove mathematically why holding a heavy load stationary involves \(0\text{ J}\) of work, despite biological fatigue (\(W = F \times s\)).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Quantify Kinetic & Potential Energy:</strong> Calculate Gravitational Potential Energy (\(PE = mgh\)) and Kinetic Energy (\(KE = \frac{1}{2}mv^2\)) with strict SI unit tracking in Joules (\(\text{J}\)).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Classify the Three Orders of Levers:</strong> Categorize any everyday tool into Class I, II, or III levers by pinpointing the central element (\(F, L, \text{or } E\)).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Elimination:</strong> Rule out zero-displacement traps, efficiency \(> 100\%\), and inverted mechanical advantage ratios in under 5 seconds.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 mechanics:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Qualitative effort and everyday definitions</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Work meant any tiring activity:</strong> Pushing against an immovable brick wall or holding a heavy school bag for an hour was considered hard work.</li>
+            <li><strong>Energy was vague stamina:</strong> Energy was described qualitatively as the strength or fuel required to perform tasks without numerical equations.</li>
+            <li><strong>Machines just made things easier:</strong> Levers and inclined planes were recognized from examples without calculating mechanical advantage ratios.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Mechanical work, quantitative energy, and lever physics</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Displacement is mandatory:</strong> Mechanical work requires displacement along the line of force (\(W = F \times s\)). If \(s = 0\), work is strictly \(0\text{ J}\) regardless of effort.</li>
+            <li><strong>Energy is strictly quantified in Joules:</strong> We calculate \(PE = mgh\) and \(KE = \frac{1}{2}mv^2\), demonstrating how mechanical energy transforms while remaining conserved.</li>
+            <li><strong>Quantitative Mechanical Advantage (\(\text{MA}\)):</strong> We derive \(\text{MA} = \frac{\text{Load}}{\text{Effort}}\). Class II levers always have \(\text{MA} > 1\) (force multiplier), while Class III levers have \(\text{MA} < 1\) (speed multiplier).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
 
     <!-- 1. DEFINITION OF WORK -->
     <div class="section-block">
@@ -446,7 +506,7 @@
 
     </div>
 
-    <!-- 7. WORKED ICSE NUMERICALS -->
+    <!-- 7. WORKED• ICSE NUMERICALS -->
     <div class="section-block">
       <h2 class="section-heading">7. Worked Problems</h2>
       
@@ -507,43 +567,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In science and mathematics, formulas are not abstract numbers—they govern physical reality. Top problem solvers don't blindly grind algebra; they inspect options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Reality & Scale Check</span>
+          <p class="cs-check-text">Mechanical work demands real spatial displacement (\(s \ne 0\)). A porter standing stationary with a 50 kg trunk does exactly \(0\text{ J}\) of work, no matter how exhausted his neck muscles feel.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Conservation & Efficiency Rule</span>
+          <p class="cs-check-text">No machine can output more energy than is supplied to it. Machine efficiency can never exceed 100% (\(\eta \le 100\%\)). Levers can multiply force only by sacrificing displacement proportionally.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Alignment & Direction Check</span>
+          <p class="cs-check-text">Work is strictly the product of force and displacement <em>in the direction of the force</em> (\(W = F \times s\)). Carrying a bag horizontally does zero work against the vertical downward pull of gravity.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A railway porter at Howrah station holds a heavy trunk of mass \(35\text{ kg}\) stationary on his head for \(15\text{ minutes}\) while waiting for a passenger. Taking \(g = 10\text{ m/s}^2\), calculate the mechanical work done by the porter on the trunk.
         </div>
 
         <div class="cs-options-list">
@@ -552,17 +612,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(5,250\text{ J}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Force × Time Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Multiplying force (\(350\text{ N}\)) by time (\(15\text{ minutes}\)) does not yield work! Work requires spatial displacement in meters. Force multiplied by time is impulse, not work.
               </div>
             </div>
           </div>
@@ -572,17 +632,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(350\text{ J}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Force vs Work Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> \(350\text{ N}\) is the downward weight (\(m \times g = 35 \times 10\)) of the trunk. Weight is a force in Newtons, not work in Joules. Without displacement, no work exists.
               </div>
             </div>
           </div>
@@ -592,17 +652,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(315,000\text{ J}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">The Muscular Fatigue Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> This trap multiplies weight by 900 seconds (\(15 \times 60\)). While human muscles consume chemical energy internally to stay tensed, in physical mechanics, zero displacement means strictly zero mechanical work done on the trunk.
               </div>
             </div>
           </div>
@@ -612,17 +672,21 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(0\text{ J}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Physical & Mathematical Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> The trunk stayed completely stationary on the porter's head, meaning displacement \(s = 0\text{ m}\). No displacement means no mechanical work!<br><br>
+                <strong>The 10-Second Mathematical Proof:</strong><br>
+                • Force \(F = m \times g = 35\text{ kg} \times 10\text{ m/s}^2 = 350\text{ N}\).<br>
+                • Displacement \(s = 0\text{ m}\).<br>
+                • Work \(W = F \times s = 350\text{ N} \times 0\text{ m} = \mathbf{0\text{ J}}\). You eliminated 3 options in seconds without complex math!
               </div>
             </div>
           </div>
@@ -630,62 +694,62 @@
       </div>
     </section>
 
-    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG Hunt -->
+    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Kabir's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          A construction hoist at a Kolkata site lifts a pallet of bricks of mass \(250\text{ kg}\) vertically upward through a height of \(8\text{ m}\). Taking \(g = 10\text{ m/s}^2\), calculate: (a) the work done against gravity, and (b) the power developed if the lift takes \(20\text{ seconds}\).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Kabir</strong> submitted the three-step solution below in his exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Work, Energy & Simple Machines</span>
+          <span>Student: Kabir Sen • Class 7-A</span>
+          <span>Physics Assignment: Work, Energy & Simple Machines</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Given Data & Force Calculation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Given: \(m = 250\text{ kg}\), \(h = 8\text{ m}\), \(g = 10\text{ m/s}^2\). Weight / Force \(F = m \times g = 250 \times 10 = 2500\text{ N}\).
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Work Done Calculation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$W = \frac{F}{h} = \frac{2500\text{ N}}{8\text{ m}} = 312.5\text{ J}$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Power Output Calculation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$\text{Power } P = \frac{W}{t} = \frac{312.5\text{ J}}{20\text{ s}} = \mathbf{15.625\text{ W}}$$
             </div>
           </div>
         </div>
@@ -693,35 +757,53 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data & Force Calculation</div>
+            Kabir accurately extracted the mass, height, and gravitational acceleration, correctly calculating the upward force required to overcome weight: \(F = m \times g = 2500\text{ N}\). This step is 100% sound.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Inverted Work Relation (Division Instead of Multiplication)</div>
+            <strong>The Trap:</strong> Kabir divided force by displacement instead of multiplying! Work is defined as \(W = F \times s\), not \(F/s\).<br>
+            • Dividing yielded an absurdly tiny \(312.5\text{ J}\)—barely enough energy to lift a coffee mug!<br>
+            • The correct mechanical work done is \(2500\text{ N} \times 8\text{ m} = \mathbf{20,000\text{ J}}\) (\(20\text{ kJ}\)).
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Kabir correctly recalled the formula for power (\(P = \frac{W}{t}\)) and divided his carried value of \(312.5\text{ J}\) by \(20\text{ s}\) to obtain \(15.625\text{ W}\) without arithmetic slips.<br>
+            In ICSE board examination marking schemes, examiners award the <strong>Method Mark (M1)</strong> for follow-through calculations so that candidates are never penalized twice for the same initial error.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Determine the Force Required to Overcome Gravity:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$F = m \times g = 250\text{ kg} \times 10\text{ m/s}^2 = 2500\text{ N}$$<br>
+          2. <em>Calculate the Mechanical Work Done:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$W = F \times s = 2500\text{ N} \times 8\text{ m} = \mathbf{20,000\text{ J}}\ (20\text{ kJ})$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Lifting a quarter-ton of bricks up a two-storey building requires substantial energy (\(20\text{ kJ}\)), which aligns with real industrial crane work.<br><br>
+          3. <em>Calculate the Power Developed:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P = \frac{W}{t} = \frac{20,000\text{ J}}{20\text{ s}} = \mathbf{1,000\text{ W}}\ (1\text{ kW})$$
         </div>
       </div>
     </section>

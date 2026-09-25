@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICSE Class 7 Science & Mathematics</title>
   
+  <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="fonts/fonts.css">
   
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
   <style>
     :root {
@@ -26,14 +30,14 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
-    button, input, select, textarea { font-family: var(--font-body, var(--font-sans)); }
+    h1, h2, h3, h4, .heading { font-family: var(--font-heading); font-weight: 700; }
+    button, input, select, textarea { font-family: var(--font-body); }
     .katex-display {
       overflow-x: auto;
       overflow-y: hidden;
@@ -217,9 +221,6 @@
     @keyframes vector-pulse {
       0% { transform: scale(0.94); opacity: 0.7; }
       100% { transform: scale(1.06); opacity: 1; }
-    }
-
-    100% { stroke-dashoffset: 0; opacity: 1; }
     }
 
     /* FEATURED WORKED PROBLEM SPOTLIGHT DIRECTLY ON LANDING */
@@ -851,12 +852,12 @@
     <aside class="desk-margin-stream" aria-label="Authentic Desk Margin"></aside>
   </main>
 
-  <div class="bottom-utility-bar" style="text-align: center; padding: 24px 16px; border-top: 1px solid var(--border-subtle);"><a href="src/animated_svgs.html" class="btn-studio-dock" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 10px 18px; border-radius: 6px; font-family: 'Atkinson Hyperlegible', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-black); text-decoration: none;">📐 Open Motion Studio & Vector Lab ↗</a></div>
+  <div class="bottom-utility-bar" style="text-align: center; padding: 24px 16px; border-top: 1px solid var(--border-subtle);"><a href="src/animated_svgs.html" class="btn-studio-dock" style="display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 10px 18px; border-radius: 6px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-black); text-decoration: none;">📐 Open Motion Studio & Vector Lab ↗</a></div>
 
   <!-- FOOTER -->
   <footer class="editorial-footer">
     <div class="footer-note">ICSE Science & Mathematics Class 7 • Complete Curriculum</div>
-    <div>Roboto Slab &amp; Atkinson Hyperlegible • KaTeX for math</div>
+    <div>Outfit &amp; Inter • KaTeX for math</div>
   </footer>
 
   <script>

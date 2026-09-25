@@ -11,11 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-      <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+      <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <style>
     :root {
@@ -31,10 +32,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #059669;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -276,7 +277,7 @@
   <!-- MASTHEAD -->
   <header class="masthead">
     <a href="../index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
-    <a href="../index.html" class="nav-back">← Back to Reference</a>
+    <a href="../index.html" onclick="if(window.location.protocol==='file:'){window.location.href='../index.html'}else{window.location.href='/index.html'}; return true;" class="nav-back">← Back to Topics Repository</a>
   </header>
 
   <!-- HEADER -->
@@ -290,6 +291,65 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
+
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Quantify Machine Performance:</strong> Define Mechanical Advantage (\(MA = \frac{L}{E}\)), Velocity Ratio (\(VR = \frac{d_E}{d_L}\)), and Efficiency (\(\eta = \frac{MA}{VR} \times 100\%\)), explaining why real efficiency is always \(<100\%\).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply the Principle of Moments:</strong> Solve lever equilibrium problems using \(\text{Load} \times \text{Load Arm} = \text{Effort} \times \text{Effort Arm}\).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Classify the Three Orders of Levers:</strong> Distinguish Class I (Fulcrum central, \(MA \gtrless 1\)), Class II (Load central, \(MA > 1\)), and Class III (Effort central, \(MA < 1\), gain in speed) with everyday examples.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Analyze Pulley Systems:</strong> Contrast a Single Fixed Pulley (\(VR = 1\), changes effort direction) with a Single Movable Pulley (\(VR = 2\), force multiplier), calculating actual \(MA\) under frictional losses.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- GRADE 6 TO 7 COGNITIVE BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 mechanics:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Magic work reducers and equal halving</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Magic Work Reducer:</strong> Machines magically create extra energy to do work for you with less effort.</li>
+            <li><strong>Equal Halving:</strong> A lever or pulley always cuts your required lifting force exactly in half.</li>
+            <li><strong>Direction Alone:</strong> Pulleys simply make things feel lighter because pulling downward is easier.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Conservation of energy, geometric VR vs frictional MA, and pulleys</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Energy Conservation:</strong> Machines can never create energy or multiply work (\(W_{\text{out}} \le W_{\text{in}}\)); they strictly trade smaller force for greater displacement distance.</li>
+            <li><strong>Geometric VR vs Frictional MA:</strong> Velocity Ratio is fixed geometrically (\(VR = d_E / d_L\)), while Mechanical Advantage is reduced by machine weight and friction (\(\eta = MA/VR < 1\)).</li>
+            <li><strong>Fixed Pulley Directional Tradeoff:</strong> A single fixed pulley has \(VR = 1\) and \(MA < 1\); its advantage is solely changing effort direction to pull downward with gravity.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
     <!-- 1. DEFINITION & CORE QUANTITIES OF MACHINES -->
@@ -520,18 +580,18 @@
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Energy Conservation Ceiling</span>
+          <p class="cs-check-text">Efficiency \(\eta = \frac{MA}{VR} \le 100\%\). In any real machine with friction, \(MA < VR\). An option where Mechanical Advantage exceeds Velocity Ratio violates the Conservation of Energy!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">Fixed Pulley Geometry Rule</span>
+          <p class="cs-check-text">For a single fixed pulley, the length of rope pulled down by the effort strictly equals the distance raised by the load (\(d_E = d_L\)). Hence, its Velocity Ratio is geometrically fixed at \(VR = 1\).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Friction Penalty Rule</span>
+          <p class="cs-check-text">Because axle friction and rope stiffness always resist motion, the effort needed to raise a load is always slightly greater than the load (\(E > L\)). Therefore, \(MA = \frac{L}{E} < 1\) in real pulleys.</p>
         </div>
       </div>
 
@@ -542,7 +602,7 @@
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>ICSE Board Question:</strong> A laborer uses a single fixed pulley with friction to raise a load of \(150\text{ N}\) by pulling downward with an effort of \(160\text{ N}\). What are the Mechanical Advantage (\(MA\)) and Velocity Ratio (\(VR\)) of this system?
         </div>
 
         <div class="cs-options-list">
@@ -551,17 +611,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(MA = 1.07,\ VR = 1\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-detail-title">Conservation Law Violation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Inverted fraction trap (\(160/150\))! If \(MA = 1.07\) and \(VR = 1\), efficiency \(\eta = 107\%\), which creates free energy out of nowhere!
               </div>
             </div>
           </div>
@@ -571,17 +631,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(MA = 2,\ VR = 2\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-detail-title">Movable Pulley Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> A velocity ratio of 2 belongs to a movable pulley supported by two rope segments. A single fixed pulley has strictly \(VR = 1\)!
               </div>
             </div>
           </div>
@@ -591,17 +651,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(MA = 0.94,\ VR = 0.94\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 3 Seconds</span>
+                <span class="cs-detail-title">Geometric VR Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Friction reduces \(MA\), but it CANNOT alter the Velocity Ratio! \(VR\) is a pure geometric distance ratio and remains precisely 1.
               </div>
             </div>
           </div>
@@ -611,17 +671,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(MA = 0.9375,\ VR = 1\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-detail-title">10-Second Mechanical Proof</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this:</strong> \(MA = \frac{\text{Load}}{\text{Effort}} = \frac{150\text{ N}}{160\text{ N}} = 0.9375\). In a single fixed pulley, distance moved by effort equals distance raised by load, so \(VR = 1\). Efficiency \(\eta = \frac{MA}{VR} \times 100\% = 93.75\%\) (< 100% due to friction)!
               </div>
             </div>
           </div>
@@ -629,12 +689,12 @@
       </div>
     </section>
 
-    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG Hunt -->
+    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Vivaan's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
       </div>
@@ -642,15 +702,15 @@
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          A lifting machine has a Velocity Ratio (\(VR\)) of 4. An effort of \(200\text{ N}\) is applied to lift a load of \(600\text{ N}\). Calculate the Mechanical Advantage (\(MA\)) and the efficiency (\(\eta\)) of the machine.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Vivaan</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
+          <span>Student: Vivaan Malhotra &bull; Class 7-A</span>
           <span>Topic: Simple Machines &amp; Mechanical Advantage</span>
         </div>
 
@@ -658,33 +718,33 @@
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
+              <span class="line-step-tag">Step 1: Mechanical Advantage Calculation</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              \(\text{Mechanical Advantage (MA)} = \frac{\text{Load}}{\text{Effort}} = \frac{600\text{ N}}{200\text{ N}} = 3\).
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
+              <span class="line-step-tag">Step 2: Machine Efficiency Calculation</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              \(\text{Efficiency } \eta = \frac{VR}{MA} \times 100\% = \frac{4}{3} \times 100\% = 133.3\%\).
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-step-tag">Step 3: Physical Interpretation of Machine</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Since the efficiency is \(133.3\%\), the machine is a super-ideal machine that generates surplus mechanical energy while operating.
             </div>
           </div>
         </div>
@@ -696,8 +756,8 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Mechanical Advantage</div>
+            Vivaan correctly applied the formula \(MA = \frac{\text{Load}}{\text{Effort}} = \frac{600}{200} = 3\). Full credit awarded.
           </div>
         </div>
 
@@ -707,8 +767,8 @@
             <span class="feedback-marks-badge">Score: 0/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Inverted Efficiency Formula</div>
+            Fatal physics error! Efficiency is defined as \(\eta = \frac{MA}{VR} \times 100\%\). Vivaan inverted the ratio as \(\frac{VR}{MA}\), calculating an impossible efficiency of \(133.3\%\). No machine can exceed \(100\%\) efficiency as it violates the Principle of Conservation of Energy!
           </div>
         </div>
 
@@ -718,8 +778,27 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method is Sound (ECF Awarded)</div>
+            Although a surplus-energy machine is physically impossible, Vivaan's deduction in Step 3 consistently follows through from his erroneous Step 2 calculation. Under ICSE marking schemes, follow-through credit is awarded.
+          </div>
+        </div>
+
+        <!-- MODEL SOLUTION DRAWER -->
+        <div class="model-solution-wrap" style="margin-top: 24px;">
+          <button class="btn-toggle" onclick="toggleDrawer('model_sol')">View Examiner's Model Solution &rarr;</button>
+          <div class="solution-drawer" id="model_sol" style="display: none; margin-top: 12px;">
+            <div class="model-step">
+              <strong>Step 1: Calculate Mechanical Advantage (\(MA\))</strong><br>
+              \[MA = \frac{\text{Load}}{\text{Effort}} = \frac{600\text{ N}}{200\text{ N}} = \mathbf{3}\]
+            </div>
+            <div class="model-step" style="margin-top: 8px;">
+              <strong>Step 2: Calculate Efficiency (\(\eta\))</strong><br>
+              \[\eta = \frac{MA}{VR} \times 100\% = \frac{3}{4} \times 100\% = \mathbf{75\%}\]
+            </div>
+            <div class="model-step" style="margin-top: 8px;">
+              <strong>Step 3: State common-sense physical reality check</strong><br>
+              An efficiency of \(75\%\) is physically realistic because \(25\%\) of the work input is expended in overcoming friction at hinges/pulleys and moving machine components. \(\eta < 100\%\) strictly upholds the Principle of Conservation of Energy!
+            </div>
           </div>
         </div>
       </div>
@@ -736,7 +815,6 @@
 
   <footer class="editorial-footer">
     <div>Physics • Topic 12: Simple Machines &amp; Mechanical Advantage</div>
-    <div>CISCE Class 7 Academic Reference</div>
   </footer>
 
   

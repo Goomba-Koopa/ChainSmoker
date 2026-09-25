@@ -11,11 +11,12 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 
-      <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+      <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   
 
@@ -59,13 +60,13 @@
   <!-- MASTHEAD -->
   <header class="masthead">
     <a href="../index.html" class="brand-title">ICSE Class 7 Science & Mathematics</a>
-    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">← Back to Topics Repository</a>
+    <a href="../index.html" onclick="if(window.location.protocol===`file:`){window.location.href=`../index.html`}else{window.location.href=`/index.html`}; return true;" class="nav-back">&larr; Back to Topics Repository</a>
   </header>
 
   <!-- HEADER -->
   <section class="article-header">
-    <div class="topic-kicker">Chemistry • Topic 08</div>
-    <h1 class="topic-title">Water as a Solvent, Solutions & Solubility</h1>
+    <div class="topic-kicker">Chemistry &bull; Topic 08</div>
+    <h1 class="topic-title">Water as a Solvent, Solutions &amp; Solubility</h1>
     <p class="topic-subtext">
       Solute, solvent, and solution definitions; Saturated vs Unsaturated vs Supersaturated solutions; solubility formula (S = mass of solute / 100g solvent); hard water vs soft water; temporary vs permanent hardness; and anomalous expansion of water.
     </p>
@@ -73,6 +74,65 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
+
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Solutions & Saturation:</strong> Define solute, solvent, and homogeneous solution; differentiate unsaturated, saturated, and supersaturated equilibrium states.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Solubility Formula & Calculation:</strong> Calculate solubility quantitatively using standard ICSE formula: \(S = \frac{\text{mass of solute (g)}}{\text{mass of solvent (g)}} \times 100\).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Solubility Curves & Crystallization:</strong> Interpret temperature curves to calculate mass of solid crystallized out when a hot saturated solution cools.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Thermal Gas vs Solid Dynamics:</strong> Contrast why solid solubility typically increases with temperature while dissolved gas solubility strictly decreases.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Chemistry builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 solubility rigor:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Everyday dissolving and qualitative saturation</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Simple Mixing:</strong> Water dissolves sugar and salt until no more dissolves and solid settles at the bottom.</li>
+            <li><strong>Thermal Speed:</strong> Heating water makes sugar dissolve faster and in slightly larger amounts.</li>
+            <li><strong>Basic Components:</strong> A solution is just a solid mixed into a liquid medium.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Dynamic equilibrium, solubility curves, and degassing</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Phase Equilibrium:</strong> Saturated solution is a dynamic equilibrium at fixed temperature; cooling yields crystallization.</li>
+            <li><strong>Quantitative Formula:</strong> Solubility is strictly grams of solute per \(100\text{ g}\) of pure solvent (\(S = \frac{m_{\text{solute}}}{m_{\text{solvent}}} \times 100\)).</li>
+            <li><strong>Gas De-solvation:</strong> Gas solubility decreases with temperature; heating water releases dissolved air bubbles well below \(100^\circ\text{C}\).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
     <!-- 1. SOLUTE, SOLVENT, AND SOLUTION DEFINITIONS -->
@@ -216,7 +276,7 @@
     </div>
 
 
-    <!-- WORKED ICSE NUMERICALS & REASONING -->
+    <!-- WORKED• ICSE NUMERICALS & REASONING -->
     <div class="section-block">
       <h2 class="section-heading">6. Worked Problems</h2>
       
@@ -319,43 +379,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
           <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In chemistry, formulas describe physical phenomena. Top problem solvers don't blindly grind algebra; they inspect options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> In solubility and solution problems, you can eliminate wrong choices in seconds by verifying solvent boundaries and gas de-solvation rules.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">Solvent Mass Isolation Rule</span>
+          <p class="cs-check-text">Solubility is strictly defined per \(100\text{ g}\) of pure solvent, NOT \(100\text{ g}\) of solution. Remember: \(m_{\text{solution}} = m_{\text{solute}} + m_{\text{solvent}}\). Denominators with total solution mass produce mass percentages, not solubility!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">Thermal Degassing Law</span>
+          <p class="cs-check-text">Unlike solids whose solubility generally increases with heat, the solubility of gases in liquids decreases as temperature rises. Heating drives dissolved atmospheric gases out well below \(100^\circ\text{C}\).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">Crystallization Difference Bracket</span>
+          <p class="cs-check-text">When cooling a hot saturated solution, the mass crystallized equals the difference between solubilities at the two temperatures: \(\Delta m = S_{\text{hot}} - S_{\text{cold}}\). Precipitated mass cannot exceed original dissolved mass!</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A beaker of cold tap water at \(10^\circ\text{C}\) is left undisturbed on a sunny classroom windowsill at \(32^\circ\text{C}\) for two hours. Tiny bubbles steadily appear and cling to the inside glass walls well before boiling. What are these bubbles?
         </div>
 
         <div class="cs-options-list">
@@ -364,17 +424,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">Hydrogen gas (\(\text{H}_2\)) produced by the thermal decomposition of water molecules.</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Thermal Decomposition Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Water is an extremely stable compound. Splitting \(\text{H}_2\text{O}\) thermally into hydrogen gas requires temperatures exceeding \(2000^\circ\text{C}\) or an electric current (electrolysis), never gentle solar warming at \(32^\circ\text{C}\)!
               </div>
             </div>
           </div>
@@ -384,17 +444,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Steam / water vapor bubbles forming because the liquid has reached its boiling point.</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Boiling Point Scale Violation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Pure water boils at \(100^\circ\text{C}\) under normal atmospheric pressure. At \(32^\circ\text{C}\), the liquid is nowhere near its boiling point, so vapor bubbles cannot form throughout the bulk liquid.
               </div>
             </div>
           </div>
@@ -404,17 +464,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Carbon dioxide gas generated rapidly by microscopic bacterial respiration.</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Biological Speculation Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Tap water is treated and sanitized. Microscopic bacteria do not produce visible effervescence clinging across glass walls within minutes of gentle temperature rise.
               </div>
             </div>
           </div>
@@ -424,17 +484,21 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">Dissolved atmospheric air (oxygen and nitrogen) coming out of solution because gas solubility decreases as temperature rises.</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Gas De-Solvation Confirmed</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> Cold water dissolves substantial quantities of atmospheric gases (\(\text{O}_2, \text{N}_2\)). When warmed from \(10^\circ\text{C}\) to \(32^\circ\text{C}\), gas solubility drops sharply, expelling the excess gas as tiny clinging air bubbles.<br><br>
+                <strong>The 10-Second Physical Proof:</strong><br>
+                • Gas dissolution in water is exothermic: \(\text{Gas} + \text{Water} \rightleftharpoons \text{Aqueous Solution} + \text{Heat}\).<br>
+                • By Le Chatelier's principle / kinetic theory, adding heat shifts equilibrium to the left, decreasing gas solubility.<br>
+                • Expelled dissolved air nucleates on microscopic imperfections on the beaker wall!
               </div>
             </div>
           </div>
@@ -446,58 +510,59 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Yash's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          At \(30^\circ\text{C}\), \(18\text{ g}\) of pure sodium chloride dissolves completely in \(50\text{ g}\) of water to form a saturated solution. Calculate the solubility of sodium chloride in water at \(30^\circ\text{C}\).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Yash Verma</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Water as a Solvent, Solutions & Solubility</span>
+          <span>Student: Yash Verma • Class 7-A</span>
+          <span>Topic: Water as a Solvent, Solutions &amp; Solubility</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Extract Given Quantities &amp; Compute Total Solution Mass</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              $$\text{Mass of solute (NaCl)} = 18\text{ g}, \quad \text{Mass of solvent (water)} = 50\text{ g}$$
+              $$\text{Total mass of saturated solution} = 18\text{ g} + 50\text{ g} = 68\text{ g}$$
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Calculate Solubility Using Solution Mass</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$\text{Solubility } (S) = \frac{\text{Mass of Solute}}{\mathbf{\text{Mass of Solution}}} \times 100 = \frac{18}{68} \times 100 = \mathbf{26.47\text{ g}}$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: State Saturated Solubility Value</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              Conclusion: The solubility of \(\text{NaCl}\) at \(30^\circ\text{C}\) is <strong>\(26.47\text{ g per 100 g of water}\)</strong>.
             </div>
           </div>
         </div>
@@ -505,35 +570,53 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Mass Inventory</div>
+            Yash accurately identified the solute mass (\(18\text{ g}\)), solvent mass (\(50\text{ g}\)), and summed them correctly to find total solution mass (\(68\text{ g}\)). 1/1 Mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Solvent vs Solution Denominator Confusion</div>
+            <strong>The Trap:</strong> Yash placed total solution mass (\(68\text{ g}\)) in the denominator instead of solvent mass (\(50\text{ g}\))!<br>
+            • Solubility is strictly defined as the mass of solute dissolved in <strong>\(100\text{ g}\) of pure solvent</strong>, NOT in \(100\text{ g}\) of solution.<br>
+            • Yash calculated mass percentage concentration (\(26.47\%\)), which is fundamentally distinct from solubility. The correct denominator is \(50\text{ g}\): \(\frac{18}{50} \times 100 = \mathbf{36\text{ g}}\).
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Yash correctly phrased the concluding unit statement based on his calculated value from Step 2 without any secondary arithmetic errors.<br>
+            Under ICSE board examination marking conventions, the candidate is awarded the follow-through <strong>Method Mark (M1)</strong> to prevent double penalization.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Extract Given Parameters:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Mass of solute (NaCl)} = 18\text{ g}, \quad \text{Mass of solvent (water)} = 50\text{ g}$$<br>
+          2. <em>Apply Standard ICSE Solubility Formula:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Solubility } (S) = \frac{\text{Mass of Solute}}{\text{Mass of Solvent}} \times 100$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$S = \frac{18\text{ g}}{50\text{ g}} \times 100 = 18 \times 2 = \mathbf{36\text{ g per 100 g of water}}$$<br><br>
+          3. <em>Examiner Reality Check:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> At room temperature, common salt has a solubility of roughly \(36\text{ g}\) in \(100\text{ g}\) of water. Dividing by \(68\text{ g}\) yields mass percent (\(26.5\%\)), which severely underestimates solubility!
         </div>
       </div>
     </section>
@@ -548,7 +631,7 @@
   </nav>
 
   <footer class="editorial-footer">
-    <div>Chemistry Topic 08: Water as a Solvent, Solutions & Solubility</div>
+    <div>Chemistry• Topic 08: Water as a Solvent, Solutions & Solubility</div>
   </footer>
 
   

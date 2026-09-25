@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Biology 07: Human Excretory System • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -29,10 +30,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -262,6 +263,67 @@
 
   <!-- BODY CONTENT -->
   <main class="article-body">
+
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Distinguish Excretion from Egestion:</strong> Differentiate metabolic nitrogenous waste elimination (urea, uric acid via kidneys) from defecation of undigested food roughage (feces via anus).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Map Urinary Anatomy & Nephron Architecture:</strong> Trace kidneys (cortex, medulla, pelvis) \(\to\) ureters \(\to\) bladder \(\to\) urethra, and deconstruct the Malpighian capsule (Bowman's capsule and glomerulus).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Explain Ultrafiltration & Selective Reabsorption:</strong> Detail how the wider afferent arteriole generates high hydrostatic pressure, producing \(180\text{ L}\) of filtrate of which \(99\%\) is reabsorbed into \(1.5\text{ L}\) of urine.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Common-Sense Elimination:</strong> Rule out options showing red blood cells in normal filtrate, expecting glucose in healthy urine, or reversing arteriole diameters in under 5 seconds.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Renal physiology builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 excretory mechanics:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Simple tea strainer and generalized waste removal</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Kidneys as simple sieves:</strong> Kidneys were thought of as coarse kitchen strainers that filter liquid dirty water directly into the bladder.</li>
+            <li><strong>Excretion confused with bowel movement:</strong> Passing stool and urinating were grouped together as general "excretory waste".</li>
+            <li><strong>Everything filtered is discarded:</strong> All fluid that passed through the kidney filter was assumed to be toxic waste.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Nephron cytology, ultrafiltration pressure, and tubular reabsorption</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Strict physiological definitions:</strong> Excretion is strictly the removal of nitrogenous waste (urea) formed during cellular metabolism; egestion is the discharge of undigested dietary fiber via the alimentary canal.</li>
+            <li><strong>Hydraulic ultrafiltration:</strong> High hydrostatic pressure is engineered by vessel geometry: the incoming afferent arteriole is wider than the constricted efferent arteriole, forcing plasma solutes into Bowman's capsule.</li>
+            <li><strong>Massive tubular reabsorption:</strong> The kidneys filter \(180\text{ Litres}\) of fluid daily, but convoluted tubules selectively reabsorb \(100\%\) of glucose, essential amino acids, and \(99\%\) of water, leaving only \(\sim 1.5\text{ Litres}\) of concentrated urine.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
 
 
     <!-- 1. EXCRETION VS EGESTION -->
@@ -510,48 +572,47 @@
       </div>
     </div>
 
-  
     <!-- 8. THE COMMON-SENSE STRATEGY: RULING OUT THE IMPOSSIBLE -->
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> The nephron is a precision molecular sieve. Ask yourself: <em>Can large protein molecules squeeze through microscopic podocyte slits? Can a healthy person excrete 180 Litres of urine a day?</em> In multiple-choice questions, you can rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Molecular Size Filter Check</span>
+          <p class="cs-check-text">Glomerular capillaries filter strictly by molecular size. Blood cells (RBCs, WBCs, platelets) and large plasma proteins (albumin) CANNOT pass into Bowman's capsule. Normal glomerular filtrate is deproteinized plasma.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Arteriole Diameter Hydraulic Rule</span>
+          <p class="cs-check-text">Hydrostatic pressure is created because the incoming <strong>afferent arteriole is wider</strong> than the outgoing constricted <strong>efferent arteriole</strong>. If the efferent were wider, pressure would collapse and ultrafiltration would fail.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Glucose Renal Threshold Check</span>
+          <p class="cs-check-text">Normal healthy urine contains exactly \(0\%\) glucose. All \(100\%\) of filtered glucose is actively reabsorbed by the proximal convoluted tubule (PCT). Glucose in urine indicates diabetes mellitus or renal threshold overload.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A clinical report compares samples of Bowman's capsule filtrate with excreted urine from a healthy Class 7 student. Which dataset correctly reflects the composition and daily volumes of normal glomerular filtrate compared to excreted urine?
         </div>
 
         <div class="cs-options-list">
@@ -560,17 +621,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">Filtrate: High Urea, \(0\%\) Glucose; Urine: Low Urea, \(5\%\) Glucose</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Complete Reabsorption Inversion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> Complete physiological inversion! Glucose freely enters the filtrate from plasma and is \(100\%\) reabsorbed in the PCT; healthy urine has \(0\%\) glucose. Urea is concentrated by tubular water reabsorption, making urine much higher in urea concentration than filtrate.
               </div>
             </div>
           </div>
@@ -580,17 +641,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">Filtrate: Contains RBCs and Albumin; Urine: Contains RBCs and Urea</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Molecular Sieve Size Failure</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Intact red blood cells (\(7\,\mu\text{m}\)) and large albumin proteins cannot squeeze through the glomerular capillary pore slits. Their presence indicates severe kidney trauma or glomerulonephritis, not normal physiology.
               </div>
             </div>
           </div>
@@ -600,17 +661,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Filtrate Volume: \(180\text{ L/day}\); Excreted Urine: \(180\text{ L/day}\)</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Volume Scale Impossibility</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> If humans excreted all \(180\text{ Litres}\) of filtered fluid, a person would suffer fatal hypovolemic dehydration in under an hour! Over \(99\%\) (\(178.5\text{ L}\)) of water is recovered by tubular reabsorption.
               </div>
             </div>
           </div>
@@ -620,17 +681,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">Filtrate: Water, Glucose, Salts, Urea; Urine: Concentrated Urea & Salts (\(0\%\) Glucose, \(1.5\text{ L/day}\))</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Renal & Biochemical Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> Glomerular filtrate contains all small diffusible blood constituents (water, glucose, amino acids, urea, salts). As filtrate flows through the tubules, \(100\%\) of glucose and \(99\%\) of water are reabsorbed back into peritubular capillaries, leaving \(\approx 1.5\text{ L}\) of concentrated urine.
               </div>
             </div>
           </div>
@@ -642,58 +703,58 @@
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Tanvi's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Tanvi is analyzing the hydraulic mechanics of ultrafiltration in human kidneys: (a) Identify the two structural components that constitute a Malpighian body. (b) Explain how high hydrostatic pressure is generated in the glomerular capillaries. (c) If both kidneys produce a glomerular filtration rate (GFR) of \(125\text{ mL/min}\), calculate the total volume of filtrate produced in \(24\text{ hours}\) in Litres.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Tanvi Nair</strong> submitted the three-step solution below in her exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Human Excretory System</span>
+          <span>Student: Tanvi Nair • Class 7-A</span>
+          <span>Biology Assignment: Renal Ultrafiltration & GFR</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Components of the Malpighian Body</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              A Malpighian body (renal corpuscle) consists of the cup-shaped double-walled <strong>Bowman's capsule</strong> enclosing a tuft of capillary loops called the <strong>Glomerulus</strong>.
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Mechanism of High Hydrostatic Pressure</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              High filtration pressure is generated because the incoming afferent arteriole is extremely narrow, while the outgoing efferent arteriole has a very wide lumen, allowing blood to drain freely with zero resistance.
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: 24-Hour Filtrate Volume Calculation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$\text{Daily Filtrate Volume} = 125\text{ mL/min} \times 60\text{ min/h} \times 24\text{ h} = 180,000\text{ mL} = \mathbf{180\text{ Litres}}$$
             </div>
           </div>
         </div>
@@ -701,35 +762,52 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Anatomical Identification Sound</div>
+            Tanvi correctly identified Bowman's capsule and the glomerulus as the two anatomical structures comprising the Malpighian body. 1/1 mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Fatal Hydraulic Inversion</div>
+            <strong>The Trap:</strong> Tanvi stated the exact opposite of vascular reality! High hydrostatic filtration pressure is created because the <strong>afferent arteriole is wider</strong> and the <strong>efferent arteriole is narrower</strong>. Blood enters through a broad conduit and is squeezed out through a constricted exit pipe, building up back-pressure (\(\sim 50\text{ mmHg}\)). A wide exit pipe would cause pressure to collapse! Deduction: -1 mark.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Method Mark Awarded</div>
+            <strong>How ICSE Marks This:</strong> Tanvi executed the dimensional arithmetic conversion flawlessly: \(125 \times 60 \times 24 = 180,000\text{ mL} = 180\text{ Litres}\). Full method credit (1/1 M1) is awarded.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Components of Malpighian Body:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<strong>Bowman's capsule</strong> (epithelial cup) and the <strong>Glomerulus</strong> (capillary knot).<br><br>
+          2. <em>Hydrostatic Pressure Generation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;The incoming <strong>afferent arteriole is distinctly wider in diameter</strong> than the outgoing <strong>efferent arteriole</strong>. This outflow bottleneck creates high capillary hydrostatic pressure (\(\sim 50\text{ mmHg}\)) that forces water and small solutes through the filtration membrane into the capsular space.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> Like a garden hose with your thumb partially blocking the outlet, narrowing the exit raises pressure inside the hose.<br><br>
+          3. <em>24-Hour Filtrate Volume:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Rate per hour} = 125\text{ mL/min} \times 60\text{ min} = 7,500\text{ mL/h}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Daily Volume} = 7,500\text{ mL/h} \times 24\text{ h} = 180,000\text{ mL} = \mathbf{180\text{ Litres}}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;(\(\sim 99\%\) is reabsorbed in the tubules, yielding \(\sim 1.5\text{ L}\) of urine).
         </div>
       </div>
     </section>

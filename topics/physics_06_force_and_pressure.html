@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Physics 06: Force, Pressure & Pascal's Principle • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -30,10 +31,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -266,8 +267,67 @@
   <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Distinguish Thrust from Pressure:</strong> Calculate pressure using \(P = \frac{F}{A}\) and explain real-world applications (sharp needles, broad foundations, camel feet).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Convert Surface Areas to SI Units:</strong> Convert \(\text{cm}^2\) to \(\text{m}^2\) precisely by dividing by \(10,000\) (\(1\text{ cm}^2 = 10^{-4}\text{ m}^2\)) without confusion.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Calculate Hydrostatic Liquid Pressure:</strong> Apply \(P = h\rho g\) to prove that liquid pressure depends on depth and density, independent of container shape.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Apply Pascal's Principle to Hydraulics:</strong> Use \(\frac{F_1}{A_1} = \frac{F_2}{A_2}\) to compute force multiplication in hydraulic jacks and vehicle brakes.</div>
+        </li>
+      </ul>
+    </div>
 
-    <!-- 1. THRUST VS PRESSURE -->
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Physics builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 fluid statics:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Push, pull, and gross forces</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Force was just a push or pull:</strong> Forces were measured in Newtons and treated as total actions on an object.</li>
+            <li><strong>Pressure was conflated with weight:</strong> Heavy objects were assumed to always exert more pressure without considering surface area.</li>
+            <li><strong>Fluids were passive in containers:</strong> Water rested in cups without analyzing pressure increases at greater depths.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Distributed thrust, fluid statics, and hydraulics</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Pressure is thrust per unit area (\(P = F/A\)):</strong> Modest forces concentrated over small contact areas generate tremendous pressures in Pascals (\(\text{N/m}^2\)).</li>
+            <li><strong>Hydrostatic pressure rises with depth (\(P = h\rho g\)):</strong> Liquids exert equal pressure in all directions, increasing linearly with vertical column height and liquid density.</li>
+            <li><strong>Pascal's Principle of enclosed fluids:</strong> Pressure applied to an enclosed liquid is transmitted undiminished, multiplying force in hydraulic jacks (\(\frac{F_1}{A_1} = \frac{F_2}{A_2}\)).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 1. THRUST AND PRESSURE -->
     <div class="section-block">
       <h2 class="section-heading">1. Thrust and Pressure</h2>
       <p class="concept-intro">
@@ -497,43 +557,43 @@
     <section class="cs-strategy-section" id="commonsense">
       <div class="cs-header">
         <div class="cs-title-group">
-          <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <div class="cs-kicker">Exam Strategy • The 5-Second Filter</div>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Rule Out the Impossible</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In science and mathematics, formulas are not abstract numbers—they govern physical reality. Top problem solvers don't blindly grind algebra; they inspect options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> In multiple-choice questions, you can frequently rule out 2 or 3 options in under 5 seconds.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">The Inverse Area Relation</span>
+          <p class="cs-check-text">For any constant thrust, reducing the contact area concentrates the force and elevates pressure (\(P \propto 1/A\)). The smallest surface face always generates the maximum pressure.</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">The Area Conversion Factor</span>
+          <p class="cs-check-text">Because \(1\text{ m} = 100\text{ cm}\), \(1\text{ m}^2 = 10,000\text{ cm}^2\). Converting \(\text{cm}^2\) to \(\text{m}^2\) requires dividing by \(10,000\) (\(10^{-4}\)), never dividing by 100!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">The Depth-Density Proportionality</span>
+          <p class="cs-check-text">Hydrostatic pressure \(P = h\rho g\) depends solely on vertical depth and fluid density. It is independent of container shape, cross-sectional area, or total liquid volume.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE ELIMINATION DRILL -->
       <div class="cs-drill-box">
         <div class="drill-header-row">
-          <span class="drill-header-title">Interactive Elimination Challenge &bull; Click Each Option to Test</span>
+          <span class="drill-header-title">Interactive Elimination Challenge • Click Each Option to Test</span>
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> A rectangular granite brick of weight \(30\text{ N}\) measures \(20\text{ cm} \times 10\text{ cm} \times 5\text{ cm}\). It can be placed flat on a table in three different orientations. On which face does it exert the maximum pressure on the table?
         </div>
 
         <div class="cs-options-list">
@@ -542,17 +602,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">On the largest \(20\text{ cm} \times 10\text{ cm}\) face</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Inverse Area Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> The largest face has an area of \(200\text{ cm}^2\). Spreading the \(30\text{ N}\) thrust over the largest area produces the <em>minimum</em> pressure, not the maximum!
               </div>
             </div>
           </div>
@@ -562,17 +622,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">The pressure is identical on all three faces</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 2 Seconds</span>
+                <span class="cs-detail-title">Thrust vs Pressure Confusion</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> The total downward thrust is indeed \(30\text{ N}\) on all faces, but pressure is thrust divided by area (\(P = F/A\)). Different face areas produce different pressures!
               </div>
             </div>
           </div>
@@ -582,17 +642,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">Along the diagonal edge</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">⚡ Ruled Out in 5 Seconds</span>
+                <span class="cs-detail-title">Instability Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> A brick cannot rest in stable equilibrium balanced on a sharp edge. The question explicitly asks for the stable flat face orientations.
               </div>
             </div>
           </div>
@@ -602,17 +662,20 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">On the smallest \(10\text{ cm} \times 5\text{ cm}\) face</span>
               </div>
-              <span class="cs-option-hint">Click to test with common sense &rarr;</span>
+              <span class="cs-option-hint">Click to test with common sense ⚡</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-status-tag tag-sound">✓ The Only Survivor!</span>
+                <span class="cs-detail-title">Physical & Mathematical Confirmation</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this without calculating:</strong> Pressure is inversely proportional to contact area (\(P \propto 1/A\)). The smallest contact area must concentrate the force and create the highest pressure.<br><br>
+                <strong>The 10-Second Mathematical Proof:</strong><br>
+                • Minimum face area \(A = 10\text{ cm} \times 5\text{ cm} = 50\text{ cm}^2 = 0.005\text{ m}^2\).<br>
+                • Maximum pressure \(P = \frac{F}{A} = \frac{30\text{ N}}{0.005\text{ m}^2} = \mathbf{6,000\text{ Pa}}\). You ruled out 3 options in seconds without complex algebra!
               </div>
             </div>
           </div>
@@ -620,62 +683,62 @@
       </div>
     </section>
 
-    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG Hunt -->
+    <!-- 9. DIAGNOSTIC PRACTICE: THE BUG HUNT -->
     <section class="bughunt-section" id="bughunt">
       <div class="bughunt-header">
         <div class="bughunt-title-group">
-          <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <div class="bughunt-kicker">Diagnostic Practice • The Examiner's Red Pen</div>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Dev's Homework</h2>
         </div>
-        <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
+        <span class="bughunt-badge">Interactive Audit • 3 Marks</span>
       </div>
 
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          A dancer of weight \(500\text{ N}\) balances her entire body weight on the single stiletto heel of one shoe. The contact area of the heel is \(1.0\text{ cm}^2\). Calculate the pressure exerted on the floor in Pascals (\(\text{N/m}^2\)).
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Dev</strong> submitted the three-step solution below in his exercise book.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Force, Pressure & Pascal's Principle</span>
+          <span>Student: Dev Patel • Class 7-D</span>
+          <span>Physics Assignment: Force, Thrust & Pressure</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 1: Given Data & Formula Identification</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              Given: Thrust \(F = 500\text{ N}\), Area \(A = 1.0\text{ cm}^2\). Formula: \(P = \frac{F}{A}\).
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 2: Area Conversion to SI Units</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$A = 1.0\text{ cm}^2 = \frac{1.0}{100}\text{ m}^2 = 0.01\text{ m}^2$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
-              <span class="line-action-hint">Click to inspect line &rarr;</span>
+              <span class="line-step-tag">Step 3: Pressure Calculation</span>
+              <span class="line-action-hint">Click to inspect line 🔍</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$\text{Pressure } P = \frac{500\text{ N}}{0.01\text{ m}^2} = \mathbf{50,000\text{ Pa}}$$
             </div>
           </div>
         </div>
@@ -683,35 +746,53 @@
         <!-- PRE-RENDERED STATIC EXAMINER FEEDBACK CARDS -->
         <div class="examiner-feedback-card card-sound" id="feedback-1" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10004; Sound Step</span>
+            <span class="feedback-status-pill">✓ Sound Step</span>
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data & Formula Identification</div>
+            Dev accurately extracted the thrust and heel area, identifying the correct definition equation \(P = \frac{F}{A}\). 100% sound.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">✗ Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: False Area Unit Conversion (\(\text{cm}^2 \to \text{m}^2\))</div>
+            <strong>The Trap:</strong> Dev divided by 100 instead of 10,000! Area has two spatial dimensions:<br>
+            • \(1\text{ m}^2 = (100\text{ cm}) \times (100\text{ cm}) = 10,000\text{ cm}^2\).<br>
+            • Therefore, \(1.0\text{ cm}^2 = \frac{1.0}{10,000}\text{ m}^2 = 0.0001\text{ m}^2\) (\(10^{-4}\text{ m}^2\)). Dev's area was 100 times too large, which made his pressure 100 times too small!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">🟡 Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Dev correctly substituted his erroneous carried area of \(0.01\text{ m}^2\) into \(P = \frac{F}{A}\) and calculated \(500 / 0.01 = 50,000\text{ Pa}\) with correct units.<br>
+            In accordance with ICSE marking principles, examiners award the <strong>Method Mark (M1)</strong> for proper mathematical follow-through.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer ↓</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Convert Contact Area to SI Square Meters:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$A = 1.0\text{ cm}^2 = \frac{1.0}{100 \times 100}\text{ m}^2 = 0.0001\text{ m}^2\ (1.0 \times 10^{-4}\text{ m}^2)$$<br>
+          2. <em>Calculate Pressure Exerted on the Floor:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$P = \frac{F}{A} = \frac{500\text{ N}}{0.0001\text{ m}^2} = \mathbf{5,000,000\text{ Pa}}\ (5\text{ MPa})$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> A stiletto heel concentrates a whole person's weight on a fingernail-sized tip, creating \(5\text{ MPa}\) (greater than the pressure under an elephant's broad foot!), which easily dents softwood flooring.<br><br>
+          3. <em>State with Standard Metric Prefix:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Pressure = \(5 \times 10^6\text{ Pa} = \mathbf{5\text{ MPa}}\) (MegaPascals).
         </div>
       </div>
     </section>

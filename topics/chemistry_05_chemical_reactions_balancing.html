@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chemistry 05: Chemical Reactions & Equation Balancing • ICSE Class 7</title>
   
-    <!-- Typography: Google Fonts Roboto Slab (Headings) + Atkinson Hyperlegible (Body) + Abel -->
+    <!-- Typography: Google Fonts Outfit (Headings & Body) + Inter + Abel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Abel&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../fonts/fonts.css">
+  <link rel="stylesheet" href="../styles.css">
 
   <!-- KaTeX for LaTeX Math Rendering -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -29,10 +30,10 @@
       --terracotta-soft: #fbf0ea;
       --emerald-accent: #15803d;
       --emerald-soft: #f0f7f2;
-      --font-heading: 'Roboto Slab', serif;
-      --font-serif: 'Roboto Slab', serif;
-      --font-body: 'Atkinson Hyperlegible', sans-serif;
-      --font-sans: 'Atkinson Hyperlegible', sans-serif;
+      --font-heading: 'Outfit', sans-serif;
+      --font-serif: 'Outfit', sans-serif;
+      --font-body: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     h1, h2, h3, h4, .heading { font-family: var(--font-heading, var(--font-serif)); }
@@ -256,9 +257,66 @@
     </p>
   </section>
 
-  <!-- BODY CONTENT -->
   <main class="article-body">
 
+    <!-- LEARNING GOALS -->
+    <div class="learning-goals-card">
+      <div class="learning-goals-header">
+        <span class="learning-goals-badge">Learning Goals</span>
+        <span class="learning-goals-sub">Skills you will master in this lesson</span>
+      </div>
+      <ul class="learning-goals-list">
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Identify Chemical Hallmarks:</strong> Detect chemical reactions using five physical indicators (gas evolution, precipitate, color change, state change, temperature exchange).</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Law of Conservation of Mass:</strong> Explain why chemical equations must balance: total atoms of each element on reactant side must equal product side.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Hit-and-Trial Balancing Mastery:</strong> Balance skeletal equations by adjusting stoichiometric coefficients only, without ever altering chemical subscripts.</div>
+        </li>
+        <li>
+          <span class="goal-bullet">✓</span>
+          <div><strong>Classify Reaction Types:</strong> Categorize reactions into Combination, Decomposition, Displacement, and Double Decomposition (Precipitation &amp; Neutralization).</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- THE GRADE 6 BRIDGE -->
+    <div class="grade6-bridge-card">
+      <div class="grade6-bridge-header">
+        <div class="grade6-bridge-kicker">The Grade 6 Bridge</div>
+        <h2 class="grade6-bridge-title">From Grade 6 Intuition to Grade 7 Reality</h2>
+        <div class="grade6-bridge-intro">Chemistry builds layer upon layer. Here is how what you learned in Grade 6 evolves into Grade 7 equation balancing rigor:</div>
+      </div>
+      <div class="spiral-columns">
+        <div class="spiral-col spiral-col-prev">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-prev">Grade 6: The Simple Model</span>
+            <span class="spiral-model-summary">Word equations and qualitative changes</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Word descriptions only:</strong> Reactions were written as simple word equations: \(\text{Carbon} + \text{Oxygen} \to \text{Carbon Dioxide}\).</li>
+            <li><strong>Atoms were not counted:</strong> You assumed matter transformed into new substances without balancing atom counts.</li>
+            <li><strong>Reactions were just "hot" or "cold":</strong> Energy changes were felt qualitatively without writing balanced chemical equations.</li>
+          </ul>
+        </div>
+        <div class="spiral-col spiral-col-curr">
+          <div class="spiral-col-header">
+            <span class="spiral-badge badge-curr">Grade 7: The Deeper Reality</span>
+            <span class="spiral-model-summary">Conservation of mass, coefficient balancing, and reaction taxonomy</span>
+          </div>
+          <ul class="spiral-list">
+            <li><strong>Conservation of Mass:</strong> Total mass of reactants must strictly equal total mass of products. Atom count per element on LHS must equal RHS.</li>
+            <li><strong>Subscripts are Inviolable:</strong> Subscripts define chemical identity and can NEVER be changed during balancing. Balancing is achieved purely by prefixing coefficients.</li>
+            <li><strong>Mechanistic Classification:</strong> Reactions fall into 4 precise classes: Combination (\(A+B\to AB\)), Decomposition (\(AB\to A+B\)), Displacement (\(A+BC\to AC+B\)), and Double Displacement (\(AB+CD\to AD+CB\)).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- 1. CHARACTERISTICS OF A CHEMICAL REACTION -->
     <div class="section-block">
@@ -648,31 +706,31 @@
       <div class="cs-header">
         <div class="cs-title-group">
           <div class="cs-kicker">Exam Strategy &bull; The 5-Second Filter</div>
-          <h2 class="cs-title">8. The Common-Sense Strategy: Reality Checks</h2>
+          <h2 class="cs-title">8. The Common-Sense Strategy: Balancing Reality Checks</h2>
         </div>
         <span class="cs-badge">Elimination Drill</span>
       </div>
 
       <div class="cs-intro">
-        <strong>"Common sense is the law."</strong> In science and mathematics, formulas describe physical reality. Top problem solvers don't blindly calculate; they inspect the options first and ask: <em>Which of these are physically absurd or mathematically impossible?</em> Use your physical instincts to eliminate wrong answers before writing down a single equation.
+        <strong>"Common sense is the law."</strong> In chemical reactions, atoms are neither created nor destroyed—they are merely rearranged. Top ICSE candidates never alter subscripts to balance an equation. Before doing long hit-and-trial algebra, use these 3 physical sanity filters to spot absurd trap options instantly.
       </div>
 
       <!-- THE 3 CHECK CARDS -->
       <div class="cs-checks-grid">
         <div class="cs-check-card">
           <span class="cs-check-num">Check 01</span>
-          <span class="cs-check-title">The Reality Scale Check</span>
-          <p class="cs-check-text">Does the magnitude make physical sense? A biological cell cannot be 1 meter long, and an everyday chemical reaction cannot yield millions of liters. Always check if the value fits the real-world scale.</p>
+          <span class="cs-check-title">Subscript Immutability Law</span>
+          <p class="cs-check-text">Subscripts define chemical identity and are fixed by valencies. Never change, add, or delete a subscript to balance an equation. You can ONLY modify stoichiometric coefficients in front of formulas!</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 02</span>
-          <span class="cs-check-title">The Boundary Bracket Rule</span>
-          <p class="cs-check-text">Look for bounds. An average or a mixture must always lie strictly between the minimum and maximum inputs. Any option outside this bracket is an immediate physical impossibility.</p>
+          <span class="cs-check-title">Atom Count Conservation Ledger</span>
+          <p class="cs-check-text">Matter cannot vanish. The total number of atoms of every individual element on the reactant side (LHS) must exactly match the total number of atoms on the product side (RHS).</p>
         </div>
         <div class="cs-check-card">
           <span class="cs-check-num">Check 03</span>
-          <span class="cs-check-title">The Units & Dimension Check</span>
-          <p class="cs-check-text">Are the units correct? If the question asks for a rate, the answer cannot be in kilograms. Often, two options can be eliminated instantly just by looking at the trailing units.</p>
+          <span class="cs-check-title">Smallest Whole-Number Integers</span>
+          <p class="cs-check-text">Standard chemical equations require the simplest whole-number ratio of coefficients. Fractional coefficients or unreduced multiples (like \(4\text{H}_2 + 2\text{O}_2 \to 4\text{H}_2\text{O}\)) are incomplete.</p>
         </div>
       </div>
 
@@ -683,7 +741,7 @@
           <span class="drill-header-hint">Target: Rule out 3 options in 10 seconds</span>
         </div>
         <div class="drill-question">
-          <strong>Exam Problem (Practice):</strong> A generic problem statement for this topic goes here. (This placeholder will be updated with topic-specific physics/math/biology data). Which of the following is the correct answer?
+          <strong>Exam Problem:</strong> Consider the synthesis of water from hydrogen and oxygen gases: \(\text{H}_2 + \text{O}_2 \to \text{H}_2\text{O}\). Which of the following represents the correctly balanced chemical equation obeying the Law of Conservation of Mass?
         </div>
 
         <div class="cs-options-list">
@@ -692,17 +750,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">A</span>
-                <span class="cs-option-value">Absurd Option 1</span>
+                <span class="cs-option-value">\(\text{H}_2 + \text{O}_2 \to \text{H}_2\text{O}_2\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-a" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Scale Violation</span>
+                <span class="cs-detail-title">Subscript Alteration Trap</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This value completely violates the Reality Scale Check. It is orders of magnitude off from what is physically possible.
+                <strong>Why common sense eliminates this:</strong> \(\text{H}_2\text{O}_2\) is hydrogen peroxide (a bleaching agent and antiseptic), NOT water (\(\text{H}_2\text{O}\))! Changing subscripts changes the chemical substance entirely.
               </div>
             </div>
           </div>
@@ -712,17 +770,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">B</span>
-                <span class="cs-option-value">Absurd Option 2</span>
+                <span class="cs-option-value">\(\text{H}_2 + \text{O} \to \text{H}_2\text{O}\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-b" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 2 Seconds</span>
-                <span class="cs-detail-title">Boundary Bracket Violation</span>
+                <span class="cs-detail-title">Monoatomic Gas Fallacy</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This falls outside the mathematical boundaries of the problem inputs. Disqualified immediately!
+                <strong>Why common sense eliminates this:</strong> Oxygen gas exists in nature as diatomic molecules (\(\text{O}_2\)), never as isolated monoatomic \(\text{O}\) atoms. You cannot alter elemental reactants to evade balancing.
               </div>
             </div>
           </div>
@@ -732,17 +790,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">C</span>
-                <span class="cs-option-value">Absurd Option 3</span>
+                <span class="cs-option-value">\(\text{H} + \text{O}_2 \to \text{HO}_2\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-c" style="display: none;">
               <div class="cs-detail-badge-row">
-                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 5 Seconds</span>
-                <span class="cs-detail-title">The Arithmetic Trap</span>
+                <span class="cs-status-tag tag-ruled-out">&#10006; Ruled Out in 3 Seconds</span>
+                <span class="cs-detail-title">Absurd Valence / Product Identity</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense eliminates this:</strong> This is a classic trap option meant to catch students who just add numbers without thinking about the physical meaning.
+                <strong>Why common sense eliminates this:</strong> Hydrogen gas is \(\text{H}_2\), not \(\text{H}\), and water is \(\text{H}_2\text{O}\), not hydroperoxyl (\(\text{HO}_2\)). Both reactants and products are chemically wrong.
               </div>
             </div>
           </div>
@@ -752,17 +810,17 @@
             <div class="cs-option-top">
               <div class="cs-option-label-group">
                 <span class="cs-option-letter">D</span>
-                <span class="cs-option-value">Logical Option</span>
+                <span class="cs-option-value">\(2\text{H}_2 + \text{O}_2 \to 2\text{H}_2\text{O}\)</span>
               </div>
               <span class="cs-option-hint">Click to test with common sense &rarr;</span>
             </div>
             <div class="cs-option-detail" id="detail-d" style="display: none;">
               <div class="cs-detail-badge-row">
                 <span class="cs-status-tag tag-sound">&#10004; The Only Survivor!</span>
-                <span class="cs-detail-title">Physical Confirmation</span>
+                <span class="cs-detail-title">Conservation of Mass Confirmed</span>
               </div>
               <div class="cs-detail-text">
-                <strong>Why common sense picks this:</strong> It is the ONLY option that satisfies all physical instincts and unit checks. You ruled out 3 options in seconds!
+                <strong>Why common sense picks this:</strong> Reactant atoms: \(2 \times 2 = 4\text{ H}\) and \(2\text{ O}\). Product atoms: \(2 \times 2 = 4\text{ H}\) and \(2 \times 1 = 2\text{ O}\). Subscripts are untouched, formulas are authentic, and atom totals are conserved!
               </div>
             </div>
           </div>
@@ -775,7 +833,7 @@
       <div class="bughunt-header">
         <div class="bughunt-title-group">
           <div class="bughunt-kicker">Diagnostic Practice &bull; The Examiner's Red Pen</div>
-          <h2 class="bughunt-title">9. The Bug Hunt: Audit Aarav's Homework</h2>
+          <h2 class="bughunt-title">9. The Bug Hunt: Audit Ananya's Homework</h2>
         </div>
         <span class="bughunt-badge">Interactive Audit &bull; 3 Marks</span>
       </div>
@@ -783,49 +841,50 @@
       <div class="bughunt-context">
         <strong>Problem Assigned:</strong>
         <div class="bughunt-prompt-box">
-          A generic exam problem based on this topic's learning objectives goes here. Evaluate the student's methodology below.
+          Write and balance the chemical equation for the combustion of magnesium ribbon in oxygen gas to form white magnesium oxide powder.
         </div>
-        Class 7 student <strong>Aarav</strong> submitted the three-step solution below.
+        Class 7 student <strong>Ananya Roy</strong> submitted the three-step solution below.
         Click on <em>any line</em> to put on the examiner's red pen: verify whether the step is sound, catch root blunders, or see how ICSE awards follow-through credit (ECF).
       </div>
 
       <div class="notebook-sheet">
         <div class="notebook-meta">
-          <span>Student: Aarav Mehta &bull; Class 7-B</span>
-          <span>Topic: Chemical Reactions & Equation Balancing</span>
+          <span>Student: Ananya Roy &bull; Class 7-C</span>
+          <span>Topic: Chemical Reactions &amp; Equation Balancing</span>
         </div>
 
         <div class="notebook-lines">
           <!-- LINE 1: SOUND -->
           <div class="notebook-line-item" id="line1" onclick="auditLine(1)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 1: Given Data &amp; Formula Identification</span>
+              <span class="line-step-tag">Step 1: Write Skeleton Equation &amp; Atom Inventory</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's correct extraction of givens]
+              $$\text{Skeleton: } \text{Mg} + \text{O}_2 \to \text{MgO}$$
+              $$\text{Reactants (LHS): } 1\text{ Mg}, 2\text{ O} \quad \big| \quad \text{Products (RHS): } 1\text{ Mg}, 1\text{ O}$$
             </div>
           </div>
 
           <!-- LINE 2: ROOT BLUNDER -->
           <div class="notebook-line-item" id="line2" onclick="auditLine(2)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 2: Core Calculation Step</span>
+              <span class="line-step-tag">Step 2: Balance Oxygen by Modifying Product Formula</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's erroneous calculation or conceptual misunderstanding]
+              $$\text{Ananya modifies product subscript: } \mathbf{Mg + O_2 \to MgO_2}$$
             </div>
           </div>
 
           <!-- LINE 3: ECF FOLLOW-THROUGH -->
           <div class="notebook-line-item" id="line3" onclick="auditLine(3)">
             <div class="notebook-line-top">
-              <span class="line-step-tag">Step 3: Final Answer Derivation</span>
+              <span class="line-step-tag">Step 3: Atom Count Verification</span>
               <span class="line-action-hint">Click to inspect line &rarr;</span>
             </div>
             <div class="line-content">
-              [Placeholder for Student's final answer, carrying forward the mistake]
+              $$\text{LHS: } 1\text{ Mg}, 2\text{ O} \quad \big| \quad \text{RHS: } 1\text{ Mg}, 2\text{ O} \implies \text{Equation is Balanced}$$
             </div>
           </div>
         </div>
@@ -837,31 +896,51 @@
             <span class="feedback-marks-badge">Score: 1/1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Correct Given Data</div>
-            Aarav accurately recorded the given parameters. This step is 100% mathematically sound. No deduction here!
+            <div class="feedback-note-title">Examiner's Assessment: Accurate Skeleton &amp; Inventory</div>
+            Ananya correctly wrote the initial skeleton equation and accurately counted the atoms on both sides (\(1\text{ Mg}, 2\text{ O}\) vs \(1\text{ Mg}, 1\text{ O}\)). 1/1 Mark awarded.
           </div>
         </div>
 
         <div class="examiner-feedback-card card-blunder" id="feedback-2" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#10006; Root Conceptual Blunder</span>
-            <span class="feedback-marks-badge">Score: 0/1 Mark</span>
+            <span class="feedback-status-pill">&#10006; Root Blunder Caught!</span>
+            <span class="feedback-marks-badge">Deduction: -1 Mark</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Fatal Error</div>
-            Aarav made a critical mistake in the core conversion or theoretical application here. This is a common trap!
+            <div class="feedback-note-title">Examiner's Assessment: Subscript Tampering Blunder</div>
+            <strong>The Trap:</strong> Ananya altered the subscript of magnesium oxide from \(\text{MgO}\) to \(\text{MgO}_2\).<br>
+            &bull; Magnesium has valency 2 (\(\text{Mg}^{2+}\)) and Oxygen has valency 2 (\(\text{O}^{2-}\)), so the chemical formula of magnesium oxide is strictly \(\mathbf{MgO}\).<br>
+            &bull; Subscripts are fixed by nature and chemical valencies. To balance oxygen, you must introduce a stoichiometric coefficient in front: \(2\text{MgO}\), never change subscripts!
           </div>
         </div>
 
         <div class="examiner-feedback-card card-ecf" id="feedback-3" style="display: none;">
           <div class="feedback-card-header">
-            <span class="feedback-status-pill">&#9888; Error Carried Forward (ECF)</span>
-            <span class="feedback-marks-badge">Score: 1/1 Mark</span>
+            <span class="feedback-status-pill">&#9888; Follow-Through (ECF Credit)</span>
+            <span class="feedback-marks-badge">Method Credit: 1/1 Mark (M1)</span>
           </div>
           <div class="feedback-body">
-            <div class="feedback-note-title">Examiner's Assessment: Method is Sound</div>
-            Even though the final answer is physically wrong, ICSE awards credit for correct methodology. Because Aarav applied the correct logic to his (wrong) inputs from Step 2, he earns the follow-through mark.
+            <div class="feedback-note-title">Examiner's Assessment: Error Carried Forward (ECF)</div>
+            <strong>How ICSE Marks This:</strong> Ananya verified that for her written equation (\(\text{Mg} + \text{O}_2 \to \text{MgO}_2\)), both sides have \(1\text{ Mg}\) and \(2\text{ O}\).<br>
+            Under ICSE marking rules, the candidate receives the <strong>Method Mark (M1)</strong> for correctly verifying atom conservation on her own written formula.
           </div>
+        </div>
+      </div>
+
+      <!-- CORRECTED MODEL SOLUTION ACCORDION -->
+      <div class="model-solution-wrap">
+        <button class="btn-toggle" onclick="toggleDrawer('model_sol')">Show Examiner's Corrected Model Answer &darr;</button>
+        <div class="solution-drawer" id="model_sol" style="margin-top: 10px;">
+          <strong>Examiner's Corrected Model Answer:</strong><br><br>
+          1. <em>Write Skeleton Equation &amp; Atom Inventory:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Mg} + \text{O}_2 \to \text{MgO} \quad (\text{LHS: } 1\text{ Mg}, 2\text{ O}; \quad \text{RHS: } 1\text{ Mg}, 1\text{ O})$$<br>
+          2. <em>Balance Oxygen Using Stoichiometric Coefficients:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Place coefficient } 2 \text{ before } \text{MgO}: \quad \text{Mg} + \text{O}_2 \to 2\text{MgO}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Now RHS has } 2\text{ Mg} \text{ and } 2\text{ O, while LHS has } 1\text{ Mg} \text{ and } 2\text{ O.}$$<br>
+          3. <em>Balance Magnesium &amp; Verify Mass Conservation:</em><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Place coefficient } 2 \text{ before } \text{Mg}: \quad \mathbf{2Mg + O_2 \to 2MgO}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;$$\text{Reactants: } 2\text{ Mg} + 2\text{ O} \quad \big| \quad \text{Products: } 2\text{ Mg} + 2\text{ O} \implies \text{Strictly Conserved!}$$<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<em>Common-sense reality check:</em> All chemical formulas retain their authentic valency-determined subscripts (\(\text{Mg}, \text{O}_2, \text{MgO}\)), and mass is conserved with simplest whole numbers.
         </div>
       </div>
     </section>
